@@ -1,0 +1,322 @@
+[
+  {
+    "headwords": ["mangan", "kakan", "turi", "boi", "jo", "gai"],
+    "sentence_bajau": "Boi jo gai mangan, turino gai.",
+    "highlight_word": "mangan",
+    "sentence_en": "After they ate, they went to sleep.",
+    "sentence_ms": "Selepas mereka makan, mereka pun tidur.",
+    "source": "Mark T. Miller (2007), p. 197"
+  },
+  {
+    "headwords": ["mangan", "nya'", "boi", "pedih", "kuri'"],
+    "sentence_bajau": "Amzi nya' boi mangan, ling-ni pedih betong-ni.",
+    "highlight_word": "mangan",
+    "sentence_en": "Amzi did not eat; he said his stomach hurts.",
+    "sentence_ms": "Amzi tidak makan; katanya perutnya sakit.",
+    "source": "Mark T. Miller (2007), p. 198"
+  },
+  {
+    "headwords": ["mangan", "boino", "ku", "tadi"],
+    "sentence_bajau": "Boino ku mangan tadi.",
+    "highlight_word": "mangan",
+    "sentence_en": "I already ate just now.",
+    "sentence_ms": "Sudah saya makan tadi.",
+    "source": "Mark T. Miller (2007), p. 201"
+  },
+  {
+    "headwords": ["tilau", "tilauno", "mio"],
+    "sentence_bajau": "Tilauno mio pasal hal e.",
+    "highlight_word": "Tilauno",
+    "sentence_en": "Ask him/her about that matter.",
+    "sentence_ms": "Tanyalah kepada dia tentang perkara itu.",
+    "source": "Mark T. Miller (2007), p. 188"
+  },
+  {
+    "headwords": ["tilau", "patilau", "jomo"],
+    "sentence_bajau": "Patilauno kiti ta' jomo e oron kampung tu.",
+    "highlight_word": "Patilauno",
+    "sentence_en": "Let us ask that person the name of this village.",
+    "sentence_ms": "Marilah kita bertanya kepada orang itu nama kampung ini.",
+    "source": "Mark T. Miller (2007), p. 189"
+  },
+  {
+    "headwords": ["laa'", "betis", "lumua'"],
+    "sentence_bajau": "Lumua' laa' lua' betis-nu.",
+    "highlight_word": "laa'",
+    "sentence_en": "Blood is coming out from your leg.",
+    "sentence_ms": "Darah keluar dari kaki kamu.",
+    "source": "Mark T. Miller (2007), p. 145"
+  },
+  {
+    "headwords": ["ngelaa'", "poyo", "batu"],
+    "sentence_bajau": "Ngelaa' jo poyo-no boi takad batu.",
+    "highlight_word": "Ngelaa'",
+    "sentence_en": "His foot bled after hitting a stone.",
+    "sentence_ms": "Berdarahlah kakinya selepas terhantuk batu.",
+    "source": "Mark T. Miller (2007), p. 146"
+  },
+  {
+    "headwords": ["bu'e'", "dingin", "nginum"],
+    "sentence_bajau": "Nginum kiti bu'e' dingin tu.",
+    "highlight_word": "bu'e'",
+    "sentence_en": "Let us drink this cold water.",
+    "sentence_ms": "Marilah kita minum air sejuk ini.",
+    "source": "Mark T. Miller (2007), p. 122"
+  },
+  {
+    "headwords": ["bu'e'", "suang", "bese'", "bése'"],
+    "sentence_bajau": "Bése' lumua' lua' moto-ni masa iyo nangis.",
+    "highlight_word": "Bése'",
+    "sentence_en": "Tears flowed from his eyes while he was crying.",
+    "sentence_ms": "Air mata mengalir dari matanya semasa dia menangis.",
+    "source": "Mark T. Miller (2007), p. 138"
+  },
+  {
+    "headwords": ["kerabau", "pandai", "tutur"],
+    "sentence_bajau": "Kerabau e pan pandai no be-tutur.",
+    "highlight_word": "Kerabau",
+    "sentence_en": "The buffalo was able to speak.",
+    "sentence_ms": "Kerbau itu pandai bertutur.",
+    "source": "Miller (2007), kerabaw 022"
+  },
+  {
+    "headwords": ["kerabau", "parai", "mangan"],
+    "sentence_bajau": "Kerabau e mangan parai ta' tana'.",
+    "highlight_word": "Kerabau",
+    "sentence_en": "The buffalo ate the unhusked rice on the ground.",
+    "sentence_ms": "Kerbau itu makan padi di atas tanah.",
+    "source": "Mark T. Miller (2007), p. 165"
+  },
+  {
+    "headwords": ["bagi", "parai", "tumpuk"],
+    "sentence_bajau": "Baginou parai tu duo tumpuk.",
+    "highlight_word": "Baginou",
+    "sentence_en": "Divide this rice into two heaps.",
+    "sentence_ms": "Bahagikan padi ini kepada dua longgok.",
+    "source": "Mark T. Miller (2007), p. 170"
+  },
+  {
+    "headwords": ["bagian", "dikau'"],
+    "sentence_bajau": "Tu no bagian dikau'.",
+    "highlight_word": "bagian",
+    "sentence_en": "This is your share.",
+    "sentence_ms": "Inilah bahagian kamu.",
+    "source": "Mark T. Miller (2007), p. 171"
+  },
+  {
+    "headwords": ["keta", "suang", "ngeta"],
+    "sentence_bajau": "Gai ngeta suang makai biduk diki'.",
+    "highlight_word": "ngeta",
+    "sentence_en": "They crossed the river using a small boat.",
+    "sentence_ms": "Mereka menyeberang sungai menggunakan sampan kecil.",
+    "source": "Mark T. Miller (2007), p. 182"
+  },
+  {
+    "headwords": ["keta", "pe-keta", "jomo"],
+    "sentence_bajau": "Iyo no meketa jomo ta' seberang suang.",
+    "highlight_word": "meketa",
+    "sentence_en": "He was the one who crossed the people over to the other side of the river.",
+    "sentence_ms": "Dialah yang menyeberangkan orang ke seberang sungai.",
+    "source": "Mark T. Miller (2007), p. 183"
+  },
+  {
+    "headwords": ["alap", "kealapan", "jomo"],
+    "sentence_bajau": "Kealapan jomo e no nikenang semomon.",
+    "highlight_word": "Kealapan",
+    "sentence_en": "The goodness of that person is remembered by all.",
+    "sentence_ms": "Kebaikan orang itu dikenang oleh semua orang.",
+    "source": "Mark T. Miller (2007), p. 190"
+  },
+  {
+    "headwords": ["alap", "pealap", "ruma'"],
+    "sentence_bajau": "Amzi pealap ruma'-ni boi temuan barat.",
+    "highlight_word": "pealap",
+    "sentence_en": "Amzi repaired his house after it was struck by the storm.",
+    "sentence_ms": "Amzi membaiki rumahnya selepas dipukul ribut.",
+    "source": "Mark T. Miller (2007), p. 191"
+  },
+  {
+    "headwords": ["jomo", "suang", "majlis"],
+    "sentence_bajau": "Suang jomo teko diom majlis e.",
+    "highlight_word": "jomo",
+    "sentence_en": "Many people arrived at the gathering.",
+    "sentence_ms": "Ramai orang datang ke majlis itu.",
+    "source": "Mark T. Miller (2007), p. 142"
+  },
+  {
+    "headwords": ["jomo", "pejomoon", "kampung"],
+    "sentence_bajau": "Kampung tu iono pejomoon jomo lua' darat.",
+    "highlight_word": "pejomoon",
+    "sentence_en": "This village is a meeting place for people from the inland.",
+    "sentence_ms": "Kampung ini ialah tempat persinggahan orang dari kawasan pedalaman.",
+    "source": "Mark T. Miller (2007), p. 143"
+  },
+  {
+    "headwords": ["tingkoo'", "petingkoo'", "bangku"],
+    "sentence_bajau": "Petingkoo'no emma' ta' bangku kayu tu.",
+    "highlight_word": "Petingkoo'no",
+    "sentence_en": "Seat father on this wooden bench.",
+    "sentence_ms": "Dudukkanlah ayah di bangku kayu ini.",
+    "source": "Mark T. Miller (2007), p. 155"
+  },
+  {
+    "headwords": ["tingkoo'", "sedi", "bu'e'"],
+    "sentence_bajau": "Gai ningkoo' ta' sedi suang.",
+    "highlight_word": "ningkoo'",
+    "sentence_en": "They sat at the riverbank.",
+    "sentence_ms": "Mereka duduk di tepi sungai.",
+    "source": "Mark T. Miller (2007), p. 156"
+  },
+  {
+    "headwords": ["beli", "kadai", "parai"],
+    "sentence_bajau": "Iyang meli parai ta' kadai e.",
+    "highlight_word": "meli",
+    "sentence_en": "Mother bought rice at that shop.",
+    "sentence_ms": "Emak membeli padi di kedai itu.",
+    "source": "Mark T. Miller (2007), p. 160"
+  },
+  {
+    "headwords": ["beli", "pebeli", "sinsim"],
+    "sentence_bajau": "Iyo mebeli diki'-ni sinsim amas.",
+    "highlight_word": "mebeli",
+    "sentence_en": "He bought his younger sibling a gold ring.",
+    "sentence_ms": "Dia membelikan adiknya sebentuk cincin emas.",
+    "source": "Mark T. Miller (2007), p. 161"
+  },
+  {
+    "headwords": ["turi", "peturi", "anak"],
+    "sentence_bajau": "Iyang peturi anak-ni diom bilik.",
+    "highlight_word": "peturi",
+    "sentence_en": "Mother put her child to sleep in the room.",
+    "sentence_ms": "Emak menidurkan anaknya di dalam bilik.",
+    "source": "Mark T. Miller (2007), p. 175"
+  },
+  {
+    "headwords": ["laan", "suang", "taun"],
+    "sentence_bajau": "Iyo lumaan en-diam taun sampai teko ta' suang.",
+    "highlight_word": "lumaan",
+    "sentence_en": "He walked through the forest until he reached a river.",
+    "sentence_ms": "Dia berjalan di dalam hutan sehingga tiba di sebatang sungai.",
+    "source": "Miller (2007), biduk 078"
+  },
+  {
+    "headwords": ["laan", "pulau", "lai"],
+    "sentence_bajau": "Iyo lai ta' dikau' pulau.",
+    "highlight_word": "lai",
+    "sentence_en": "He fled to a certain island.",
+    "sentence_ms": "Dia melarikan diri ke sebuah pulau.",
+    "source": "Miller (2007), Mat Salleh 015"
+  },
+  {
+    "headwords": ["kito", "tekito", "uwa'", "léko'"],
+    "sentence_bajau": "Tekito le' uwa' e léko' diom rumbau.",
+    "highlight_word": "Tekito",
+    "sentence_en": "The dog accidentally saw a snake in the bushes.",
+    "sentence_ms": "Ternampak oleh anjing itu seekor ular di dalam semak.",
+    "source": "Mark T. Miller (2007), p. 210"
+  },
+  {
+    "headwords": ["ngenda'", "bua'", "kayu"],
+    "sentence_bajau": "Anak e ngenda' bua' kayu ta' pitas.",
+    "highlight_word": "ngenda'",
+    "sentence_en": "The child is looking at the fruit at the top of the tree.",
+    "sentence_ms": "Kanak-kanak itu melihat buah di atas pokok.",
+    "source": "Mark T. Miller (2007), p. 211"
+  },
+  {
+    "headwords": ["emma'", "iyang", "ruma'"],
+    "sentence_bajau": "Emma' ko' iyang no ninda' ruma' tu.",
+    "highlight_word": "Emma'",
+    "sentence_en": "Father and mother are the ones looking after this house.",
+    "sentence_ms": "Ayah dan emaklah yang menjaga rumah ini.",
+    "source": "Mark T. Miller (2007), p. 115"
+  },
+  {
+    "headwords": ["sinsim", "amas", "moto"],
+    "sentence_bajau": "Sinsim tu nianang le' moto-ku ta' lantai.",
+    "highlight_word": "Sinsim",
+    "sentence_en": "This ring was found by my eyes on the floor.",
+    "sentence_ms": "Cincin ini dijumpai oleh saya di atas lantai.",
+    "source": "Mark T. Miller (2007), p. 130"
+  },
+  {
+    "headwords": ["ellau", "panas", "langau"],
+    "sentence_bajau": "Ellau tu panas tuu sampai karing tana'.",
+    "highlight_word": "Ellau",
+    "sentence_en": "Today is very hot until the earth is dried up.",
+    "sentence_ms": "Hari ini sangat panas sehingga kering tanah.",
+    "source": "Mark T. Miller (2007), p. 132"
+  },
+  {
+    "headwords": ["uwa'", "kucing", "makan"],
+    "sentence_bajau": "Uwa' e nundug kucing sampai ta' sedi poon kayu.",
+    "highlight_word": "Uwa'",
+    "sentence_en": "The dog chased the cat to the side of the tree.",
+    "sentence_ms": "Anjing itu mengejar kucing sehingga ke tepi pokok.",
+    "source": "Mark T. Miller (2007), p. 140"
+  },
+  {
+    "headwords": ["sapi'", "rungai", "taun"],
+    "sentence_bajau": "Sapi'-ni ai rungai diom taun.",
+    "highlight_word": "Sapi'-ni",
+    "sentence_en": "His cow is missing in the forest.",
+    "sentence_ms": "Lembunya telah hilang di dalam hutan.",
+    "source": "Mark T. Miller (2007), p. 117"
+  },
+  {
+    "headwords": ["buku", "buk", "muan"],
+    "sentence_bajau": "Amzi boi muan buk e ta' si Nisah.",
+    "highlight_word": "muan",
+    "sentence_en": "Amzi gave the book to Nisah.",
+    "sentence_ms": "Amzi memberikan buku itu kepada Nisah.",
+    "source": "Mark T. Miller (2007), p. 164"
+  },
+  {
+    "headwords": ["parai", "karung", "telu"],
+    "sentence_bajau": "Telu karung parai niboo le' gai ta' kadai.",
+    "highlight_word": "parai",
+    "sentence_en": "Three sacks of rice were brought by them to the shop.",
+    "sentence_ms": "Tiga guni padi dibawa oleh mereka ke kedai.",
+    "source": "Mark T. Miller (2007), p. 144"
+  },
+  {
+    "headwords": ["badu", "tudung", "jadi"],
+    "sentence_bajau": "Kain tu binuat jadi badu ko' tudung.",
+    "highlight_word": "badu",
+    "sentence_en": "This cloth was made into a shirt and a headscarf.",
+    "sentence_ms": "Kain ini dibuat menjadi baju dan tudung.",
+    "source": "Mark T. Miller (2007), p. 168"
+  },
+  {
+    "headwords": ["kayu", "ebba'", "angin"],
+    "sentence_bajau": "Poon kayu e ebba' masa angin benter.",
+    "highlight_word": "ebba'",
+    "sentence_en": "The tree toppled when the strong wind blew.",
+    "sentence_ms": "Pokok itu tumbang semasa angin kencang bertiup.",
+    "source": "Miller (2007), kayu ebba’ 045"
+  },
+  {
+    "headwords": ["sedo'", "duri'", "mangan"],
+    "sentence_bajau": "Sedo' e suang duri'-ni masa pinangan.",
+    "highlight_word": "Sedo'",
+    "sentence_en": "The fish has many bones/thorns when eaten.",
+    "sentence_ms": "Ikan itu banyak tulangnya apabila dimakan.",
+    "source": "Mark T. Miller (2007), p. 150"
+  },
+  {
+    "headwords": ["suang", "bu'e'", "kuala"],
+    "sentence_bajau": "Bu'e' suang tu lumaan terus sampai ta' laut.",
+    "highlight_word": "suang",
+    "sentence_en": "The river water flows continuously into the sea.",
+    "sentence_ms": "Air sungai itu mengalir terus sampai ke laut.",
+    "source": "Mark T. Miller (2007), p. 152"
+  },
+  {
+    "headwords": ["malas", "pemalas", "turi"],
+    "sentence_bajau": "Dela pemalas e tekuri' sampai tengellau.",
+    "highlight_word": "pemalas",
+    "sentence_en": "The lazy man overslept until noon.",
+    "sentence_ms": "Lelaki pemalas itu tertidur sehingga tengah hari.",
+    "source": "Mark T. Miller (2007), p. 177"
+  }
+]

@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="ms">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kamus Bajau Sama — Prototaip Reka Bentuk</title>
+
+  <!-- Google Fonts: Libre Baskerville (Headings) & Work Sans (Body/UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- Floating Prototype Control Bar for easy demo & review -->
+  <aside class="proto-switcher" aria-label="Kawalan Prototaip">
+    <div class="proto-badge">MOCKUP PREVIEW</div>
+    <div class="proto-actions">
+      <button type="button" class="proto-btn active" id="btn-view-home" onclick="showPage('home')">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+          <polyline points="9 22 9 12 15 12 15 22" />
+        </svg>
+        Laman Utama
+      </button>
+      <button type="button" class="proto-btn" id="btn-view-entry" onclick="showPage('entry')">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z" />
+          <path d="M6 6h10" />
+          <path d="M6 10h10" />
+        </svg>
+        Entri: "mangan"
+      </button>
+      <button type="button" class="proto-btn" id="btn-view-about" onclick="showPage('about')">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10" />
+          <line x1="12" y1="16" x2="12" y2="12" />
+          <line x1="12" y1="8" x2="12.01" y2="8" />
+        </svg>
+        Tentang
+      </button>
+      <button type="button" class="proto-btn" id="btn-toggle-viewport" onclick="toggleViewport()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect width="14" height="20" x="5" y="2" rx="2" ry="2" />
+          <path d="M12 18h.01" />
+        </svg>
+        <span id="vp-label">Mod Telefon</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- App Wrapper (Viewport constrained when in mobile preview mode) -->
+  <div class="app-viewport-wrapper" id="viewport-wrapper">
+
+    <!-- Left Vertical Linangkit Strip -->
+    <div class="linangkit-left-border" aria-hidden="true"></div>
+
+    <!-- ======================================================== -->
+    <!-- 1. HOME PAGE VIEW -->
+    <!-- ======================================================== -->
+    <main class="page-container page-home" id="page-home">
+
+      <!-- Top Navigation -->
+      <header class="site-header">
+        <a href="#" class="brand-logo" onclick="showPage('home'); return false;">
+          <span class="brand-light">Kamus</span>
+          <span class="brand-bold">Bajau Sama</span>
+        </a>
+        <nav class="nav-links" aria-label="Navigasi Utama">
+          <a href="#" class="nav-link" data-i18n="nav_glosari" onclick="openGlosariModal(); return false;">Glosari</a>
+          <a href="#" class="nav-link" data-i18n="nav_cadang" onclick="openCadangModal(); return false;">Cadang</a>
+          <a href="#" class="nav-link" data-i18n="nav_tentang" onclick="showPage('about'); return false;">Tentang</a>
+          <!-- Language Switcher -->
+          <div class="lang-switcher" role="group" aria-label="Language switcher">
+            <button type="button" class="lang-btn active" data-lang="ms" onclick="setLanguage('ms')">MS</button>
+            <button type="button" class="lang-btn" data-lang="bj" onclick="setLanguage('bj')">BJ</button>
+            <button type="button" class="lang-btn" data-lang="en" onclick="setLanguage('en')">EN</button>
+          </div>
+        </nav>
+      </header>
+
+      <!-- Main Hero Content -->
+      <section class="hero-split-layout">
+
+        <!-- Ambient Warm Coral Glow -->
+        <div class="ambient-glow" aria-hidden="true"></div>
+
+        <!-- Left Hero Headline Column -->
+        <div class="hero-text-col">
+          <h1 class="hero-title" data-i18n="hero_title"
+            data-i18n-ms="Bersama <strong>Menerokai</strong><br>dan <strong>Memelihara</strong><br>Jiwa Bangsa <em>Kita.</em>"
+            data-i18n-bj="Somo-somo <strong>Ngeneroka</strong><br>ko' <strong>Meloro</strong><br>Jiwo Banso <em>Kiti.</em>"
+            data-i18n-en="Together <strong>Exploring</strong><br>and <strong>Preserving</strong><br>the Soul of Our <em>People.</em>">
+            Bersama <strong>Menerokai</strong><br>
+            dan <strong>Memelihara</strong><br>
+            Jiwa Bangsa <em>Kita.</em>
+          </h1>
+          <p class="hero-description" data-i18n="hero_desc">
+            Mulakan pencarian, atau cadangkan perkataan baharu untuk meluaskan kosa kata kamus ini.
+          </p>
+        </div>
+
+        <!-- Right Hero Search Column -->
+        <div class="hero-search-col">
+          <div class="search-card">
+            <div class="search-card-header">
+              <span class="search-card-label" data-i18n="search_label">BAR PENCARIAN</span>
+            </div>
+
+            <!-- Search Input Box -->
+            <div class="search-input-wrapper">
+              <span class="search-icon-box" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <path d="m21 21-4.3-4.3"></path>
+                </svg>
+              </span>
+              <input type="text" id="home-search-input" class="search-input" data-i18n-placeholder="search_placeholder"
+                placeholder="Cari perkataan dalam bahasa Bajau, Melayu atau Inggeris." autocomplete="off"
+                aria-label="Cari perkataan" />
+              <button type="button" class="btn-clear-input" id="btn-clear-search" onclick="clearSearch()"
+                aria-label="Padam teks" style="display:none;">
+                &times;
+              </button>
+            </div>
+
+            <!-- Dynamic Search Content (Suggestions / Hint) inside Card -->
+            <div class="search-card-body" id="search-card-body">
+              <p class="search-hint-text" id="search-hint-text" data-i18n="search_hint">
+                Cadangan akan muncul di sini apabila anda menaip sesuatu.
+              </p>
+              <div class="inline-suggestions-list" id="search-suggestions" style="display: none;"></div>
+            </div>
+
+            <!-- Card Bottom Action Buttons -->
+            <div class="search-card-footer">
+              <button type="button" class="btn-ghost" data-i18n="btn_clear" onclick="clearSearch()">Padam</button>
+              <button type="button" class="btn-primary" data-i18n="btn_search" onclick="submitSearch()">Cari</button>
+            </div>
+          </div>
+
+          <!-- Trending Keywords Chips -->
+          <div class="trending-container">
+            <span class="trending-label" data-i18n="trending_label">Trending:</span>
+            <div class="trending-chips">
+              <button type="button" class="chip-item" onclick="quickSearch('mangan')">mangan</button>
+              <button type="button" class="chip-item" onclick="quickSearch('tilau')">tilau</button>
+              <button type="button" class="chip-item" onclick="quickSearch('oron')">oron</button>
+              <button type="button" class="chip-item" onclick="quickSearch('boe\'')">boe'</button>
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </main>
+
+
+    <!-- ======================================================== -->
+    <!-- 2. LEXICAL ENTRY PAGE VIEW (/kamus/mangan) -->
+    <!-- ======================================================== -->
+    <main class="page-container page-entry" id="page-entry" style="display:none;">
+
+      <!-- Top Navigation with Integrated Search -->
+      <header class="site-header site-header-entry">
+        <a href="#" class="brand-logo" onclick="showPage('home'); return false;">
+          <span class="brand-light">Kamus</span>
+          <span class="brand-bold">Bajau Sama</span>
+        </a>
+
+        <!-- Integrated Navbar Search -->
+        <div class="nav-search-box">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            class="nav-search-icon">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.3-4.3"></path>
+          </svg>
+          <input type="text" class="nav-search-input" data-i18n-placeholder="nav_search_placeholder"
+            placeholder="Cari perkataan." id="nav-search-input" autocomplete="off" />
+        </div>
+
+        <nav class="nav-links" aria-label="Navigasi Utama">
+          <a href="#" class="nav-link" data-i18n="nav_glosari" onclick="openGlosariModal(); return false;">Glosari</a>
+          <a href="#" class="nav-link" data-i18n="nav_cadang" onclick="openCadangModal(); return false;">Cadang</a>
+          <a href="#" class="nav-link" data-i18n="nav_tentang" onclick="showPage('about'); return false;">Tentang</a>
+          <!-- Language Switcher -->
+          <div class="lang-switcher" role="group" aria-label="Language switcher">
+            <button type="button" class="lang-btn active" data-lang="ms" onclick="setLanguage('ms')">MS</button>
+            <button type="button" class="lang-btn" data-lang="bj" onclick="setLanguage('bj')">BJ</button>
+            <button type="button" class="lang-btn" data-lang="en" onclick="setLanguage('en')">EN</button>
+          </div>
+        </nav>
+      </header>
+
+      <!-- Entry Content Grid -->
+      <div class="entry-layout-grid">
+
+        <!-- Left Column: Headword, Pronunciation, Morphology, Regional Variants -->
+        <div class="entry-left-col">
+
+          <div class="headword-group">
+            <span class="pos-badge">KATA KERJA</span>
+            <h1 class="headword-title">mangan</h1>
+
+            <div class="pronunciation-row">
+              <span class="ipa-text">/ma.ngan/</span>
+              <button type="button" class="audio-btn" id="audio-play-btn" onclick="playPronunciation('mangan')"
+                title="Dengarkan sebutan" aria-label="Mainkan sebutan audio">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                  <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                  <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+                </svg>
+                <span class="audio-playing-pulse"></span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Terbitan Imbuhan -->
+          <section class="entry-section">
+            <h2 class="section-heading" data-i18n="entry_affixes">Terbitan Imbuhan</h2>
+            <ul class="affix-list">
+              <li><strong class="affix-term">mangan</strong> <span class="affix-sep">–</span> <span
+                  class="affix-desc">memakan</span></li>
+              <li><strong class="affix-term">nimangan</strong> <span class="affix-sep">–</span> <span
+                  class="affix-desc">dimakan</span></li>
+              <li><strong class="affix-term">minangan</strong> <span class="affix-sep">–</span> <span
+                  class="affix-desc">dimakan</span></li>
+              <li><strong class="affix-term">manganan</strong> <span class="affix-sep">–</span> <span
+                  class="affix-desc">makankan</span></li>
+            </ul>
+          </section>
+
+          <!-- Variasi Daerah -->
+          <section class="entry-section">
+            <h2 class="section-heading" data-i18n="entry_dialects">Variasi Daerah</h2>
+            <ul class="dialect-list">
+              <li><span class="locality-name">Kota Belud:</span> <span class="locality-val">mangan (piawai)</span></li>
+              <li><span class="locality-name">Tuaran:</span> <span class="locality-val">mangan / pemangan</span></li>
+              <li><span class="locality-name">Kawang:</span> <span class="locality-val">mangan</span></li>
+            </ul>
+          </section>
+
+        </div>
+
+        <!-- Vertical Editorial Divider -->
+        <div class="entry-col-divider" aria-hidden="true"></div>
+
+        <!-- Right Column: Definitions, Examples, Thesaurus, Provenance -->
+        <div class="entry-right-col">
+
+          <!-- Definisi -->
+          <section class="entry-section">
+            <h2 class="section-heading" data-i18n="entry_definition">Definisi</h2>
+            <ol class="definition-list">
+              <li>
+                <span class="def-num">1.</span>
+                <span class="def-text">makan</span>
+                <span class="def-en">(to eat / to consume food)</span>
+              </li>
+            </ol>
+          </section>
+
+          <!-- Contoh Penggunaan -->
+          <section class="entry-section">
+            <h2 class="section-heading" data-i18n="entry_examples">Contoh Penggunaan</h2>
+            <div class="example-box">
+              <p class="example-quote">“Boino ku <strong class="highlight-word">mangan</strong> tadi.”</p>
+              <p class="example-tr-ms">Sudah saya makan tadi.</p>
+              <p class="example-tr-en">I already ate just now.</p>
+            </div>
+          </section>
+
+          <!-- Tesaurus Container -->
+          <section class="entry-section">
+            <div class="thesaurus-card">
+              <span class="thesaurus-label">TESAURUS</span>
+              <div class="thesaurus-items">
+                <a href="#" class="thesaurus-pill" onclick="quickSearch('kinakan'); return false;">kinakan <span
+                    class="thesaurus-sub">(makanan)</span></a>
+                <a href="#" class="thesaurus-pill" onclick="quickSearch('nginum'); return false;">nginum <span
+                    class="thesaurus-sub">(minum)</span></a>
+                <a href="#" class="thesaurus-pill" onclick="quickSearch('mangan-mangan'); return false;">mangan-mangan
+                  <span class="thesaurus-sub">(berjamu)</span></a>
+              </div>
+            </div>
+          </section>
+
+          <!-- Provenance / Sumber -->
+          <div class="provenance-banner">
+            <div class="provenance-info">
+              <span class="provenance-icon">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="16" x2="12" y2="12"></line>
+                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+              </span>
+              <span data-i18n="entry_source"><strong>Sumber:</strong> Informan Lisan (Kota Belud) • Disemak oleh Penutur
+                Jati</span>
+            </div>
+            <button type="button" class="btn-suggest-sm" data-i18n="entry_suggest_btn"
+              onclick="openCadangModal('mangan')">
+              + Cadang Maklumat
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>
+
+
+    <!-- ======================================================== -->
+    <!-- 3. DEDICATED ABOUT PAGE VIEW (/tentang) -->
+    <!-- ======================================================== -->
+    <main class="page-container page-about" id="page-about" style="display:none;">
+
+      <!-- Top Navigation -->
+      <header class="site-header">
+        <a href="#" class="brand-logo" onclick="showPage('home'); return false;">
+          <span class="brand-light">Kamus</span>
+          <span class="brand-bold">Bajau Sama</span>
+        </a>
+        <nav class="nav-links" aria-label="Navigasi Utama">
+          <a href="#" class="nav-link" data-i18n="nav_glosari" onclick="openGlosariModal(); return false;">Glosari</a>
+          <a href="#" class="nav-link" data-i18n="nav_cadang" onclick="openCadangModal(); return false;">Cadang</a>
+          <a href="#" class="nav-link active" data-i18n="nav_tentang"
+            onclick="showPage('about'); return false;">Tentang</a>
+          <!-- Language Switcher -->
+          <div class="lang-switcher" role="group" aria-label="Language switcher">
+            <button type="button" class="lang-btn active" data-lang="ms" onclick="setLanguage('ms')">MS</button>
+            <button type="button" class="lang-btn" data-lang="bj" onclick="setLanguage('bj')">BJ</button>
+            <button type="button" class="lang-btn" data-lang="en" onclick="setLanguage('en')">EN</button>
+          </div>
+        </nav>
+      </header>
+
+      <!-- About Page Header Banner -->
+      <div class="about-hero">
+        <span class="about-kicker" data-i18n="about_kicker">INISIATIF PEMELIHARAAN WARISAN BAHASA</span>
+        <h1 class="about-main-title" data-i18n="about_title">
+          Memelihara Warisan Lisan,<br>
+          Memperkasa Penutur <em>Generasi Hadapan.</em>
+        </h1>
+        <p class="about-lead" data-i18n="about_lead">
+          <strong>Kamus Bajau Samah</strong> ialah sebuah sumber leksikal digital terbuka yang diasaskan untuk
+          mendokumentasikan, meraikan dan memperluaskan kosa kata bahasa Bajau Samah agar kekal hidup dan mudah diakses
+          oleh semua lapisan masyarakat.
+        </p>
+      </div>
+
+      <!-- About Pillars Grid -->
+      <div class="about-grid">
+
+        <div class="about-card">
+          <div class="about-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"></path>
+              <path d="M6 6h10"></path>
+              <path d="M6 10h10"></path>
+            </svg>
+          </div>
+          <h2 class="about-card-title">Akses Terbuka & Digital</h2>
+          <p class="about-card-text">
+            Menjadikan perbendaharaan kata Bajau Samah mudah dicari, difahami dan dikongsi merentasi pelbagai peranti
+            dengan pengalaman carian yang pantas dan tepat.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <div class="about-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <path d="m9 12 2 2 4-4"></path>
+            </svg>
+          </div>
+          <h2 class="about-card-title">Ketulenan & Integriti Data</h2>
+          <p class="about-card-text">
+            Setiap perkataan, sebutan dan contoh ayat dipelihara mengikut bentuk pertuturan tulen penutur jati tanpa
+            sebarang rekaan atau pengubahsuaian leksikal sewenang-wenangnya.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <div class="about-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </div>
+          <h2 class="about-card-title">Variasi Daerah & Dialek</h2>
+          <p class="about-card-text">
+            Mendokumentasikan kepelbagaian dialek Bajau Samah di Sabah — dari Kota Belud, Tuaran, Papar, Kawang hingga
+            ke persisiran pantai timur Sabah.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Editorial Section: Metodologi & Sumber -->
+      <section class="about-editorial-section">
+        <div class="editorial-box">
+          <h2 class="editorial-heading">Metodologi & Sumber Rujukan</h2>
+          <p>
+            Kandungan dalam kamus ini dikumpulkan melalui gabungan sumber lisan daripada warga emas, penutur jati
+            komuniti, serta rujukan dokumentasi linguistik dan akademik yang diiktiraf.
+          </p>
+          <div class="methodology-tags">
+            <span class="m-badge">Sumber Lisan Penutur Jati</span>
+            <span class="m-badge">Semakan Jawatankuasa Bahasa</span>
+            <span class="m-badge">Variasi Imbuhan & Morfologi</span>
+            <span class="m-badge">Transkripsi Fonetik (IPA)</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Community Contribution Callout -->
+      <section class="about-cta-section">
+        <div class="about-cta-card">
+          <div class="about-cta-content">
+            <h2 class="about-cta-title" data-i18n="about_cta_title">Sumbangkan Pengetahuan Anda</h2>
+            <p class="about-cta-desc" data-i18n="about_cta_desc">
+              Kamus ini berkembang seiring dengan sumbangan anda. Jika anda mengetahui perkataan, sebutan, dialek
+              setempat atau contoh
+              ayat baharu, kongsi bersama kami untuk dinilai dan dimasukkan ke dalam pangkalan data rasmi.
+            </p>
+          </div>
+          <button type="button" class="btn-primary btn-large" data-i18n="about_cta_btn" onclick="openCadangModal()">
+            + Cadang Perkataan Sekarang
+          </button>
+        </div>
+      </section>
+    </main>
+
+  </div>
+
+  <!-- Interactive Modal for Contribution / Cadang -->
+  <dialog id="modal-cadang" class="modal-dialog">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title">Cadang Perkataan / Maklumat Baharu</h3>
+        <button type="button" class="modal-close" onclick="closeModal('modal-cadang')">&times;</button>
+      </div>
+      <form class="modal-body" onsubmit="handleCadangSubmit(event)">
+        <p class="modal-desc">
+          Bantu kami memperkayakan Kamus Bajau Sama. Setiap cadangan komuniti akan disemak sebelum dimuatkan ke kamus
+          rasmi.
+        </p>
+        <div class="form-group">
+          <label for="cadang-word">Perkataan Bajau Sama <span class="req">*</span></label>
+          <input type="text" id="cadang-word" class="form-input" placeholder="Cth: mangan, boe', tilau" required>
+        </div>
+        <div class="form-group">
+          <label for="cadang-meaning">Maksud / Definisi (Bahasa Melayu / Inggeris) <span class="req">*</span></label>
+          <input type="text" id="cadang-meaning" class="form-input" placeholder="Cth: makan, air, bertanya" required>
+        </div>
+        <div class="form-group">
+          <label for="cadang-example">Contoh Ayat (Pilihan)</label>
+          <textarea id="cadang-example" class="form-textarea" rows="2"
+            placeholder="Cth: Boino ku mangan tadi. (Sudah saya makan tadi)"></textarea>
+        </div>
+        <div class="form-row">
+          <div class="form-group half">
+            <label for="cadang-locality">Daerah / Dialek</label>
+            <select id="cadang-locality" class="form-select">
+              <option value="Kota Belud">Kota Belud</option>
+              <option value="Tuaran">Tuaran</option>
+              <option value="Papar">Papar</option>
+              <option value="Kawang">Kawang</option>
+              <option value="Semporna">Semporna</option>
+              <option value="Lain-lain">Lain-lain</option>
+            </select>
+          </div>
+          <div class="form-group half">
+            <label for="cadang-contributor">Nama Pencadang (Pilihan)</label>
+            <input type="text" id="cadang-contributor" class="form-input" placeholder="Nama anda">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-ghost" onclick="closeModal('modal-cadang')">Batal</button>
+          <button type="submit" class="btn-primary">Hantar Cadangan</button>
+        </div>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- Interactive Modal for Glosari / Blog Notification -->
+  <dialog id="modal-info" class="modal-dialog">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title" id="info-modal-title">Glosari</h3>
+        <button type="button" class="modal-close" onclick="closeModal('modal-info')">&times;</button>
+      </div>
+      <div class="modal-body" id="info-modal-body">
+        <!-- Dynamic content -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-primary" onclick="closeModal('modal-info')">Tutup</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Toast Notification -->
+  <div id="toast-notif" class="toast" role="alert" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

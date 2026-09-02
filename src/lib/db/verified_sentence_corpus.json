@@ -1,0 +1,3432 @@
+[
+  {
+    "ex_num": "3.2",
+    "page": 96,
+    "sentence_bajau": "Kerabau e pan pandai no be-tutur. buffalo skilled",
+    "sentence_en": "The buffalo was able to speak.",
+    "source": "kerabaw 022"
+  },
+  {
+    "ex_num": "3.24",
+    "page": 113,
+    "sentence_bajau": "Bungo e pe-pekar- pe-pekar. flower INTR-unfurl- REDUP",
+    "sentence_en": "The (many) flowers bloomed.",
+    "source": "Miller (2007), p.113"
+  },
+  {
+    "ex_num": "4.1",
+    "page": 117,
+    "sentence_bajau": "Sapi’ni ai rungay. cow3s.I missing",
+    "sentence_en": "His cow is missing.",
+    "source": "Miller (2007), p.117"
+  },
+  {
+    "ex_num": "4.5",
+    "page": 118,
+    "sentence_bajau": "telu kau’ using tu. three CL cat",
+    "sentence_en": "these three cats",
+    "source": "Miller (2007), p.118"
+  },
+  {
+    "ex_num": "4.6",
+    "page": 118,
+    "sentence_bajau": "entelo semomon egg all",
+    "sentence_en": "all those eggs",
+    "source": "Miller (2007), p.118"
+  },
+  {
+    "ex_num": "4.7",
+    "page": 118,
+    "sentence_bajau": "Kayu e ebba’. tree topple",
+    "sentence_en": "He was formerly my teacher",
+    "source": "Miller (2007), p.118"
+  },
+  {
+    "ex_num": "4.10",
+    "page": 122,
+    "sentence_bajau": "ta’ dia’ poon suka’ under tree coconut",
+    "sentence_en": "below the coconut tree",
+    "source": "Miller (2007), p.122"
+  },
+  {
+    "ex_num": "4.11",
+    "page": 122,
+    "sentence_bajau": "em-buli’ ruma’ e",
+    "sentence_en": "behind the house",
+    "source": "Miller (2007), p.122"
+  },
+  {
+    "ex_num": "4.32",
+    "page": 135,
+    "sentence_bajau": "Uwa’ e suk. dog thin",
+    "sentence_en": "The dog is thin.",
+    "source": "Miller (2007), p.135"
+  },
+  {
+    "ex_num": "4.34",
+    "page": 135,
+    "sentence_bajau": "Iyo makan uwa’ suk 3s.II AV.feed dog thin",
+    "sentence_en": "He fed the dog which was thin.",
+    "source": "Miller (2007), p.135"
+  },
+  {
+    "ex_num": "4.35",
+    "page": 135,
+    "sentence_bajau": "Iyo makan uwa’ ng-uma 3s.II AV.feed dog ACT-bark",
+    "sentence_en": "He fed the dog which was barking.",
+    "source": "Miller (2007), p.135"
+  },
+  {
+    "ex_num": "4.43",
+    "page": 139,
+    "sentence_bajau": "ta’ sedi selang beside sea",
+    "sentence_en": "beside the sea",
+    "source": "Miller (2007), p.139"
+  },
+  {
+    "ex_num": "4.48",
+    "page": 143,
+    "sentence_bajau": "Iyo lai en-diam taun sampai teko 3s.II flee",
+    "sentence_en": "He fled into the forest until (he) arrived at a certain river.",
+    "source": "biduk 078"
+  },
+  {
+    "ex_num": "4.49",
+    "page": 143,
+    "sentence_bajau": "Iyo lai ta' di-kau' pulau. 3s.II flee",
+    "sentence_en": "He fled to a certain island.",
+    "source": "Mat Salleh 015"
+  },
+  {
+    "ex_num": "4.50",
+    "page": 143,
+    "sentence_bajau": "Ling Mat Salleh iyo no l-um-aan memia ta… sai PN 3s.II -ACT-go AV.look.for island one-CL",
+    "sentence_en": "Mat Salleh said that he would be the one to go searching (for someone) on another island…",
+    "source": "Miller (2007), p.143"
+  },
+  {
+    "ex_num": "4.51",
+    "page": 144,
+    "sentence_bajau": "telu karung parai three sack paddy.rice",
+    "sentence_en": "three sacks of rice",
+    "source": "Miller (2007), p.144"
+  },
+  {
+    "ex_num": "4.52",
+    "page": 144,
+    "sentence_bajau": "Weight or volume kilo",
+    "sentence_en": "the tithe of (uncooked) rice",
+    "source": "Miller (2007), p.144"
+  },
+  {
+    "ex_num": "4.53",
+    "page": 146,
+    "sentence_bajau": "bangan bengen bongon",
+    "sentence_en": "X and company",
+    "source": "Miller (2007), p.146"
+  },
+  {
+    "ex_num": "4.54",
+    "page": 146,
+    "sentence_bajau": "Abis mangan bongon pakir pan be-pule’ no. finish AV.eat",
+    "sentence_en": "After eating, the men with religious knowledge went home.",
+    "source": "bejogo 022"
+  },
+  {
+    "ex_num": "4.55",
+    "page": 146,
+    "sentence_bajau": "Te-kitoku bangan sioko engkoku too DC.PASS-see1s.I",
+    "sentence_en": "I could see my older siblings and the company of my grandparents surrounding my mother.",
+    "source": "Miller (2007), p.146"
+  },
+  {
+    "ex_num": "4.57",
+    "page": 147,
+    "sentence_bajau": "… ke-ingin-anni -endo'ni entelo emas semomon NOM-desire3s.I UV-take3s.I egg gold all me-diam betong ansa’ e",
+    "sentence_en": "… his desire was to take all the gold eggs inside the goose",
+    "source": "ansa’ 013"
+  },
+  {
+    "ex_num": "4.58",
+    "page": 147,
+    "sentence_bajau": "Uun debagi pe mandi, ngenduk engko' EXIST some to.there ACT.bathe fetch.water and mandi bengen anak-anak ni. AV.bathe",
+    "sentence_en": "Some had gone there to bathe, to fetch water, and to bathe their children.",
+    "source": "baginda 071"
+  },
+  {
+    "ex_num": "4.59",
+    "page": 147,
+    "sentence_bajau": "Iko bana poon kayu ebba’ waktu e. many very tree topple time",
+    "sentence_en": "Many trees toppled at that time.",
+    "source": "kayu ebba’ 037"
+  },
+  {
+    "ex_num": "4.60",
+    "page": 147,
+    "sentence_bajau": "Tapi' betiru, sampai pe-tenab ellaw, but todai until INTR-sink dai kayu te-kule’ni nya’ iko. wood DC.PASS-get3s.I",
+    "sentence_en": "But today, until the sun set, the wood he got was not much.",
+    "source": "Miller (2007), p.147"
+  },
+  {
+    "ex_num": "4.61",
+    "page": 148,
+    "sentence_bajau": "Aku boi meli buas tu *itu en-semio sini’. 1s.II",
+    "sentence_en": "(S)he bought this in town.",
+    "source": "Miller (2007), p.148"
+  },
+  {
+    "ex_num": "4.62",
+    "page": 148,
+    "sentence_bajau": "Buas e boi -belini en-semio sini’. rice",
+    "sentence_en": "He bought that at the market earlier.",
+    "source": "Miller (2007), p.148"
+  },
+  {
+    "ex_num": "4.63",
+    "page": 149,
+    "sentence_bajau": "Buas u’e boi -belini en-semio sini’. rice",
+    "sentence_en": "He bought that (over there) at the market earlier.",
+    "source": "Miller (2007), p.149"
+  },
+  {
+    "ex_num": "4.65",
+    "page": 149,
+    "sentence_bajau": "Uun kono’ jomo too tu laki bini. EXIST hearsai person old husband wife",
+    "sentence_en": "his wedding ring",
+    "source": "Miller (2007), p.149"
+  },
+  {
+    "ex_num": "4.67",
+    "page": 150,
+    "sentence_bajau": "Sangsuriang men-dule-an Situmang, \"Kau tu pe-malas bana.” PN",
+    "sentence_en": "today; this day",
+    "source": "Miller (2007), p.150"
+  },
+  {
+    "ex_num": "4.68",
+    "page": 151,
+    "sentence_bajau": "Te-kitoku ruun dekiit jo jamban mitu. DC.PASS-see1s.I EXIST few just toilet here",
+    "sentence_en": "I see that there are few toilets here.",
+    "source": "masala langaw 028"
+  },
+  {
+    "ex_num": "4.69",
+    "page": 151,
+    "sentence_bajau": "…aku ningkoo jo me me-luar.. 1s.II ACT-sit-REDUP just there PREP-outside",
+    "sentence_en": "...I just kept sitting there outside.",
+    "source": "beta’ kerungayan 055"
+  },
+  {
+    "ex_num": "4.70",
+    "page": 151,
+    "sentence_bajau": "Bo'ku likas ng-ogo siokoku dela e then1s.I quick AV-go.to oldest1s.I male mu’ dembila’ ruma’. yonder across house",
+    "sentence_en": "Then I quickly went to my oldest brother there in the house across (from us).",
+    "source": "beta’ kerungayan 049"
+  },
+  {
+    "ex_num": "4.71",
+    "page": 152,
+    "sentence_bajau": "A. Minggo kam boi turi debui’ where 2s.II",
+    "sentence_en": "that over there",
+    "source": "Miller (2007), p.152"
+  },
+  {
+    "ex_num": "4.73",
+    "page": 153,
+    "sentence_bajau": "Somo-somo gai s-in-oo’ moo endo same-REDUP 3p -PASS-command AV.bring wife pe ta’ rumani. to.there house father3s.I",
+    "sentence_en": "Together they were ordered to bring (their) wives there to their father",
+    "source": "pak 060"
+  },
+  {
+    "ex_num": "4.74",
+    "page": 153,
+    "sentence_bajau": "Uun entedo Hassan pu’ ta’ laat de-m-bua’ nuut bono’. EXIST once PN to.yonder region one-CNT-CL AV.join fight",
+    "sentence_en": "One time Hassan (went) yonder to another country to fight",
+    "source": "Miller (2007), p.153"
+  },
+  {
+    "ex_num": "5.1",
+    "page": 162,
+    "sentence_bajau": "Mali boi ng-opo’ kayu",
+    "sentence_en": "The wood was chopped by Mali.",
+    "source": "Miller (2007), p.162"
+  },
+  {
+    "ex_num": "5.3",
+    "page": 164,
+    "sentence_bajau": "Amzi boi muan buk e ta’ Nisah. PN CMPL AV.give book",
+    "sentence_en": "Amzi gave the book to Nisah.",
+    "source": "Miller (2007), p.164"
+  },
+  {
+    "ex_num": "5.4",
+    "page": 164,
+    "sentence_bajau": "Amzi boi muan buk e ta’ Nisah",
+    "sentence_en": "Amzi gave the book to Nisah.",
+    "source": "Miller (2007), p.164"
+  },
+  {
+    "ex_num": "5.5",
+    "page": 166,
+    "sentence_bajau": "Iyo boi nge-dede’-an sinsim e ta’ Azizy. 3s.II",
+    "sentence_en": "to set down",
+    "source": "Miller (2007), p.166"
+  },
+  {
+    "ex_num": "5.7",
+    "page": 168,
+    "sentence_bajau": "Boi -sembali Azizy sapi’ e dilau",
+    "sentence_en": "Azizy slaughtered the cow yesterday.",
+    "source": "Miller (2007), p.168"
+  },
+  {
+    "ex_num": "5.8",
+    "page": 169,
+    "sentence_bajau": "Azizy boi nembali sapi’ e dilau",
+    "sentence_en": "The cow slaughtered Azizy yesterday.",
+    "source": "Miller (2007), p.169"
+  },
+  {
+    "ex_num": "5.9",
+    "page": 169,
+    "sentence_bajau": "enselan -boo Azam kemuap e gas UV-bring PN afternoon",
+    "sentence_en": "the gasoline which Azam brought the previous afternoon",
+    "source": "Miller (2007), p.169"
+  },
+  {
+    "ex_num": "5.10",
+    "page": 170,
+    "sentence_bajau": "jomo moo enselan kemuap e person AV.bring gas afternoon",
+    "sentence_en": "the person who brought gasoline that afternoon",
+    "source": "Miller (2007), p.170"
+  },
+  {
+    "ex_num": "5.11",
+    "page": 171,
+    "sentence_bajau": "Buk e boi -beli guru e momon",
+    "sentence_en": "The teacher(s) bought books for all the students.",
+    "source": "Miller (2007), p.171"
+  },
+  {
+    "ex_num": "5.13",
+    "page": 173,
+    "sentence_bajau": "Ai pungkau iyo wake.up 3s.II",
+    "sentence_en": "I brought him/her here.",
+    "source": "Miller (2007), p.173"
+  },
+  {
+    "ex_num": "5.17",
+    "page": 175,
+    "sentence_bajau": "Ai jo naga’ e sikot en-sedi kapal, gai pan nimbakni. after dragon near PREP-beside ship 3p AV.shoot3s.I",
+    "sentence_en": "When the dragon was near to the ship, they shot it.",
+    "source": "kinabalu 029"
+  },
+  {
+    "ex_num": "5.18",
+    "page": 175,
+    "sentence_bajau": "…-sele gai nanduk ni engko’ sawan",
+    "sentence_en": "… they took turns ladling it (the food) out with a glass.",
+    "source": "Miller (2007), p.175"
+  },
+  {
+    "ex_num": "5.19",
+    "page": 176,
+    "sentence_bajau": "… jadi iyo buli ebba' semberen-semberen jo bila beriu daras niup. so 3s.II can topple when-REDUP when wind strong ACT.blow",
+    "sentence_en": "at the time",
+    "source": "Miller (2007), p.176"
+  },
+  {
+    "ex_num": "5.21",
+    "page": 177,
+    "sentence_bajau": "Enda’ku roo iyangku lolom-lolom sambilku nangis UV-watch1s.I shape mother1s.I deep-REDUP while1s.I ACT.cry sepuas atayku . content liver1s.I",
+    "sentence_en": "I saw that my mother",
+    "source": "beta’ kerungayan 039"
+  },
+  {
+    "ex_num": "5.22",
+    "page": 177,
+    "sentence_bajau": "beta’ni s-in-embali e , bangan jomo teko. UV-when3s.I -PASS-slaughter person arrive",
+    "sentence_en": "When (it) was slaughtered, the people began to arrive.",
+    "source": "Miller (2007), p.177"
+  },
+  {
+    "ex_num": "6.1",
+    "page": 180,
+    "sentence_bajau": "Boi -boo Amzi bua e",
+    "sentence_en": "Amzi brought the jackfruit.",
+    "source": "Miller (2007), p.180"
+  },
+  {
+    "ex_num": "6.2",
+    "page": 180,
+    "sentence_bajau": "inum jomo no bue’ UV-drink person",
+    "sentence_en": "The man drank the water.",
+    "source": "Miller (2007), p.180"
+  },
+  {
+    "ex_num": "6.3",
+    "page": 180,
+    "sentence_bajau": "Suu’ e pan -tagu’ Inang en-jata’ para-para. light",
+    "sentence_en": "Inang set the light on top of the shelf.",
+    "source": "Miller (2007), p.180"
+  },
+  {
+    "ex_num": "6.5",
+    "page": 181,
+    "sentence_bajau": "Ai jo -purun puteri sinsim e nya' no iyo kui k-in-awin. after UV-pick.up princess ring",
+    "sentence_en": "When the princess had picked up the ring, she was not willing to be married.",
+    "source": "Miller (2007), p.181"
+  },
+  {
+    "ex_num": "6.6",
+    "page": 181,
+    "sentence_bajau": "Ensen -bubutni tiang ta’ ruma’nu e , even.if UV-pull.up3s.I post house2s.I tetap jo iyo manang… certain 3s.II win",
+    "sentence_en": "Even if he uproots the post from your house, it is certain he has won...",
+    "source": "Miller (2007), p.181"
+  },
+  {
+    "ex_num": "6.7",
+    "page": 181,
+    "sentence_bajau": "Dede-an Hussein no sinsim e ta’ endoni",
+    "sentence_en": "Hussein sent the ring to his wife.",
+    "source": "Miller (2007), p.181"
+  },
+  {
+    "ex_num": "6.9",
+    "page": 182,
+    "sentence_bajau": "Amzi boi moo bua e. PN",
+    "sentence_en": "Amzi brought the jackfruit.",
+    "source": "Miller (2007), p.182"
+  },
+  {
+    "ex_num": "6.11",
+    "page": 183,
+    "sentence_bajau": "Boi moo Amzi bua e",
+    "sentence_en": "The jackfruit brought Amzi.",
+    "source": "Miller (2007), p.183"
+  },
+  {
+    "ex_num": "6.12",
+    "page": 183,
+    "sentence_bajau": "Nisah nabang-an iyangni mapi. PN AV.help-TZ mother3s.I AV.cook",
+    "sentence_en": "Nisah is helping her mother to cook.",
+    "source": "Miller (2007), p.183"
+  },
+  {
+    "ex_num": "6.13",
+    "page": 184,
+    "sentence_bajau": "Iyo boi nguse-an kerita’ Amzi. 3s.II",
+    "sentence_en": "He cleaned Amzi",
+    "source": "Miller (2007), p.184"
+  },
+  {
+    "ex_num": "6.14",
+    "page": 184,
+    "sentence_bajau": "Boi nembali kambing gi Azizy debui’. CMPL AV.slaughter goat COL PN last.night",
+    "sentence_en": "Azizy slaughtered my goat last night.",
+    "source": "Miller (2007), p.184"
+  },
+  {
+    "ex_num": "6.17",
+    "page": 185,
+    "sentence_bajau": "Amun Kuzik nembali kambing e , ng-agad jo aku me-ruma’. when PN AV.slaughter goat AV-wait 1s.II PREP-house",
+    "sentence_en": "If/ when Kuzik slaughters the goat, I will just wait at home.",
+    "source": "Miller (2007), p.185"
+  },
+  {
+    "ex_num": "6.18",
+    "page": 186,
+    "sentence_bajau": "Iyangku masang no suu’ e. mother1s.I AV.follow",
+    "sentence_en": "heavy NP shift",
+    "source": "Miller (2007), p.186"
+  },
+  {
+    "ex_num": "6.19",
+    "page": 187,
+    "sentence_bajau": "Iyangku masang suu’ e kaang. mother1s.I AV.turn.on light later",
+    "sentence_en": "My mother turned on the light.",
+    "source": "Miller (2007), p.187"
+  },
+  {
+    "ex_num": "6.20",
+    "page": 187,
+    "sentence_bajau": "Gai naat ruma’ diki’ e dilaw. 3p AV.paint house small yesterdai",
+    "sentence_en": "They painted the small house yesterday.",
+    "source": "Miller (2007), p.187"
+  },
+  {
+    "ex_num": "6.21",
+    "page": 187,
+    "sentence_bajau": "Razin meli toos e ta’ iyangni. PN AV.buy medicine mother3s.I",
+    "sentence_en": "Razin will buy medicine for his mother.",
+    "source": "2006"
+  },
+  {
+    "ex_num": "6.23",
+    "page": 188,
+    "sentence_bajau": "Endo’ using no te’ bagianni si’ e. UV-take cat EMPH portion3s.I just.now",
+    "sentence_en": "The cat took his portion.",
+    "source": "Miller (2007), p.188"
+  },
+  {
+    "ex_num": "6.24",
+    "page": 191,
+    "sentence_bajau": "Sapi’ e pan -sembali emma’ni no. cow",
+    "sentence_en": "His father slaughtered the cow.",
+    "source": "Miller (2007), p.191"
+  },
+  {
+    "ex_num": "6.25",
+    "page": 192,
+    "sentence_bajau": "Waktuni ng-inum e, ai -labu-anni sinsim kawinni time3s AV-drink UV-fall-CAUS3s.I ring wedding3s.I diam boo’… inside bamboo",
+    "sentence_en": "While he was drinking the water, he dropped his wedding ring into the bamboo (vessel)…",
+    "source": "Miller (2007), p.192"
+  },
+  {
+    "ex_num": "6.26",
+    "page": 192,
+    "sentence_bajau": "Jomo kampung ingin belajar pian le’ noos person village want learn how manner AV.medicate amun ai -keket soo. if",
+    "sentence_en": "The villagers wanted to know how to treat (someone) if a snake bites (him).",
+    "source": "Miller (2007), p.192"
+  },
+  {
+    "ex_num": "6.27",
+    "page": 193,
+    "sentence_bajau": "Ogo gai tabit ta’ kelinik kampung. UV-go.to 3p healer clinic village",
+    "sentence_en": "They went to a medical practitioner at the village clinic.",
+    "source": "rupiah 012"
+  },
+  {
+    "ex_num": "6.28",
+    "page": 193,
+    "sentence_bajau": "Amun serudung me-dia’ lanjang jomo -endo'ni… if kitchen PREP-below rice.pot person UV-take3s.I",
+    "sentence_en": "If the kitchens were below (the house), she took people",
+    "source": "Miller (2007), p.193"
+  },
+  {
+    "ex_num": "6.29",
+    "page": 194,
+    "sentence_bajau": "Semaungni te-kito Pa' Yakob anak ansa' tomorrow3s.I DC.PASS-see uncle PN child goose ta' laman ruma'ni, ai -dokopni. compound house3s.I",
+    "sentence_en": "The next day, Jacob saw a baby goose in his yard, (and) he caught (it).",
+    "source": "Miller (2007), p.194"
+  },
+  {
+    "ex_num": "6.30",
+    "page": 194,
+    "sentence_bajau": "Bila -dede-anni ta' jomo e, -sorong-onni when",
+    "sentence_en": "When he gave (the water) to the man, he pushed (it) with his sword.",
+    "source": "Miller (2007), p.194"
+  },
+  {
+    "ex_num": "6.31",
+    "page": 194,
+    "sentence_bajau": "Api nge-liling ruma’ fire AV-encircle house",
+    "sentence_en": "Fire encircled the house.",
+    "source": "Miller (2007), p.194"
+  },
+  {
+    "ex_num": "6.33",
+    "page": 195,
+    "sentence_bajau": "Lupus jo gai mandi, somo-somo no ng-osok pepikni. finish",
+    "sentence_en": "After they finished bathing, (they) all put on their wings.",
+    "source": "sultan salaudin 008"
+  },
+  {
+    "ex_num": "6.36",
+    "page": 196,
+    "sentence_bajau": "Dela e pan ai ngari no, iyo muat dikau’ akal. man fed.up 3s.II AV.make certain scheme",
+    "sentence_en": "The man became fed up, (so) he devised a plan.",
+    "source": "namuk 022"
+  },
+  {
+    "ex_num": "6.37",
+    "page": 196,
+    "sentence_bajau": "Deli tarus memia jomo boi be-lagu e. PN immediately AV.look.for person",
+    "sentence_en": "Deli immediately searched for the person who was singing.",
+    "source": "dela piatu 014"
+  },
+  {
+    "ex_num": "6.38",
+    "page": 196,
+    "sentence_bajau": "Jomo too noo' dendo pisok e temban eng-gai. person old AV.order woman blind stai",
+    "sentence_en": "The old man asked the blind woman to stay with them.",
+    "source": "jomo pisok 016"
+  },
+  {
+    "ex_num": "6.39",
+    "page": 196,
+    "sentence_bajau": "… iyo pan nagu' anakni uwa' suk en-dia' ruma'. 3s.II AV.set.down child3s.I dog thin PREP-under house",
+    "sentence_en": "... she placed her child (Thin Dog) under the house.",
+    "source": "uwa’ suk 013"
+  },
+  {
+    "ex_num": "6.40",
+    "page": 196,
+    "sentence_bajau": "Dela e pan nambut iyo ta' beluang... man",
+    "sentence_en": "The man welcomed him at the door...",
+    "source": "Miller (2007), p.196"
+  },
+  {
+    "ex_num": "6.41",
+    "page": 196,
+    "sentence_bajau": "Lupus jo aku muat, bo'ku mooni finish 1s.II AV-make then1s.I AV.bring3s.I",
+    "sentence_en": "When I finished making (the hot milk), then I brought it to my mother.",
+    "source": "beta’ \n            \nkerungayan 016"
+  },
+  {
+    "ex_num": "6.42",
+    "page": 196,
+    "sentence_bajau": "Teko sinsaung rojo pan moo no mule'. arrive morning king AV.bring ACT-return.home",
+    "sentence_en": "When morning came, the king brought (him) home.",
+    "source": "Miller (2007), p.196"
+  },
+  {
+    "ex_num": "6.43",
+    "page": 197,
+    "sentence_bajau": "Boi jo gai mangan, gai pan turi. after 3p AV.eat",
+    "sentence_en": "After they ate, they went to sleep.",
+    "source": "Miller (2007), p.197"
+  },
+  {
+    "ex_num": "6.44",
+    "page": 197,
+    "sentence_bajau": "“Alap lagi -kakanku jo daging manuk tu.” good more",
+    "sentence_en": "to drink x",
+    "source": "Miller (2007), p.197"
+  },
+  {
+    "ex_num": "6.46",
+    "page": 199,
+    "sentence_bajau": "Tapi’ uwa’ e nya’ nuut. but dog",
+    "sentence_en": "But the dog didn",
+    "source": "Miller (2007), p.199"
+  },
+  {
+    "ex_num": "6.48",
+    "page": 199,
+    "sentence_bajau": "Iyangku ng-enda’ m-iyo. mother1s.I AV-look",
+    "sentence_en": "to follow behind",
+    "source": "Miller (2007), p.199"
+  },
+  {
+    "ex_num": "6.49",
+    "page": 201,
+    "sentence_bajau": "Beluang e pan b-in-uka no ole' anakni sioko . door",
+    "sentence_en": "The door was opened by the oldest child.",
+    "source": "Miller (2007), p.201"
+  },
+  {
+    "ex_num": "6.50",
+    "page": 201,
+    "sentence_bajau": "Soo e nya’ buli s-in-egir engko’ t-in-indak. snake",
+    "sentence_en": "Snakes must not be touched or stepped on.",
+    "source": "Miller (2007), p.201"
+  },
+  {
+    "ex_num": "6.51",
+    "page": 202,
+    "sentence_bajau": "Ai k-in-akan moto diing e le’ Kuzik dilau",
+    "sentence_en": "Kuzik ate the fish eye yesterday.",
+    "source": "Miller (2007), p.202"
+  },
+  {
+    "ex_num": "6.53",
+    "page": 204,
+    "sentence_bajau": "Dela pisok e t-in-anduk-an no ole' gai man blind -PASS-show-TZ",
+    "sentence_en": "The blind man was shown by them the path that went to the well.",
+    "source": "Miller (2007), p.204"
+  },
+  {
+    "ex_num": "6.56",
+    "page": 205,
+    "sentence_bajau": "P-in-en-dule-an, nya' no iyo padul",
+    "sentence_en": "(He) was scolded, (but) he paid no attention.",
+    "source": "Miller (2007), p.205"
+  },
+  {
+    "ex_num": "6.57",
+    "page": 206,
+    "sentence_bajau": "Lua’ me ai -seraan Mat Salleh dirini",
+    "sentence_en": "From there, Mat Salleh surrendered (himself)...",
+    "source": "Miller (2007), p.206"
+  },
+  {
+    "ex_num": "6.59",
+    "page": 206,
+    "sentence_bajau": "Ngini kau be-tutur diri-dirinu why 2s.II ACT-speak REFL-REDUP2s.I",
+    "sentence_en": "Why are you talking to yourself?",
+    "source": "Miller (2007), p.206"
+  },
+  {
+    "ex_num": "6.60",
+    "page": 206,
+    "sentence_bajau": "Iyo be-janji ta’ dirini engko’ iyo nuntut bila 3s.II",
+    "sentence_en": "He promised to himself that he would avenge his older brother Hassan",
+    "source": "mat salleh 024"
+  },
+  {
+    "ex_num": "6.63",
+    "page": 209,
+    "sentence_bajau": "*Dirini boi nawar iyo meniik poon suka’ e",
+    "sentence_en": "(Lit. ‘Himselfi offered Azizyi to climb the coconut tree.",
+    "source": "Miller (2007), p.209"
+  },
+  {
+    "ex_num": "6.64",
+    "page": 210,
+    "sentence_bajau": "Dirini boi nawar meniik suka’ e",
+    "sentence_en": "He himself offered to climb the coconut tree.",
+    "source": "Miller (2007), p.210"
+  },
+  {
+    "ex_num": "6.65",
+    "page": 210,
+    "sentence_bajau": "Pak taun e pe-lumpat diri-dirini jo frog jungle INTR-jump EMPH.PRO-REDUP3s.I only",
+    "sentence_en": "The jungle frog jumped along by itself.",
+    "source": "pak pu’ ta’ bandar 038"
+  },
+  {
+    "ex_num": "6.66",
+    "page": 210,
+    "sentence_bajau": "Azizy dirini nya’ boi nuut meniik gunung. PN EMPH.PRO3s.I CMPL AV.follow AV.climb mountain",
+    "sentence_en": "Azizy himself did not join in climbing the mountain.",
+    "source": "Miller (2007), p.210"
+  },
+  {
+    "ex_num": "6.67",
+    "page": 210,
+    "sentence_bajau": "Serita’ nandas tebu tu pengalaman diriku. story AV.make.sugar-cane sugar-cane experience EMPH.PRO1s.I",
+    "sentence_en": "This story about processing sugar cane is (from) my own experience.",
+    "source": "Miller (2007), p.210"
+  },
+  {
+    "ex_num": "6.70",
+    "page": 212,
+    "sentence_bajau": "Ruma’ e nya’ oyo. house",
+    "sentence_en": "The house is not large.",
+    "source": "Miller (2007), p.212"
+  },
+  {
+    "ex_num": "6.71",
+    "page": 213,
+    "sentence_bajau": "Badanni sukup suk … body3s.I enough thin",
+    "sentence_en": "Her body was too thin…",
+    "source": "beta’ kerungayan 009"
+  },
+  {
+    "ex_num": "6.72",
+    "page": 213,
+    "sentence_bajau": "Beta-beta koyo no gai. long.time-REDUP rich",
+    "sentence_en": "to experience spicy-ness",
+    "source": "Miller (2007), p.213"
+  },
+  {
+    "ex_num": "6.76",
+    "page": 215,
+    "sentence_bajau": "Panas bana atai uwa’ e … hot very liver dog",
+    "sentence_en": "The dog was very angry…",
+    "source": "ngini using 060"
+  },
+  {
+    "ex_num": "6.77",
+    "page": 215,
+    "sentence_bajau": "Atayku sukup sanang. liver1s.I enough happy",
+    "sentence_en": "My liver was very happy.",
+    "source": "beta’ kerungayan 026"
+  },
+  {
+    "ex_num": "6.78",
+    "page": 215,
+    "sentence_bajau": "alasanni lagi betongni pedi. excuse3s.I more stomach3s.I hurt",
+    "sentence_en": "… his further excuse was that he had a stomach ache.",
+    "source": "namuk 053"
+  },
+  {
+    "ex_num": "6.80",
+    "page": 215,
+    "sentence_bajau": "Atayni ng-intam ta’ Puteri Bongsu. liver3s.I",
+    "sentence_en": "His liver longed for Puteri Bongsu.",
+    "source": "Miller (2007), p.215"
+  },
+  {
+    "ex_num": "6.81",
+    "page": 215,
+    "sentence_bajau": "Tapi’ iyangni susa atai sebab gai miskin. but mother3s.I hard liver because 3p poor",
+    "sentence_en": "But his mother was worried because they were poor.",
+    "source": "uwa’ suk 048"
+  },
+  {
+    "ex_num": "6.82",
+    "page": 215,
+    "sentence_bajau": "Pa’ Yakob engko’ endoni sanang atay. PN and wife3s.I easy liver",
+    "sentence_en": "Jacob and his wife were happy.",
+    "source": "ansa’ 007"
+  },
+  {
+    "ex_num": "6.84",
+    "page": 216,
+    "sentence_bajau": "Sakit jantung aku. sick heart 1s.II",
+    "sentence_en": "there is not/there are not",
+    "source": "Miller (2007), p.216"
+  },
+  {
+    "ex_num": "6.85",
+    "page": 217,
+    "sentence_bajau": "Bila teko pe, uun Gipun dua-ngan. when arrive to.there EXIST Japanese two-CL",
+    "sentence_en": "When (they) arrived there, there were two Japanese (soldiers).",
+    "source": "Gipun 029"
+  },
+  {
+    "ex_num": "6.86",
+    "page": 217,
+    "sentence_bajau": "Diam taun e uun di-kau’ gua. inside forest EXIST one-CL cave",
+    "sentence_en": "In the forest there was a certain cave.",
+    "source": "kerabaw 016"
+  },
+  {
+    "ex_num": "6.87",
+    "page": 217,
+    "sentence_bajau": "Nyaun pan ruma’ sakit",
+    "sentence_en": "There were no hospitals.",
+    "source": "Miller (2007), p.217"
+  },
+  {
+    "ex_num": "6.88",
+    "page": 217,
+    "sentence_bajau": "Dau-da kono’ uun jomo tu temban ta’ di-kau’ kampung. 22 long.ago hearsai EXIST person live",
+    "sentence_en": "Long ago, it is said, there was a man who lived in a certain village.",
+    "source": "Miller (2007), p.217"
+  },
+  {
+    "ex_num": "6.89",
+    "page": 218,
+    "sentence_bajau": "Uun jo musu ng-ogo gai . EXIST",
+    "sentence_en": "There was an enemy who would go to them.",
+    "source": "biduk 038"
+  },
+  {
+    "ex_num": "6.92",
+    "page": 218,
+    "sentence_bajau": "amun uun te-bangga’ni -booni mule' ta' ruma'. if EXIST DC.PASS-meet3s.I UV-bring3s.I ACT.go.home house",
+    "sentence_en": "... if there was (anything) that he found, he brought (it) home.",
+    "source": "Abu Nawas 038"
+  },
+  {
+    "ex_num": "6.94",
+    "page": 218,
+    "sentence_bajau": "Pas-pas, iyo uun me. exactly 3s.II EXIST there",
+    "sentence_en": "At that precise (time), he was there.",
+    "source": "beta’ kerungayan 050"
+  },
+  {
+    "ex_num": "6.95",
+    "page": 219,
+    "sentence_bajau": "Amun nyaun tiung e ai tantu no besekalni rungay. if",
+    "sentence_en": "If if weren",
+    "source": "Miller (2007), p.219"
+  },
+  {
+    "ex_num": "6.96",
+    "page": 219,
+    "sentence_bajau": "Uun sinnu EXIST money2s.I",
+    "sentence_en": "Do you have money (on you)?",
+    "source": "Miller (2007), p.219"
+  },
+  {
+    "ex_num": "6.97",
+    "page": 219,
+    "sentence_bajau": "Ruma' diki' e, nyaun serambi'ni. house small",
+    "sentence_en": "That small house, it does not have an inner walkway.",
+    "source": "Miller (2007), p.219"
+  },
+  {
+    "ex_num": "6.98",
+    "page": 219,
+    "sentence_bajau": "“Ngini baduku uun eng-kau” why shirt1s.I EXIST",
+    "sentence_en": "located (temporarily) at",
+    "source": "Miller (2007), p.219"
+  },
+  {
+    "ex_num": "6.99",
+    "page": 220,
+    "sentence_bajau": "Anak bidadari... nya’ kui mandi sebab uun child.fairy",
+    "sentence_en": "The fairy...was not willing to bathe because she smelled an earthling.",
+    "source": "salaudin 002"
+  },
+  {
+    "ex_num": "6.100",
+    "page": 220,
+    "sentence_bajau": "Dendo pisok e uun no mule’ ng-angkat kayuni. woman blind EXIST ACT.go.home AV-raise tree3s.I",
+    "sentence_en": "The blind woman now returned home carrying her wood.",
+    "source": "jomo pisok 028"
+  },
+  {
+    "ex_num": "6.102",
+    "page": 221,
+    "sentence_bajau": "Pasal e no aturan tu nya’ jadi. plan",
+    "sentence_en": "For that reason, the plan did not happen.",
+    "source": "Miller (2007), p.221"
+  },
+  {
+    "ex_num": "6.103",
+    "page": 221,
+    "sentence_bajau": "… iyo tu terjadi kerana’ tarik-an graviti. 3s.II happen because pull-NOM gravitiy",
+    "sentence_en": "become (someone or something)",
+    "source": "Miller (2007), p.221"
+  },
+  {
+    "ex_num": "6.104",
+    "page": 221,
+    "sentence_bajau": "Jomo e jadi guru silatni. person become teacher martial.art3s.I",
+    "sentence_en": "The man became his silat teacher.",
+    "source": "biduk 095"
+  },
+  {
+    "ex_num": "6.106",
+    "page": 222,
+    "sentence_bajau": "Lapas e gai likas-likas mule’. after 3p quick-REDUP ACT.go.home",
+    "sentence_en": "After that, they quickly went home.",
+    "source": "kinabalu 010"
+  },
+  {
+    "ex_num": "6.107",
+    "page": 222,
+    "sentence_bajau": "Iko bana poon kayu ebba’ waktu many very tree fall.over time",
+    "sentence_en": "Many trees fell over at that time.",
+    "source": "Miller (2007), p.222"
+  },
+  {
+    "ex_num": "6.108",
+    "page": 222,
+    "sentence_bajau": "Temban no using e en-jata’ jing… stai",
+    "sentence_en": "The cat stayed on top of the zinc roof…",
+    "source": "Miller (2007), p.222"
+  },
+  {
+    "ex_num": "6.114",
+    "page": 223,
+    "sentence_bajau": "Jadi itu jo pendapatangai… so income3p",
+    "sentence_en": "So this was their livelihood…",
+    "source": "Miller (2007), p.223"
+  },
+  {
+    "ex_num": "6.115",
+    "page": 223,
+    "sentence_bajau": "Jadi e no kejadian linta e en-diam suang… so",
+    "sentence_en": "So that is the origin of the leech in rivers.",
+    "source": "linta 034"
+  },
+  {
+    "ex_num": "6.116",
+    "page": 223,
+    "sentence_bajau": "E jo andayanku…",
+    "sentence_en": "That is my assumption…",
+    "source": "kayu ebba’ 048"
+  },
+  {
+    "ex_num": "6.117",
+    "page": 224,
+    "sentence_bajau": "Sarangan tu tungan me-tingkoo’ kawa… sarangan place",
+    "sentence_en": "The sarangan is used for seating the cauldron.",
+    "source": "nandas tebu 026"
+  },
+  {
+    "ex_num": "6.118",
+    "page": 224,
+    "sentence_bajau": "Sinsim e tungan ng-asa’ gunting… ring place AV-sharpen scissors",
+    "sentence_en": "The ring is used for sharpening scissors.",
+    "source": "Miller (2007), p.224"
+  },
+  {
+    "ex_num": "6.119",
+    "page": 224,
+    "sentence_bajau": "…en-tana' jo iyo",
+    "sentence_en": "… he was on the ground.",
+    "source": "uwa’ suk 058"
+  },
+  {
+    "ex_num": "6.121",
+    "page": 224,
+    "sentence_bajau": "Resoni doko’ reso ungus... feeling3s.I",
+    "sentence_en": "Its texture is like sand…",
+    "source": "Miller (2007), p.224"
+  },
+  {
+    "ex_num": "6.122",
+    "page": 225,
+    "sentence_bajau": "Makanan gai iko bana. food 3p many very",
+    "sentence_en": "their food was very much",
+    "source": "namuk 046"
+  },
+  {
+    "ex_num": "7.1",
+    "page": 228,
+    "sentence_bajau": "A. Iyan boi -beli Azizy sini’ What",
+    "sentence_en": "Azizy bought a chicken just now.",
+    "source": "Miller (2007), p.228"
+  },
+  {
+    "ex_num": "7.2",
+    "page": 228,
+    "sentence_bajau": "A. Sian boi meli manuk e who CMPL AV.buy chicken",
+    "sentence_en": "Azizy bought the chicken(s).",
+    "source": "Miller (2007), p.228"
+  },
+  {
+    "ex_num": "7.3",
+    "page": 229,
+    "sentence_bajau": "A. Boi no kau meli buas already 2s.II AV.buy rice",
+    "sentence_en": "No, I bought only corn, not rice.",
+    "source": "Miller (2007), p.229"
+  },
+  {
+    "ex_num": "7.4",
+    "page": 230,
+    "sentence_bajau": "A. Boi -pedagang Azizy no tana’ e",
+    "sentence_en": "Mali sold the land, not Azizy.",
+    "source": "Miller (2007), p.230"
+  },
+  {
+    "ex_num": "7.5",
+    "page": 231,
+    "sentence_bajau": "*Boi -opo’ Nisah iyan",
+    "sentence_en": "What did Nisah break?",
+    "source": "Miller (2007), p.231"
+  },
+  {
+    "ex_num": "7.6",
+    "page": 231,
+    "sentence_bajau": "Boi -boo sian bua e",
+    "sentence_en": "Who brought the jackfruit?",
+    "source": "Miller (2007), p.231"
+  },
+  {
+    "ex_num": "7.7",
+    "page": 231,
+    "sentence_bajau": "Boi moo bua e sian",
+    "sentence_en": "Who brought the jackfruit?",
+    "source": "Miller (2007), p.231"
+  },
+  {
+    "ex_num": "7.9",
+    "page": 233,
+    "sentence_bajau": "A. Iyan boi -buat Abu me-ruma’ sini’ what CMPL",
+    "sentence_en": "He fixed his motorcycle.",
+    "source": "Miller (2007), p.233"
+  },
+  {
+    "ex_num": "7.10",
+    "page": 233,
+    "sentence_bajau": "A. Ngini betisnu e why leg3s.I",
+    "sentence_en": "The dog bit my leg yesterday.",
+    "source": "Miller (2007), p.233"
+  },
+  {
+    "ex_num": "7.11",
+    "page": 235,
+    "sentence_bajau": "tarus -endo’ endoni sarung e. Sarung e -tapukni. then UV-take wife3s.I costume costume UV-hide3s.I",
+    "sentence_en": "then his wife took the costume.   She hid the costume.",
+    "source": "uwa’ suk 087-088"
+  },
+  {
+    "ex_num": "7.13",
+    "page": 235,
+    "sentence_bajau": "Amun iyo makan uwani en-diam ungut. when 3s.II AV.feed dog rice UV-place3s.I PREP-inside coconut.shell",
+    "sentence_en": "Whenever she fed the dog, she put rice in a coconut shell.",
+    "source": "Miller (2007), p.235"
+  },
+  {
+    "ex_num": "7.14",
+    "page": 236,
+    "sentence_bajau": "Ogo gai tabit ta’ kelinik kampung. UV-go.to 3p healer",
+    "sentence_en": "They went to a medical practitioner at the village clinic.",
+    "source": "rupiah 012"
+  },
+  {
+    "ex_num": "7.15",
+    "page": 236,
+    "sentence_bajau": "Ai -peke-lumni d-angan orang puti e",
+    "sentence_en": "He revived a white man.  He made the white man a village chief.",
+    "source": "mat salleh  \n             050-051"
+  },
+  {
+    "ex_num": "7.17",
+    "page": 238,
+    "sentence_bajau": "Boi -dede-anni sinsim e ta’ Azizy. CMPL UV-send-TZ3s-I ring",
+    "sentence_en": "She sent the ring to Azizy.",
+    "source": "Miller (2007), p.238"
+  },
+  {
+    "ex_num": "7.18",
+    "page": 238,
+    "sentence_bajau": "Saging e boi -tebongni ta’ Iyang Zaman. banana",
+    "sentence_en": "He chopped down the banana tree for Zaman",
+    "source": "Miller (2007), p.238"
+  },
+  {
+    "ex_num": "7.19",
+    "page": 238,
+    "sentence_bajau": "Saging e boi -tebongni dilaw. banana CMPL UV-chop.down3s.I yesterdai",
+    "sentence_en": "for Iyang Zaman",
+    "source": "Miller (2007), p.238"
+  },
+  {
+    "ex_num": "7.21",
+    "page": 239,
+    "sentence_bajau": "Telumpa’ e boi -belini ta’ Kuzik shoes",
+    "sentence_en": "Yesterday she bought Kuzik the shoes.",
+    "source": "Miller (2007), p.239"
+  },
+  {
+    "ex_num": "7.22",
+    "page": 240,
+    "sentence_bajau": "Telumpa’ e boi b-in-eli le’ku",
+    "sentence_en": "Those shoes were bought by me.",
+    "source": "Miller (2007), p.240"
+  },
+  {
+    "ex_num": "7.23",
+    "page": 241,
+    "sentence_bajau": "A. Iyan boi -belini dilau what",
+    "sentence_en": "Kuzik bought those shoes (yesterday).",
+    "source": "Miller (2007), p.241"
+  },
+  {
+    "ex_num": "7.24",
+    "page": 241,
+    "sentence_bajau": "A. Emberen telumpa’ e boi -beli Kuzik when shoes",
+    "sentence_en": "He bought the shoes yesterday.",
+    "source": "Miller (2007), p.241"
+  },
+  {
+    "ex_num": "7.25",
+    "page": 242,
+    "sentence_bajau": "A. Saging e boi -tebongnu ta’ sian",
+    "sentence_en": "I chopped down the banana tree for Nisah / at Nisah",
+    "source": "Miller (2007), p.242"
+  },
+  {
+    "ex_num": "7.26",
+    "page": 242,
+    "sentence_bajau": "A. Minggo boi -tedak-annu diing e where",
+    "sentence_en": "I cleaned the fish at the river.",
+    "source": "Miller (2007), p.242"
+  },
+  {
+    "ex_num": "7.27",
+    "page": 243,
+    "sentence_bajau": "A. Iyan boi -belinu ta’ Kuzik what",
+    "sentence_en": "I bought shoes for him.",
+    "source": "Miller (2007), p.243"
+  },
+  {
+    "ex_num": "7.28",
+    "page": 243,
+    "sentence_bajau": "* Ta’ Pirik sian boi nge-dede-an ruti’ e",
+    "sentence_en": "Who sent the bread to Pirik?",
+    "source": "Miller (2007), p.243"
+  },
+  {
+    "ex_num": "7.30",
+    "page": 245,
+    "sentence_bajau": "Sapi’ e no boi -beli Amzi m-iyo. cow",
+    "sentence_en": "(It was) from him Amzi bought the cow.",
+    "source": "Miller (2007), p.245"
+  },
+  {
+    "ex_num": "7.31",
+    "page": 245,
+    "sentence_bajau": "A. Iyan boi -beli Azizy what",
+    "sentence_en": "What did Azizy buy just now?",
+    "source": "Miller (2007), p.245"
+  },
+  {
+    "ex_num": "7.32",
+    "page": 246,
+    "sentence_bajau": "A. Sian boi meli manuk e who",
+    "sentence_en": "Azizy bought the chicken(s).",
+    "source": "Miller (2007), p.246"
+  },
+  {
+    "ex_num": "7.34",
+    "page": 247,
+    "sentence_bajau": "A. Ai ngini kau",
+    "sentence_en": "A dog bit me yesterday.",
+    "source": "Miller (2007), p.247"
+  },
+  {
+    "ex_num": "7.38",
+    "page": 249,
+    "sentence_bajau": "Iyo no jomo boi -keket uwa’ t dilaw. Srel NPi",
+    "sentence_en": "He is the one whom the dog bit yesterday.",
+    "source": "Miller (2007), p.249"
+  },
+  {
+    "ex_num": "7.39",
+    "page": 249,
+    "sentence_bajau": "Itu no guuk boi - beliku t en-semio. Srel NPi knife CMPL UV-buy1s.I PREP-weekly.market",
+    "sentence_en": "This is the knife that I bought at the weekly market.",
+    "source": "Miller (2007), p.249"
+  },
+  {
+    "ex_num": "7.40",
+    "page": 249,
+    "sentence_bajau": "Guuk e no i boi -beliku t en-semio. Srel NPi knife",
+    "sentence_en": "That knife is what I bought at the weekly market.",
+    "source": "Miller (2007), p.249"
+  },
+  {
+    "ex_num": "7.41",
+    "page": 249,
+    "sentence_bajau": "E no i boi -beli ku t dilaw. Srel NPi",
+    "sentence_en": "That is what I bought yesterday.",
+    "source": "Miller (2007), p.249"
+  },
+  {
+    "ex_num": "7.42",
+    "page": 249,
+    "sentence_bajau": "Iyo no i t boi nabang-an kami ellau e Srel NPi",
+    "sentence_en": "(S)he is the one who helped us that day.",
+    "source": "Miller (2007), p.249"
+  },
+  {
+    "ex_num": "7.45",
+    "page": 251,
+    "sentence_bajau": "Sian no jomo boi nge-radu tana’ e who person CMPL AV-plow land",
+    "sentence_en": "Who is the one that plowed the land?",
+    "source": "Miller (2007), p.251"
+  },
+  {
+    "ex_num": "7.46",
+    "page": 251,
+    "sentence_bajau": "Iyan no boi -de-an14 iyangku miyo what CMPL UV-send-TZ mother1s.I PREP-3s.II",
+    "sentence_en": "What did his mother send to him?",
+    "source": "Miller (2007), p.251"
+  },
+  {
+    "ex_num": "7.47",
+    "page": 252,
+    "sentence_bajau": "Gandum e, bu’ku boi ng-endo’ni dilaw. corn aunt1s.I CMPL AV-take3s.I yesterdai",
+    "sentence_en": "The corn, my aunt picked it yesterday.",
+    "source": "Miller (2007), p.252"
+  },
+  {
+    "ex_num": "7.48",
+    "page": 252,
+    "sentence_bajau": "Bu’ku, boi -endo’ni gandum e dilaw. aunt1s.I CMPL UV-take3s.I corn yesterdai",
+    "sentence_en": "My aunt, she picked the corn yesterday.",
+    "source": "Miller (2007), p.252"
+  },
+  {
+    "ex_num": "7.49",
+    "page": 252,
+    "sentence_bajau": "Anak buaku, boi iyo -enda’ku eng-kaday, nyaun. nephewniece1s-I CMPL 3s.II UV-look1s.I",
+    "sentence_en": "My nephew, I looked for him in the town.  Nothing (of him did I see).",
+    "source": "Miller (2007), p.252"
+  },
+  {
+    "ex_num": "7.50",
+    "page": 253,
+    "sentence_bajau": "Ta’ Kuzik, boi -beli-anku iyo sapi’.16",
+    "sentence_en": "Kuzik, I bought him a cow.",
+    "source": "Miller (2007), p.253"
+  },
+  {
+    "ex_num": "7.51",
+    "page": 253,
+    "sentence_bajau": "Eng-kadai e, ai no telu en-taun aku timban me. PREP-town already three CNT-year 1s.II live there",
+    "sentence_en": "That town, I have stayed there for three years.",
+    "source": "Miller (2007), p.253"
+  },
+  {
+    "ex_num": "7.52",
+    "page": 253,
+    "sentence_bajau": "Gula’ tebu tu, yang te-ratiku lah, telu kau’ jenisni. cane.sugar REL DC.PASS-know1s.I EMP three CL kind3s.I",
+    "sentence_en": "This cane sugar, from what I know, it has three kinds.",
+    "source": "Miller (2007), p.253"
+  },
+  {
+    "ex_num": "7.56",
+    "page": 254,
+    "sentence_bajau": "Kambing e, sian nembalini kaang goat who AV-slaughter3s.I later",
+    "sentence_en": "The goat, who will slaughter it later?",
+    "source": "Miller (2007), p.254"
+  },
+  {
+    "ex_num": "7.57",
+    "page": 254,
+    "sentence_bajau": "A. Boi -belinu buas e CMPL UV-buy2s-I rice",
+    "sentence_en": "Corn, I bought it, not rice.",
+    "source": "Miller (2007), p.254"
+  },
+  {
+    "ex_num": "7.58",
+    "page": 254,
+    "sentence_bajau": "A. Boi kau meli gandum e",
+    "sentence_en": "The corn, Azizy bought it, not I.",
+    "source": "Miller (2007), p.254"
+  },
+  {
+    "ex_num": "8.1",
+    "page": 259,
+    "sentence_bajau": "… si-temu no iyo engko’ jomo boi mono’ siokoni",
+    "sentence_en": "… he met with the man who had killed his older brother.",
+    "source": "baginda 031"
+  },
+  {
+    "ex_num": "8.2",
+    "page": 259,
+    "sentence_bajau": "Iyangku nuba’ ng-angkat saging e . mother1s.I AV.try AV-lift banana",
+    "sentence_en": "My mother tried to lift the bananas.",
+    "source": "Miller (2007), p.259"
+  },
+  {
+    "ex_num": "8.5",
+    "page": 268,
+    "sentence_bajau": "Jomo laatni nya' makai iyo kerna iyo jomo miskin. person place3s.I AV.use 3s.II because 3s.II person poor",
+    "sentence_en": "His people had no use for him because he was poor.",
+    "source": "Miller (2007), p.268"
+  },
+  {
+    "ex_num": "8.6",
+    "page": 268,
+    "sentence_bajau": "Boi jo -tata'ni anak makai gayung , after UV-pour.water3s.I child AV.use bucket betis anakni si-rekot. leg child3s.I REC-stick",
+    "sentence_en": "to pour water",
+    "source": "Miller (2007), p.268"
+  },
+  {
+    "ex_num": "8.7",
+    "page": 268,
+    "sentence_bajau": "Hussin mara' boi -dede-an iyangni. PN AV.tell CMPL UV-send-TZ mother3s.I",
+    "sentence_en": "Hussin said that his mother had sent (it).",
+    "source": "Miller (2007), p.268"
+  },
+  {
+    "ex_num": "9.1",
+    "page": 279,
+    "sentence_bajau": "Ruma’ni pe-gontor tiup beriu. house3s.I INTR-shake blow wind",
+    "sentence_en": "assume x position",
+    "source": "Miller (2007), p.279"
+  },
+  {
+    "ex_num": "9.2",
+    "page": 280,
+    "sentence_bajau": "Ai pe-lantung diing matai ta’ suang",
+    "sentence_en": "to become far",
+    "source": "Miller (2007), p.280"
+  },
+  {
+    "ex_num": "9.6",
+    "page": 282,
+    "sentence_bajau": "Me no gai be-tapuk-an diam saging over.there 3p DISTR-hide inside banana",
+    "sentence_en": "(there are) many yellow x",
+    "source": "Miller (2007), p.282"
+  },
+  {
+    "ex_num": "9.7",
+    "page": 282,
+    "sentence_bajau": "Be-bagal-an diing me en-suang DISTR-big fish over.there PREP-river",
+    "sentence_en": "The fish in the river there are big.",
+    "source": "Miller (2007), p.282"
+  },
+  {
+    "ex_num": "9.9",
+    "page": 283,
+    "sentence_bajau": "Tujuanni supaya iyo si-temu engkoni. purpose3s.I so.that 3s.II REC-meet companion3s.I",
+    "sentence_en": "to be acquainted with each other",
+    "source": "Miller (2007), p.283"
+  },
+  {
+    "ex_num": "9.10",
+    "page": 285,
+    "sentence_bajau": "Ai labu’ suka’",
+    "sentence_en": "to be lost",
+    "source": "Miller (2007), p.285"
+  },
+  {
+    "ex_num": "9.11",
+    "page": 285,
+    "sentence_bajau": "Rosli e ai ke-rungay-an seramin moto",
+    "sentence_en": "Rosli has lost her glasses.",
+    "source": "Miller (2007), p.285"
+  },
+  {
+    "ex_num": "9.12",
+    "page": 285,
+    "sentence_bajau": "Mark e ai ke-buus-an bue’",
+    "sentence_en": "Mark got water spilled on him.",
+    "source": "Miller (2007), p.285"
+  },
+  {
+    "ex_num": "9.13",
+    "page": 286,
+    "sentence_bajau": "Beta’ kami turi, betisku ai ke-limpang-an le’ Azizy. while 3p.excl sleep leg1s.I ADVRS-lie.down PN",
+    "sentence_en": "While we were sleeping, my legs were laid down on by Azizy.",
+    "source": "Miller (2007), p.286"
+  },
+  {
+    "ex_num": "9.14",
+    "page": 286,
+    "sentence_bajau": "Amzi e ke-buat-an le’ beg",
+    "sentence_en": "Amzi is weighed down by the bag.",
+    "source": "Miller (2007), p.286"
+  },
+  {
+    "ex_num": "9.15",
+    "page": 286,
+    "sentence_bajau": "Mark e ke-labu-an le’ suka’",
+    "sentence_en": "Mark fell on account of the coconut.",
+    "source": "Miller (2007), p.286"
+  },
+  {
+    "ex_num": "9.16",
+    "page": 287,
+    "sentence_bajau": "Jamni ai ke-buus-an kopi’. watch 3s.I ADVRS-spill coffee",
+    "sentence_en": "to be overtaken by nightfall",
+    "source": "Miller (2007), p.287"
+  },
+  {
+    "ex_num": "9.17",
+    "page": 287,
+    "sentence_bajau": "Ai ke-songom-on kami dilau nyaun kerita’",
+    "sentence_en": "We were overtaken by nightfall yesterday (because) we had no car.",
+    "source": "Miller (2007), p.287"
+  },
+  {
+    "ex_num": "9.19",
+    "page": 289,
+    "sentence_bajau": "Ka’ku e malas engko’ pe-turi bana. older.sibling1s.I lazy and AGT-sleep too,very",
+    "sentence_en": "My older sibling is lazy and always sleeps.",
+    "source": "Miller (2007), p.289"
+  },
+  {
+    "ex_num": "9.20",
+    "page": 289,
+    "sentence_bajau": "Aku pesoyo ta’ Ramli, iyo nya’ *enggai pe-ngakal. 1s.II believe PN",
+    "sentence_en": "I believe Ramli, he is not prone to lying.",
+    "source": "Miller (2007), p.289"
+  },
+  {
+    "ex_num": "9.21",
+    "page": 289,
+    "sentence_bajau": "Madin pe-sasat bana, ta' diam bandar pan sasat. PN AGT-lost very inside city also lost",
+    "sentence_en": "prone to steal",
+    "source": "Miller (2007), p.289"
+  },
+  {
+    "ex_num": "9.30",
+    "page": 296,
+    "sentence_bajau": "Amun kau pe-suuk dia’ pagar, pe-tondok kau. if 2s.II INTR-go.under beneath fence INTR-stoop 2s.II",
+    "sentence_en": "If you go underneath the fence, you have to stoop.",
+    "source": "Miller (2007), p.296"
+  },
+  {
+    "ex_num": "9.31",
+    "page": 296,
+    "sentence_bajau": "Parai e amun mana pe-tondok no. rice.plant if ripe INTR-stoop",
+    "sentence_en": "to make x stand perpendicular",
+    "source": "Miller (2007), p.296"
+  },
+  {
+    "ex_num": "9.34",
+    "page": 299,
+    "sentence_bajau": "Bangan ka’ni l-em-iang no mule’ ta’ laat gai",
+    "sentence_en": "Her older sisters flew home to their land.",
+    "source": "Miller (2007), p.299"
+  },
+  {
+    "ex_num": "9.35",
+    "page": 299,
+    "sentence_bajau": "Kapal terbang e l-em-iang pu KL. airplane -ACT-fly to.there PN",
+    "sentence_en": "The airplane flew to KL.",
+    "source": "Miller (2007), p.299"
+  },
+  {
+    "ex_num": "9.36",
+    "page": 299,
+    "sentence_bajau": "Bo’ku p-osok pu’ en-serudung muat bue’ susu. then1s.I INTR-enter to.there PREP-kitchen AV.make milk",
+    "sentence_en": "Then I entered the kitchen to prepare some milk.",
+    "source": "beta’ kerungayan 015"
+  },
+  {
+    "ex_num": "9.37",
+    "page": 299,
+    "sentence_bajau": "Aku pan tarus p-osok me-diam bilik… 1s.II direct INTR-enter PREP-inside room",
+    "sentence_en": "Straight away I entered into the room…",
+    "source": "Miller (2007), p.299"
+  },
+  {
+    "ex_num": "9.38",
+    "page": 300,
+    "sentence_bajau": "Ai -keta Amzi suang",
+    "sentence_en": "Amzi crossed the river.",
+    "source": "Miller (2007), p.300"
+  },
+  {
+    "ex_num": "9.39",
+    "page": 300,
+    "sentence_bajau": "Ai pe-keta kuda’ e pe dembila’ suang. INTR-cross horse to.there across river",
+    "sentence_en": "to stop by someone",
+    "source": "Miller (2007), p.300"
+  },
+  {
+    "ex_num": "9.40",
+    "page": 301,
+    "sentence_bajau": "Ai -tuunku sinsim e. UV-dive.for1s.I ring",
+    "sentence_en": "I dove for the ring.",
+    "source": "Miller (2007), p.301"
+  },
+  {
+    "ex_num": "10.1",
+    "page": 311,
+    "sentence_bajau": "Aku meli-an iyangku toos. 1s.II",
+    "sentence_en": "I bought my sister some medicine [at mother",
+    "source": "Miller (2007), p.311"
+  },
+  {
+    "ex_num": "10.2",
+    "page": 311,
+    "sentence_bajau": "Boi -boo Amzi bua e ta’ iyangni",
+    "sentence_en": "Amzi brought jackfruit for his mother.",
+    "source": "Miller (2007), p.311"
+  },
+  {
+    "ex_num": "10.3",
+    "page": 311,
+    "sentence_bajau": "Boi -sembali emma’ku kambing e ta’ Saiman",
+    "sentence_en": "My father slaughtered the goat for Saiman.",
+    "source": "Miller (2007), p.311"
+  },
+  {
+    "ex_num": "10.4",
+    "page": 311,
+    "sentence_bajau": "Boi -boo-n4 Amzi iyangni bua",
+    "sentence_en": "Amzi brought his mother the jackfruit.",
+    "source": "Miller (2007), p.311"
+  },
+  {
+    "ex_num": "10.5",
+    "page": 311,
+    "sentence_bajau": "Boi -sembali-an emma’ ku Saiman kambing tu",
+    "sentence_en": "My father slaughtered (for) Saiman the goat.",
+    "source": "Miller (2007), p.311"
+  },
+  {
+    "ex_num": "10.10",
+    "page": 313,
+    "sentence_bajau": "Saiman boi s-in-embali-an kambing leku. Saiman CMPL -PASS-slaughter-APPL goat father1s.I",
+    "sentence_en": "(For) Saiman was slaughtered a goat by my father.",
+    "source": "Miller (2007), p.313"
+  },
+  {
+    "ex_num": "10.12",
+    "page": 314,
+    "sentence_bajau": "Aku meli-an Pirik telumpa’ e. 1s.II",
+    "sentence_en": "I will buy Pirik shoes.",
+    "source": "Miller (2007), p.314"
+  },
+  {
+    "ex_num": "10.15",
+    "page": 316,
+    "sentence_bajau": "Ngini kau pe-sading m-aku why 2s.II INTR-lean",
+    "sentence_en": "Why are you leaning against me?",
+    "source": "Miller (2007), p.316"
+  },
+  {
+    "ex_num": "10.16",
+    "page": 316,
+    "sentence_bajau": "Sesok e ai pe-rekot ta' jing. house.lizard",
+    "sentence_en": "The house lizard has stuck to the zinc.",
+    "source": "Miller (2007), p.316"
+  },
+  {
+    "ex_num": "10.17",
+    "page": 316,
+    "sentence_bajau": "Kuzik e purni nading-an Saiman jo. PN",
+    "sentence_en": "Kuzik often leans against Saiman.",
+    "source": "Miller (2007), p.316"
+  },
+  {
+    "ex_num": "10.18",
+    "page": 317,
+    "sentence_bajau": "Sesok e nge-rekot-on zinc. house.lizard",
+    "sentence_en": "to add (s.thing) to",
+    "source": "Miller (2007), p.317"
+  },
+  {
+    "ex_num": "10.19",
+    "page": 318,
+    "sentence_bajau": "Ai -enna'-anni gula’ diam kupi’",
+    "sentence_en": "(S)he put sugar in the coffee.",
+    "source": "Miller (2007), p.318"
+  },
+  {
+    "ex_num": "10.20",
+    "page": 318,
+    "sentence_bajau": "Tuyung-anni bu'e' tebu e pe diam kawa.` UV-add-TZ3s.I water sugar.cane to.there inside cauldron",
+    "sentence_en": "She added sugar cane water into the cauldron.",
+    "source": "Miller (2007), p.318"
+  },
+  {
+    "ex_num": "10.21",
+    "page": 318,
+    "sentence_bajau": "Tuyung-anni aku buas",
+    "sentence_en": "He added (for) me the rice.",
+    "source": "Miller (2007), p.318"
+  },
+  {
+    "ex_num": "10.23",
+    "page": 319,
+    "sentence_bajau": "Bila teko me-ruma’ bara-anni emma'ni uun jomo mu' when arrive PREP-house UV-tell-APPL3s.I father3s.I EXIST person there lawa' bana. beautiful very ‘When she arrived home, she told her father that there was a very handsome man there. suk 074 In 10.22 the speech verb bara’ is unaffixed, and the addressee m-aku occurs as the oblique form. In 10.23 the same root verb occurs as the affixed form bara-an and the addressee emma’ni is promoted to a DCA. Note also in 10.23 that the addressee occurs just after the verb + actor where a non-fronted undergoer normally occurs and before the speech act complement. The locative -an1 suffix occurs on some bound roots to promote or add an addressee or perceiver",
+    "sentence_en": "to lie to (s.one)",
+    "source": "Miller (2007), p.319"
+  },
+  {
+    "ex_num": "10.24",
+    "page": 321,
+    "sentence_bajau": "Ai -keta Pirik suang",
+    "sentence_en": "Pirik carried the cat across the river.",
+    "source": "Miller (2007), p.321"
+  },
+  {
+    "ex_num": "10.25",
+    "page": 321,
+    "sentence_bajau": "Azizy boi -sembetku engko’ surat PN",
+    "sentence_en": "I rushed the letter to Azizy.",
+    "source": "Miller (2007), p.321"
+  },
+  {
+    "ex_num": "10.26",
+    "page": 322,
+    "sentence_bajau": "Aku boi nembet Azizy engko’ surat. 1s.II",
+    "sentence_en": "I rushed the letter to Azizy.",
+    "source": "Miller (2007), p.322"
+  },
+  {
+    "ex_num": "10.27",
+    "page": 322,
+    "sentence_bajau": "Surat e s-in-embet-en ta’ Azizy. letter",
+    "sentence_en": "to reach for (s.thing)",
+    "source": "Miller (2007), p.322"
+  },
+  {
+    "ex_num": "10.30",
+    "page": 324,
+    "sentence_bajau": "Ai buus kupi’ e. spill coffee",
+    "sentence_en": "to move, to flee",
+    "source": "Miller (2007), p.324"
+  },
+  {
+    "ex_num": "10.32",
+    "page": 326,
+    "sentence_bajau": "Iyangku boi mopo’ mopo-on pakayanni. mother1s.I CMPL AV.wash.clothes clothes3s.I",
+    "sentence_en": "My mother washed his clothes.",
+    "source": "Miller (2007), p.326"
+  },
+  {
+    "ex_num": "10.34",
+    "page": 328,
+    "sentence_bajau": "Penombol kee tu teraat tu. INSTR-close hole damaged",
+    "sentence_en": "The cover of this hole is worn out/ damaged.",
+    "source": "Miller (2007), p.328"
+  },
+  {
+    "ex_num": "10.35",
+    "page": 329,
+    "sentence_bajau": "tebongku boo’ e engko’ guuk tu. UV-chop.down1s-I bamboo knife",
+    "sentence_en": "I used the knife to chop down the bamboo",
+    "source": "Miller (2007), p.329"
+  },
+  {
+    "ex_num": "10.36",
+    "page": 330,
+    "sentence_bajau": "Penebongku boo’ e NP guuk tu NP",
+    "sentence_en": "My chopper of the bamboo is this knife.",
+    "source": "Miller (2007), p.330"
+  },
+  {
+    "ex_num": "10.37",
+    "page": 330,
+    "sentence_bajau": "Itu no guuk penebongnu boo’ knife INSTR-chop.down2s.I bamboo",
+    "sentence_en": "This is the knife you should use for chopping the bamboo.",
+    "source": "Miller (2007), p.330"
+  },
+  {
+    "ex_num": "10.40",
+    "page": 332,
+    "sentence_bajau": "Kuala Abai e no peng-enda Mantanani. PN LOC-look.at 1p.excl to.there PN",
+    "sentence_en": "use (s.thing) to buy x!",
+    "source": "Miller (2007), p.332"
+  },
+  {
+    "ex_num": "10.41",
+    "page": 333,
+    "sentence_bajau": "Suang Gunding e boi pe-kepo-on peranak e dau. river PN CMPL LOC-jump.down children earlier",
+    "sentence_en": "to hide (s.thing)",
+    "source": "Miller (2007), p.333"
+  },
+  {
+    "ex_num": "10.43",
+    "page": 333,
+    "sentence_bajau": "Itu no tungan pe-lunsur-an gai kayu balak lekat en-jata’ place LOC-flow 3p log",
+    "sentence_en": "This is their channeling-place for logs...",
+    "source": "Miller (2007), p.333"
+  },
+  {
+    "ex_num": "10.44",
+    "page": 333,
+    "sentence_bajau": "Itu no tungan pe-napuk-an gai barang sapi’. DEM.PRN place LOC-hide 3p",
+    "sentence_en": "That is the place where they hide (stolen) cows.",
+    "source": "Miller (2007), p.333"
+  },
+  {
+    "ex_num": "10.45",
+    "page": 334,
+    "sentence_bajau": "Tempati e tungani pe-niman-an sampa’ t Srel . place place LOC-throw.awai garbage",
+    "sentence_en": "That place is where (people) throw away garbage.",
+    "source": "Miller (2007), p.334"
+  },
+  {
+    "ex_num": "10.46",
+    "page": 334,
+    "sentence_bajau": "Ta’ ongkob e pe-napuk-an parai",
+    "sentence_en": "At/in the storage bin is the hiding place for paddy rice.",
+    "source": "Miller (2007), p.334"
+  },
+  {
+    "ex_num": "10.51",
+    "page": 337,
+    "sentence_bajau": "Ai pe-rekotni setem e ta' sampul surat. CAUS-stick3s.I stamp envelope",
+    "sentence_en": "Mark stuck the letter with a stamp.",
+    "source": "Miller (2007), p.337"
+  },
+  {
+    "ex_num": "10.53",
+    "page": 338,
+    "sentence_bajau": "Ai -rangi anakku suang",
+    "sentence_en": "I made/let my child swim in the river.",
+    "source": "Miller (2007), p.338"
+  },
+  {
+    "ex_num": "10.57",
+    "page": 342,
+    "sentence_bajau": "Soo’ni endoni mopo’. UV-command3s.I wife3s.I AV.wash.clothes",
+    "sentence_en": "He told his wife to wash clothes.",
+    "source": "Miller (2007), p.342"
+  },
+  {
+    "ex_num": "10.60",
+    "page": 342,
+    "sentence_bajau": "Anak e -soo’ emma’ni me-patai manuk. child UV-command father3s.I AV.CAUS-die chicken",
+    "sentence_en": "The father made his child kill a chicken.",
+    "source": "Miller (2007), p.342"
+  },
+  {
+    "ex_num": "10.61",
+    "page": 343,
+    "sentence_bajau": "Jomo jogo e ai mono’ orang sala’ person guard",
+    "sentence_en": "The guard let the prisoner die",
+    "source": "Miller (2007), p.343"
+  },
+  {
+    "ex_num": "10.62",
+    "page": 343,
+    "sentence_bajau": "Ai rubu-an jomo kampung ruma’",
+    "sentence_en": "The villagers let the house collapse",
+    "source": "Miller (2007), p.343"
+  },
+  {
+    "ex_num": "10.65",
+    "page": 344,
+    "sentence_bajau": "Beriu daras e engko’ ngiot-ngiot ruma’ wind strong creak-REDUP house",
+    "sentence_en": "The strong wind made the house continue creaking.",
+    "source": "Miller (2007), p.344"
+  },
+  {
+    "ex_num": "11.2",
+    "page": 346,
+    "sentence_bajau": "duo em-bua’ belud oyo two CNT-CL hill large measure head descriptive",
+    "sentence_en": "two large hills",
+    "source": "baginda 133"
+  },
+  {
+    "ex_num": "11.3",
+    "page": 346,
+    "sentence_bajau": "Lubang en-tenga' telu kau' e hole",
+    "sentence_en": "the three holes in the middle",
+    "source": "nandas tebu 043"
+  },
+  {
+    "ex_num": "11.4",
+    "page": 346,
+    "sentence_bajau": "enselan di-kau’ tin gasoline one-CL can head descriptive",
+    "sentence_en": "one can of gasoline",
+    "source": "Miller (2007), p.346"
+  },
+  {
+    "ex_num": "11.5",
+    "page": 346,
+    "sentence_bajau": "Serita’ poon suka' ebba' ai mantau balik story tree coconut topple ACT-stand again head possessive descriptive head",
+    "sentence_en": "the story of the coconut tree (that) toppled and (that) stood again",
+    "source": "Miller (2007), p.346"
+  },
+  {
+    "ex_num": "11.6",
+    "page": 347,
+    "sentence_bajau": "Iko bana poon kayu NP ebba’ waktu many very tree topple time",
+    "sentence_en": "Many trees toppled at that time.",
+    "source": "Miller (2007), p.347"
+  },
+  {
+    "ex_num": "11.8",
+    "page": 347,
+    "sentence_bajau": "Lua’ ta’ bangan kama NP , langau moo penyakit…",
+    "sentence_en": "From (landing) on dirty (things), flies carry diseases…",
+    "source": "Miller (2007), p.347"
+  },
+  {
+    "ex_num": "11.11",
+    "page": 348,
+    "sentence_bajau": "sarung uwa’ costume dog",
+    "sentence_en": "dog costume/ costume of a dog",
+    "source": "Miller (2007), p.348"
+  },
+  {
+    "ex_num": "11.12",
+    "page": 348,
+    "sentence_bajau": "ampun parai e owner paddy",
+    "sentence_en": "the owner of the paddy",
+    "source": "Miller (2007), p.348"
+  },
+  {
+    "ex_num": "11.14",
+    "page": 349,
+    "sentence_bajau": "soro betongni voice stomach3s.I",
+    "sentence_en": "the sound of his stomach",
+    "source": "ngini using 026"
+  },
+  {
+    "ex_num": "11.15",
+    "page": 349,
+    "sentence_bajau": "bagas impon soo e mark tooth snake",
+    "sentence_en": "the mark of the snake",
+    "source": "Miller (2007), p.349"
+  },
+  {
+    "ex_num": "11.16",
+    "page": 349,
+    "sentence_bajau": "laan buuk Srel e road worn",
+    "sentence_en": "the road that is worn",
+    "source": "Miller (2007), p.349"
+  },
+  {
+    "ex_num": "11.17",
+    "page": 349,
+    "sentence_bajau": "jomo boi ninso kayu Srel e NP person CMPL AV.chainsau wood",
+    "sentence_en": "the man who used a chainsaw on the tree",
+    "source": "kayu ebba’ 034"
+  },
+  {
+    "ex_num": "11.18",
+    "page": 349,
+    "sentence_bajau": "enselan -booni kemuap Srel e NP gasoline UV-bring3s.I afternoon",
+    "sentence_en": "the gasoline he brought (the previous) afternoon",
+    "source": "namuk 071"
+  },
+  {
+    "ex_num": "11.19",
+    "page": 350,
+    "sentence_bajau": "sinsim ta’ tangan Hussin Srel e NP. woman",
+    "sentence_en": "the ring on Hussin",
+    "source": "Miller (2007), p.350"
+  },
+  {
+    "ex_num": "11.21",
+    "page": 350,
+    "sentence_bajau": "masa jomo e ng-ogo ta' bandar time person AV-go.to city",
+    "sentence_en": "the time when people go to the city",
+    "source": "Miller (2007), p.350"
+  },
+  {
+    "ex_num": "11.23",
+    "page": 351,
+    "sentence_bajau": "jomoni semomon person3s.I all",
+    "sentence_en": "all of his men",
+    "source": "Miller (2007), p.351"
+  },
+  {
+    "ex_num": "11.25",
+    "page": 352,
+    "sentence_bajau": "“…too’ bana kelongku tu NP .” dry very throat1s.I",
+    "sentence_en": "my throat is very dry",
+    "source": "beta’ kerungayan 014"
+  },
+  {
+    "ex_num": "11.26",
+    "page": 352,
+    "sentence_bajau": "…iyo sayang bana ta’ anakni e NP . 3s.II love very",
+    "sentence_en": "…she loved her child very much.",
+    "source": "Miller (2007), p.352"
+  },
+  {
+    "ex_num": "11.27",
+    "page": 352,
+    "sentence_bajau": "Selalu p-in-akai kerabau imon, kerabau dela sukad. usually -PASS-use buffalo tame buffalo male ***",
+    "sentence_en": "Usually a tame buffalo was used, a large male buffalo.",
+    "source": "nandas tebu 052"
+  },
+  {
+    "ex_num": "11.29",
+    "page": 353,
+    "sentence_bajau": "iyo nuut turi ta’ ruma’ dela e. 3s.II AV.go.with sleep",
+    "sentence_en": "… he went (with the man) to sleep at the man",
+    "source": "namuk 027"
+  },
+  {
+    "ex_num": "11.30",
+    "page": 353,
+    "sentence_bajau": "Beranti iyo ta’ dia’ poon kayu. stop 3s.II",
+    "sentence_en": "He stopped beneath a tree.",
+    "source": "baginda 047"
+  },
+  {
+    "ex_num": "11.31",
+    "page": 353,
+    "sentence_bajau": "Sangsuriang mule’ me-ruma’ sambilni nangis. PN ACT.go.home PREP-house while3s.I ACT.cry",
+    "sentence_en": "Sangsuriang went home crying.",
+    "source": "biduk 072"
+  },
+  {
+    "ex_num": "11.33",
+    "page": 353,
+    "sentence_bajau": "Masa gai kepo lua’ ta’ kayangan… time 3p jump.down",
+    "sentence_en": "At the time they jumped down from the heavens…",
+    "source": "Miller (2007), p.353"
+  },
+  {
+    "ex_num": "11.34",
+    "page": 353,
+    "sentence_bajau": "Endoku muan peranggi’ e m-aku. wife1s.I AV.give pineapple",
+    "sentence_en": "My wife gave the pineapple to me.",
+    "source": "Miller (2007), p.353"
+  },
+  {
+    "ex_num": "11.35",
+    "page": 354,
+    "sentence_bajau": "… gai mara’ ta’ jomo kampung di’ni ai rungay. 3p AV.tell person village yg.sibling3s.I missing",
+    "sentence_en": "… they told the villagers that his younger brother was missing.",
+    "source": "belis 046"
+  },
+  {
+    "ex_num": "11.37",
+    "page": 354,
+    "sentence_bajau": "beliku telumpa’ e m-iyo. UV-buy1s.I shoe",
+    "sentence_en": "shoes at/from him",
+    "source": "Miller (2007), p.354"
+  },
+  {
+    "ex_num": "11.39",
+    "page": 354,
+    "sentence_bajau": "Ta’ sian saging e boi -tebongnu",
+    "sentence_en": "At whom (whose place) did you chop down the banana tree?",
+    "source": "Miller (2007), p.354"
+  },
+  {
+    "ex_num": "11.40",
+    "page": 355,
+    "sentence_bajau": "…iyo lai lekat ta’ kampungni… PP PP 3s.II flee",
+    "sentence_en": "…he fled from his village…",
+    "source": "mat salleh 002"
+  },
+  {
+    "ex_num": "11.41",
+    "page": 355,
+    "sentence_bajau": "lua’ en-diam lubang langkau PP PP PREP-inside hole long",
+    "sentence_en": "from within the tunnel",
+    "source": "Miller (2007), p.355"
+  },
+  {
+    "ex_num": "11.43",
+    "page": 355,
+    "sentence_bajau": "…iyo ng-agad-ng-agad lua’ kemuap lagi… 3s.II",
+    "sentence_en": "…she continued to wait since the afternoon…",
+    "source": "belis 043"
+  },
+  {
+    "ex_num": "11.44",
+    "page": 355,
+    "sentence_bajau": "Kulintangan bana selaluni b-in-uat lekat ta’ tembaga’. small.gongs true always3.I",
+    "sentence_en": "The kulintangan bana were ordinarily made from (brass) metal.",
+    "source": "kulintangan 007"
+  },
+  {
+    "ex_num": "11.45",
+    "page": 355,
+    "sentence_bajau": "Waktu ellani mule’ lua’ ng-endo… time husband3s.I ACT-go.home AV-take water",
+    "sentence_en": "At the time her husband returned home from fetching water…",
+    "source": "Miller (2007), p.355"
+  },
+  {
+    "ex_num": "11.47",
+    "page": 356,
+    "sentence_bajau": "Sangsuriang pan l-um-aan no engko’ Situmang en-diam taun…. PN",
+    "sentence_en": "Sangsuriang traveled with Situmang into the forest…",
+    "source": "biduk 069"
+  },
+  {
+    "ex_num": "11.49",
+    "page": 356,
+    "sentence_bajau": "Tujuanni supaya iyo si-temu engkoni. purpose3s.I so.that 3s.II REC-meet friend3s.I",
+    "sentence_en": "His purpose was that he could meet with his friend.",
+    "source": "Miller (2007), p.356"
+  },
+  {
+    "ex_num": "11.50",
+    "page": 357,
+    "sentence_bajau": "…pe-limpas lagi dela e balik engko’ karungni. INTR-pass yet man again",
+    "sentence_en": "The man passed yet again with his sack.",
+    "source": "namuk 019"
+  },
+  {
+    "ex_num": "11.52",
+    "page": 357,
+    "sentence_bajau": "Ai jo bege engko' kekuasan Allah belud e pan ai katup. After like.that strength PN hill close",
+    "sentence_en": "At that time, by Allah",
+    "source": "Miller (2007), p.357"
+  },
+  {
+    "ex_num": "11.54",
+    "page": 357,
+    "sentence_bajau": "Tangan e mesti’ tena’ man jantung. arm must short",
+    "sentence_en": "The (poisoned) arm must be lower than the heart.",
+    "source": "rupiah 010"
+  },
+  {
+    "ex_num": "11.55",
+    "page": 358,
+    "sentence_bajau": "Aku lagi langa man kam momon. 1s.II more tall",
+    "sentence_en": "I am taller than all of you.",
+    "source": "Miller (2007), p.358"
+  },
+  {
+    "ex_num": "11.57",
+    "page": 358,
+    "sentence_bajau": "…tapi’ iyo lain rooni man gula' datai bana. but 3s.II different form3s.I sugar boiled very",
+    "sentence_en": "by; on account of",
+    "source": "Miller (2007), p.358"
+  },
+  {
+    "ex_num": "11.59",
+    "page": 359,
+    "sentence_bajau": "Nge-letup tanganku le’ guuk e. ACT-explode hand1s.I",
+    "sentence_en": "My hand blistered (lit. ‘exploded",
+    "source": "Miller (2007), p.359"
+  },
+  {
+    "ex_num": "11.60",
+    "page": 359,
+    "sentence_bajau": "Ai so no iyo le’ni",
+    "sentence_en": "He is satiated by (the food).",
+    "source": "Miller (2007), p.359"
+  },
+  {
+    "ex_num": "11.61",
+    "page": 359,
+    "sentence_bajau": "Ai pe-pekar no tipo e le’ Amzi",
+    "sentence_en": "the manner [ in which x does y ]",
+    "source": "Miller (2007), p.359"
+  },
+  {
+    "ex_num": "11.62",
+    "page": 359,
+    "sentence_bajau": "Tabit e sanang atai le’ Mastura boi noos Rupiah . healer happy manner PN CMPL AV.medicate PN",
+    "sentence_en": "The healer was pleased with how Mastura had medicated Rupiah.",
+    "source": "rupiah 013"
+  },
+  {
+    "ex_num": "11.63",
+    "page": 359,
+    "sentence_bajau": "Le’ ni nguuk bue’ e dekiit-dekiit jo. manner3s.I scoop water little-REDUP only",
+    "sentence_en": "The way in which he scooped water was little-by-little (?).",
+    "source": "Miller (2007), p.359"
+  },
+  {
+    "ex_num": "11.65",
+    "page": 360,
+    "sentence_bajau": "Pada masa e namuk kono' oyo bana masam manuk dela. at time mosquito hearsai large very chicken male",
+    "sentence_en": "At that time, it is said that mosquitoes were very large, like roosters.",
+    "source": "namuk 004"
+  },
+  {
+    "ex_num": "11.66",
+    "page": 360,
+    "sentence_bajau": "Pengabisanni gai pan maskin doko’ dau. end3s.I 3p EMPH poor",
+    "sentence_en": "In the end they were poor like before.",
+    "source": "ansa’ 017"
+  },
+  {
+    "ex_num": "11.67",
+    "page": 360,
+    "sentence_bajau": "Doko’ susu sap junjung e, amun e p-in-alit pe-langkaw. milk *** PN if -PASS-dab INTR-long",
+    "sentence_en": "Like the junjung brand of milk, if it is dabbed with the finger, it stretches.",
+    "source": "nandas tebu \n111"
+  },
+  {
+    "ex_num": "11.68",
+    "page": 360,
+    "sentence_bajau": "Resoni doko’ reso ungus, kasar. feel3s.I feel sand rough",
+    "sentence_en": "Its texture is like that of sand, (it is) coarse.",
+    "source": "nandas tebu 114"
+  },
+  {
+    "ex_num": "11.70",
+    "page": 361,
+    "sentence_bajau": "Baginda Ali nya' no teko pe-lua' lua' me PN",
+    "sentence_en": "Baginda Ali could not get out from then until now.",
+    "source": "baginda 136"
+  },
+  {
+    "ex_num": "11.71",
+    "page": 361,
+    "sentence_bajau": "Tapi' bila sikot ellau iyo ai te-turi sampai telak. but when near dai 3s.II",
+    "sentence_en": "But when it was nearly day, he fell asleep (and did not awake) until it was bright (outside).",
+    "source": "jomo pisok 027"
+  },
+  {
+    "ex_num": "12.1",
+    "page": 363,
+    "sentence_bajau": "Boi suk sapi’",
+    "sentence_en": "The cow was scrawny (but not now).",
+    "source": "Miller (2007), p.363"
+  },
+  {
+    "ex_num": "12.2",
+    "page": 363,
+    "sentence_bajau": "Boi l-um-aan no emma’ku",
+    "sentence_en": "My father went out (and has now returned).",
+    "source": "Miller (2007), p.363"
+  },
+  {
+    "ex_num": "12.3",
+    "page": 363,
+    "sentence_bajau": "Buas e boi -dede pu’ dilaw. rice",
+    "sentence_en": "I sent the rice there yesterday.",
+    "source": "Miller (2007), p.363"
+  },
+  {
+    "ex_num": "12.9",
+    "page": 364,
+    "sentence_bajau": "Ai -ebba’-an Azizy poon saging e",
+    "sentence_en": "Azizy has felled the banana tree.",
+    "source": "Miller (2007), p.364"
+  },
+  {
+    "ex_num": "12.13",
+    "page": 366,
+    "sentence_bajau": "Ruma’ e tunu’. house burn",
+    "sentence_en": "The house has burned down.",
+    "source": "Miller (2007), p.366"
+  },
+  {
+    "ex_num": "12.14",
+    "page": 366,
+    "sentence_bajau": "Amzi nya’ boi *ai mangan, iyo mara’ pedi betongni",
+    "sentence_en": "Amzi did not eat; he said he has a stomach ache.",
+    "source": "Miller (2007), p.366"
+  },
+  {
+    "ex_num": "12.15",
+    "page": 367,
+    "sentence_bajau": "Boi Ai -ebba-an Azizy poon saging e tapi boi ebba’",
+    "sentence_en": "Azizy tried to fell the banana tree but (it) didn",
+    "source": "Miller (2007), p.367"
+  },
+  {
+    "ex_num": "12.16",
+    "page": 367,
+    "sentence_bajau": "Ai tunu e. burn house",
+    "sentence_en": "The house has (partially) burned [it is still standing].",
+    "source": "Miller (2007), p.367"
+  },
+  {
+    "ex_num": "12.17",
+    "page": 368,
+    "sentence_bajau": "Jomo boi ninso kayu e ai lulai kerana' tinau. person VBL.chainsau wood run because afraid",
+    "sentence_en": "beta         ai   kurung  bangan   jomo      ng-enda",
+    "source": "kayu ebba’ 034-035"
+  },
+  {
+    "ex_num": "12.18",
+    "page": 368,
+    "sentence_bajau": "Bila ai songom gai awal turi endo' bangun sinsaung awal. when night 3p early sleep so.that rise morning early",
+    "sentence_en": "When it was night, they went to sleep early so that they could get up early.",
+    "source": "Miller (2007), p.368"
+  },
+  {
+    "ex_num": "12.19",
+    "page": 369,
+    "sentence_bajau": "A. “Uun iyangnu me” EXIST mother2s.I there",
+    "sentence_en": "Is your mother there?",
+    "source": "Miller (2007), p.369"
+  },
+  {
+    "ex_num": "12.21",
+    "page": 369,
+    "sentence_bajau": "Sini’ sinsaung aku pe-osok me-ruma’, te-kitoku earlier morning",
+    "sentence_en": "This morning when I entered the house, I saw that my mother was sewing Mali",
+    "source": "Miller (2007), p.369"
+  },
+  {
+    "ex_num": "12.23",
+    "page": 371,
+    "sentence_bajau": "Akan uran no tu. about.to rain",
+    "sentence_en": "It might rain later.",
+    "source": "Miller (2007), p.371"
+  },
+  {
+    "ex_num": "12.24",
+    "page": 371,
+    "sentence_bajau": "Amun boi mangan, akan nalan kiti. when CMPL AV.eat about.to play.gongs 1p.II.incl",
+    "sentence_en": "After (we) eat, we might play gongs.",
+    "source": "Miller (2007), p.371"
+  },
+  {
+    "ex_num": "12.25",
+    "page": 371,
+    "sentence_bajau": "Amun boi mangan, nalan kiti. when CMPL AV.eat play.gongs 1p.II.incl",
+    "sentence_en": "After (we) eat, we will play gongs.",
+    "source": "Miller (2007), p.371"
+  },
+  {
+    "ex_num": "12.26",
+    "page": 371,
+    "sentence_bajau": "Akan matai no iyo, tapi' nemu aku toos. about.to die 3s.II but AV.meet 1s.II medicine",
+    "sentence_en": "She was about to die, but I found medicine.",
+    "source": "Miller (2007), p.371"
+  },
+  {
+    "ex_num": "12.27",
+    "page": 371,
+    "sentence_bajau": "Akan uran no si’. about.to rain just.now",
+    "sentence_en": "It was going to rain just now [but didn",
+    "source": "Miller (2007), p.371"
+  },
+  {
+    "ex_num": "12.28",
+    "page": 372,
+    "sentence_bajau": "Runsai mulai pukul 12:00 songom dan lupus pukul 6:00 saung-saung. type.of.dance begin hour night and finish hour morning",
+    "sentence_en": "The runsay dance begins at 12 midnight and finishes at 6 in the morning.",
+    "source": "runsay 012"
+  },
+  {
+    "ex_num": "12.29",
+    "page": 372,
+    "sentence_bajau": "Uwa’ ng-uma e pan beranti. dog ACT-bark",
+    "sentence_en": "The dog that was barking stopped.",
+    "source": "Miller (2007), p.372"
+  },
+  {
+    "ex_num": "12.30",
+    "page": 372,
+    "sentence_bajau": "Kiro-kiro pukul 11:00 mulai no pakir e meseduo… about hour begin religious.officiant recite.prayers",
+    "sentence_en": "At about 11 o",
+    "source": "bejogo 011"
+  },
+  {
+    "ex_num": "12.31",
+    "page": 372,
+    "sentence_bajau": "Ai lupus no -buatni ruma’",
+    "sentence_en": "He finished building the house.",
+    "source": "Miller (2007), p.372"
+  },
+  {
+    "ex_num": "12.32",
+    "page": 372,
+    "sentence_bajau": "Jomo daras e beranti ng-amuk Hussin amun person strong stop *** PN when te-kitoni sinsim ta’ tangan Hussin DC.PASS-see3s.I ring",
+    "sentence_en": "The strong man stopped (raging at?) Hussin when he saw the ring on Hussin",
+    "source": "Miller (2007), p.372"
+  },
+  {
+    "ex_num": "12.33",
+    "page": 372,
+    "sentence_bajau": "Ai jo jomo too e abis be-tutur iyo pan pungkaw. after person old finish ACT-speak 3s.II wake.up",
+    "sentence_en": "After the old man had finished speaking, he (Hussin) woke up.",
+    "source": "Miller (2007), p.372"
+  },
+  {
+    "ex_num": "12.34",
+    "page": 372,
+    "sentence_bajau": "Abis *Lupus no parai e tomo’. finish",
+    "sentence_en": "The padi rice is finished growing.",
+    "source": "Miller (2007), p.372"
+  },
+  {
+    "ex_num": "12.35",
+    "page": 373,
+    "sentence_bajau": "dinakanni ai abis no matay. relative3s.I all",
+    "sentence_en": "... his relatives were all deceased.",
+    "source": "Miller (2007), p.373"
+  },
+  {
+    "ex_num": "12.38",
+    "page": 374,
+    "sentence_bajau": "Iyan lagi ruma’ e pan nya’ no te-kito. what still house",
+    "sentence_en": "What is more, the house could not now be seen.",
+    "source": "Miller (2007), p.374"
+  },
+  {
+    "ex_num": "12.40",
+    "page": 374,
+    "sentence_bajau": "P-in-endule-an, nya’ no iyo padul. -PASS-scold-TZ",
+    "sentence_en": "(He) was scolded, (but) he paid no heed.",
+    "source": "Miller (2007), p.374"
+  },
+  {
+    "ex_num": "12.42",
+    "page": 374,
+    "sentence_bajau": "Anak kerabau e manusia' enggai do’ anak kerabaw. child buffalo human EMPH child buffalo",
+    "sentence_en": "The offspring of the buffalo was human, not buffalo.",
+    "source": "kerabaw 020"
+  },
+  {
+    "ex_num": "12.43",
+    "page": 374,
+    "sentence_bajau": "…iyo nembet jomo, enggai ko’ jomo nembet iyo. 3s.II AV.chase person",
+    "sentence_en": "It (the snake) chases people, rather than people chase it.",
+    "source": "Miller (2007), p.374"
+  },
+  {
+    "ex_num": "12.49",
+    "page": 376,
+    "sentence_bajau": "Boo' gading been iting, buli b-in-uat tiang pagar. type.of.bamboo have thorn can -PASS-make post fence",
+    "sentence_en": "The gading bamboo has thorns, (it) can be used to make fence posts.",
+    "source": "boo’  \n               010"
+  },
+  {
+    "ex_num": "12.50",
+    "page": 377,
+    "sentence_bajau": "Bila ai bioso, teko no iyo l-um-aan den-d-anganni.5 when usual can 3s.II -ACT-go REDUP-one-CL-person3s.I",
+    "sentence_en": "When (he) became accustomed to it, he was able to go alone.",
+    "source": "jomo pisok  019"
+  },
+  {
+    "ex_num": "12.51",
+    "page": 377,
+    "sentence_bajau": "Linta e nya’ teko nge-rekot ta’ betisni. leech can AV-stick",
+    "sentence_en": "The leech could not stick to his leg.",
+    "source": "Miller (2007), p.377"
+  },
+  {
+    "ex_num": "12.53",
+    "page": 378,
+    "sentence_bajau": "Sebabni iyo tu pandai te' judi dekiit-dekiit. reason3s.I 3s.II skilled EMPH gamble little-REDUP",
+    "sentence_en": "frequent to gamble",
+    "source": "mat salleh 005"
+  },
+  {
+    "ex_num": "12.56",
+    "page": 379,
+    "sentence_bajau": "Rupiah pe-loot diam sumpat, mono-mono nge-raa iyo. PN INTR-reach inside undergrowth suddenly ACT-scream 3s.II",
+    "sentence_en": "Rupiah reached into the underbrush, (and) suddenly he screamed.",
+    "source": "Miller (2007), p.379"
+  },
+  {
+    "ex_num": "12.59",
+    "page": 380,
+    "sentence_bajau": "\"Pinggo si' kau nak engko' karungnu e\" to.where earlier 2s.II child with sack2s.I jomo e tilau lagi. person ask further “Where did you just come from with that sack of yours” the man asked further. namuk 009",
+    "sentence_en": "not yet; before",
+    "source": "Miller (2007), p.380"
+  },
+  {
+    "ex_num": "12.61",
+    "page": 380,
+    "sentence_bajau": "Sangsuriang masi lagi nya’ sadar. PN still yet",
+    "sentence_en": "Sangsuriang was still unconscious.",
+    "source": "biduk 083"
+  },
+  {
+    "ex_num": "12.62",
+    "page": 380,
+    "sentence_bajau": "Teko iyo pu’ kakal Hussin mandi en-diam telaga’ e. arrive 3s.II to.there still PN AV-bathe PREP-in well",
+    "sentence_en": "When he arrived there, Hussin was still bathing in the well.",
+    "source": "Miller (2007), p.380"
+  },
+  {
+    "ex_num": "12.63",
+    "page": 380,
+    "sentence_bajau": "Ellani e pan ng-osok sarung uwa'ni balik. husband3s.I AV-put.on costume dog3s.I again",
+    "sentence_en": "Her husband put on his dog costume again.",
+    "source": "uwa’ suk 084"
+  },
+  {
+    "ex_num": "12.65",
+    "page": 381,
+    "sentence_bajau": "Peserta runsai selaluni sepu sampai sepu limo orang… participant type.of.dance usually3s.I ten fifteen CL",
+    "sentence_en": "The runsay participants are usually between 10 and 15 (in number)…",
+    "source": "runsay 002"
+  },
+  {
+    "ex_num": "12.66",
+    "page": 381,
+    "sentence_bajau": "Tapi’ biosoni bangan pekakas tu",
+    "sentence_en": "But usually these items are not found in houses.",
+    "source": "masala langaw 049"
+  },
+  {
+    "ex_num": "12.67",
+    "page": 381,
+    "sentence_bajau": "Bangan langau pan gorot",
+    "sentence_en": "Flies are always landing on our food.",
+    "source": "masala langaw 041"
+  },
+  {
+    "ex_num": "12.69",
+    "page": 382,
+    "sentence_bajau": "Bo’ku likas ng-ogo siokoku dela e… then1s.I fast AV-visit older.sibling1s.I male",
+    "sentence_en": "Then I quickly went to my older brother…",
+    "source": "beta’ kerungayan 049"
+  },
+  {
+    "ex_num": "12.70",
+    "page": 382,
+    "sentence_bajau": "Daras soo tu l-ul-ai… strong snake -ACT-run",
+    "sentence_en": "The snake moved (lit. ‘ran",
+    "source": "jomo beramu 010"
+  },
+  {
+    "ex_num": "12.72",
+    "page": 383,
+    "sentence_bajau": "Gai airan bana ngito kerabau moo",
+    "sentence_en": "They were very surprised to see a buffalo carrying fruit on its horns.",
+    "source": "kerabaw \n               037"
+  },
+  {
+    "ex_num": "12.74",
+    "page": 383,
+    "sentence_bajau": "Jarang bana no pan muat gula' tebu tu betiru. rare very EMPH AV-make cane.sugar todai",
+    "sentence_en": "Very rarely (do people) make cane sugar nowadays.",
+    "source": "nandas tebu 140"
+  },
+  {
+    "ex_num": "12.75",
+    "page": 383,
+    "sentence_bajau": "Dendo em-buli’ bana ng-entan ta' torong puyut. woman PREP-behind very AV-hold end handkerchief",
+    "sentence_en": "The woman in the very back holds the end of the handkerchief.",
+    "source": "runsay 004"
+  },
+  {
+    "ex_num": "12.78",
+    "page": 384,
+    "sentence_bajau": "Dau iko bana, betiru nya' na iko bana pipit. before many very now many very sparrow",
+    "sentence_en": "Before there were many (sparrows); nowadays there are not many sparrows.",
+    "source": "tonom paray 032"
+  },
+  {
+    "ex_num": "12.79",
+    "page": 384,
+    "sentence_bajau": "Te-ingotku kisah sikot duo empu' taun dau. DC.PASS-remember1s.I story near twenty year before",
+    "sentence_en": "I recalled a story from nearly twenty years ago.",
+    "source": "kayu ebba’ 013"
+  },
+  {
+    "ex_num": "12.81",
+    "page": 384,
+    "sentence_bajau": "Sultan Salaudin e",
+    "sentence_en": "Sultan Salaudin (meanwhile) had washed ashore on the beach.",
+    "source": "salaudin 032"
+  },
+  {
+    "ex_num": "12.84",
+    "page": 386,
+    "sentence_bajau": "Alap pan ellani uun me. good EMPH husband3s.I EXIST there",
+    "sentence_en": "Fortunately, her husband was there.",
+    "source": "biduk 047"
+  },
+  {
+    "ex_num": "12.86",
+    "page": 386,
+    "sentence_bajau": "Rupo-ruponi, kakal pala te-ingotni. apparently still NEW.REAL DC.PASS-remember3s.I",
+    "sentence_en": "Apparently, she still remembered (the matter).",
+    "source": "beta’ kerungayan 025"
+  },
+  {
+    "ex_num": "12.87",
+    "page": 386,
+    "sentence_bajau": "Mungkin Tuhan ingin me-kito-on ke-kuasa-anni. maybe God want AV.CAUS-see NOM-strong3s.I",
+    "sentence_en": "Perhaps God wanted to show His power.",
+    "source": "Miller (2007), p.386"
+  },
+  {
+    "ex_num": "12.88",
+    "page": 386,
+    "sentence_bajau": "Gai mimang jogo bana ta’ ke-selamat-angai… 3p certainly watch.over very",
+    "sentence_en": "Of course they were watching out for their safety…",
+    "source": "Miller (2007), p.386"
+  },
+  {
+    "ex_num": "12.89",
+    "page": 387,
+    "sentence_bajau": "jadi badu engko sebagai hadiah iyangku m-aku. so shirt and covering hearsai as gift mother1s.I PREP-1s.II",
+    "sentence_en": "So the shirt and head covering was said to be my mother",
+    "source": "beta’  \n              kerungayan 023"
+  },
+  {
+    "ex_num": "12.90",
+    "page": 387,
+    "sentence_bajau": "sambatan gai dau-dau nangis kono’ tandas-an e. parable 3p first-REDUP ACT-cry hearsai process.cane.sugar-NOM",
+    "sentence_en": "... they used to have a saying from long ago that the tandasan cried.",
+    "source": "nandas  \ntebu 060"
+  },
+  {
+    "ex_num": "12.91",
+    "page": 387,
+    "sentence_bajau": "boi no kono sini’ sinsaung. already hearsai DC.PASS-see3s.I tree topple earlier morning",
+    "sentence_en": "... he claimed that he saw the tree fall over earlier this morning.",
+    "source": "kayu ebba’  \n              028"
+  },
+  {
+    "ex_num": "12.92",
+    "page": 387,
+    "sentence_bajau": "Jomo nya’ ingin diam bilik sebab panas kono’. person want inside room because hot hearsai",
+    "sentence_en": "The man did not want to be inside the room because (he claimed) it was hot.",
+    "source": "Miller (2007), p.387"
+  },
+  {
+    "ex_num": "12.95",
+    "page": 389,
+    "sentence_bajau": "Jadi kerabau e pan l-um-aan no. so buffalo",
+    "sentence_en": "So the buffalo went on her way.",
+    "source": "kerabaw 048"
+  },
+  {
+    "ex_num": "12.96",
+    "page": 389,
+    "sentence_bajau": "masang no te’ dela e perangkap",
+    "sentence_en": "... the man set a trap.",
+    "source": "ngini using 012"
+  },
+  {
+    "ex_num": "12.97",
+    "page": 389,
+    "sentence_bajau": "Inum jomo no bue’ UV-drink person water",
+    "sentence_en": "The man drank the water.",
+    "source": "Miller (2007), p.389"
+  },
+  {
+    "ex_num": "12.98",
+    "page": 389,
+    "sentence_bajau": "Beluang e pan b-in-uka no ole’ anakni sioko. door",
+    "sentence_en": "The door was opened by her oldest child.",
+    "source": "Miller (2007), p.389"
+  },
+  {
+    "ex_num": "12.99",
+    "page": 390,
+    "sentence_bajau": "Tapi’ amun ai no peno’, l-um-aan iyo... but when already full -ACT-go 3s.II",
+    "sentence_en": "But when (the mini bus) is full, it will leave...",
+    "source": "lumaan 007"
+  },
+  {
+    "ex_num": "12.103",
+    "page": 390,
+    "sentence_bajau": "Sultan Salaudin pan likas-likas no matal endoni... PN quick-REDUP AV.seal.marriage wife3s.I",
+    "sentence_en": "Sultan Salaudin quickly sealed the marriage to his wife...",
+    "source": "Miller (2007), p.390"
+  },
+  {
+    "ex_num": "12.104",
+    "page": 391,
+    "sentence_bajau": "te-gega’ uwa’ e ngini iyo b-in-uan-an bokog jo. DC.PASS-surprise dog why 3s.II -PASS-give-APPL bone only",
+    "sentence_en": "The dog wondered why he was given only bones (to eat).",
+    "source": "ngini using 032"
+  },
+  {
+    "ex_num": "12.106",
+    "page": 391,
+    "sentence_bajau": "Sekajap jo serita’ e nge-rered. moment only story ACT-spread",
+    "sentence_en": "In just a short time the story spread.",
+    "source": "Miller (2007), p.391"
+  },
+  {
+    "ex_num": "12.107",
+    "page": 391,
+    "sentence_bajau": "Le’ ng-ogo kadai tu tapuk jo pan... AV-go.to town hide",
+    "sentence_en": "When (we) went into town we would hide...",
+    "source": "gipun 032"
+  },
+  {
+    "ex_num": "12.108",
+    "page": 392,
+    "sentence_bajau": "Ta’ en-diam14 pe-laan-anni Hussin selalu jo",
+    "sentence_en": "On his journey, Hussin was always accosted by evil men.",
+    "source": "Miller (2007), p.392"
+  },
+  {
+    "ex_num": "12.109",
+    "page": 392,
+    "sentence_bajau": "…nya’ no nge-rati b-in-anta, iyan jo -buatni… AV-know -PASS-oppose what UV-do3s.I",
+    "sentence_en": "…(the elephant) could not be opposed in whatever he did…",
+    "source": "telingo gaja 002"
+  },
+  {
+    "ex_num": "12.111",
+    "page": 392,
+    "sentence_bajau": "Boi jo gai mangan, gai pan turi. after 3p AV.eat 3p sleep",
+    "sentence_en": "After they ate, they went to sleep.",
+    "source": "abu nawas 024"
+  },
+  {
+    "ex_num": "12.112",
+    "page": 392,
+    "sentence_bajau": "Ai jo langa, -bubut gai no. when tall UV-uproot 3p",
+    "sentence_en": "When (the stalks) were tall, they pulled (them) up.",
+    "source": "tonom paray 009"
+  },
+  {
+    "ex_num": "12.113",
+    "page": 392,
+    "sentence_bajau": "Lupus jo gai mandi, somo-somo no ng-osok pepikni. finish 3p AV.bathe together now AV-put.on wing3s.I",
+    "sentence_en": "When they finished bathing, they all put on their wings.",
+    "source": "Miller (2007), p.392"
+  },
+  {
+    "ex_num": "12.115",
+    "page": 394,
+    "sentence_bajau": "masang no dela e perangkap. Using engko e pan tabang. AV.set man trap cat and dog also helped",
+    "sentence_en": "... the man set a trap.  The cat and dog also helped.",
+    "source": "ngini using 012-13"
+  },
+  {
+    "ex_num": "12.116",
+    "page": 394,
+    "sentence_bajau": "Pinda iyo pu Sayap. P-in-emia pan iyo me. move 3s.II to.there PN -PASS-look.for also 3s.II there",
+    "sentence_en": "He moved to Sayap.  He was also searched for there.",
+    "source": "Miller (2007), p.394"
+  },
+  {
+    "ex_num": "12.120",
+    "page": 395,
+    "sentence_bajau": "Meroto no pan gai engko’ tujuan ni. spread",
+    "sentence_en": "Then they spread out to accomplish their purpose.",
+    "source": "pak 007"
+  },
+  {
+    "ex_num": "12.121",
+    "page": 395,
+    "sentence_bajau": "Nya’ no pan gai makai ongkob, ni-enna' jo diam karung. EMPH 3p AV.use bin PASS-place only inside sack",
+    "sentence_en": "They no longer use storage bins, (the unhusked rice) is placed in sacks.",
+    "source": "Miller (2007), p.395"
+  },
+  {
+    "ex_num": "12.122",
+    "page": 395,
+    "sentence_bajau": "Mat Salleh memang pan p-in-emia. PN certain EMPH -PASS-search.for",
+    "sentence_en": "Mat Salleh was definitely being hunted for.",
+    "source": "mat salleh 039"
+  },
+  {
+    "ex_num": "12.123",
+    "page": 396,
+    "sentence_bajau": "Jadi pe-lua bueni. so",
+    "sentence_en": "So then the water [from the pressed sugar cane] came out.",
+    "source": "nandas tebu 064"
+  },
+  {
+    "ex_num": "12.128",
+    "page": 397,
+    "sentence_bajau": "Bau do’ iyo teko ta terak pe-limpas. new EMPH 3s.II arrive beside road one-CL truck INTR-pass",
+    "sentence_en": "Just as he reached the side of the road, a truck passed by.",
+    "source": "pak pu’ ta’ bandar 008"
+  },
+  {
+    "ex_num": "12.131",
+    "page": 398,
+    "sentence_bajau": "Mapi iyo sini’. AV.cook 3s.II earlier",
+    "sentence_en": "She cooked earlier.",
+    "source": "Miller (2007), p.398"
+  },
+  {
+    "ex_num": "12.132",
+    "page": 398,
+    "sentence_bajau": "L-um-aan iyo subu-subu. -ACT-go 3s.II dawn-REDUP",
+    "sentence_en": "If he goes before dawn, I will come along.",
+    "source": "Miller (2007), p.398"
+  },
+  {
+    "ex_num": "12.133",
+    "page": 400,
+    "sentence_bajau": "…ansa’ e ai no pan matai nyaun no ngen-telo",
+    "sentence_en": "…the goose died, there was no more laying of eggs.",
+    "source": "ansa’ 016"
+  },
+  {
+    "ex_num": "12.134",
+    "page": 400,
+    "sentence_bajau": "Iyan-iyan jo pan buli -buatni",
+    "sentence_en": "He can do anything.",
+    "source": "kayu ebba’ 048"
+  },
+  {
+    "ex_num": "12.135",
+    "page": 400,
+    "sentence_bajau": "Ai jo sab gai mule', pe-lua' no sab Sultan Salaudin after",
+    "sentence_en": "When they had gone home, Sultan Salaudin came out to take the princess.",
+    "source": "Salaudin 016"
+  },
+  {
+    "ex_num": "12.136",
+    "page": 400,
+    "sentence_bajau": "Sampai langa ellau sasa’ jo no gai. until noon quarrel only 3p",
+    "sentence_en": "Until noon all they did was quarrel.",
+    "source": "jomo pisok 051"
+  },
+  {
+    "ex_num": "12.137",
+    "page": 400,
+    "sentence_bajau": "Tapi’ meriam e t-in-unu’ jo te’. but cannon",
+    "sentence_en": "But the cannon was burned (by fire).",
+    "source": "kota belud 004"
+  },
+  {
+    "ex_num": "13.2",
+    "page": 403,
+    "sentence_bajau": "Ai k-in-akan le’ Kuzik moto diing e",
+    "sentence_en": "The fish eye was eaten by Kuzik.",
+    "source": "Miller (2007), p.403"
+  },
+  {
+    "ex_num": "13.3",
+    "page": 403,
+    "sentence_bajau": "Ai te-kakan le’ Kuzik moto diing e",
+    "sentence_en": "able to be eaten by Kuzik",
+    "source": "Miller (2007), p.403"
+  },
+  {
+    "ex_num": "13.4",
+    "page": 404,
+    "sentence_bajau": "Ai te-kakan Amzi langau e",
+    "sentence_en": "somewhere in between",
+    "source": "Miller (2007), p.404"
+  },
+  {
+    "ex_num": "13.6",
+    "page": 405,
+    "sentence_bajau": "Teko ta’ ruma’, te-kito le’ jomo too e bakat arrive house DC.PASS-see person old wound ta' tikook Sangsuriang",
+    "sentence_en": "Arriving home, the old man saw the wound on Sangsuriang",
+    "source": "biduk 082"
+  },
+  {
+    "ex_num": "13.7",
+    "page": 405,
+    "sentence_bajau": "\"Patang bana lagi tu, laan nya' lagi te-kito,” ling dela pisok e. dark very still wai still DC.PASS-see sai male blind “It is still very dark, the path cannot yet be seen,” said the blind man. jomo pisok 031",
+    "sentence_en": "the old man",
+    "source": "Miller (2007), p.405"
+  },
+  {
+    "ex_num": "13.8",
+    "page": 407,
+    "sentence_bajau": "Baru de-jam iyo -kale emma’ni maang. new one-hour 3s.II DC.AV-hear father3s.I snore",
+    "sentence_en": "After one hour he heard his father snore.",
+    "source": "Miller (2007), p.407"
+  },
+  {
+    "ex_num": "13.15",
+    "page": 410,
+    "sentence_bajau": "Popo-inbi do’ pakay-an tu m-aku. wash.clothes-UV.IMP2p.I EMPH clothes-NOM",
+    "sentence_en": "Wash those clothes for me!",
+    "source": "Miller (2007), p.410"
+  },
+  {
+    "ex_num": "13.16",
+    "page": 411,
+    "sentence_bajau": "“Di’..., enda-in do’ bengkutut e lawa’ bana. younger.sibling look.at-UV.IMP EMPH shrimp pretty very",
+    "sentence_en": "Sister... look at the shrimps, (they are) so nice!",
+    "source": "salaudin 005"
+  },
+  {
+    "ex_num": "13.19",
+    "page": 412,
+    "sentence_bajau": "Endu-un do’ diing e m-aku",
+    "sentence_en": "Take the fish to me!",
+    "source": "Miller (2007), p.412"
+  },
+  {
+    "ex_num": "13.21",
+    "page": 413,
+    "sentence_bajau": "Pe-keet-in do’ suu’",
+    "sentence_en": "Turn on (shine) that light!",
+    "source": "Miller (2007), p.413"
+  },
+  {
+    "ex_num": "13.25",
+    "page": 415,
+    "sentence_bajau": "Amun ai entemunu payung e, -bara-in do’ aku.10 if find2s.I umbrella UV-tell-UV.IMP EMPH 1s.II ‘If you find the umbrella, tell me right away!” Amun ai entemunu payung e, -bara-in jo aku. if find2s.I umbrella UV-tell-IMP just 1s.II ‘If you find the umbrella, tell me at your leisure.” 9 The do’ particle also frequently occurs as an emphatic particle with auxiliaries such as the negator enggai",
+    "sentence_en": "just now; recently",
+    "source": "Miller (2007), p.415"
+  },
+  {
+    "ex_num": "13.26",
+    "page": 416,
+    "sentence_bajau": "Pakan-in do’ uwa’ e songom tu",
+    "sentence_en": "sympathy for the dog",
+    "source": "Miller (2007), p.416"
+  },
+  {
+    "ex_num": "13.29",
+    "page": 417,
+    "sentence_bajau": "“Mule’ jo no kam baya’ni no aku temban mitu.” ACT.go.home just 2s.II allow.it3s.I 1s.II stai here “You all go home; just let me stai here.” salaudin 011",
+    "sentence_en": "let it be!",
+    "source": "Miller (2007), p.417"
+  },
+  {
+    "ex_num": "13.35",
+    "page": 418,
+    "sentence_bajau": "3 1 1 1 1 a Boi no gai mangan",
+    "sentence_en": "Have they eaten yet?",
+    "source": "Miller (2007), p.418"
+  },
+  {
+    "ex_num": "13.36",
+    "page": 419,
+    "sentence_bajau": "Jomo daras tilau",
+    "sentence_en": "The strong man asked Hussin, “Don",
+    "source": "baginda 092"
+  },
+  {
+    "ex_num": "13.37",
+    "page": 419,
+    "sentence_bajau": "Rojo e pan ling ta' Abu Nawas, \"Buli ka kiti be-soro” king sai PN can Q 1p.incl.II VBL-voice",
+    "sentence_en": "The king said to Abu Nawas, “Can we dispute this (in court)?”",
+    "source": "abu nawas    \n  042"
+  },
+  {
+    "ex_num": "13.38",
+    "page": 419,
+    "sentence_bajau": "Meli diing ka kau AV.buy fish Q 2s.II",
+    "sentence_en": "Is that the fish you bought?",
+    "source": "Miller (2007), p.419"
+  },
+  {
+    "ex_num": "13.39",
+    "page": 420,
+    "sentence_bajau": "“Sian oronnu” who name2s.I",
+    "sentence_en": "What is your name?",
+    "source": "Miller (2007), p.420"
+  },
+  {
+    "ex_num": "13.40",
+    "page": 420,
+    "sentence_bajau": "…pak pan tilaw, “Iyan -boonu e, Kin”",
+    "sentence_en": "…the frog asked, “What are you to bring, Kin?”",
+    "source": "Miller (2007), p.420"
+  },
+  {
+    "ex_num": "13.41",
+    "page": 420,
+    "sentence_bajau": "Badu enggo boi pene’nu shirt which",
+    "sentence_en": "Which shirt did you choose?",
+    "source": "Miller (2007), p.420"
+  },
+  {
+    "ex_num": "13.42",
+    "page": 421,
+    "sentence_bajau": "Enggo boi -pene’nu which",
+    "sentence_en": "Which (one) did you choose?",
+    "source": "Miller (2007), p.421"
+  },
+  {
+    "ex_num": "13.47",
+    "page": 422,
+    "sentence_bajau": "Pian le' ku nya' sugul bana , … how manner1s.I upset very",
+    "sentence_en": "How could I not be upset…",
+    "source": "salaudin 050"
+  },
+  {
+    "ex_num": "13.48",
+    "page": 422,
+    "sentence_bajau": "“Minggo tungan mandi mitu” where place bathe here",
+    "sentence_en": "Where is a place to bathe here?",
+    "source": "Miller (2007), p.422"
+  },
+  {
+    "ex_num": "13.49",
+    "page": 422,
+    "sentence_bajau": "Ta’ sian kau boi turi debui’",
+    "sentence_en": "At whom (whose place) did you sleep last night?",
+    "source": "Miller (2007), p.422"
+  },
+  {
+    "ex_num": "13.50",
+    "page": 422,
+    "sentence_bajau": "Gandum tu boi t-in-onom le’ sian corn",
+    "sentence_en": "This corn was planted by whom?",
+    "source": "Miller (2007), p.422"
+  },
+  {
+    "ex_num": "13.54",
+    "page": 423,
+    "sentence_bajau": "Sian-sian jo nginumni mesti’ betong",
+    "sentence_en": "Whoever drank it would become pregnant.",
+    "source": "kerabaw 013"
+  },
+  {
+    "ex_num": "13.55",
+    "page": 423,
+    "sentence_bajau": "Minggo-minggo jo pan bengen langaw. where-REDUP",
+    "sentence_en": "Everywhere there were flies.",
+    "source": "Miller (2007), p.423"
+  },
+  {
+    "ex_num": "14.1",
+    "page": 425,
+    "sentence_bajau": "Uwa’ nguma e pan beranti. dog bark",
+    "sentence_en": "The dog that was barking (or ‘the barking dog",
+    "source": "belis 025"
+  },
+  {
+    "ex_num": "14.2",
+    "page": 425,
+    "sentence_bajau": "Ellani pan ng-endo’ kerabau panut husband3s.I AV-take buffalo drift",
+    "sentence_en": "Her husband seized the buffalo that was drifting (or ‘drifting buffalo",
+    "source": "kerabaw 075"
+  },
+  {
+    "ex_num": "14.6",
+    "page": 427,
+    "sentence_bajau": "Jomo moo enselan kemuap e nuang-anni en-tana’. person AV.bring gasoline afternoon AV.pour-TZ3s.I PREP-land",
+    "sentence_en": "The man who brought gasoline that afternoon poured it onto the ground.",
+    "source": "Miller (2007), p.427"
+  },
+  {
+    "ex_num": "14.7",
+    "page": 427,
+    "sentence_bajau": "Iyo ai no mono’ jomo boi mono’ siokoni . 3s.II already AV.kill person CMPL AV.kill oldest.sibling3s.I",
+    "sentence_en": "He had now killed the men who had earlier killed his older brother.",
+    "source": "baginda  \n              115"
+  },
+  {
+    "ex_num": "14.8",
+    "page": 428,
+    "sentence_bajau": "Entedo e Baginda Ali ingin m-oyo kawasan once PN want AV.CAUS-large region boi -jajani . CMPL UV-conquer3s.I",
+    "sentence_en": "One time Baginda Ali wanted to enlarge the territory which he had conquered.",
+    "source": "Miller (2007), p.428"
+  },
+  {
+    "ex_num": "14.9",
+    "page": 428,
+    "sentence_bajau": "Guuk boi penedak Azizy diing e tompol bana. knife CMPL INSTR-clean.fish PN fish blunt very",
+    "sentence_en": "to clean fish",
+    "source": "Miller (2007), p.428"
+  },
+  {
+    "ex_num": "14.10",
+    "page": 428,
+    "sentence_bajau": "Anakku boi -beli-an Dzul sinsim e nya’ kui kawin. child1s.I CMPL UV-buy-APPL PN ring willing marry",
+    "sentence_en": "to clean fish",
+    "source": "Miller (2007), p.428"
+  },
+  {
+    "ex_num": "14.11",
+    "page": 429,
+    "sentence_bajau": "Sikot no ellaw, uun no gai teko boi l-um-aan e . near sun EXIST",
+    "sentence_en": "When it was near daylight, those who had gone out now arrived.",
+    "source": "Miller (2007), p.429"
+  },
+  {
+    "ex_num": "14.13",
+    "page": 430,
+    "sentence_bajau": "Simono-mono leti’, tana’ tunganni mantau e nge-leta’. suddenly lightning land where3s.I ACT.stand AV-crack",
+    "sentence_en": "Suddenly lightning struck, and the ground where he stood cracked open.",
+    "source": "adapted from biduk 149"
+  },
+  {
+    "ex_num": "14.15",
+    "page": 430,
+    "sentence_bajau": "Bo’ku l-ul-ai sorop pu wad then1s.I -ACT-ran toward to.there ward tungan iyangku p-in-osok . where mother1s.I -PASS-enter",
+    "sentence_en": "Then I ran toward the ward where my mother was admitted.",
+    "source": "beta’ kerungayan 038"
+  },
+  {
+    "ex_num": "14.17",
+    "page": 432,
+    "sentence_bajau": "kerabau e pan memia tunganni ng-anak. buffalo AV.search place3s.I VBL-child",
+    "sentence_en": "The buffalo sought a place for her to give birth.",
+    "source": "kerabaw 004"
+  },
+  {
+    "ex_num": "14.19",
+    "page": 432,
+    "sentence_bajau": "Kawa oyo tungan mapi daging sapi' amun uun kawin. cauldron large place AV.cook flesh cow if EXIST marry",
+    "sentence_en": "A large cauldron is what (one) uses for cooking beef when there is a wedding.",
+    "source": "Miller (2007), p.432"
+  },
+  {
+    "ex_num": "14.20",
+    "page": 432,
+    "sentence_bajau": "Itu no tungan pe-napuk-an gai barang sapi’ Srel",
+    "sentence_en": "That is the place where they hide (stolen) cows",
+    "source": "Miller (2007), p.432"
+  },
+  {
+    "ex_num": "14.21",
+    "page": 432,
+    "sentence_bajau": "Lagi pan si-odop engko’ tungan kuda’. Yet also REC-face",
+    "sentence_en": "What is more, (it) faced the horse stall (or ‘... the place of the horse",
+    "source": "abu nawas 034"
+  },
+  {
+    "ex_num": "14.23",
+    "page": 433,
+    "sentence_bajau": "Uun dikau’ kerabau warnani pute’ laan-laan EXIST certain buffalo color3s.I white go-REDUP me en-sedi suang. there PREP-beside river",
+    "sentence_en": "a certain buffalo",
+    "source": "Miller (2007), p.433"
+  },
+  {
+    "ex_num": "14.24",
+    "page": 433,
+    "sentence_bajau": "Uwa’ betisni silau nya’ buli l-um-aan. dog leg3s.I sprain",
+    "sentence_en": "The dog whose leg is sprained cannot move.",
+    "source": "Miller (2007), p.433"
+  },
+  {
+    "ex_num": "14.25",
+    "page": 433,
+    "sentence_bajau": "Tukang kayu oronni Saiman muat ruma’ku. carpenter name3s.I PN AV.make house1s.I",
+    "sentence_en": "The carpenter whose name is Saiman will build my house.",
+    "source": "Miller (2007), p.433"
+  },
+  {
+    "ex_num": "14.26",
+    "page": 435,
+    "sentence_bajau": "Hussin nya’ pesoyo engko’ emma’ni ai matay. PN believe that father3s.I ACT.die",
+    "sentence_en": "Hussin did not believe that his father was dead.",
+    "source": "baginda 013"
+  },
+  {
+    "ex_num": "14.27",
+    "page": 435,
+    "sentence_bajau": "Te-ingotku balik engko’ iyangku tu nyaun no. DC.PASS-remember1s.I again that mother1s.I NEG.EXIST",
+    "sentence_en": "I was reminded again that my mother was no longer here.",
+    "source": "beta’ kerungayan 079"
+  },
+  {
+    "ex_num": "14.30",
+    "page": 435,
+    "sentence_bajau": "Iyo pikir jomo e sini’ meniik turi . 3s.II think person just.now AV.go.up sleep",
+    "sentence_en": "He thought that the man went up (to the house) to sleep.",
+    "source": "namuk 013"
+  },
+  {
+    "ex_num": "14.31",
+    "page": 435,
+    "sentence_bajau": "Sikin tu nangis jo ng-ingot endoni pak e . PN",
+    "sentence_en": "Sikin wept to remember that his wife was a frog.",
+    "source": "Miller (2007), p.435"
+  },
+  {
+    "ex_num": "14.33",
+    "page": 436,
+    "sentence_bajau": "Tinau iyo kaang -sembet uwa’ lagi . afraid 3s.II later UV-chase dog more",
+    "sentence_en": "He was afraid that later the dog would chase (him) again.",
+    "source": "ngini using 074"
+  },
+  {
+    "ex_num": "14.36",
+    "page": 437,
+    "sentence_bajau": "Hussin pan mara’ engko’ oronni Hussin. PN",
+    "sentence_en": "Hussin said that his name was Hussin.",
+    "source": "baginda 090"
+  },
+  {
+    "ex_num": "14.41",
+    "page": 438,
+    "sentence_bajau": "“Sapi’ e s-in-oo’ s-in-embali, p-in-api b-in-oo cow -PASS-order -PASS-slaughter -PASS-cook -PASS-bring pu’ ta’ ruma’ metooku maung.” to.there house parent-in-law1s.I tomorrow ‘I was instructed that the cow be slaughtered, cooked, and brought to the house of my",
+    "sentence_en": "the cow was instructed to be slaughtered…",
+    "source": "Miller (2007), p.438"
+  },
+  {
+    "ex_num": "14.44",
+    "page": 439,
+    "sentence_bajau": "Debagi ngen-dule’ nya’ s-in-oo’ gai be-ragam bege… some VBL-anger",
+    "sentence_en": "Some got angry, (and) they were ordered not to joke around like that…",
+    "source": "Miller (2007), p.439"
+  },
+  {
+    "ex_num": "14.45",
+    "page": 439,
+    "sentence_bajau": "Amun kono' iyo boi ng-anak, anakni",
+    "sentence_en": "… her child was not ordered to be bathed by her husband.",
+    "source": "Miller (2007), p.439"
+  },
+  {
+    "ex_num": "14.47",
+    "page": 440,
+    "sentence_bajau": "Jomo too e pan mara’, “Duo-duo no kam person",
+    "sentence_en": "The old man said, “You both cannot see because (you both) are blind.",
+    "source": "Miller (2007), p.440"
+  },
+  {
+    "ex_num": "14.48",
+    "page": 440,
+    "sentence_bajau": "“Nya’ te-ratiku,” -jawap Sangsuriang",
+    "sentence_en": "sound of the Sama",
+    "source": "Miller (2007), p.440"
+  },
+  {
+    "ex_num": "14.50",
+    "page": 441,
+    "sentence_bajau": "Jadi iyo pan ling ta’ ellani, “Dari mura’ lagi hingga so",
+    "sentence_en": "So she said to her husband, “From the time we were young until now…”.",
+    "source": "Miller (2007), p.441"
+  },
+  {
+    "ex_num": "14.55",
+    "page": 443,
+    "sentence_bajau": "Iyangni pan mekebana Hussin l-um-aan. mother3s.I AV-permit PN -ACT-go",
+    "sentence_en": "His mother permitted Hussin to go.",
+    "source": "baginda 027"
+  },
+  {
+    "ex_num": "14.56",
+    "page": 443,
+    "sentence_bajau": "Ruma’ e -peberen gai jo rubu. house",
+    "sentence_en": "They let the house collapse",
+    "source": "Miller (2007), p.443"
+  },
+  {
+    "ex_num": "14.57",
+    "page": 443,
+    "sentence_bajau": "Hussin naan jomo daras e mono’ iyo… PN AV.prevent person strong AV.kill 3s.II",
+    "sentence_en": "Hussin prevented Strong Man from killing him...",
+    "source": "Miller (2007), p.443"
+  },
+  {
+    "ex_num": "14.60",
+    "page": 444,
+    "sentence_bajau": "Iyangku nuba’ ng-angkat saging mother1s.I AV.try AV-lift banana",
+    "sentence_en": "My mother tried to lift the (stalk of) bananas.",
+    "source": "Miller (2007), p.444"
+  },
+  {
+    "ex_num": "14.61",
+    "page": 444,
+    "sentence_bajau": "Boi -tawar’ni dirini meniik poon suka’",
+    "sentence_en": "He volunteered himself to climb the coconut tree.",
+    "source": "Miller (2007), p.444"
+  },
+  {
+    "ex_num": "14.63",
+    "page": 444,
+    "sentence_bajau": "…ai lupo iyo moo kantungni",
+    "sentence_en": "to want, to desire",
+    "source": "Miller (2007), p.444"
+  },
+  {
+    "ex_num": "14.66",
+    "page": 445,
+    "sentence_bajau": "Iyo ingin supaya anakku melioro sapi’ni. 3s.II want so.that child1s.I AV.raise cow3s.I",
+    "sentence_en": "He wanted that my child would take care of the cows.",
+    "source": "Miller (2007), p.445"
+  },
+  {
+    "ex_num": "14.67",
+    "page": 445,
+    "sentence_bajau": "…ke-ingin-anni -endo’ni entelo emas semomon … NOM-want3s.I UV-take3s.I egg gold all",
+    "sentence_en": "…his desire was to take all the gold eggs…",
+    "source": "Miller (2007), p.445"
+  },
+  {
+    "ex_num": "14.68",
+    "page": 446,
+    "sentence_bajau": "Sangkalalana l-ul-ai te-kitoni kerabau nembet d-angan dendo . PN -ACT-run DC.PASS-see3s.I buffalo AV.chase one-CL woman",
+    "sentence_en": "Sangkalalana ran (and) he saw a buffalo chasing a woman.",
+    "source": "biduk 116"
+  },
+  {
+    "ex_num": "14.72",
+    "page": 448,
+    "sentence_bajau": "Paga ai no -belini tiang rojo e , iyo pan ng-endo’ paku... when already UV-buy3s.I post king 3s.II AV-take nail",
+    "sentence_en": "When he had bought the king",
+    "source": "abu nawas 037"
+  },
+  {
+    "ex_num": "14.73",
+    "page": 448,
+    "sentence_bajau": "waktuku muka moto ku , ka’ku ningkoo’ en-sediku. when1s.I AV.open eye1s.I older.sibling1s.I AV.sit PREP-beside1s.I",
+    "sentence_en": "When I opened my eyes, my older sister was sitting beside me.",
+    "source": "Miller (2007), p.448"
+  },
+  {
+    "ex_num": "14.74",
+    "page": 448,
+    "sentence_bajau": "Jomo daras e beranti ng-amuk Hussin amun te-kitoni Person strong stop VBL-rage Hussin when DC.PASS-see3s.I sinsim ta’ tangan Hussin e . ring",
+    "sentence_en": "Strong Man stopped raging at Hussin when he saw the ring on Hussin",
+    "source": "Miller (2007), p.448"
+  },
+  {
+    "ex_num": "14.75",
+    "page": 448,
+    "sentence_bajau": "Teko iyo pu’ kakal Hussin mandi en-diam telaga’ e. arrive 3s.II to.there still PN AV.bathe PREP-inside well",
+    "sentence_en": "When he arrived there, Hussin was still bathing in the well.",
+    "source": "Miller (2007), p.448"
+  },
+  {
+    "ex_num": "14.77",
+    "page": 449,
+    "sentence_bajau": "Nya’ lagi iyo lumaan iyangni nge-dede’ sinsim... yet 3s.II go mother3s.I AV-send ring",
+    "sentence_en": "Before (her son) left, his mother sent (with him) a ring...",
+    "source": "Miller (2007), p.449"
+  },
+  {
+    "ex_num": "14.78",
+    "page": 450,
+    "sentence_bajau": "Sambil dela e nembali",
+    "sentence_en": "While the man slaughtered the chicken, the cat and dog were watching.",
+    "source": "ngini using 017"
+  },
+  {
+    "ex_num": "14.79",
+    "page": 450,
+    "sentence_bajau": "Pe-sikot aku ng-enda bangan jomo INTR-near 1s.II AV-look.at tree while ACT-speech person",
+    "sentence_en": "I drew near to look at the tree while conversing with people.",
+    "source": "Miller (2007), p.450"
+  },
+  {
+    "ex_num": "14.80",
+    "page": 450,
+    "sentence_bajau": "Palu-paluni Sangsuriang sambilni nangis",
+    "sentence_en": "She hit Sangsuriang repeatedly while she cried.",
+    "source": "Miller (2007), p.450"
+  },
+  {
+    "ex_num": "14.82",
+    "page": 451,
+    "sentence_bajau": "uran pan duwai dokon nge-dua lumaan-an iyangku . rain EMPH come.down VBL-prayer go-NOM mother1s.I",
+    "sentence_en": "... rain came down as if praying for mother",
+    "source": "beta’ kerungayan 091"
+  },
+  {
+    "ex_num": "14.83",
+    "page": 451,
+    "sentence_bajau": "Be-sinar-sinar no emas e masam keadaan kampung e tunu’ . DSTR-shine-REDUP gold like condition village burn",
+    "sentence_en": "The gold shimmered as though the village were burning.",
+    "source": "Miller (2007), p.451"
+  },
+  {
+    "ex_num": "14.85",
+    "page": 452,
+    "sentence_bajau": "…ai pe-patai Mastura makai batu",
+    "sentence_en": "… Mastura killed (the snake) with a rock.",
+    "source": "Miller (2007), p.452"
+  },
+  {
+    "ex_num": "14.86",
+    "page": 452,
+    "sentence_bajau": "Amun uun pakir teko p-in-andi no ke-kanak e. when EXIST relig.man arrive -PASS-bathe REDUP-child",
+    "sentence_en": "When the religious man arrives, the child is bathed.",
+    "source": "bejogo 010"
+  },
+  {
+    "ex_num": "14.91",
+    "page": 453,
+    "sentence_bajau": "Dela pisok e s-in-oo’ ngenduk pasal gai too no…. man blind -PASS-order fetch.water because 3p old now",
+    "sentence_en": "The blind man was instructed to fetch water because they were now old...",
+    "source": "Miller (2007), p.453"
+  },
+  {
+    "ex_num": "14.92",
+    "page": 454,
+    "sentence_bajau": "Suap-suap tu nya’ ke-tentu-an ruoni, podo enggai ko’ hut DET",
+    "sentence_en": "The hut was dilapidated, for it was not looked after.",
+    "source": "mat salleh 021"
+  },
+  {
+    "ex_num": "14.93",
+    "page": 454,
+    "sentence_bajau": "Ule bana , Deli ningkoo... because tired very PN sit-REDUP",
+    "sentence_en": "Because he was very tired, Deli relaxed...",
+    "source": "Miller (2007), p.454"
+  },
+  {
+    "ex_num": "14.95",
+    "page": 455,
+    "sentence_bajau": "L-um-aan no Hussin memia emma’ni",
+    "sentence_en": "Hussin went off to look for his father.",
+    "source": "baginda 041"
+  },
+  {
+    "ex_num": "14.96",
+    "page": 455,
+    "sentence_bajau": "Ellani pan lebi awal lagi bangun ng-endo . husband3s.I more early still get.up AV-take water",
+    "sentence_en": "Her husband got up yet earlier to fetch water.",
+    "source": "biduk 051"
+  },
+  {
+    "ex_num": "14.97",
+    "page": 455,
+    "sentence_bajau": "…iyo ingin maku parai dekiit -booni 3p want AV.ask.for paddy.rice little UV-bring3s.I mule’ ta’ laat . ACT.go.home country",
+    "sentence_en": "He wanted to ask for a little paddy rice to bring (it) home to (his) country.",
+    "source": "Miller (2007), p.455"
+  },
+  {
+    "ex_num": "14.100",
+    "page": 456,
+    "sentence_bajau": "bo nya’ -kakan pipit then 3p AV-shoo.birds-TZ sparrow3s.I so.that UV-eat sparrow parai e . paddy.rice",
+    "sentence_en": "Then they shoo the sparrows away so that the sparrows won",
+    "source": "Miller (2007), p.456"
+  },
+  {
+    "ex_num": "14.102",
+    "page": 457,
+    "sentence_bajau": "Nya’ no te-padulni mangan sampai suk no iyo",
+    "sentence_en": "She did not bother to eat, to the extent that she became thin.",
+    "source": "kerabaw 060"
+  },
+  {
+    "ex_num": "14.104",
+    "page": 457,
+    "sentence_bajau": "Ensan entelo emas akan pe-lua' e pan ai lanyap. although egg gold about.to",
+    "sentence_en": "Although a gold egg was about to come out, it was gone.",
+    "source": "ansa’ 015"
+  },
+  {
+    "ex_num": "14.105",
+    "page": 457,
+    "sentence_bajau": "Tapi’ jomo e nge-rati walau pan gai nya . but person AV-know although 3p AV.tell",
+    "sentence_en": "But the man knew even though they did not tell (him).",
+    "source": "namuk 049"
+  },
+  {
+    "ex_num": "14.107",
+    "page": 458,
+    "sentence_bajau": "Tapi te-reso , atayku sukup sanang... but although how EMPH tired DC.PASS-feel liver1s.I enough happy",
+    "sentence_en": "But however tired (I) felt, I was very happy...",
+    "source": "Miller (2007), p.458"
+  },
+  {
+    "ex_num": "14.109",
+    "page": 458,
+    "sentence_bajau": "Jomo e -sedio-on gai tilam engko’ bantal diam bilik person UV-prepare-APPL 3p mattress and pillow inside room",
+    "sentence_en": "They prepared for him a mattress and pillow in a room.",
+    "source": "namuk 051"
+  },
+  {
+    "ex_num": "14.110",
+    "page": 459,
+    "sentence_bajau": "Uun debagi pe mandi, ngenduk engko’ mandi EXIST some to.there AV.bathe fetch.water and AV.bathe bengen anak-anakni",
+    "sentence_en": "Some had gone there to bathe, to fetch water, and to bathe their children.",
+    "source": "baginda 071"
+  },
+  {
+    "ex_num": "14.112",
+    "page": 459,
+    "sentence_bajau": "Jadi e no ke-jadi-an linta e en-diam bue’ suang so NOM-origin leech PREP-inside water river atau diam ranaw... or inside paddy",
+    "sentence_en": "So that is the origin of the leech in river water or in paddies...",
+    "source": "asal linta 034"
+  },
+  {
+    "ex_num": "14.113",
+    "page": 459,
+    "sentence_bajau": "Diam masa de-m-buan atau pan duo em-buan, ... inside time one-CNT-month or also two CNT-month",
+    "sentence_en": "In one or two months…",
+    "source": "nandas tebu 054"
+  },
+  {
+    "ex_num": "14.114",
+    "page": 459,
+    "sentence_bajau": "Aku ng-ajar tuisyen ellau Sabtu atau endoku ng-ajar ellau Aad. 1s.II AV-teach tuition Saturdai or wife1s.I AV-teach Sundai",
+    "sentence_en": "Either I will teach tuition on Saturday or my wife will teach on Sunday.",
+    "source": "Miller (2007), p.459"
+  },
+  {
+    "ex_num": "14.115",
+    "page": 460,
+    "sentence_bajau": "S-in-embet iyo tapi’ tuan puteri tapuk. -PASS-chase 3s.II but princess hide",
+    "sentence_en": "She (the princess) was chased but the princess hid.",
+    "source": "biduk 044"
+  },
+  {
+    "ex_num": "14.120",
+    "page": 461,
+    "sentence_bajau": "Setanga jam jo abis no badan anakni jadi linta. half hour just complete body child3s.I become leech Jadi linta e ng-ogo no sab en-diam telaga’. so leech AV-go.to PREP-inside well",
+    "sentence_en": "In just half an hour her child",
+    "source": "asal linta 030-31"
+  },
+  {
+    "ex_num": "14.121",
+    "page": 462,
+    "sentence_bajau": "Aku pan pungkad, bo’ku muka beluang",
+    "sentence_en": "I got up, and opened the door.",
+    "source": "beta’ kerungayan 072"
+  },
+  {
+    "ex_num": "14.123",
+    "page": 462,
+    "sentence_bajau": "Boi jo salin badu, bo’ku ningkoo ta’ pentaran after change shirt then1s.I sit-REDUP porch ruma’ punduk-punduk. House way.of.sitting-REDUP",
+    "sentence_en": "After changing clothes, I sat on the porch with my knees pulled up.",
+    "source": "Miller (2007), p.462"
+  },
+  {
+    "ex_num": "14.124",
+    "page": 463,
+    "sentence_bajau": "Nya' aku pesoyo iyan",
+    "sentence_en": "doktor    e.        Bo",
+    "source": "Miller (2007), p.463"
+  },
+  {
+    "ex_num": "14.126",
+    "page": 463,
+    "sentence_bajau": "Ellani pan teko, -bono’ni jomo raat e. husband3s.I arrive UV-kill3s.I person bad",
+    "sentence_en": "Her husband arrived, (and) he killed the bad man.",
+    "source": "Miller (2007), p.463"
+  },
+  {
+    "ex_num": "14.128",
+    "page": 464,
+    "sentence_bajau": "dela e tapuk en-diam kera’, ng-agad songom. male hide PREP-inside kind.of.tree AV-wait night",
+    "sentence_en": "The man hid inside a kera",
+    "source": "namuk 012"
+  },
+  {
+    "ex_num": "14.129",
+    "page": 464,
+    "sentence_bajau": "Dendo e -selamatni, -dede’-anni pu. woman UV-save3s.I UV-send-TZ3s.I to.there PREP-house",
+    "sentence_en": "He saved the woman, (and) he sent (her) home.",
+    "source": "biduk 103"
+  },
+  {
+    "ex_num": "14.133",
+    "page": 465,
+    "sentence_bajau": "Resoni doko' reso ungus, kasar. feel3s.I feel sand rough",
+    "sentence_en": "to join, to participate",
+    "source": "Miller (2007), p.465"
+  },
+  {
+    "ex_num": "14.134",
+    "page": 466,
+    "sentence_bajau": "Bo’ni nuut mandi ta’ bangan ka’ni. then3s.I AV.join AV-bathe",
+    "sentence_en": "Then she joined her older sisters to bathe.",
+    "source": "salaudin 007"
+  },
+  {
+    "ex_num": "14.135",
+    "page": 466,
+    "sentence_bajau": "Iyo pan nuut numpang turi ta jomo too e . 3s.II AV.join AV.stay.overnight sleep house person old",
+    "sentence_en": "He joined (the old man) to stay overnight at the old man",
+    "source": "Miller (2007), p.466"
+  },
+  {
+    "ex_num": "14.138",
+    "page": 467,
+    "sentence_bajau": "En-diam pe-bono-on e Hassan ai matai",
+    "sentence_en": "In the battle, Hassan died (from being) killed by the evil men.",
+    "source": "baginda  \n 022"
+  },
+  {
+    "ex_num": "14.139",
+    "page": 467,
+    "sentence_bajau": "Dendo e matai te-rua' bujak emma'ni. 21 woman ACT.die DC.PASS-struck spear father3s.I",
+    "sentence_en": "The woman died from being struck by her father",
+    "source": "Miller (2007), p.467"
+  }
+]

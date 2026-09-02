@@ -3,7 +3,7 @@ import { db } from '@/lib/db';
 import { submissions } from '@/lib/db/schema';
 import { z } from 'zod';
 
-export const runtime = 'edge';
+export const runtime = process.env.NODE_ENV === 'development' ? 'nodejs' : 'edge';
 
 const submissionSchema = z.object({
   headword: z.string().min(1).max(100),

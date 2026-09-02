@@ -61,13 +61,13 @@ export default function EntryHeader({ headword, partOfSpeech, ipa, audioUrl, roo
         )}
       </div>
 
-      <h1 className="font-heading text-[52px] md:text-[68px] font-bold text-black leading-[1.05] tracking-tighter mb-2">
+      <h1 className="font-heading text-[36px] sm:text-[48px] md:text-[68px] font-bold text-black leading-[1.1] tracking-tighter mb-2 break-words max-w-full">
         {headword}
       </h1>
 
       {ipa && (
         <div className="flex items-center gap-3 mt-1">
-          <span className="font-heading text-[22px] md:text-[24px] font-normal text-slate-800">
+          <span className="font-heading text-[20px] sm:text-[22px] md:text-[24px] font-normal text-slate-800">
             {ipa}
           </span>
           <button
@@ -75,8 +75,8 @@ export default function EntryHeader({ headword, partOfSpeech, ipa, audioUrl, roo
             onClick={handlePlayAudio}
             title={t.entry_listen_audio}
             aria-label={t.entry_listen_audio}
-            className={`text-slate-800 hover:text-blue-600 p-1.5 rounded-full transition-all hover:scale-110 ${
-              isPlaying ? 'text-blue-600 audio-playing-pulse' : ''
+            className={`w-11 h-11 flex items-center justify-center text-slate-800 hover:text-amber-700 bg-slate-100/80 hover:bg-slate-200/80 rounded-full transition-all hover:scale-105 active:scale-95 ${
+              isPlaying ? 'text-amber-600 bg-amber-100 audio-playing-pulse' : ''
             }`}
           >
             <Volume2 className="w-5 h-5" />

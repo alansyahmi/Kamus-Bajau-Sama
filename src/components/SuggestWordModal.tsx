@@ -66,14 +66,15 @@ export default function SuggestWordModal({ isOpen, onClose, initialWord = '' }: 
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm animate-in fade-in duration-200">
-      <div className="bg-white rounded-3xl p-7 max-w-[540px] w-full shadow-dropdown flex flex-col gap-4 relative">
+    <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-slate-900/50 backdrop-blur-sm animate-in fade-in duration-200">
+      <div className="bg-white rounded-t-3xl sm:rounded-3xl p-5 sm:p-7 max-w-[540px] w-full shadow-dropdown flex flex-col gap-4 relative max-h-[92vh] overflow-y-auto pb-safe sm:pb-7">
         <div className="flex items-center justify-between">
           <h3 className="font-heading text-[20px] text-slate-900 font-bold">{t.modal_suggest_title}</h3>
           <button
             type="button"
             onClick={onClose}
-            className="text-slate-400 hover:text-slate-700 transition-colors p-1"
+            className="text-slate-400 hover:text-slate-700 transition-colors p-2 min-w-[40px] min-h-[40px] flex items-center justify-center rounded-full hover:bg-slate-100"
+            aria-label="Tutup"
           >
             <X className="w-5 h-5" />
           </button>
@@ -98,7 +99,7 @@ export default function SuggestWordModal({ isOpen, onClose, initialWord = '' }: 
                 onChange={(e) => setHeadword(e.target.value)}
                 placeholder="Cth: mangan, boe', tilau"
                 required
-                className="font-body text-[14px] p-2.5 rounded-lg border border-slate-300 outline-none focus:border-slate-900 focus:ring-2 focus:ring-slate-900/10"
+                className="font-body text-[16px] sm:text-[14px] p-2.5 rounded-xl border border-slate-300 outline-none focus:border-slate-900 focus:ring-2 focus:ring-slate-900/10"
               />
             </div>
 
@@ -112,7 +113,7 @@ export default function SuggestWordModal({ isOpen, onClose, initialWord = '' }: 
                 onChange={(e) => setMeaning(e.target.value)}
                 placeholder="Cth: makan, air, bertanya"
                 required
-                className="font-body text-[14px] p-2.5 rounded-lg border border-slate-300 outline-none focus:border-slate-900 focus:ring-2 focus:ring-slate-900/10"
+                className="font-body text-[16px] sm:text-[14px] p-2.5 rounded-xl border border-slate-300 outline-none focus:border-slate-900 focus:ring-2 focus:ring-slate-900/10"
               />
             </div>
 
@@ -125,11 +126,11 @@ export default function SuggestWordModal({ isOpen, onClose, initialWord = '' }: 
                 onChange={(e) => setExampleSentence(e.target.value)}
                 rows={2}
                 placeholder="Cth: Boino ku mangan tadi. (Sudah saya makan tadi)"
-                className="font-body text-[14px] p-2.5 rounded-lg border border-slate-300 outline-none focus:border-slate-900 focus:ring-2 focus:ring-slate-900/10 resize-none"
+                className="font-body text-[16px] sm:text-[14px] p-2.5 rounded-xl border border-slate-300 outline-none focus:border-slate-900 focus:ring-2 focus:ring-slate-900/10 resize-none"
               />
             </div>
 
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div className="flex flex-col gap-1.5">
                 <label className="font-body text-[13px] font-medium text-slate-700">
                   {t.modal_locality_label}
@@ -137,7 +138,7 @@ export default function SuggestWordModal({ isOpen, onClose, initialWord = '' }: 
                 <select
                   value={locality}
                   onChange={(e) => setLocality(e.target.value)}
-                  className="font-body text-[14px] p-2.5 rounded-lg border border-slate-300 outline-none focus:border-slate-900 bg-white"
+                  className="font-body text-[16px] sm:text-[14px] p-2.5 rounded-xl border border-slate-300 outline-none focus:border-slate-900 bg-white"
                 >
                   <option value="Kota Belud">Kota Belud</option>
                   <option value="Tuaran">Tuaran</option>
@@ -157,7 +158,7 @@ export default function SuggestWordModal({ isOpen, onClose, initialWord = '' }: 
                   value={contributorName}
                   onChange={(e) => setContributorName(e.target.value)}
                   placeholder="Nama anda"
-                  className="font-body text-[14px] p-2.5 rounded-lg border border-slate-300 outline-none focus:border-slate-900 focus:ring-2 focus:ring-slate-900/10"
+                  className="font-body text-[16px] sm:text-[14px] p-2.5 rounded-xl border border-slate-300 outline-none focus:border-slate-900 focus:ring-2 focus:ring-slate-900/10"
                 />
               </div>
             </div>
@@ -166,14 +167,14 @@ export default function SuggestWordModal({ isOpen, onClose, initialWord = '' }: 
               <button
                 type="button"
                 onClick={onClose}
-                className="font-body text-[14px] font-medium text-slate-600 hover:text-slate-900 px-3.5 py-2 rounded-lg hover:bg-slate-100 transition-colors"
+                className="font-body text-[14px] font-medium text-slate-600 hover:text-slate-900 px-4 py-2.5 rounded-xl hover:bg-slate-100 transition-colors min-h-[44px]"
               >
                 {t.modal_btn_cancel}
               </button>
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="font-body text-[14px] font-medium bg-black text-white px-6 py-2 rounded-full hover:bg-zinc-800 transition-all disabled:opacity-50"
+                className="font-body text-[14px] font-medium bg-black text-white px-7 py-2.5 rounded-full hover:bg-zinc-800 transition-all disabled:opacity-50 min-h-[44px]"
               >
                 {isSubmitting ? '...' : t.modal_btn_submit}
               </button>

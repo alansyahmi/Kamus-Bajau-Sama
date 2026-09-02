@@ -16,11 +16,11 @@ export default function DefinitionList({ senses }: { senses: LexicalSense[] }) {
       </h2>
       <ol className="flex flex-col gap-2.5 list-none p-0 m-0">
         {senses.map((sense, idx) => (
-          <li key={sense.id} className="flex items-baseline gap-2.5 text-[19px] text-slate-900 font-body">
-            <span className="font-semibold text-slate-900">{idx + 1}.</span>
-            <span className="font-medium">{sense.definitionMs}</span>
+          <li key={sense.id} className="text-[17px] sm:text-[19px] text-slate-900 font-body leading-relaxed pl-6 relative">
+            <span className="font-semibold text-slate-900 absolute left-0 top-0">{idx + 1}.</span>
+            <span className="font-medium text-slate-900">{sense.definitionMs}</span>
             {sense.definitionEn && (
-              <span className="text-[15px] text-slate-500 font-normal">
+              <span className="text-[14px] sm:text-[15px] text-slate-500 font-normal ml-2 inline-block">
                 ({sense.definitionEn})
               </span>
             )}

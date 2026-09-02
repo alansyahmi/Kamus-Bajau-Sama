@@ -1,6 +1,7 @@
+import { cache } from 'react';
 import { db } from '../db';
 import { entries, senses, affixes, dialects, thesaurus, sources } from '../db/schema';
-import { eq, or, sql } from 'drizzle-orm';
+import { eq, or, sql, like } from 'drizzle-orm';
 import { LexicalEntry, SearchResultItem } from '../types';
 
 export function normalizeQuery(query: string): string {
@@ -35,8 +36,14 @@ export async function searchEntries(query: string, limit = 10): Promise<SearchRe
 
   const normalized = normalizeQuery(cleanQuery);
 
-  // Fetch entries joined with senses, affixes, and dialects
+  // Pre-filter in SQL to avoid a full-table scan on every keystroke.
+  // Uses a LIKE clause on headword and search_normalized so only plausible
+  // candidates are fetched; the JS scoring loop handles fine-grained ranking.
   const rawResults = await db.query.entries.findMany({
+    where: or(
+      like(entries.headword, `%${cleanQuery}%`),
+      like(entries.searchNormalized, `%${normalized}%`),
+    ),
     with: {
       senses: {
         orderBy: (senses, { asc }) => [asc(senses.orderIndex)],
@@ -47,6 +54,7 @@ export async function searchEntries(query: string, limit = 10): Promise<SearchRe
       },
       dialects: true,
     },
+    limit: 100,
   });
 
   const scored: Array<{ item: SearchResultItem; score: number }> = [];
@@ -358,3 +366,10 @@ export async function getAllHeadwords(): Promise<string[]> {
   const allEntries = await db.select({ headword: entries.headword }).from(entries);
   return allEntries.map(e => e.headword);
 }
+
+/**
+ * React.cache-deduplicated version of getEntriesByHeadword.
+ * Ensures that generateMetadata() and EntryPage() in the same server render
+ * share a single D1 query result instead of each issuing independent queries.
+ */
+export const getCachedEntriesByHeadword = cache(getEntriesByHeadword);

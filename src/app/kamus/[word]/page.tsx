@@ -1,7 +1,7 @@
 import React from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { getEntriesByHeadword } from '@/lib/search/searchService';
+import { getCachedEntriesByHeadword } from '@/lib/search/searchService';
 import SiteHeader from '@/components/SiteHeader';
 import EntryHeader from '@/components/EntryHeader';
 import AffixList from '@/components/AffixList';
@@ -13,7 +13,7 @@ import ProvenanceBanner from '@/components/ProvenanceBanner';
 import SuggestWordModal from '@/components/SuggestWordModal';
 
 export const dynamic = 'force-dynamic';
-export const runtime = 'edge';
+export const runtime = process.env.NODE_ENV === 'development' ? 'nodejs' : 'edge';
 
 interface EntryPageProps {
   params: {
@@ -26,7 +26,7 @@ const SUPERSCRIPTS = ['', '¹', '²', '³', '⁴', '⁵', '⁶', '⁷', '⁸', '
 
 export async function generateMetadata({ params }: EntryPageProps): Promise<Metadata> {
   const word = decodeURIComponent(params.word);
-  const allEntries = await getEntriesByHeadword(word);
+  const allEntries = await getCachedEntriesByHeadword(word);
 
   if (allEntries.length === 0) {
     return {
@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: EntryPageProps): Promise<Meta
 
 export default async function EntryPage({ params }: EntryPageProps) {
   const word = decodeURIComponent(params.word);
-  const allEntries = await getEntriesByHeadword(word);
+  const allEntries = await getCachedEntriesByHeadword(word);
 
   if (allEntries.length === 0) {
     return (
@@ -85,13 +85,13 @@ export default async function EntryPage({ params }: EntryPageProps) {
 
       {/* Homonym navigation bar — only shown when multiple entries exist */}
       {isHomonymous && (
-        <div className="flex items-center gap-2 px-4 py-3 border-b border-slate-100 bg-amber-50/60">
-          <span className="text-xs font-semibold text-stone-500 mr-1">Homofon:</span>
+        <div className="flex items-center gap-2 px-3 sm:px-4 py-2.5 border border-amber-200/60 rounded-2xl bg-amber-50/60 overflow-x-auto no-scrollbar mb-4">
+          <span className="text-xs font-semibold text-stone-500 mr-1 shrink-0">Homofon:</span>
           {allEntries.map((e, i) => (
             <a
               key={e.id}
               href={`#homonym-${i + 1}`}
-              className="text-xs px-3 py-1 rounded-full border border-amber-300 bg-white text-amber-800 font-medium hover:bg-amber-100 transition"
+              className="text-xs px-3 py-1.5 rounded-full border border-amber-300 bg-white text-amber-800 font-medium hover:bg-amber-100 transition shrink-0 min-h-[32px] inline-flex items-center"
             >
               {e.headword}{SUPERSCRIPTS[i + 1]}
               <span className="ml-1 opacity-60 font-normal">{e.partOfSpeech.replace('KATA ', '')}</span>
@@ -105,7 +105,7 @@ export default async function EntryPage({ params }: EntryPageProps) {
         <div
           key={entry.id}
           id={`homonym-${index + 1}`}
-          className={index > 0 ? 'mt-12 pt-10 border-t-2 border-dashed border-slate-200' : ''}
+          className={index > 0 ? 'mt-10 sm:mt-12 pt-8 sm:pt-10 border-t-2 border-dashed border-slate-200' : ''}
         >
           {/* Homonym index label */}
           {isHomonymous && (
@@ -120,7 +120,7 @@ export default async function EntryPage({ params }: EntryPageProps) {
           )}
 
           {/* Two-Column Editorial Entry Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1px_1.2fr] gap-10 lg:gap-12 items-start mt-2">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1px_1.2fr] gap-8 lg:gap-12 items-start mt-1 sm:mt-2">
             {/* Left Column: Headword, Pronunciation, Morphology, Dialects */}
             <div className="flex flex-col gap-8">
               <EntryHeader
@@ -130,6 +130,12 @@ export default async function EntryPage({ params }: EntryPageProps) {
                 audioUrl={entry.audioUrl}
                 rootEntry={entry.rootEntry}
               />
+
+              {/* Mobile-only: Definition positioned directly on top of Word Derivations */}
+              <div className="block lg:hidden">
+                <DefinitionList senses={entry.senses} />
+              </div>
+
               <AffixList affixes={entry.affixes} />
               <DialectList dialects={entry.dialects} />
             </div>
@@ -139,7 +145,11 @@ export default async function EntryPage({ params }: EntryPageProps) {
 
             {/* Right Column: Definitions, Examples, Thesaurus, Provenance */}
             <div className="flex flex-col gap-8">
-              <DefinitionList senses={entry.senses} />
+              {/* Desktop-only: Definition positioned at top of right editorial column */}
+              <div className="hidden lg:block">
+                <DefinitionList senses={entry.senses} />
+              </div>
+
               <ExampleBox senses={entry.senses} currentHeadword={entry.headword} />
               <ThesaurusCard thesaurus={entry.thesaurus} />
               <ProvenanceBanner sources={entry.sources} headword={entry.headword} />

@@ -41,7 +41,7 @@
   position: absolute;
   right: -5%;
   top: 15%;
-  width: 580px;
+  width: min(580px, 90vw);
   height: 520px;
   background: radial-gradient(circle, rgba(251, 146, 60, 0.28) 0%, rgba(244, 114, 182, 0.2) 40%, rgba(246, 246, 248, 0) 70%);
   filter: blur(48px);
@@ -74,8 +74,33 @@
   animation: audioPulse 0.6s infinite alternate;
 }
 
+/* Utility for hiding scrollbars in horizontal scroll lists */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Safe area insets for mobile devices */
+.pb-safe {
+  padding-bottom: max(1rem, env(safe-area-inset-bottom, 1rem));
+}
+
+button, a {
+  touch-action: manipulation;
+}
+
 @media (max-width: 640px) {
   :root {
     --linangkit-width: 22px;
   }
 }
+
+@media (max-width: 480px) {
+  :root {
+    --linangkit-width: 18px;
+  }
+}
+

@@ -45,13 +45,13 @@ export default function AlphabetBrowser() {
           </span>
         </div>
 
-        <div className="flex flex-wrap items-center gap-1.5 md:gap-2">
+        <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
           {LETTERS.map((letter) => (
             <button
               key={letter}
               type="button"
               onClick={() => handleSelectLetter(letter)}
-              className="w-8 h-8 md:w-9 md:h-9 flex items-center justify-center rounded-xl bg-slate-50 border border-slate-200 text-slate-800 font-heading text-[13px] font-bold hover:bg-slate-900 hover:text-white hover:border-slate-900 hover:-translate-y-0.5 transition-all shadow-2xs"
+              className="min-w-[36px] h-9 sm:w-9 sm:h-9 px-1.5 flex items-center justify-center rounded-xl bg-slate-50 border border-slate-200 text-slate-800 font-heading text-[13px] font-bold hover:bg-slate-900 hover:text-white hover:border-slate-900 hover:-translate-y-0.5 transition-all shadow-2xs active:scale-95"
             >
               {letter}
             </button>
@@ -59,10 +59,10 @@ export default function AlphabetBrowser() {
         </div>
       </section>
 
-      {/* Letter words popup modal */}
+      {/* Letter words popup modal (bottom-sheet on mobile) */}
       {selectedLetter && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm animate-in fade-in duration-200">
-          <div className="bg-white rounded-3xl p-6 md:p-7 max-w-[520px] w-full shadow-dropdown flex flex-col gap-4 max-h-[80vh]">
+        <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-slate-900/50 backdrop-blur-sm animate-in fade-in duration-200">
+          <div className="bg-white rounded-t-3xl sm:rounded-3xl p-5 sm:p-7 max-w-[520px] w-full shadow-dropdown flex flex-col gap-4 max-h-[88vh] sm:max-h-[80vh] pb-safe sm:pb-7">
             <div className="flex items-center justify-between border-b border-slate-100 pb-3">
               <div className="flex items-baseline gap-2">
                 <span className="font-heading text-[24px] font-bold text-slate-900">{selectedLetter}</span>

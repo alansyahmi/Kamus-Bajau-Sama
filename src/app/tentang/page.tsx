@@ -30,8 +30,8 @@ export default function AboutPage() {
       </div>
 
       {/* 3 Core Pillars */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-3">
-        <div className="bg-white rounded-3xl p-7 shadow-card border border-slate-200/70 flex flex-col gap-3 hover:-translate-y-1 transition-all">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 mt-2 sm:mt-3">
+        <div className="bg-white rounded-3xl p-5 sm:p-7 shadow-card border border-slate-200/70 flex flex-col gap-3 hover:-translate-y-1 transition-all">
           <div className="w-11 h-11 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-900 mb-1.5">
             <BookOpen className="w-5 h-5" />
           </div>
@@ -43,7 +43,7 @@ export default function AboutPage() {
           </p>
         </div>
 
-        <div className="bg-white rounded-3xl p-7 shadow-card border border-slate-200/70 flex flex-col gap-3 hover:-translate-y-1 transition-all">
+        <div className="bg-white rounded-3xl p-5 sm:p-7 shadow-card border border-slate-200/70 flex flex-col gap-3 hover:-translate-y-1 transition-all">
           <div className="w-11 h-11 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-900 mb-1.5">
             <ShieldCheck className="w-5 h-5" />
           </div>
@@ -55,7 +55,7 @@ export default function AboutPage() {
           </p>
         </div>
 
-        <div className="bg-white rounded-3xl p-7 shadow-card border border-slate-200/70 flex flex-col gap-3 hover:-translate-y-1 transition-all">
+        <div className="bg-white rounded-3xl p-5 sm:p-7 shadow-card border border-slate-200/70 flex flex-col gap-3 hover:-translate-y-1 transition-all">
           <div className="w-11 h-11 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-900 mb-1.5">
             <MapPin className="w-5 h-5" />
           </div>
@@ -69,15 +69,15 @@ export default function AboutPage() {
       </div>
 
       {/* Editorial Methodology Section */}
-      <section className="bg-white rounded-3xl p-8 md:p-9 border border-slate-200 shadow-subtle">
+      <section className="bg-white rounded-3xl p-5 sm:p-8 md:p-9 border border-slate-200 shadow-subtle">
         <div className="flex flex-col gap-3.5 max-w-[800px]">
-          <h2 className="font-heading text-[22px] font-bold text-slate-900 tracking-tighter">
+          <h2 className="font-heading text-[20px] sm:text-[22px] font-bold text-slate-900 tracking-tighter">
             {t.about_methodology_title}
           </h2>
-          <p className="font-body text-[15px] leading-relaxed text-slate-700">
+          <p className="font-body text-[14.5px] sm:text-[15px] leading-relaxed text-slate-700">
             {t.about_methodology_desc}
           </p>
-          <div className="flex flex-wrap gap-2.5 mt-2">
+          <div className="flex flex-wrap gap-2 sm:gap-2.5 mt-2">
             <span className="bg-slate-100 border border-slate-300 text-slate-800 font-body text-[12px] font-medium px-3 py-1 rounded-full">
               Sumber Lisan Penutur Jati
             </span>
@@ -96,7 +96,7 @@ export default function AboutPage() {
 
       {/* Community Contribution CTA */}
       <section className="mb-6">
-        <div className="bg-gradient-to-br from-slate-900 to-slate-800 text-white rounded-3xl p-9 md:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-8 shadow-[0_15px_35px_-10px_rgba(15,23,42,0.3)]">
+        <div className="bg-gradient-to-br from-slate-900 to-slate-800 text-white rounded-3xl p-6 sm:p-9 md:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 sm:gap-8 shadow-[0_15px_35px_-10px_rgba(15,23,42,0.3)]">
           <div className="max-w-[620px]">
             <h2 className="font-heading text-[24px] font-bold text-white mb-2 tracking-tighter">
               {t.about_cta_title}

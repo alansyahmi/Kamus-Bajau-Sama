@@ -45,7 +45,7 @@ export default function RootLayout({
       <body className="font-body bg-background text-text-main min-h-screen relative antialiased selection:bg-slate-900 selection:text-white">
         <LanguageProvider>
           <LinangkitBorder />
-          <div className="flex-1 flex flex-col pl-[calc(var(--linangkit-width)+18px)] md:pl-[calc(var(--linangkit-width)+40px)] pr-4 md:pr-12 pt-7 md:pt-9 pb-12 max-w-[1440px] mx-auto w-full min-h-screen">
+          <div className="flex-1 flex flex-col pl-[calc(var(--linangkit-width)+12px)] sm:pl-[calc(var(--linangkit-width)+18px)] md:pl-[calc(var(--linangkit-width)+40px)] pr-3.5 sm:pr-6 md:pr-12 pt-5 sm:pt-7 md:pt-9 pb-12 max-w-[1440px] mx-auto w-full min-h-screen">
             {children}
           </div>
         </LanguageProvider>

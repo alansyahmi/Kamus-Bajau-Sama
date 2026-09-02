@@ -108,12 +108,12 @@ export default function ExampleBox({ senses, currentHeadword }: ExampleBoxProps)
           return (
             <div
               key={currentId}
-              className={`flex flex-col gap-1 p-3.5 -mx-3.5 rounded-2xl transition-all duration-200 ${
+              className={`flex flex-col gap-1 p-3 sm:p-3.5 -mx-1 sm:-mx-3.5 rounded-2xl transition-all duration-200 ${
                 isPlaying ? 'bg-amber-50/80 dark:bg-amber-950/40 ring-1 ring-amber-200 dark:ring-amber-800' : 'hover:bg-sand-50/50 dark:hover:bg-stone-800/40'
               }`}
             >
               <div className="flex items-start justify-between gap-3">
-                <p className="font-heading italic text-[18px] text-slate-900 dark:text-stone-100 mb-1 leading-snug">
+                <p className="font-heading italic text-[17px] sm:text-[18px] text-slate-900 dark:text-stone-100 mb-1 leading-snug">
                   &ldquo;{renderSentenceWithLinks(ex.sentenceBajau, ex.highlightWord)}&rdquo;
                 </p>
                 <button
@@ -121,10 +121,10 @@ export default function ExampleBox({ senses, currentHeadword }: ExampleBoxProps)
                   onClick={() => handlePlaySentence(currentId, ex.sentenceBajau, ex.audioUrl)}
                   title="Dengar sebutan contoh ayat"
                   aria-label="Dengar sebutan contoh ayat"
-                  className={`shrink-0 p-1.5 rounded-full transition-all hover:scale-110 ${
+                  className={`w-10 h-10 flex items-center justify-center shrink-0 rounded-full transition-all hover:scale-105 active:scale-95 ${
                     isPlaying
                       ? 'text-amber-600 bg-amber-100 dark:bg-amber-900 scale-105'
-                      : 'text-slate-400 hover:text-slate-700 dark:hover:text-stone-300 hover:bg-sand-100 dark:hover:bg-stone-800'
+                      : 'text-slate-400 hover:text-slate-700 bg-slate-100/60 hover:bg-slate-200/70'
                   }`}
                 >
                   <Volume2 className={`w-4 h-4 ${isPlaying ? 'animate-pulse' : ''}`} />

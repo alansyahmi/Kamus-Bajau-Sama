@@ -18,17 +18,17 @@ export default function HomePage() {
       <SiteHeader />
 
       {/* Hero Section */}
-      <section className="grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-10 lg:gap-14 items-center min-h-[calc(70vh-80px)] relative">
+      <section className="grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-7 lg:gap-14 items-center lg:min-h-[calc(70vh-80px)] relative">
         {/* Ambient Coral Glow */}
         <div className="ambient-glow" aria-hidden="true" />
 
         {/* Left Editorial Headline Column */}
         <div className="relative z-10 max-w-[540px]">
           <h1
-            className="font-heading text-[34px] sm:text-[40px] md:text-[46px] font-normal leading-[1.22] text-slate-900 tracking-tighter mb-5"
+            className="font-heading text-[28px] sm:text-[38px] md:text-[46px] font-normal leading-[1.2] text-slate-900 tracking-tighter mb-3.5 sm:mb-5"
             dangerouslySetInnerHTML={{ __html: t.hero_title_html }}
           />
-          <p className="font-body text-[17px] md:text-[18px] leading-[1.6] text-slate-700 max-w-[460px] tracking-tightest">
+          <p className="font-body text-[15px] sm:text-[17px] md:text-[18px] leading-[1.6] text-slate-700 max-w-[460px] tracking-tightest">
             {t.hero_desc}
           </p>
 
@@ -44,7 +44,7 @@ export default function HomePage() {
       </section>
 
       {/* Lower Section: Word of the Day & Alphabet Index */}
-      <section className="grid grid-cols-1 lg:grid-cols-[1fr_1.3fr] gap-8 mt-12 pt-10 border-t border-slate-200/60 relative z-10 items-start">
+      <section className="grid grid-cols-1 lg:grid-cols-[1fr_1.3fr] gap-8 mt-10 md:mt-12 pt-8 md:pt-10 border-t border-slate-200/60 relative z-10 items-start">
         {/* Word of the Day (Pekataan Penean) */}
         <div>
           <FeaturedWordCard />

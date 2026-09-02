@@ -5,6 +5,8 @@ import { entries, senses, examples, affixes, dialects, sources } from '@/lib/db/
 import { normalizeQuery } from '@/lib/search/searchService';
 import { eq, like, desc, sql } from 'drizzle-orm';
 
+export const runtime = 'edge';
+
 export async function GET(req: NextRequest) {
   if (!verifyAdminSession(req)) return unauthorizedResponse();
 

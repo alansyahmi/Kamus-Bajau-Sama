@@ -4,12 +4,10 @@ import { db } from '@/lib/db';
 import { entries } from '@/lib/db/schema';
 import { eq } from 'drizzle-orm';
 import { toTtsPhoneticSpelling } from '@/lib/tts/speechService';
-import { execFile } from 'child_process';
-import { promisify } from 'util';
-import fs from 'fs';
-import path from 'path';
+import { EdgeTTS } from 'edge-tts-universal';
 
-const execFileAsync = promisify(execFile);
+export const dynamic = 'force-dynamic';
+export const runtime = 'edge';
 
 const NEURAL_VOICES = {
   fil: 'fil-PH-BlessicaNeural',
@@ -40,44 +38,21 @@ export async function POST(req: NextRequest) {
     const spokenText = toTtsPhoneticSpelling(textToSynthesize, entry.ipa);
     const voice = NEURAL_VOICES[voiceKey as keyof typeof NEURAL_VOICES] || NEURAL_VOICES.fil;
 
-    const script = `
-      const { EdgeTTS } = require('edge-tts-universal');
-      (async () => {
-        try {
-          const tts = new EdgeTTS(process.argv[1], process.argv[2], { rate: process.argv[3] || '-5%', pitch: process.argv[4] || '+0Hz' });
-          const res = await tts.synthesize();
-          const buf = Buffer.from(await res.audio.arrayBuffer());
-          process.stdout.write(buf);
-        } catch (err) {
-          process.stderr.write(err?.message || String(err));
-          process.exit(1);
-        }
-      })();
-    `;
+    // Direct asynchronous EdgeTTS
+    const tts = new EdgeTTS(spokenText, voice, { rate, pitch });
+    const res = await tts.synthesize();
+    const arrayBuffer = await res.audio.arrayBuffer();
 
-    const { stdout } = await execFileAsync(
-      process.execPath,
-      ['-e', script, spokenText, voice, rate, pitch],
-      {
-        encoding: 'buffer',
-        maxBuffer: 10 * 1024 * 1024,
-        timeout: 15000,
-        cwd: process.cwd(),
-      }
-    );
-
-    // Save audio into public/audio/
-    const audioDir = path.join(process.cwd(), 'public', 'audio');
-    if (!fs.existsSync(audioDir)) {
-      fs.mkdirSync(audioDir, { recursive: true });
-    }
-
-    // Safe filename based on headword and entry ID to prevent collisions
     const sanitizedHeadword = entry.headword.toLowerCase().replace(/[^a-z0-9]/g, '_');
     const filename = `${entry.id}_${sanitizedHeadword}.mp3`;
-    const filePath = path.join(audioDir, filename);
-
-    fs.writeFileSync(filePath, stdout);
+    try {
+      const req = eval('require');
+      const fs = req('fs');
+      const path = req('path');
+      const audioDir = path.join(process.cwd(), 'public', 'audio');
+      if (!fs.existsSync(audioDir)) fs.mkdirSync(audioDir, { recursive: true });
+      fs.writeFileSync(path.join(audioDir, filename), Buffer.from(arrayBuffer));
+    } catch {}
 
     const relativeAudioUrl = `/audio/${filename}?v=${Date.now()}`;
 
@@ -120,16 +95,18 @@ export async function DELETE(req: NextRequest) {
     if (!entry) return NextResponse.json({ error: 'Entri tidak dijumpai.' }, { status: 404 });
 
     if (entry.audioUrl) {
-      const cleanPath = entry.audioUrl.split('?')[0];
-      const filePath = path.join(process.cwd(), 'public', cleanPath);
-      if (fs.existsSync(filePath)) {
-        try {
+      try {
+        const req = eval('require');
+        const fs = req('fs');
+        const path = req('path');
+        const cleanPath = entry.audioUrl.split('?')[0];
+        const filePath = path.join(process.cwd(), 'public', cleanPath);
+        if (fs.existsSync(filePath)) {
           fs.unlinkSync(filePath);
-        } catch (e) {
-          console.warn('Could not delete audio file from disk:', e);
         }
-      }
+      } catch {}
     }
+
 
     db.update(entries)
       .set({

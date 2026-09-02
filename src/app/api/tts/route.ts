@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import { toTtsPhoneticSpelling } from '@/lib/tts/speechService';
 import { EdgeTTS } from 'edge-tts-universal';
 
+export const runtime = 'edge';
+
 // Edge Neural Voices mapping prioritizing Austronesian & Glottal models (Tagalog, Javanese, Sundanese, Indonesian, Malay, Arabic)
 const NEURAL_VOICES = {
   fil: 'fil-PH-BlessicaNeural',

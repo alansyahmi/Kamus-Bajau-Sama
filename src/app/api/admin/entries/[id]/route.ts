@@ -5,12 +5,10 @@ import { entries, senses, examples, affixes, dialects } from '@/lib/db/schema';
 import { normalizeQuery } from '@/lib/search/searchService';
 import { toTtsPhoneticSpelling } from '@/lib/tts/speechService';
 import { eq } from 'drizzle-orm';
-import { execFile } from 'child_process';
-import { promisify } from 'util';
-import fs from 'fs';
-import path from 'path';
+import { EdgeTTS } from 'edge-tts-universal';
 
-const execFileAsync = promisify(execFile);
+export const dynamic = 'force-dynamic';
+export const runtime = 'edge';
 
 const NEURAL_VOICES = {
   fil: 'fil-PH-BlessicaNeural',
@@ -75,42 +73,23 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
     const spokenText = toTtsPhoneticSpelling(textToSynthesize, entry.ipa);
     const voice = NEURAL_VOICES[voiceKey as keyof typeof NEURAL_VOICES] || NEURAL_VOICES.su;
 
-    const script = `
-      const { EdgeTTS } = require('edge-tts-universal');
-      (async () => {
-        try {
-          const tts = new EdgeTTS(process.argv[1], process.argv[2], { rate: process.argv[3] || '-5%', pitch: '+0Hz' });
-          const res = await tts.synthesize();
-          const buf = Buffer.from(await res.audio.arrayBuffer());
-          process.stdout.write(buf);
-        } catch (err) {
-          process.stderr.write(err?.message || String(err));
-          process.exit(1);
-        }
-      })();
-    `;
+    // Use pure asynchronous EdgeTTS directly
+    const tts = new EdgeTTS(spokenText, voice, { rate, pitch: '+0Hz' });
+    const res = await tts.synthesize();
+    const arrayBuffer = await res.audio.arrayBuffer();
 
-    const { stdout } = await execFileAsync(
-      process.execPath,
-      ['-e', script, spokenText, voice, rate],
-      {
-        encoding: 'buffer',
-        maxBuffer: 10 * 1024 * 1024,
-        timeout: 15000,
-        cwd: process.cwd(),
-      }
-    );
-
-    const audioDir = path.join(process.cwd(), 'public', 'audio');
-    if (!fs.existsSync(audioDir)) {
-      fs.mkdirSync(audioDir, { recursive: true });
-    }
-
+    // In local Node environment, also save to public/audio if possible
     const sanitized = entry.headword.toLowerCase().replace(/[^a-z0-9]/g, '_');
     const filename = `${entry.id}_${sanitized}.mp3`;
-    const filePath = path.join(audioDir, filename);
+    try {
+      const req = eval('require');
+      const fs = req('fs');
+      const path = req('path');
+      const audioDir = path.join(process.cwd(), 'public', 'audio');
+      if (!fs.existsSync(audioDir)) fs.mkdirSync(audioDir, { recursive: true });
+      fs.writeFileSync(path.join(audioDir, filename), Buffer.from(arrayBuffer));
+    } catch {}
 
-    fs.writeFileSync(filePath, stdout);
 
     const relativeAudioUrl = `/audio/${filename}?v=${Date.now()}`;
 
@@ -135,6 +114,7 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
     );
   }
 }
+
 
 export async function PUT(req: NextRequest, { params }: { params: { id: string } }) {
   if (!verifyAdminSession(req)) return unauthorizedResponse();
@@ -285,15 +265,22 @@ export async function DELETE(req: NextRequest, { params }: { params: { id: strin
 
     if (deleteAudioOnly) {
       if (entry.audioUrl) {
-        const cleanPath = entry.audioUrl.split('?')[0];
-        const filePath = path.join(process.cwd(), 'public', cleanPath);
-        if (fs.existsSync(filePath)) {
-          fs.unlinkSync(filePath);
-        }
+        try {
+          const req = eval('require');
+          const fs = req('fs');
+          const path = req('path');
+          const cleanPath = entry.audioUrl.split('?')[0];
+          const filePath = path.join(process.cwd(), 'public', cleanPath);
+          if (fs.existsSync(filePath)) {
+            fs.unlinkSync(filePath);
+          }
+        } catch {}
       }
+
       db.update(entries).set({ audioUrl: null, updatedAt: new Date().toISOString() }).where(eq(entries.id, id)).run();
       return NextResponse.json({ success: true, message: 'Audio rasmi telah dipadam.' });
     }
+
 
     db.delete(entries).where(eq(entries.id, id)).run();
     return NextResponse.json({ success: true, message: 'Entri berjaya dipadam.' });

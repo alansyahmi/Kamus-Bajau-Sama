@@ -23,22 +23,28 @@ export function getDb(): AppDatabase {
 
   // 3. Fallback to local SQLite database in Node.js development server
   if (!_cachedDb) {
-    const Database = require('better-sqlite3');
-    const { drizzle } = require('drizzle-orm/better-sqlite3');
-    const path = require('path');
-
-    const dbPath = path.resolve(process.cwd(), 'dictionary.db');
-    const sqlite = new Database(dbPath);
-
     try {
-      sqlite.pragma('journal_mode = WAL');
-      sqlite.pragma('foreign_keys = ON');
-    } catch {}
+      const dynamicRequire = eval('require');
+      const Database = dynamicRequire('better-sqlite3');
+      const { drizzle } = dynamicRequire('drizzle-orm/better-sqlite3');
+      const path = dynamicRequire('path');
 
-    _cachedDb = drizzle(sqlite, { schema }) as AppDatabase;
+      const dbPath = path.resolve(process.cwd(), 'dictionary.db');
+      const sqlite = new Database(dbPath);
+
+      try {
+        sqlite.pragma('journal_mode = WAL');
+        sqlite.pragma('foreign_keys = ON');
+      } catch {}
+
+      _cachedDb = drizzle(sqlite, { schema }) as AppDatabase;
+    } catch (err) {
+      console.warn('Local SQLite not available in this runtime.');
+    }
   }
 
-  return _cachedDb;
+
+  return _cachedDb as AppDatabase;
 }
 
 // Proxied db instance for seamless drop-in queries across all environments

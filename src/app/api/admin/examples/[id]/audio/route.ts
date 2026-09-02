@@ -4,14 +4,10 @@ import { db } from '@/lib/db';
 import { examples } from '@/lib/db/schema';
 import { eq } from 'drizzle-orm';
 import { toTtsPhoneticSpelling } from '@/lib/tts/speechService';
-import { execFile } from 'child_process';
-import { promisify } from 'util';
-import fs from 'fs';
-import path from 'path';
-
-const execFileAsync = promisify(execFile);
+import { EdgeTTS } from 'edge-tts-universal';
 
 export const dynamic = 'force-dynamic';
+export const runtime = 'edge';
 
 const NEURAL_VOICES: Record<string, string> = {
   su: 'su-ID-TutiNeural',
@@ -44,48 +40,28 @@ export async function POST(
       return NextResponse.json({ error: 'Ayat contoh tidak dijumpai.' }, { status: 404 });
     }
 
-    const body = await req.json();
+    const body = await req.json().catch(() => ({}));
     const { voiceKey = 'su', customText, rate = '-5%', pitch = '+0Hz' } = body;
 
     const textToSynthesize = (customText || ex.sentenceBajau).trim();
     const spokenText = toTtsPhoneticSpelling(textToSynthesize, null);
     const voice = NEURAL_VOICES[voiceKey] || NEURAL_VOICES.su;
 
-    const script = `
-      const { EdgeTTS } = require('edge-tts-universal');
-      (async () => {
-        try {
-          const tts = new EdgeTTS(process.argv[1], process.argv[2], { rate: process.argv[3] || '-5%', pitch: process.argv[4] || '+0Hz' });
-          const res = await tts.synthesize();
-          const buf = Buffer.from(await res.audio.arrayBuffer());
-          process.stdout.write(buf);
-        } catch (err) {
-          process.stderr.write(err?.message || String(err));
-          process.exit(1);
-        }
-      })();
-    `;
-
-    const { stdout } = await execFileAsync(
-      process.execPath,
-      ['-e', script, spokenText, voice, rate, pitch],
-      {
-        encoding: 'buffer',
-        maxBuffer: 10 * 1024 * 1024,
-        timeout: 20000,
-        cwd: process.cwd(),
-      }
-    );
-
-    // Save audio into public/audio/examples/
-    const audioDir = path.join(process.cwd(), 'public', 'audio', 'examples');
-    if (!fs.existsSync(audioDir)) {
-      fs.mkdirSync(audioDir, { recursive: true });
-    }
+    // Use pure asynchronous EdgeTTS directly
+    const tts = new EdgeTTS(spokenText, voice, { rate, pitch });
+    const res = await tts.synthesize();
+    const arrayBuffer = await res.audio.arrayBuffer();
 
     const filename = `ex_${ex.id}.mp3`;
-    const filePath = path.join(audioDir, filename);
-    fs.writeFileSync(filePath, stdout);
+    try {
+      const req = eval('require');
+      const fs = req('fs');
+      const path = req('path');
+      const audioDir = path.join(process.cwd(), 'public', 'audio', 'examples');
+      if (!fs.existsSync(audioDir)) fs.mkdirSync(audioDir, { recursive: true });
+      fs.writeFileSync(path.join(audioDir, filename), Buffer.from(arrayBuffer));
+    } catch {}
+
 
     const relativeAudioUrl = `/audio/examples/${filename}?v=${Date.now()}`;
 
@@ -131,16 +107,18 @@ export async function DELETE(
     }
 
     if (ex.audioUrl) {
-      const cleanPath = ex.audioUrl.split('?')[0];
-      const filePath = path.join(process.cwd(), 'public', cleanPath);
-      if (fs.existsSync(filePath)) {
-        try {
+      try {
+        const req = eval('require');
+        const fs = req('fs');
+        const path = req('path');
+        const cleanPath = ex.audioUrl.split('?')[0];
+        const filePath = path.join(process.cwd(), 'public', cleanPath);
+        if (fs.existsSync(filePath)) {
           fs.unlinkSync(filePath);
-        } catch (e) {
-          console.warn('Could not delete audio file:', e);
         }
-      }
+      } catch {}
     }
+
 
     db.update(examples)
       .set({ audioUrl: null })

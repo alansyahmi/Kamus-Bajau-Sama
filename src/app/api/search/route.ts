@@ -3,6 +3,7 @@ import { searchEntries } from '@/lib/search/searchService';
 import { db } from '@/lib/db';
 
 export const dynamic = 'force-dynamic';
+export const runtime = 'edge';
 
 export async function GET(request: NextRequest) {
   try {

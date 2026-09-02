@@ -3,10 +3,9 @@ import { verifyAdminSession, unauthorizedResponse } from '@/lib/auth/adminAuth';
 import { db } from '@/lib/db';
 import { examples } from '@/lib/db/schema';
 import { eq } from 'drizzle-orm';
-import fs from 'fs';
-import path from 'path';
 
 export const dynamic = 'force-dynamic';
+export const runtime = 'edge';
 
 export async function PUT(
   req: NextRequest,
@@ -67,18 +66,21 @@ export async function DELETE(
       return NextResponse.json({ error: 'Ayat contoh tidak dijumpai.' }, { status: 404 });
     }
 
-    // Delete associated audio file if it exists
+    // Delete associated audio file if it exists (in local Node environment)
     if (ex.audioUrl) {
-      const cleanPath = ex.audioUrl.split('?')[0];
-      const filePath = path.join(process.cwd(), 'public', cleanPath);
-      if (fs.existsSync(filePath)) {
-        try {
+      try {
+        const req = eval('require');
+        const fs = req('fs');
+        const path = req('path');
+        const cleanPath = ex.audioUrl.split('?')[0];
+        const filePath = path.join(process.cwd(), 'public', cleanPath);
+        if (fs.existsSync(filePath)) {
           fs.unlinkSync(filePath);
-        } catch (e) {
-          console.warn('Could not delete example audio file:', e);
         }
-      }
+      } catch {}
     }
+
+
 
     db.delete(examples).where(eq(examples.id, id)).run();
 

@@ -3,6 +3,8 @@ import { db } from '@/lib/db';
 import { submissions } from '@/lib/db/schema';
 import { z } from 'zod';
 
+export const runtime = 'edge';
+
 const submissionSchema = z.object({
   headword: z.string().min(1).max(100),
   meaning: z.string().min(1).max(500),

@@ -258,7 +258,7 @@ const TRANSLATIONS = {
     search_label: 'BAR PEMIAAN',
     search_placeholder: "Pemia pekataan diom ling Sama, Melayu, atau Inggeris.",
     search_hint: 'Pesadangan akan pelua\' ta\' mitu mun nitaip pekataan.',
-    btn_clear: 'Ala\'', btn_search: 'Pia', trending_label: 'Terending:',
+    btn_clear: 'Ala\'', btn_search: 'Pemia', trending_label: 'Terending:',
     nav_search_placeholder: 'Pemia pekataan.',
     entry_affixes: 'Turunan Sipitan', entry_dialects: 'Variasi Daerah',
     entry_definition: 'Definisi', entry_examples: 'Sonto Pegunoon',

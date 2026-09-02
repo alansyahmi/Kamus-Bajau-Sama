@@ -1,10 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { toTtsPhoneticSpelling } from '@/lib/tts/speechService';
-import { execFile } from 'child_process';
-import { promisify } from 'util';
-import path from 'path';
-
-const execFileAsync = promisify(execFile);
+import { EdgeTTS } from 'edge-tts-universal';
 
 // Edge Neural Voices mapping prioritizing Austronesian & Glottal models (Tagalog, Javanese, Sundanese, Indonesian, Malay, Arabic)
 const NEURAL_VOICES = {
@@ -36,33 +32,14 @@ export async function GET(req: NextRequest) {
   const spokenText = toTtsPhoneticSpelling(text, ipa);
 
   try {
-    const script = `
-      const { EdgeTTS } = require('edge-tts-universal');
-      (async () => {
-        try {
-          const tts = new EdgeTTS(process.argv[1], process.argv[2], { rate: process.argv[3] || '-5%', pitch: '+0Hz' });
-          const res = await tts.synthesize();
-          const buf = Buffer.from(await res.audio.arrayBuffer());
-          process.stdout.write(buf);
-        } catch (err) {
-          process.stderr.write(err?.message || String(err));
-          process.exit(1);
-        }
-      })();
-    `;
+    const tts = new EdgeTTS(spokenText, voice, {
+      rate: rate || '-5%',
+      pitch: '+0Hz',
+    });
+    const res = await tts.synthesize();
+    const arrayBuffer = await res.audio.arrayBuffer();
 
-    const { stdout } = await execFileAsync(
-      process.execPath,
-      ['-e', script, spokenText, voice, rate],
-      {
-        encoding: 'buffer',
-        maxBuffer: 10 * 1024 * 1024,
-        timeout: 10000,
-        cwd: process.cwd(),
-      }
-    );
-
-    return new NextResponse(stdout as unknown as BodyInit, {
+    return new NextResponse(arrayBuffer, {
       headers: {
         'Content-Type': 'audio/mpeg',
         'Cache-Control': 'public, max-age=86400, stale-while-revalidate=604800',
@@ -79,3 +56,4 @@ export async function GET(req: NextRequest) {
     );
   }
 }
+

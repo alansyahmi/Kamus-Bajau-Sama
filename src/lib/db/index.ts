@@ -1,13 +1,50 @@
-import Database from 'better-sqlite3';
-import { drizzle } from 'drizzle-orm/better-sqlite3';
 import * as schema from './schema';
-import path from 'path';
+import type { DrizzleD1Database } from 'drizzle-orm/d1';
+import type { BetterSQLite3Database } from 'drizzle-orm/better-sqlite3';
 
-const dbPath = path.resolve(process.cwd(), 'dictionary.db');
-const sqlite = new Database(dbPath);
+type AppDatabase = BetterSQLite3Database<typeof schema>;
 
-// Enable WAL mode for high performance SQLite reads/writes
-sqlite.pragma('journal_mode = WAL');
-sqlite.pragma('foreign_keys = ON');
+let _cachedDb: AppDatabase | null = null;
 
-export const db = drizzle(sqlite, { schema });
+export function getDb(): AppDatabase {
+  // 1. In Cloudflare Workers / Pages runtime with D1 binding attached to global/env
+  const cfDb = (typeof process !== 'undefined' && (process.env as any)?.DB) || (globalThis as any)?.DB || (globalThis as any)?.__D1_BETA__?.DB;
+  if (cfDb) {
+    const { drizzle } = require('drizzle-orm/d1');
+    return drizzle(cfDb, { schema }) as unknown as AppDatabase;
+  }
+
+
+  // 3. Fallback to local SQLite database in Node.js development server
+  if (!_cachedDb) {
+    const Database = require('better-sqlite3');
+    const { drizzle } = require('drizzle-orm/better-sqlite3');
+    const path = require('path');
+
+    const dbPath = path.resolve(process.cwd(), 'dictionary.db');
+    const sqlite = new Database(dbPath);
+
+    try {
+      sqlite.pragma('journal_mode = WAL');
+      sqlite.pragma('foreign_keys = ON');
+    } catch {}
+
+    _cachedDb = drizzle(sqlite, { schema }) as AppDatabase;
+  }
+
+  return _cachedDb;
+}
+
+// Proxied db instance for seamless drop-in queries across all environments
+export const db = new Proxy({} as AppDatabase, {
+  get(_target, prop, receiver) {
+    const instance = getDb() as any;
+    const value = Reflect.get(instance, prop, receiver);
+    if (typeof value === 'function') {
+      return value.bind(instance);
+    }
+    return value;
+  },
+});
+
+

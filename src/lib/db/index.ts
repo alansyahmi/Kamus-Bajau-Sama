@@ -8,11 +8,17 @@ let _cachedDb: AppDatabase | null = null;
 
 export function getDb(): AppDatabase {
   // 1. In Cloudflare Workers / Pages runtime with D1 binding attached to global/env
-  const cfDb = (typeof process !== 'undefined' && (process.env as any)?.DB) || (globalThis as any)?.DB || (globalThis as any)?.__D1_BETA__?.DB;
+  const cfDb =
+    (typeof process !== 'undefined' && ((process.env as any)?.kamus_bajau_db || (process.env as any)?.DB)) ||
+    (globalThis as any)?.kamus_bajau_db ||
+    (globalThis as any)?.DB ||
+    (globalThis as any)?.__D1_BETA__?.kamus_bajau_db ||
+    (globalThis as any)?.__D1_BETA__?.DB;
   if (cfDb) {
     const { drizzle } = require('drizzle-orm/d1');
     return drizzle(cfDb, { schema }) as unknown as AppDatabase;
   }
+
 
 
   // 3. Fallback to local SQLite database in Node.js development server

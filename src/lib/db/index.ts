@@ -7,7 +7,14 @@ type AppDatabase = BetterSQLite3Database<typeof schema>;
 let _cachedDb: AppDatabase | null = null;
 
 export function getDb(): AppDatabase {
-  // 1. In Cloudflare Workers / Pages runtime with D1 binding attached to global/env
+  // 1. Cloudflare Pages / Workers runtime (production or via setupDevPlatform)
+  const cfContext = (globalThis as any)?.[Symbol.for('__cloudflare-request-context__')];
+  const d1Binding = cfContext?.env?.kamus_bajau_db || cfContext?.env?.DB;
+  if (d1Binding) {
+    const { drizzle } = require('drizzle-orm/d1');
+    return drizzle(d1Binding, { schema }) as unknown as AppDatabase;
+  }
+
   const cfDb =
     (typeof process !== 'undefined' && ((process.env as any)?.kamus_bajau_db || (process.env as any)?.DB)) ||
     (globalThis as any)?.kamus_bajau_db ||
@@ -18,8 +25,6 @@ export function getDb(): AppDatabase {
     const { drizzle } = require('drizzle-orm/d1');
     return drizzle(cfDb, { schema }) as unknown as AppDatabase;
   }
-
-
 
   // 3. Fallback to local SQLite database in Node.js development server
   if (!_cachedDb) {
@@ -43,7 +48,6 @@ export function getDb(): AppDatabase {
     }
   }
 
-
   return _cachedDb as AppDatabase;
 }
 
@@ -51,6 +55,9 @@ export function getDb(): AppDatabase {
 export const db = new Proxy({} as AppDatabase, {
   get(_target, prop, receiver) {
     const instance = getDb() as any;
+    if (!instance) {
+      return () => Promise.resolve([]);
+    }
     const value = Reflect.get(instance, prop, receiver);
     if (typeof value === 'function') {
       return value.bind(instance);

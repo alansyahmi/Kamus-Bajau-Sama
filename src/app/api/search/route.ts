@@ -5,7 +5,7 @@ import { entries, senses, examples, dialects } from '@/lib/db/schema';
 import { sql, eq, asc, like, or } from 'drizzle-orm';
 
 export const dynamic = 'force-dynamic';
-export const runtime = process.env.NODE_ENV === 'development' ? 'nodejs' : 'edge';
+export const runtime = 'edge';
 
 export async function GET(request: NextRequest) {
   try {

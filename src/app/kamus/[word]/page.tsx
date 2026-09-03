@@ -13,7 +13,7 @@ import ProvenanceBanner from '@/components/ProvenanceBanner';
 import SuggestWordModal from '@/components/SuggestWordModal';
 
 export const dynamic = 'force-dynamic';
-export const runtime = process.env.NODE_ENV === 'development' ? 'nodejs' : 'edge';
+export const runtime = 'edge';
 
 interface EntryPageProps {
   params: {

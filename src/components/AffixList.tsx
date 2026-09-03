@@ -24,7 +24,14 @@ export default function AffixList({ affixes }: { affixes: LexicalAffix[] }) {
 
       <ul className="flex flex-col gap-2 list-none p-0 m-0">
         {affixes.map((item, idx) => {
-          const meaning = language === 'en' && item.meaningEn ? item.meaningEn : item.meaningMs;
+          const meaning =
+            language === 'en'
+              ? (item.meaningEn || item.meaningMs)
+              : language === 'ms'
+              ? item.meaningMs
+              : item.meaningEn
+              ? `${item.meaningMs} (${item.meaningEn})`
+              : item.meaningMs;
           const isAttested = item.isAttested;
           const displayTerm = item.isTheoretical ? `*${item.term}` : item.term;
           const linkTarget = item.linkedHeadword || item.term;

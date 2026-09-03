@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { Search, Menu, X, PlusCircle, Info } from 'lucide-react';
 import { useLanguage } from '../lib/i18n/LanguageContext';
@@ -41,14 +42,30 @@ export default function SiteHeader({ showSearch = false }: SiteHeaderProps) {
     <>
       <header className={`z-20 relative transition-all ${showSearch ? 'mb-6 md:mb-10' : 'mb-8 md:mb-16'}`}>
         <div className="flex items-center justify-between gap-3">
-          {/* Brand Logo */}
+          {/* Brand Logo: Icon on Tab & Mobile, Text on Desktop */}
           <Link
             href="/"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="inline-flex items-baseline gap-1.5 text-[19px] sm:text-[22px] no-underline text-slate-900 whitespace-nowrap flex-shrink-0"
+            className="inline-flex items-center no-underline text-slate-900 whitespace-nowrap flex-shrink-0 group"
+            aria-label="Kamus Bajau Sama"
           >
-            <span className="font-body font-normal tracking-sans">Kamus</span>
-            <span className="font-heading font-bold tracking-serif">Bajau Sama</span>
+            {/* Tab & Mobile Version: Icon replacing text */}
+            <div className="lg:hidden flex items-center">
+              <Image
+                src="/icon.png"
+                alt="Kamus Bajau Sama"
+                width={40}
+                height={40}
+                className="w-9 h-9 sm:w-10 sm:h-10 object-contain drop-shadow-sm group-hover:scale-105 active:scale-95 transition-transform"
+                priority
+              />
+            </div>
+
+            {/* Desktop Version: Text title without icon */}
+            <div className="hidden lg:inline-flex items-baseline gap-1.5 text-[22px]">
+              <span className="font-body font-normal tracking-sans">Kamus</span>
+              <span className="font-heading font-bold tracking-serif">Bajau Sama</span>
+            </div>
           </Link>
 
           {/* Desktop Integrated Search (shown only on md+ when showSearch is true) */}

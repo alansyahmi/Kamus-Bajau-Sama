@@ -14,7 +14,7 @@ interface ExampleBoxProps {
 }
 
 export default function ExampleBox({ senses, currentHeadword }: ExampleBoxProps) {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [playingId, setPlayingId] = useState<number | null>(null);
 
   const allExamples = senses.flatMap((s) => s.examples || []);
@@ -131,9 +131,25 @@ export default function ExampleBox({ senses, currentHeadword }: ExampleBoxProps)
                 </button>
               </div>
 
-              <p className="font-body text-[15px] text-slate-800 dark:text-stone-300">{ex.sentenceMs}</p>
-              {ex.sentenceEn && (
-                <p className="font-body text-[14px] text-slate-400 dark:text-stone-500">{ex.sentenceEn}</p>
+              {language === 'en' && (
+                <p className="font-body text-[15px] text-slate-800 dark:text-stone-300">
+                  {ex.sentenceEn || ex.sentenceMs}
+                </p>
+              )}
+
+              {language === 'ms' && (
+                <p className="font-body text-[15px] text-slate-800 dark:text-stone-300">
+                  {ex.sentenceMs}
+                </p>
+              )}
+
+              {language === 'bj' && (
+                <>
+                  <p className="font-body text-[15px] text-slate-800 dark:text-stone-300">{ex.sentenceMs}</p>
+                  {ex.sentenceEn && (
+                    <p className="font-body text-[14px] text-slate-400 dark:text-stone-500">{ex.sentenceEn}</p>
+                  )}
+                </>
               )}
             </div>
           );

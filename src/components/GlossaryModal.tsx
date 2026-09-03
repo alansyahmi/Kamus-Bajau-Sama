@@ -14,10 +14,11 @@ interface GlossaryEntry {
   headword: string;
   partOfSpeech: string;
   definitionMs: string;
+  definitionEn?: string | null;
 }
 
 export default function GlossaryModal({ isOpen, onClose }: GlossaryModalProps) {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [entries, setEntries] = useState<GlossaryEntry[]>([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -57,24 +58,37 @@ export default function GlossaryModal({ isOpen, onClose }: GlossaryModalProps) {
           ) : entries.length === 0 ? (
             <p className="font-body text-[14px] text-slate-400 py-6 text-center">Tiada entri.</p>
           ) : (
-            entries.map((item) => (
-              <Link
-                key={item.headword}
-                href={`/kamus/${encodeURIComponent(item.headword)}`}
-                onClick={onClose}
-                className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-2 p-3 sm:p-3.5 rounded-xl bg-slate-50 border border-slate-100 hover:bg-slate-100 hover:border-slate-200 transition-all text-decoration-none group min-h-[50px]"
-              >
-                <span className="font-heading font-bold text-[16px] text-slate-900 group-hover:text-black">
-                  {item.headword}
-                </span>
-                <div className="flex items-center gap-2 justify-between sm:justify-end w-full sm:w-auto">
-                  <span className="font-body text-[13px] text-slate-600 truncate max-w-[200px] sm:max-w-[240px]">{item.definitionMs}</span>
-                  <span className="font-body text-[10px] font-semibold uppercase tracking-wider bg-white border border-slate-200 text-slate-600 px-2 py-0.5 rounded shrink-0">
-                    {item.partOfSpeech.split('/')[0].trim()}
+            entries.map((item) => {
+              const def =
+                language === 'en'
+                  ? (item.definitionEn || item.definitionMs)
+                  : language === 'ms'
+                  ? item.definitionMs
+                  : item.definitionEn
+                  ? `${item.definitionMs} (${item.definitionEn})`
+                  : item.definitionMs;
+
+              return (
+                <Link
+                  key={item.headword}
+                  href={`/kamus/${encodeURIComponent(item.headword)}`}
+                  onClick={onClose}
+                  className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-2 p-3 sm:p-3.5 rounded-xl bg-slate-50 border border-slate-100 hover:bg-slate-100 hover:border-slate-200 transition-all text-decoration-none group min-h-[50px]"
+                >
+                  <span className="font-heading font-bold text-[16px] text-slate-900 group-hover:text-black">
+                    {item.headword}
                   </span>
-                </div>
-              </Link>
-            ))
+                  <div className="flex items-center gap-2 justify-between sm:justify-end w-full sm:w-auto">
+                    <span className="font-body text-[13px] text-slate-600 truncate max-w-[200px] sm:max-w-[240px]">
+                      {def}
+                    </span>
+                    <span className="font-body text-[10px] font-semibold uppercase tracking-wider bg-white border border-slate-200 text-slate-600 px-2 py-0.5 rounded shrink-0">
+                      {item.partOfSpeech.split('/')[0].trim()}
+                    </span>
+                  </div>
+                </Link>
+              );
+            })
           )}
         </div>
 

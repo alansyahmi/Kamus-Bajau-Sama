@@ -30,7 +30,14 @@ export default function FeaturedWordCard() {
 
   if (!data) return null;
 
-  const definition = language === 'en' && data.definitionEn ? data.definitionEn : data.definitionMs;
+  const definition =
+    language === 'en'
+      ? (data.definitionEn || data.definitionMs)
+      : language === 'ms'
+      ? data.definitionMs
+      : data.definitionEn
+      ? `${data.definitionMs} (${data.definitionEn})`
+      : data.definitionMs;
 
   return (
     <div className="bg-white rounded-3xl p-6 md:p-7 shadow-card border border-slate-200/80 flex flex-col justify-between relative overflow-hidden group hover:border-slate-300 transition-all">

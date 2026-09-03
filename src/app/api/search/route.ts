@@ -12,6 +12,7 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url);
     const query = searchParams.get('q') || '';
     const letter = searchParams.get('letter') || '';
+    const mode = (searchParams.get('mode') as 'bj' | 'ms' | 'en') || 'bj';
 
     // 1. Stats endpoint — two lightweight COUNT aggregates, no full scan
     if (query === 'stats') {
@@ -98,6 +99,7 @@ export async function GET(request: NextRequest) {
           headword: e.headword,
           partOfSpeech: e.partOfSpeech,
           definitionMs: e.senses[0]?.definitionMs || '',
+          definitionEn: e.senses[0]?.definitionEn || null,
         })),
         {
           headers: {
@@ -123,6 +125,7 @@ export async function GET(request: NextRequest) {
           headword: e.headword,
           partOfSpeech: e.partOfSpeech,
           definitionMs: e.senses[0]?.definitionMs || '',
+          definitionEn: e.senses[0]?.definitionEn || null,
         })),
         {
           headers: {
@@ -136,7 +139,7 @@ export async function GET(request: NextRequest) {
       return NextResponse.json([]);
     }
 
-    const results = await searchEntries(query.trim());
+    const results = await searchEntries(query.trim(), mode);
     return NextResponse.json(results, {
       headers: {
         'Cache-Control': 'public, max-age=300, stale-while-revalidate=60',

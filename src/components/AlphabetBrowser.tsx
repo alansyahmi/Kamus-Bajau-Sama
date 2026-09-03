@@ -11,10 +11,11 @@ interface LetterWordItem {
   headword: string;
   partOfSpeech: string;
   definitionMs: string;
+  definitionEn?: string | null;
 }
 
 export default function AlphabetBrowser() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [selectedLetter, setSelectedLetter] = useState<string | null>(null);
   const [letterWords, setLetterWords] = useState<LetterWordItem[]>([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -85,26 +86,37 @@ export default function AlphabetBrowser() {
                   Tiada perkataan bermula dengan huruf &ldquo;{selectedLetter}&rdquo; didokumentasikan lagi.
                 </p>
               ) : (
-                letterWords.map((item) => (
-                  <Link
-                    key={item.headword}
-                    href={`/kamus/${encodeURIComponent(item.headword)}`}
-                    onClick={() => setSelectedLetter(null)}
-                    className="flex items-center justify-between p-3 rounded-lg bg-slate-50 border border-slate-100 hover:bg-slate-100 hover:border-slate-200 transition-all text-decoration-none group"
-                  >
-                    <span className="font-heading font-bold text-[16px] text-slate-900 group-hover:text-black">
-                      {item.headword}
-                    </span>
-                    <div className="flex items-center gap-2">
-                      <span className="font-body text-[13px] text-slate-600 truncate max-w-[180px]">
-                        {item.definitionMs}
+                letterWords.map((item) => {
+                  const def =
+                    language === 'en'
+                      ? (item.definitionEn || item.definitionMs)
+                      : language === 'ms'
+                      ? item.definitionMs
+                      : item.definitionEn
+                      ? `${item.definitionMs} (${item.definitionEn})`
+                      : item.definitionMs;
+
+                  return (
+                    <Link
+                      key={item.headword}
+                      href={`/kamus/${encodeURIComponent(item.headword)}`}
+                      onClick={() => setSelectedLetter(null)}
+                      className="flex items-center justify-between p-3 rounded-lg bg-slate-50 border border-slate-100 hover:bg-slate-100 hover:border-slate-200 transition-all text-decoration-none group"
+                    >
+                      <span className="font-heading font-bold text-[16px] text-slate-900 group-hover:text-black">
+                        {item.headword}
                       </span>
-                      <span className="font-body text-[10px] font-semibold bg-white border border-slate-200 text-slate-600 px-1.5 py-0.5 rounded">
-                        {item.partOfSpeech.split('/')[0].trim()}
-                      </span>
-                    </div>
-                  </Link>
-                ))
+                      <div className="flex items-center gap-2">
+                        <span className="font-body text-[13px] text-slate-600 truncate max-w-[180px]">
+                          {def}
+                        </span>
+                        <span className="font-body text-[10px] font-semibold bg-white border border-slate-200 text-slate-600 px-1.5 py-0.5 rounded">
+                          {item.partOfSpeech.split('/')[0].trim()}
+                        </span>
+                      </div>
+                    </Link>
+                  );
+                })
               )}
             </div>
 

@@ -6,7 +6,7 @@ async function test() {
   const testQueries = ['mangan', 'tilau', 'kinakan', 'sinsim', 'alap', 'kerabaw', 'air', 'makan', 'bapa', 'anjing'];
   
   for (const q of testQueries) {
-    const results = await searchEntries(q, 3);
+    const results = await searchEntries(q, 'bj', 3);
     console.log(`\nQuery: "${q}" -> ${results.length} results`);
     for (const r of results) {
       console.log(`  [${r.matchType}] ${r.headword} (${r.partOfSpeech}) -> MS: ${r.definitionMs} | EN: ${r.definitionEn}`);

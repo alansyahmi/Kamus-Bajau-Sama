@@ -8,15 +8,18 @@ import { SearchResultItem } from '../lib/types';
 import InlineSuggestions from './InlineSuggestions';
 import SuggestWordModal from './SuggestWordModal';
 
+export type SearchMode = 'bj' | 'ms' | 'en';
+
 interface SearchBarProps {
   initialQuery?: string;
   onSelectWord?: (word: string) => void;
 }
 
 export default function SearchBar({ initialQuery = '' }: SearchBarProps) {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const router = useRouter();
   const [query, setQuery] = useState(initialQuery);
+  const [searchMode, setSearchMode] = useState<SearchMode>('bj');
   const [results, setResults] = useState<SearchResultItem[]>([]);
   const [isSuggestModalOpen, setIsSuggestModalOpen] = useState(false);
   const [suggestInitialWord, setSuggestInitialWord] = useState('');
@@ -67,7 +70,7 @@ export default function SearchBar({ initialQuery = '' }: SearchBarProps) {
 
     debounceTimerRef.current = setTimeout(async () => {
       try {
-        const res = await fetch(`/api/search?q=${encodeURIComponent(trimmed)}`);
+        const res = await fetch(`/api/search?q=${encodeURIComponent(trimmed)}&mode=${searchMode}`);
         if (res.ok) {
           const data = await res.json();
           setResults(data);
@@ -80,7 +83,7 @@ export default function SearchBar({ initialQuery = '' }: SearchBarProps) {
     return () => {
       if (debounceTimerRef.current) clearTimeout(debounceTimerRef.current);
     };
-  }, [query]);
+  }, [query, searchMode]);
 
   const saveRecentSearch = (word: string) => {
     const clean = word.trim().toLowerCase();
@@ -160,9 +163,9 @@ export default function SearchBar({ initialQuery = '' }: SearchBarProps) {
         {/* Search Input Box */}
         <form
           onSubmit={handleSubmit}
-          className="relative flex items-center bg-white border border-slate-300 rounded-xl px-3.5 py-1 focus-within:border-slate-900 focus-within:ring-2 focus-within:ring-slate-900/10 transition-all"
+          className="relative flex items-center bg-white border border-slate-300 rounded-xl px-3 py-1 sm:px-3.5 focus-within:border-slate-900 focus-within:ring-2 focus-within:ring-slate-900/10 transition-all gap-1.5"
         >
-          <Search className="w-5 h-5 text-slate-400 mr-2.5 flex-shrink-0" />
+          <Search className="w-5 h-5 text-slate-400 mr-1 flex-shrink-0" />
           <input
             ref={inputRef}
             type="text"
@@ -170,15 +173,21 @@ export default function SearchBar({ initialQuery = '' }: SearchBarProps) {
             onFocus={() => setIsInputFocused(true)}
             onBlur={() => setTimeout(() => setIsInputFocused(false), 200)}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder={t.search_placeholder}
-            className="w-full bg-transparent border-none outline-none font-body text-[16px] sm:text-[15px] text-slate-900 py-2.5 placeholder:text-slate-400 placeholder:font-light"
+            placeholder={
+              searchMode === 'ms'
+                ? (language === 'en' ? 'Search by Malay definition (e.g. makan, tidur)...' : 'Cari maksud Bahasa Melayu (cth: makan, tidur)...')
+                : searchMode === 'en'
+                ? (language === 'en' ? 'Search English definitions (e.g. eat, sleep)...' : 'Cari maksud Bahasa Inggeris (cth: eat, sleep)...')
+                : (language === 'en' ? 'Search Bajau Sama words...' : language === 'bj' ? 'Pemia pekataan ling Sama...' : 'Cari perkataan Bajau Sama...')
+            }
+            className="w-full bg-transparent border-none outline-none font-body text-[16px] sm:text-[15px] text-slate-900 py-2.5 placeholder:text-slate-400 placeholder:font-light min-w-0"
             autoComplete="off"
             aria-label="Cari perkataan"
           />
 
           {/* Shortcut indicator when empty */}
           {!query && (
-            <kbd className="hidden sm:inline-flex items-center font-mono text-[11px] text-slate-400 bg-slate-100 border border-slate-200 px-1.5 py-0.5 rounded mr-1">
+            <kbd className="hidden md:inline-flex items-center font-mono text-[11px] text-slate-400 bg-slate-100 border border-slate-200 px-1.5 py-0.5 rounded shrink-0">
               {isMac ? '⌘K' : 'Ctrl K'}
             </kbd>
           )}
@@ -187,12 +196,58 @@ export default function SearchBar({ initialQuery = '' }: SearchBarProps) {
             <button
               type="button"
               onClick={handleClear}
-              className="text-slate-400 hover:text-slate-800 p-2 min-w-[36px] min-h-[36px] flex items-center justify-center transition-colors"
+              className="text-slate-400 hover:text-slate-800 p-1.5 flex items-center justify-center transition-colors shrink-0"
               aria-label="Padam teks"
             >
               <X className="w-4 h-4" />
             </button>
           )}
+
+          {/* Search Mode Switcher (BJ: Perkataan Bajau | MS: Maksud Melayu | EN: English Definition) */}
+          <div className="shrink-0 flex items-center pl-1 sm:pl-2 border-l border-slate-200">
+            <div
+              className="inline-flex items-center bg-[#eff0f3] rounded-full p-[3px] gap-[2px] border border-[#e2e8f0]"
+              role="group"
+              aria-label="Mod carian perkataan atau maksud"
+            >
+              <button
+                type="button"
+                onClick={() => setSearchMode('bj')}
+                title="Cari melalui perkataan Bajau Sama"
+                className={`font-body text-[11px] font-semibold tracking-wide py-1 px-2.5 rounded-full transition-all duration-150 leading-none ${
+                  searchMode === 'bj'
+                    ? 'bg-white text-slate-900 font-bold shadow-[0_1px_3px_rgba(0,0,0,0.12),0_0_0_1px_rgba(0,0,0,0.04)]'
+                    : 'text-slate-500 hover:text-slate-800 hover:bg-white/60'
+                }`}
+              >
+                BJ
+              </button>
+              <button
+                type="button"
+                onClick={() => setSearchMode('ms')}
+                title="Cari melalui maksud Bahasa Melayu"
+                className={`font-body text-[11px] font-semibold tracking-wide py-1 px-2.5 rounded-full transition-all duration-150 leading-none ${
+                  searchMode === 'ms'
+                    ? 'bg-white text-slate-900 font-bold shadow-[0_1px_3px_rgba(0,0,0,0.12),0_0_0_1px_rgba(0,0,0,0.04)]'
+                    : 'text-slate-500 hover:text-slate-800 hover:bg-white/60'
+                }`}
+              >
+                MS
+              </button>
+              <button
+                type="button"
+                onClick={() => setSearchMode('en')}
+                title="Cari melalui maksud Bahasa Inggeris"
+                className={`font-body text-[11px] font-semibold tracking-wide py-1 px-2.5 rounded-full transition-all duration-150 leading-none ${
+                  searchMode === 'en'
+                    ? 'bg-white text-slate-900 font-bold shadow-[0_1px_3px_rgba(0,0,0,0.12),0_0_0_1px_rgba(0,0,0,0.04)]'
+                    : 'text-slate-500 hover:text-slate-800 hover:bg-white/60'
+                }`}
+              >
+                EN
+              </button>
+            </div>
+          </div>
         </form>
 
         {/* Dynamic Search Content (Recent Searches / Suggestions / Hint) */}
@@ -201,6 +256,7 @@ export default function SearchBar({ initialQuery = '' }: SearchBarProps) {
             <InlineSuggestions
               results={results}
               query={query}
+              searchMode={searchMode}
               onOpenSuggestModal={handleOpenSuggestModal}
             />
           ) : isInputFocused && recentSearches.length > 0 ? (

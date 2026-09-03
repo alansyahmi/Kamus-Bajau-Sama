@@ -1,7 +1,7 @@
 import { cache } from 'react';
 import { db } from '../db';
 import { entries, senses, affixes, dialects, thesaurus, sources } from '../db/schema';
-import { eq, or, sql, like } from 'drizzle-orm';
+import { eq, or, sql, like, inArray } from 'drizzle-orm';
 import { LexicalEntry, SearchResultItem } from '../types';
 
 export function normalizeQuery(query: string): string {
@@ -30,121 +30,84 @@ export function normalizeQuery(query: string): string {
  * 5. Meaning match (definitions in MS/EN contain query) -> Score 400
  * 6. Substring match (headword contains query) -> Score 200
  */
-export async function searchEntries(query: string, limit = 10): Promise<SearchResultItem[]> {
+export type SearchMode = 'bj' | 'ms' | 'en';
+
+/**
+ * Multi-tier search implementation:
+ * - mode 'bj' (default): Searches through Bajau headwords, variants, and morphological affixes
+ * - mode 'ms': Searches through Malay definitions in senses and affixes
+ * - mode 'en': Searches through English definitions in senses and affixes
+ */
+export async function searchEntries(
+  query: string,
+  mode: SearchMode = 'bj',
+  limit = 10
+): Promise<SearchResultItem[]> {
   const cleanQuery = query.trim().toLowerCase();
   if (!cleanQuery) return [];
 
   const normalized = normalizeQuery(cleanQuery);
-
-  // Pre-filter in SQL to avoid a full-table scan on every keystroke.
-  // Uses a LIKE clause on headword and search_normalized so only plausible
-  // candidates are fetched; the JS scoring loop handles fine-grained ranking.
-  const rawResults = await db.query.entries.findMany({
-    where: or(
-      like(entries.headword, `%${cleanQuery}%`),
-      like(entries.searchNormalized, `%${normalized}%`),
-    ),
-    with: {
-      senses: {
-        orderBy: (senses, { asc }) => [asc(senses.orderIndex)],
-        limit: 1,
-      },
-      affixes: {
-        limit: 4,
-      },
-      dialects: true,
-    },
-    limit: 100,
-  });
-
   const scored: Array<{ item: SearchResultItem; score: number }> = [];
 
-  for (const entry of rawResults) {
-    const headwordLower = entry.headword.toLowerCase();
-    const primarySense = entry.senses[0];
-    const defMs = primarySense?.definitionMs || '';
-    const defEn = primarySense?.definitionEn || '';
-    const defMsLower = defMs.toLowerCase();
-    const defEnLower = defEn.toLowerCase();
+  if (mode === 'ms') {
+    // Mode MS: Search through Malay definitions
+    const matchingSenses = await db
+      .select({ entryId: senses.entryId })
+      .from(senses)
+      .where(like(sql`LOWER(${senses.definitionMs})`, `%${cleanQuery}%`))
+      .limit(80);
 
-    let score = 0;
-    let matchType: SearchResultItem['matchType'] = 'substring';
-    let matchedVariant: SearchResultItem['matchedVariant'] = undefined;
+    const matchingAffixes = await db
+      .select({ entryId: affixes.entryId })
+      .from(affixes)
+      .where(like(sql`LOWER(${affixes.meaningMs})`, `%${cleanQuery}%`))
+      .limit(40);
 
-    // Check for distinct variant / dialect match (exclude variants that are identical to the headword)
-    const matchedDialect = entry.dialects?.find(d => {
-      const cleanDialect = d.dialectForm.toLowerCase().replace(/\s*\(piawai\)/i, '').trim();
-      const normDialect = normalizeQuery(cleanDialect);
-      
-      // Exclude if this variant is simply identical to the headword itself
-      if (cleanDialect === headwordLower || normDialect === entry.searchNormalized) {
-        return false;
-      }
+    const entryIds = Array.from(
+      new Set([...matchingSenses.map((s) => s.entryId), ...matchingAffixes.map((a) => a.entryId)])
+    );
 
-      return cleanDialect === cleanQuery || normDialect === normalized || cleanDialect.startsWith(cleanQuery);
+    if (entryIds.length === 0) return [];
+
+    const rawResults = await db.query.entries.findMany({
+      where: inArray(entries.id, entryIds),
+      with: {
+        senses: {
+          orderBy: (senses, { asc }) => [asc(senses.orderIndex)],
+          limit: 1,
+        },
+        affixes: {
+          limit: 4,
+        },
+        dialects: true,
+      },
+      limit: 100,
     });
 
-    if (matchedDialect) {
-      const isSpelling = matchedDialect.localityName?.toLowerCase().includes('varian') ||
-                         matchedDialect.localityName?.toLowerCase().includes('ejaan') ||
-                         matchedDialect.localityName?.toLowerCase().includes('ortografi');
-      matchedVariant = {
-        form: matchedDialect.dialectForm.replace(/\s*\(piawai\)/i, '').trim(),
-        type: isSpelling ? 'spelling' : 'dialect',
-        localityName: matchedDialect.localityName,
-      };
-    }
+    for (const entry of rawResults) {
+      const primarySense = entry.senses[0];
+      const defMs = primarySense?.definitionMs || '';
+      const defEn = primarySense?.definitionEn || '';
+      const defMsLower = defMs.toLowerCase();
 
-    // 1. Exact match on Headword (Score: 1000)
-    if (headwordLower === cleanQuery) {
-      score = 1000;
-      matchType = 'exact';
-    }
-    // 2. Exact match on Variant / Alternative spelling (Score: 900)
-    else if (matchedDialect && (
-      matchedDialect.dialectForm.toLowerCase().replace(/\s*\(piawai\)/i, '').trim() === cleanQuery ||
-      normalizeQuery(matchedDialect.dialectForm) === normalized
-    )) {
-      score = matchedVariant?.type === 'spelling' ? 900 : 850;
-      matchType = 'variant';
-    }
-    // 3. Exact Normalized match on Headword (Score: 800)
-    else if (entry.searchNormalized === normalized) {
-      score = 800;
-      matchType = 'normalized';
-    }
-    // 4. Prefix match on Headword (Score: 700)
-    else if (headwordLower.startsWith(cleanQuery)) {
-      score = 700;
-      matchType = 'prefix';
-    }
-    // 5. Prefix match on Normalized Headword (Score: 600)
-    else if (entry.searchNormalized.startsWith(normalized)) {
-      score = 600;
-      matchType = 'normalized';
-    }
-    // 6. Prefix match on Variant (Score: 550)
-    else if (matchedDialect) {
-      score = 550;
-      matchType = 'variant';
-    }
-    // 7. Morphological affix match (Score: 500)
-    else if (entry.affixes.some(af => af.term.toLowerCase() === cleanQuery || normalizeQuery(af.term) === normalized || af.term.toLowerCase().startsWith(cleanQuery))) {
-      score = 500;
-      matchType = 'affix';
-    }
-    // 8. Meaning match in MS/EN (Score: 400)
-    else if (defMsLower.includes(cleanQuery) || defEnLower.includes(cleanQuery)) {
-      score = 400;
-      matchType = 'meaning';
-    }
-    // 9. Substring match on Headword (Score: 200)
-    else if (headwordLower.includes(cleanQuery)) {
-      score = 200;
-      matchType = 'substring';
-    }
+      let score = 0;
+      const defTokens = defMsLower.split(/[\s,;.()/]+/).filter(Boolean);
+      const isExactToken = defTokens.includes(cleanQuery);
 
-    if (score > 0) {
+      if (defMsLower === cleanQuery) {
+        score = 1000;
+      } else if (isExactToken) {
+        score = 900;
+      } else if (defMsLower.startsWith(cleanQuery)) {
+        score = 800;
+      } else if (entry.affixes.some((af) => af.meaningMs.toLowerCase().split(/[\s,;.()/]+/).includes(cleanQuery))) {
+        score = 700;
+      } else if (defMsLower.includes(cleanQuery)) {
+        score = 600;
+      } else {
+        score = 400;
+      }
+
       scored.push({
         item: {
           id: entry.id,
@@ -152,17 +115,189 @@ export async function searchEntries(query: string, limit = 10): Promise<SearchRe
           partOfSpeech: entry.partOfSpeech,
           definitionMs: defMs,
           definitionEn: defEn,
-          matchType,
-          matchedVariant,
+          matchType: 'meaning',
         },
         score,
       });
     }
+  } else if (mode === 'en') {
+    // Mode EN: Search through English definitions
+    const matchingSenses = await db
+      .select({ entryId: senses.entryId })
+      .from(senses)
+      .where(like(sql`LOWER(${senses.definitionEn})`, `%${cleanQuery}%`))
+      .limit(80);
+
+    const matchingAffixes = await db
+      .select({ entryId: affixes.entryId })
+      .from(affixes)
+      .where(like(sql`LOWER(${affixes.meaningEn})`, `%${cleanQuery}%`))
+      .limit(40);
+
+    const entryIds = Array.from(
+      new Set([...matchingSenses.map((s) => s.entryId), ...matchingAffixes.map((a) => a.entryId)])
+    );
+
+    if (entryIds.length === 0) return [];
+
+    const rawResults = await db.query.entries.findMany({
+      where: inArray(entries.id, entryIds),
+      with: {
+        senses: {
+          orderBy: (senses, { asc }) => [asc(senses.orderIndex)],
+          limit: 1,
+        },
+        affixes: {
+          limit: 4,
+        },
+        dialects: true,
+      },
+      limit: 100,
+    });
+
+    for (const entry of rawResults) {
+      const primarySense = entry.senses[0];
+      const defMs = primarySense?.definitionMs || '';
+      const defEn = primarySense?.definitionEn || '';
+      const defEnLower = defEn.toLowerCase();
+
+      let score = 0;
+      const defTokens = defEnLower.split(/[\s,;.()/]+/).filter(Boolean);
+      const isExactToken = defTokens.includes(cleanQuery);
+
+      if (defEnLower === cleanQuery || defEnLower === `to ${cleanQuery}`) {
+        score = 1000;
+      } else if (isExactToken) {
+        score = 900;
+      } else if (defEnLower.startsWith(cleanQuery) || defEnLower.startsWith(`to ${cleanQuery}`)) {
+        score = 800;
+      } else if (entry.affixes.some((af) => (af.meaningEn || '').toLowerCase().split(/[\s,;.()/]+/).includes(cleanQuery))) {
+        score = 700;
+      } else if (defEnLower.includes(cleanQuery)) {
+        score = 600;
+      } else {
+        score = 400;
+      }
+
+      scored.push({
+        item: {
+          id: entry.id,
+          headword: entry.headword,
+          partOfSpeech: entry.partOfSpeech,
+          definitionMs: defMs,
+          definitionEn: defEn,
+          matchType: 'meaning',
+        },
+        score,
+      });
+    }
+  } else {
+    // Mode BJ (default): Search through Bajau headwords, variants, and affixes
+    const rawResults = await db.query.entries.findMany({
+      where: or(
+        like(entries.headword, `%${cleanQuery}%`),
+        like(entries.searchNormalized, `%${normalized}%`),
+      ),
+      with: {
+        senses: {
+          orderBy: (senses, { asc }) => [asc(senses.orderIndex)],
+          limit: 1,
+        },
+        affixes: {
+          limit: 4,
+        },
+        dialects: true,
+      },
+      limit: 100,
+    });
+
+    for (const entry of rawResults) {
+      const headwordLower = entry.headword.toLowerCase();
+      const primarySense = entry.senses[0];
+      const defMs = primarySense?.definitionMs || '';
+      const defEn = primarySense?.definitionEn || '';
+
+      let score = 0;
+      let matchType: SearchResultItem['matchType'] = 'substring';
+      let matchedVariant: SearchResultItem['matchedVariant'] = undefined;
+
+      const matchedDialect = entry.dialects?.find((d) => {
+        const cleanDialect = d.dialectForm.toLowerCase().replace(/\s*\(piawai\)/i, '').trim();
+        const normDialect = normalizeQuery(cleanDialect);
+        if (cleanDialect === headwordLower || normDialect === entry.searchNormalized) {
+          return false;
+        }
+        return cleanDialect === cleanQuery || normDialect === normalized || cleanDialect.startsWith(cleanQuery);
+      });
+
+      if (matchedDialect) {
+        const isSpelling =
+          matchedDialect.localityName?.toLowerCase().includes('varian') ||
+          matchedDialect.localityName?.toLowerCase().includes('ejaan') ||
+          matchedDialect.localityName?.toLowerCase().includes('ortografi');
+        matchedVariant = {
+          form: matchedDialect.dialectForm.replace(/\s*\(piawai\)/i, '').trim(),
+          type: isSpelling ? 'spelling' : 'dialect',
+          localityName: matchedDialect.localityName,
+        };
+      }
+
+      if (headwordLower === cleanQuery) {
+        score = 1000;
+        matchType = 'exact';
+      } else if (
+        matchedDialect &&
+        (matchedDialect.dialectForm.toLowerCase().replace(/\s*\(piawai\)/i, '').trim() === cleanQuery ||
+          normalizeQuery(matchedDialect.dialectForm) === normalized)
+      ) {
+        score = matchedVariant?.type === 'spelling' ? 900 : 850;
+        matchType = 'variant';
+      } else if (entry.searchNormalized === normalized) {
+        score = 800;
+        matchType = 'normalized';
+      } else if (headwordLower.startsWith(cleanQuery)) {
+        score = 700;
+        matchType = 'prefix';
+      } else if (entry.searchNormalized.startsWith(normalized)) {
+        score = 600;
+        matchType = 'normalized';
+      } else if (matchedDialect) {
+        score = 550;
+        matchType = 'variant';
+      } else if (
+        entry.affixes.some(
+          (af) =>
+            af.term.toLowerCase() === cleanQuery ||
+            normalizeQuery(af.term) === normalized ||
+            af.term.toLowerCase().startsWith(cleanQuery)
+        )
+      ) {
+        score = 500;
+        matchType = 'affix';
+      } else if (headwordLower.includes(cleanQuery)) {
+        score = 200;
+        matchType = 'substring';
+      }
+
+      if (score > 0) {
+        scored.push({
+          item: {
+            id: entry.id,
+            headword: entry.headword,
+            partOfSpeech: entry.partOfSpeech,
+            definitionMs: defMs,
+            definitionEn: defEn,
+            matchType,
+            matchedVariant,
+          },
+          score,
+        });
+      }
+    }
   }
 
   scored.sort((a, b) => b.score - a.score || a.item.headword.localeCompare(b.item.headword));
-
-  return scored.slice(0, limit).map(s => s.item);
+  return scored.slice(0, limit).map((s) => s.item);
 }
 
 /**

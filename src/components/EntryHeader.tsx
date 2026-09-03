@@ -34,7 +34,14 @@ export default function EntryHeader({ headword, partOfSpeech, ipa, audioUrl, roo
     );
   };
 
-  const rootDefinition = language === 'en' && rootEntry?.definitionEn ? rootEntry.definitionEn : rootEntry?.definitionMs;
+  const rootDefinition =
+    language === 'en'
+      ? (rootEntry?.definitionEn || rootEntry?.definitionMs)
+      : language === 'ms'
+      ? rootEntry?.definitionMs
+      : rootEntry?.definitionEn
+      ? `${rootEntry.definitionMs} (${rootEntry.definitionEn})`
+      : rootEntry?.definitionMs;
 
   return (
     <div className="flex flex-col items-start">

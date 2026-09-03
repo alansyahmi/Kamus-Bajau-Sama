@@ -51,6 +51,22 @@ function exportD1Seed() {
     }
   }
 
+  sqlStatements.push('\n-- Performance Indexes to prevent full table scans and eliminate row read limits');
+  sqlStatements.push('CREATE INDEX IF NOT EXISTS `affixes_entry_id_idx` ON `affixes` (`entry_id`);');
+  sqlStatements.push('CREATE INDEX IF NOT EXISTS `affixes_term_idx` ON `affixes` (`term`);');
+  sqlStatements.push('CREATE INDEX IF NOT EXISTS `affixes_meaning_ms_idx` ON `affixes` (`meaning_ms`);');
+  sqlStatements.push('CREATE INDEX IF NOT EXISTS `dialects_entry_id_idx` ON `dialects` (`entry_id`);');
+  sqlStatements.push('CREATE INDEX IF NOT EXISTS `dialects_dialect_form_idx` ON `dialects` (`dialect_form`);');
+  sqlStatements.push('CREATE INDEX IF NOT EXISTS `entries_headword_idx` ON `entries` (`headword`);');
+  sqlStatements.push('CREATE INDEX IF NOT EXISTS `entries_search_normalized_idx` ON `entries` (`search_normalized`);');
+  sqlStatements.push('CREATE INDEX IF NOT EXISTS `examples_sense_id_idx` ON `examples` (`sense_id`);');
+  sqlStatements.push('CREATE INDEX IF NOT EXISTS `senses_entry_id_idx` ON `senses` (`entry_id`);');
+  sqlStatements.push('CREATE INDEX IF NOT EXISTS `senses_def_ms_idx` ON `senses` (`definition_ms`);');
+  sqlStatements.push('CREATE INDEX IF NOT EXISTS `senses_def_en_idx` ON `senses` (`definition_en`);');
+  sqlStatements.push('CREATE INDEX IF NOT EXISTS `sources_entry_id_idx` ON `sources` (`entry_id`);');
+  sqlStatements.push('CREATE INDEX IF NOT EXISTS `submissions_status_idx` ON `submissions` (`status`);');
+  sqlStatements.push('CREATE INDEX IF NOT EXISTS `thesaurus_entry_id_idx` ON `thesaurus` (`entry_id`);');
+
   sqlStatements.push('\nPRAGMA foreign_keys = ON;\n');
 
   const outputPath = path.resolve(process.cwd(), 'd1-seed.sql');

@@ -12,7 +12,7 @@ import ThesaurusCard from '@/components/ThesaurusCard';
 import ProvenanceBanner from '@/components/ProvenanceBanner';
 import SuggestWordModal from '@/components/SuggestWordModal';
 
-export const dynamic = 'force-dynamic';
+export const revalidate = 86400; // Cache at Edge for 24 hours
 export const runtime = 'edge';
 
 interface EntryPageProps {

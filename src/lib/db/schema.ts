@@ -1,4 +1,4 @@
-import { sqliteTable, text, integer } from 'drizzle-orm/sqlite-core';
+import { sqliteTable, text, integer, index } from 'drizzle-orm/sqlite-core';
 import { sql, relations } from 'drizzle-orm';
 
 // Authoritative Lexical Entries
@@ -11,7 +11,10 @@ export const entries = sqliteTable('entries', {
   audioUrl: text('audio_url'),
   createdAt: text('created_at').default(sql`(CURRENT_TIMESTAMP)`).notNull(),
   updatedAt: text('updated_at').default(sql`(CURRENT_TIMESTAMP)`).notNull(),
-});
+}, (table) => ({
+  headwordIdx: index('entries_headword_idx').on(table.headword),
+  searchNormalizedIdx: index('entries_search_normalized_idx').on(table.searchNormalized),
+}));
 
 // Senses / Definitions (supporting multi-sense entries)
 export const senses = sqliteTable('senses', {
@@ -20,7 +23,11 @@ export const senses = sqliteTable('senses', {
   orderIndex: integer('order_index').default(1).notNull(),
   definitionMs: text('definition_ms').notNull(),
   definitionEn: text('definition_en'),
-});
+}, (table) => ({
+  entryIdIdx: index('senses_entry_id_idx').on(table.entryId),
+  defMsIdx: index('senses_def_ms_idx').on(table.definitionMs),
+  defEnIdx: index('senses_def_en_idx').on(table.definitionEn),
+}));
 
 // Example Sentences
 export const examples = sqliteTable('examples', {
@@ -31,7 +38,9 @@ export const examples = sqliteTable('examples', {
   sentenceMs: text('sentence_ms').notNull(),
   sentenceEn: text('sentence_en'),
   audioUrl: text('audio_url'),
-});
+}, (table) => ({
+  senseIdIdx: index('examples_sense_id_idx').on(table.senseId),
+}));
 
 // Morphological Affixes & Derivations (Turunan Sipitan / Terbitan Imbuhan)
 export const affixes = sqliteTable('affixes', {
@@ -40,7 +49,11 @@ export const affixes = sqliteTable('affixes', {
   term: text('term').notNull(),
   meaningMs: text('meaning_ms').notNull(),
   meaningEn: text('meaning_en'),
-});
+}, (table) => ({
+  entryIdIdx: index('affixes_entry_id_idx').on(table.entryId),
+  termIdx: index('affixes_term_idx').on(table.term),
+  meaningMsIdx: index('affixes_meaning_ms_idx').on(table.meaningMs),
+}));
 
 // Dialect / Regional Variations (Kota Belud, Tuaran, Papar, Kawang, Semporna, etc.)
 export const dialects = sqliteTable('dialects', {
@@ -48,7 +61,10 @@ export const dialects = sqliteTable('dialects', {
   entryId: integer('entry_id').notNull().references(() => entries.id, { onDelete: 'cascade' }),
   localityName: text('locality_name').notNull(),
   dialectForm: text('dialect_form').notNull(),
-});
+}, (table) => ({
+  entryIdIdx: index('dialects_entry_id_idx').on(table.entryId),
+  dialectFormIdx: index('dialects_dialect_form_idx').on(table.dialectForm),
+}));
 
 // Thesaurus / Related Words
 export const thesaurus = sqliteTable('thesaurus', {
@@ -56,7 +72,9 @@ export const thesaurus = sqliteTable('thesaurus', {
   entryId: integer('entry_id').notNull().references(() => entries.id, { onDelete: 'cascade' }),
   relatedHeadword: text('related_headword').notNull(),
   relationNote: text('relation_note'),
-});
+}, (table) => ({
+  entryIdIdx: index('thesaurus_entry_id_idx').on(table.entryId),
+}));
 
 // Linguistic Source & Provenance
 export const sources = sqliteTable('sources', {
@@ -65,7 +83,9 @@ export const sources = sqliteTable('sources', {
   sourceType: text('source_type').notNull(),
   description: text('description').notNull(),
   verifiedBy: text('verified_by'),
-});
+}, (table) => ({
+  entryIdIdx: index('sources_entry_id_idx').on(table.entryId),
+}));
 
 // Community Word Submissions
 export const submissions = sqliteTable('submissions', {
@@ -79,7 +99,9 @@ export const submissions = sqliteTable('submissions', {
   notes: text('notes'),
   status: text('status', { enum: ['pending', 'approved', 'rejected'] }).default('pending').notNull(),
   createdAt: text('created_at').default(sql`(CURRENT_TIMESTAMP)`).notNull(),
-});
+}, (table) => ({
+  statusIdx: index('submissions_status_idx').on(table.status),
+}));
 
 // Relations setup
 export const entriesRelations = relations(entries, ({ many }) => ({

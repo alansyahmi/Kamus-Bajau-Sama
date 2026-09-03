@@ -8,6 +8,13 @@
       "when": 1788362935522,
       "tag": "0000_steady_enchantress",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1788469592242,
+      "tag": "0001_skinny_spiral",
+      "breakpoints": true
     }
   ]
 }

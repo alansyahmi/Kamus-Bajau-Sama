@@ -103,13 +103,13 @@ export async function GET(request: NextRequest) {
         })),
         {
           headers: {
-            'Cache-Control': 'public, max-age=3600, stale-while-revalidate=300',
+            'Cache-Control': 'public, max-age=3600, s-maxage=86400, stale-while-revalidate=86400',
           },
         }
       );
     }
 
-    // 4. All glossary endpoint — intentional full list but cached aggressively
+    // 4. All glossary endpoint — intentional full list cached 24h at Cloudflare Edge
     if (query === 'all') {
       const allEntries = await db.query.entries.findMany({
         with: {
@@ -129,7 +129,7 @@ export async function GET(request: NextRequest) {
         })),
         {
           headers: {
-            'Cache-Control': 'public, max-age=3600, stale-while-revalidate=300',
+            'Cache-Control': 'public, max-age=3600, s-maxage=86400, stale-while-revalidate=86400',
           },
         }
       );
@@ -142,7 +142,7 @@ export async function GET(request: NextRequest) {
     const results = await searchEntries(query.trim(), mode);
     return NextResponse.json(results, {
       headers: {
-        'Cache-Control': 'public, max-age=300, stale-while-revalidate=60',
+        'Cache-Control': 'public, max-age=300, s-maxage=3600, stale-while-revalidate=86400',
       },
     });
   } catch (err) {

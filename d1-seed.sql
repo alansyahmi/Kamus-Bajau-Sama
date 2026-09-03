@@ -6979,4 +6979,20 @@ INSERT OR IGNORE INTO `sources` (`id`, `entry_id`, `source_type`, `description`,
   (20411, 20411, 'Penyunting Pentadbir', 'Dimasukkan melalui Papan Pemuka Pentadbir Kamus Bajau Samah', 'Pentadbir Kamus'),
   (20412, 20414, 'Penyunting Pentadbir', 'Dimasukkan melalui Papan Pemuka Pentadbir Kamus Bajau Samah', 'Pentadbir Kamus');
 
+-- Performance Indexes to prevent full table scans and eliminate row read limits
+CREATE INDEX IF NOT EXISTS `affixes_entry_id_idx` ON `affixes` (`entry_id`);
+CREATE INDEX IF NOT EXISTS `affixes_term_idx` ON `affixes` (`term`);
+CREATE INDEX IF NOT EXISTS `affixes_meaning_ms_idx` ON `affixes` (`meaning_ms`);
+CREATE INDEX IF NOT EXISTS `dialects_entry_id_idx` ON `dialects` (`entry_id`);
+CREATE INDEX IF NOT EXISTS `dialects_dialect_form_idx` ON `dialects` (`dialect_form`);
+CREATE INDEX IF NOT EXISTS `entries_headword_idx` ON `entries` (`headword`);
+CREATE INDEX IF NOT EXISTS `entries_search_normalized_idx` ON `entries` (`search_normalized`);
+CREATE INDEX IF NOT EXISTS `examples_sense_id_idx` ON `examples` (`sense_id`);
+CREATE INDEX IF NOT EXISTS `senses_entry_id_idx` ON `senses` (`entry_id`);
+CREATE INDEX IF NOT EXISTS `senses_def_ms_idx` ON `senses` (`definition_ms`);
+CREATE INDEX IF NOT EXISTS `senses_def_en_idx` ON `senses` (`definition_en`);
+CREATE INDEX IF NOT EXISTS `sources_entry_id_idx` ON `sources` (`entry_id`);
+CREATE INDEX IF NOT EXISTS `submissions_status_idx` ON `submissions` (`status`);
+CREATE INDEX IF NOT EXISTS `thesaurus_entry_id_idx` ON `thesaurus` (`entry_id`);
+
 PRAGMA foreign_keys = ON;

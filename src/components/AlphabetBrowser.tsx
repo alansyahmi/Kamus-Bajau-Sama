@@ -38,7 +38,7 @@ export default function AlphabetBrowser() {
 
   return (
     <>
-      <section className="mt-8 bg-white/70 backdrop-blur-xs rounded-3xl p-5 md:p-6 border border-slate-200/80 shadow-subtle">
+      <section id="simak-abjad" className="mt-8 bg-white/70 backdrop-blur-xs rounded-3xl p-5 md:p-6 border border-slate-200/80 shadow-subtle scroll-mt-6">
         <div className="flex items-center gap-2 mb-3 text-slate-700">
           <BookA className="w-4 h-4 text-slate-500" />
           <span className="font-body text-[12px] font-bold tracking-wide uppercase text-slate-500">

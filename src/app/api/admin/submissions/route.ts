@@ -4,7 +4,7 @@ import { db } from '@/lib/db';
 import { submissions } from '@/lib/db/schema';
 import { desc } from 'drizzle-orm';
 
-export const runtime = 'edge';
+export const runtime = process.env.NODE_ENV === 'development' ? 'nodejs' : 'edge';
 
 export async function GET(req: NextRequest) {
   if (!verifyAdminSession(req)) return unauthorizedResponse();

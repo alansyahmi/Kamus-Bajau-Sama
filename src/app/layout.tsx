@@ -3,6 +3,7 @@ import { Libre_Baskerville, Work_Sans } from 'next/font/google';
 import './globals.css';
 import { LanguageProvider } from '@/lib/i18n/LanguageContext';
 import LinangkitBorder from '@/components/LinangkitBorder';
+import Footer from '@/components/Footer';
 
 const libreBaskerville = Libre_Baskerville({
   subsets: ['latin'],
@@ -23,11 +24,24 @@ const workSans = Work_Sans({
 export const metadata: Metadata = {
   title: 'Kamus Bajau Sama — Pangkalan Data & Warisan Leksikal Terbuka',
   description:
-    'Sebuah kamus digital terbuka dan inisiatif pemeliharaan bahasa Bajau Samah. Cari maksud perkataan, sebutan, morfologi imbuhan, dan variasi dialek.',
+    'Sebuah kamus digital terbuka dan inisiatif pemeliharaan bahasa Bajau Sama. Cari maksud perkataan, sebutan, morfologi imbuhan, dan variasi dialek.',
   keywords: [
     'Kamus Bajau Sama',
+    'Bajau Sama',
     'Bajau Samah',
+    'Sama Bajau',
+    'Sama-Bajau',
+    'Sama-Bajaw',
     'Bahasa Bajau',
+    'Ling Sama',
+    'West Coast Bajau',
+    'West Coast Bajaw',
+    'West Coast Sama',
+    'West Coast Samah',
+    'Bajau Kota Belud',
+    'Sama Kota Belud',
+    'Bajau Tuaran',
+    'Sama Tuaran',
     'Kamus Bajau Melayu',
     'Sabah Language',
     'Kota Belud',
@@ -52,12 +66,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ms" className={`${libreBaskerville.variable} ${workSans.variable}`}>
-      <body className="font-body bg-background text-text-main min-h-screen relative antialiased selection:bg-slate-900 selection:text-white">
+      <body className="font-body bg-background text-text-main min-h-screen relative antialiased selection:bg-slate-900 selection:text-white flex flex-col justify-between">
         <LanguageProvider>
           <LinangkitBorder />
-          <div className="flex-1 flex flex-col pl-[calc(var(--linangkit-width)+12px)] sm:pl-[calc(var(--linangkit-width)+18px)] md:pl-[calc(var(--linangkit-width)+40px)] pr-3.5 sm:pr-6 md:pr-12 pt-5 sm:pt-7 md:pt-9 pb-12 max-w-[1440px] mx-auto w-full min-h-screen">
+          <div className="flex-1 flex flex-col pl-[calc(var(--linangkit-width)+12px)] sm:pl-[calc(var(--linangkit-width)+18px)] md:pl-[calc(var(--linangkit-width)+40px)] pr-3.5 sm:pr-6 md:pr-12 pt-5 sm:pt-7 md:pt-9 pb-12 max-w-[1440px] mx-auto w-full">
             {children}
           </div>
+          <Footer />
         </LanguageProvider>
       </body>
     </html>

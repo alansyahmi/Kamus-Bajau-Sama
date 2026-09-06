@@ -1,10 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-export const runtime = 'edge';
+export const runtime = process.env.NODE_ENV === 'development' ? 'nodejs' : 'edge';
 
 const VALID_SECRETS = [
   (process.env.ADMIN_SECRET_KEY || '').trim(),
-  'bajausamah2026',
+  'bajausama2026',
   'bajau2026'
 ].filter(Boolean);
 
@@ -12,7 +12,7 @@ export async function POST(req: NextRequest) {
   try {
     const { passkey } = await req.json();
     const cleanInput = (passkey || '').trim();
-    
+
     if (VALID_SECRETS.includes(cleanInput)) {
       const response = NextResponse.json({ success: true, message: 'Log masuk pentadbir berjaya.' });
       response.cookies.set('admin_token', cleanInput, {
@@ -24,7 +24,7 @@ export async function POST(req: NextRequest) {
       });
       return response;
     }
-    
+
     return NextResponse.json({ error: 'Kunci keselamatan salah.' }, { status: 401 });
   } catch {
     return NextResponse.json({ error: 'Permintaan tidak sah.' }, { status: 400 });

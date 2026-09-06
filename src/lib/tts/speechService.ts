@@ -1,6 +1,6 @@
 /**
- * Multi-Word Phonetic Compiler for Kamus Bajau Samah.
- * Compiles full Bajau Samah sentences and phrases into a single unified phonetic representation
+ * Multi-Word Phonetic Compiler for Kamus Bajau Sama.
+ * Compiles full Bajau Sama sentences and phrases into a single unified phonetic representation
  * suitable for authentic synthesis in Austronesian neural voices (Tagalog, Javanese, Sundanese).
  */
 export function toTtsPhoneticSpelling(text: string, ipa?: string | null): string {

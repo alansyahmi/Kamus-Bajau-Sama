@@ -1,5 +1,5 @@
 /**
- * KAMUS BAJAU SAMAH — INTERACTIVE PROTOTYPE CONTROLLER
+ * KAMUS BAJAU SAMA — INTERACTIVE PROTOTYPE CONTROLLER
  */
 
 // Sample authorized lexical database for realistic prototype testing
@@ -247,7 +247,7 @@ const TRANSLATIONS = {
     entry_suggest_btn: '+ Cadang Maklumat',
     about_kicker: 'INISIATIF PEMELIHARAAN WARISAN BAHASA',
     about_title: 'Memelihara Warisan Lisan,<br>Memperkasa Penutur <em>Generasi Hadapan.</em>',
-    about_lead: '<strong>Kamus Bajau Samah</strong> ialah sebuah sumber leksikal digital terbuka yang diasaskan untuk mendokumentasikan, meraikan dan memperluaskan kosa kata bahasa Bajau Samah agar kekal hidup dan mudah diakses oleh semua lapisan masyarakat.',
+    about_lead: '<strong>Kamus Bajau Sama</strong> ialah sebuah sumber leksikal digital terbuka yang diasaskan untuk mendokumentasikan, meraikan dan memperluaskan kosa kata bahasa Bajau Sama agar kekal hidup dan mudah diakses oleh semua lapisan masyarakat.',
     about_cta_title: 'Sumbangkan Pengetahuan Anda',
     about_cta_desc: 'Kamus ini berkembang seiring dengan sumbangan anda. Jika anda mengetahui perkataan, sebutan, dialek setempat atau contoh ayat baharu, kongsi bersama kami untuk dinilai dan dimasukkan ke dalam pangkalan data rasmi.',
     about_cta_btn: '+ Cadang Perkataan Sekarang',
@@ -266,7 +266,7 @@ const TRANSLATIONS = {
     entry_suggest_btn: '+ Sadang Maklumat',
     about_kicker: 'INISIATIF PEMELOROON WARISAN LING-TI',
     about_title: 'Meloro Warisan Lisan,<br>Memperkasa Pemakai <em>Generasi Baru.</em>',
-    about_lead: "<strong>Kamus Bajau Samah</strong> iono po'on leksikal digital binuka' yang niasas untuk mendokumentasi, mera\'i ko' mopoluasan kosa kata bahasa Bajau Samah supaya kekal hidup bo' terbuka kepada alam masyarakat.",
+    about_lead: "<strong>Kamus Bajau Sama</strong> iono po'on leksikal digital binuka' yang niasas untuk mendokumentasi, mera\'i ko' mopoluasan kosa kata bahasa Bajau Sama supaya kekal hidup bo' terbuka kepada alam masyarakat.",
     about_cta_title: 'Sumbangin Pengeratian-nu',
     about_cta_desc: "Kamus tu bekembang sebia engko' sumbangan-nu. Mun ngerati-nu pekataan, sebutan, lugat setungan atau sonto ayat bau, kongsino engkami untuk nirego ko' niposok diom data rasmi.",
     about_cta_btn: '+ Sadang Pekataan Betiu',
@@ -285,7 +285,7 @@ const TRANSLATIONS = {
     entry_suggest_btn: '+ Suggest Information',
     about_kicker: 'LANGUAGE HERITAGE PRESERVATION INITIATIVE',
     about_title: 'Preserving an Oral Heritage,<br>Empowering <em>Future Generations.</em>',
-    about_lead: '<strong>Kamus Bajau Samah</strong> is an open digital lexical resource founded to document, celebrate and expand the Bajau Samah vocabulary so it remains alive and accessible to all communities.',
+    about_lead: '<strong>Kamus Bajau Sama</strong> is an open digital lexical resource founded to document, celebrate and expand the Bajau Sama vocabulary so it remains alive and accessible to all communities.',
     about_cta_title: 'Share Your Knowledge',
     about_cta_desc: 'This dictionary grows with your contributions. If you know a word, pronunciation, regional dialect or new example sentence, share it with us to be reviewed and added to the official database.',
     about_cta_btn: '+ Suggest a Word Now',
@@ -682,11 +682,11 @@ function openTentangModal() {
   const title = document.getElementById('info-modal-title');
   const body = document.getElementById('info-modal-body');
 
-  title.textContent = 'Tentang Kamus Bajau Samah';
+  title.textContent = 'Tentang Kamus Bajau Sama';
   body.innerHTML = `
     <div style="display:flex; flex-direction:column; gap:12px; font-size:14.5px; color:#334155; line-height:1.65;">
       <p>
-        <strong>Kamus Bajau Samah</strong> ialah sebuah inisiatif pemeliharaan warisan bahasa dan dokumentasi leksikal digital terbuka untuk bahasa Bajau Samah di Sabah.
+        <strong>Kamus Bajau Sama</strong> ialah sebuah inisiatif pemeliharaan warisan bahasa dan dokumentasi leksikal digital terbuka untuk bahasa Bajau Sama di Sabah.
       </p>
       <p>
         Projek ini menghubungkan para penutur jati, komuniti keluarga, penyelidik dan generasi masa hadapan merentasi pelbagai daerah termasuk Kota Belud, Tuaran, Papar, Kawang dan kawasan pesisir Sabah.

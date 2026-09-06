@@ -5,7 +5,7 @@ import { examples } from '@/lib/db/schema';
 import { eq } from 'drizzle-orm';
 
 export const dynamic = 'force-dynamic';
-export const runtime = 'edge';
+export const runtime = process.env.NODE_ENV === 'development' ? 'nodejs' : 'edge';
 
 export async function PUT(
   req: NextRequest,
@@ -24,7 +24,7 @@ export async function PUT(
 
     if (!sentenceBajau || !sentenceMs) {
       return NextResponse.json(
-        { error: 'Ayat Bajau Samah dan terjemahan Melayu diperlukan.' },
+        { error: 'Ayat Bajau Sama dan terjemahan Melayu diperlukan.' },
         { status: 400 }
       );
     }
@@ -77,7 +77,7 @@ export async function DELETE(
         if (fs.existsSync(filePath)) {
           fs.unlinkSync(filePath);
         }
-      } catch {}
+      } catch { }
     }
 
 

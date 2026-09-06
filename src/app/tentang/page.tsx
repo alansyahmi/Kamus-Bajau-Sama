@@ -1,14 +1,16 @@
 'use client';
 
 import React, { useState } from 'react';
-import { BookOpen, ShieldCheck, MapPin } from 'lucide-react';
+import { BookOpen, ShieldCheck, MapPin, Heart, QrCode } from 'lucide-react';
 import SiteHeader from '@/components/SiteHeader';
 import SuggestWordModal from '@/components/SuggestWordModal';
+import SupportModal from '@/components/SupportModal';
 import { useLanguage } from '@/lib/i18n/LanguageContext';
 
 export default function AboutPage() {
   const { t } = useLanguage();
   const [isSuggestOpen, setIsSuggestOpen] = useState(false);
+  const [isSupportOpen, setIsSupportOpen] = useState(false);
 
   return (
     <div className="flex-1 flex flex-col gap-10">
@@ -95,7 +97,7 @@ export default function AboutPage() {
       </section>
 
       {/* Community Contribution CTA */}
-      <section className="mb-6">
+      <section className="flex flex-col gap-5">
         <div className="bg-gradient-to-br from-slate-900 to-slate-800 text-white rounded-3xl p-6 sm:p-9 md:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 sm:gap-8 shadow-[0_15px_35px_-10px_rgba(15,23,42,0.3)]">
           <div className="max-w-[620px]">
             <h2 className="font-heading text-[24px] font-bold text-white mb-2 tracking-tighter">
@@ -113,9 +115,36 @@ export default function AboutPage() {
             {t.about_cta_btn}
           </button>
         </div>
+
+        {/* Financial & Sustaining Support Section */}
+        <div className="bg-gradient-to-r from-amber-50/90 via-rose-50/70 to-orange-50/80 border border-amber-200/80 rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div className="flex items-start gap-4 max-w-[640px]">
+            <div className="w-12 h-12 rounded-2xl bg-white border border-rose-200/70 shadow-xs flex items-center justify-center text-rose-600 flex-shrink-0">
+              <Heart className="w-6 h-6 fill-rose-500 text-rose-500" />
+            </div>
+            <div className="flex flex-col gap-1">
+              <h3 className="font-heading text-[20px] font-bold text-slate-900 tracking-tight">
+                {t.support_modal_title}
+              </h3>
+              <p className="font-body text-[14px] text-slate-600 leading-relaxed">
+                {t.support_modal_desc}
+              </p>
+            </div>
+          </div>
+
+          <button
+            type="button"
+            onClick={() => setIsSupportOpen(true)}
+            className="inline-flex items-center gap-2 bg-slate-900 hover:bg-black text-white font-body text-[14px] font-medium px-6 py-3 rounded-full transition-all shadow-sm hover:shadow flex-shrink-0"
+          >
+            <QrCode className="w-4 h-4 text-amber-300" />
+            <span>Imbas Kod QR DuitNow</span>
+          </button>
+        </div>
       </section>
 
       <SuggestWordModal isOpen={isSuggestOpen} onClose={() => setIsSuggestOpen(false)} />
+      <SupportModal isOpen={isSupportOpen} onClose={() => setIsSupportOpen(false)} />
     </div>
   );
 }

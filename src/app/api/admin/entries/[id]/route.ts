@@ -1,14 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { verifyAdminSession, unauthorizedResponse } from '@/lib/auth/adminAuth';
 import { db } from '@/lib/db';
-import { entries, senses, examples, affixes, dialects } from '@/lib/db/schema';
+import { entries, senses, examples, affixes, dialects, sources } from '@/lib/db/schema';
 import { normalizeQuery } from '@/lib/search/searchService';
 import { toTtsPhoneticSpelling } from '@/lib/tts/speechService';
 import { eq } from 'drizzle-orm';
 import { EdgeTTS } from 'edge-tts-universal';
 
 export const dynamic = 'force-dynamic';
-export const runtime = 'edge';
+export const runtime = process.env.NODE_ENV === 'development' ? 'nodejs' : 'edge';
 
 const NEURAL_VOICES = {
   fil: 'fil-PH-BlessicaNeural',
@@ -37,6 +37,7 @@ export async function GET(req: NextRequest, { params }: { params: { id: string }
     const entrySenses = db.select().from(senses).where(eq(senses.entryId, id)).all();
     const entryAffixes = db.select().from(affixes).where(eq(affixes.entryId, id)).all();
     const entryDialects = db.select().from(dialects).where(eq(dialects.entryId, id)).all();
+    const entrySources = db.select().from(sources).where(eq(sources.entryId, id)).all();
 
     const sensesWithExamples = entrySenses.map(s => {
       const senseExamples = db.select().from(examples).where(eq(examples.senseId, s.id)).all();
@@ -47,7 +48,8 @@ export async function GET(req: NextRequest, { params }: { params: { id: string }
       ...entry,
       senses: sensesWithExamples,
       affixes: entryAffixes,
-      dialects: entryDialects
+      dialects: entryDialects,
+      sources: entrySources,
     });
   } catch (error) {
     console.error('Error fetching entry:', error);
@@ -124,7 +126,7 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
 
   try {
     const body = await req.json();
-    const { headword, partOfSpeech, ipa, audioUrl, senses: updatedSenses, affixes: updatedAffixes, dialects: updatedDialects } = body;
+    const { headword, partOfSpeech, ipa, audioUrl, senses: updatedSenses, affixes: updatedAffixes, dialects: updatedDialects, sources: updatedSources } = body;
 
     if (!headword || !partOfSpeech) {
       return NextResponse.json({ error: 'Kata dasar dan golongan kata wajib diisi.' }, { status: 400 });
@@ -238,6 +240,21 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
             entryId: id,
             localityName: d.localityName.trim(),
             dialectForm: d.dialectForm.trim(),
+          }).run();
+        }
+      }
+    }
+
+    // 5. Update sources if provided
+    if (Array.isArray(updatedSources)) {
+      db.delete(sources).where(eq(sources.entryId, id)).run();
+      for (const src of updatedSources) {
+        if (src.description?.trim()) {
+          db.insert(sources).values({
+            entryId: id,
+            sourceType: (src.sourceType || 'Lisan / Komuniti').trim(),
+            description: src.description.trim(),
+            verifiedBy: src.verifiedBy?.trim() || null,
           }).run();
         }
       }

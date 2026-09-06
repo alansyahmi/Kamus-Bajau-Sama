@@ -28,10 +28,10 @@ export default function AffixList({ affixes }: { affixes: LexicalAffix[] }) {
             language === 'en'
               ? (item.meaningEn || item.meaningMs)
               : language === 'ms'
-              ? item.meaningMs
-              : item.meaningEn
-              ? `${item.meaningMs} (${item.meaningEn})`
-              : item.meaningMs;
+                ? item.meaningMs
+                : item.meaningEn
+                  ? `${item.meaningMs} (${item.meaningEn})`
+                  : item.meaningMs;
           const isAttested = item.isAttested;
           const displayTerm = item.isTheoretical ? `*${item.term}` : item.term;
           const linkTarget = item.linkedHeadword || item.term;
@@ -39,11 +39,10 @@ export default function AffixList({ affixes }: { affixes: LexicalAffix[] }) {
           return (
             <li
               key={item.id || idx}
-              className={`p-2.5 rounded-lg border transition-all flex flex-col sm:flex-row sm:items-baseline justify-between gap-1.5 font-body ${
-                isAttested
+              className={`p-2.5 rounded-lg border transition-all flex flex-col sm:flex-row sm:items-baseline justify-between gap-1.5 font-body ${isAttested
                   ? 'bg-amber-50/40 border-amber-200/70 hover:border-amber-300 hover:bg-amber-50'
                   : 'bg-slate-50/50 border-slate-200/60'
-              }`}
+                }`}
             >
               <div className="flex items-baseline gap-2 flex-wrap">
                 {isAttested ? (
@@ -57,7 +56,7 @@ export default function AffixList({ affixes }: { affixes: LexicalAffix[] }) {
                 ) : (
                   <span
                     className="font-medium text-slate-700 font-mono"
-                    title="Bentuk terbitan teoretis / produktif (mengikut rumus tatabahasa Bajau Samah)"
+                    title="Bentuk terbitan teoretis / produktif (mengikut rumus tatabahasa Bajau Sama)"
                   >
                     {displayTerm}
                   </span>

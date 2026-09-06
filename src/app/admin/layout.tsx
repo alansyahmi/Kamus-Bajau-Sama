@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Pengurusan Pangkalan Data — Kamus Bajau Samah',
+  title: 'Pengurusan Pangkalan Data — Kamus Bajau Sama',
   robots: {
     index: false,
     follow: false,

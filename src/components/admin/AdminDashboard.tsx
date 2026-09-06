@@ -31,6 +31,13 @@ interface SenseItem {
   examples?: ExampleItem[];
 }
 
+interface SourceItem {
+  id?: number;
+  sourceType: string;
+  description: string;
+  verifiedBy?: string | null;
+}
+
 interface EntryItem {
   id: number;
   headword: string;
@@ -41,6 +48,7 @@ interface EntryItem {
   senses?: SenseItem[];
   affixes?: Array<{ id?: number; term: string; meaningMs: string; meaningEn?: string }>;
   dialects?: Array<{ id?: number; localityName: string; dialectForm: string }>;
+  sources?: SourceItem[];
 }
 
 interface SubmissionItem {
@@ -70,7 +78,7 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
   const [passkey, setPasskey] = useState('');
   const [authError, setAuthError] = useState('');
-  const [activeTab, setActiveTab] = useState<'entries' | 'examples' | 'submissions' | 'new_entry' | 'stats'>('entries');
+  const [activeTab, setActiveTab] = useState<'entries' | 'examples' | 'submissions' | 'stats'>('entries');
 
   // Entries State
   const [searchQuery, setSearchQuery] = useState(targetWord || '');
@@ -119,16 +127,6 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
   const [isPreviewPlaying, setIsPreviewPlaying] = useState(false);
   const [previewAudioObj, setPreviewAudioObj] = useState<HTMLAudioElement | null>(null);
 
-  // New Entry Form State
-  const [newHw, setNewHw] = useState('');
-  const [newPos, setNewPos] = useState('KATA NAMA');
-  const [newIpa, setNewIpa] = useState('');
-  const [newDefMs, setNewDefMs] = useState('');
-  const [newDefEn, setNewDefEn] = useState('');
-  const [newExBj, setNewExBj] = useState('');
-  const [newExMs, setNewExMs] = useState('');
-  const [newExEn, setNewExEn] = useState('');
-  const [createStatus, setCreateStatus] = useState<string | null>(null);
 
   // Check initial login session
   useEffect(() => {
@@ -213,7 +211,7 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
               setAllHeadwordsSet(set);
             }
           })
-          .catch(() => {});
+          .catch(() => { });
       }
     } catch (e) {
       console.error(e);
@@ -396,32 +394,109 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
     }
   };
 
+  const createEmptyEntry = (): EntryItem => ({
+    id: 0,
+    headword: '',
+    searchNormalized: '',
+    partOfSpeech: 'KATA NAMA',
+    ipa: '',
+    audioUrl: null,
+    senses: [
+      {
+        orderIndex: 1,
+        definitionMs: '',
+        definitionEn: '',
+        examples: [
+          {
+            sentenceBajau: '',
+            highlightWord: '',
+            sentenceMs: '',
+            sentenceEn: '',
+            audioUrl: null,
+          },
+        ],
+      },
+    ],
+    affixes: [],
+    dialects: [],
+    sources: [
+      {
+        sourceType: 'Penyunting Pentadbir',
+        description: 'Dimasukkan melalui Papan Pemuka Pentadbir Kamus Bajau Sama',
+        verifiedBy: 'Pentadbir Kamus',
+      },
+    ],
+  });
+
+  const handleStartNewEntry = () => {
+    const empty = createEmptyEntry();
+    setSelectedEntry(empty);
+    savedEntryRef.current = empty;
+    setHasUnsavedChanges(false);
+    setActiveTab('entries');
+    setIsSidebarOpen(false);
+    setSaveStatus(null);
+    setCustomPhoneticInput('');
+  };
+
   const handleSaveEntry = useCallback(async () => {
     if (!selectedEntry) return;
-    setSaveStatus('Menyimpan perubahan...');
+
+    if (!selectedEntry.headword.trim()) {
+      alert('Sila masukkan kata dasar (Headword).');
+      return;
+    }
+    if (!selectedEntry.partOfSpeech.trim()) {
+      alert('Sila pilih golongan kata (POS).');
+      return;
+    }
+    const hasDef = selectedEntry.senses?.some(s => s.definitionMs?.trim());
+    if (!hasDef) {
+      alert('Sila masukkan sekurang-kurangnya satu definisi / maksud Bahasa Melayu.');
+      return;
+    }
+
+    const isNew = selectedEntry.id === 0;
+    setSaveStatus(isNew ? 'Mencipta entri baharu...' : 'Menyimpan perubahan...');
+
     try {
-      const res = await fetch(`/api/admin/entries/${selectedEntry.id}`, {
-        method: 'PUT',
+      const url = isNew ? '/api/admin/entries' : `/api/admin/entries/${selectedEntry.id}`;
+      const method = isNew ? 'POST' : 'PUT';
+
+      const res = await fetch(url, {
+        method,
         headers: {
           'Content-Type': 'application/json',
           'x-admin-key': passkey,
         },
         body: JSON.stringify(selectedEntry),
       });
+
       if (res.ok) {
-        setSaveStatus('✅ Berjaya dikemas kini!');
+        const data = await res.json();
+        setSaveStatus(isNew ? '✅ Entri berjaya dicipta!' : '✅ Berjaya dikemas kini!');
         setHasUnsavedChanges(false);
-        savedEntryRef.current = selectedEntry;
-        setTimeout(() => setSaveStatus(null), 3000);
-        loadEntries(searchQuery);
+
+        if (isNew && data.entry) {
+          savedEntryRef.current = data.entry;
+          setSelectedEntry(data.entry);
+          if (typeof window !== 'undefined') {
+            window.history.replaceState(null, '', `/admin/${encodeURIComponent(data.entry.headword)}`);
+          }
+        } else {
+          savedEntryRef.current = selectedEntry;
+        }
+
+        setTimeout(() => setSaveStatus(null), 3500);
+        loadEntries(selectedEntry.headword);
       } else {
-        const err = await res.json();
+        const err = await res.json().catch(() => ({}));
         setSaveStatus(`❌ Ralat: ${err.error || 'Gagal menyimpan'}`);
       }
     } catch {
       setSaveStatus('❌ Ralat sambungan.');
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedEntry, passkey, searchQuery]);
 
   // Ctrl+Enter saves the current entry
@@ -472,6 +547,10 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
 
   const handleBakeAudio = async () => {
     if (!selectedEntry) return;
+    if (selectedEntry.id === 0) {
+      alert('Sila simpan entri baharu terlebih dahulu (klik "Cipta & Simpan") sebelum menyimpan fail audio rasmi.');
+      return;
+    }
     setIsBakingAudio(true);
     setAudioStatusMsg('Menjana dan menyimpan rakaman rasmi...');
     try {
@@ -506,6 +585,10 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
 
   const handleDeleteAudio = async () => {
     if (!selectedEntry) return;
+    if (selectedEntry.id === 0) {
+      setSelectedEntry({ ...selectedEntry, audioUrl: null });
+      return;
+    }
     if (!confirm('Adakah anda pasti mahu memadam rakaman audio rasmi bagi entri ini?')) return;
     try {
       const res = await fetch(`/api/admin/entries/${selectedEntry.id}?audioOnly=true`, {
@@ -528,6 +611,10 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
 
   const handleDeleteEntry = async () => {
     if (!selectedEntry) return;
+    if (selectedEntry.id === 0) {
+      setSelectedEntry(null);
+      return;
+    }
     if (!confirm(`Adakah anda pasti mahu memadam entri "${selectedEntry.headword}"?`)) return;
     try {
       const res = await fetch(`/api/admin/entries/${selectedEntry.id}`, {
@@ -547,48 +634,6 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
     }
   };
 
-  const handleCreateEntry = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setCreateStatus('Mencipta entri...');
-    try {
-      const res = await fetch('/api/admin/entries', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'x-admin-key': passkey,
-        },
-        body: JSON.stringify({
-          headword: newHw,
-          partOfSpeech: newPos,
-          ipa: newIpa || undefined,
-          definitionMs: newDefMs,
-          definitionEn: newDefEn || undefined,
-          examples: newExBj && newExMs ? [{
-            sentenceBajau: newExBj,
-            sentenceMs: newExMs,
-            sentenceEn: newExEn,
-            highlightWord: newHw,
-          }] : [],
-        }),
-      });
-      if (res.ok) {
-        setCreateStatus('✅ Entri berjaya dicipta!');
-        setNewHw('');
-        setNewDefMs('');
-        setNewDefEn('');
-        setNewExBj('');
-        setNewExMs('');
-        setNewExEn('');
-        setTimeout(() => setCreateStatus(null), 4000);
-        loadEntries('');
-      } else {
-        const err = await res.json();
-        setCreateStatus(`❌ ${err.error || 'Gagal mencipta entri'}`);
-      }
-    } catch {
-      setCreateStatus('❌ Ralat pelayan.');
-    }
-  };
 
   const handleModerateSubmission = async (action: 'approve' | 'reject') => {
     if (!moderatingSub) return;
@@ -623,16 +668,16 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
 
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen bg-sand-50 dark:bg-stone-950 flex items-center justify-center p-4">
-        <div className="max-w-md w-full bg-white dark:bg-stone-900 rounded-3xl p-8 shadow-xl border border-sand-200 dark:border-stone-800 text-center">
-          <div className="inline-flex p-4 rounded-2xl bg-amber-50 dark:bg-amber-950/40 text-amber-700 dark:text-amber-400 mb-4 text-3xl">
+      <div className="min-h-screen bg-sand-50 flex items-center justify-center p-4">
+        <div className="max-w-md w-full bg-white rounded-3xl p-8 shadow-xl border border-sand-200 text-center">
+          <div className="inline-flex p-4 rounded-2xl bg-amber-50 text-amber-700 mb-4 text-3xl">
             🔐
           </div>
-          <h1 className="font-serif text-2xl font-bold text-stone-900 dark:text-stone-100 mb-2">
+          <h1 className="font-serif text-2xl font-bold text-stone-900 mb-2">
             Papan Pemuka Pentadbir
           </h1>
-          <p className="text-sm text-stone-600 dark:text-stone-400 mb-6">
-            Kamus Bajau Samah — Mod Pengurusan Pangkalan Data Tempatan
+          <p className="text-sm text-stone-600 mb-6">
+            Kamus Bajau Sama — Mod Pengurusan Pangkalan Data Tempatan
           </p>
 
           <form onSubmit={(e) => { e.preventDefault(); validateLogin(passkey); }} className="space-y-4 text-left">
@@ -645,13 +690,13 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                 value={passkey}
                 onChange={(e) => setPasskey(e.target.value)}
                 placeholder="Masukkan kata laluan..."
-                className="w-full px-4 py-3 rounded-xl border border-sand-300 dark:border-stone-700 bg-sand-50 dark:bg-stone-800 text-stone-900 dark:text-stone-100 focus:outline-none focus:ring-2 focus:ring-amber-500 font-mono text-sm"
+                className="w-full px-4 py-3 rounded-xl border border-sand-300 bg-sand-50 text-stone-900 focus:outline-none focus:ring-2 focus:ring-amber-500 font-mono text-sm"
                 autoFocus
               />
             </div>
 
             {authError && (
-              <div className="p-3 bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-800 rounded-xl text-xs text-red-700 dark:text-red-300">
+              <div className="p-3 bg-red-50 border border-red-200 rounded-xl text-xs text-red-700">
                 {authError}
               </div>
             )}
@@ -664,11 +709,11 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
             </button>
           </form>
 
-          <div className="mt-6 pt-6 border-t border-sand-100 dark:border-stone-800 flex justify-between items-center text-xs text-stone-400">
+          <div className="mt-6 pt-6 border-t border-sand-100 flex justify-between items-center text-xs text-stone-400">
             <Link href="/" className="hover:text-amber-600 transition">
               ← Kembali ke Laman Utama
             </Link>
-            <span>Kamus Bajau Samah v1.0</span>
+            <span>Kamus Bajau Sama v1.0</span>
           </div>
         </div>
       </div>
@@ -676,15 +721,15 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
   }
 
   return (
-    <div className="min-h-screen bg-sand-50/50 dark:bg-stone-950 text-stone-900 dark:text-stone-100">
+    <div className="min-h-screen bg-sand-50/50 text-stone-900">
       {/* Top Navbar */}
-      <header className="border-b border-sand-200 dark:border-stone-800 bg-white/80 dark:bg-stone-900/80 backdrop-blur-md sticky top-0 z-30 px-6 py-3.5 flex items-center justify-between">
+      <header className="border-b border-sand-200 bg-white/80 backdrop-blur-md sticky top-0 z-30 px-6 py-3.5 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <span className="text-xl">🪡</span>
           <div>
             <h1 className="font-serif font-bold text-base tracking-tight flex items-center gap-2">
-              Kamus Bajau Samah — CMS Pentadbir
-              <span className="text-[10px] uppercase font-bold tracking-widest px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300">
+              Kamus Bajau Sama — CMS Pentadbir
+              <span className="text-[10px] uppercase font-bold tracking-widest px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800">
                 Local-First Active
               </span>
             </h1>
@@ -693,14 +738,13 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
         </div>
 
         {/* Tab Navigation */}
-        <nav className="flex items-center gap-1 bg-sand-100 dark:bg-stone-800 p-1 rounded-xl">
+        <nav className="flex items-center gap-1 bg-sand-100 p-1 rounded-xl">
           <button
             onClick={() => setActiveTab('entries')}
-            className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition ${
-              activeTab === 'entries'
-                ? 'bg-white dark:bg-stone-900 text-amber-700 dark:text-amber-400 shadow-sm'
-                : 'text-stone-600 dark:text-stone-400 hover:text-stone-900'
-            }`}
+            className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition ${activeTab === 'entries'
+              ? 'bg-white text-amber-700 shadow-sm'
+              : 'text-stone-600 hover:text-stone-900'
+              }`}
           >
             📚 Sunting Entri ({totalEntries})
           </button>
@@ -709,31 +753,28 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
               setActiveTab('examples');
               loadExamples();
             }}
-            className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition ${
-              activeTab === 'examples'
-                ? 'bg-white dark:bg-stone-900 text-amber-700 dark:text-amber-400 shadow-sm'
-                : 'text-stone-600 dark:text-stone-400 hover:text-stone-900'
-            }`}
+            className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition ${activeTab === 'examples'
+              ? 'bg-white text-amber-700 shadow-sm'
+              : 'text-stone-600 hover:text-stone-900'
+              }`}
           >
             📝 Sunting Contoh ({totalExamples})
           </button>
           <button
             onClick={() => setActiveTab('submissions')}
-            className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition ${
-              activeTab === 'submissions'
-                ? 'bg-white dark:bg-stone-900 text-amber-700 dark:text-amber-400 shadow-sm'
-                : 'text-stone-600 dark:text-stone-400 hover:text-stone-900'
-            }`}
+            className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition ${activeTab === 'submissions'
+              ? 'bg-white text-amber-700 shadow-sm'
+              : 'text-stone-600 hover:text-stone-900'
+              }`}
           >
             📥 Moderasi Sumbangan ({submissionsList.filter(s => s.status === 'pending').length})
           </button>
           <button
-            onClick={() => setActiveTab('new_entry')}
-            className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition ${
-              activeTab === 'new_entry'
-                ? 'bg-white dark:bg-stone-900 text-amber-700 dark:text-amber-400 shadow-sm'
-                : 'text-stone-600 dark:text-stone-400 hover:text-stone-900'
-            }`}
+            onClick={handleStartNewEntry}
+            className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition ${selectedEntry?.id === 0
+              ? 'bg-amber-600 text-white shadow-sm'
+              : 'text-stone-600 hover:text-stone-900'
+              }`}
           >
             ➕ Tambah Kata Baru
           </button>
@@ -743,13 +784,13 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
           <Link
             href="/"
             target="_blank"
-            className="text-xs px-3 py-1.5 border border-sand-300 dark:border-stone-700 rounded-lg hover:bg-sand-100 dark:hover:bg-stone-800 transition"
+            className="text-xs px-3 py-1.5 border border-sand-300 rounded-lg hover:bg-sand-100 transition"
           >
             ↗ Buka Kamus Awam
           </Link>
           <button
             onClick={handleLogout}
-            className="text-xs px-3 py-1.5 bg-stone-200 dark:bg-stone-800 hover:bg-stone-300 text-stone-700 dark:text-stone-300 rounded-lg transition"
+            className="text-xs px-3 py-1.5 bg-stone-200 hover:bg-stone-300 text-stone-700 rounded-lg transition"
           >
             Log Keluar
           </button>
@@ -763,13 +804,13 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
           <div>
             {!selectedEntry ? (
               /* DEDICATED FULL-PAGE LEXICON DIRECTORY & SEARCH VIEW */
-              <div className="bg-white dark:bg-stone-900 rounded-3xl border border-sand-200 dark:border-stone-800 shadow-sm overflow-hidden flex flex-col min-h-[75vh]">
+              <div className="bg-white rounded-3xl border border-sand-200 shadow-sm overflow-hidden flex flex-col min-h-[75vh]">
                 {/* Header Toolbar & Search Filter */}
-                <div className="p-6 border-b border-sand-200 dark:border-stone-800 space-y-4 bg-sand-50/50 dark:bg-stone-950/40">
+                <div className="p-6 border-b border-sand-200 space-y-4 bg-sand-50/50">
                   <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                     <div>
-                      <h2 className="font-serif text-xl font-bold text-stone-900 dark:text-stone-100">
-                        Direktori Leksikon Kamus Bajau Samah
+                      <h2 className="font-serif text-xl font-bold text-stone-900">
+                        Direktori Leksikon Kamus Bajau Sama
                       </h2>
                       <p className="text-xs text-stone-500">
                         Pilih mana-mana kata dasar di bawah untuk membuka editor khusus satu halaman penuh.
@@ -778,7 +819,7 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
 
                     <div className="flex items-center gap-2 shrink-0">
                       <button
-                        onClick={() => setActiveTab('new_entry')}
+                        onClick={handleStartNewEntry}
                         className="px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white font-medium text-xs rounded-xl transition shadow-xs flex items-center gap-1.5"
                       >
                         ➕ Tambah Kata Baru
@@ -790,14 +831,14 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                   <div className="relative">
                     <input
                       type="text"
-                      placeholder="Cari kata dasar Bajau Samah, ejaan normalisasi, atau maksud Melayu..."
+                      placeholder="Cari kata dasar Bajau Sama, ejaan normalisasi, atau maksud Melayu..."
                       value={searchQuery}
                       onChange={(e) => {
                         setSearchQuery(e.target.value);
                         setCurrentPage(1);
                         loadEntries(e.target.value, selectedLetter, 1);
                       }}
-                      className="w-full px-4 py-3 rounded-2xl bg-white dark:bg-stone-800 border border-sand-300 dark:border-stone-700 text-stone-900 dark:text-stone-100 placeholder-stone-400 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 shadow-xs"
+                      className="w-full px-4 py-3 rounded-2xl bg-white border border-sand-300 text-stone-900 placeholder-stone-400 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 shadow-xs"
                     />
                     {searchQuery && (
                       <button
@@ -820,11 +861,10 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                         setCurrentPage(1);
                         loadEntries(searchQuery, '', 1);
                       }}
-                      className={`px-3 py-1 rounded-lg font-semibold shrink-0 transition ${
-                        selectedLetter === ''
-                          ? 'bg-amber-600 text-white shadow-xs'
-                          : 'bg-white dark:bg-stone-800 text-stone-600 dark:text-stone-300 border border-sand-200 dark:border-stone-700 hover:bg-sand-100'
-                      }`}
+                      className={`px-3 py-1 rounded-lg font-semibold shrink-0 transition ${selectedLetter === ''
+                        ? 'bg-amber-600 text-white shadow-xs'
+                        : 'bg-white text-stone-600 border border-sand-200 hover:bg-sand-100'
+                        }`}
                     >
                       Semua Abjad
                     </button>
@@ -836,11 +876,10 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                           setCurrentPage(1);
                           loadEntries(searchQuery, l, 1);
                         }}
-                        className={`px-2.5 py-1 rounded-lg font-semibold shrink-0 uppercase transition ${
-                          selectedLetter === l
-                            ? 'bg-amber-600 text-white shadow-xs'
-                            : 'bg-white dark:bg-stone-800 text-stone-600 dark:text-stone-300 border border-sand-200 dark:border-stone-700 hover:bg-sand-100'
-                        }`}
+                        className={`px-2.5 py-1 rounded-lg font-semibold shrink-0 uppercase transition ${selectedLetter === l
+                          ? 'bg-amber-600 text-white shadow-xs'
+                          : 'bg-white text-stone-600 border border-sand-200 hover:bg-sand-100'
+                          }`}
                       >
                         {l}
                       </button>
@@ -887,19 +926,19 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                                   window.history.replaceState(null, '', `/admin/${encodeURIComponent(entry.headword)}`);
                                 }
                               }}
-                              className="group p-4 text-left bg-sand-50/50 dark:bg-stone-800/40 hover:bg-amber-50/80 dark:hover:bg-amber-950/30 rounded-2xl border border-sand-200 dark:border-stone-700/80 hover:border-amber-300 dark:hover:border-amber-800 transition duration-150 flex flex-col justify-between"
+                              className="group p-4 text-left bg-sand-50/50 hover:bg-amber-50/80:bg-amber-950/30 rounded-2xl border border-sand-200 hover:border-amber-300:border-amber-800 transition duration-150 flex flex-col justify-between"
                             >
                               <div className="space-y-1.5 w-full">
                                 <div className="flex items-center justify-between">
-                                  <div className="font-serif font-bold text-base text-stone-900 dark:text-stone-100 group-hover:text-amber-700 dark:group-hover:text-amber-400 transition">
+                                  <div className="font-serif font-bold text-base text-stone-900 group-hover:text-amber-700:text-amber-400 transition">
                                     {entry.headword}{sup && <sup className="text-amber-600 ml-0.5 text-xs">{sup}</sup>}
                                   </div>
-                                  <span className="text-[10px] uppercase font-mono px-2 py-0.5 bg-sand-200 dark:bg-stone-800 rounded-md text-stone-700 dark:text-stone-300 font-semibold">
+                                  <span className="text-[10px] uppercase font-mono px-2 py-0.5 bg-sand-200 rounded-md text-stone-700 font-semibold">
                                     {entry.partOfSpeech.replace('KATA ', '')}
                                   </span>
                                 </div>
 
-                                <p className="text-xs font-medium text-stone-700 dark:text-stone-300 line-clamp-1">
+                                <p className="text-xs font-medium text-stone-700 line-clamp-1">
                                   {primaryMs}
                                 </p>
                                 {primaryEn && (
@@ -909,13 +948,13 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                                 )}
                               </div>
 
-                              <div className="pt-3 mt-3 border-t border-sand-200/60 dark:border-stone-700/60 flex items-center justify-between text-[11px] text-stone-400 w-full font-mono">
+                              <div className="pt-3 mt-3 border-t border-sand-200/60 flex items-center justify-between text-[11px] text-stone-400 w-full font-mono">
                                 <span>{entry.ipa || '—'}</span>
                                 <div className="flex items-center gap-2">
                                   {hasAudio && (
-                                    <span className="text-amber-600 dark:text-amber-400 font-bold" title="Mempunyai rakaman audio rasmi">🎙️</span>
+                                    <span className="text-amber-600 font-bold" title="Mempunyai rakaman audio rasmi">🎙️</span>
                                   )}
-                                  <span className="text-amber-700 dark:text-amber-400 font-medium group-hover:underline">Sunting ✎</span>
+                                  <span className="text-amber-700 font-medium group-hover:underline">Sunting ✎</span>
                                 </div>
                               </div>
                             </button>
@@ -927,7 +966,7 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                 </div>
 
                 {/* Pagination Controls Toolbar */}
-                <div className="p-4 border-t border-sand-200 dark:border-stone-800 bg-sand-50/70 dark:bg-stone-950/80 flex items-center justify-between text-xs">
+                <div className="p-4 border-t border-sand-200 bg-sand-50/70 flex items-center justify-between text-xs">
                   <div className="flex items-center gap-2">
                     <button
                       disabled={currentPage <= 1 || isLoadingEntries}
@@ -936,7 +975,7 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                         setCurrentPage(prev);
                         loadEntries(searchQuery, selectedLetter, prev);
                       }}
-                      className="px-3 py-1.5 bg-white dark:bg-stone-800 border border-sand-300 dark:border-stone-700 rounded-xl disabled:opacity-30 hover:bg-sand-100 font-medium transition text-stone-700 dark:text-stone-300"
+                      className="px-3 py-1.5 bg-white border border-sand-300 rounded-xl disabled:opacity-30 hover:bg-sand-100 font-medium transition text-stone-700"
                     >
                       ◀ Halaman Sebelum
                     </button>
@@ -947,14 +986,14 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                         setCurrentPage(next);
                         loadEntries(searchQuery, selectedLetter, next);
                       }}
-                      className="px-3 py-1.5 bg-white dark:bg-stone-800 border border-sand-300 dark:border-stone-700 rounded-xl disabled:opacity-30 hover:bg-sand-100 font-medium transition text-stone-700 dark:text-stone-300"
+                      className="px-3 py-1.5 bg-white border border-sand-300 rounded-xl disabled:opacity-30 hover:bg-sand-100 font-medium transition text-stone-700"
                     >
                       Halaman Seterusnya ▶
                     </button>
                   </div>
 
                   <div className="text-stone-500 text-xs font-medium">
-                    Halaman <span className="font-bold text-stone-900 dark:text-stone-100">{currentPage}</span> daripada {totalPages} ({totalEntries} jumlah entri)
+                    Halaman <span className="font-bold text-stone-900">{currentPage}</span> daripada {totalPages} ({totalEntries} jumlah entri)
                   </div>
                 </div>
               </div>
@@ -963,17 +1002,17 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
               <div className="flex flex-col lg:flex-row items-start gap-6 relative">
                 {/* 1/4 Quick Navigation Sidebar (Collapsible) */}
                 {isSidebarOpen && (
-                  <div className="w-full lg:w-80 xl:w-96 shrink-0 bg-white dark:bg-stone-900 rounded-3xl border border-sand-200 dark:border-stone-800 shadow-sm overflow-hidden flex flex-col sticky top-20 max-h-[calc(100vh-6rem)]">
+                  <div className="w-full lg:w-80 xl:w-96 shrink-0 bg-white rounded-3xl border border-sand-200 shadow-sm overflow-hidden flex flex-col sticky top-20 max-h-[calc(100vh-6rem)]">
                     {/* Sidebar Header & Search */}
-                    <div className="p-4 border-b border-sand-200 dark:border-stone-800 space-y-3 bg-sand-50/50 dark:bg-stone-950/40">
+                    <div className="p-4 border-b border-sand-200 space-y-3 bg-sand-50/50">
                       <div className="flex items-center justify-between">
-                        <span className="font-serif font-bold text-sm text-stone-900 dark:text-stone-100 flex items-center gap-1.5">
+                        <span className="font-serif font-bold text-sm text-stone-900 flex items-center gap-1.5">
                           <span>📖</span> Navigasi Pantas
                         </span>
                         <button
                           onClick={() => setIsSidebarOpen(false)}
                           title="Sembunyikan panel tepi"
-                          className="text-stone-400 hover:text-stone-600 dark:hover:text-stone-200 text-xs px-2 py-1 rounded-lg hover:bg-sand-100 dark:hover:bg-stone-800"
+                          className="text-stone-400 hover:text-stone-600 text-xs px-2 py-1 rounded-lg hover:bg-sand-100"
                         >
                           ◀ Tutup
                         </button>
@@ -990,7 +1029,7 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                             setCurrentPage(1);
                             loadEntries(e.target.value, selectedLetter, 1);
                           }}
-                          className="w-full px-3.5 py-2 text-xs rounded-xl bg-white dark:bg-stone-800 border border-sand-300 dark:border-stone-700 text-stone-900 dark:text-stone-100 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                          className="w-full px-3.5 py-2 text-xs rounded-xl bg-white border border-sand-300 text-stone-900 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-500"
                         />
                         {searchQuery && (
                           <button
@@ -1013,11 +1052,10 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                             setCurrentPage(1);
                             loadEntries(searchQuery, '', 1);
                           }}
-                          className={`px-2 py-0.5 rounded-md font-semibold shrink-0 transition ${
-                            selectedLetter === ''
-                              ? 'bg-amber-600 text-white'
-                              : 'bg-white dark:bg-stone-800 text-stone-600 dark:text-stone-300 border border-sand-200 dark:border-stone-700'
-                          }`}
+                          className={`px-2 py-0.5 rounded-md font-semibold shrink-0 transition ${selectedLetter === ''
+                            ? 'bg-amber-600 text-white'
+                            : 'bg-white text-stone-600 border border-sand-200'
+                            }`}
                         >
                           Semua
                         </button>
@@ -1029,11 +1067,10 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                               setCurrentPage(1);
                               loadEntries(searchQuery, l, 1);
                             }}
-                            className={`px-1.5 py-0.5 rounded-md font-semibold shrink-0 uppercase transition ${
-                              selectedLetter === l
-                                ? 'bg-amber-600 text-white'
-                                : 'bg-white dark:bg-stone-800 text-stone-600 dark:text-stone-300 border border-sand-200 dark:border-stone-700'
-                            }`}
+                            className={`px-1.5 py-0.5 rounded-md font-semibold shrink-0 uppercase transition ${selectedLetter === l
+                              ? 'bg-amber-600 text-white'
+                              : 'bg-white text-stone-600 border border-sand-200'
+                              }`}
                           >
                             {l}
                           </button>
@@ -1042,7 +1079,7 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                     </div>
 
                     {/* Quick Entry List */}
-                    <div className="flex-1 overflow-y-auto divide-y divide-sand-100 dark:divide-stone-800/80 p-2 space-y-1">
+                    <div className="flex-1 overflow-y-auto divide-y divide-sand-100 p-2 space-y-1">
                       {isLoadingEntries ? (
                         <div className="p-8 text-center text-xs text-stone-400">Memuatkan...</div>
                       ) : entriesList.length === 0 ? (
@@ -1067,22 +1104,20 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                                   window.history.replaceState(null, '', `/admin/${encodeURIComponent(entry.headword)}`);
                                 }
                               }}
-                              className={`w-full text-left p-3 rounded-2xl transition flex items-center justify-between gap-2 ${
-                                isCurrent
-                                  ? 'bg-amber-500 text-white font-bold shadow-xs'
-                                  : 'hover:bg-sand-100 dark:hover:bg-stone-800 text-stone-800 dark:text-stone-200'
-                              }`}
+                              className={`w-full text-left p-3 rounded-2xl transition flex items-center justify-between gap-2 ${isCurrent
+                                ? 'bg-amber-500 text-white font-bold shadow-xs'
+                                : 'hover:bg-sand-100 text-stone-800'
+                                }`}
                             >
                               <div className="min-w-0 flex-1">
                                 <div className="flex items-center gap-1.5">
                                   <span className="font-serif text-sm font-semibold truncate">
                                     {entry.headword}
                                   </span>
-                                  <span className={`text-[9px] uppercase font-mono px-1.5 py-0.5 rounded ${
-                                    isCurrent
-                                      ? 'bg-amber-600 text-amber-100'
-                                      : 'bg-sand-200 dark:bg-stone-700 text-stone-600 dark:text-stone-300'
-                                  }`}>
+                                  <span className={`text-[9px] uppercase font-mono px-1.5 py-0.5 rounded ${isCurrent
+                                    ? 'bg-amber-600 text-amber-100'
+                                    : 'bg-sand-200 text-stone-600'
+                                    }`}>
                                     {entry.partOfSpeech.replace('KATA ', '')}
                                   </span>
                                 </div>
@@ -1091,7 +1126,7 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                                 </p>
                               </div>
                               {hasAudio && (
-                                <span className={`text-xs ${isCurrent ? 'text-white' : 'text-amber-600 dark:text-amber-400'}`}>
+                                <span className={`text-xs ${isCurrent ? 'text-white' : 'text-amber-600'}`}>
                                   🎙️
                                 </span>
                               )}
@@ -1102,7 +1137,7 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                     </div>
 
                     {/* Sidebar Pagination Footer */}
-                    <div className="p-3 border-t border-sand-200 dark:border-stone-800 bg-sand-50/70 dark:bg-stone-950/80 flex items-center justify-between text-[11px]">
+                    <div className="p-3 border-t border-sand-200 bg-sand-50/70 flex items-center justify-between text-[11px]">
                       <button
                         disabled={currentPage <= 1 || isLoadingEntries}
                         onClick={() => {
@@ -1110,7 +1145,7 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                           setCurrentPage(prev);
                           loadEntries(searchQuery, selectedLetter, prev);
                         }}
-                        className="px-2.5 py-1 bg-white dark:bg-stone-800 border border-sand-300 dark:border-stone-700 rounded-lg disabled:opacity-30 hover:bg-sand-100 text-stone-700 dark:text-stone-300 font-medium"
+                        className="px-2.5 py-1 bg-white border border-sand-300 rounded-lg disabled:opacity-30 hover:bg-sand-100 text-stone-700 font-medium"
                       >
                         ◀ Sebelum
                       </button>
@@ -1124,7 +1159,7 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                           setCurrentPage(next);
                           loadEntries(searchQuery, selectedLetter, next);
                         }}
-                        className="px-2.5 py-1 bg-white dark:bg-stone-800 border border-sand-300 dark:border-stone-700 rounded-lg disabled:opacity-30 hover:bg-sand-100 text-stone-700 dark:text-stone-300 font-medium"
+                        className="px-2.5 py-1 bg-white border border-sand-300 rounded-lg disabled:opacity-30 hover:bg-sand-100 text-stone-700 font-medium"
                       >
                         Seterus ▶
                       </button>
@@ -1133,13 +1168,13 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                 )}
 
                 {/* 3/4 Main Editor Area */}
-                <div className="flex-1 w-full bg-white dark:bg-stone-900 rounded-3xl border border-sand-200 dark:border-stone-800 p-8 shadow-sm space-y-8">
+                <div className="flex-1 w-full bg-white rounded-3xl border border-sand-200 p-8 shadow-sm space-y-8">
                   {/* Top Action Bar */}
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-sand-200 dark:border-stone-800">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-sand-200">
                     <div className="flex items-center gap-3">
                       <button
                         onClick={() => setSelectedEntry(null)}
-                        className="px-3.5 py-2 bg-sand-100 hover:bg-sand-200 dark:bg-stone-800 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-300 rounded-xl text-xs font-bold transition flex items-center gap-1.5"
+                        className="px-3.5 py-2 bg-sand-100 hover:bg-sand-200 text-stone-700 rounded-xl text-xs font-bold transition flex items-center gap-1.5"
                       >
                         ◀ Kembali ke Direktori
                       </button>
@@ -1147,98 +1182,109 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                       {!isSidebarOpen && (
                         <button
                           onClick={() => setIsSidebarOpen(true)}
-                          className="px-3.5 py-2 bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-800 rounded-xl text-xs font-bold transition flex items-center gap-1.5"
+                          className="px-3.5 py-2 bg-amber-50 text-amber-800 border border-amber-200 rounded-xl text-xs font-bold transition flex items-center gap-1.5"
                         >
                           📖 Buka Panel Tepi (1/4)
                         </button>
                       )}
 
                       <div>
-                        <h2 className="font-serif text-2xl font-bold text-stone-900 dark:text-stone-100 flex items-center gap-2">
-                          Sunting Kata: <span className="text-amber-600 dark:text-amber-400">{selectedEntry.headword}</span>
+                        <h2 className="font-serif text-2xl font-bold text-stone-900 flex items-center gap-2">
+                          {selectedEntry.id === 0 ? (
+                            <>➕ Tambah Entri Rasmi Baharu</>
+                          ) : (
+                            <>Sunting Kata: <span className="text-amber-600">{selectedEntry.headword}</span></>
+                          )}
                         </h2>
-                        <p className="text-xs text-stone-500">ID Entri: #{selectedEntry.id} • Bentuk Carian: {selectedEntry.searchNormalized}</p>
+                        <p className="text-xs text-stone-500">
+                          {selectedEntry.id === 0
+                            ? 'Lengkapkan maklumat leksikon, definisi, contoh ayat, imbuhan, dialek, dan sumber rujukan di bawah.'
+                            : `ID Entri: #${selectedEntry.id} • Bentuk Carian: ${selectedEntry.searchNormalized}`
+                          }
+                        </p>
                       </div>
                     </div>
 
                     <div className="flex items-center gap-3">
-                      <Link
-                        href={`/kamus/${encodeURIComponent(selectedEntry.headword)}`}
-                        target="_blank"
-                        className="text-xs font-medium px-3.5 py-2 border border-sand-300 dark:border-stone-700 rounded-xl hover:bg-sand-50 dark:hover:bg-stone-800 text-stone-700 dark:text-stone-300 transition"
-                      >
-                        ↗ Pratonton Laman
-                      </Link>
+                      {selectedEntry.id !== 0 && (
+                        <Link
+                          href={`/kamus/${encodeURIComponent(selectedEntry.headword)}`}
+                          target="_blank"
+                          className="text-xs font-medium px-3.5 py-2 border border-sand-300 rounded-xl hover:bg-sand-50 text-stone-700 transition"
+                        >
+                          ↗ Pratonton Laman
+                        </Link>
+                      )}
                       <button
                         onClick={handleDeleteEntry}
-                        className="text-xs font-semibold px-3.5 py-2 bg-rose-50 text-rose-700 border border-rose-200 dark:bg-rose-950/40 dark:text-rose-300 dark:border-rose-900 hover:bg-rose-100 rounded-xl transition"
+                        className="text-xs font-semibold px-3.5 py-2 bg-rose-50 text-rose-700 border border-rose-200 hover:bg-rose-100 rounded-xl transition"
                       >
-                        Padam Entri
+                        {selectedEntry.id === 0 ? 'Batal Draf' : 'Padam Entri'}
                       </button>
                     </div>
                   </div>
 
-                {/* Core Lexical Fields */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-                  <div>
-                    <label className="block text-xs font-semibold text-stone-700 dark:text-stone-300 mb-1.5">
-                      Kata Dasar (*Headword*)
-                    </label>
-                    <input
-                      type="text"
-                      value={selectedEntry.headword}
-                      onChange={(e) => setSelectedEntry({ ...selectedEntry, headword: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl border border-sand-300 dark:border-stone-700 bg-white dark:bg-stone-800 text-stone-900 dark:text-stone-100 text-sm font-semibold focus:ring-2 focus:ring-amber-500"
-                    />
-                  </div>
+                  {/* Core Lexical Fields */}
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                    <div>
+                      <label className="block text-xs font-semibold text-stone-700 mb-1.5">
+                        Kata Dasar (*Headword*)
+                      </label>
+                      <input
+                        type="text"
+                        value={selectedEntry.headword}
+                        onChange={(e) => setSelectedEntry({ ...selectedEntry, headword: e.target.value })}
+                        className="w-full px-4 py-2.5 rounded-xl border border-sand-300 bg-white text-stone-900 text-sm font-semibold focus:ring-2 focus:ring-amber-500"
+                      />
+                    </div>
 
-                  <div>
-                    <label className="block text-xs font-semibold text-stone-700 dark:text-stone-300 mb-1.5">
-                      Golongan Kata (*POS*)
-                    </label>
-                    <select
-                      value={selectedEntry.partOfSpeech}
-                      onChange={(e) => setSelectedEntry({ ...selectedEntry, partOfSpeech: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl border border-sand-300 dark:border-stone-700 bg-white dark:bg-stone-800 text-stone-900 dark:text-stone-100 text-sm font-semibold focus:ring-2 focus:ring-amber-500"
-                    >
-                      <option value="KATA NAMA">KATA NAMA</option>
-                      <option value="KATA KERJA">KATA KERJA</option>
-                      <option value="KATA SIFAT">KATA SIFAT</option>
-                      <option value="KATA BILANGAN">KATA BILANGAN</option>
-                      <option value="KATA TUGAS / PARTIKEL">KATA TUGAS / PARTIKEL</option>
-                      <option value="KATA SENDI NAMA">KATA SENDI NAMA</option>
-                      <option value="KATA GANTI NAMA">KATA GANTI NAMA</option>
-                      <option value="KATA HUBUNG">KATA HUBUNG</option>
-                    </select>
-                  </div>
+                    <div>
+                      <label className="block text-xs font-semibold text-stone-700 mb-1.5">
+                        Golongan Kata (*POS*)
+                      </label>
+                      <select
+                        value={selectedEntry.partOfSpeech}
+                        onChange={(e) => setSelectedEntry({ ...selectedEntry, partOfSpeech: e.target.value })}
+                        className="w-full px-4 py-2.5 rounded-xl border border-sand-300 bg-white text-stone-900 text-sm font-semibold focus:ring-2 focus:ring-amber-500"
+                      >
+                        <option value="KATA NAMA">KATA NAMA</option>
+                        <option value="KATA KERJA">KATA KERJA</option>
+                        <option value="KATA SIFAT">KATA SIFAT</option>
+                        <option value="KATA BILANGAN">KATA BILANGAN</option>
+                        <option value="KATA TUGAS / PARTIKEL">KATA TUGAS / PARTIKEL</option>
+                        <option value="KATA SENDI NAMA">KATA SENDI NAMA</option>
+                        <option value="KATA GANTI NAMA">KATA GANTI NAMA</option>
+                        <option value="KATA HUBUNG">KATA HUBUNG</option>
+                      </select>
+                    </div>
 
-                  <div>
-                    <label className="block text-xs font-semibold text-stone-700 dark:text-stone-300 mb-1.5">
-                      Transkripsi Fonetik (*IPA*)
-                    </label>
-                    <input
-                      type="text"
-                      value={selectedEntry.ipa || ''}
-                      onChange={(e) => setSelectedEntry({ ...selectedEntry, ipa: e.target.value })}
-                      placeholder="/ipa/"
-                      className="w-full px-4 py-2.5 rounded-xl border border-sand-300 dark:border-stone-700 bg-white dark:bg-stone-800 text-stone-900 dark:text-stone-100 text-sm font-mono focus:ring-2 focus:ring-amber-500"
-                    />
+                    <div>
+                      <label className="block text-xs font-semibold text-stone-700 mb-1.5">
+                        Transkripsi Fonetik (*IPA*)
+                      </label>
+                      <input
+                        type="text"
+                        value={selectedEntry.ipa || ''}
+                        onChange={(e) => setSelectedEntry({ ...selectedEntry, ipa: e.target.value })}
+                        placeholder="/ipa/"
+                        className="w-full px-4 py-2.5 rounded-xl border border-sand-300 bg-white text-stone-900 text-sm font-mono focus:ring-2 focus:ring-amber-500"
+                      />
+                    </div>
                   </div>
-                </div>
                   {/* 🎙️ Studio Sebutan Audio Rasmi (Audio Studio & Bakery) */}
-                  <div className="p-5 bg-amber-50/80 dark:bg-amber-950/40 rounded-2xl border border-amber-200 dark:border-amber-900/60 space-y-4">
+                  <div className="p-5 bg-amber-50/80 rounded-2xl border border-amber-200 space-y-4">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
                         <span className="text-lg">🎙️</span>
-                        <h3 className="text-xs font-bold uppercase tracking-wider text-amber-900 dark:text-amber-300">
+                        <h3 className="text-xs font-bold uppercase tracking-wider text-amber-900">
                           Studio Sebutan Audio Rasmi
                         </h3>
                         {selectedEntry.audioUrl ? (
-                          <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300 dark:bg-emerald-950/60 dark:text-emerald-300">
+                          <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">
                             ✓ Audio Rasmi Tersimpan
                           </span>
                         ) : (
-                          <span className="px-2 py-0.5 rounded-full text-[10px] font-medium bg-stone-100 text-stone-600 border border-stone-300 dark:bg-stone-800 dark:text-stone-400">
+                          <span className="px-2 py-0.5 rounded-full text-[10px] font-medium bg-stone-100 text-stone-600 border border-stone-300">
                             Auto-TTS Dinamik
                           </span>
                         )}
@@ -1255,7 +1301,7 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                       )}
                     </div>
 
-                    <p className="text-xs text-amber-950/70 dark:text-amber-200/70 leading-relaxed">
+                    <p className="text-xs text-amber-950/70 leading-relaxed">
                       Dengar pelbagai model suara Austronesia dan simpan (*bake*) sebutan terbaik menjadi fail audio kekal rasmi bagi mengelakkan variasi sebutan rawak.
                     </p>
 
@@ -1263,7 +1309,7 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-1">
                       <div>
                         <div className="flex items-center justify-between mb-1.5">
-                          <label className="block text-[11px] font-semibold text-stone-700 dark:text-stone-300">
+                          <label className="block text-[11px] font-semibold text-stone-700">
                             Teks Fonetik Suara (*Custom Phonetic Trigger*)
                           </label>
                           {customPhoneticInput && (
@@ -1281,18 +1327,18 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                           value={customPhoneticInput || selectedEntry.headword}
                           onChange={(e) => setCustomPhoneticInput(e.target.value)}
                           placeholder="Cth: bé-sé', se-do', suh-do'..."
-                          className="w-full px-3.5 py-2 rounded-xl border border-amber-300 dark:border-stone-700 bg-white dark:bg-stone-800 text-stone-900 dark:text-stone-100 text-xs font-mono focus:ring-2 focus:ring-amber-500"
+                          className="w-full px-3.5 py-2 rounded-xl border border-amber-300 bg-white text-stone-900 text-xs font-mono focus:ring-2 focus:ring-amber-500"
                         />
                       </div>
 
                       <div>
-                        <label className="block text-[11px] font-semibold text-stone-700 dark:text-stone-300 mb-1.5">
+                        <label className="block text-[11px] font-semibold text-stone-700 mb-1.5">
                           Kelajuan Sebutan (*Speech Rate*)
                         </label>
                         <select
                           value={customRate}
                           onChange={(e) => setCustomRate(e.target.value)}
-                          className="w-full px-3.5 py-2 rounded-xl border border-amber-300 dark:border-stone-700 bg-white dark:bg-stone-800 text-stone-900 dark:text-stone-100 text-xs font-medium focus:ring-2 focus:ring-amber-500"
+                          className="w-full px-3.5 py-2 rounded-xl border border-amber-300 bg-white text-stone-900 text-xs font-medium focus:ring-2 focus:ring-amber-500"
                         >
                           <option value="-30%">Sangat Perlahan (-30%)</option>
                           <option value="-25%">Lebih Perlahan (-25%)</option>
@@ -1313,11 +1359,11 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                     <div className="flex flex-wrap items-center gap-3 pt-2">
                       {/* Voice Model Selector */}
                       <div className="flex items-center gap-1.5">
-                        <span className="text-xs text-stone-600 dark:text-stone-400 font-medium">Model:</span>
+                        <span className="text-xs text-stone-600 font-medium">Model:</span>
                         <select
                           value={selectedVoice}
                           onChange={(e) => setSelectedVoice(e.target.value)}
-                          className="px-3.5 py-2 rounded-xl border border-amber-300 dark:border-stone-700 bg-white dark:bg-stone-800 text-stone-900 dark:text-stone-100 text-xs font-medium focus:ring-2 focus:ring-amber-500"
+                          className="px-3.5 py-2 rounded-xl border border-amber-300 bg-white text-stone-900 text-xs font-medium focus:ring-2 focus:ring-amber-500"
                         >
                           <option value="su">🇮🇩 Sunda / Tuti (Wanita - Disyorkan)</option>
                           <option value="su-m">🇮🇩 Sunda / Jajang (Lelaki - Vokal Tulen)</option>
@@ -1338,7 +1384,7 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                         type="button"
                         onClick={() => handlePreviewAudio(selectedVoice, customPhoneticInput || selectedEntry.headword)}
                         disabled={isPreviewPlaying}
-                        className="px-4 py-2 bg-white dark:bg-stone-800 hover:bg-amber-100/60 border border-amber-300 dark:border-stone-700 text-amber-900 dark:text-amber-200 font-medium rounded-xl text-xs transition flex items-center gap-1.5 shadow-xs disabled:opacity-50"
+                        className="px-4 py-2 bg-white hover:bg-amber-100/60 border border-amber-300 text-amber-900 font-medium rounded-xl text-xs transition flex items-center gap-1.5 shadow-xs disabled:opacity-50"
                       >
                         <span>{isPreviewPlaying ? '🔊 Sedang Main...' : '▶ Uji Dengar'}</span>
                       </button>
@@ -1355,7 +1401,7 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                     </div>
 
                     {audioStatusMsg && (
-                      <div className="text-xs font-medium text-amber-800 dark:text-amber-300 pt-1">
+                      <div className="text-xs font-medium text-amber-800 pt-1">
                         {audioStatusMsg}
                       </div>
                     )}
@@ -1364,7 +1410,7 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                   {/* Senses & Definitions */}
                   <div className="space-y-4 pt-2">
                     <div className="flex items-center justify-between">
-                      <h3 className="text-base font-bold text-stone-900 dark:text-stone-100">
+                      <h3 className="text-base font-bold text-stone-900">
                         Definisi & Terjemahan ({selectedEntry.senses?.length || 0})
                       </h3>
                       <button
@@ -1379,16 +1425,16 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                           });
                           setSelectedEntry({ ...selectedEntry, senses: newSenses });
                         }}
-                        className="px-3 py-1.5 text-xs font-semibold bg-sand-100 hover:bg-sand-200 text-stone-700 dark:bg-stone-800 dark:text-stone-300 rounded-xl transition"
+                        className="px-3 py-1.5 text-xs font-semibold bg-sand-100 hover:bg-sand-200 text-stone-700 rounded-xl transition"
                       >
                         + Tambah Definisi Baharu
                       </button>
                     </div>
 
                     {selectedEntry.senses?.map((sense, sIdx) => (
-                      <div key={sIdx} className="p-5 bg-sand-50 dark:bg-stone-800/60 rounded-2xl space-y-4 border border-sand-200 dark:border-stone-700 relative">
+                      <div key={sIdx} className="p-5 bg-sand-50 rounded-2xl space-y-4 border border-sand-200 relative">
                         <div className="flex items-center justify-between">
-                          <span className="text-xs font-bold uppercase tracking-wider text-amber-800 dark:text-amber-300">
+                          <span className="text-xs font-bold uppercase tracking-wider text-amber-800">
                             Maksud #{sIdx + 1}
                           </span>
                           {selectedEntry.senses && selectedEntry.senses.length > 1 && (
@@ -1409,7 +1455,7 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                           <div>
-                            <label className="block text-xs font-semibold text-stone-700 dark:text-stone-300 mb-1.5">
+                            <label className="block text-xs font-semibold text-stone-700 mb-1.5">
                               Maksud Bahasa Melayu
                             </label>
                             <input
@@ -1421,12 +1467,12 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                                 setSelectedEntry({ ...selectedEntry, senses: newSenses });
                               }}
                               placeholder="Maksud dalam Bahasa Melayu..."
-                              className="w-full px-4 py-2.5 rounded-xl border border-sand-300 dark:border-stone-700 bg-white dark:bg-stone-900 text-stone-900 dark:text-stone-100 text-sm font-medium focus:ring-2 focus:ring-amber-500"
+                              className="w-full px-4 py-2.5 rounded-xl border border-sand-300 bg-white text-stone-900 text-sm font-medium focus:ring-2 focus:ring-amber-500"
                             />
                           </div>
 
                           <div>
-                            <label className="block text-xs font-semibold text-stone-700 dark:text-stone-300 mb-1.5">
+                            <label className="block text-xs font-semibold text-stone-700 mb-1.5">
                               English Definition
                             </label>
                             <input
@@ -1438,7 +1484,7 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                                 setSelectedEntry({ ...selectedEntry, senses: newSenses });
                               }}
                               placeholder="English definition..."
-                              className="w-full px-4 py-2.5 rounded-xl border border-sand-300 dark:border-stone-700 bg-white dark:bg-stone-900 text-stone-900 dark:text-stone-100 text-sm font-medium focus:ring-2 focus:ring-amber-500"
+                              className="w-full px-4 py-2.5 rounded-xl border border-sand-300 bg-white text-stone-900 text-sm font-medium focus:ring-2 focus:ring-amber-500"
                             />
                           </div>
                         </div>
@@ -1446,7 +1492,7 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                         {/* Examples under this Sense */}
                         <div className="pt-2">
                           <div className="flex items-center justify-between mb-2">
-                            <label className="block text-xs font-semibold text-stone-700 dark:text-stone-300">
+                            <label className="block text-xs font-semibold text-stone-700">
                               Ayat Contoh ({sense.examples?.length || 0})
                             </label>
                             <button
@@ -1462,7 +1508,7 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                                 });
                                 setSelectedEntry({ ...selectedEntry, senses: newSenses });
                               }}
-                              className="text-xs font-semibold text-amber-700 hover:text-amber-800 dark:text-amber-400 underline"
+                              className="text-xs font-semibold text-amber-700 hover:text-amber-800 underline"
                             >
                               + Tambah Ayat Contoh
                             </button>
@@ -1476,11 +1522,11 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                             ).filter(t => t.isWord);
 
                             return (
-                              <div key={eIdx} className="p-4 bg-white dark:bg-stone-900 rounded-2xl border border-sand-200 dark:border-stone-700 space-y-3 mb-3">
+                              <div key={eIdx} className="p-4 bg-white rounded-2xl border border-sand-200 space-y-3 mb-3">
                                 <div className="flex items-center justify-between gap-3">
                                   <input
                                     type="text"
-                                    placeholder="Ayat Bajau Samah (cth: Mangan kiti sekot)..."
+                                    placeholder="Ayat Bajau Sama (cth: Mangan kiti sekot)..."
                                     value={ex.sentenceBajau}
                                     onChange={(e) => {
                                       const newSenses = [...(selectedEntry.senses || [])];
@@ -1489,14 +1535,14 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                                         setSelectedEntry({ ...selectedEntry, senses: newSenses });
                                       }
                                     }}
-                                    className="flex-1 px-3.5 py-2 text-sm rounded-xl border border-sand-300 dark:border-stone-700 bg-white dark:bg-stone-900 text-stone-900 dark:text-stone-100 font-serif focus:ring-2 focus:ring-amber-500"
+                                    className="flex-1 px-3.5 py-2 text-sm rounded-xl border border-sand-300 bg-white text-stone-900 font-serif focus:ring-2 focus:ring-amber-500"
                                   />
                                   {ex.sentenceBajau && (
                                     <button
                                       type="button"
                                       onClick={() => handlePreviewAudio(selectedVoice, ex.sentenceBajau, customRate)}
                                       title="Uji dengar sebutan ayat ini dengan model suara yang dipilih"
-                                      className="px-3 py-2 text-amber-800 dark:text-amber-300 hover:bg-amber-100 dark:hover:bg-stone-800 rounded-xl transition text-xs font-semibold flex items-center gap-1.5 shrink-0 border border-amber-200 dark:border-stone-700"
+                                      className="px-3 py-2 text-amber-800 hover:bg-amber-100 rounded-xl transition text-xs font-semibold flex items-center gap-1.5 shrink-0 border border-amber-200"
                                     >
                                       <span>▶ Uji Ayat</span>
                                     </button>
@@ -1517,7 +1563,7 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
 
                                 {/* Real-time Detected Words in Sentence Bar */}
                                 {detectedWords.length > 0 && (
-                                  <div className="flex flex-wrap items-center gap-1.5 pt-1.5 pb-1 px-2.5 bg-sand-50 dark:bg-stone-800/50 rounded-xl border border-sand-200/60 dark:border-stone-700 text-xs">
+                                  <div className="flex flex-wrap items-center gap-1.5 pt-1.5 pb-1 px-2.5 bg-sand-50 rounded-xl border border-sand-200/60 text-xs">
                                     <span className="text-[10px] font-bold uppercase tracking-wider text-stone-500 mr-1">
                                       Kata Terkesan:
                                     </span>
@@ -1535,13 +1581,12 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                                             setSelectedEntry({ ...selectedEntry, senses: newSenses });
                                           }}
                                           title={inDict ? `Kata dalam kamus ("${dt.matchingHeadword}"). Klik untuk set sebagai kata fokus utama.` : 'Kata belum tersenarai'}
-                                          className={`px-2.5 py-1 rounded-lg font-mono text-[11px] transition flex items-center gap-1 ${
-                                            isHighlighted
-                                              ? 'bg-amber-600 text-white font-bold shadow-xs'
-                                              : inDict
-                                              ? 'bg-amber-100 dark:bg-amber-950/60 text-amber-900 dark:text-amber-200 border border-amber-300 dark:border-amber-800 hover:bg-amber-200'
-                                              : 'bg-stone-100 text-stone-600 dark:bg-stone-800 dark:text-stone-400 border border-stone-200'
-                                          }`}
+                                          className={`px-2.5 py-1 rounded-lg font-mono text-[11px] transition flex items-center gap-1 ${isHighlighted
+                                            ? 'bg-amber-600 text-white font-bold shadow-xs'
+                                            : inDict
+                                              ? 'bg-amber-100 text-amber-900 border border-amber-300 hover:bg-amber-200'
+                                              : 'bg-stone-100 text-stone-600 border border-stone-200'
+                                            }`}
                                         >
                                           <span>{dt.raw}</span>
                                           {isHighlighted ? ' ★' : inDict ? ' ✓' : ''}
@@ -1566,7 +1611,7 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                                         setSelectedEntry({ ...selectedEntry, senses: newSenses });
                                       }
                                     }}
-                                    className="w-full px-3.5 py-2 text-xs rounded-xl border border-sand-300 dark:border-stone-700 bg-white dark:bg-stone-900 text-stone-900 dark:text-stone-100 placeholder-stone-400"
+                                    className="w-full px-3.5 py-2 text-xs rounded-xl border border-sand-300 bg-white text-stone-900 placeholder-stone-400"
                                   />
                                   <input
                                     type="text"
@@ -1579,7 +1624,7 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                                         setSelectedEntry({ ...selectedEntry, senses: newSenses });
                                       }
                                     }}
-                                    className="w-full px-3.5 py-2 text-xs rounded-xl border border-sand-300 dark:border-stone-700 bg-white dark:bg-stone-900 text-stone-900 dark:text-stone-100 placeholder-stone-400"
+                                    className="w-full px-3.5 py-2 text-xs rounded-xl border border-sand-300 bg-white text-stone-900 placeholder-stone-400"
                                   />
                                 </div>
                               </div>
@@ -1591,9 +1636,9 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                   </div>
 
                   {/* Morphological Affixes / Turunan Sipitan */}
-                  <div className="p-5 bg-sand-50 dark:bg-stone-800/60 rounded-2xl space-y-4 border border-sand-200 dark:border-stone-700">
+                  <div className="p-5 bg-sand-50 rounded-2xl space-y-4 border border-sand-200">
                     <div className="flex items-center justify-between">
-                      <h3 className="text-base font-bold text-stone-900 dark:text-stone-100">
+                      <h3 className="text-base font-bold text-stone-900">
                         Turunan Sipitan / Terbitan Imbuhan ({selectedEntry.affixes?.length || 0})
                       </h3>
                       <button
@@ -1607,14 +1652,14 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                           });
                           setSelectedEntry({ ...selectedEntry, affixes: newAffixes });
                         }}
-                        className="px-3 py-1.5 text-xs font-semibold bg-sand-100 hover:bg-sand-200 text-stone-700 dark:bg-stone-800 dark:text-stone-300 rounded-xl transition"
+                        className="px-3 py-1.5 text-xs font-semibold bg-sand-100 hover:bg-sand-200 text-stone-700 rounded-xl transition"
                       >
                         + Tambah Imbuhan
                       </button>
                     </div>
 
                     {selectedEntry.affixes?.map((aff, aIdx) => (
-                      <div key={aIdx} className="grid grid-cols-1 md:grid-cols-3 gap-3 bg-white dark:bg-stone-900 p-3.5 rounded-xl border border-sand-200 dark:border-stone-700 items-center">
+                      <div key={aIdx} className="grid grid-cols-1 md:grid-cols-3 gap-3 bg-white p-3.5 rounded-xl border border-sand-200 items-center">
                         <input
                           type="text"
                           placeholder="Bentuk Terbitan (cth: panganan)..."
@@ -1624,7 +1669,7 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                             newAff[aIdx].term = e.target.value;
                             setSelectedEntry({ ...selectedEntry, affixes: newAff });
                           }}
-                          className="px-3.5 py-2 text-xs rounded-xl border border-sand-300 dark:border-stone-700 bg-white dark:bg-stone-900 text-stone-900 dark:text-stone-100 font-bold text-amber-900 dark:text-amber-300"
+                          className="px-3.5 py-2 text-xs rounded-xl border border-sand-300 bg-white text-stone-900 font-bold text-amber-900"
                         />
                         <input
                           type="text"
@@ -1635,7 +1680,7 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                             newAff[aIdx].meaningMs = e.target.value;
                             setSelectedEntry({ ...selectedEntry, affixes: newAff });
                           }}
-                          className="px-3.5 py-2 text-xs rounded-xl border border-sand-300 dark:border-stone-700 bg-white dark:bg-stone-900 text-stone-900 dark:text-stone-100"
+                          className="px-3.5 py-2 text-xs rounded-xl border border-sand-300 bg-white text-stone-900"
                         />
                         <div className="flex items-center gap-2">
                           <input
@@ -1647,7 +1692,7 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                               newAff[aIdx].meaningEn = e.target.value;
                               setSelectedEntry({ ...selectedEntry, affixes: newAff });
                             }}
-                            className="flex-1 px-3.5 py-2 text-xs rounded-xl border border-sand-300 dark:border-stone-700 bg-white dark:bg-stone-900 text-stone-900 dark:text-stone-100"
+                            className="flex-1 px-3.5 py-2 text-xs rounded-xl border border-sand-300 bg-white text-stone-900"
                           />
                           <button
                             type="button"
@@ -1665,10 +1710,10 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                   </div>
 
                   {/* Section 4: Dialects & Spelling Variants */}
-                  <div className="space-y-4 pt-4 border-t border-sand-200 dark:border-stone-800">
+                  <div className="space-y-4 pt-4 border-t border-sand-200">
                     <div className="flex items-center justify-between">
                       <div>
-                        <h3 className="font-semibold text-sm text-stone-900 dark:text-stone-100 flex items-center gap-2">
+                        <h3 className="font-semibold text-sm text-stone-900 flex items-center gap-2">
                           <span>📍</span> Variasi Ejaan & Dialek Tempatan ({selectedEntry.dialects?.length || 0})
                         </h3>
                         <p className="text-xs text-stone-500">
@@ -1686,7 +1731,7 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                             });
                             setSelectedEntry({ ...selectedEntry, dialects: newDialects });
                           }}
-                          className="px-3 py-1.5 text-xs font-semibold bg-amber-50 hover:bg-amber-100 text-amber-800 dark:bg-amber-950/40 dark:text-amber-300 rounded-xl transition border border-amber-200 dark:border-amber-800/40"
+                          className="px-3 py-1.5 text-xs font-semibold bg-amber-50 hover:bg-amber-100 text-amber-800 rounded-xl transition border border-amber-200"
                         >
                           + Varian Ejaan
                         </button>
@@ -1700,7 +1745,7 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                             });
                             setSelectedEntry({ ...selectedEntry, dialects: newDialects });
                           }}
-                          className="px-3 py-1.5 text-xs font-semibold bg-sand-100 hover:bg-sand-200 text-stone-700 dark:bg-stone-800 dark:text-stone-300 rounded-xl transition"
+                          className="px-3 py-1.5 text-xs font-semibold bg-sand-100 hover:bg-sand-200 text-stone-700 rounded-xl transition"
                         >
                           + Dialek Daerah
                         </button>
@@ -1708,7 +1753,7 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                     </div>
 
                     {selectedEntry.dialects?.map((dia, dIdx) => (
-                      <div key={dIdx} className="grid grid-cols-1 md:grid-cols-[200px_1fr_auto] gap-3 bg-white dark:bg-stone-900 p-3.5 rounded-xl border border-sand-200 dark:border-stone-700 items-center">
+                      <div key={dIdx} className="grid grid-cols-1 md:grid-cols-[200px_1fr_auto] gap-3 bg-white p-3.5 rounded-xl border border-sand-200 items-center">
                         <select
                           value={dia.localityName}
                           onChange={(e) => {
@@ -1716,7 +1761,7 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                             newDia[dIdx].localityName = e.target.value;
                             setSelectedEntry({ ...selectedEntry, dialects: newDia });
                           }}
-                          className="px-3 py-2 text-xs rounded-xl border border-sand-300 dark:border-stone-700 bg-white dark:bg-stone-900 text-stone-900 dark:text-stone-100 font-semibold focus:ring-2 focus:ring-amber-500"
+                          className="px-3 py-2 text-xs rounded-xl border border-sand-300 bg-white text-stone-900 font-semibold focus:ring-2 focus:ring-amber-500"
                         >
                           <option value="Varian Ortografi">📝 Varian Ortografi</option>
                           <option value="Kota Belud (Piawai)">📍 Kota Belud (Piawai)</option>
@@ -1738,7 +1783,7 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                             newDia[dIdx].dialectForm = e.target.value;
                             setSelectedEntry({ ...selectedEntry, dialects: newDia });
                           }}
-                          className="px-3.5 py-2 text-xs rounded-xl border border-sand-300 dark:border-stone-700 bg-white dark:bg-stone-900 text-stone-900 dark:text-stone-100 font-serif font-medium focus:ring-2 focus:ring-amber-500"
+                          className="px-3.5 py-2 text-xs rounded-xl border border-sand-300 bg-white text-stone-900 font-serif font-medium focus:ring-2 focus:ring-amber-500"
                         />
                         <button
                           type="button"
@@ -1755,25 +1800,136 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                     ))}
                   </div>
 
+                  {/* Section 5: Linguistic Sources & Provenance */}
+                  <div className="space-y-4 pt-4 border-t border-sand-200">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <h3 className="font-semibold text-sm text-stone-900 flex items-center gap-2">
+                          <span>📚</span> Sumber & Provenans Linguistik ({selectedEntry.sources?.length || 0})
+                        </h3>
+                        <p className="text-xs text-stone-500">
+                          Dokumentasi sumber rujukan leksikal (cth: penerbitan akademik, informan lisan, atau semakan jawatankuasa).
+                        </p>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          const newSources = [...(selectedEntry.sources || [])];
+                          newSources.push({
+                            sourceType: 'Lisan / Komuniti',
+                            description: '',
+                            verifiedBy: 'Penutur Jati',
+                          });
+                          setSelectedEntry({ ...selectedEntry, sources: newSources });
+                        }}
+                        className="px-3 py-1.5 text-xs font-semibold bg-sand-100 hover:bg-sand-200 text-stone-700 rounded-xl transition"
+                      >
+                        + Tambah Sumber
+                      </button>
+                    </div>
+
+                    {(!selectedEntry.sources || selectedEntry.sources.length === 0) && (
+                      <div className="text-xs text-stone-400 italic p-3 bg-sand-50/50 rounded-xl border border-dashed border-sand-200">
+                        Tiada sumber khusus direkodkan untuk entri ini. Klik &quot;+ Tambah Sumber&quot; untuk menetapkan sumber rujukan.
+                      </div>
+                    )}
+
+                    {selectedEntry.sources?.map((src, srcIdx) => (
+                      <div key={srcIdx} className="p-3.5 bg-white rounded-xl border border-sand-200 space-y-3">
+                        <div className="flex items-center justify-between gap-3">
+                          <div className="flex items-center gap-2 flex-1">
+                            <label className="text-[11px] font-semibold text-stone-500 uppercase tracking-wider min-w-[70px]">
+                              Jenis:
+                            </label>
+                            <select
+                              value={src.sourceType}
+                              onChange={(e) => {
+                                const newSrc = [...(selectedEntry.sources || [])];
+                                newSrc[srcIdx].sourceType = e.target.value;
+                                setSelectedEntry({ ...selectedEntry, sources: newSrc });
+                              }}
+                              className="px-2.5 py-1.5 text-xs rounded-lg border border-sand-300 bg-sand-50 text-stone-900 font-semibold focus:ring-2 focus:ring-amber-500"
+                            >
+                              <option value="Academic Publication">📖 Penerbitan Akademik</option>
+                              <option value="Lisan / Komuniti">🗣️ Lisan / Penutur Jati</option>
+                              <option value="Penyunting Pentadbir">✍️ Penyunting Pentadbir</option>
+                              <option value="Kamus / Glosari Rasmi">📗 Kamus / Glosari Rasmi</option>
+                              <option value="Kajian Lapangan">🗺️ Kajian Lapangan</option>
+                              {src.sourceType && !['Academic Publication', 'Lisan / Komuniti', 'Penyunting Pentadbir', 'Kamus / Glosari Rasmi', 'Kajian Lapangan'].includes(src.sourceType) && (
+                                <option value={src.sourceType}>{src.sourceType}</option>
+                              )}
+                            </select>
+                          </div>
+                          <button
+                            type="button"
+                            onClick={() => {
+                              const newSrc = selectedEntry.sources!.filter((_, i) => i !== srcIdx);
+                              setSelectedEntry({ ...selectedEntry, sources: newSrc });
+                            }}
+                            className="text-stone-400 hover:text-rose-600 px-2 py-1 text-xs"
+                            title="Padam sumber ini"
+                          >
+                            ✕ Padam
+                          </button>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-[1.5fr_1fr] gap-3">
+                          <div>
+                            <label className="block text-[11px] font-semibold text-stone-600 mb-1">
+                              Keterangan Sumber / Rujukan (Buku, Halaman, Informan)
+                            </label>
+                            <input
+                              type="text"
+                              placeholder="Cth: Mark T. Miller (2007), A Grammar of West Coast Bajau (p. 105)..."
+                              value={src.description}
+                              onChange={(e) => {
+                                const newSrc = [...(selectedEntry.sources || [])];
+                                newSrc[srcIdx].description = e.target.value;
+                                setSelectedEntry({ ...selectedEntry, sources: newSrc });
+                              }}
+                              className="w-full px-3 py-2 text-xs rounded-xl border border-sand-300 bg-white text-stone-900 focus:ring-2 focus:ring-amber-500"
+                            />
+                          </div>
+                          <div>
+                            <label className="block text-[11px] font-semibold text-stone-600 mb-1">
+                              Disemak / Disahkan Oleh (Pilihan)
+                            </label>
+                            <input
+                              type="text"
+                              placeholder="Cth: Penutur Jati Kota Belud, Jawatankuasa..."
+                              value={src.verifiedBy || ''}
+                              onChange={(e) => {
+                                const newSrc = [...(selectedEntry.sources || [])];
+                                newSrc[srcIdx].verifiedBy = e.target.value;
+                                setSelectedEntry({ ...selectedEntry, sources: newSrc });
+                              }}
+                              className="w-full px-3 py-2 text-xs rounded-xl border border-sand-300 bg-white text-stone-900 focus:ring-2 focus:ring-amber-500"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
                   {/* Unsaved Changes Banner */}
                   {hasUnsavedChanges && (
-                    <div className="flex items-center gap-2 px-4 py-3 bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800/50 rounded-2xl text-xs text-amber-800 dark:text-amber-300">
+                    <div className="flex items-center gap-2 px-4 py-3 bg-amber-50 border border-amber-200 rounded-2xl text-xs text-amber-800">
                       <span className="relative flex h-2.5 w-2.5">
                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-500 opacity-75"></span>
                         <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-amber-600"></span>
                       </span>
                       <span className="font-semibold">Terdapat perubahan yang belum disimpan.</span>
-                      <span className="text-amber-600 dark:text-amber-400 ml-auto font-medium">Tekan <kbd className="px-2 py-0.5 bg-amber-100 dark:bg-amber-900 rounded font-mono text-[10px] border border-amber-300 dark:border-amber-700">Ctrl + Enter</kbd> untuk simpan</span>
+                      <span className="text-amber-600 ml-auto font-medium">Tekan <kbd className="px-2 py-0.5 bg-amber-100 rounded font-mono text-[10px] border border-amber-300">Ctrl + Enter</kbd> untuk simpan</span>
                     </div>
                   )}
 
                   {/* Save Button Bar */}
-                  <div className="pt-4 flex items-center justify-between border-t border-sand-200 dark:border-stone-800">
-                    <span className="text-xs font-semibold text-amber-700 dark:text-amber-400">{saveStatus}</span>
+                  <div className="pt-4 flex items-center justify-between border-t border-sand-200">
+                    <span className="text-xs font-semibold text-amber-700">{saveStatus}</span>
                     <div className="flex items-center gap-3">
                       <button
                         onClick={() => setSelectedEntry(null)}
-                        className="px-4 py-2.5 bg-stone-100 hover:bg-stone-200 dark:bg-stone-800 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-300 font-semibold rounded-xl text-xs transition"
+                        className="px-4 py-2.5 bg-stone-100 hover:bg-stone-200 text-stone-700 font-semibold rounded-xl text-xs transition"
                       >
                         Tutup & Kembali
                       </button>
@@ -1782,7 +1938,7 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                         title="Simpan (Ctrl+Enter)"
                         className="px-6 py-2.5 bg-amber-600 hover:bg-amber-700 active:bg-amber-800 text-white font-semibold rounded-xl text-sm transition shadow-md flex items-center gap-2 disabled:opacity-50"
                       >
-                        💾 Simpan Perubahan
+                        {selectedEntry.id === 0 ? '➕ Cipta & Simpan Entri Rasmi' : '💾 Simpan Perubahan'}
                         <span className="text-[10px] opacity-70 font-mono">Ctrl+↵</span>
                       </button>
                     </div>
@@ -1795,12 +1951,12 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
 
         {/* TAB 1.5: DEDICATED SUNTING CONTOH & AUDIO STUDIO */}
         {activeTab === 'examples' && (
-          <div className="bg-white dark:bg-stone-900 rounded-3xl border border-sand-200 dark:border-stone-800 shadow-sm overflow-hidden flex flex-col min-h-[75vh]">
+          <div className="bg-white rounded-3xl border border-sand-200 shadow-sm overflow-hidden flex flex-col min-h-[75vh]">
             {/* Header Toolbar & Search Filter */}
-            <div className="p-6 border-b border-sand-200 dark:border-stone-800 space-y-4 bg-sand-50/50 dark:bg-stone-950/40">
+            <div className="p-6 border-b border-sand-200 space-y-4 bg-sand-50/50">
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div>
-                  <h2 className="font-serif text-xl font-bold text-stone-900 dark:text-stone-100 flex items-center gap-2">
+                  <h2 className="font-serif text-xl font-bold text-stone-900 flex items-center gap-2">
                     <span>📝</span> Studio Sunting Contoh & Audio Ayat
                   </h2>
                   <p className="text-xs text-stone-500">
@@ -1811,7 +1967,7 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                 <div className="flex items-center gap-2">
                   <button
                     onClick={() => loadExamples()}
-                    className="px-3.5 py-2 bg-sand-100 dark:bg-stone-800 text-xs font-semibold rounded-xl hover:bg-sand-200 text-stone-700 dark:text-stone-300 transition flex items-center gap-1.5"
+                    className="px-3.5 py-2 bg-sand-100 text-xs font-semibold rounded-xl hover:bg-sand-200 text-stone-700 transition flex items-center gap-1.5"
                   >
                     🔄 Muat Semula
                   </button>
@@ -1823,14 +1979,14 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                 <div className="relative flex-1">
                   <input
                     type="text"
-                    placeholder="Cari ayat Bajau Samah, terjemahan Melayu, atau kata dasar..."
+                    placeholder="Cari ayat Bajau Sama, terjemahan Melayu, atau kata dasar..."
                     value={examplesSearchQuery}
                     onChange={(e) => {
                       setExamplesSearchQuery(e.target.value);
                       setExamplesPage(1);
                       loadExamples(e.target.value, examplesFilter, 1);
                     }}
-                    className="w-full px-4 py-3 rounded-2xl bg-white dark:bg-stone-800 border border-sand-300 dark:border-stone-700 text-stone-900 dark:text-stone-100 placeholder-stone-400 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 shadow-xs"
+                    className="w-full px-4 py-3 rounded-2xl bg-white border border-sand-300 text-stone-900 placeholder-stone-400 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 shadow-xs"
                   />
                   {examplesSearchQuery && (
                     <button
@@ -1846,18 +2002,17 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                 </div>
 
                 {/* Filter Pill Selector */}
-                <div className="flex items-center gap-1.5 bg-sand-100 dark:bg-stone-800 p-1.5 rounded-2xl shrink-0 text-xs">
+                <div className="flex items-center gap-1.5 bg-sand-100 p-1.5 rounded-2xl shrink-0 text-xs">
                   <button
                     onClick={() => {
                       setExamplesFilter('all');
                       setExamplesPage(1);
                       loadExamples(examplesSearchQuery, 'all', 1);
                     }}
-                    className={`px-3 py-1.5 rounded-xl font-medium transition ${
-                      examplesFilter === 'all'
-                        ? 'bg-white dark:bg-stone-900 text-amber-700 dark:text-amber-400 font-bold shadow-xs'
-                        : 'text-stone-600 dark:text-stone-400 hover:text-stone-900'
-                    }`}
+                    className={`px-3 py-1.5 rounded-xl font-medium transition ${examplesFilter === 'all'
+                      ? 'bg-white text-amber-700 font-bold shadow-xs'
+                      : 'text-stone-600 hover:text-stone-900'
+                      }`}
                   >
                     Semua ({totalExamples})
                   </button>
@@ -1867,11 +2022,10 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                       setExamplesPage(1);
                       loadExamples(examplesSearchQuery, 'has_audio', 1);
                     }}
-                    className={`px-3 py-1.5 rounded-xl font-medium transition flex items-center gap-1 ${
-                      examplesFilter === 'has_audio'
-                        ? 'bg-white dark:bg-stone-900 text-amber-700 dark:text-amber-400 font-bold shadow-xs'
-                        : 'text-stone-600 dark:text-stone-400 hover:text-stone-900'
-                    }`}
+                    className={`px-3 py-1.5 rounded-xl font-medium transition flex items-center gap-1 ${examplesFilter === 'has_audio'
+                      ? 'bg-white text-amber-700 font-bold shadow-xs'
+                      : 'text-stone-600 hover:text-stone-900'
+                      }`}
                   >
                     <span>🎙️ Ada Audio</span>
                   </button>
@@ -1881,11 +2035,10 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                       setExamplesPage(1);
                       loadExamples(examplesSearchQuery, 'no_audio', 1);
                     }}
-                    className={`px-3 py-1.5 rounded-xl font-medium transition ${
-                      examplesFilter === 'no_audio'
-                        ? 'bg-white dark:bg-stone-900 text-amber-700 dark:text-amber-400 font-bold shadow-xs'
-                        : 'text-stone-600 dark:text-stone-400 hover:text-stone-900'
-                    }`}
+                    className={`px-3 py-1.5 rounded-xl font-medium transition ${examplesFilter === 'no_audio'
+                      ? 'bg-white text-amber-700 font-bold shadow-xs'
+                      : 'text-stone-600 hover:text-stone-900'
+                      }`}
                   >
                     Tiada Audio
                   </button>
@@ -1895,11 +2048,10 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                       setExamplesPage(1);
                       loadExamples(examplesSearchQuery, 'no_highlight', 1);
                     }}
-                    className={`px-3 py-1.5 rounded-xl font-medium transition ${
-                      examplesFilter === 'no_highlight'
-                        ? 'bg-white dark:bg-stone-900 text-amber-700 dark:text-amber-400 font-bold shadow-xs'
-                        : 'text-stone-600 dark:text-stone-400 hover:text-stone-900'
-                    }`}
+                    className={`px-3 py-1.5 rounded-xl font-medium transition ${examplesFilter === 'no_highlight'
+                      ? 'bg-white text-amber-700 font-bold shadow-xs'
+                      : 'text-stone-600 hover:text-stone-900'
+                      }`}
                   >
                     Tiada Kata Fokus
                   </button>
@@ -1929,10 +2081,10 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                   return (
                     <div
                       key={ex.id}
-                      className="p-6 bg-sand-50/50 dark:bg-stone-800/40 rounded-3xl border border-sand-200 dark:border-stone-700/80 shadow-xs space-y-5 hover:border-amber-200 dark:hover:border-amber-900/60 transition"
+                      className="p-6 bg-sand-50/50 rounded-3xl border border-sand-200 shadow-xs space-y-5 hover:border-amber-200:border-amber-900/60 transition"
                     >
                       {/* Top Bar: Headword & Sense Context Badge */}
-                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-sand-200/70 dark:border-stone-700/70">
+                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-sand-200/70">
                         <div className="flex items-center gap-2.5">
                           <button
                             onClick={() => {
@@ -1949,12 +2101,12 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                                   }
                                 });
                             }}
-                            className="font-serif font-bold text-base text-amber-700 dark:text-amber-400 hover:underline flex items-center gap-1.5"
+                            className="font-serif font-bold text-base text-amber-700 hover:underline flex items-center gap-1.5"
                             title="Buka kata dasar ini dalam editor leksikon"
                           >
                             <span>📖</span>
                             <span>{ex.headword}</span>
-                            <span className="text-[10px] uppercase font-mono px-2 py-0.5 bg-sand-200 dark:bg-stone-800 rounded-md text-stone-700 dark:text-stone-300 font-semibold">
+                            <span className="text-[10px] uppercase font-mono px-2 py-0.5 bg-sand-200 rounded-md text-stone-700 font-semibold">
                               {ex.partOfSpeech.replace('KATA ', '')}
                             </span>
                           </button>
@@ -1967,11 +2119,11 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
 
                         <div className="flex items-center gap-2 shrink-0">
                           {ex.audioUrl ? (
-                            <span className="px-2.5 py-1 rounded-full text-[11px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300 dark:bg-emerald-950/60 dark:text-emerald-300">
+                            <span className="px-2.5 py-1 rounded-full text-[11px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">
                               ✓ Audio Rasmi Tersimpan
                             </span>
                           ) : (
-                            <span className="px-2.5 py-1 rounded-full text-[11px] font-medium bg-stone-100 text-stone-600 border border-stone-300 dark:bg-stone-800 dark:text-stone-400">
+                            <span className="px-2.5 py-1 rounded-full text-[11px] font-medium bg-stone-100 text-stone-600 border border-stone-300">
                               Auto-TTS Dinamik
                             </span>
                           )}
@@ -1979,7 +2131,7 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                           <button
                             type="button"
                             onClick={() => handleDeleteExample(ex.id)}
-                            className="text-xs font-semibold px-3 py-1 text-rose-600 hover:bg-rose-50 dark:hover:bg-rose-950/40 rounded-xl transition"
+                            className="text-xs font-semibold px-3 py-1 text-rose-600 hover:bg-rose-50:bg-rose-950/40 rounded-xl transition"
                           >
                             Padam
                           </button>
@@ -1989,8 +2141,8 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                       {/* Main Editable Fields */}
                       <div className="space-y-3">
                         <div>
-                          <label className="block text-xs font-semibold text-stone-700 dark:text-stone-300 mb-1">
-                            Ayat Bajau Samah
+                          <label className="block text-xs font-semibold text-stone-700 mb-1">
+                            Ayat Bajau Sama
                           </label>
                           <input
                             type="text"
@@ -1999,13 +2151,13 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                               const val = e.target.value;
                               setExamplesList(prev => prev.map(item => item.id === ex.id ? { ...item, sentenceBajau: val } : item));
                             }}
-                            className="w-full px-4 py-2.5 text-sm rounded-xl border border-sand-300 dark:border-stone-700 bg-white dark:bg-stone-900 text-stone-900 dark:text-stone-100 font-serif font-medium focus:ring-2 focus:ring-amber-500 shadow-xs"
+                            className="w-full px-4 py-2.5 text-sm rounded-xl border border-sand-300 bg-white text-stone-900 font-serif font-medium focus:ring-2 focus:ring-amber-500 shadow-xs"
                           />
                         </div>
 
                         {/* Real-time Detected Words in Sentence Bar */}
                         {detectedWords.length > 0 && (
-                          <div className="flex flex-wrap items-center gap-1.5 py-2 px-3 bg-white dark:bg-stone-900 rounded-xl border border-sand-200 dark:border-stone-700 text-xs">
+                          <div className="flex flex-wrap items-center gap-1.5 py-2 px-3 bg-white rounded-xl border border-sand-200 text-xs">
                             <span className="text-[10px] font-bold uppercase tracking-wider text-stone-500 mr-1">
                               Kata Terkesan:
                             </span>
@@ -2021,13 +2173,12 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                                     setExamplesList(prev => prev.map(item => item.id === ex.id ? { ...item, highlightWord: dt.cleaned } : item));
                                   }}
                                   title={inDict ? `Kata dalam kamus ("${dt.matchingHeadword}"). Klik untuk set sebagai kata fokus utama ★.` : 'Kata belum tersenarai'}
-                                  className={`px-2.5 py-1 rounded-lg font-mono text-[11px] transition flex items-center gap-1 ${
-                                    isHighlighted
-                                      ? 'bg-amber-600 text-white font-bold shadow-xs'
-                                      : inDict
-                                      ? 'bg-amber-100 dark:bg-amber-950/60 text-amber-900 dark:text-amber-200 border border-amber-300 dark:border-amber-800 hover:bg-amber-200'
-                                      : 'bg-stone-100 text-stone-600 dark:bg-stone-800 dark:text-stone-400 border border-stone-200'
-                                  }`}
+                                  className={`px-2.5 py-1 rounded-lg font-mono text-[11px] transition flex items-center gap-1 ${isHighlighted
+                                    ? 'bg-amber-600 text-white font-bold shadow-xs'
+                                    : inDict
+                                      ? 'bg-amber-100 text-amber-900 border border-amber-300 hover:bg-amber-200'
+                                      : 'bg-stone-100 text-stone-600 border border-stone-200'
+                                    }`}
                                 >
                                   <span>{dt.raw}</span>
                                   {isHighlighted ? ' ★' : inDict ? ' ✓' : ''}
@@ -2042,7 +2193,7 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                           <div>
-                            <label className="block text-xs font-semibold text-stone-700 dark:text-stone-300 mb-1">
+                            <label className="block text-xs font-semibold text-stone-700 mb-1">
                               Terjemahan Bahasa Melayu
                             </label>
                             <input
@@ -2052,12 +2203,12 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                                 const val = e.target.value;
                                 setExamplesList(prev => prev.map(item => item.id === ex.id ? { ...item, sentenceMs: val } : item));
                               }}
-                              className="w-full px-4 py-2 text-xs rounded-xl border border-sand-300 dark:border-stone-700 bg-white dark:bg-stone-900 text-stone-900 dark:text-stone-100 placeholder-stone-400"
+                              className="w-full px-4 py-2 text-xs rounded-xl border border-sand-300 bg-white text-stone-900 placeholder-stone-400"
                             />
                           </div>
 
                           <div>
-                            <label className="block text-xs font-semibold text-stone-700 dark:text-stone-300 mb-1">
+                            <label className="block text-xs font-semibold text-stone-700 mb-1">
                               English Translation (Pilihan)
                             </label>
                             <input
@@ -2068,16 +2219,16 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                                 setExamplesList(prev => prev.map(item => item.id === ex.id ? { ...item, sentenceEn: val } : item));
                               }}
                               placeholder="English translation..."
-                              className="w-full px-4 py-2 text-xs rounded-xl border border-sand-300 dark:border-stone-700 bg-white dark:bg-stone-900 text-stone-900 dark:text-stone-100 placeholder-stone-400"
+                              className="w-full px-4 py-2 text-xs rounded-xl border border-sand-300 bg-white text-stone-900 placeholder-stone-400"
                             />
                           </div>
                         </div>
                       </div>
 
                       {/* Integrated Sentence Audio Bakery Studio */}
-                      <div className="p-4 bg-amber-50/70 dark:bg-amber-950/30 rounded-2xl border border-amber-200 dark:border-amber-900/50 space-y-3">
+                      <div className="p-4 bg-amber-50/70 rounded-2xl border border-amber-200 space-y-3">
                         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                          <span className="text-xs font-bold uppercase tracking-wider text-amber-900 dark:text-amber-300 flex items-center gap-1.5">
+                          <span className="text-xs font-bold uppercase tracking-wider text-amber-900 flex items-center gap-1.5">
                             <span>🎙️</span> Studio Sebutan Ayat
                           </span>
                           {ex.audioUrl && (
@@ -2094,11 +2245,11 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                         <div className="flex flex-wrap items-center gap-3">
                           {/* Voice Selector */}
                           <div className="flex items-center gap-1.5">
-                            <span className="text-xs text-stone-600 dark:text-stone-400">Model:</span>
+                            <span className="text-xs text-stone-600">Model:</span>
                             <select
                               value={selectedVoice}
                               onChange={(e) => setSelectedVoice(e.target.value)}
-                              className="px-3 py-1.5 rounded-xl border border-amber-300 dark:border-stone-700 bg-white dark:bg-stone-800 text-stone-900 dark:text-stone-100 text-xs font-medium"
+                              className="px-3 py-1.5 rounded-xl border border-amber-300 bg-white text-stone-900 text-xs font-medium"
                             >
                               <option value="su">🇮🇩 Sunda / Tuti (Wanita - Disyorkan)</option>
                               <option value="su-m">🇮🇩 Sunda / Jajang (Lelaki)</option>
@@ -2113,11 +2264,11 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
 
                           {/* Rate Selector */}
                           <div className="flex items-center gap-1.5">
-                            <span className="text-xs text-stone-600 dark:text-stone-400">Kelajuan:</span>
+                            <span className="text-xs text-stone-600">Kelajuan:</span>
                             <select
                               value={customRate}
                               onChange={(e) => setCustomRate(e.target.value)}
-                              className="px-3 py-1.5 rounded-xl border border-amber-300 dark:border-stone-700 bg-white dark:bg-stone-800 text-stone-900 dark:text-stone-100 text-xs font-medium"
+                              className="px-3 py-1.5 rounded-xl border border-amber-300 bg-white text-stone-900 text-xs font-medium"
                             >
                               <option value="-20%">Perlahan Jelas (-20%)</option>
                               <option value="-10%">Sedikit Perlahan (-10%)</option>
@@ -2131,7 +2282,7 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                           <button
                             type="button"
                             onClick={() => handlePlaySentenceAudio(ex.id, ex.sentenceBajau, ex.audioUrl)}
-                            className="px-3.5 py-1.5 bg-white dark:bg-stone-800 hover:bg-amber-100/60 border border-amber-300 dark:border-stone-700 text-amber-900 dark:text-amber-200 font-medium rounded-xl text-xs transition flex items-center gap-1.5 shadow-xs"
+                            className="px-3.5 py-1.5 bg-white hover:bg-amber-100/60 border border-amber-300 text-amber-900 font-medium rounded-xl text-xs transition flex items-center gap-1.5 shadow-xs"
                           >
                             <span>{isPlayingThis ? '🔊 Memainkan...' : '▶ Uji Dengar'}</span>
                           </button>
@@ -2147,7 +2298,7 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                           </button>
 
                           {audioMsg && (
-                            <span className="text-xs font-semibold text-amber-800 dark:text-amber-300 ml-2">
+                            <span className="text-xs font-semibold text-amber-800 ml-2">
                               {audioMsg}
                             </span>
                           )}
@@ -2155,15 +2306,15 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                       </div>
 
                       {/* Action Save Bar for this Example */}
-                      <div className="flex items-center justify-between pt-2 border-t border-sand-200/50 dark:border-stone-700/50">
-                        <span className="text-xs font-semibold text-amber-700 dark:text-amber-400">
+                      <div className="flex items-center justify-between pt-2 border-t border-sand-200/50">
+                        <span className="text-xs font-semibold text-amber-700">
                           {saveMsg || ''}
                         </span>
 
                         <button
                           type="button"
                           onClick={() => handleSaveExample(ex)}
-                          className="px-5 py-2 bg-stone-900 hover:bg-stone-800 dark:bg-stone-100 dark:hover:bg-white text-white dark:text-stone-900 font-semibold rounded-xl text-xs transition shadow-xs flex items-center gap-1.5"
+                          className="px-5 py-2 bg-stone-900 hover:bg-stone-800 text-white font-semibold rounded-xl text-xs transition shadow-xs flex items-center gap-1.5"
                         >
                           💾 Simpan Teks Ayat
                         </button>
@@ -2175,7 +2326,7 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
             </div>
 
             {/* Pagination Controls */}
-            <div className="p-4 border-t border-sand-200 dark:border-stone-800 bg-sand-50/70 dark:bg-stone-950/80 flex items-center justify-between text-xs">
+            <div className="p-4 border-t border-sand-200 bg-sand-50/70 flex items-center justify-between text-xs">
               <div className="flex items-center gap-2">
                 <button
                   disabled={examplesPage <= 1 || isLoadingExamples}
@@ -2184,7 +2335,7 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                     setExamplesPage(prev);
                     loadExamples(examplesSearchQuery, examplesFilter, prev);
                   }}
-                  className="px-3 py-1.5 bg-white dark:bg-stone-800 border border-sand-300 dark:border-stone-700 rounded-xl disabled:opacity-30 hover:bg-sand-100 font-medium transition text-stone-700 dark:text-stone-300"
+                  className="px-3 py-1.5 bg-white border border-sand-300 rounded-xl disabled:opacity-30 hover:bg-sand-100 font-medium transition text-stone-700"
                 >
                   ◀ Halaman Sebelum
                 </button>
@@ -2195,14 +2346,14 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                     setExamplesPage(next);
                     loadExamples(examplesSearchQuery, examplesFilter, next);
                   }}
-                  className="px-3 py-1.5 bg-white dark:bg-stone-800 border border-sand-300 dark:border-stone-700 rounded-xl disabled:opacity-30 hover:bg-sand-100 font-medium transition text-stone-700 dark:text-stone-300"
+                  className="px-3 py-1.5 bg-white border border-sand-300 rounded-xl disabled:opacity-30 hover:bg-sand-100 font-medium transition text-stone-700"
                 >
                   Halaman Seterusnya ▶
                 </button>
               </div>
 
               <div className="text-stone-500 text-xs font-medium">
-                Halaman <span className="font-bold text-stone-900 dark:text-stone-100">{examplesPage}</span> daripada {examplesTotalPages} ({totalExamples} jumlah ayat)
+                Halaman <span className="font-bold text-stone-900">{examplesPage}</span> daripada {examplesTotalPages} ({totalExamples} jumlah ayat)
               </div>
             </div>
           </div>
@@ -2210,7 +2361,7 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
 
         {/* TAB 2: SUBMISSIONS MODERATION */}
         {activeTab === 'submissions' && (
-          <div className="bg-white dark:bg-stone-900 rounded-3xl border border-sand-200 dark:border-stone-800 p-6 shadow-sm">
+          <div className="bg-white rounded-3xl border border-sand-200 p-6 shadow-sm">
             <div className="flex items-center justify-between mb-6">
               <div>
                 <h2 className="font-serif text-xl font-bold">Barisan Moderasi Cadangan Komuniti</h2>
@@ -2218,7 +2369,7 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
               </div>
               <button
                 onClick={() => loadSubmissions()}
-                className="px-3.5 py-1.5 bg-sand-100 dark:bg-stone-800 text-xs font-semibold rounded-xl hover:bg-sand-200 transition"
+                className="px-3.5 py-1.5 bg-sand-100 text-xs font-semibold rounded-xl hover:bg-sand-200 transition"
               >
                 🔄 Muat Semula
               </button>
@@ -2229,24 +2380,23 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
             ) : submissionsList.length === 0 ? (
               <div className="p-12 text-center text-xs text-stone-400">Tiada sumbangan komuniti yang direkodkan setakat ini.</div>
             ) : (
-              <div className="divide-y divide-sand-100 dark:divide-stone-800">
+              <div className="divide-y divide-sand-100">
                 {submissionsList.map((sub) => (
                   <div key={sub.id} className="py-4 flex items-start justify-between gap-4">
                     <div className="space-y-1 max-w-2xl">
                       <div className="flex items-center gap-3">
-                        <span className="font-serif font-bold text-base text-stone-900 dark:text-stone-100">{sub.headword}</span>
-                        <span className={`text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full ${
-                          sub.status === 'approved'
-                            ? 'bg-emerald-100 text-emerald-800'
-                            : sub.status === 'rejected'
+                        <span className="font-serif font-bold text-base text-stone-900">{sub.headword}</span>
+                        <span className={`text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full ${sub.status === 'approved'
+                          ? 'bg-emerald-100 text-emerald-800'
+                          : sub.status === 'rejected'
                             ? 'bg-red-100 text-red-800'
                             : 'bg-amber-100 text-amber-800'
-                        }`}>
+                          }`}>
                           {sub.status}
                         </span>
                         <span className="text-xs text-stone-400">• Disumbang oleh: {sub.contributorName || 'Anon'} ({sub.locality || 'Sabah'})</span>
                       </div>
-                      <p className="text-xs text-stone-700 dark:text-stone-300"><strong>Maksud:</strong> {sub.meaning}</p>
+                      <p className="text-xs text-stone-700"><strong>Maksud:</strong> {sub.meaning}</p>
                       {sub.exampleSentence && (
                         <p className="text-xs text-stone-500 italic">"{sub.exampleSentence}"</p>
                       )}
@@ -2274,7 +2424,7 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                               handleModerateSubmission('reject');
                             }
                           }}
-                          className="px-3.5 py-1.5 bg-stone-200 dark:bg-stone-800 hover:bg-red-100 hover:text-red-700 text-stone-600 dark:text-stone-300 rounded-xl text-xs font-semibold transition"
+                          className="px-3.5 py-1.5 bg-stone-200 hover:bg-red-100 hover:text-red-700 text-stone-600 rounded-xl text-xs font-semibold transition"
                         >
                           Tolak
                         </button>
@@ -2288,18 +2438,18 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
             {/* Moderation Modal */}
             {moderatingSub && (
               <div className="fixed inset-0 bg-black/50 backdrop-blur-xs flex items-center justify-center p-4 z-50">
-                <div className="bg-white dark:bg-stone-900 rounded-3xl p-6 max-w-lg w-full border border-sand-200 dark:border-stone-800 shadow-2xl space-y-4">
+                <div className="bg-white rounded-3xl p-6 max-w-lg w-full border border-sand-200 shadow-2xl space-y-4">
                   <h3 className="font-serif text-lg font-bold">Luluskan Perkataan ke Kamus Rasmi</h3>
                   <p className="text-xs text-stone-500">Anda boleh membetulkan ejaan mengikut ORTHOGRAPHY.md sebelum diluluskan.</p>
 
                   <div className="space-y-3">
                     <div>
-                      <label className="block text-xs font-semibold text-stone-500 mb-1">Kata Dasar Bajau Samah</label>
+                      <label className="block text-xs font-semibold text-stone-500 mb-1">Kata Dasar Bajau Sama</label>
                       <input
                         type="text"
                         value={editSubWord}
                         onChange={(e) => setEditSubWord(e.target.value)}
-                        className="w-full px-3.5 py-2 text-sm rounded-xl border border-sand-300 dark:border-stone-700 font-serif"
+                        className="w-full px-3.5 py-2 text-sm rounded-xl border border-sand-300 font-serif"
                       />
                     </div>
                     <div>
@@ -2308,7 +2458,7 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                         type="text"
                         value={editSubMeaning}
                         onChange={(e) => setEditSubMeaning(e.target.value)}
-                        className="w-full px-3.5 py-2 text-sm rounded-xl border border-sand-300 dark:border-stone-700"
+                        className="w-full px-3.5 py-2 text-sm rounded-xl border border-sand-300"
                       />
                     </div>
                     <div>
@@ -2316,7 +2466,7 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                       <select
                         value={editSubPos}
                         onChange={(e) => setEditSubPos(e.target.value)}
-                        className="w-full px-3.5 py-2 text-sm rounded-xl border border-sand-300 dark:border-stone-700"
+                        className="w-full px-3.5 py-2 text-sm rounded-xl border border-sand-300"
                       >
                         <option value="KATA NAMA">KATA NAMA</option>
                         <option value="KATA KERJA">KATA KERJA</option>
@@ -2327,7 +2477,7 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                     </div>
                   </div>
 
-                  <div className="flex justify-end gap-3 pt-4 border-t border-sand-100 dark:border-stone-800">
+                  <div className="flex justify-end gap-3 pt-4 border-t border-sand-100">
                     <button
                       onClick={() => setModeratingSub(null)}
                       className="px-4 py-2 text-xs font-semibold text-stone-600 hover:bg-sand-100 rounded-xl transition"
@@ -2347,120 +2497,7 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
           </div>
         )}
 
-        {/* TAB 3: CREATE NEW ENTRY */}
-        {activeTab === 'new_entry' && (
-          <div className="bg-white dark:bg-stone-900 rounded-3xl border border-sand-200 dark:border-stone-800 p-8 shadow-sm max-w-2xl mx-auto">
-            <h2 className="font-serif text-2xl font-bold mb-2">Tambah Entri Rasmi Baharu</h2>
-            <p className="text-xs text-stone-500 mb-6">
-              Entri yang ditambah akan terus dimasukkan ke dalam pangkalan data SQLite dan diindeks untuk enjin carian.
-            </p>
 
-            <form onSubmit={handleCreateEntry} className="space-y-4">
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-xs font-semibold text-stone-600 dark:text-stone-400 mb-1">
-                    Kata Dasar (*Headword*) <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    placeholder="Cth: sumbang"
-                    value={newHw}
-                    onChange={(e) => setNewHw(e.target.value)}
-                    className="w-full px-4 py-2.5 rounded-xl border border-sand-300 dark:border-stone-700 text-sm font-serif"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-semibold text-stone-600 dark:text-stone-400 mb-1">
-                    Golongan Kata (*POS*) <span className="text-red-500">*</span>
-                  </label>
-                  <select
-                    value={newPos}
-                    onChange={(e) => setNewPos(e.target.value)}
-                    className="w-full px-4 py-2.5 rounded-xl border border-sand-300 dark:border-stone-700 text-sm"
-                  >
-                    <option value="KATA NAMA">KATA NAMA</option>
-                    <option value="KATA KERJA">KATA KERJA</option>
-                    <option value="KATA SIFAT">KATA SIFAT</option>
-                    <option value="KATA BILANGAN">KATA BILANGAN</option>
-                    <option value="KATA TUGAS / PARTIKEL">KATA TUGAS / PARTIKEL</option>
-                  </select>
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-xs font-semibold text-stone-600 dark:text-stone-400 mb-1">
-                  Transkripsi IPA (Pilihan)
-                </label>
-                <input
-                  type="text"
-                  placeholder="Cth: /sumbaŋ/ (auto-dijana jika kosong)"
-                  value={newIpa}
-                  onChange={(e) => setNewIpa(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl border border-sand-300 dark:border-stone-700 text-sm font-mono"
-                />
-              </div>
-
-              <div>
-                <label className="block text-xs font-semibold text-stone-600 dark:text-stone-400 mb-1">
-                  Maksud / Definisi Bahasa Melayu <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="text"
-                  required
-                  placeholder="Cth: derma, sumbangan"
-                  value={newDefMs}
-                  onChange={(e) => setNewDefMs(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl border border-sand-300 dark:border-stone-700 text-sm"
-                />
-              </div>
-
-              <div>
-                <label className="block text-xs font-semibold text-stone-600 dark:text-stone-400 mb-1">
-                  English Definition (Pilihan)
-                </label>
-                <input
-                  type="text"
-                  placeholder="Cth: donation, contribution"
-                  value={newDefEn}
-                  onChange={(e) => setNewDefEn(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl border border-sand-300 dark:border-stone-700 text-sm"
-                />
-              </div>
-
-              <div className="p-4 bg-sand-50 dark:bg-stone-800 rounded-2xl space-y-3 border border-sand-200 dark:border-stone-700">
-                <h4 className="text-xs font-bold text-stone-700 dark:text-stone-300">Ayat Contoh (Pilihan)</h4>
-                <input
-                  type="text"
-                  placeholder="Ayat Bajau Samah..."
-                  value={newExBj}
-                  onChange={(e) => setNewExBj(e.target.value)}
-                  className="w-full px-3.5 py-2 text-xs rounded-xl border border-sand-300 dark:border-stone-600 bg-white dark:bg-stone-900 font-serif"
-                />
-                <input
-                  type="text"
-                  placeholder="Terjemahan Melayu..."
-                  value={newExMs}
-                  onChange={(e) => setNewExMs(e.target.value)}
-                  className="w-full px-3.5 py-2 text-xs rounded-xl border border-sand-300 dark:border-stone-600 bg-white dark:bg-stone-900"
-                />
-              </div>
-
-              {createStatus && (
-                <div className="p-3 bg-amber-50 dark:bg-amber-950/40 text-xs font-semibold text-amber-800 dark:text-amber-300 rounded-xl">
-                  {createStatus}
-                </div>
-              )}
-
-              <button
-                type="submit"
-                className="w-full py-3.5 bg-amber-600 hover:bg-amber-700 text-white font-medium rounded-xl text-sm transition shadow-md"
-              >
-                ➕ Cipta Entri Rasmi
-              </button>
-            </form>
-          </div>
-        )}
       </main>
     </div>
   );

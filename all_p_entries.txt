@@ -1,0 +1,552 @@
+1. ID: 19382 | Headword: [pa'] | POS: [KATA NAMA] | IPA: [/paʔ/]
+   MS: "pakcik, (harfiah) pak"
+   EN: "uncle"
+
+2. ID: 19383 | Headword: [paam] | POS: [KATA KERJA] | IPA: [/paːm/]
+   MS: "faham"
+   EN: "to understand"
+
+3. ID: 19384 | Headword: [pagar] | POS: [KATA NAMA] | IPA: [/pagar/]
+   MS: "fence"
+   EN: "fence"
+
+4. ID: 19385 | Headword: [paip] | POS: [KATA NAMA] | IPA: [/paip/]
+   MS: "paip"
+   EN: "water pipe"
+
+5. ID: 19386 | Headword: [pak] | POS: [KATA NAMA] | IPA: [/pak/]
+   MS: "frog"
+   EN: "frog"
+
+6. ID: 19387 | Headword: [pakai] | POS: [KATA KERJA] | IPA: [/pakaj/]
+   MS: "pakai"
+   EN: "to use"
+
+7. ID: 19376 | Headword: [pakan] | POS: [KATA KERJA] | IPA: [/pakan/]
+   MS: "memberi makan"
+   EN: "to feed"
+
+8. ID: 19388 | Headword: [pakir] | POS: [KATA NAMA] | IPA: [/pakir/]
+   MS: "agamawan"
+   EN: "religious officiant"
+
+9. ID: 19389 | Headword: [paksa'] | POS: [KATA KERJA] | IPA: [/paksa/]
+   MS: "paksa"
+   EN: "to force"
+
+10. ID: 19390 | Headword: [pala] | POS: [KATA TUGAS / PARTIKEL] | IPA: [/pala/]
+   MS: "pula"
+   EN: "counter-expectation"
+
+11. ID: 19391 | Headword: [paling] | POS: [KATA SIFAT] | IPA: [/paliŋ/]
+   MS: "paling"
+   EN: "most"
+
+12. ID: 19392 | Headword: [palu] | POS: [KATA KERJA] | IPA: [/palu/]
+   MS: "pukul, hentam, (harfiah) palu"
+   EN: "hit"
+
+13. ID: 19394 | Headword: [palu-paluan] | POS: [KATA KERJA] | IPA: [/palu-paluan/]
+   MS: "sasaran pukulan"
+   EN: "object of repeated hitting"
+
+14. ID: 19393 | Headword: [paluan] | POS: [KATA KERJA] | IPA: [/paluan/]
+   MS: "pukulkan"
+   EN: "to hit using something"
+
+15. ID: 19395 | Headword: [pan] | POS: [KATA NAMA] | IPA: [/pan/]
+   MS: "pun"
+   EN: "topic particle: also, too, (linker), (emphatic marker)"
+
+16. ID: 19396 | Headword: [panas] | POS: [KATA SIFAT] | IPA: [/panas/]
+   MS: "panas"
+   EN: "hot"
+
+17. ID: 19397 | Headword: [pandai] | POS: [KATA KERJA] | IPA: [/pandaj/]
+   MS: "mahir, pandai, berkebolehan"
+   EN: "skilled, clever, able"
+
+18. ID: 19398 | Headword: [pandi] | POS: [KATA KERJA] | IPA: [/pandi/]
+   MS: "memandikan"
+   EN: "to bathe someone or something"
+
+19. ID: 19399 | Headword: [panggil] | POS: [KATA KERJA] | IPA: [/paŋgil/]
+   MS: "panggil"
+   EN: "call"
+
+20. ID: 19399 | Headword: [panggil] | POS: [KATA KERJA] | IPA: [/paŋgil/]
+   MS: "jemput"
+   EN: "summon"
+
+21. ID: 19400 | Headword: [panggilan] | POS: [KATA NAMA] | IPA: [/paŋgilan/]
+   MS: "jemputan"
+   EN: "guests"
+
+22. ID: 19400 | Headword: [panggilan] | POS: [KATA NAMA] | IPA: [/paŋgilan/]
+   MS: "panggilan"
+   EN: "call"
+
+23. ID: 19401 | Headword: [pantau] | POS: [KATA KERJA] | IPA: [/pantaw/]
+   MS: "berdiri, (harfiah) pantau"
+   EN: "to stand"
+
+24. ID: 19402 | Headword: [panut] | POS: [KATA KERJA] | IPA: [/panut/]
+   MS: "hanyut"
+   EN: "to drift"
+
+25. ID: 19403 | Headword: [panutan] | POS: [KATA KERJA] | IPA: [/panut-an/]
+   MS: "menghanyutkan"
+   EN: "to set something adrift"
+
+26. ID: 19404 | Headword: [papi] | POS: [KATA KERJA] | IPA: [/papi/]
+   MS: "masak"
+   EN: "to cook"
+
+27. ID: 19405 | Headword: [papian] | POS: [KATA NAMA] | IPA: [/papian/]
+   MS: "masakan"
+   EN: "cooked food"
+
+28. ID: 19406 | Headword: [parai] | POS: [KATA NAMA] | IPA: [/paraj/]
+   MS: "padi"
+   EN: "unhusked rice"
+
+29. ID: 19407 | Headword: [pasal] | POS: [KATA NAMA] | IPA: [/pasal/]
+   MS: "sebab, fasal"
+   EN: "cause, reason"
+
+30. ID: 19408 | Headword: [patai] | POS: [KATA KERJA] | IPA: [/pataj/]
+   MS: "bunuh"
+   EN: "to kill"
+
+31. ID: 19409 | Headword: [pe-] | POS: [KATA TUGAS / PARTIKEL] | IPA: [/pə/]
+   MS: "imbuhan yang berfungsi seperti ke- dalam "keluar""
+   EN: "prefix that functions like ex- in "exclusion" vs. "inclusion""
+
+32. ID: 19409 | Headword: [pe-] | POS: [KATA TUGAS / PARTIKEL] | IPA: [/pə/]
+   MS: "imbuhan kausatif, seperti per- + -kan, meN-, meN- + -kan, meN- + -per- + -kan"
+   EN: "causative prefix"
+
+33. ID: 19411 | Headword: [pe-gontor] | POS: [KATA KERJA] | IPA: [/pə-gontor/]
+   MS: "goyang, goncang"
+   EN: "to shake"
+
+34. ID: 19412 | Headword: [pe-iram] | POS: [KATA KERJA] | IPA: [/pə-iram/]
+   MS: "hitam"
+   EN: "to become black"
+
+35. ID: 19413 | Headword: [pe-ke-raat] | POS: [KATA KERJA] | IPA: [/pə-kə-raːt/]
+   MS: "merosakkan"
+   EN: "to damage"
+
+36. ID: 19414 | Headword: [pe-ke-tau] | POS: [KATA KERJA] | IPA: [/pə-kə-taw/]
+   MS: "menakutkan"
+   EN: "to scare"
+
+37. ID: 19415 | Headword: [pe-kepa'] | POS: [KATA KERJA] | IPA: [/pə-kəpaʔ/]
+   MS: "hinggap"
+   EN: "to alight"
+
+38. ID: 19416 | Headword: [pe-keta] | POS: [KATA KERJA] | IPA: [/pə-kəta/]
+   MS: "lintas, menyeberang"
+   EN: "to cross"
+
+39. ID: 19417 | Headword: [pe-kiling] | POS: [KATA BILANGAN] | IPA: [/pə-kiliŋ/]
+   MS: "goyang, satu"
+   EN: "to shake one"
+
+40. ID: 19418 | Headword: [pe-kito-on] | POS: [KATA BILANGAN] | IPA: [/pə-kito-on/]
+   MS: "satu"
+   EN: "to show (s.thing) to (s.one)"
+
+41. ID: 19420 | Headword: [pe-lantung] | POS: [KATA KERJA] | IPA: [/pə-lantuŋ/]
+   MS: "terapung, timbul"
+   EN: "to float"
+
+42. ID: 19421 | Headword: [pe-lekat] | POS: [KATA KERJA] | IPA: [/pə-ləkat/]
+   MS: "leave"
+   EN: "to leave"
+
+43. ID: 19422 | Headword: [pe-liak] | POS: [KATA KERJA] | IPA: [/pə-liak/]
+   MS: "menelentangkan"
+   EN: "lay (s.thing) on its back; upturn"
+
+44. ID: 19423 | Headword: [pe-liang] | POS: [KATA KERJA] | IPA: [/pə-liaŋ/]
+   MS: "release (s.thing) into flight"
+   EN: "to release (s.thing) into flight"
+
+45. ID: 19424 | Headword: [pe-limbo] | POS: [KATA BILANGAN] | IPA: [/pə-limbo/]
+   MS: "lemas, satu"
+   EN: "to suffocate (s.one)"
+
+46. ID: 19426 | Headword: [pe-lulai] | POS: [KATA BILANGAN] | IPA: [/pə-lulaj/]
+   MS: "buat, satu, berlari"
+   EN: "to make (s.one) run"
+
+47. ID: 19427 | Headword: [pe-lumpat] | POS: [KATA KERJA] | IPA: [/pə-lumpat/]
+   MS: "lompat"
+   EN: "to jump"
+
+48. ID: 19428 | Headword: [pe-lunsur] | POS: [KATA KERJA] | IPA: [/pə-lunsur/]
+   MS: "mengalir"
+   EN: "to flow"
+
+49. ID: 19429 | Headword: [pe-oyo] | POS: [KATA KERJA] | IPA: [/pə-ojo/]
+   MS: "become large"
+   EN: "to become large"
+
+50. ID: 19430 | Headword: [pe-pantau] | POS: [KATA KERJA] | IPA: [/pə-pantaw/]
+   MS: "berdiri"
+   EN: "stand (s.thing) up"
+
+51. ID: 19431 | Headword: [pe-patai] | POS: [KATA BILANGAN] | IPA: [/pə-pataj/]
+   MS: "bunuh, satu"
+   EN: "to kill (s.one)"
+
+52. ID: 19432 | Headword: [pe-pe-dia'] | POS: [KATA KERJA] | IPA: [/pə-pə-diaʔ/]
+   MS: "rendahkan"
+   EN: "to lower (s.thing)"
+
+53. ID: 19433 | Headword: [pe-sading] | POS: [KATA KERJA] | IPA: [/pə-sadiŋ/]
+   MS: "sandar, condong"
+   EN: "to lean"
+
+54. ID: 19434 | Headword: [pe-sedi] | POS: [KATA KERJA] | IPA: [/pə-sədi/]
+   MS: "alih"
+   EN: "to move beside"
+
+55. ID: 19435 | Headword: [pe-sikot] | POS: [KATA KERJA] | IPA: [/pə-sikot/]
+   MS: "dekat"
+   EN: "to come near"
+
+56. ID: 19436 | Headword: [pe-singga] | POS: [KATA BILANGAN] | IPA: [/pə-siŋga/]
+   MS: "berhenti, oleh"
+   EN: "to stop by someone"
+
+57. ID: 19437 | Headword: [pe-sorong] | POS: [KATA KERJA] | IPA: [/pə-soroŋ/]
+   MS: "hampiri, dekati"
+   EN: "to approach"
+
+58. ID: 19438 | Headword: [pe-suk] | POS: [KATA KERJA] | IPA: [/pə-suk/]
+   MS: "become thin"
+   EN: "to become thin"
+
+59. ID: 19439 | Headword: [pe-tangis] | POS: [KATA BILANGAN] | IPA: [/pə-taŋis/]
+   MS: "buat, satu, menangis"
+   EN: "make (s.one) cry"
+
+60. ID: 19440 | Headword: [pe-telak] | POS: [KATA KERJA] | IPA: [/pə-təlak/]
+   MS: "become clear"
+   EN: "to become clear"
+
+61. ID: 19441 | Headword: [pe-tio] | POS: [KATA KERJA] | IPA: [/pə-tio/]
+   MS: "jauh"
+   EN: "to become far"
+
+62. ID: 19443 | Headword: [pe-tondok] | POS: [KATA KERJA] | IPA: [/pə-tondok/]
+   MS: "bongkok, tunduk"
+   EN: "to stoop"
+
+63. ID: 19444 | Headword: [pe-turi] | POS: [KATA BILANGAN] | IPA: [/pə-turi/]
+   MS: "letak, satu, tidur"
+   EN: "to put (s.one) down to sleep"
+
+64. ID: 19445 | Headword: [pe-tuun] | POS: [KATA KERJA] | IPA: [/pə-tuːn/]
+   MS: "menyelam"
+   EN: "to dive"
+
+65. ID: 19464 | Headword: [peN] | POS: [KATA NAMA] | IPA: [/pən/]
+   MS: "location"
+   EN: "location"
+
+66. ID: 19446 | Headword: [pealap] | POS: [KATA KERJA] | IPA: [/pəalap/]
+   MS: "membaiki, memperelok"
+   EN: "to fix, repair"
+
+67. ID: 19447 | Headword: [peberen] | POS: [KATA BILANGAN] | IPA: [/pəbərən/]
+   MS: "benar, biar"
+   EN: "to allow, to let"
+
+68. ID: 19448 | Headword: [peboroon] | POS: [KATA NAMA] | IPA: [/pəboroːn/]
+   MS: "censer"
+   EN: "censer"
+
+69. ID: 19449 | Headword: [pedarag] | POS: [KATA KERJA] | IPA: [/pədarag/]
+   MS: "merah"
+   EN: "to become red"
+
+70. ID: 19450 | Headword: [pedelaan] | POS: [KATA NAMA] | IPA: [/pədəlaːn/]
+   MS: "(jantina) lelaki"
+   EN: "male, man"
+
+71. ID: 19451 | Headword: [pedendoon] | POS: [KATA NAMA] | IPA: [/pədəndoːn/]
+   MS: "(jantina) perempuan"
+   EN: "female, woman"
+
+72. ID: 19410 | Headword: [pedia'] | POS: [KATA KERJA] | IPA: [/pədiaʔ/]
+   MS: "menurunkan"
+   EN: "to move down"
+
+73. ID: 19452 | Headword: [pediki'] | POS: [KATA BILANGAN] | IPA: [/pədikiʔ/]
+   MS: "mengecilkan"
+   EN: "to become small"
+
+74. ID: 19453 | Headword: [pedutai] | POS: [KATA KERJA] | IPA: [/pədutaj/]
+   MS: "merendahkan"
+   EN: "to lower something"
+
+75. ID: 19454 | Headword: [pejata'] | POS: [KATA KERJA] | IPA: [/pədʒataʔ/]
+   MS: "go upward"
+   EN: "to go upward"
+
+76. ID: 19455 | Headword: [pekar] | POS: [KATA KERJA] | IPA: [/pəkar/]
+   MS: "membentang, memekar"
+   EN: "to unfurl, unfold"
+
+77. ID: 19456 | Headword: [pekeet] | POS: [KATA KERJA] | IPA: [/pəkeːt/]
+   MS: "decontrolled"
+   EN: "decontrolled"
+
+78. ID: 19457 | Headword: [pelaanan] | POS: [KATA NAMA] | IPA: [/pəlaːnan/]
+   MS: "perjalanan"
+   EN: "journey, trip"
+
+79. ID: 19419 | Headword: [pelai] | POS: [KATA KERJA] | IPA: [/pəlaj/]
+   MS: "memperlarikan"
+   EN: "to move or send something away"
+
+80. ID: 19458 | Headword: [pelanga] | POS: [KATA BILANGAN] | IPA: [/pəlaŋa/]
+   MS: "tinggi"
+   EN: "to become high"
+
+81. ID: 19459 | Headword: [pelema'] | POS: [KATA KERJA] | IPA: [/pələmaʔ/]
+   MS: "lembut"
+   EN: "to become soft"
+
+82. ID: 19460 | Headword: [peloot-loot] | POS: [KATA KERJA] | IPA: [/pəloːt-loːt/]
+   MS: "capai, dengan, tangan"
+   EN: "to repeatedly reach with (the hand)"
+
+83. ID: 19425 | Headword: [pelua'] | POS: [KATA KERJA] | IPA: [/pəluaʔ/]
+   MS: "keluar"
+   EN: "to go out"
+
+84. ID: 19425 | Headword: [pelua'] | POS: [KATA KERJA] | IPA: [/pəluaʔ/]
+   MS: "muncul"
+   EN: "to appear"
+
+85. ID: 19461 | Headword: [pemeli] | POS: [KATA NAMA] | IPA: [/pəməli/]
+   MS: "currency"
+   EN: "currency"
+
+86. ID: 19462 | Headword: [pemia] | POS: [KATA KERJA] | IPA: [/pəmia/]
+   MS: "cari"
+   EN: "to search"
+
+87. ID: 19463 | Headword: [pemia-an] | POS: [KATA BILANGAN] | IPA: [/pəmia-an/]
+   MS: "cari, satu"
+   EN: "to search for s.thing for (s.one)"
+
+88. ID: 19465 | Headword: [penangis] | POS: [KATA BILANGAN] | IPA: [/pənaŋis/]
+   MS: "menangis"
+   EN: "prone to cry"
+
+89. ID: 19466 | Headword: [penangkau] | POS: [KATA BILANGAN] | IPA: [/pənaŋkaw/]
+   MS: "curi"
+   EN: "prone to steal"
+
+90. ID: 19467 | Headword: [pene'] | POS: [KATA KERJA] | IPA: [/pənəʔ/]
+   MS: "pilih"
+   EN: "to choose"
+
+91. ID: 19468 | Headword: [penebong] | POS: [KATA NAMA] | IPA: [/pənəboŋ/]
+   MS: "chopper"
+   EN: "chopper"
+
+92. ID: 19469 | Headword: [penepak] | POS: [KATA NAMA] | IPA: [/pənəpak/]
+   MS: "swatter"
+   EN: "swatter"
+
+93. ID: 19470 | Headword: [peng-enda-an] | POS: [KATA NAMA] | IPA: [/pəŋ-ənda-an/]
+   MS: "letak"
+   EN: "place for viewing"
+
+94. ID: 19471 | Headword: [pengayam] | POS: [KATA KERJA] | IPA: [/pəŋajam/]
+   MS: "domesticated animals"
+   EN: "domesticated animals"
+
+95. ID: 19472 | Headword: [pengellau] | POS: [KATA SIFAT] | IPA: [/pəŋəlːaw/]
+   MS: "kering"
+   EN: "dry season"
+
+96. ID: 19473 | Headword: [pengelong] | POS: [KATA NAMA] | IPA: [/pəŋəloŋ/]
+   MS: "kerbau"
+   EN: "neck harness (for buffalo)"
+
+97. ID: 19474 | Headword: [pengennaan] | POS: [KATA NAMA] | IPA: [/pəŋənːaːn/]
+   MS: "container"
+   EN: "container"
+
+98. ID: 19475 | Headword: [pengentanan] | POS: [KATA NAMA] | IPA: [/pəŋəntanan/]
+   MS: "handle"
+   EN: "handle"
+
+99. ID: 19476 | Headword: [penguran] | POS: [KATA NAMA] | IPA: [/pəŋuran/]
+   MS: "rainy season"
+   EN: "rainy season"
+
+100. ID: 19477 | Headword: [peniik] | POS: [KATA KERJA] | IPA: [/pəniːk/]
+   MS: "panjat, daki"
+   EN: "to climb"
+
+101. ID: 19478 | Headword: [penitik] | POS: [KATA KERJA] | IPA: [/pənitik/]
+   MS: "(percussion) beaters"
+   EN: "(percussion) beaters"
+
+102. ID: 19479 | Headword: [penombol] | POS: [KATA NAMA] | IPA: [/pənombol/]
+   MS: "tutup, selimut"
+   EN: "cover"
+
+103. ID: 19480 | Headword: [pepekar] | POS: [KATA KERJA] | IPA: [/pəpəkar/]
+   MS: "unfurl"
+   EN: "to unfurl"
+
+104. ID: 19481 | Headword: [pepekar-pepekar] | POS: [KATA KERJA] | IPA: [/pəpəkar-pəpəkar/]
+   MS: "unfurl repeatedly"
+   EN: "to unfurl repeatedly"
+
+105. ID: 19482 | Headword: [pepelua'] | POS: [KATA BILANGAN] | IPA: [/pəpəluaʔ/]
+   MS: "gemar keluar"
+   EN: "prone to go out"
+
+106. ID: 19483 | Headword: [pepule'] | POS: [KATA KERJA] | IPA: [/pəpuləʔ/]
+   MS: "return (s.thing)"
+   EN: "return (s.thing)"
+
+107. ID: 19484 | Headword: [perlu] | POS: [KATA NAMA] | IPA: [/pərlu/]
+   MS: "mesti, perlu"
+   EN: "must"
+
+108. ID: 19485 | Headword: [pesa'] | POS: [KATA KERJA] | IPA: [/pəsaʔ/]
+   MS: "pecah, patah"
+   EN: "to break"
+
+109. ID: 19486 | Headword: [pesi] | POS: [KATA NAMA] | IPA: [/pəsi/]
+   MS: "fishing rod"
+   EN: "fishing rod"
+
+110. ID: 19487 | Headword: [pesoyo] | POS: [KATA KERJA] | IPA: [/pəsojo/]
+   MS: "percaya"
+   EN: "to believe, to trust"
+
+111. ID: 19488 | Headword: [pesuk-pesuk] | POS: [KATA KERJA] | IPA: [/pəsuk-pəsuk/]
+   MS: "continue getting thinner"
+   EN: "to continue getting thinner"
+
+112. ID: 19489 | Headword: [pesuuk] | POS: [KATA KERJA] | IPA: [/pəsuːk/]
+   MS: "go underneath"
+   EN: "to go underneath"
+
+113. ID: 19490 | Headword: [peteketa] | POS: [KATA KERJA] | IPA: [/pətəkəta/]
+   MS: "boleh, bawa, bertentangan"
+   EN: "able to bring (s.thing) across"
+
+114. ID: 19491 | Headword: [peteko] | POS: [KATA KERJA] | IPA: [/pətəko/]
+   MS: "hantar"
+   EN: "send (s.thing)"
+
+115. ID: 19492 | Headword: [petingkoo'] | POS: [KATA KERJA] | IPA: [/pətiŋkoːʔ/]
+   MS: "set (s.thing) down"
+   EN: "set (s.thing) down"
+
+116. ID: 19442 | Headword: [petogor] | POS: [KATA KERJA] | IPA: [/pətogor/]
+   MS: "menegakkan"
+   EN: "to stand perpendicular, to erect"
+
+117. ID: 19493 | Headword: [pian] | POS: [KATA NAMA] | IPA: [/pian/]
+   MS: "bagaimana"
+   EN: "how"
+
+118. ID: 19494 | Headword: [pikir] | POS: [KATA KERJA] | IPA: [/pikir/]
+   MS: "fikir, sangka"
+   EN: "to think"
+
+119. ID: 19495 | Headword: [pikiran] | POS: [KATA NAMA] | IPA: [/pikiran/]
+   MS: "idea, opinion"
+   EN: "idea, opinion"
+
+120. ID: 19496 | Headword: [piko] | POS: [KATA KERJA] | IPA: [/piko/]
+   MS: "ganda, biak"
+   EN: "to multiply"
+
+121. ID: 19377 | Headword: [pinelua'] | POS: [KATA KERJA] | IPA: [/pinəluaʔ/]
+   MS: "dikeluarkan, dilepaskan"
+   EN: "to be taken out, to be removed"
+
+122. ID: 19377 | Headword: [pinelua'] | POS: [KATA KERJA] | IPA: [/pinəluaʔ/]
+   MS: "dibebaskan"
+   EN: "to be released, set free"
+
+123. ID: 19497 | Headword: [pinene'] | POS: [KATA NAMA] | IPA: [/pinənəʔ/]
+   MS: "chosen"
+   EN: "chosen"
+
+124. ID: 19378 | Headword: [pineteko] | POS: [KATA KERJA] | IPA: [/pinətəko/]
+   MS: "disampaikan, dihantar"
+   EN: "to be sent"
+
+125. ID: 19498 | Headword: [pinisak-pisak] | POS: [KATA KERJA] | IPA: [/pinisak-pisak/]
+   MS: "repeatedly smashed"
+   EN: "repeatedly smashed"
+
+126. ID: 19379 | Headword: [pinum] | POS: [KATA KERJA] | IPA: [/pinum/]
+   MS: "meminumkan"
+   EN: "to give drink to someone"
+
+127. ID: 19499 | Headword: [pisak] | POS: [KATA KERJA] | IPA: [/pisak/]
+   MS: "hancur, lenyek"
+   EN: "to crush"
+
+128. ID: 19500 | Headword: [pisak-pisak] | POS: [KATA KERJA] | IPA: [/pisak-pisak/]
+   MS: "crushed repeatedly"
+   EN: "to be crushed repeatedly"
+
+129. ID: 19501 | Headword: [pitu'] | POS: [KATA BILANGAN] | IPA: [/pituʔ/]
+   MS: "tujuh"
+   EN: "seven years"
+
+130. ID: 19502 | Headword: [poon] | POS: [KATA NAMA] | IPA: [/poːn/]
+   MS: "pokok, kayu"
+   EN: "tree"
+
+131. ID: 19503 | Headword: [popo'] | POS: [KATA KERJA] | IPA: [/popoʔ/]
+   MS: "pijak"
+   EN: "to tread (grain)"
+
+132. ID: 19380 | Headword: [posok] | POS: [KATA KERJA] | IPA: [/posok/]
+   MS: "masuk"
+   EN: "to enter"
+
+133. ID: 19381 | Headword: [poyo] | POS: [KATA KERJA] | IPA: [/pojo/]
+   MS: "membesarkan"
+   EN: "to enlarge"
+
+134. ID: 19504 | Headword: [pu'] | POS: [KATA NAMA] | IPA: [/puʔ/]
+   MS: "forty"
+   EN: "forty"
+
+135. ID: 19505 | Headword: [pule'] | POS: [KATA KERJA] | IPA: [/puləʔ/]
+   MS: "ramai"
+   EN: "many are drinking"
+
+136. ID: 19506 | Headword: [pungkau] | POS: [KATA NAMA] | IPA: [/puŋkaw/]
+   MS: "jaga, bangun"
+   EN: "to awake"
+
+137. ID: 19507 | Headword: [pusing] | POS: [KATA NAMA] | IPA: [/pusiŋ/]
+   MS: "turn"
+   EN: "turn"
+
+138. ID: 19508 | Headword: [pute'] | POS: [KATA KERJA] | IPA: [/putəʔ/]
+   MS: "putih"
+   EN: "white"
+

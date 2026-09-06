@@ -13,7 +13,7 @@ import ProvenanceBanner from '@/components/ProvenanceBanner';
 import SuggestWordModal from '@/components/SuggestWordModal';
 
 export const revalidate = 86400; // Cache at Edge for 24 hours
-export const runtime = 'edge';
+export const runtime = process.env.NODE_ENV === 'development' ? 'nodejs' : 'edge';
 
 interface EntryPageProps {
   params: {

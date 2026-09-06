@@ -36,7 +36,7 @@ export function tokenizeSentence(sentence: string): string[] {
  * Cleans a token for dictionary matching:
  * - strips surrounding punctuation
  * - converts to lowercase
- * - preserves legitimate Bajau Samah internal/terminal glottals (' / ’ / `)
+ * - preserves legitimate Bajau Sama internal/terminal glottals (' / ’ / `)
  */
 export function cleanBajauWord(rawToken: string): string {
   if (!rawToken) return '';

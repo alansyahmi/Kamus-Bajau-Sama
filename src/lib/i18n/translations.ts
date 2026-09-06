@@ -66,6 +66,34 @@ export interface UiTranslations {
   stats_words: string;
   stats_dialects: string;
   stats_open_data: string;
+
+  // Footer / Footnote
+  footer_brand_desc: string;
+  footer_nav_title: string;
+  footer_nav_home: string;
+  footer_nav_about: string;
+  footer_nav_suggest: string;
+  footer_nav_alphabet: string;
+  footer_dialects_title: string;
+  footer_dialects_desc: string;
+  footer_heritage_title: string;
+  footer_heritage_desc: string;
+  footer_copyright: string;
+  footer_motif_note: string;
+
+  // Support / Patronage Modal & CTA
+  support_nav: string;
+  support_modal_title: string;
+  support_modal_desc: string;
+  support_qr_caption: string;
+  support_bank_name: string;
+  support_account_name: string;
+  support_account_number: string;
+  support_copy_btn: string;
+  support_copied_toast: string;
+  support_download_qr: string;
+  support_why_title: string;
+  support_why_desc: string;
 }
 
 export const TRANSLATIONS: Record<LanguageCode, UiTranslations> = {
@@ -96,13 +124,13 @@ export const TRANSLATIONS: Record<LanguageCode, UiTranslations> = {
 
     about_kicker: 'INISIATIF PEMELIHARAAN WARISAN BAHASA',
     about_title: 'Memelihara Warisan Lisan,<br>Memperkasa Penutur <em>Generasi Hadapan.</em>',
-    about_lead: '<strong>Kamus Bajau Samah</strong> ialah sebuah sumber leksikal digital terbuka yang diasaskan untuk mendokumentasikan, meraikan dan memperluaskan kosa kata bahasa Bajau Samah agar kekal hidup dan mudah diakses oleh semua lapisan masyarakat.',
+    about_lead: '<strong>Kamus Bajau Sama</strong> ialah sebuah sumber leksikal digital terbuka yang diasaskan untuk mendokumentasikan, meraikan dan memperluaskan kosa kata bahasa Bajau Sama agar kekal hidup dan mudah diakses oleh semua lapisan masyarakat.',
     about_pillar_1_title: 'Akses Terbuka & Digital',
-    about_pillar_1_desc: 'Menjadikan perbendaharaan kata Bajau Samah mudah dicari, difahami dan dikongsi merentasi pelbagai peranti dengan pengalaman carian yang pantas dan tepat.',
+    about_pillar_1_desc: 'Menjadikan perbendaharaan kata Bajau Sama mudah dicari, difahami dan dikongsi merentasi pelbagai peranti dengan pengalaman carian yang pantas dan tepat.',
     about_pillar_2_title: 'Ketulenan & Integriti Data',
     about_pillar_2_desc: 'Setiap perkataan, sebutan dan contoh ayat dipelihara mengikut bentuk pertuturan tulen penutur jati tanpa sebarang rekaan atau pengubahsuaian leksikal sewenang-wenangnya.',
     about_pillar_3_title: 'Variasi Daerah & Dialek',
-    about_pillar_3_desc: 'Mendokumentasikan kepelbagaian dialek Bajau Samah di Sabah — dari Kota Belud, Tuaran, Papar, Kawang hingga ke persisiran pantai timur Sabah.',
+    about_pillar_3_desc: 'Mendokumentasikan kepelbagaian dialek Bajau Sama di Sabah — dari Kota Belud, Tuaran, Papar, Kawang hingga ke persisiran pantai timur Sabah.',
     about_methodology_title: 'Metodologi & Sumber Rujukan',
     about_methodology_desc: 'Kandungan dalam kamus ini dikumpulkan melalui gabungan sumber lisan daripada warga emas, penutur jati komuniti, serta rujukan dokumentasi linguistik dan akademik yang diiktiraf.',
     about_cta_title: 'Sumbangkan Pengetahuan Anda',
@@ -129,6 +157,32 @@ export const TRANSLATIONS: Record<LanguageCode, UiTranslations> = {
     stats_words: 'perkataan didokumentasikan',
     stats_dialects: 'variasi daerah',
     stats_open_data: 'pangkalan data terbuka',
+
+    footer_brand_desc: 'Inisiatif pemeliharaan khazanah kosa kata dan warisan leksikal bahasa Bajau Sama terbuka untuk generasi kini dan masa hadapan.',
+    footer_nav_title: 'Pautan Pantas',
+    footer_nav_home: 'Laman Utama',
+    footer_nav_about: 'Tentang Projek',
+    footer_nav_suggest: 'Cadang Perkataan',
+    footer_nav_alphabet: 'Indeks Abjad A-Z',
+    footer_dialects_title: 'Variasi Dialek & Daerah',
+    footer_dialects_desc: 'Mendokumentasikan kepelbagaian leksikal Pantai Barat (Kota Belud, Tuaran, Papar) dan Pantai Timur Sabah.',
+    footer_heritage_title: 'Integriti Linguistik',
+    footer_heritage_desc: 'Pangkalan data bersandarkan penutur jati dan sumber lisan tulen tanpa rekaan leksikal tiruan.',
+    footer_copyright: 'Kamus Bajau Sama. Hak cipta terpelihara.',
+    footer_motif_note: 'Motif Tradisional & Linangkit Sabah',
+
+    support_nav: 'Sokong Kami',
+    support_modal_title: 'Sokong Pemeliharaan Bahasa',
+    support_modal_desc: 'Bantu kami mengekalkan Kamus Bajau Sama percuma, berdikari dan bebas iklan untuk anak bangsa serta generasi akan datang.',
+    support_qr_caption: 'Imbas Kod QR DuitNow melalui mana-mana aplikasi bank atau e-Dompet Malaysia.',
+    support_bank_name: 'Maybank / DuitNow',
+    support_account_name: 'Alan Syahmi Bin Sanih',
+    support_account_number: '160102434316',
+    support_copy_btn: 'Salin Nama',
+    support_copied_toast: 'Nama disalin!',
+    support_download_qr: 'Muat Turun Kod QR',
+    support_why_title: 'Kemana sumbangan anda disalurkan?',
+    support_why_desc: 'Setiap sumbangan digunakan secara langsung untuk membiayai kos pelayan (hosting), pangkalan data terbuka, dan pembangunan ciri-ciri baharu kamus tanpa komersial.',
   },
 
   bj: {
@@ -158,13 +212,13 @@ export const TRANSLATIONS: Record<LanguageCode, UiTranslations> = {
 
     about_kicker: 'INISIATIF PEMELOROON WARISAN LING-TI',
     about_title: "Meloro Warisan Lisan,<br>Memperkasa Pemakai <em>Generasi Baru.</em>",
-    about_lead: "<strong>Kamus Bajau Samah</strong> iono po'on leksikal digital binuka' yang niasas untuk mendokumentasi, mera'i ko' mopoluasan kosa kata bahasa Bajau Samah supaya kekal hidup bo' terbuka kepada alam masyarakat.",
+    about_lead: "<strong>Kamus Bajau Sama</strong> iono po'on leksikal digital binuka' yang niasas untuk mendokumentasi, mera'i ko' mopoluasan kosa kata bahasa Bajau Sama supaya kekal hidup bo' terbuka kepada alam masyarakat.",
     about_pillar_1_title: 'Akses Tebuka & Digital',
-    about_pillar_1_desc: "Mokosonong pekataan Bajau Samah nianang, nipaham ko' nipabagi ta' peranti pantas engko' tepat.",
+    about_pillar_1_desc: "Mokosonong pekataan Bajau Sama nianang, nipaham ko' nipabagi ta' peranti pantas engko' tepat.",
     about_pillar_2_title: 'Ketulenan & Integriti Data',
     about_pillar_2_desc: "Tiap-tiap pekataan, sebutan engko' sonto ayat nipeliara' sebentuk tulen penutur jati.",
     about_pillar_3_title: 'Variasi Daerah & Dialek',
-    about_pillar_3_desc: "Mendokumentasi kepelbagaian dialek Bajau Samah ta' Sabah — dari Kota Belud, Tuaran, Papar, Kawang sampay pantai timur.",
+    about_pillar_3_desc: "Mendokumentasi kepelbagaian dialek Bajau Sama ta' Sabah — dari Kota Belud, Tuaran, Papar, Kawang sampay pantai timur.",
     about_methodology_title: 'Metodologi & Sumber Rujukan',
     about_methodology_desc: "Isi kamus diti nitipon le' sumber lisan ombok-ombok, penutur jati, engko' rujukan linguistik rasmi.",
     about_cta_title: 'Sumbangin Pengeratian-nu',
@@ -191,6 +245,32 @@ export const TRANSLATIONS: Record<LanguageCode, UiTranslations> = {
     stats_words: 'pekataan nidokumentasi',
     stats_dialects: 'variasi daerah',
     stats_open_data: 'pangkalan data tebuka',
+
+    footer_brand_desc: "Inisiatif meloro khazanah kosa kata ko' warisan leksikal ling Bajau Sama tebuka untuk generasi betiu ko' masa hadapan.",
+    footer_nav_title: 'Pautan Pantas',
+    footer_nav_home: 'Laman Poon',
+    footer_nav_about: 'Pasal Projek',
+    footer_nav_suggest: 'Sadang Pekataan',
+    footer_nav_alphabet: 'Indeks Urup A-Z',
+    footer_dialects_title: 'Variasi Lugat & Daerah',
+    footer_dialects_desc: 'Mendokumentasi kepelbagaian leksikal Pantai Barat (Kota Belud, Tuaran, Papar) ko Pantai Timur Sabah.',
+    footer_heritage_title: 'Integriti Linguistik',
+    footer_heritage_desc: 'Pangkalan data bertunjang penutur jati ko poon lisan tulen tanpa rekaan leksikal tiruan.',
+    footer_copyright: 'Kamus Bajau Sama. Hak cipta terpelihara.',
+    footer_motif_note: 'Motif Tradisional & Linangkit Sabah',
+
+    support_nav: 'Tulung Engkami',
+    support_modal_title: 'Tulung Meloro Ling Bajau',
+    support_modal_desc: 'Bantuno engkami meloro Kamus Bajau Sama bo kekal percuma, bebas iklan engko tebuka untuk semomon generasi kiti.',
+    support_qr_caption: 'Imbas Kod QR DuitNow nuut aplikasi bank atau e-Dompet Malaysia.',
+    support_bank_name: 'Maybank / DuitNow',
+    support_account_name: 'Alan Syahmi Bin Sanih',
+    support_account_number: '160102434316',
+    support_copy_btn: 'Salin Oron',
+    support_copied_toast: 'Oron nisalin!',
+    support_download_qr: 'Simpan Kod QR',
+    support_why_title: 'Pikoonan sumbangan-nu?',
+    support_why_desc: 'Tiap-tiap sumbangan dipakai terus untuk bayar pelayan (server hosting), pangkalan data tebuka, ko peluas fungsi kamus tanpa tujuan jualan.',
   },
 
   en: {
@@ -220,13 +300,13 @@ export const TRANSLATIONS: Record<LanguageCode, UiTranslations> = {
 
     about_kicker: 'LANGUAGE HERITAGE PRESERVATION INITIATIVE',
     about_title: 'Preserving an Oral Heritage,<br>Empowering <em>Future Generations.</em>',
-    about_lead: '<strong>Kamus Bajau Samah</strong> is an open digital lexical resource founded to document, celebrate and expand the Bajau Samah vocabulary so it remains alive and accessible to all communities.',
+    about_lead: '<strong>Kamus Bajau Sama</strong> is an open digital lexical resource founded to document, celebrate and expand the Bajau Sama vocabulary so it remains alive and accessible to all communities.',
     about_pillar_1_title: 'Open & Digital Access',
-    about_pillar_1_desc: 'Making the Bajau Samah vocabulary effortlessly searchable, comprehensible, and shareable across all modern devices with fast, accurate discovery.',
+    about_pillar_1_desc: 'Making the Bajau Sama vocabulary effortlessly searchable, comprehensible, and shareable across all modern devices with fast, accurate discovery.',
     about_pillar_2_title: 'Authenticity & Data Integrity',
     about_pillar_2_desc: 'Every word, pronunciation, and example sentence is preserved in the authentic spoken form of native speakers without artificial modifications.',
     about_pillar_3_title: 'Regional Dialect Variations',
-    about_pillar_3_desc: 'Documenting the rich diversity of Bajau Samah dialects across Sabah — from Kota Belud, Tuaran, Papar, Kawang to the east coast communities.',
+    about_pillar_3_desc: 'Documenting the rich diversity of Bajau Sama dialects across Sabah — from Kota Belud, Tuaran, Papar, Kawang to the east coast communities.',
     about_methodology_title: 'Methodology & References',
     about_methodology_desc: 'Dictionary content is collected from elder native speakers, local communities, and recognized linguistic publications and fieldwork.',
     about_cta_title: 'Share Your Knowledge',
@@ -253,6 +333,31 @@ export const TRANSLATIONS: Record<LanguageCode, UiTranslations> = {
     stats_words: 'words documented',
     stats_dialects: 'regional variants',
     stats_open_data: 'open lexical database',
-  },
 
+    footer_brand_desc: 'An open language-preservation and lexical documentation initiative for the Bajau Sama language, built for present and future generations.',
+    footer_nav_title: 'Quick Links',
+    footer_nav_home: 'Home',
+    footer_nav_about: 'About Project',
+    footer_nav_suggest: 'Suggest a Word',
+    footer_nav_alphabet: 'A-Z Alphabet Index',
+    footer_dialects_title: 'Dialects & Localities',
+    footer_dialects_desc: 'Documenting lexical variations across the West Coast (Kota Belud, Tuaran, Papar) and East Coast Sabah.',
+    footer_heritage_title: 'Linguistic Integrity',
+    footer_heritage_desc: 'Authoritative entries grounded in native speakers and verified oral sources without synthetic fabrication.',
+    footer_copyright: 'Kamus Bajau Sama. All rights reserved.',
+    footer_motif_note: 'Traditional Motifs & Sabah Linangkit',
+
+    support_nav: 'Support Us',
+    support_modal_title: 'Support Language Preservation',
+    support_modal_desc: 'Help us keep Kamus Bajau Sama completely free, independent, and ad-free for future generations.',
+    support_qr_caption: 'Scan this DuitNow QR with any Malaysian banking or eWallet app.',
+    support_bank_name: 'Maybank / DuitNow',
+    support_account_name: 'Alan Syahmi Bin Sanih',
+    support_account_number: '160102434316',
+    support_copy_btn: 'Copy Name',
+    support_copied_toast: 'Name copied!',
+    support_download_qr: 'Download QR Code',
+    support_why_title: 'Where do your funds go?',
+    support_why_desc: '100% of contributions directly support server hosting, open-access database infrastructure, and continuing digital preservation work without commercial ads.',
+  },
 };

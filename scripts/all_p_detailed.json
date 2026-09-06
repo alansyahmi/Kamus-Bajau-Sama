@@ -1,0 +1,1382 @@
+[
+  {
+    "id": 19382,
+    "headword": "pa'",
+    "search_normalized": "pa",
+    "part_of_speech": "KATA NAMA",
+    "ipa": "/paʔ/",
+    "sense_id": 19382,
+    "definition_ms": "pakcik, (harfiah) pak",
+    "definition_en": "uncle"
+  },
+  {
+    "id": 19383,
+    "headword": "paam",
+    "search_normalized": "paam",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/paːm/",
+    "sense_id": 19383,
+    "definition_ms": "faham",
+    "definition_en": "to understand"
+  },
+  {
+    "id": 19384,
+    "headword": "pagar",
+    "search_normalized": "pagar",
+    "part_of_speech": "KATA NAMA",
+    "ipa": "/pagar/",
+    "sense_id": 19384,
+    "definition_ms": "fence",
+    "definition_en": "fence"
+  },
+  {
+    "id": 19385,
+    "headword": "paip",
+    "search_normalized": "paip",
+    "part_of_speech": "KATA NAMA",
+    "ipa": "/paip/",
+    "sense_id": 19385,
+    "definition_ms": "paip",
+    "definition_en": "water pipe"
+  },
+  {
+    "id": 19386,
+    "headword": "pak",
+    "search_normalized": "pak",
+    "part_of_speech": "KATA NAMA",
+    "ipa": "/pak/",
+    "sense_id": 19386,
+    "definition_ms": "frog",
+    "definition_en": "frog"
+  },
+  {
+    "id": 19387,
+    "headword": "pakai",
+    "search_normalized": "pakai",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pakaj/",
+    "sense_id": 19387,
+    "definition_ms": "pakai",
+    "definition_en": "to use"
+  },
+  {
+    "id": 19376,
+    "headword": "pakan",
+    "search_normalized": "pakan",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pakan/",
+    "sense_id": 19376,
+    "definition_ms": "memberi makan",
+    "definition_en": "to feed"
+  },
+  {
+    "id": 19388,
+    "headword": "pakir",
+    "search_normalized": "pakir",
+    "part_of_speech": "KATA NAMA",
+    "ipa": "/pakir/",
+    "sense_id": 19388,
+    "definition_ms": "agamawan",
+    "definition_en": "religious officiant"
+  },
+  {
+    "id": 19389,
+    "headword": "paksa'",
+    "search_normalized": "paksa",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/paksa/",
+    "sense_id": 19389,
+    "definition_ms": "paksa",
+    "definition_en": "to force"
+  },
+  {
+    "id": 19390,
+    "headword": "pala",
+    "search_normalized": "pala",
+    "part_of_speech": "KATA TUGAS / PARTIKEL",
+    "ipa": "/pala/",
+    "sense_id": 19390,
+    "definition_ms": "pula",
+    "definition_en": "counter-expectation"
+  },
+  {
+    "id": 19391,
+    "headword": "paling",
+    "search_normalized": "paling",
+    "part_of_speech": "KATA SIFAT",
+    "ipa": "/paliŋ/",
+    "sense_id": 19391,
+    "definition_ms": "paling",
+    "definition_en": "most"
+  },
+  {
+    "id": 19392,
+    "headword": "palu",
+    "search_normalized": "palu",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/palu/",
+    "sense_id": 19392,
+    "definition_ms": "pukul, hentam, (harfiah) palu",
+    "definition_en": "hit"
+  },
+  {
+    "id": 19394,
+    "headword": "palu-paluan",
+    "search_normalized": "palupaluan",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/palu-paluan/",
+    "sense_id": 19394,
+    "definition_ms": "sasaran pukulan",
+    "definition_en": "object of repeated hitting"
+  },
+  {
+    "id": 19393,
+    "headword": "paluan",
+    "search_normalized": "paluan",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/paluan/",
+    "sense_id": 19393,
+    "definition_ms": "pukulkan",
+    "definition_en": "to hit using something"
+  },
+  {
+    "id": 19395,
+    "headword": "pan",
+    "search_normalized": "pan",
+    "part_of_speech": "KATA NAMA",
+    "ipa": "/pan/",
+    "sense_id": 19395,
+    "definition_ms": "pun",
+    "definition_en": "topic particle: also, too, (linker), (emphatic marker)"
+  },
+  {
+    "id": 19396,
+    "headword": "panas",
+    "search_normalized": "panas",
+    "part_of_speech": "KATA SIFAT",
+    "ipa": "/panas/",
+    "sense_id": 19396,
+    "definition_ms": "panas",
+    "definition_en": "hot"
+  },
+  {
+    "id": 19397,
+    "headword": "pandai",
+    "search_normalized": "pandai",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pandaj/",
+    "sense_id": 19397,
+    "definition_ms": "mahir, pandai, berkebolehan",
+    "definition_en": "skilled, clever, able"
+  },
+  {
+    "id": 19398,
+    "headword": "pandi",
+    "search_normalized": "pandi",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pandi/",
+    "sense_id": 19398,
+    "definition_ms": "memandikan",
+    "definition_en": "to bathe someone or something"
+  },
+  {
+    "id": 19399,
+    "headword": "panggil",
+    "search_normalized": "panggil",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/paŋgil/",
+    "sense_id": 19399,
+    "definition_ms": "panggil",
+    "definition_en": "call"
+  },
+  {
+    "id": 19399,
+    "headword": "panggil",
+    "search_normalized": "panggil",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/paŋgil/",
+    "sense_id": 20417,
+    "definition_ms": "jemput",
+    "definition_en": "summon"
+  },
+  {
+    "id": 19400,
+    "headword": "panggilan",
+    "search_normalized": "panggilan",
+    "part_of_speech": "KATA NAMA",
+    "ipa": "/paŋgilan/",
+    "sense_id": 19400,
+    "definition_ms": "jemputan",
+    "definition_en": "guests"
+  },
+  {
+    "id": 19400,
+    "headword": "panggilan",
+    "search_normalized": "panggilan",
+    "part_of_speech": "KATA NAMA",
+    "ipa": "/paŋgilan/",
+    "sense_id": 20418,
+    "definition_ms": "panggilan",
+    "definition_en": "call"
+  },
+  {
+    "id": 19401,
+    "headword": "pantau",
+    "search_normalized": "pantau",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pantaw/",
+    "sense_id": 19401,
+    "definition_ms": "berdiri, (harfiah) pantau",
+    "definition_en": "to stand"
+  },
+  {
+    "id": 19402,
+    "headword": "panut",
+    "search_normalized": "panut",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/panut/",
+    "sense_id": 19402,
+    "definition_ms": "hanyut",
+    "definition_en": "to drift"
+  },
+  {
+    "id": 19403,
+    "headword": "panutan",
+    "search_normalized": "panutan",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/panut-an/",
+    "sense_id": 19403,
+    "definition_ms": "menghanyutkan",
+    "definition_en": "to set something adrift"
+  },
+  {
+    "id": 19404,
+    "headword": "papi",
+    "search_normalized": "papi",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/papi/",
+    "sense_id": 19404,
+    "definition_ms": "masak",
+    "definition_en": "to cook"
+  },
+  {
+    "id": 19405,
+    "headword": "papian",
+    "search_normalized": "papian",
+    "part_of_speech": "KATA NAMA",
+    "ipa": "/papian/",
+    "sense_id": 19405,
+    "definition_ms": "masakan",
+    "definition_en": "cooked food"
+  },
+  {
+    "id": 19406,
+    "headword": "parai",
+    "search_normalized": "parai",
+    "part_of_speech": "KATA NAMA",
+    "ipa": "/paraj/",
+    "sense_id": 19406,
+    "definition_ms": "padi",
+    "definition_en": "unhusked rice"
+  },
+  {
+    "id": 19407,
+    "headword": "pasal",
+    "search_normalized": "pasal",
+    "part_of_speech": "KATA NAMA",
+    "ipa": "/pasal/",
+    "sense_id": 19407,
+    "definition_ms": "sebab, fasal",
+    "definition_en": "cause, reason"
+  },
+  {
+    "id": 19408,
+    "headword": "patai",
+    "search_normalized": "patai",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pataj/",
+    "sense_id": 19408,
+    "definition_ms": "bunuh",
+    "definition_en": "to kill"
+  },
+  {
+    "id": 19409,
+    "headword": "pe-",
+    "search_normalized": "pe",
+    "part_of_speech": "KATA TUGAS / PARTIKEL",
+    "ipa": "/pə/",
+    "sense_id": 19409,
+    "definition_ms": "imbuhan yang berfungsi seperti ke- dalam \"keluar\"",
+    "definition_en": "prefix that functions like ex- in \"exclusion\" vs. \"inclusion\""
+  },
+  {
+    "id": 19409,
+    "headword": "pe-",
+    "search_normalized": "pe",
+    "part_of_speech": "KATA TUGAS / PARTIKEL",
+    "ipa": "/pə/",
+    "sense_id": 20427,
+    "definition_ms": "imbuhan kausatif, seperti per- + -kan, meN-, meN- + -kan, meN- + -per- + -kan",
+    "definition_en": "causative prefix"
+  },
+  {
+    "id": 19411,
+    "headword": "pe-gontor",
+    "search_normalized": "pegontor",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pə-gontor/",
+    "sense_id": 19411,
+    "definition_ms": "goyang, goncang",
+    "definition_en": "to shake"
+  },
+  {
+    "id": 19412,
+    "headword": "pe-iram",
+    "search_normalized": "peiram",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pə-iram/",
+    "sense_id": 19412,
+    "definition_ms": "hitam",
+    "definition_en": "to become black"
+  },
+  {
+    "id": 19413,
+    "headword": "pe-ke-raat",
+    "search_normalized": "pekeraat",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pə-kə-raːt/",
+    "sense_id": 19413,
+    "definition_ms": "merosakkan",
+    "definition_en": "to damage"
+  },
+  {
+    "id": 19414,
+    "headword": "pe-ke-tau",
+    "search_normalized": "peketau",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pə-kə-taw/",
+    "sense_id": 19414,
+    "definition_ms": "menakutkan",
+    "definition_en": "to scare"
+  },
+  {
+    "id": 19415,
+    "headword": "pe-kepa'",
+    "search_normalized": "pekepa",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pə-kəpaʔ/",
+    "sense_id": 19415,
+    "definition_ms": "hinggap",
+    "definition_en": "to alight"
+  },
+  {
+    "id": 19416,
+    "headword": "pe-keta",
+    "search_normalized": "peketa",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pə-kəta/",
+    "sense_id": 19416,
+    "definition_ms": "lintas, menyeberang",
+    "definition_en": "to cross"
+  },
+  {
+    "id": 19417,
+    "headword": "pe-kiling",
+    "search_normalized": "pekiling",
+    "part_of_speech": "KATA BILANGAN",
+    "ipa": "/pə-kiliŋ/",
+    "sense_id": 19417,
+    "definition_ms": "goyang, satu",
+    "definition_en": "to shake one"
+  },
+  {
+    "id": 19418,
+    "headword": "pe-kito-on",
+    "search_normalized": "pekitoon",
+    "part_of_speech": "KATA BILANGAN",
+    "ipa": "/pə-kito-on/",
+    "sense_id": 19418,
+    "definition_ms": "satu",
+    "definition_en": "to show (s.thing) to (s.one)"
+  },
+  {
+    "id": 19420,
+    "headword": "pe-lantung",
+    "search_normalized": "pelantung",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pə-lantuŋ/",
+    "sense_id": 19420,
+    "definition_ms": "terapung, timbul",
+    "definition_en": "to float"
+  },
+  {
+    "id": 19421,
+    "headword": "pe-lekat",
+    "search_normalized": "pelekat",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pə-ləkat/",
+    "sense_id": 19421,
+    "definition_ms": "leave",
+    "definition_en": "to leave"
+  },
+  {
+    "id": 19422,
+    "headword": "pe-liak",
+    "search_normalized": "peliak",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pə-liak/",
+    "sense_id": 19422,
+    "definition_ms": "menelentangkan",
+    "definition_en": "lay (s.thing) on its back; upturn"
+  },
+  {
+    "id": 19423,
+    "headword": "pe-liang",
+    "search_normalized": "peliang",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pə-liaŋ/",
+    "sense_id": 19423,
+    "definition_ms": "release (s.thing) into flight",
+    "definition_en": "to release (s.thing) into flight"
+  },
+  {
+    "id": 19424,
+    "headword": "pe-limbo",
+    "search_normalized": "pelimbo",
+    "part_of_speech": "KATA BILANGAN",
+    "ipa": "/pə-limbo/",
+    "sense_id": 19424,
+    "definition_ms": "lemas, satu",
+    "definition_en": "to suffocate (s.one)"
+  },
+  {
+    "id": 19426,
+    "headword": "pe-lulai",
+    "search_normalized": "pelulai",
+    "part_of_speech": "KATA BILANGAN",
+    "ipa": "/pə-lulaj/",
+    "sense_id": 19426,
+    "definition_ms": "buat, satu, berlari",
+    "definition_en": "to make (s.one) run"
+  },
+  {
+    "id": 19427,
+    "headword": "pe-lumpat",
+    "search_normalized": "pelumpat",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pə-lumpat/",
+    "sense_id": 19427,
+    "definition_ms": "lompat",
+    "definition_en": "to jump"
+  },
+  {
+    "id": 19428,
+    "headword": "pe-lunsur",
+    "search_normalized": "pelunsur",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pə-lunsur/",
+    "sense_id": 19428,
+    "definition_ms": "mengalir",
+    "definition_en": "to flow"
+  },
+  {
+    "id": 19429,
+    "headword": "pe-oyo",
+    "search_normalized": "peoyo",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pə-ojo/",
+    "sense_id": 19429,
+    "definition_ms": "become large",
+    "definition_en": "to become large"
+  },
+  {
+    "id": 19430,
+    "headword": "pe-pantau",
+    "search_normalized": "pepantau",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pə-pantaw/",
+    "sense_id": 19430,
+    "definition_ms": "berdiri",
+    "definition_en": "stand (s.thing) up"
+  },
+  {
+    "id": 19431,
+    "headword": "pe-patai",
+    "search_normalized": "pepatai",
+    "part_of_speech": "KATA BILANGAN",
+    "ipa": "/pə-pataj/",
+    "sense_id": 19431,
+    "definition_ms": "bunuh, satu",
+    "definition_en": "to kill (s.one)"
+  },
+  {
+    "id": 19432,
+    "headword": "pe-pe-dia'",
+    "search_normalized": "pepedia",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pə-pə-diaʔ/",
+    "sense_id": 19432,
+    "definition_ms": "rendahkan",
+    "definition_en": "to lower (s.thing)"
+  },
+  {
+    "id": 19433,
+    "headword": "pe-sading",
+    "search_normalized": "pesading",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pə-sadiŋ/",
+    "sense_id": 19433,
+    "definition_ms": "sandar, condong",
+    "definition_en": "to lean"
+  },
+  {
+    "id": 19434,
+    "headword": "pe-sedi",
+    "search_normalized": "pesedi",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pə-sədi/",
+    "sense_id": 19434,
+    "definition_ms": "alih",
+    "definition_en": "to move beside"
+  },
+  {
+    "id": 19435,
+    "headword": "pe-sikot",
+    "search_normalized": "pesikot",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pə-sikot/",
+    "sense_id": 19435,
+    "definition_ms": "dekat",
+    "definition_en": "to come near"
+  },
+  {
+    "id": 19436,
+    "headword": "pe-singga",
+    "search_normalized": "pesingga",
+    "part_of_speech": "KATA BILANGAN",
+    "ipa": "/pə-siŋga/",
+    "sense_id": 19436,
+    "definition_ms": "berhenti, oleh",
+    "definition_en": "to stop by someone"
+  },
+  {
+    "id": 19437,
+    "headword": "pe-sorong",
+    "search_normalized": "pesorong",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pə-soroŋ/",
+    "sense_id": 19437,
+    "definition_ms": "hampiri, dekati",
+    "definition_en": "to approach"
+  },
+  {
+    "id": 19438,
+    "headword": "pe-suk",
+    "search_normalized": "pesuk",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pə-suk/",
+    "sense_id": 19438,
+    "definition_ms": "become thin",
+    "definition_en": "to become thin"
+  },
+  {
+    "id": 19439,
+    "headword": "pe-tangis",
+    "search_normalized": "petangis",
+    "part_of_speech": "KATA BILANGAN",
+    "ipa": "/pə-taŋis/",
+    "sense_id": 19439,
+    "definition_ms": "buat, satu, menangis",
+    "definition_en": "make (s.one) cry"
+  },
+  {
+    "id": 19440,
+    "headword": "pe-telak",
+    "search_normalized": "petelak",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pə-təlak/",
+    "sense_id": 19440,
+    "definition_ms": "become clear",
+    "definition_en": "to become clear"
+  },
+  {
+    "id": 19441,
+    "headword": "pe-tio",
+    "search_normalized": "petio",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pə-tio/",
+    "sense_id": 19441,
+    "definition_ms": "jauh",
+    "definition_en": "to become far"
+  },
+  {
+    "id": 19443,
+    "headword": "pe-tondok",
+    "search_normalized": "petondok",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pə-tondok/",
+    "sense_id": 19443,
+    "definition_ms": "bongkok, tunduk",
+    "definition_en": "to stoop"
+  },
+  {
+    "id": 19444,
+    "headword": "pe-turi",
+    "search_normalized": "peturi",
+    "part_of_speech": "KATA BILANGAN",
+    "ipa": "/pə-turi/",
+    "sense_id": 19444,
+    "definition_ms": "letak, satu, tidur",
+    "definition_en": "to put (s.one) down to sleep"
+  },
+  {
+    "id": 19445,
+    "headword": "pe-tuun",
+    "search_normalized": "petuun",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pə-tuːn/",
+    "sense_id": 19445,
+    "definition_ms": "menyelam",
+    "definition_en": "to dive"
+  },
+  {
+    "id": 19446,
+    "headword": "pealap",
+    "search_normalized": "pealap",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pəalap/",
+    "sense_id": 19446,
+    "definition_ms": "membaiki, memperelok",
+    "definition_en": "to fix, repair"
+  },
+  {
+    "id": 19447,
+    "headword": "peberen",
+    "search_normalized": "peberen",
+    "part_of_speech": "KATA BILANGAN",
+    "ipa": "/pəbərən/",
+    "sense_id": 19447,
+    "definition_ms": "benar, biar",
+    "definition_en": "to allow, to let"
+  },
+  {
+    "id": 19448,
+    "headword": "peboroon",
+    "search_normalized": "peboroon",
+    "part_of_speech": "KATA NAMA",
+    "ipa": "/pəboroːn/",
+    "sense_id": 19448,
+    "definition_ms": "censer",
+    "definition_en": "censer"
+  },
+  {
+    "id": 19449,
+    "headword": "pedarag",
+    "search_normalized": "pedarag",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pədarag/",
+    "sense_id": 19449,
+    "definition_ms": "merah",
+    "definition_en": "to become red"
+  },
+  {
+    "id": 19450,
+    "headword": "pedelaan",
+    "search_normalized": "pedelaan",
+    "part_of_speech": "KATA NAMA",
+    "ipa": "/pədəlaːn/",
+    "sense_id": 19450,
+    "definition_ms": "(jantina) lelaki",
+    "definition_en": "male, man"
+  },
+  {
+    "id": 19451,
+    "headword": "pedendoon",
+    "search_normalized": "pedendoon",
+    "part_of_speech": "KATA NAMA",
+    "ipa": "/pədəndoːn/",
+    "sense_id": 19451,
+    "definition_ms": "(jantina) perempuan",
+    "definition_en": "female, woman"
+  },
+  {
+    "id": 19410,
+    "headword": "pedia'",
+    "search_normalized": "pedia",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pədiaʔ/",
+    "sense_id": 19410,
+    "definition_ms": "menurunkan",
+    "definition_en": "to move down"
+  },
+  {
+    "id": 19452,
+    "headword": "pediki'",
+    "search_normalized": "pediki",
+    "part_of_speech": "KATA BILANGAN",
+    "ipa": "/pədikiʔ/",
+    "sense_id": 19452,
+    "definition_ms": "mengecilkan",
+    "definition_en": "to become small"
+  },
+  {
+    "id": 19453,
+    "headword": "pedutai",
+    "search_normalized": "pedutai",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pədutaj/",
+    "sense_id": 19453,
+    "definition_ms": "merendahkan",
+    "definition_en": "to lower something"
+  },
+  {
+    "id": 19454,
+    "headword": "pejata'",
+    "search_normalized": "pejata",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pədʒataʔ/",
+    "sense_id": 19454,
+    "definition_ms": "go upward",
+    "definition_en": "to go upward"
+  },
+  {
+    "id": 19455,
+    "headword": "pekar",
+    "search_normalized": "pekar",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pəkar/",
+    "sense_id": 19455,
+    "definition_ms": "membentang, memekar",
+    "definition_en": "to unfurl, unfold"
+  },
+  {
+    "id": 19456,
+    "headword": "pekeet",
+    "search_normalized": "pekeet",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pəkeːt/",
+    "sense_id": 19456,
+    "definition_ms": "decontrolled",
+    "definition_en": "decontrolled"
+  },
+  {
+    "id": 19457,
+    "headword": "pelaanan",
+    "search_normalized": "pelaanan",
+    "part_of_speech": "KATA NAMA",
+    "ipa": "/pəlaːnan/",
+    "sense_id": 19457,
+    "definition_ms": "perjalanan",
+    "definition_en": "journey, trip"
+  },
+  {
+    "id": 19419,
+    "headword": "pelai",
+    "search_normalized": "pelai",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pəlaj/",
+    "sense_id": 19419,
+    "definition_ms": "memperlarikan",
+    "definition_en": "to move or send something away"
+  },
+  {
+    "id": 19458,
+    "headword": "pelanga",
+    "search_normalized": "pelanga",
+    "part_of_speech": "KATA BILANGAN",
+    "ipa": "/pəlaŋa/",
+    "sense_id": 19458,
+    "definition_ms": "tinggi",
+    "definition_en": "to become high"
+  },
+  {
+    "id": 19459,
+    "headword": "pelema'",
+    "search_normalized": "pelema",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pələmaʔ/",
+    "sense_id": 19459,
+    "definition_ms": "lembut",
+    "definition_en": "to become soft"
+  },
+  {
+    "id": 19460,
+    "headword": "peloot-loot",
+    "search_normalized": "pelootloot",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pəloːt-loːt/",
+    "sense_id": 19460,
+    "definition_ms": "capai, dengan, tangan",
+    "definition_en": "to repeatedly reach with (the hand)"
+  },
+  {
+    "id": 19425,
+    "headword": "pelua'",
+    "search_normalized": "pelua",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pəluaʔ/",
+    "sense_id": 19425,
+    "definition_ms": "keluar",
+    "definition_en": "to go out"
+  },
+  {
+    "id": 19425,
+    "headword": "pelua'",
+    "search_normalized": "pelua",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pəluaʔ/",
+    "sense_id": 20428,
+    "definition_ms": "muncul",
+    "definition_en": "to appear"
+  },
+  {
+    "id": 19461,
+    "headword": "pemeli",
+    "search_normalized": "pemeli",
+    "part_of_speech": "KATA NAMA",
+    "ipa": "/pəməli/",
+    "sense_id": 19461,
+    "definition_ms": "currency",
+    "definition_en": "currency"
+  },
+  {
+    "id": 19462,
+    "headword": "pemia",
+    "search_normalized": "pemia",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pəmia/",
+    "sense_id": 19462,
+    "definition_ms": "cari",
+    "definition_en": "to search"
+  },
+  {
+    "id": 19463,
+    "headword": "pemia-an",
+    "search_normalized": "pemiaan",
+    "part_of_speech": "KATA BILANGAN",
+    "ipa": "/pəmia-an/",
+    "sense_id": 19463,
+    "definition_ms": "cari, satu",
+    "definition_en": "to search for s.thing for (s.one)"
+  },
+  {
+    "id": 19464,
+    "headword": "peN",
+    "search_normalized": "pen",
+    "part_of_speech": "KATA NAMA",
+    "ipa": "/pən/",
+    "sense_id": 19464,
+    "definition_ms": "location",
+    "definition_en": "location"
+  },
+  {
+    "id": 19465,
+    "headword": "penangis",
+    "search_normalized": "penangis",
+    "part_of_speech": "KATA BILANGAN",
+    "ipa": "/pənaŋis/",
+    "sense_id": 19465,
+    "definition_ms": "menangis",
+    "definition_en": "prone to cry"
+  },
+  {
+    "id": 19466,
+    "headword": "penangkau",
+    "search_normalized": "penangkau",
+    "part_of_speech": "KATA BILANGAN",
+    "ipa": "/pənaŋkaw/",
+    "sense_id": 19466,
+    "definition_ms": "curi",
+    "definition_en": "prone to steal"
+  },
+  {
+    "id": 19467,
+    "headword": "pene'",
+    "search_normalized": "pene",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pənəʔ/",
+    "sense_id": 19467,
+    "definition_ms": "pilih",
+    "definition_en": "to choose"
+  },
+  {
+    "id": 19468,
+    "headword": "penebong",
+    "search_normalized": "penebong",
+    "part_of_speech": "KATA NAMA",
+    "ipa": "/pənəboŋ/",
+    "sense_id": 19468,
+    "definition_ms": "chopper",
+    "definition_en": "chopper"
+  },
+  {
+    "id": 19469,
+    "headword": "penepak",
+    "search_normalized": "penepak",
+    "part_of_speech": "KATA NAMA",
+    "ipa": "/pənəpak/",
+    "sense_id": 19469,
+    "definition_ms": "swatter",
+    "definition_en": "swatter"
+  },
+  {
+    "id": 19470,
+    "headword": "peng-enda-an",
+    "search_normalized": "pengendaan",
+    "part_of_speech": "KATA NAMA",
+    "ipa": "/pəŋ-ənda-an/",
+    "sense_id": 19470,
+    "definition_ms": "letak",
+    "definition_en": "place for viewing"
+  },
+  {
+    "id": 19471,
+    "headword": "pengayam",
+    "search_normalized": "pengayam",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pəŋajam/",
+    "sense_id": 19471,
+    "definition_ms": "domesticated animals",
+    "definition_en": "domesticated animals"
+  },
+  {
+    "id": 19472,
+    "headword": "pengellau",
+    "search_normalized": "pengellau",
+    "part_of_speech": "KATA SIFAT",
+    "ipa": "/pəŋəlːaw/",
+    "sense_id": 19472,
+    "definition_ms": "kering",
+    "definition_en": "dry season"
+  },
+  {
+    "id": 19473,
+    "headword": "pengelong",
+    "search_normalized": "pengelong",
+    "part_of_speech": "KATA NAMA",
+    "ipa": "/pəŋəloŋ/",
+    "sense_id": 19473,
+    "definition_ms": "kerbau",
+    "definition_en": "neck harness (for buffalo)"
+  },
+  {
+    "id": 19474,
+    "headword": "pengennaan",
+    "search_normalized": "pengennaan",
+    "part_of_speech": "KATA NAMA",
+    "ipa": "/pəŋənːaːn/",
+    "sense_id": 19474,
+    "definition_ms": "container",
+    "definition_en": "container"
+  },
+  {
+    "id": 19475,
+    "headword": "pengentanan",
+    "search_normalized": "pengentanan",
+    "part_of_speech": "KATA NAMA",
+    "ipa": "/pəŋəntanan/",
+    "sense_id": 19475,
+    "definition_ms": "handle",
+    "definition_en": "handle"
+  },
+  {
+    "id": 19476,
+    "headword": "penguran",
+    "search_normalized": "penguran",
+    "part_of_speech": "KATA NAMA",
+    "ipa": "/pəŋuran/",
+    "sense_id": 19476,
+    "definition_ms": "rainy season",
+    "definition_en": "rainy season"
+  },
+  {
+    "id": 19477,
+    "headword": "peniik",
+    "search_normalized": "peniik",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pəniːk/",
+    "sense_id": 19477,
+    "definition_ms": "panjat, daki",
+    "definition_en": "to climb"
+  },
+  {
+    "id": 19478,
+    "headword": "penitik",
+    "search_normalized": "penitik",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pənitik/",
+    "sense_id": 19478,
+    "definition_ms": "(percussion) beaters",
+    "definition_en": "(percussion) beaters"
+  },
+  {
+    "id": 19479,
+    "headword": "penombol",
+    "search_normalized": "penombol",
+    "part_of_speech": "KATA NAMA",
+    "ipa": "/pənombol/",
+    "sense_id": 19479,
+    "definition_ms": "tutup, selimut",
+    "definition_en": "cover"
+  },
+  {
+    "id": 19480,
+    "headword": "pepekar",
+    "search_normalized": "pepekar",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pəpəkar/",
+    "sense_id": 19480,
+    "definition_ms": "unfurl",
+    "definition_en": "to unfurl"
+  },
+  {
+    "id": 19481,
+    "headword": "pepekar-pepekar",
+    "search_normalized": "pepekarpepekar",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pəpəkar-pəpəkar/",
+    "sense_id": 19481,
+    "definition_ms": "unfurl repeatedly",
+    "definition_en": "to unfurl repeatedly"
+  },
+  {
+    "id": 19482,
+    "headword": "pepelua'",
+    "search_normalized": "pepelua",
+    "part_of_speech": "KATA BILANGAN",
+    "ipa": "/pəpəluaʔ/",
+    "sense_id": 19482,
+    "definition_ms": "gemar keluar",
+    "definition_en": "prone to go out"
+  },
+  {
+    "id": 19483,
+    "headword": "pepule'",
+    "search_normalized": "pepule",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pəpuləʔ/",
+    "sense_id": 19483,
+    "definition_ms": "return (s.thing)",
+    "definition_en": "return (s.thing)"
+  },
+  {
+    "id": 19484,
+    "headword": "perlu",
+    "search_normalized": "perlu",
+    "part_of_speech": "KATA NAMA",
+    "ipa": "/pərlu/",
+    "sense_id": 19484,
+    "definition_ms": "mesti, perlu",
+    "definition_en": "must"
+  },
+  {
+    "id": 19485,
+    "headword": "pesa'",
+    "search_normalized": "pesa",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pəsaʔ/",
+    "sense_id": 19485,
+    "definition_ms": "pecah, patah",
+    "definition_en": "to break"
+  },
+  {
+    "id": 19486,
+    "headword": "pesi",
+    "search_normalized": "pesi",
+    "part_of_speech": "KATA NAMA",
+    "ipa": "/pəsi/",
+    "sense_id": 19486,
+    "definition_ms": "fishing rod",
+    "definition_en": "fishing rod"
+  },
+  {
+    "id": 19487,
+    "headword": "pesoyo",
+    "search_normalized": "pesoyo",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pəsojo/",
+    "sense_id": 19487,
+    "definition_ms": "percaya",
+    "definition_en": "to believe, to trust"
+  },
+  {
+    "id": 19488,
+    "headword": "pesuk-pesuk",
+    "search_normalized": "pesukpesuk",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pəsuk-pəsuk/",
+    "sense_id": 19488,
+    "definition_ms": "continue getting thinner",
+    "definition_en": "to continue getting thinner"
+  },
+  {
+    "id": 19489,
+    "headword": "pesuuk",
+    "search_normalized": "pesuuk",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pəsuːk/",
+    "sense_id": 19489,
+    "definition_ms": "go underneath",
+    "definition_en": "to go underneath"
+  },
+  {
+    "id": 19490,
+    "headword": "peteketa",
+    "search_normalized": "peteketa",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pətəkəta/",
+    "sense_id": 19490,
+    "definition_ms": "boleh, bawa, bertentangan",
+    "definition_en": "able to bring (s.thing) across"
+  },
+  {
+    "id": 19491,
+    "headword": "peteko",
+    "search_normalized": "peteko",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pətəko/",
+    "sense_id": 19491,
+    "definition_ms": "hantar",
+    "definition_en": "send (s.thing)"
+  },
+  {
+    "id": 19492,
+    "headword": "petingkoo'",
+    "search_normalized": "petingkoo",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pətiŋkoːʔ/",
+    "sense_id": 19492,
+    "definition_ms": "set (s.thing) down",
+    "definition_en": "set (s.thing) down"
+  },
+  {
+    "id": 19442,
+    "headword": "petogor",
+    "search_normalized": "petogor",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pətogor/",
+    "sense_id": 19442,
+    "definition_ms": "menegakkan",
+    "definition_en": "to stand perpendicular, to erect"
+  },
+  {
+    "id": 19493,
+    "headword": "pian",
+    "search_normalized": "pian",
+    "part_of_speech": "KATA NAMA",
+    "ipa": "/pian/",
+    "sense_id": 19493,
+    "definition_ms": "bagaimana",
+    "definition_en": "how"
+  },
+  {
+    "id": 19494,
+    "headword": "pikir",
+    "search_normalized": "pikir",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pikir/",
+    "sense_id": 19494,
+    "definition_ms": "fikir, sangka",
+    "definition_en": "to think"
+  },
+  {
+    "id": 19495,
+    "headword": "pikiran",
+    "search_normalized": "pikiran",
+    "part_of_speech": "KATA NAMA",
+    "ipa": "/pikiran/",
+    "sense_id": 19495,
+    "definition_ms": "idea, opinion",
+    "definition_en": "idea, opinion"
+  },
+  {
+    "id": 19496,
+    "headword": "piko",
+    "search_normalized": "piko",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/piko/",
+    "sense_id": 19496,
+    "definition_ms": "ganda, biak",
+    "definition_en": "to multiply"
+  },
+  {
+    "id": 19377,
+    "headword": "pinelua'",
+    "search_normalized": "pinelua",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pinəluaʔ/",
+    "sense_id": 19377,
+    "definition_ms": "dikeluarkan, dilepaskan",
+    "definition_en": "to be taken out, to be removed"
+  },
+  {
+    "id": 19377,
+    "headword": "pinelua'",
+    "search_normalized": "pinelua",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pinəluaʔ/",
+    "sense_id": 20416,
+    "definition_ms": "dibebaskan",
+    "definition_en": "to be released, set free"
+  },
+  {
+    "id": 19497,
+    "headword": "pinene'",
+    "search_normalized": "pinene",
+    "part_of_speech": "KATA NAMA",
+    "ipa": "/pinənəʔ/",
+    "sense_id": 19497,
+    "definition_ms": "chosen",
+    "definition_en": "chosen"
+  },
+  {
+    "id": 19378,
+    "headword": "pineteko",
+    "search_normalized": "pineteko",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pinətəko/",
+    "sense_id": 19378,
+    "definition_ms": "disampaikan, dihantar",
+    "definition_en": "to be sent"
+  },
+  {
+    "id": 19498,
+    "headword": "pinisak-pisak",
+    "search_normalized": "pinisakpisak",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pinisak-pisak/",
+    "sense_id": 19498,
+    "definition_ms": "repeatedly smashed",
+    "definition_en": "repeatedly smashed"
+  },
+  {
+    "id": 19379,
+    "headword": "pinum",
+    "search_normalized": "pinum",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pinum/",
+    "sense_id": 19379,
+    "definition_ms": "meminumkan",
+    "definition_en": "to give drink to someone"
+  },
+  {
+    "id": 19499,
+    "headword": "pisak",
+    "search_normalized": "pisak",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pisak/",
+    "sense_id": 19499,
+    "definition_ms": "hancur, lenyek",
+    "definition_en": "to crush"
+  },
+  {
+    "id": 19500,
+    "headword": "pisak-pisak",
+    "search_normalized": "pisakpisak",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pisak-pisak/",
+    "sense_id": 19500,
+    "definition_ms": "crushed repeatedly",
+    "definition_en": "to be crushed repeatedly"
+  },
+  {
+    "id": 19501,
+    "headword": "pitu'",
+    "search_normalized": "pitu",
+    "part_of_speech": "KATA BILANGAN",
+    "ipa": "/pituʔ/",
+    "sense_id": 19501,
+    "definition_ms": "tujuh",
+    "definition_en": "seven years"
+  },
+  {
+    "id": 19502,
+    "headword": "poon",
+    "search_normalized": "poon",
+    "part_of_speech": "KATA NAMA",
+    "ipa": "/poːn/",
+    "sense_id": 19502,
+    "definition_ms": "pokok, kayu",
+    "definition_en": "tree"
+  },
+  {
+    "id": 19503,
+    "headword": "popo'",
+    "search_normalized": "popo",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/popoʔ/",
+    "sense_id": 19503,
+    "definition_ms": "pijak",
+    "definition_en": "to tread (grain)"
+  },
+  {
+    "id": 19380,
+    "headword": "posok",
+    "search_normalized": "posok",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/posok/",
+    "sense_id": 19380,
+    "definition_ms": "masuk",
+    "definition_en": "to enter"
+  },
+  {
+    "id": 19381,
+    "headword": "poyo",
+    "search_normalized": "poyo",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/pojo/",
+    "sense_id": 19381,
+    "definition_ms": "membesarkan",
+    "definition_en": "to enlarge"
+  },
+  {
+    "id": 19504,
+    "headword": "pu'",
+    "search_normalized": "pu",
+    "part_of_speech": "KATA NAMA",
+    "ipa": "/puʔ/",
+    "sense_id": 19504,
+    "definition_ms": "forty",
+    "definition_en": "forty"
+  },
+  {
+    "id": 19505,
+    "headword": "pule'",
+    "search_normalized": "pule",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/puləʔ/",
+    "sense_id": 19505,
+    "definition_ms": "ramai",
+    "definition_en": "many are drinking"
+  },
+  {
+    "id": 19506,
+    "headword": "pungkau",
+    "search_normalized": "pungkau",
+    "part_of_speech": "KATA NAMA",
+    "ipa": "/puŋkaw/",
+    "sense_id": 19506,
+    "definition_ms": "jaga, bangun",
+    "definition_en": "to awake"
+  },
+  {
+    "id": 19507,
+    "headword": "pusing",
+    "search_normalized": "pusing",
+    "part_of_speech": "KATA NAMA",
+    "ipa": "/pusiŋ/",
+    "sense_id": 19507,
+    "definition_ms": "turn",
+    "definition_en": "turn"
+  },
+  {
+    "id": 19508,
+    "headword": "pute'",
+    "search_normalized": "pute",
+    "part_of_speech": "KATA KERJA",
+    "ipa": "/putəʔ/",
+    "sense_id": 19508,
+    "definition_ms": "putih",
+    "definition_en": "white"
+  }
+]

@@ -9,7 +9,7 @@ conn = sqlite3.connect('dictionary.db')
 c = conn.cursor()
 
 print("==========================================================")
-print("       COMPREHENSIVE KAMUS BAJAU SAMAH DB AUDIT           ")
+print("       COMPREHENSIVE KAMUS BAJAU SAMA DB AUDIT           ")
 print("==========================================================\n")
 
 # 1. Check Entries

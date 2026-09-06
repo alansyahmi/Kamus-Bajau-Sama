@@ -74,7 +74,7 @@ export default function ExampleBox({ senses, currentHeadword }: ExampleBoxProps)
         return (
           <span
             key={idx}
-            className="font-bold text-amber-700 dark:text-amber-400 underline decoration-amber-400/60 underline-offset-4 decoration-2"
+            className="font-bold text-amber-700 underline decoration-amber-400/60 underline-offset-4 decoration-2"
           >
             {tok}
           </span>
@@ -87,7 +87,7 @@ export default function ExampleBox({ senses, currentHeadword }: ExampleBoxProps)
           key={idx}
           href={`/kamus/${encodeURIComponent(cleaned)}`}
           title={`Lihat maksud "${cleaned}"`}
-          className="hover:text-amber-700 dark:hover:text-amber-400 hover:underline underline-offset-2 transition-colors inline-block"
+          className="hover:text-amber-700 hover:underline underline-offset-2 transition-colors inline-block"
         >
           {tok}
         </Link>
@@ -97,7 +97,7 @@ export default function ExampleBox({ senses, currentHeadword }: ExampleBoxProps)
 
   return (
     <section className="flex flex-col gap-3">
-      <h2 className="font-body text-[22px] font-medium text-slate-900 dark:text-stone-100 tracking-tightest">
+      <h2 className="font-body text-[22px] font-medium text-slate-900 tracking-tightest">
         {t.entry_examples}
       </h2>
       <div className="flex flex-col gap-4">
@@ -109,11 +109,11 @@ export default function ExampleBox({ senses, currentHeadword }: ExampleBoxProps)
             <div
               key={currentId}
               className={`flex flex-col gap-1 p-3 sm:p-3.5 -mx-1 sm:-mx-3.5 rounded-2xl transition-all duration-200 ${
-                isPlaying ? 'bg-amber-50/80 dark:bg-amber-950/40 ring-1 ring-amber-200 dark:ring-amber-800' : 'hover:bg-sand-50/50 dark:hover:bg-stone-800/40'
+                isPlaying ? 'bg-amber-50/80 ring-1 ring-amber-200' : 'hover:bg-sand-50/50'
               }`}
             >
               <div className="flex items-start justify-between gap-3">
-                <p className="font-heading italic text-[17px] sm:text-[18px] text-slate-900 dark:text-stone-100 mb-1 leading-snug">
+                <p className="font-heading italic text-[17px] sm:text-[18px] text-slate-900 mb-1 leading-snug">
                   &ldquo;{renderSentenceWithLinks(ex.sentenceBajau, ex.highlightWord)}&rdquo;
                 </p>
                 <button
@@ -123,7 +123,7 @@ export default function ExampleBox({ senses, currentHeadword }: ExampleBoxProps)
                   aria-label="Dengar sebutan contoh ayat"
                   className={`w-10 h-10 flex items-center justify-center shrink-0 rounded-full transition-all hover:scale-105 active:scale-95 ${
                     isPlaying
-                      ? 'text-amber-600 bg-amber-100 dark:bg-amber-900 scale-105'
+                      ? 'text-amber-600 bg-amber-100 scale-105'
                       : 'text-slate-400 hover:text-slate-700 bg-slate-100/60 hover:bg-slate-200/70'
                   }`}
                 >
@@ -132,22 +132,22 @@ export default function ExampleBox({ senses, currentHeadword }: ExampleBoxProps)
               </div>
 
               {language === 'en' && (
-                <p className="font-body text-[15px] text-slate-800 dark:text-stone-300">
+                <p className="font-body text-[15px] text-slate-800">
                   {ex.sentenceEn || ex.sentenceMs}
                 </p>
               )}
 
               {language === 'ms' && (
-                <p className="font-body text-[15px] text-slate-800 dark:text-stone-300">
+                <p className="font-body text-[15px] text-slate-800">
                   {ex.sentenceMs}
                 </p>
               )}
 
               {language === 'bj' && (
                 <>
-                  <p className="font-body text-[15px] text-slate-800 dark:text-stone-300">{ex.sentenceMs}</p>
+                  <p className="font-body text-[15px] text-slate-800">{ex.sentenceMs}</p>
                   {ex.sentenceEn && (
-                    <p className="font-body text-[14px] text-slate-400 dark:text-stone-500">{ex.sentenceEn}</p>
+                    <p className="font-body text-[14px] text-slate-400">{ex.sentenceEn}</p>
                   )}
                 </>
               )}

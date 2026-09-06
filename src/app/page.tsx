@@ -55,11 +55,6 @@ export default function HomePage() {
           <AlphabetBrowser />
         </div>
       </section>
-
-      {/* Bottom Footer */}
-      <footer className="mt-16 pt-6 text-center md:text-left text-[12px] text-slate-400 font-body border-t border-slate-200/40">
-        <p>© {new Date().getFullYear()} Kamus Bajau Samah — Inisiatif Pemeliharaan Warisan Bahasa Terbuka.</p>
-      </footer>
     </main>
   );
 }

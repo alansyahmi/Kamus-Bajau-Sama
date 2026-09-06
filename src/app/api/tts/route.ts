@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { toTtsPhoneticSpelling } from '@/lib/tts/speechService';
-import { EdgeTTS } from 'edge-tts-universal';
+import path from 'path';
 
-export const runtime = 'edge';
+export const runtime = process.env.NODE_ENV === 'development' ? 'nodejs' : 'edge';
 
 // Edge Neural Voices mapping prioritizing Austronesian & Glottal models (Tagalog, Javanese, Sundanese, Indonesian, Malay, Arabic)
 const NEURAL_VOICES = {
@@ -34,19 +34,45 @@ export async function GET(req: NextRequest) {
   const spokenText = toTtsPhoneticSpelling(text, ipa);
 
   try {
-    const tts = new EdgeTTS(spokenText, voice, {
-      rate: rate || '-5%',
-      pitch: '+0Hz',
-    });
-    const res = await tts.synthesize();
-    const arrayBuffer = await res.audio.arrayBuffer();
+    if (process.env.NODE_ENV === 'development') {
+      const { execFile } = require('child_process');
+      const { promisify } = require('util');
+      const execFileAsync = promisify(execFile);
 
-    return new NextResponse(arrayBuffer, {
-      headers: {
-        'Content-Type': 'audio/mpeg',
-        'Cache-Control': 'public, max-age=86400, stale-while-revalidate=604800',
-      },
-    });
+      const scriptPath = path.resolve(process.cwd(), 'scripts', 'generate-tts.js');
+      const { stdout } = await execFileAsync(
+        process.execPath,
+        [scriptPath, spokenText, voice, rate || '-5%'],
+        {
+          encoding: 'buffer',
+          maxBuffer: 10 * 1024 * 1024,
+          timeout: 10000,
+          cwd: process.cwd(),
+        }
+      );
+
+      return new NextResponse(stdout as unknown as BodyInit, {
+        headers: {
+          'Content-Type': 'audio/mpeg',
+          'Cache-Control': 'public, max-age=86400, stale-while-revalidate=604800',
+        },
+      });
+    } else {
+      const { EdgeTTS } = require('edge-tts-universal');
+      const tts = new EdgeTTS(spokenText, voice, {
+        rate: rate || '-5%',
+        pitch: '+0Hz',
+      });
+      const res = await tts.synthesize();
+      const arrayBuffer = await res.audio.arrayBuffer();
+
+      return new NextResponse(arrayBuffer, {
+        headers: {
+          'Content-Type': 'audio/mpeg',
+          'Cache-Control': 'public, max-age=86400, stale-while-revalidate=604800',
+        },
+      });
+    }
   } catch (error: any) {
     console.error('Error generating Edge Neural TTS audio:', error);
     return NextResponse.json(
@@ -58,4 +84,6 @@ export async function GET(req: NextRequest) {
     );
   }
 }
+
+
 

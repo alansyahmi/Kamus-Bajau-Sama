@@ -41,7 +41,7 @@ export default function Footer() {
               <div className="md:col-span-8 flex flex-col gap-4">
                 <div className="flex items-center gap-3">
                   <Image
-                    src="/icon.png"
+                    src="/minimalist-logo-transparent.png"
                     alt="Kamus Bajau Sama Logo"
                     width={36}
                     height={36}
@@ -82,6 +82,14 @@ export default function Footer() {
                       className="text-slate-300 hover:text-white transition-colors inline-flex items-center gap-1.5 group"
                     >
                       <span>{t.footer_nav_about}</span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/rujukan"
+                      className="text-slate-300 hover:text-white transition-colors inline-flex items-center gap-1.5 group"
+                    >
+                      <span>Rujukan &amp; Bibliografi</span>
                     </Link>
                   </li>
                   <li>

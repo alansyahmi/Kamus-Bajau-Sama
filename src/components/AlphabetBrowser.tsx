@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { BookA, X } from 'lucide-react';
 import { useLanguage } from '../lib/i18n/LanguageContext';
+import { formatPartOfSpeech } from '../lib/i18n/translations';
 
 const LETTERS = ['A', 'B', 'D', 'G', 'I', 'K', 'L', 'M', 'N', 'NG', 'O', 'P', 'R', 'S', 'T', 'U', 'W', 'Y'];
 
@@ -83,7 +84,7 @@ export default function AlphabetBrowser() {
                 <p className="font-body text-[14px] text-slate-400 py-8 text-center">Memuatkan...</p>
               ) : letterWords.length === 0 ? (
                 <p className="font-body text-[14px] text-slate-400 py-8 text-center">
-                  Tiada perkataan bermula dengan huruf &ldquo;{selectedLetter}&rdquo; didokumentasikan lagi.
+                  Tiada perkataan bermula dengan huruf &ldquo;{selectedLetter}&rdquo; didokumentésénkan lagi.
                 </p>
               ) : (
                 letterWords.map((item) => {
@@ -91,10 +92,10 @@ export default function AlphabetBrowser() {
                     language === 'en'
                       ? (item.definitionEn || item.definitionMs)
                       : language === 'ms'
-                      ? item.definitionMs
-                      : item.definitionEn
-                      ? `${item.definitionMs} (${item.definitionEn})`
-                      : item.definitionMs;
+                        ? item.definitionMs
+                        : item.definitionEn
+                          ? `${item.definitionMs} (${item.definitionEn})`
+                          : item.definitionMs;
 
                   return (
                     <Link
@@ -111,7 +112,7 @@ export default function AlphabetBrowser() {
                           {def}
                         </span>
                         <span className="font-body text-[10px] font-semibold bg-white border border-slate-200 text-slate-600 px-1.5 py-0.5 rounded">
-                          {item.partOfSpeech.split('/')[0].trim()}
+                          {formatPartOfSpeech(item.partOfSpeech, language, true)}
                         </span>
                       </div>
                     </Link>
@@ -126,7 +127,7 @@ export default function AlphabetBrowser() {
                 onClick={() => setSelectedLetter(null)}
                 className="font-body text-[13px] font-medium bg-black text-white px-5 py-2 rounded-full hover:bg-zinc-800 transition-all"
               >
-                Tutup
+                {language === 'en' ? 'Close' : 'Tutup'}
               </button>
             </div>
           </div>

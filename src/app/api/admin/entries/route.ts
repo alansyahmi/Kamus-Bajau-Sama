@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { verifyAdminSession, unauthorizedResponse } from '@/lib/auth/adminAuth';
 import { db } from '@/lib/db';
-import { entries, senses, examples, affixes, dialects, sources } from '@/lib/db/schema';
+import { entries, senses, examples, affixes, dialects, thesaurus, sources, categories, entryCategories } from '@/lib/db/schema';
 import { normalizeQuery } from '@/lib/search/searchService';
 import { eq, like, desc, sql } from 'drizzle-orm';
 
@@ -57,7 +57,10 @@ export async function GET(req: NextRequest) {
       const entrySenses = db.select().from(senses).where(eq(senses.entryId, entry.id)).all();
       const entryAffixes = db.select().from(affixes).where(eq(affixes.entryId, entry.id)).all();
       const entryDialects = db.select().from(dialects).where(eq(dialects.entryId, entry.id)).all();
+      const entryThesaurus = db.select().from(thesaurus).where(eq(thesaurus.entryId, entry.id)).all();
       const entrySources = db.select().from(sources).where(eq(sources.entryId, entry.id)).all();
+      const entryCatLinks = db.select().from(entryCategories).where(eq(entryCategories.entryId, entry.id)).all();
+      const categoryIds = entryCatLinks.map(c => c.categoryId);
 
       const sensesWithExamples = entrySenses.map(s => {
         const senseExamples = db.select().from(examples).where(eq(examples.senseId, s.id)).all();
@@ -69,6 +72,8 @@ export async function GET(req: NextRequest) {
         senses: sensesWithExamples,
         affixes: entryAffixes,
         dialects: entryDialects,
+        thesaurus: entryThesaurus,
+        categoryIds,
         sources: entrySources,
       };
     });
@@ -101,6 +106,8 @@ export async function POST(req: NextRequest) {
       senses: rawSenses, 
       affixes: rawAffixes, 
       dialects: rawDialects, 
+      thesaurus: rawThesaurus,
+      categoryIds: rawCategoryIds,
       sources: rawSources,
       // legacy fallback fields
       definitionMs, 
@@ -215,7 +222,36 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    // 5. Insert Sources
+    // 5. Insert Thesaurus
+    const createdThesaurus: any[] = [];
+    if (Array.isArray(rawThesaurus)) {
+      for (const th of rawThesaurus) {
+        if (th.relatedHeadword?.trim()) {
+          const insertedTh = db.insert(thesaurus).values({
+            entryId: newEntry.id,
+            relatedHeadword: th.relatedHeadword.trim(),
+            relationNote: th.relationNote?.trim() || null,
+          }).returning().get();
+          createdThesaurus.push(insertedTh);
+        }
+      }
+    }
+
+    // 6. Insert Categories
+    const createdCategoryIds: number[] = [];
+    if (Array.isArray(rawCategoryIds)) {
+      for (const catId of rawCategoryIds) {
+        if (typeof catId === 'number') {
+          db.insert(entryCategories).values({
+            entryId: newEntry.id,
+            categoryId: catId,
+          }).run();
+          createdCategoryIds.push(catId);
+        }
+      }
+    }
+
+    // 7. Insert Sources
     const createdSources: any[] = [];
     if (Array.isArray(rawSources) && rawSources.length > 0) {
       for (const src of rawSources) {
@@ -245,6 +281,8 @@ export async function POST(req: NextRequest) {
       senses: createdSenses,
       affixes: createdAffixes,
       dialects: createdDialects,
+      thesaurus: createdThesaurus,
+      categoryIds: createdCategoryIds,
       sources: createdSources,
     };
 

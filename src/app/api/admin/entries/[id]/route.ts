@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { verifyAdminSession, unauthorizedResponse } from '@/lib/auth/adminAuth';
 import { db } from '@/lib/db';
-import { entries, senses, examples, affixes, dialects, sources } from '@/lib/db/schema';
+import { entries, senses, examples, affixes, dialects, thesaurus, sources, categories, entryCategories } from '@/lib/db/schema';
 import { normalizeQuery } from '@/lib/search/searchService';
 import { toTtsPhoneticSpelling } from '@/lib/tts/speechService';
 import { eq } from 'drizzle-orm';
@@ -37,7 +37,10 @@ export async function GET(req: NextRequest, { params }: { params: { id: string }
     const entrySenses = db.select().from(senses).where(eq(senses.entryId, id)).all();
     const entryAffixes = db.select().from(affixes).where(eq(affixes.entryId, id)).all();
     const entryDialects = db.select().from(dialects).where(eq(dialects.entryId, id)).all();
+    const entryThesaurus = db.select().from(thesaurus).where(eq(thesaurus.entryId, id)).all();
     const entrySources = db.select().from(sources).where(eq(sources.entryId, id)).all();
+    const entryCatLinks = db.select().from(entryCategories).where(eq(entryCategories.entryId, id)).all();
+    const categoryIds = entryCatLinks.map(c => c.categoryId);
 
     const sensesWithExamples = entrySenses.map(s => {
       const senseExamples = db.select().from(examples).where(eq(examples.senseId, s.id)).all();
@@ -49,6 +52,8 @@ export async function GET(req: NextRequest, { params }: { params: { id: string }
       senses: sensesWithExamples,
       affixes: entryAffixes,
       dialects: entryDialects,
+      thesaurus: entryThesaurus,
+      categoryIds,
       sources: entrySources,
     });
   } catch (error) {
@@ -126,7 +131,18 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
 
   try {
     const body = await req.json();
-    const { headword, partOfSpeech, ipa, audioUrl, senses: updatedSenses, affixes: updatedAffixes, dialects: updatedDialects, sources: updatedSources } = body;
+    const { 
+      headword, 
+      partOfSpeech, 
+      ipa, 
+      audioUrl, 
+      senses: updatedSenses, 
+      affixes: updatedAffixes, 
+      dialects: updatedDialects, 
+      thesaurus: updatedThesaurus,
+      categoryIds: updatedCategoryIds,
+      sources: updatedSources 
+    } = body;
 
     if (!headword || !partOfSpeech) {
       return NextResponse.json({ error: 'Kata dasar dan golongan kata wajib diisi.' }, { status: 400 });
@@ -245,7 +261,34 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
       }
     }
 
-    // 5. Update sources if provided
+    // 5. Update thesaurus if provided
+    if (Array.isArray(updatedThesaurus)) {
+      db.delete(thesaurus).where(eq(thesaurus.entryId, id)).run();
+      for (const th of updatedThesaurus) {
+        if (th.relatedHeadword?.trim()) {
+          db.insert(thesaurus).values({
+            entryId: id,
+            relatedHeadword: th.relatedHeadword.trim(),
+            relationNote: th.relationNote?.trim() || null,
+          }).run();
+        }
+      }
+    }
+
+    // 6. Update categories if provided
+    if (Array.isArray(updatedCategoryIds)) {
+      db.delete(entryCategories).where(eq(entryCategories.entryId, id)).run();
+      for (const catId of updatedCategoryIds) {
+        if (typeof catId === 'number') {
+          db.insert(entryCategories).values({
+            entryId: id,
+            categoryId: catId,
+          }).run();
+        }
+      }
+    }
+
+    // 7. Update sources if provided
     if (Array.isArray(updatedSources)) {
       db.delete(sources).where(eq(sources.entryId, id)).run();
       for (const src of updatedSources) {

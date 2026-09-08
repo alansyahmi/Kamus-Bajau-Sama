@@ -247,29 +247,29 @@ const TRANSLATIONS = {
     entry_suggest_btn: '+ Cadang Maklumat',
     about_kicker: 'INISIATIF PEMELIHARAAN WARISAN BAHASA',
     about_title: 'Memelihara Warisan Lisan,<br>Memperkasa Penutur <em>Generasi Hadapan.</em>',
-    about_lead: '<strong>Kamus Bajau Sama</strong> ialah sebuah sumber leksikal digital terbuka yang diasaskan untuk mendokumentasikan, meraikan dan memperluaskan kosa kata bahasa Bajau Sama agar kekal hidup dan mudah diakses oleh semua lapisan masyarakat.',
+    about_lead: '<strong>Kamus Bajau Sama</strong> ialah sebuah sumber leksikal digital terbuka yang diasaskan untuk mendokumentésénkan, meraikan dan memperluaskan kosa kata bahasa Bajau Sama agar kekal hidup dan mudah diakses oleh semua lapisan masyarakat.',
     about_cta_title: 'Sumbangkan Pengetahuan Anda',
     about_cta_desc: 'Kamus ini berkembang seiring dengan sumbangan anda. Jika anda mengetahui perkataan, sebutan, dialek setempat atau contoh ayat baharu, kongsi bersama kami untuk dinilai dan dimasukkan ke dalam pangkalan data rasmi.',
     about_cta_btn: '+ Cadang Perkataan Sekarang',
   },
   bj: {
     nav_glosari: 'Glosari', nav_cadang: 'Sadang', nav_tentang: 'Pasal',
-    hero_desc: "Mulai memia, atau sadang pekataan bau untuk ngeluas kosa kata kamus tu.",
+    hero_desc: "Mulai memia, atau sadang pekotoon bau untuk ngeluas kosa kata kamus tu.",
     search_label: 'BAR PEMIAAN',
-    search_placeholder: "Pemia pekataan diom ling Sama, Melayu, atau Inggeris.",
-    search_hint: 'Pesadangan akan pelua\' ta\' mitu mun nitaip pekataan.',
+    search_placeholder: "Pemia pekotoon diom ling Sama, Melayu, atau Inggeris.",
+    search_hint: 'Pesadangan akan pelua\' ta\' mitu mun nitaip pekotoon.',
     btn_clear: 'Ala\'', btn_search: 'Pemia', trending_label: 'Terending:',
-    nav_search_placeholder: 'Pemia pekataan.',
+    nav_search_placeholder: 'Pemia pekotoon.',
     entry_affixes: 'Turunan Sipitan', entry_dialects: 'Variasi Daerah',
     entry_definition: 'Definisi', entry_examples: 'Sonto Pegunoon',
     entry_source: '<strong>Poon:</strong> Informan Lisan (Kota Belud) \u2022 Nisimak le\' Penutur Jati',
     entry_suggest_btn: '+ Sadang Maklumat',
-    about_kicker: 'INISIATIF PEMELOROON WARISAN LING-TI',
-    about_title: 'Meloro Warisan Lisan,<br>Memperkasa Pemakai <em>Generasi Baru.</em>',
-    about_lead: "<strong>Kamus Bajau Sama</strong> iono po'on leksikal digital binuka' yang niasas untuk mendokumentasi, mera\'i ko' mopoluasan kosa kata bahasa Bajau Sama supaya kekal hidup bo' terbuka kepada alam masyarakat.",
+    about_kicker: 'INISIATIF PEMELIOROON WARISAN LING-TI',
+    about_title: 'Melioro Warisan Lisan,<br>Mepegaga Pemakai <em>Generasi Bau.</em>',
+    about_lead: "<strong>Kamus Bajau Sama</strong> iono poon leksikal digital tebuka' yang niasas untuk mendokumentésén, mera\'i ko' peluas kosokoto basa Sama supaya kekal ellum ko' tebuka' ta' sekemon masarakat.",
     about_cta_title: 'Sumbangin Pengeratian-nu',
-    about_cta_desc: "Kamus tu bekembang sebia engko' sumbangan-nu. Mun ngerati-nu pekataan, sebutan, lugat setungan atau sonto ayat bau, kongsino engkami untuk nirego ko' niposok diom data rasmi.",
-    about_cta_btn: '+ Sadang Pekataan Betiu',
+    about_cta_desc: "Kamus tu bekembang sebia engko' sumbangan-nu. Mun ngerati-nu pekotoon, sebutan, lugat setungan atau sonto ayat bau, kongsino engkami untuk nirego ko' niposok diom data rasmi.",
+    about_cta_btn: '+ Sadang Pekotoon Betiu',
   },
   en: {
     nav_glosari: 'Glossary', nav_cadang: 'Suggest', nav_tentang: 'About',
@@ -295,7 +295,7 @@ const TRANSLATIONS = {
 // Hero title per-lang HTML (stored separately due to rich markup)
 const HERO_TITLE = {
   ms: 'Bersama <strong>Menerokai</strong><br>dan <strong>Memelihara</strong><br>Jiwa Bangsa <em>Kita.</em>',
-  bj: "Somo-somo <strong>Ngeneroka</strong><br>ko' <strong>Meloro</strong><br>Jiwo Bangso <em>Kiti.</em>",
+  bj: "Somo-somo <strong>Ngeneroka</strong><br>ko' <strong>Melioro</strong><br>Jiwo Bangso <em>Kiti.</em>",
   en: 'Together <strong>Exploring</strong><br>and <strong>Preserving</strong><br>the Soul of Our <em>People.</em>',
 };
 
@@ -517,7 +517,7 @@ function renderEntry(item) {
               <span class="affix-sep">–</span>
               <span class="affix-desc">${a.desc}</span>
             </div>
-            <span class="affix-badge theoretical-tag" title="Bentuk morfologi produktif (belum didokumentasikan sebagai entri bertulis tersendiri)">* Bentuk Teoretis</span>
+            <span class="affix-badge theoretical-tag" title="Bentuk morfologi produktif (belum didokumentésénkan sebagai entri bertulis tersendiri)">* Bentuk Teoretis</span>
           </li>
         `;
       }
@@ -542,7 +542,7 @@ function renderEntry(item) {
         <a href="#" class="thesaurus-pill" onclick="quickSearch('${t.word}'); return false;">${t.word} <span class="thesaurus-sub">(${t.sub})</span></a>
       `).join('');
     } else {
-      thesaurusItems.innerHTML = `<span style="font-size:13px; color:#94a3b8;">Tiada kata berkaitan didokumentasikan lagi.</span>`;
+      thesaurusItems.innerHTML = `<span style="font-size:13px; color:#94a3b8;">Tiada kata berkaitan didokumentésénkan lagi.</span>`;
     }
   }
 }
@@ -686,7 +686,7 @@ function openTentangModal() {
   body.innerHTML = `
     <div style="display:flex; flex-direction:column; gap:12px; font-size:14.5px; color:#334155; line-height:1.65;">
       <p>
-        <strong>Kamus Bajau Sama</strong> ialah sebuah inisiatif pemeliharaan warisan bahasa dan dokumentasi leksikal digital terbuka untuk bahasa Bajau Sama di Sabah.
+        <strong>Kamus Bajau Sama</strong> ialah sebuah inisiatif pemeliharaan warisan bahasa dan dokumentésén leksikal digital terbuka untuk bahasa Bajau Sama di Sabah.
       </p>
       <p>
         Projek ini menghubungkan para penutur jati, komuniti keluarga, penyelidik dan generasi masa hadapan merentasi pelbagai daerah termasuk Kota Belud, Tuaran, Papar, Kawang dan kawasan pesisir Sabah.
@@ -695,7 +695,7 @@ function openTentangModal() {
         <strong>Matlamat Utama:</strong>
         <ul style="margin-top:6px; padding-left:18px; display:flex; flex-direction:column; gap:4px;">
           <li>Memudahkan pencarian kosa kata secara tepat dan pantas.</li>
-          <li>Mendokumentasikan variasi dialek daerah dan terbitan imbuhan.</li>
+          <li>Mendokumentésénkan variasi dialek daerah dan terbitan imbuhan.</li>
           <li>Menyediakan ruang sumbangan terbuka yang disemak secara teliti.</li>
         </ul>
       </div>

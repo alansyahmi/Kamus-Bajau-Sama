@@ -1,0 +1,1209 @@
+
+==================== PAGE 150 ====================
+ 
+ 
+117
+a newly introduced participant in the first clause, then subsequently referred to using the 
+demonstrative e: 
+ 
+(4.66) …ai      labu-an=ni     
+sinsim  kawin=ni    
+diam  boo'…. 
+PERF  fall-CAUS=3s.I 
+ring 
+wedding=3s.I 
+inside bamboo 
+ 
+Waktu  puteri   siari          e         p-in-andi       ai     
+ngetek   sinsim   e 
+ 
+when 
+princess youngest  DEM  -PASS-bathe PERF   tap 
+ ring      DEM 
+ 
+labu’ 
+ta’ 
+dasar. 
+fall 
+PREP floor 
+‘…he dropped his wedding ring into the bamboo (receptacle)…. When the young princess 
+was being bathed, the ring made a tapping sound as it dropped to the ground.’  (sultan 
+salaudin 040-041) 
+ 
+ 
+The demonstratives tu and e can modify a personal name or a personal pronoun, though this is 
+less common than their use with common nouns.  When a first person pronoun (singular or plural) is 
+modified by a demonstrative, it is always the proximal demonstrative tu, as might be expected since 
+the speaker(s) refer to themselves.  With a second or third person pronoun, it seems that the use of the 
+demonstrative (whether tu or e) can have a referential, locational, and/or emphatic function.  In (4.67) 
+below, the use of the demonstrative tu with the second person pronoun is most likely emphatic: 
+ 
+(4.67) Sangsuriang  
+men-dule-an  
+Situmang, "Kau    tu 
+ 
+pe-malas     bana.” 
+PN 
+ 
+CAUS-anger 
+PN 
+      2s.II   DEM  
+AGT-lazy   very 
+‘Sangsuriang scolded Situmang, “You are very lazy (dog)!’  (biduk 065) 
+ 
+ 
+The demonstratives tu and e have a temporal use as well, where e ‘that’ refers to some time in the 
+past, whereas tu ‘this’ refers to the present time.  Examples include: ellaw e ‘that day; that time’; and 
+ellaw tu  ‘today; this day’. 
+
+
+==================== PAGE 151 ====================
+ 
+ 
+118
+4.4.3.2 Deictic adverbs of location 
+Each of the demonstrative pronouns in Table 4.4 above has an adverbial counterpart to denote 
+location, formed by the addition of m- to the pronoun form.  The deictic adverbs are shown in Table 
+4.5 below. 
+ 
+ 
+Table 4.5  The deictic adverbs 
+Deictic adverb of location 
+Derived from: 
+Meaning 
+mitu 
+itu (‘this’) 
+‘here’ 
+me 
+e (‘that’) 
+‘there’ 
+mu’ 
+u’ (‘that over there’) 
+‘yonder; over there’ 
+ 
+ 
+ 
+Adverbial deictics of location often precede a clause-final PP.  Since they are never preceded by 
+a locative preposition such as ta’, I analyze them as adverbs rather than a type of locative noun 
+(which usually occurs with a locative preposition).  Even so, these deictic adverbs can occur 
+following prepositions such as lekat ‘from’, which leaves open the possibility that they are (or can be) 
+nouns.   Examples of each of the adverbial demonstratives of location are shown below: 
+ 
+(4.68) Te-kito=ku 
+ 
+ ruun 
+dekiit jo 
+ 
+jamban mitu. 
+DC.PASS-see=1s.I 
+ EXIST few 
+just 
+ 
+toilet 
+here 
+‘I see that there are few toilets here.’  (masala langaw 028) 
+ 
+(4.69) …aku   ningkoo’-ningkoo’ 
+  jo 
+me 
+me-luar.. 
+1s.II ACT-sit-REDUP 
+ just 
+there 
+PREP-outside  
+ ‘...I just kept sitting there outside.’  (beta’ kerungayan 055) 
+ 
+(4.70) Bo'=ku   
+likas  
+ng-ogo   
+sioko=ku  
+dela  
+e 
+ 
+then=1s.I 
+quick AV-go.to 
+oldest=1s.I 
+male 
+DEM 
+ 
+mu’ 
+ 
+dembila’ 
+ruma’. 
+ 
+yonder  
+across  
+house 
+ 
+‘Then I quickly went to my oldest brother there in the house across (from us).’   
+              (beta’ kerungayan 049) 
+ 
+ 
+
+
+==================== PAGE 152 ====================
+ 
+ 
+119
+When used to refer to objects, me and mu’ can be used for relative distance from speaker: if the 
+object is in the immediate vicinity, me is used.  If the object is several yards away (certainly out of 
+reach) but still visible, mu’ can be used.  The deictic adverb mu’ is used as well for more distant 
+places, whether a stone’s throw away or several miles away. 
+Of the deictic adverbs,  it appears that only me can be used to refer to a previously mentioned 
+referent in the discourse regardless of the spatial distance involved.  In (4.71) below, note that speaker 
+A can refer to the previously mentioned referent (Kundasang) using me even though the place is 
+several miles away: 
+ 
+(4.71)  
+A.  
+Minggo  
+kam  
+ 
+boi  
+turi  
+debui’? 
+where  
+2s.II 
+ 
+CMPL sleep 
+last.night 
+‘Where did you all sleep last night?’ 
+ 
+B.   
+Mu’  
+ 
+ta’  
+Kundasang. 
+yonder  
+PREP PN 
+ 
+‘Over yonder in Kundasang.’ 
+ 
+A. 
+Sajuk  ka  
+me / mu’ ?   
+ 
+cold 
+Q 
+there / yonder 
+ 
+‘Is it cold there?’ 
+ 
+ 
+4.4.3.3 Deictic adverbs of directed motion 
+When expressing motion directed toward or away from the speaker, a different set of deictic 
+adverbs is used, formed by the addition of p- to the demonstrative pronouns.  The demonstrative 
+adverbs of directed motion are shown in the following table: 
+ 
+ 
+Table 4.6  Deictic adverbs of direction 
+Deictic adverb of directed motion 
+Derived from: 
+Meaning 
+pitu 
+itu (‘this’) 
+‘to here’ 
+pe 
+e (‘that’) 
+‘to there’ 
+pu’ 
+u’ (‘that over there’) 
+‘to yonder’ 
+ 
+ 
+
+
+==================== PAGE 153 ====================
+ 
+ 
+120
+These directional adverbs are deictics because they refer to motion toward or away from the 
+speaker.  The only kind of verb they occur with are motion verbs such as teko ‘to arrive’, boo ‘to 
+bring’, or lumaan ‘to go’.   Some examples follow.  Note that sometimes the directional deictics occur 
+without any explicit motion verb, as in (4.74).  Here they seem to function as verbs themselves. 
+ 
+(4.72) “Aku  tu 
+ 
+bau 
+    teko  
+pitu 
+ 
+eng-Kuta’ Belud. 
+  1s.II DEM new 
+    arrive 
+ 
+to.here PREP-PN 
+“I have just arrived here in Kota Belud.”  (lumaan pu’ Api-Api 001) 
+ 
+(4.73) Somo-somo 
+gai 
+s-in-oo’  
+ 
+moo 
+ 
+endo 
+ 
+same-REDUP 3p 
+-PASS-command 
+AV.bring 
+wife 
+ 
+ 
+pe 
+ 
+ta’ 
+ruma’ emma’=ni. 
+to.there PREP house father=3s.I 
+‘Together they were ordered to bring (their) wives there to their father’s house.’ 
+(pak 060) 
+ 
+(4.74) Uun 
+ entedo Hassan pu’ 
+      ta’  
+laat 
+de-m-bua’       nuut   
+bono’. 
+EXIST once 
+PN 
+to.yonder   PREP 
+region  one-CNT-CL  AV.join   fight 
+‘One time Hassan (went) yonder to another country to fight’.  (baginda ali 019) 
+ 
+ 
+ 
+ 
+4.4.3.4  Similative deictic bege 
+WC Bajau has one similative deictic bege ‘like this’/ ‘like that’.26  The similative deictic is used 
+to liken one thing to another, and normally occurs as an adverb.  It often follows a subordinating 
+conjunction of time such as ai jo ‘after’, as a transitional device to move from the event just described 
+to the next one.  Examples: 
+ 
+(4.75) “Ngini kau 
+be-tutur 
+bege?”  
+ling 
+tuan 
+ puteri. 
+  why 2s.II 
+ACT-speech 
+like.that 
+say 
+princess 
+ 
+“Why are you talking like that?” said the princess.  (biduk 034) 
+ 
+ 
+ 
+ 
+                                                 
+ 
+26 The pronunciation of bege is [bəˈge]. 
+
+
+==================== PAGE 154 ====================
+ 
+ 
+121
+(4.76) Boi 
+jo 
+Hussin mara’   bege      
+jomo 
+daras e         pan 
+mara’ 
+after 
+ 
+PN 
+AV.tell   like.that 
+person strong DEM TOP 
+AV.tell 
+ 
+engko’ sinsim e 
+sinsim=ni 
+dau…. 
+that 
+ring 
+DEM ring=3s.I 
+before 
+‘After Hussin said that, the strong man said that the ring was once his ring…’.   
+(baginda ali 106) 
+ 
+ 
+4.4.3.5 Summary 
+The three (non-similative) types of deictics discussed above are shown together in Table 4.7.  
+Note that the demonstrative pronouns form the morphological base of both the deictic adverbs of 
+location and of directed motion. 
+ 
+ 
+Table 4.7  Summary of the demonstrative forms 
+Demonstrative pronouns 
+Deictic adverbs of location 
+Deictic adverbs of directed 
+motion 
+inan(tu), 
+nantu, 
+itu(tu), 
+o(nan)(tu)  ‘this’ 
+m-itu  ‘here’ 
+p-itu  ‘to here’ 
+e  ‘that’ 
+m-e  ‘there’ 
+p-e  ‘to there’ 
+u’(e)  ‘that yonder’ 
+m-u’  ‘yonder’ 
+p-u’  ‘to yonder’ 
+ 
+ 
+ 
+4.4.4 
+Adverbs 
+WC Bajau has a mostly closed class of adverbs.  Apart from the deictic adverbs described above 
+in §4.4.3.2 and §4.4.3.3, WC Bajau has at least seven other types of adverbs, which may be 
+distinguished according to function:  narrative adverbs, aspectual adverbs, adverbs of frequency, 
+manner adverbs, adverbs of degree, adverbs of time, and sentence adverbs.  Each of these adverb 
+types are described in detail in §12.5 and will not be further discussed here.  Suffice it to say that 
+adverbs of these different types, and sometimes within the same type, show diverse syntactic 
+properties, such as their distribution in the clause, and their ability or inability to head a phrase.   
+
+
+==================== PAGE 155 ====================
+ 
+ 
+122
+4.4.5 
+Interjections 
+An interjection is “a lexical item or phrase which serves primarily to express emotion and which 
+typically fails to enter into any syntactic structures at all” (Trask 1993:144).  As such, interjections 
+typically occur on their own, not related syntactically to what precedes or follows the interjection.  
+The following are a few interjections in WC Bajau.  The way in which they are glossed reflects my 
+(still tentative) understanding of contexts in which they are typically used. 
+ 
+(4.77) aii…!   
+expression of surprise 
+adakah…! 
+expression of surprise  
+oi…! 
+ 
+expression of annoyance 
+si’! 
+ 
+sound made to shoo away chickens 
+se’! 
+ 
+sound made to shoo away dogs 
+ 
+ 
+ 
+
+
+==================== PAGE 156 ====================
+ 
+ 
+123
+ 
+ 
+ 
+CHAPTER 5 
+ 
+SUBJECTHOOD, VOICE, AND TRANSITIVITY  
+ 
+ 
+5.1 
+Introduction 
+ 
+The WC Bajau clause (with the exception of ambient clauses) contains from one to three 
+arguments, depending on the number required by its predicate.  Every such clause has a subject, 
+considered here as a purely syntactic notion (§5.2).  In this chapter, the subject and several other basic 
+syntactic categories are defined: voice (§5.3), including the notion of macroroles (‘actor’ and 
+‘undergoer’); the syntactic distinctions of ‘core’ vs. ‘periphery’ and ‘direct’ vs. ‘oblique’ (§5.4); and 
+transitivity (§5.5).  Some tests for subjecthood are shown in §5.6.  Finally, a description of pronouns 
+and case-marking in WC Bajau is given in §5.7.  
+5.2 
+The problem of defining ‘subject’ 
+ 
+The question of what constitutes a ‘subject’ in Philippine languages has long been debated.  In 
+English and many other languages, the grammatical category of ‘subject’ represents the clustering of 
+several syntactic, semantic, and pragmatic properties on one NP in the clause.  Keenan (1976), noting 
+this “cluster concept” of the subject, compiled a list of subject properties which (taken together) 
+would guide the identification of subjects cross-linguistically.  His list includes autonomy properties 
+such as indispensability, absolute reference, topic, and most accessible target of advancement 
+processes; and semantic properties such as agent and the addressee phrase of imperatives.  He admits, 
+however, that if this list is used as the measure of subjecthood, “subjects in some languages will be 
+more subject-like than those of other languages” depending upon how many of the listed properties 
+cluster with the subject NP (305). 
+
+
+==================== PAGE 377 ====================
+ 
+344
+12.4.3 
+The modal use of teko ‘to arrive’ 
+The verb teko ‘arrive’ can have a deontic modal use to express ability (‘can’).  As such, teko 
+takes a complement clause.  Note the following examples: 
+ 
+(12.50)   Bila    ai         bioso,   teko   no       iyo    l-um-aan   den-d-angan=ni.5 
+ 
+  when  PERF  usual    can     FOC   3s.II  -ACT-go   REDUP-one-CL-person=3s.I 
+ ‘When (he) became accustomed to it, he was able to go alone.’  (jomo pisok  019) 
+ 
+(12.51) Linta 
+e  
+ 
+nya’     teko    nge-rekot  
+ta’     betis=ni. 
+               leech   
+DEM 
+NEG    can 
+  AV-stick 
+PREP  leg=3s.I 
+              ‘The leech could not stick to his leg.’ 
+ 
+ 
+12.4.4 
+The modal use of ngerati ‘to know’ 
+The AV verb nge-rati ‘to know’ can also have a deontic modal meaning to express ability, where 
+like the modal use of teko it takes a complement clause.  In the following example, note the almost 
+identical use of ngerati to that of buli in (12.49) above: 
+ 
+(12.52) Boo'       puti'   
+b-in-uat  tung  
+ngenduk   
+engko' 
+ngerati pan   
+ 
+   
+bamboo white  
+-PASS- place 
+fetch.water 
+and   
+can         EMPH 
+ 
+b-in-uat  
+tiang  ruma’. 
+ -PASS-make post   house 
+‘White bamboo is used to hold water and (it) can also be made into house posts.’ 
+(boo’ 005) 
+ 
+ 
+12.4.5 
+The modal use of panday ‘to be skilled; able to’ 
+The stative verb panday ‘to be skilled or clever (at)’ normally takes a complement clause 
+specifying what the subject of the verb is skilled at doing.  Sometimes the sense is ‘frequent to’, as 
+might be the case in (12.53) below.  The modal meaning of panday is most obvious with inanimate 
+                                                 
+5 The form den-dangan is the shortened form of dangan-dangan, and is likely an example of the ‘partial Ce- 
+reduplication’ described in §3.7.3.  The expected Ce- reduplicated form would actually be de-dangan, but 
+apparently an ‘n’ has been epenthesized before the ‘d’ in the full root. 
+
+
+==================== PAGE 378 ====================
+ 
+345
+subjects, where the meaning of panday is essentially reduced to ‘can’ or ‘happen to’, as in (12.54).  
+Examples:  
+  
+(12.53) Sebab=ni 
+iyo  
+tu 
+ 
+panday    te'         judi   
+dekiit-dekiit. 
+  reason=3s.I 
+3s.II  
+DEM 
+skilled 
+EMPH     gamble little-REDUP 
+  ‘Their reason was that he was rather good at gambling’ (or, ‘frequent to gamble’).   
+(mat salleh 005) 
+ 
+(12.54) Lagi pan       ke-alap-an  
+gula' tebu 
+tu   
+nya'  
+panday   te-raat. 
+  what.is.more  NOM-good 
+cane.sugar 
+DEM 
+NEG 
+can     
+DC.PASS-bad 
+  ‘What is more, the advantage of cane sugar is that it cannot (or does not) spoil.’   
+  (nandas tebu 124) 
+ 
+ 
+ 
+12.5 
+Adverbs 
+ 
+WC Bajau contains a class of adverbs which may be described according to their semantic 
+function.  The deictic adverbs were described in (§4.4.3.2)-(§4.4.3.4).  In this section, several other 
+types adverbs are described:  narrative adverbs (§12.5.1), aspectual adverbs (§12.5.2), adverbs of 
+frequency (§12.5.3), manner adverbs (§12.5.4), adverbs of degree (§12.5.5), adverbs of time 
+(§12.5.6), and sentence adverbs (§12.5.7).  
+12.5.1 
+Narrative adverbs 
+WC Bajau has two adverbs which occur primarily or exclusively in narrative discourse:  terus 
+‘straight away; immediately’ and (se)mono-mono ‘suddenly’.6  The adverb terus is likely borrowed 
+from the Malay word terus, one sense of which has the same meaning.  Based on the limited number 
+of examples in the corpus, it appears that both narrative adverbs in WC Bajau occur clause-initial.  
+Examples: 
+ 
+ 
+ 
+ 
+ 
+                                                 
+6 I have borrowed the term ‘narrative adverb’ from Goudswaard (2005), who describes such adverbs in the 
+Begak language of Sabah. 
+
+
+==================== PAGE 379 ====================
+ 
+346
+(12.55) Te-kito=ni        jo      uwa'  e 
+ 
+l-ul-ai 
+   sorop  meniik,    
+  DC.PASS=3s.I  FOC   dog 
+ DEM 
+-ACT-run   toward  AV.ascend 
+ 
+ 
+  terus 
+ 
+iyo   
+memia   
+te'   
+tungan=ni  
+tapuk. 
+  immediately    3s.II  
+AV.look.for EMPH    place=3s.I 
+hide 
+‘When he saw the dog running toward (him), he immediately searched for a place  
+  to hide.’  (ngini using 047) 
+ 
+(12.56) Rupiah    pe-loot   
+diam    sumpat,          mono-mono    nge-raa          iyo. 
+  PN         INTR-reach  inside  undergrowth   suddenly 
+   ACT-scream  3s.II 
+  ‘Rupiah reached into the underbrush, (and) suddenly he screamed.’  (rupiah 
+  003) 
+ 
+ 
+12.5.2 
+Aspectual adverbs 
+The following are aspectual adverbs in WC Bajau: 
+ 
+(12.57)   lagi   
+‘yet’, ‘further’  (Malay lagi) 
+     masi  
+‘still’  (Malay masih) 
+     kakal   ‘still’  (Malay kekal)7 
+ 
+   
+  balik   ‘again’ 
+ 
+   
+  boi-boi   ‘ever (before); once’ 
+ 
+ 
+These forms do not co-occur with the aspectual particles boi and ai.  They are distinguished from 
+these particles primarily in that they show a broader syntactic distribution.  Whereas ai and boi 
+obligatorily occur before the verb they modify, most of the forms listed in (12.57) can occur either 
+before or after the verb, and some can even occur clause-final. 
+The adverb lagi occurs frequently and in a variety of contexts.  It usually means ‘still, yet’ 
+(12.58) or ‘further, more’ (12.59): 
+ 
+(12.58) Sinsaung    awal 
+ lagi    iyang=ni  
+   ng-ogo  
+ruma'   rojo. 
+  morning      early     still    mother=3s.I    AV-visit 
+house   king 
+  ‘(When it was) still early in the morning, his mother went to the palace.’  (uwa’  
+  suk 029) 
+ 
+ 
+                                                 
+7 Malay kekal ‘eternal, permanent’ is probably cognate with WC Bajau kakal ‘still’, but their meanings and 
+usage are distinct.   
+
+
+==================== PAGE 380 ====================
+ 
+347
+(12.59) "Pinggo    si'   
+kau   
+nak   
+engko'  
+karung=nu  
+e?"   
+    to.where   earlier 2s.II  
+child 
+with  
+sack=2s.I  
+DEM 
+ 
+  jomo     e     
+tilaw   lagi. 
+ 
+   
+person  DEM ask    further 
+ 
+ 
+“Where did you just come from with that sack of yours?” the man asked further.   
+             (namuk 009) 
+ 
+ 
+When lagi is preceded by the negator nya’, it forms the phrase nya’ lagi ‘not yet; before’: 
+ 
+ 
+(12.60) Jomo  e   
+tilaw,   "Enggo   no     kerabaw=nu 
+nya’  lagi    entemu=nu?” 
+  person DEM ask      where    FOC  buffalo=2s.I 
+NEG yet     found=2s.I 
+  The man asked, “Where is your buffalo?  You haven’t found it yet?”  (namuk 019) 
+ 
+ 
+The adverbs masi and kakal can both be glossed ‘still’, and they have the same meaning.  (Masi 
+is probably borrowed from Malay masih).  However, kakal may show a wider syntactic distribution in 
+the clause.  For example, whereas kakal may occur clause-final, apparently masi cannot.  Also, kakal 
+occurs more often clause-initial (before a preverbal subject) than masi.  Both masi and kakal may 
+precede the adverb lagi ‘still, yet’.  Examples: 
+  
+(12.61) Sangsuriang masi  
+lagi  
+nya’  
+sadar. 
+  PN  
+ 
+still  
+yet  
+NEG 
+aware 
+  ‘Sangsuriang was still unconscious.’  (biduk 083) 
+ 
+ 
+(12.62) Teko   iyo 
+pu’    
+kakal 
+Hussin  mandi  
+en-diam   telaga’   e. 
+  arrive  3s.II     to.there   still     
+PN      AV-bathe PREP-in  well       DEM 
+ 
+   
+‘When he arrived there, Hussin was still bathing in the well.’  (baginda 086) 
+ 
+ 
+The adverb balik ‘again’ almost always occurs after the VP it modifies: 
+ 
+ 
+(12.63) Ella=ni     
+e  
+    pan  
+ng-osok      sarung    
+uwa'=ni   
+balik.   
+  husband=3s.I   DEM  TOP    AV-put.on   costume  
+dog=3s.I  
+again 
+  ‘Her husband put on his dog costume again.’  (uwa’ suk 084) 
+ 
+
+
+==================== PAGE 381 ====================
+ 
+348
+12.5.3 
+Adverbs of frequency 
+The commonly used adverbs of frequency in WC Bajau are shown in (12.64) below: 
+ 
+(12.64) selalu 
+ 
+ 
+‘always’, ‘usually’  (Malay selalu) 
+   gorot   
+ 
+ 
+‘frequently’8  
+ 
+  
+bioso 
+ 
+ 
+‘normally’  (Malay biasa) 
+ 
+   
+kadang-kadang  
+‘sometimes’, ‘on occasion’  (Malay kadang-kadang) 
+ 
+  
+jarang   
+ 
+‘rarely’  (Malay jarang) 
+ 
+ 
+These adverbs typically occur just prior to the verb or predicate NP which they modify.  It 
+appears that only gorot ‘frequently’ and jarang ‘rarely’ can be heads of phrases (e.g., a degree phrase 
+with bana ‘very’).  The adverbs selalu and bioso often attach to the third person enclitic (=ni),9 while 
+the other adverbs of frequency never occur with an enclitic pronoun.  Furthermore, selalu and bioso 
+are more likely to introduce a clause, in which case they may have scope over the entire clause.  Some 
+examples of frequency adverbs follow:   
+ 
+(12.65) Peserta      runsay  
+    selalu=ni     sepu  
+sampay   sepu limo   orang… 
+  participant   type.of.dance  usually=3s.I   ten 
+PREP     fifteen       CL 
+  ‘The runsay participants are usually between 10 and 15 (in number)…’.  (runsay 002) 
+ 
+(12.66) Tapi’   bioso=ni  
+bangan  pekakas tu  
+ nya'   ruun      me-ruma'." 
+  but    usual=3s.I PL       tool     DEM   NEG  EXIST  PREP-house 
+  ‘But usually these items are not found in houses.’  (masala langaw 049) 
+ 
+(12.67) Bangan  langaw 
+pan   gorot 
+   bana  pe-kepa'         ta'       makanan= ti.               
+  PL       fly 
+ 
+TOP  frequently very 
+INTR-alight   PREP food=1p.incl.I 
+  ‘Flies are always landing on our food.’  (masala langaw 041) 
+ 
+(12.68) Pasal   e         no   pan        iyo   jarang  duwai     me-dia’          ruma’. 
+  reason  DEM  FOC  EMPH   3s.II   rarely 
+ descend  PREP-below  house 
+  ‘For that reason he rarely goes down under the house.’  (ngini using 077) 
+ 
+ 
+                                                 
+8 The word gorot ‘frequently’ is sometimes associated with a strong attraction to a particular activity or place, 
+thus combining frequency with desire. 
+9 The forms selalu=ni and bioso=ni, with the third person enclitic form, appear to be lexicalizations.  The form 
+of the enclitic seems to be invariant regardless of the person or number of the subject. 
+
+
+==================== PAGE 382 ====================
+ 
+349
+In addition, WC Bajau has a frequentative prefix10 me(n)- which attaches to numerals in order to 
+derive adverbs of frequency:  men-duo ‘two times’, men-telu ‘three times’, me-empat ‘four times’, 
+etc.  (The meaning ‘one time/ once’ is expressed by the form entedo, which operates independently of 
+this pattern.)  The frequentative prefix also combines with dangay ‘how many?’ to derive men-
+dangay ‘how many times?’ 
+12.5.4 
+Manner adverbs 
+Manner adverbs express the manner of the action encoded by the verb.  They may either precede 
+or follow the verb.  Manner adverbs primarily express speed (likas, lingaw ‘quickly’) or vigor (daras 
+‘powerfully’).11   Examples: 
+ 
+(12.69) Bo’=ku       likas  ng-ogo   sioko=ku  
+         dela    e…  
+               then=1s.I    fast 
+AV-visit  older.sibling=1s.I   male   DEM 
+  ‘Then I quickly went to my older brother…’.  (beta’ kerungayan 049) 
+ 
+(12.70) Daras 
+soo  
+tu 
+   
+l-ul-ai… 
+               strong 
+snake 
+DEM 
+-ACT-run 
+              ‘The snake moved (lit. ‘ran’) powerfully.’  (jomo beramu 010) 
+ 
+(12.71) Rupiah ingin 
+mule’  
+ 
+ 
+lingaw… 
+               PN  
+want   
+AV-return.home 
+quick   
+              ‘Rupiah wanted to return home quickly…’.  (rupiah 006) 
+ 
+12.5.5 
+Adverbs of degree 
+WC Bajau has four adverbs of degree.  Two of these mark intensive degree:  bana and sukup 
+‘very’.  The word paling ‘most’ marks superlative degree, though it is sometimes used to mark 
+intensive degree when there is no referent of comparison.  The word telampaw ‘too’ marks excessive 
+degree.  By far the most frequent adverb of degree is bana.  As shown in the following examples, 
+bana can modify stative verbs (12.72) as well as dynamic verbs (12.73), a few adverbs including 
+several adverbs of frequency (12.74), prepositional phrases (12.75), and quantifiers (12.76).  Bana 
+                                                 
+10 The name ‘frequentative prefix’ was taken from Eades (2005:82) in his grammar of Gayo. 
+11 Daras ‘strong’ may also function as an adjective (a stative verb); the others possibly can as well. 
+
+
+==================== PAGE 383 ====================
+ 
+350
+can also have an adjectival use to modify nouns, in which case it has the meaning ‘true’, ‘natural’, 
+‘original’. 
+ 
+(12.72) Gai  airan 
+ bana  ngito          kerabaw  moo  
+ bua'-bua'  
+kayu      
+  3p 
+surprised  very   DC.AV.see  buffalo   AV-bring  fruit-REDUP  tree     
+ 
+ta’  
+tanduk=ni. 
+  PREP 
+horn=3s.I 
+ 
+   
+‘They were very surprised to see a buffalo carrying fruit on its horns.’  (kerabaw 
+               037) 
+ 
+(12.73) Kayu  tomo'  ta'   
+kubur   e   
+∅-usa'=ni  
+ 
+bana… 
+  tree     grow   PREP 
+grave   DEM UV-care.for=3s.I very 
+  ‘The tree growing on the grave site she tended carefully…’.  (kerabaw 080) 
+ 
+(12.74) Jarang   bana   no      pan  
+  muat  
+    gula'  tebu    tu     
+betiru. 
+  rare        very   FOC  EMPH   AV-make  cane.sugar    DEM 
+today 
+  ‘Very rarely (do people) make cane sugar nowadays.’  (nandas tebu 140) 
+ 
+(12.75) Dendo   em-buli’     
+bana 
+ng-entan   ta'         torong   puyut. 
+  woman  PREP-behind    very    
+AV-hold   PREP    end        handkerchief 
+  ‘The woman in the very back holds the end of the handkerchief.’  (runsay 004) 
+ 
+(12.76) Iko    bana   poon kayu   ebba’ 
+waktu   e. 
+  many  very    tree   
+  topple time      DEM 
+ ‘A great many trees toppled at that time.’  (kayu ebba’ 037) 
+ 
+12.5.6 
+Adverbs of time 
+Time adverbs express various aspects of time, including relative time, times of the day, and 
+clock or calendar time.  They typically occur at the end of the clause or (if focal) at the beginning of 
+the clause (see §7.1.2).  Time adverbs that express relative time include the following:  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+==================== PAGE 384 ====================
+ 
+351
+(12.77) sini’ / si’   
+‘earlier’, ‘just now’ 
+  bau (do’)   
+‘just now’, ‘recently’ 
+  kaang   
+ 
+‘later’ 
+  betiru  
+ 
+‘today’, ‘now’ 
+  dau    
+ 
+‘first’, ‘before’  (dau-dau ‘long ago’) 
+  dilaw  
+ 
+‘yesterday’ 
+  maung 
+ 
+ ‘tomorrow’ 
+  bangi dilaw  ‘the day before yesterday’ 
+  suang dikau’  ‘the day after tomorrow’ 
+  debui’  
+ 
+‘last night’ 
+   
+ 
+The following are examples.  Note that in (12.78) dau ‘before’ is clause-initial and has scope 
+over the whole clause, while in (12.79) dau only modifies the time phrase in which it occurs. 
+ 
+(12.78)   Dau 
+iko     bana,  betiru   nya'  na    iko      bana   pipit. 
+    before many  very 
+now      NEG   PRT  many  very sparrow 
+    ‘Before there were many (sparrows); nowadays there are not many sparrows.’ 
+    (tonom paray 032) 
+ 
+(12.79) Te-ingot=ku      
+ 
+ 
+kisah  
+sikot    duo empu'  taun  dau. 
+  DC.PASS-remember=1s.I 
+story 
+near     twenty       year before 
+  ‘I recalled a story from nearly twenty years ago.’  (kayu ebba’ 013) 
+ 
+(12.80) “Nya’  boi 
+∅-ingkot-on=ku 
+sini’. 
+    NEG  CMPL UV-tie-TZ=1s.I 
+earlier 
+ 
+    
+  “I didn’t tie up (the buffalo) earlier.”  (namuk 064) 
+ 
+ 
+The adverb sini’ (with shortened form si’), in addition to its temporal meaning ‘earlier’ or ‘just 
+now’, can also be used for discourse deixis, where it usually modifies an NP.  The NP marked by 
+sini’/ si’ is known to both speaker and hearer, but usually has not been mentioned for several clauses.  
+Hence marking with sini’/ si’ identifies the referent of the NP as a  ‘restaged topic’.  Note the 
+following example: 
+ 
+(12.81) Sultan Salaudin   e     
+  si'             ai   no    temepe              ta'       sedi     selang. 
+   PN  
+             DEM   just.now    already  washed.ashore  PREP  beside sea 
+ 
+   
+‘Sultan Salaudin (meanwhile) had washed ashore on the beach.’  (salaudin 032) 
+ 
+ 
+
+
+==================== PAGE 385 ====================
+ 
+352
+In (12.81) the referent (Sultan Salaudin) is tagged with si’ to signal its re-emergence as the discourse 
+topic after having been mentioned only peripherally in the preceding few clauses.   
+Time adverbs that express times of the day are shown in (12.82), and days of the week in 
+(12.83): 
+ 
+(12.82) sinsaung   
+‘morning’ 
+  langa ellaw  
+‘mid-day’ 
+  kemuap   
+‘afternoon’ 
+  songom   
+‘night’ 
+ 
+(12.83) Ellaw Aad   
+‘Sunday’ 
+  Ellaw Isnin   ‘Monday’ 
+  Ellaw Lasa   ‘Tuesday’ 
+  Ellaw Rebu   ‘Wednesday’ 
+  Ellaw Kamis   ‘Thursday’ 
+  Ellaw Jumaat  ‘Friday’ 
+  Ellaw Sabtu   ‘Saturday’ 
+ 
+ 
+12.5.7 
+Sentence adverbs 
+Sentence adverbs “express the speaker’s attitude toward the state of affairs represented by the 
+clause” (Eades 2005:83) and are therefore modal in nature.  They are distinguished from the modals 
+(§12.4) in that sentence adverbs do not express deontic or potential meanings.  Three types of 
+sentence adverbs are described here:  those which indicate a feeling or opinion; those which indicate 
+degree of certainty or truthfulness; and those which report what is said.12   
+12.5.7.1 Feeling/ opinion 
+Certain sentence adverbs indicate how a speaker thinks or feels about a given state of affairs.  In 
+WC Bajau, the most common of these include:  alap ‘good’, ‘fortunately’; nasip ‘luckily’; and patut 
+‘no wonder’ (Malay patut).  These adverbs usually occur at the beginning of the sentence.  Examples: 
+ 
+                                                 
+12 My description of sentence adverbs in WC Bajau is patterned after Sneddon’s (1996) description of ‘sentence 
+adjuncts’ in Indonesian. 
+
+
+==================== PAGE 386 ====================
+ 
+353
+(12.84) Alap   
+ pan  
+ella=ni    
+  uun 
+ 
+me. 
+               good     EMPH 
+husband=3s.I    EXIST  
+there 
+             ‘Fortunately, her husband was there.’  (biduk 047) 
+ 
+(12.85) Nasip 
+Amat 
+alap. 
+               luckily 
+PN  
+good 
+               ‘Luckily, Amat was OK [i.e., he wasn’t hurt].’  (belis 052) 
+ 
+ 
+12.5.7.2 Degree of certainty 
+In WC Bajau, some adverbs of certainty occur clause-initial and they have scope over the entire 
+clause.  These include rupo(-rupo)=ni  ‘apparently’, muda’-mudaan ‘hopefully’, and mungkin  
+‘maybe’, ‘perhaps’.  Examples: 
+ 
+(12.86) Rupo-rupo=ni, 
+kakal 
+pala  
+ 
+te-ingot=ni. 
+  apparently 
+ 
+still  
+NEW.REAL DC.PASS-remember=3s.I 
+  ‘Apparently, she still remembered (the matter).’  (beta’ kerungayan 025) 
+ 
+(12.87) Mungkin  Tuhan ingin 
+me-kito-on 
+    ke-kuasa-an=ni. 
+               maybe 
+  God 
+want 
+AV.CAUS-see    NOM-strong=3s.I 
+              ‘Perhaps God wanted to show His power.’  (kayu ebba’ 008) 
+ 
+ 
+The adverbs mimang ‘surely’, ‘of course’ and andang(-andang) ‘certainly’ more often occur just 
+prior to the predicate.  It is not clear whether these adverbs (at least in this position) have scope over 
+the entire clause or simply over the predicate.  Example: 
+ 
+(12.88) Gai  mimang  
+jogo  
+ 
+bana 
+ta’  
+ke-selamat-an=gai… 
+  3p 
+certainly  
+watch.over 
+very  
+PREP 
+NOM-safe=3p 
+  ‘Of course they were watching out for their safety…’  (rupiah 002) 
+ 
+12.5.7.3 Reported speech 
+Sentence adverbs of reported speech “indicate that something is said or believed by other 
+people” (Sneddon 1996:363).  In WC Bajau the reported speech adverb is kono’ ‘is it said; 
+he/she/they say’.  This word is similar in meaning and form to Malay konon, though konon seems to 
+have comparatively infrequent use in Malay.  Whereas konon in Malay can occur in clause-initial 
+
+
+==================== PAGE 387 ====================
+ 
+354
+position, kono’ may not introduce a clause in WC Bajau.  Rather, kono’ ordinarily occurs in the 
+second position in the clause,13 following an item belonging to virtually any word class.  In the 
+following examples, kono’ occurs after an NP (12.89), a dynamic verb (12.90), an aspect marker 
+(12.91), and a stative verb (12.92): 
+ 
+(12.89) ...jadi  badu  engko’  tudung     e       kono’   sebagai  hadiah  iyang=ku     m-aku. 
+                   so    shirt   and 
+   covering  DEM  hearsay as     
+  gift       mother=1s.I PREP-1s.II 
+              ‘So the shirt and head covering was said to be my mother’s gift to me.’  (beta’  
+              kerungayan 023) 
+ 
+(12.90) ...sambatan gai  dau-dau   
+nangis      kono’ 
+tandas-an                          e. 
+                   parable    3p   first-REDUP ACT-cry  hearsay   process.cane.sugar-NOM DEM 
+                ‘... they used to have a saying from long ago that the tandasan cried.’  (nandas  
+tebu 060) 
+      
+(12.91) ...boi  no    kono’   te-kito=ni                kayu  e        ebba’    sini’     sinsaung. 
+                   already   hearsay  DC.PASS-see=3s.I  tree   DEM  topple   earlier  morning 
+              ‘... he claimed that he saw the tree fall over earlier this morning.’  (kayu ebba’  
+              028) 
+ 
+(12.92) Jomo      nya’    ingin   diam   bilik  
+ sebab  
+panas  kono’. 
+         
+ person    NEG   want   inside  room 
+ because   hot     hearsay 
+         
+‘The man did not want to be inside the room because (he claimed) it was hot.’ 
+(namuk 052) 
+ 
+  
+12.6 
+Discourse particles 
+ 
+WC Bajau narrative discourse contains a small number of frequently used particles, the use of 
+which cannot adequately be understood apart from their discourse context.  They are analyzed as 
+second position clitics because they generally prefer the second position in the clause and they never 
+occur clause-initial.  Two of these particles, no (§12.6.1) and jo (§12.6.2), are essentially focal in 
+nature, though they have distinct meanings and rarely occur together in the clause.   The particle pan 
+(§12.6.3) can simply mean ‘also, too’ but it often functions more broadly as a topic marker to bring 
+                                                 
+13 See §12.6.5 for a discussion of second-position clitics. 
+
+
+==================== PAGE 388 ====================
+ 
+355
+cohesion to the discourse.  The emphatic particles te’ and do’ are briefly described in §12.6.4.  
+Finally, the ordering of discourse particles in combination is discussed in §12.6.5. 
+12.6.1 
+The focal particle no 
+The no particle is the most frequently occurring particle in WC Bajau.   It generally functions as 
+a focus marker, though in some contexts it can have a temporal meaning ‘now’.  As a focal particle, 
+no follows the focused constituent.  The no particle may follow NPs, any type of verb, aspectual 
+markers, and adverbs. 
+12.6.1.1 With NPs 
+Following NPs (whether full NPs or pronouns), the no particle highlights the importance of the 
+NP in some way.  For this reason, no often follows clefted NPs, which mark identificational 
+(contrastive) focus (see §7.1.1.1).  In the following conversational exchange, the no particle following 
+kau (in Speaker B’s utterance) clearly identifies the NP as contrastive: 
+ 
+(12.93)   A.  "Ai      lebi    no     buan=nu      tu,        nya'    panday    mandi,"      
+  PERF more FOC  stench=2s.I  DEM   NEG   skilled     AV.bathe    
+   
+ 
+ 
+ 
+ling   dela pisok  
+e. 
+ 
+ 
+ 
+say    man blind   DEM    
+ “You smell even worse (up close); you don’t bathe,” said the blind man. 
+  
+  B.  “Kau 
+ no     nya’ 
+panday mandi...”,    ling    dendo 
+e. 
+            
+         2s.II 
+ FOC   NEG skilled 
+AV.bathe     say     woman 
+DEM 
+            
+       “You’re the one who doesn’t know how to bathe...!”  said the woman. 
+ 
+               (jomo pisok 048-049) 
+ 
+ 
+12.6.1.2 With verbs 
+The no particle (like jo) may follow any type of verb:  intransitive, transitive (UV or AV), 
+passive, and stative.  Particularly in conversational speech, the no particle seems to have a temporal 
+meaning and can be translated ‘now’, as in the following example: 
+ 
+

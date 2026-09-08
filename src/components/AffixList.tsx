@@ -18,7 +18,7 @@ export default function AffixList({ affixes }: { affixes: LexicalAffix[] }) {
           {t.entry_affixes}
         </h2>
         <span className="text-[12px] text-slate-700 bg-slate-100 px-2 py-0.5 rounded font-mono">
-          {affixes.length} bentuk
+          {affixes.length} {t.affix_forms_count}
         </span>
       </div>
 
@@ -40,8 +40,8 @@ export default function AffixList({ affixes }: { affixes: LexicalAffix[] }) {
             <li
               key={item.id || idx}
               className={`p-2.5 rounded-lg border transition-all flex flex-col sm:flex-row sm:items-baseline justify-between gap-1.5 font-body ${isAttested
-                  ? 'bg-amber-50/40 border-amber-200/70 hover:border-amber-300 hover:bg-amber-50'
-                  : 'bg-slate-50/50 border-slate-200/60'
+                ? 'bg-amber-50/40 border-amber-200/70 hover:border-amber-300 hover:bg-amber-50'
+                : 'bg-slate-50/50 border-slate-200/60'
                 }`}
             >
               <div className="flex items-baseline gap-2 flex-wrap">
@@ -73,15 +73,15 @@ export default function AffixList({ affixes }: { affixes: LexicalAffix[] }) {
                     className="text-[11px] font-medium text-amber-800 bg-amber-100/80 px-2 py-0.5 rounded-full inline-flex items-center gap-1 hover:bg-amber-200/90 transition-colors"
                   >
                     <Sparkles className="w-3 h-3 text-amber-600" />
-                    <span>Lihat Entri</span>
+                    <span>{t.affix_view_entry}</span>
                   </Link>
                 ) : (
                   <span
                     className="text-[11px] font-normal text-slate-700 bg-slate-100 px-2 py-0.5 rounded-full inline-flex items-center gap-1 cursor-help"
-                    title="Bentuk morfologi produktif (belum didokumentasikan sebagai entri bertulis tersendiri)"
+                    title="Bentuk morfologi produktif (belum didokumentésénkan sebagai entri bertulis tersendiri)"
                   >
                     <HelpCircle className="w-3 h-3 text-slate-700" />
-                    <span>Bentuk Teoretis</span>
+                    <span>{t.affix_theoretical_form}</span>
                   </span>
                 )}
               </div>

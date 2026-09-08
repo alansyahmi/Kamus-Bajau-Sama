@@ -45,7 +45,7 @@ export default function HomePage() {
 
       {/* Lower Section: Word of the Day & Alphabet Index */}
       <section className="grid grid-cols-1 lg:grid-cols-[1fr_1.3fr] gap-8 mt-10 md:mt-12 pt-8 md:pt-10 border-t border-slate-200/60 relative z-10 items-start">
-        {/* Word of the Day (Pekataan Penean) */}
+        {/* Word of the Day (Pekotoon Penean) */}
         <div>
           <FeaturedWordCard />
         </div>

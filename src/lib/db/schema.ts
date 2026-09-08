@@ -103,12 +103,34 @@ export const submissions = sqliteTable('submissions', {
   statusIdx: index('submissions_status_idx').on(table.status),
 }));
 
+// Semantic Categories & Thematic Groups (e.g. Anggota Badan, Haiwan, Makanan, Arah & Ruang)
+export const categories = sqliteTable('categories', {
+  id: integer('id').primaryKey({ autoIncrement: true }),
+  nameMs: text('name_ms').notNull(),
+  nameEn: text('name_en'),
+  slug: text('slug').notNull().unique(),
+  description: text('description'),
+  icon: text('icon'),
+}, (table) => ({
+  slugIdx: index('categories_slug_idx').on(table.slug),
+}));
+
+export const entryCategories = sqliteTable('entry_categories', {
+  id: integer('id').primaryKey({ autoIncrement: true }),
+  entryId: integer('entry_id').notNull().references(() => entries.id, { onDelete: 'cascade' }),
+  categoryId: integer('category_id').notNull().references(() => categories.id, { onDelete: 'cascade' }),
+}, (table) => ({
+  entryIdIdx: index('entry_categories_entry_id_idx').on(table.entryId),
+  categoryIdIdx: index('entry_categories_category_id_idx').on(table.categoryId),
+}));
+
 // Relations setup
 export const entriesRelations = relations(entries, ({ many }) => ({
   senses: many(senses),
   affixes: many(affixes),
   dialects: many(dialects),
   thesaurus: many(thesaurus),
+  entryCategories: many(entryCategories),
   sources: many(sources),
 }));
 
@@ -145,6 +167,21 @@ export const thesaurusRelations = relations(thesaurus, ({ one }) => ({
   entry: one(entries, {
     fields: [thesaurus.entryId],
     references: [entries.id],
+  }),
+}));
+
+export const categoriesRelations = relations(categories, ({ many }) => ({
+  entryCategories: many(entryCategories),
+}));
+
+export const entryCategoriesRelations = relations(entryCategories, ({ one }) => ({
+  entry: one(entries, {
+    fields: [entryCategories.entryId],
+    references: [entries.id],
+  }),
+  category: one(categories, {
+    fields: [entryCategories.categoryId],
+    references: [categories.id],
   }),
 }));
 

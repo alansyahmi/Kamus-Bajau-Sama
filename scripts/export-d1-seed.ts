@@ -17,7 +17,7 @@ function exportD1Seed() {
   }
 
   const sqlite = new Database(dbPath);
-  const tables = ['entries', 'senses', 'examples', 'affixes', 'dialects', 'thesaurus', 'sources', 'submissions'];
+  const tables = ['entries', 'senses', 'examples', 'affixes', 'dialects', 'thesaurus', 'categories', 'entry_categories', 'sources', 'submissions'];
 
   const sqlStatements: string[] = [
     '-- Cloudflare D1 Initial Data Seed for Kamus Bajau Sama',
@@ -44,7 +44,7 @@ function exportD1Seed() {
           })
           .join(',\n  ');
 
-        sqlStatements.push(`INSERT OR IGNORE INTO \`${table}\` (${colList}) VALUES\n  ${valuesList};`);
+        sqlStatements.push(`INSERT OR REPLACE INTO \`${table}\` (${colList}) VALUES\n  ${valuesList};`);
       }
     } catch (e: any) {
       console.warn(`Skipping table ${table}:`, e.message);
@@ -66,6 +66,9 @@ function exportD1Seed() {
   sqlStatements.push('CREATE INDEX IF NOT EXISTS `sources_entry_id_idx` ON `sources` (`entry_id`);');
   sqlStatements.push('CREATE INDEX IF NOT EXISTS `submissions_status_idx` ON `submissions` (`status`);');
   sqlStatements.push('CREATE INDEX IF NOT EXISTS `thesaurus_entry_id_idx` ON `thesaurus` (`entry_id`);');
+  sqlStatements.push('CREATE INDEX IF NOT EXISTS `categories_slug_idx` ON `categories` (`slug`);');
+  sqlStatements.push('CREATE INDEX IF NOT EXISTS `entry_categories_entry_id_idx` ON `entry_categories` (`entry_id`);');
+  sqlStatements.push('CREATE INDEX IF NOT EXISTS `entry_categories_category_id_idx` ON `entry_categories` (`category_id`);');
 
   sqlStatements.push('\nPRAGMA foreign_keys = ON;\n');
 

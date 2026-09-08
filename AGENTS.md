@@ -365,6 +365,14 @@ Never fabricate citation information.
 
 When multiple sources support an entry, preserve them rather than collapsing everything into a single source field.
 
+### Citation Format (LSA Style)
+
+Always use **LSA (Linguistic Society of America)** citation style for academic and linguistic references:
+
+- **In-text / source citations**: `Author (Year:Page)` or `(Author Year:Page)`
+  - Examples: `Miller (2007:111)`, `Miller (2007:109–110)`
+- **In-Paper Page Numbers**: Always cite the exact **printed in-paper page number** (e.g. p. 111), NOT the PDF reader's absolute page offset (e.g. 144).
+
 ---
 
 # 14. UI Principles
@@ -867,3 +875,52 @@ Build the simplest technology necessary to achieve that goal.
 Put the engineering effort where users actually feel it:
 
 > **search quality, entry quality, linguistic integrity and community contribution.**
+
+<!-- schemap:start -->
+# AGENTS.md - Database Context
+
+This file provides automated database context for AI agents working in this repository.
+
+## Database Summary
+- Total Tables: 8
+- Key Central Tables: entries, senses, examples, affixes, dialects
+
+## AI Safety & Anti-Hallucination Guardrails
+- [SAFETY] Never join `senses.id` directly to `entries.id`. Correct JOIN path: `senses.entry_id -> entries.id`.
+- [SAFETY] Never join `examples.id` directly to `senses.id`. Correct JOIN path: `examples.sense_id -> senses.id`.
+- [SAFETY] Never join `affixes.id` directly to `entries.id`. Correct JOIN path: `affixes.entry_id -> entries.id`.
+- [SAFETY] Never join `dialects.id` directly to `entries.id`. Correct JOIN path: `dialects.entry_id -> entries.id`.
+- [SAFETY] Never join `thesaurus.id` directly to `entries.id`. Correct JOIN path: `thesaurus.entry_id -> entries.id`.
+- [SAFETY] Never join `sources.id` directly to `entries.id`. Correct JOIN path: `sources.entry_id -> entries.id`.
+
+## Table Map
+### Table: `senses`
+Columns: id, entry_id, order_index, definition_ms, definition_en
+Foreign Keys: entry_id -> entries.id
+
+### Table: `examples`
+Columns: id, sense_id, sentence_bajau, highlight_word, sentence_ms, sentence_en, audio_url
+Foreign Keys: sense_id -> senses.id
+
+### Table: `affixes`
+Columns: id, entry_id, term, meaning_ms, meaning_en
+Foreign Keys: entry_id -> entries.id
+
+### Table: `dialects`
+Columns: id, entry_id, locality_name, dialect_form
+Foreign Keys: entry_id -> entries.id
+
+### Table: `thesaurus`
+Columns: id, entry_id, related_headword, relation_note
+Foreign Keys: entry_id -> entries.id
+
+### Table: `sources`
+Columns: id, entry_id, source_type, description, verified_by
+Foreign Keys: entry_id -> entries.id
+
+### Table: `submissions`
+Columns: id, headword, meaning, example_sentence, locality, contributor_name, contributor_email, notes, status, created_at
+
+### Table: `entries`
+Columns: id, headword, search_normalized, part_of_speech, ipa, audio_url, created_at, updated_at
+<!-- schemap:end -->

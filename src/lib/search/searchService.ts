@@ -1,8 +1,8 @@
 import { cache } from 'react';
 import { db } from '../db';
-import { entries, senses, affixes, dialects, thesaurus, sources } from '../db/schema';
-import { eq, or, sql, like, inArray } from 'drizzle-orm';
-import { LexicalEntry, SearchResultItem } from '../types';
+import { entries, senses, affixes, dialects, thesaurus, sources, categories, entryCategories } from '../db/schema';
+import { eq, or, sql, like, inArray, desc } from 'drizzle-orm';
+import { LexicalEntry, SearchResultItem, LexicalCategory } from '../types';
 
 export function normalizeQuery(query: string): string {
   let q = query
@@ -192,12 +192,47 @@ export async function searchEntries(
       });
     }
   } else {
-    // Mode BJ (default): Search through Bajau headwords, variants, and affixes
+    const matchingDialectEntries = await db
+      .select({ entryId: dialects.entryId })
+      .from(dialects)
+      .where(
+        or(
+          like(sql`LOWER(${dialects.dialectForm})`, `%${cleanQuery}%`),
+          like(sql`LOWER(${dialects.dialectForm})`, `%${normalized}%`),
+        )
+      )
+      .limit(40);
+
+    const matchingAffixEntries = await db
+      .select({ entryId: affixes.entryId })
+      .from(affixes)
+      .where(
+        or(
+          like(sql`LOWER(${affixes.term})`, `%${cleanQuery}%`),
+          like(sql`LOWER(${affixes.term})`, `%${normalized}%`),
+        )
+      )
+      .limit(40);
+
+    const extraEntryIds = Array.from(
+      new Set([
+        ...matchingDialectEntries.map((d) => d.entryId),
+        ...matchingAffixEntries.map((a) => a.entryId),
+      ])
+    );
+
     const rawResults = await db.query.entries.findMany({
-      where: or(
-        like(entries.headword, `%${cleanQuery}%`),
-        like(entries.searchNormalized, `%${normalized}%`),
-      ),
+      where:
+        extraEntryIds.length > 0
+          ? or(
+              like(entries.headword, `%${cleanQuery}%`),
+              like(entries.searchNormalized, `%${normalized}%`),
+              inArray(entries.id, extraEntryIds),
+            )
+          : or(
+              like(entries.headword, `%${cleanQuery}%`),
+              like(entries.searchNormalized, `%${normalized}%`),
+            ),
       with: {
         senses: {
           orderBy: (senses, { asc }) => [asc(senses.orderIndex)],
@@ -296,7 +331,28 @@ export async function searchEntries(
     }
   }
 
-  scored.sort((a, b) => b.score - a.score || a.item.headword.localeCompare(b.item.headword));
+  scored.sort((a, b) => b.score - a.score || a.item.headword.localeCompare(b.item.headword) || a.item.id - b.item.id);
+
+  // Detect homonyms and assign slugs (e.g. pu'1, pu'2)
+  const headwordCounts: Record<string, number> = {};
+  for (const s of scored) {
+    const hw = s.item.headword.toLowerCase();
+    headwordCounts[hw] = (headwordCounts[hw] || 0) + 1;
+  }
+
+  const headwordRunningIndex: Record<string, number> = {};
+  for (const s of scored) {
+    const hw = s.item.headword.toLowerCase();
+    if (headwordCounts[hw] > 1) {
+      const idx = (headwordRunningIndex[hw] || 0) + 1;
+      headwordRunningIndex[hw] = idx;
+      s.item.homonymIndex = idx;
+      s.item.slug = `${s.item.headword}${idx}`;
+    } else {
+      s.item.slug = s.item.headword;
+    }
+  }
+
   return scored.slice(0, limit).map((s) => s.item);
 }
 
@@ -398,6 +454,19 @@ interface RawEntryWithRelations {
   dialects: Array<{ id: number; entryId: number; localityName: string; dialectForm: string }>;
   thesaurus: Array<{ id: number; entryId: number; relatedHeadword: string; relationNote: string | null }>;
   sources: Array<{ id: number; entryId: number; sourceType: string; description: string; verifiedBy: string | null }>;
+  entryCategories?: Array<{
+    id: number;
+    entryId: number;
+    categoryId: number;
+    category?: {
+      id: number;
+      nameMs: string;
+      nameEn: string | null;
+      slug: string;
+      description: string | null;
+      icon: string | null;
+    };
+  }>;
 }
 
 /**
@@ -445,7 +514,11 @@ async function enrichEntry(entry: RawEntryWithRelations, normalized: string): Pr
     }
   }
 
-  return { ...entry, affixes: resolvedAffixes, rootEntry } as unknown as LexicalEntry;
+  const resolvedCategories = (entry.entryCategories || [])
+    .map(ec => ec.category)
+    .filter((c): c is NonNullable<typeof c> => Boolean(c));
+
+  return { ...entry, affixes: resolvedAffixes, rootEntry, categories: resolvedCategories } as unknown as LexicalEntry;
 }
 
 /**
@@ -463,6 +536,11 @@ export async function getEntryByHeadword(headword: string): Promise<LexicalEntry
       affixes: true,
       dialects: true,
       thesaurus: true,
+      entryCategories: {
+        with: {
+          category: true,
+        },
+      },
       sources: true,
     },
   });
@@ -479,19 +557,92 @@ export async function getEntriesByHeadword(headword: string): Promise<LexicalEnt
   const decoded = decodeURIComponent(headword).trim().toLowerCase();
   const normalized = normalizeQuery(decoded);
 
-  const allEntries = await db.query.entries.findMany({
+  const rawEntries = await db.query.entries.findMany({
     where: or(eq(entries.headword, decoded), eq(entries.searchNormalized, normalized)),
+    orderBy: (entries, { asc }) => [asc(entries.id)],
     with: {
       senses: { orderBy: (senses, { asc }) => [asc(senses.orderIndex)], with: { examples: true } },
       affixes: true,
       dialects: true,
       thesaurus: true,
+      entryCategories: {
+        with: {
+          category: true,
+        },
+      },
       sources: true,
     },
   });
 
-  if (allEntries.length === 0) return [];
-  return Promise.all(allEntries.map(e => enrichEntry(e, normalized)));
+  if (rawEntries.length > 0) {
+    const total = rawEntries.length;
+    const enriched = await Promise.all(rawEntries.map(e => enrichEntry(e, normalized)));
+    if (total > 1) {
+      return enriched.map((e, idx) => ({
+        ...e,
+        homonymMeta: {
+          index: idx + 1,
+          total,
+          baseHeadword: e.headword,
+          slug: `${e.headword}${idx + 1}`,
+          siblings: enriched.map((s, sIdx) => ({
+            index: sIdx + 1,
+            partOfSpeech: s.partOfSpeech,
+            definitionMs: s.senses[0]?.definitionMs || '',
+            slug: `${s.headword}${sIdx + 1}`,
+          })),
+        },
+      }));
+    }
+    return enriched;
+  }
+
+  // Fallback: Check if headword has a homonym index suffix (e.g. "pu'2", "pu-2", "pu2")
+  const homonymMatch = decoded.match(/^(.*?)[-_]?(\d+)$/);
+  if (homonymMatch) {
+    const baseWord = homonymMatch[1].trim();
+    const baseNormalized = normalizeQuery(baseWord);
+    const targetIdx = parseInt(homonymMatch[2], 10);
+
+    const baseRaw = await db.query.entries.findMany({
+      where: or(eq(entries.headword, baseWord), eq(entries.searchNormalized, baseNormalized)),
+      orderBy: (entries, { asc }) => [asc(entries.id)],
+      with: {
+        senses: { orderBy: (senses, { asc }) => [asc(senses.orderIndex)], with: { examples: true } },
+        affixes: true,
+        dialects: true,
+        thesaurus: true,
+        sources: true,
+      },
+    });
+
+    if (baseRaw.length > 0) {
+      const total = baseRaw.length;
+      const enriched = await Promise.all(baseRaw.map(e => enrichEntry(e, baseNormalized)));
+      const annotated = enriched.map((e, idx) => ({
+        ...e,
+        homonymMeta: {
+          index: idx + 1,
+          total,
+          baseHeadword: e.headword,
+          slug: `${e.headword}${idx + 1}`,
+          siblings: enriched.map((s, sIdx) => ({
+            index: sIdx + 1,
+            partOfSpeech: s.partOfSpeech,
+            definitionMs: s.senses[0]?.definitionMs || '',
+            slug: `${s.headword}${sIdx + 1}`,
+          })),
+        },
+      }));
+
+      if (targetIdx >= 1 && targetIdx <= annotated.length) {
+        return [annotated[targetIdx - 1]];
+      }
+      return annotated;
+    }
+  }
+
+  return [];
 }
 
 /**
@@ -508,3 +659,163 @@ export async function getAllHeadwords(): Promise<string[]> {
  * share a single D1 query result instead of each issuing independent queries.
  */
 export const getCachedEntriesByHeadword = cache(getEntriesByHeadword);
+
+export interface AdjacentHeadword {
+  headword: string;
+  partOfSpeech: string;
+  definitionMs?: string;
+  definitionEn?: string | null;
+}
+
+/**
+ * Fetch adjacent distinct headwords in alphabetical order for pagination.
+ */
+export async function getAdjacentHeadwords(headword: string): Promise<{
+  prev: AdjacentHeadword | null;
+  next: AdjacentHeadword | null;
+}> {
+  const decoded = decodeURIComponent(headword).trim().toLowerCase();
+  const cleanBase = decoded.replace(/[-_]?\d+$/, '');
+
+  const prevRecord = await db.query.entries.findFirst({
+    where: sql`LOWER(${entries.headword}) < ${cleanBase}`,
+    orderBy: (entries, { desc }) => [desc(sql`LOWER(${entries.headword})`)],
+    with: {
+      senses: {
+        limit: 1,
+        orderBy: (senses, { asc }) => [asc(senses.orderIndex)],
+      },
+    },
+  });
+
+  const nextRecord = await db.query.entries.findFirst({
+    where: sql`LOWER(${entries.headword}) > ${decoded}`,
+    orderBy: (entries, { asc }) => [asc(sql`LOWER(${entries.headword})`)],
+    with: {
+      senses: {
+        limit: 1,
+        orderBy: (senses, { asc }) => [asc(senses.orderIndex)],
+      },
+    },
+  });
+
+  return {
+    prev: prevRecord
+      ? {
+          headword: prevRecord.headword,
+          partOfSpeech: prevRecord.partOfSpeech,
+          definitionMs: prevRecord.senses[0]?.definitionMs,
+          definitionEn: prevRecord.senses[0]?.definitionEn,
+        }
+      : null,
+    next: nextRecord
+      ? {
+          headword: nextRecord.headword,
+          partOfSpeech: nextRecord.partOfSpeech,
+          definitionMs: nextRecord.senses[0]?.definitionMs,
+          definitionEn: nextRecord.senses[0]?.definitionEn,
+        }
+      : null,
+  };
+}
+
+export const getCachedAdjacentHeadwords = cache(getAdjacentHeadwords);
+
+/**
+ * Find spelling suggestions / closest matches when a word is not found.
+ */
+export async function getSpellingSuggestions(
+  query: string,
+  limit = 5
+): Promise<SearchResultItem[]> {
+  const cleanQuery = query.trim().toLowerCase();
+  if (!cleanQuery) return [];
+
+  // Try standard search with bj mode first
+  const results = await searchEntries(cleanQuery, 'bj', limit);
+  if (results.length > 0) return results;
+
+  // Also check Malay definition matches (e.g. user typed Malay word like 'makan')
+  const malayMatches = await searchEntries(cleanQuery, 'ms', limit);
+  if (malayMatches.length > 0) return malayMatches;
+
+  // If still none, try prefix search with first 2 or 3 letters
+  if (cleanQuery.length >= 2) {
+    const prefix = cleanQuery.slice(0, Math.min(3, cleanQuery.length));
+    const prefixMatches = await searchEntries(prefix, 'bj', limit);
+    if (prefixMatches.length > 0) return prefixMatches;
+  }
+
+  return [];
+}
+
+/**
+ * Fetch all categories with total word count.
+ */
+export async function getAllCategoriesWithCounts(): Promise<Array<LexicalCategory & { count: number }>> {
+  const allCats = await db.select().from(categories).orderBy(categories.nameMs).all();
+  const counts = await db
+    .select({
+      categoryId: entryCategories.categoryId,
+      count: sql<number>`count(*)`,
+    })
+    .from(entryCategories)
+    .groupBy(entryCategories.categoryId)
+    .all();
+
+  const countMap = new Map<number, number>();
+  for (const c of counts) {
+    countMap.set(c.categoryId, c.count);
+  }
+
+  return allCats.map(cat => ({
+    id: cat.id,
+    nameMs: cat.nameMs,
+    nameEn: cat.nameEn,
+    slug: cat.slug,
+    description: cat.description,
+    icon: cat.icon,
+    count: countMap.get(cat.id) || 0,
+  }));
+}
+
+/**
+ * Fetch a single category by slug along with all its member entries.
+ */
+export async function getCategoryWithEntries(slug: string): Promise<{
+  category: LexicalCategory;
+  entries: LexicalEntry[];
+} | null> {
+  const cat = await db.select().from(categories).where(eq(categories.slug, slug.trim().toLowerCase())).get();
+  if (!cat) return null;
+
+  const links = await db.select({ entryId: entryCategories.entryId }).from(entryCategories).where(eq(entryCategories.categoryId, cat.id)).all();
+  if (links.length === 0) {
+    return { category: cat, entries: [] };
+  }
+
+  const entryIds = links.map(l => l.entryId);
+  const rawEntries = await db.query.entries.findMany({
+    where: inArray(entries.id, entryIds),
+    orderBy: (entries, { asc }) => [asc(entries.headword)],
+    with: {
+      senses: { orderBy: (senses, { asc }) => [asc(senses.orderIndex)], with: { examples: true } },
+      affixes: true,
+      dialects: true,
+      thesaurus: true,
+      entryCategories: {
+        with: {
+          category: true,
+        },
+      },
+      sources: true,
+    },
+  });
+
+  const enriched = await Promise.all(rawEntries.map(e => enrichEntry(e, e.searchNormalized)));
+  return {
+    category: cat,
+    entries: enriched,
+  };
+}
+

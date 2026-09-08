@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Sparkles, ArrowRight } from 'lucide-react';
 import { useLanguage } from '../lib/i18n/LanguageContext';
+import { formatPartOfSpeech } from '../lib/i18n/translations';
 
 interface FeaturedWordData {
   headword: string;
@@ -48,7 +49,7 @@ export default function FeaturedWordCard() {
           <span>{t.featured_word_title}</span>
         </div>
         <span className="font-body text-[10px] font-bold tracking-wide bg-slate-100 border border-slate-200 text-slate-700 px-2 py-0.5 rounded uppercase">
-          {data.partOfSpeech.split('/')[0].trim()}
+          {formatPartOfSpeech(data.partOfSpeech, language, true)}
         </span>
       </div>
 

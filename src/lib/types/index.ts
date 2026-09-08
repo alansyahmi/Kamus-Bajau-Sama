@@ -13,12 +13,25 @@ export interface LexicalEntry {
   affixes: LexicalAffix[];
   dialects: LexicalDialect[];
   thesaurus: LexicalThesaurus[];
+  categories: LexicalCategory[];
   sources: LexicalSource[];
   rootEntry?: {
     headword: string;
     definitionMs: string;
     definitionEn?: string | null;
     affixPattern?: string;
+  } | null;
+  homonymMeta?: {
+    index: number;
+    total: number;
+    baseHeadword: string;
+    slug: string;
+    siblings: Array<{
+      index: number;
+      partOfSpeech: string;
+      definitionMs: string;
+      slug: string;
+    }>;
   } | null;
 }
 
@@ -67,6 +80,15 @@ export interface LexicalThesaurus {
   relationNote?: string | null;
 }
 
+export interface LexicalCategory {
+  id: number;
+  nameMs: string;
+  nameEn?: string | null;
+  slug: string;
+  description?: string | null;
+  icon?: string | null;
+}
+
 export interface LexicalSource {
   id: number;
   entryId: number;
@@ -88,6 +110,8 @@ export interface CommunitySubmissionInput {
 export interface SearchResultItem {
   id: number;
   headword: string;
+  slug?: string;
+  homonymIndex?: number;
   partOfSpeech: string;
   definitionMs: string;
   definitionEn?: string | null;

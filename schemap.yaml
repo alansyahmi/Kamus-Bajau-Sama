@@ -1,0 +1,12 @@
+database:
+  connection_url: sqlite:///dictionary.db
+output:
+  file_path: ./schemap_database_context.md
+  format: markdown
+domain:
+  mappings:
+    cust: Customer
+    tx: Transaction
+    inv: Invoice
+    acct: Account
+    amt: Amount

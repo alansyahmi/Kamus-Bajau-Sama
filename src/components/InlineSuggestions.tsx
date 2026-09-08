@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { SearchResultItem } from '../lib/types';
 import { useLanguage } from '../lib/i18n/LanguageContext';
+import { formatPartOfSpeech } from '../lib/i18n/translations';
 
 interface InlineSuggestionsProps {
   results: SearchResultItem[];
@@ -13,15 +14,34 @@ interface InlineSuggestionsProps {
 }
 
 export default function InlineSuggestions({ results, query, searchMode = 'bj', onOpenSuggestModal }: InlineSuggestionsProps) {
-  const { language } = useLanguage();
+  const { t, language } = useLanguage();
 
   if (results.length === 0 && query.trim().length > 0) {
     const noMatchText =
-      searchMode === 'ms'
+      language === 'bj'
+        ? searchMode === 'ms'
+          ? `Nya' teketo reti Melayu untuk "${query}"`
+          : searchMode === 'en'
+          ? `Nya' teketo reti Inggeris untuk "${query}"`
+          : `Nya' teketo pekotoon Bajau untuk "${query}"`
+        : language === 'en'
+        ? searchMode === 'ms'
+          ? `No Malay meaning matching "${query}"`
+          : searchMode === 'en'
+          ? `No English definition matching "${query}"`
+          : `No Bajau word matching "${query}"`
+        : searchMode === 'ms'
         ? `Tiada padanan maksud Melayu untuk "${query}"`
         : searchMode === 'en'
-        ? `No English definition matching "${query}"`
+        ? `Tiada definisi Inggeris untuk "${query}"`
         : `Tiada padanan kata Bajau untuk "${query}"`;
+
+    const suggestBtnText =
+      language === 'bj'
+        ? `+ ${t.nav_suggest} pekotoon`
+        : language === 'en'
+        ? '+ Suggest word'
+        : '+ Cadangkan perkataan';
 
     return (
       <div
@@ -32,7 +52,7 @@ export default function InlineSuggestions({ results, query, searchMode = 'bj', o
           {noMatchText}
         </span>
         <span className="font-body text-[12px] font-semibold bg-rose-100 text-rose-700 border border-rose-300 px-2.5 py-1 rounded-md shrink-0">
-          + Cadangkan perkataan
+          {suggestBtnText}
         </span>
       </div>
     );
@@ -52,10 +72,13 @@ export default function InlineSuggestions({ results, query, searchMode = 'bj', o
         const isVariantMatch = !!item.matchedVariant;
         const isMeaningMatch = item.matchType === 'meaning';
 
+        const SUPERSCRIPTS = ['', '¹', '²', '³', '⁴', '⁵', '⁶', '⁷', '⁸', '⁹'];
+        const displayHeadword = item.homonymIndex ? `${item.headword}${SUPERSCRIPTS[item.homonymIndex] || ''}` : item.headword;
+
         return (
           <Link
             key={item.id}
-            href={`/kamus/${encodeURIComponent(item.headword)}`}
+            href={`/kamus/${encodeURIComponent(item.slug || item.headword)}`}
             className={`p-3 px-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-3 rounded-xl border hover:translate-x-0.5 transition-all text-decoration-none min-h-[50px] ${
               isVariantMatch
                 ? 'bg-amber-50/70 border-amber-200/80 hover:bg-amber-100/80 hover:border-amber-300'
@@ -65,7 +88,7 @@ export default function InlineSuggestions({ results, query, searchMode = 'bj', o
             }`}
           >
             <div className="flex items-center gap-2 flex-wrap">
-              <span className="font-heading font-bold text-[16px] text-slate-900 leading-none">{item.headword}</span>
+              <span className="font-heading font-bold text-[16px] text-slate-900 leading-none">{displayHeadword}</span>
               {isVariantMatch && (
                 <span className="inline-flex items-center gap-1 font-body text-[11px] font-normal text-amber-900 bg-amber-100/80 border border-amber-300/80 px-2 py-0.5 rounded-full">
                   <span>varian</span>
@@ -81,7 +104,7 @@ export default function InlineSuggestions({ results, query, searchMode = 'bj', o
             <div className="flex items-center gap-2 justify-between sm:justify-end w-full sm:w-auto">
               <span className="font-body text-[13px] text-slate-600 truncate max-w-[200px] sm:max-w-[220px]">{displayDef}</span>
               <span className="font-body text-[10px] font-semibold uppercase tracking-wider bg-white border border-slate-200 text-slate-600 px-2 py-0.5 rounded shrink-0">
-                {item.partOfSpeech.split('/')[0].trim()}
+                {formatPartOfSpeech(item.partOfSpeech, language, true)}
               </span>
             </div>
           </Link>

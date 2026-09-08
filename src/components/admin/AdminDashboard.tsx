@@ -38,6 +38,22 @@ interface SourceItem {
   verifiedBy?: string | null;
 }
 
+interface ThesaurusItem {
+  id?: number;
+  relatedHeadword: string;
+  relationNote?: string | null;
+}
+
+interface CategoryItem {
+  id: number;
+  nameMs: string;
+  nameEn?: string | null;
+  slug: string;
+  description?: string | null;
+  icon?: string | null;
+  count?: number;
+}
+
 interface EntryItem {
   id: number;
   headword: string;
@@ -48,6 +64,8 @@ interface EntryItem {
   senses?: SenseItem[];
   affixes?: Array<{ id?: number; term: string; meaningMs: string; meaningEn?: string }>;
   dialects?: Array<{ id?: number; localityName: string; dialectForm: string }>;
+  thesaurus?: ThesaurusItem[];
+  categoryIds?: number[];
   sources?: SourceItem[];
 }
 
@@ -127,6 +145,14 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
   const [isPreviewPlaying, setIsPreviewPlaying] = useState(false);
   const [previewAudioObj, setPreviewAudioObj] = useState<HTMLAudioElement | null>(null);
 
+  // Thematic Categories State
+  const [availableCategories, setAvailableCategories] = useState<CategoryItem[]>([]);
+  const [isLoadingCategories, setIsLoadingCategories] = useState(false);
+  const [showNewCategoryModal, setShowNewCategoryModal] = useState(false);
+  const [newCatName, setNewCatName] = useState('');
+  const [newCatIcon, setNewCatIcon] = useState('🏷️');
+  const [newCatDesc, setNewCatDesc] = useState('');
+
 
   // Check initial login session
   useEffect(() => {
@@ -151,6 +177,7 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
         loadEntries(targetWord || '', '', 1, key, true);
         loadExamples('', 'all', 1, key);
         loadSubmissions(key);
+        loadCategories(key);
       } else {
         const data = await res.json();
         setAuthError(data.error || 'Kunci keselamatan tidak sah.');
@@ -394,6 +421,62 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
     }
   };
 
+  const loadCategories = async (key = passkey) => {
+    setIsLoadingCategories(true);
+    try {
+      const res = await fetch('/api/admin/categories', {
+        headers: { 'x-admin-key': key },
+      });
+      if (res.ok) {
+        const data = await res.json();
+        setAvailableCategories(data.categories || []);
+      }
+    } catch (e) {
+      console.error(e);
+    } finally {
+      setIsLoadingCategories(false);
+    }
+  };
+
+  const handleCreateCategory = async () => {
+    if (!newCatName.trim()) return;
+    try {
+      const res = await fetch('/api/admin/categories', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-admin-key': passkey,
+        },
+        body: JSON.stringify({
+          nameMs: newCatName.trim(),
+          icon: newCatIcon.trim() || '🏷️',
+          description: newCatDesc.trim(),
+        }),
+      });
+      if (res.ok) {
+        const data = await res.json();
+        if (data.category) {
+          setAvailableCategories(prev => [...prev, data.category]);
+          if (selectedEntry) {
+            const currentIds = selectedEntry.categoryIds || [];
+            setSelectedEntry({
+              ...selectedEntry,
+              categoryIds: [...currentIds, data.category.id],
+            });
+          }
+        }
+        setNewCatName('');
+        setNewCatDesc('');
+        setShowNewCategoryModal(false);
+      } else {
+        const err = await res.json().catch(() => ({}));
+        alert(err.error || 'Gagal mencipta kategori.');
+      }
+    } catch {
+      alert('Ralat sambungan.');
+    }
+  };
+
   const createEmptyEntry = (): EntryItem => ({
     id: 0,
     headword: '',
@@ -419,6 +502,8 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
     ],
     affixes: [],
     dialects: [],
+    thesaurus: [],
+    categoryIds: [],
     sources: [
       {
         sourceType: 'Penyunting Pentadbir',
@@ -1247,14 +1332,49 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                         onChange={(e) => setSelectedEntry({ ...selectedEntry, partOfSpeech: e.target.value })}
                         className="w-full px-4 py-2.5 rounded-xl border border-sand-300 bg-white text-stone-900 text-sm font-semibold focus:ring-2 focus:ring-amber-500"
                       >
-                        <option value="KATA NAMA">KATA NAMA</option>
-                        <option value="KATA KERJA">KATA KERJA</option>
-                        <option value="KATA SIFAT">KATA SIFAT</option>
-                        <option value="KATA BILANGAN">KATA BILANGAN</option>
-                        <option value="KATA TUGAS / PARTIKEL">KATA TUGAS / PARTIKEL</option>
-                        <option value="KATA SENDI NAMA">KATA SENDI NAMA</option>
-                        <option value="KATA GANTI NAMA">KATA GANTI NAMA</option>
-                        <option value="KATA HUBUNG">KATA HUBUNG</option>
+                        <optgroup label="1. Koto Oron (Kata Nama)">
+                          <option value="KATA NAMA">KATA NAMA (Koto Oron)</option>
+                          <option value="KATA NAMA AM">KATA NAMA AM (Koto Oron Am)</option>
+                          <option value="KATA NAMA KHAS">KATA NAMA KHAS (Koto Oron As)</option>
+                          <option value="KATA GANTI NAMA">KATA GANTI NAMA (Koto Ganti Oron)</option>
+                          <option value="KATA GANTI NAMA TUNJUK">KATA GANTI NAMA TUNJUK (Koto Ganti Oron Tunduk)</option>
+                          <option value="KATA GANTI NAMA TANYA">KATA GANTI NAMA TANYA (Koto Ganti Oron Tilau)</option>
+                        </optgroup>
+                        <optgroup label="2. Koto Kerjo (Kata Kerja)">
+                          <option value="KATA KERJA">KATA KERJA (Koto Kerjo)</option>
+                          <option value="KATA KERJA TRANSITIF">KATA KERJA TRANSITIF (Koto Kerjo Bengentaan)</option>
+                          <option value="KATA KERJA TAK TRANSITIF">KATA KERJA TAK TRANSITIF (Koto Kerjo Belapangan)</option>
+                          <option value="KATA KERJA PASIF">KATA KERJA PASIF (Koto Kerjo Pasip)</option>
+                        </optgroup>
+                        <optgroup label="3. Koto Sipat (Kata Sifat / Adjektif)">
+                          <option value="KATA SIFAT">KATA SIFAT (Koto Sipat)</option>
+                        </optgroup>
+                        <optgroup label="4. Koto Ketelakan (Kata Keterangan / Adverba)">
+                          <option value="KATA KETERANGAN">KATA KETERANGAN (Koto Ketelakan)</option>
+                        </optgroup>
+                        <optgroup label="5. Koto Bilangan (Kata Bilangan)">
+                          <option value="KATA BILANGAN">KATA BILANGAN (Koto Bilangan)</option>
+                          <option value="PENJODOH BILANGAN">PENJODOH BILANGAN (Penjodo Bilangan)</option>
+                        </optgroup>
+                        <optgroup label="6. Koto Tugas">
+                          <option value="KATA TUGAS / PARTIKEL">KATA TUGAS / PARTIKEL (Koto Tugas / Patikel)</option>
+                          <option value="KATA SENDI NAMA">KATA SENDI NAMA (Koto Sendi Oron)</option>
+                          <option value="KATA HUBUNG">KATA HUBUNG (Koto Ubung)</option>
+                          <option value="KATA SERU">KATA SERU (Koto Pauan)</option>
+                          <option value="KATA PERINTAH">KATA PERINTAH (Koto Soon)</option>
+                          <option value="KATA BANTU">KATA BANTU (Koto Tabang)</option>
+                          <option value="KATA PENEGAS">KATA PENEGAS (Koto Penegas / Patikel)</option>
+                          <option value="KATA TANYA">KATA TANYA (Koto Tilau)</option>
+                          <option value="KATA NAFI">KATA NAFI (Koto Gega)</option>
+                          <option value="KATA ARAH">KATA ARAH (Koto Banting)</option>
+                        </optgroup>
+                        <optgroup label="7. Ungkapan & Bentuk Leksikal Lain">
+                          <option value="PERIBAHASA">PERIBAHASA (Peribasa)</option>
+                          <option value="SIMPULAN BAHASA">SIMPULAN BAHASA (Simpulan Basa)</option>
+                          <option value="PERIBAHASA / SIMPULAN BAHASA">PERIBAHASA / SIMPULAN BAHASA (Peribasa / Simpulan Basa)</option>
+                          <option value="KATA MAJMUK">KATA MAJMUK (Koto Majmuk)</option>
+                          <option value="KATA GANDA">KATA GANDA (Koto Ganda&apos;)</option>
+                        </optgroup>
                       </select>
                     </div>
 
@@ -1800,7 +1920,181 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                     ))}
                   </div>
 
-                  {/* Section 5: Linguistic Sources & Provenance */}
+                  {/* Section 5: Thesaurus & Related Words */}
+                  <div className="space-y-4 pt-4 border-t border-sand-200">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <h3 className="font-semibold text-sm text-stone-900 flex items-center gap-2">
+                          <span>🔗</span> Kata Berkaitan & Tesaurus ({selectedEntry.thesaurus?.length || 0})
+                        </h3>
+                        <p className="text-xs text-stone-500">
+                          Hubungan leksikal seperti sinonim, antonim, kata berkaitan, kata dasar, atau frasa majmuk.
+                        </p>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <button
+                          type="button"
+                          onClick={() => {
+                            const newTh = [...(selectedEntry.thesaurus || [])];
+                            newTh.push({ relatedHeadword: '', relationNote: 'sinonim' });
+                            setSelectedEntry({ ...selectedEntry, thesaurus: newTh });
+                          }}
+                          className="px-3 py-1.5 text-xs font-semibold bg-amber-50 hover:bg-amber-100 text-amber-800 rounded-xl transition border border-amber-200"
+                        >
+                          + Sinonim
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            const newTh = [...(selectedEntry.thesaurus || [])];
+                            newTh.push({ relatedHeadword: '', relationNote: 'antonim' });
+                            setSelectedEntry({ ...selectedEntry, thesaurus: newTh });
+                          }}
+                          className="px-3 py-1.5 text-xs font-semibold bg-rose-50 hover:bg-rose-100 text-rose-800 rounded-xl transition border border-rose-200"
+                        >
+                          + Antonim
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            const newTh = [...(selectedEntry.thesaurus || [])];
+                            newTh.push({ relatedHeadword: '', relationNote: '' });
+                            setSelectedEntry({ ...selectedEntry, thesaurus: newTh });
+                          }}
+                          className="px-3 py-1.5 text-xs font-semibold bg-sand-100 hover:bg-sand-200 text-stone-700 rounded-xl transition"
+                        >
+                          + Kata Berkaitan
+                        </button>
+                      </div>
+                    </div>
+
+                    {(!selectedEntry.thesaurus || selectedEntry.thesaurus.length === 0) && (
+                      <div className="text-xs text-stone-400 italic p-3.5 bg-sand-50/50 rounded-xl border border-dashed border-sand-200">
+                        Tiada kata berkaitan atau tesaurus direkodkan untuk entri ini. Klik butang &quot;+ Sinonim&quot;, &quot;+ Antonim&quot;, atau &quot;+ Kata Berkaitan&quot; di atas untuk menambah hubungan leksikal.
+                      </div>
+                    )}
+
+                    <datalist id="relation-note-presets">
+                      <option value="sinonim" />
+                      <option value="antonim" />
+                      <option value="kata berkaitan" />
+                      <option value="kata dasar" />
+                      <option value="frasa majmuk" />
+                      <option value="varian makna" />
+                    </datalist>
+
+                    <datalist id="all-headwords-datalist">
+                      {Array.from(allHeadwordsSet).slice(0, 1000).map(hw => (
+                        <option key={hw} value={hw} />
+                      ))}
+                    </datalist>
+
+                    {selectedEntry.thesaurus?.map((th, thIdx) => (
+                      <div key={thIdx} className="grid grid-cols-1 md:grid-cols-[1.5fr_1fr_auto_auto] gap-3 bg-white p-3.5 rounded-xl border border-sand-200 items-center">
+                        <div>
+                          <input
+                            type="text"
+                            list="all-headwords-datalist"
+                            placeholder="Perkataan Bajau Sama berkaitan..."
+                            value={th.relatedHeadword}
+                            onChange={(e) => {
+                              const newTh = [...(selectedEntry.thesaurus || [])];
+                              newTh[thIdx].relatedHeadword = e.target.value;
+                              setSelectedEntry({ ...selectedEntry, thesaurus: newTh });
+                            }}
+                            className="w-full px-3.5 py-2 text-xs rounded-xl border border-sand-300 bg-white text-stone-900 font-serif font-semibold focus:ring-2 focus:ring-amber-500"
+                          />
+                        </div>
+                        <div>
+                          <input
+                            type="text"
+                            list="relation-note-presets"
+                            placeholder="Jenis Hubungan (cth: sinonim, antonim)..."
+                            value={th.relationNote || ''}
+                            onChange={(e) => {
+                              const newTh = [...(selectedEntry.thesaurus || [])];
+                              newTh[thIdx].relationNote = e.target.value;
+                              setSelectedEntry({ ...selectedEntry, thesaurus: newTh });
+                            }}
+                            className="w-full px-3.5 py-2 text-xs rounded-xl border border-sand-300 bg-white text-stone-900 focus:ring-2 focus:ring-amber-500"
+                          />
+                        </div>
+                        {th.relatedHeadword.trim() && (
+                          <a
+                            href={`/kamus/${encodeURIComponent(th.relatedHeadword.trim())}`}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="px-2.5 py-1.5 text-xs text-amber-700 bg-amber-50 hover:bg-amber-100 rounded-lg transition border border-amber-200 inline-flex items-center gap-1 font-medium whitespace-nowrap"
+                            title="Buka entri ini di tab baharu"
+                          >
+                            <span>🔗</span> Lihat
+                          </a>
+                        )}
+                        <button
+                          type="button"
+                          onClick={() => {
+                            const newTh = selectedEntry.thesaurus!.filter((_, i) => i !== thIdx);
+                            setSelectedEntry({ ...selectedEntry, thesaurus: newTh });
+                          }}
+                          className="text-stone-400 hover:text-rose-600 px-2 py-1 text-xs"
+                          title="Padam hubungan ini"
+                        >
+                          ✕
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Section 6: Thematic Groups & Semantic Categories */}
+                  <div className="space-y-4 pt-4 border-t border-sand-200">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <h3 className="font-semibold text-sm text-stone-900 flex items-center gap-2">
+                          <span>🏷️</span> Kategori Tematik & Domain Semantik ({(selectedEntry.categoryIds || []).length})
+                        </h3>
+                        <p className="text-xs text-stone-500">
+                          Kelompokkan perkataan ke dalam bidang tema (cth: Anggota Badan, Haiwan, Arah & Ruang) untuk carian bertema.
+                        </p>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => setShowNewCategoryModal(true)}
+                        className="px-3 py-1.5 text-xs font-semibold bg-sand-100 hover:bg-sand-200 text-stone-700 rounded-xl transition flex items-center gap-1"
+                      >
+                        + Kategori Baharu
+                      </button>
+                    </div>
+
+                    <div className="flex flex-wrap gap-2 pt-1">
+                      {availableCategories.map((cat) => {
+                        const isSelected = (selectedEntry.categoryIds || []).includes(cat.id);
+                        return (
+                          <button
+                            key={cat.id}
+                            type="button"
+                            onClick={() => {
+                              const current = selectedEntry.categoryIds || [];
+                              const next = isSelected
+                                ? current.filter(id => id !== cat.id)
+                                : [...current, cat.id];
+                              setSelectedEntry({ ...selectedEntry, categoryIds: next });
+                            }}
+                            className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium transition cursor-pointer border ${
+                              isSelected
+                                ? 'bg-amber-600 text-white border-amber-600 shadow-sm'
+                                : 'bg-white text-stone-700 border-sand-300 hover:border-amber-400 hover:bg-amber-50/50'
+                            }`}
+                          >
+                            <span>{cat.icon || '🏷️'}</span>
+                            <span>{cat.nameMs}</span>
+                            {isSelected && <span className="ml-1 text-[10px] font-bold">✓</span>}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  {/* Section 7: Linguistic Sources & Provenance */}
                   <div className="space-y-4 pt-4 border-t border-sand-200">
                     <div className="flex items-center justify-between">
                       <div>
@@ -1808,7 +2102,7 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                           <span>📚</span> Sumber & Provenans Linguistik ({selectedEntry.sources?.length || 0})
                         </h3>
                         <p className="text-xs text-stone-500">
-                          Dokumentasi sumber rujukan leksikal (cth: penerbitan akademik, informan lisan, atau semakan jawatankuasa).
+                          Dokumentésén sumber rujukan leksikal (cth: penerbitan akademik, informan lisan, atau semakan jawatankuasa).
                         </p>
                       </div>
                       <button
@@ -2497,6 +2791,78 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
           </div>
         )}
 
+
+        {/* Create Category Modal */}
+        {showNewCategoryModal && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-stone-900/40 backdrop-blur-sm p-4">
+            <div className="bg-white rounded-2xl p-5 w-full max-w-md shadow-2xl border border-sand-200 space-y-4">
+              <div className="flex items-center justify-between">
+                <h4 className="font-serif font-bold text-base text-stone-900 flex items-center gap-2">
+                  <span>🏷️</span> Tambah Kategori Tematik
+                </h4>
+                <button
+                  type="button"
+                  onClick={() => setShowNewCategoryModal(false)}
+                  className="text-stone-400 hover:text-stone-700 text-sm"
+                >
+                  ✕
+                </button>
+              </div>
+
+              <div className="space-y-3">
+                <div>
+                  <label className="block text-xs font-semibold text-stone-700 mb-1">Nama Kategori (Bahasa Melayu) *</label>
+                  <input
+                    type="text"
+                    placeholder="Cth: Anggota Badan, Alat Muzik, Burung..."
+                    value={newCatName}
+                    onChange={(e) => setNewCatName(e.target.value)}
+                    className="w-full px-3.5 py-2 text-xs rounded-xl border border-sand-300 focus:ring-2 focus:ring-amber-500"
+                  />
+                </div>
+                <div className="grid grid-cols-[80px_1fr] gap-2">
+                  <div>
+                    <label className="block text-xs font-semibold text-stone-700 mb-1">Ikon / Emoji</label>
+                    <input
+                      type="text"
+                      value={newCatIcon}
+                      onChange={(e) => setNewCatIcon(e.target.value)}
+                      className="w-full px-3.5 py-2 text-xs text-center rounded-xl border border-sand-300 focus:ring-2 focus:ring-amber-500"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-semibold text-stone-700 mb-1">Keterangan Ringkas (Pilihan)</label>
+                    <input
+                      type="text"
+                      placeholder="Cth: Istilah berkaitan alat muzik tradisi Sama..."
+                      value={newCatDesc}
+                      onChange={(e) => setNewCatDesc(e.target.value)}
+                      className="w-full px-3.5 py-2 text-xs rounded-xl border border-sand-300 focus:ring-2 focus:ring-amber-500"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex items-center justify-end gap-2 pt-2 border-t border-sand-200">
+                <button
+                  type="button"
+                  onClick={() => setShowNewCategoryModal(false)}
+                  className="px-3.5 py-2 text-xs font-semibold text-stone-600 bg-sand-100 hover:bg-sand-200 rounded-xl transition"
+                >
+                  Batal
+                </button>
+                <button
+                  type="button"
+                  onClick={handleCreateCategory}
+                  disabled={!newCatName.trim()}
+                  className="px-4 py-2 text-xs font-semibold text-white bg-amber-600 hover:bg-amber-700 disabled:opacity-50 rounded-xl transition shadow-sm"
+                >
+                  Simpan Kategori
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
 
       </main>
     </div>

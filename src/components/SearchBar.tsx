@@ -177,8 +177,8 @@ export default function SearchBar({ initialQuery = '' }: SearchBarProps) {
               searchMode === 'ms'
                 ? (language === 'en' ? 'Search by Malay definition (e.g. makan, tidur)...' : 'Cari maksud Bahasa Melayu (cth: makan, tidur)...')
                 : searchMode === 'en'
-                ? (language === 'en' ? 'Search English definitions (e.g. eat, sleep)...' : 'Cari maksud Bahasa Inggeris (cth: eat, sleep)...')
-                : (language === 'en' ? 'Search Bajau Sama words...' : language === 'bj' ? 'Pemia pekataan ling Sama...' : 'Cari perkataan Bajau Sama...')
+                  ? (language === 'en' ? 'Search English definitions (e.g. eat, sleep)...' : 'Cari maksud Bahasa Inggeris (cth: eat, sleep)...')
+                  : (language === 'en' ? 'Search Bajau Sama words...' : language === 'bj' ? 'Pemia pekotoon ling Sama...' : 'Cari perkataan Bajau Sama...')
             }
             className="w-full bg-transparent border-none outline-none font-body text-[16px] sm:text-[15px] text-slate-900 py-2.5 placeholder:text-slate-400 placeholder:font-light min-w-0"
             autoComplete="off"
@@ -214,11 +214,10 @@ export default function SearchBar({ initialQuery = '' }: SearchBarProps) {
                 type="button"
                 onClick={() => setSearchMode('bj')}
                 title="Cari melalui perkataan Bajau Sama"
-                className={`font-body text-[11px] font-semibold tracking-wide py-1 px-2.5 rounded-full transition-all duration-150 leading-none ${
-                  searchMode === 'bj'
+                className={`font-body text-[11px] font-semibold tracking-wide py-1 px-2.5 rounded-full transition-all duration-150 leading-none ${searchMode === 'bj'
                     ? 'bg-white text-slate-900 font-bold shadow-[0_1px_3px_rgba(0,0,0,0.12),0_0_0_1px_rgba(0,0,0,0.04)]'
                     : 'text-slate-500 hover:text-slate-800 hover:bg-white/60'
-                }`}
+                  }`}
               >
                 BJ
               </button>
@@ -226,11 +225,10 @@ export default function SearchBar({ initialQuery = '' }: SearchBarProps) {
                 type="button"
                 onClick={() => setSearchMode('ms')}
                 title="Cari melalui maksud Bahasa Melayu"
-                className={`font-body text-[11px] font-semibold tracking-wide py-1 px-2.5 rounded-full transition-all duration-150 leading-none ${
-                  searchMode === 'ms'
+                className={`font-body text-[11px] font-semibold tracking-wide py-1 px-2.5 rounded-full transition-all duration-150 leading-none ${searchMode === 'ms'
                     ? 'bg-white text-slate-900 font-bold shadow-[0_1px_3px_rgba(0,0,0,0.12),0_0_0_1px_rgba(0,0,0,0.04)]'
                     : 'text-slate-500 hover:text-slate-800 hover:bg-white/60'
-                }`}
+                  }`}
               >
                 MS
               </button>
@@ -238,11 +236,10 @@ export default function SearchBar({ initialQuery = '' }: SearchBarProps) {
                 type="button"
                 onClick={() => setSearchMode('en')}
                 title="Cari melalui maksud Bahasa Inggeris"
-                className={`font-body text-[11px] font-semibold tracking-wide py-1 px-2.5 rounded-full transition-all duration-150 leading-none ${
-                  searchMode === 'en'
+                className={`font-body text-[11px] font-semibold tracking-wide py-1 px-2.5 rounded-full transition-all duration-150 leading-none ${searchMode === 'en'
                     ? 'bg-white text-slate-900 font-bold shadow-[0_1px_3px_rgba(0,0,0,0.12),0_0_0_1px_rgba(0,0,0,0.04)]'
                     : 'text-slate-500 hover:text-slate-800 hover:bg-white/60'
-                }`}
+                  }`}
               >
                 EN
               </button>

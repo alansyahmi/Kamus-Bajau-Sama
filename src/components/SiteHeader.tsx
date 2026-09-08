@@ -4,9 +4,10 @@ import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { Search, Menu, X, PlusCircle, Info, Heart } from 'lucide-react';
+import { Search, Menu, X, PlusCircle, Info, Heart, BookOpen } from 'lucide-react';
 import { useLanguage } from '../lib/i18n/LanguageContext';
 import { SearchResultItem } from '../lib/types';
+import { formatPartOfSpeech } from '../lib/i18n/translations';
 import LanguageSwitcher from './LanguageSwitcher';
 import SuggestWordModal from './SuggestWordModal';
 import SupportModal from './SupportModal';
@@ -28,9 +29,34 @@ export default function SiteHeader({ showSearch = false }: SiteHeaderProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileSearchExpanded, setIsMobileSearchExpanded] = useState(false);
   const desktopSearchContainerRef = useRef<HTMLDivElement>(null);
+  const desktopSearchInputRef = useRef<HTMLInputElement>(null);
   const mobileSearchContainerRef = useRef<HTMLDivElement>(null);
   const mobileSearchInputRef = useRef<HTMLInputElement>(null);
   const debounceTimerRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Global shortcut Ctrl+K / Cmd+K to focus search input
+  useEffect(() => {
+    if (!showSearch) return;
+
+    const handleGlobalKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && (e.key === 'k' || e.key === 'K')) {
+        e.preventDefault();
+        if (window.innerWidth >= 768) {
+          desktopSearchInputRef.current?.focus();
+          desktopSearchInputRef.current?.select();
+        } else {
+          setIsMobileSearchExpanded(true);
+          setTimeout(() => {
+            mobileSearchInputRef.current?.focus();
+            mobileSearchInputRef.current?.select();
+          }, 50);
+        }
+      }
+    };
+
+    window.addEventListener('keydown', handleGlobalKeyDown);
+    return () => window.removeEventListener('keydown', handleGlobalKeyDown);
+  }, [showSearch]);
 
   // Debounced search query for autocomplete suggestions (max 5)
   useEffect(() => {
@@ -89,11 +115,11 @@ export default function SiteHeader({ showSearch = false }: SiteHeaderProps) {
     }
   }, [isMobileSearchExpanded]);
 
-  const handleSelectSuggestion = (headword: string) => {
+  const handleSelectSuggestion = (target: string) => {
     setIsDropdownOpen(false);
     setIsMobileSearchExpanded(false);
     setNavSearchQuery('');
-    router.push(`/kamus/${encodeURIComponent(headword)}`);
+    router.push(`/kamus/${encodeURIComponent(target)}`);
   };
 
   const handleNavSearch = (e: React.FormEvent) => {
@@ -104,7 +130,7 @@ export default function SiteHeader({ showSearch = false }: SiteHeaderProps) {
       setIsMobileSearchExpanded(false);
       setIsMobileMenuOpen(false);
       if (suggestions.length > 0) {
-        router.push(`/kamus/${encodeURIComponent(suggestions[0].headword)}`);
+        router.push(`/kamus/${encodeURIComponent(suggestions[0].slug || suggestions[0].headword)}`);
       } else {
         router.push(`/kamus/${encodeURIComponent(trimmed.toLowerCase())}`);
       }
@@ -115,27 +141,26 @@ export default function SiteHeader({ showSearch = false }: SiteHeaderProps) {
     <>
       <header className={`z-20 relative transition-all ${showSearch ? 'mb-6 md:mb-10' : 'mb-8 md:mb-16'}`}>
         <div className="flex items-center justify-between gap-3">
-          {/* Brand Logo: Icon on Tab & Mobile, Text on Desktop */}
+          {/* Brand Logo: Icon on mobile, Icon + Text on Tablet & Desktop */}
           <Link
             href="/"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="inline-flex items-center no-underline text-slate-900 whitespace-nowrap flex-shrink-0 group"
+            className="inline-flex items-center gap-2.5 no-underline text-slate-900 whitespace-nowrap flex-shrink-0 group"
             aria-label="Kamus Bajau Sama"
           >
-            {/* Tab & Mobile Version: Icon replacing text */}
-            <div className="lg:hidden flex items-center">
+            <div className="flex items-center">
               <Image
-                src="/icon.png"
+                src="/minimalist-logo-transparent.png"
                 alt="Kamus Bajau Sama"
-                width={40}
-                height={40}
-                className="w-9 h-9 sm:w-10 sm:h-10 object-contain drop-shadow-sm group-hover:scale-105 active:scale-95 transition-transform"
+                width={36}
+                height={36}
+                className="w-8 h-8 sm:w-9 sm:h-9 object-contain drop-shadow-sm group-hover:scale-105 active:scale-95 transition-transform"
                 priority
               />
             </div>
 
-            {/* Desktop Version: Text title without icon */}
-            <div className="hidden lg:inline-flex items-baseline gap-1.5 text-[22px]">
+            {/* Brand Text: Hidden on narrow mobile, shown on sm+ */}
+            <div className="hidden sm:inline-flex items-baseline gap-1.5 text-[20px] lg:text-[22px]">
               <span className="font-body font-normal tracking-sans">Kamus</span>
               <span className="font-heading font-bold tracking-serif">Bajau Sama</span>
             </div>
@@ -150,6 +175,7 @@ export default function SiteHeader({ showSearch = false }: SiteHeaderProps) {
               >
                 <Search className="w-4 h-4 text-slate-400 mr-2 flex-shrink-0" />
                 <input
+                  ref={desktopSearchInputRef}
                   type="text"
                   value={navSearchQuery}
                   onFocus={() => {
@@ -160,6 +186,11 @@ export default function SiteHeader({ showSearch = false }: SiteHeaderProps) {
                   className="bg-transparent border-none outline-none font-body text-[13px] text-slate-900 w-full placeholder:text-slate-400"
                   autoComplete="off"
                 />
+                {!navSearchQuery && (
+                  <kbd className="hidden lg:inline-flex items-center gap-0.5 px-1.5 py-0.5 text-[10px] font-mono text-slate-400 bg-slate-100 border border-slate-200 rounded shrink-0 select-none">
+                    Ctrl K
+                  </kbd>
+                )}
                 {navSearchQuery && (
                   <button
                     type="button"
@@ -198,23 +229,26 @@ export default function SiteHeader({ showSearch = false }: SiteHeaderProps) {
                             ? `${item.definitionMs} (${item.definitionEn})`
                             : item.definitionMs;
 
+                        const SUPERSCRIPTS = ['', '¹', '²', '³', '⁴', '⁵', '⁶', '⁷', '⁸', '⁹'];
+                        const displayHeadword = item.homonymIndex ? `${item.headword}${SUPERSCRIPTS[item.homonymIndex] || ''}` : item.headword;
+
                         return (
                           <button
                             key={item.id}
                             type="button"
-                            onClick={() => handleSelectSuggestion(item.headword)}
+                            onClick={() => handleSelectSuggestion(item.slug || item.headword)}
                             className="w-full text-left px-3 py-2 rounded-xl hover:bg-slate-50 transition-colors flex items-center justify-between gap-2 group"
                           >
                             <div className="flex flex-col min-w-0">
                               <span className="font-heading font-bold text-[14px] text-slate-900 group-hover:text-amber-800 transition-colors truncate">
-                                {item.headword}
+                                {displayHeadword}
                               </span>
                               <span className="font-body text-[12px] text-slate-500 truncate">
                                 {displayDef}
                               </span>
                             </div>
                             <span className="font-body text-[10px] uppercase font-semibold text-slate-400 bg-slate-100 px-1.5 py-0.5 rounded shrink-0">
-                              {item.partOfSpeech.split('/')[0].trim()}
+                              {formatPartOfSpeech(item.partOfSpeech, language, true)}
                             </span>
                           </button>
                         );
@@ -253,6 +287,20 @@ export default function SiteHeader({ showSearch = false }: SiteHeaderProps) {
             >
               {t.nav_suggest}
             </button>
+            <Link
+              href="/koleksi"
+              className="font-body text-[15px] lg:text-[16px] text-slate-800 hover:text-black hover:font-medium transition-colors"
+            >
+              Koleksi
+            </Link>
+
+            <Link
+              href="/rujukan"
+              className="font-body text-[15px] lg:text-[16px] text-slate-800 hover:text-black hover:font-medium transition-colors"
+            >
+              Rujukan
+            </Link>
+
             <Link
               href="/tentang"
               className="font-body text-[15px] lg:text-[16px] text-slate-800 hover:text-black hover:font-medium transition-colors"
@@ -370,23 +418,26 @@ export default function SiteHeader({ showSearch = false }: SiteHeaderProps) {
                           ? `${item.definitionMs} (${item.definitionEn})`
                           : item.definitionMs;
 
+                      const SUPERSCRIPTS = ['', '¹', '²', '³', '⁴', '⁵', '⁶', '⁷', '⁸', '⁹'];
+                      const displayHeadword = item.homonymIndex ? `${item.headword}${SUPERSCRIPTS[item.homonymIndex] || ''}` : item.headword;
+
                       return (
                         <button
                           key={item.id}
                           type="button"
-                          onClick={() => handleSelectSuggestion(item.headword)}
+                          onClick={() => handleSelectSuggestion(item.slug || item.headword)}
                           className="w-full text-left px-3 py-2.5 rounded-xl hover:bg-slate-50 transition-colors flex items-center justify-between gap-2 group"
                         >
                           <div className="flex flex-col min-w-0">
                             <span className="font-heading font-bold text-[15px] text-slate-900 group-hover:text-amber-800 transition-colors truncate">
-                              {item.headword}
+                              {displayHeadword}
                             </span>
                             <span className="font-body text-[12.5px] text-slate-500 truncate">
                               {displayDef}
                             </span>
                           </div>
                           <span className="font-body text-[10px] uppercase font-semibold text-slate-400 bg-slate-100 px-1.5 py-0.5 rounded shrink-0">
-                            {item.partOfSpeech.split('/')[0].trim()}
+                            {formatPartOfSpeech(item.partOfSpeech, language, true)}
                           </span>
                         </button>
                       );
@@ -431,6 +482,24 @@ export default function SiteHeader({ showSearch = false }: SiteHeaderProps) {
               <PlusCircle className="w-5 h-5 text-emerald-600 flex-shrink-0" />
               <span>{t.nav_suggest}</span>
             </button>
+
+            <Link
+              href="/koleksi"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="w-full flex items-center gap-3 p-3 rounded-xl hover:bg-slate-100 text-left font-body text-[16px] text-slate-800 transition-colors text-decoration-none"
+            >
+              <span className="text-xl flex-shrink-0">🏷️</span>
+              <span>Koleksi Tematik</span>
+            </Link>
+
+            <Link
+              href="/rujukan"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="w-full flex items-center gap-3 p-3 rounded-xl hover:bg-slate-100 text-left font-body text-[16px] text-slate-800 transition-colors text-decoration-none"
+            >
+              <BookOpen className="w-5 h-5 text-amber-600 flex-shrink-0" />
+              <span>Rujukan &amp; Bibliografi</span>
+            </Link>
 
             <Link
               href="/tentang"

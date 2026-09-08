@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { X } from 'lucide-react';
 import { useLanguage } from '../lib/i18n/LanguageContext';
+import { formatPartOfSpeech } from '../lib/i18n/translations';
 
 interface GlossaryModalProps {
   isOpen: boolean;
@@ -83,7 +84,7 @@ export default function GlossaryModal({ isOpen, onClose }: GlossaryModalProps) {
                       {def}
                     </span>
                     <span className="font-body text-[10px] font-semibold uppercase tracking-wider bg-white border border-slate-200 text-slate-600 px-2 py-0.5 rounded shrink-0">
-                      {item.partOfSpeech.split('/')[0].trim()}
+                      {formatPartOfSpeech(item.partOfSpeech, language, true)}
                     </span>
                   </div>
                 </Link>
@@ -98,7 +99,7 @@ export default function GlossaryModal({ isOpen, onClose }: GlossaryModalProps) {
             onClick={onClose}
             className="font-body text-[14px] font-medium bg-black text-white px-7 py-2.5 rounded-full hover:bg-zinc-800 transition-all min-h-[44px]"
           >
-            Tutup
+            {language === 'en' ? 'Close' : 'Tutup'}
           </button>
         </div>
       </div>

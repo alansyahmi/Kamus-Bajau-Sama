@@ -6,7 +6,7 @@ import { getCategoryWithEntries } from '@/lib/search/searchService';
 import type { Metadata } from 'next';
 
 export const dynamic = 'force-dynamic';
-export const runtime = process.env.NODE_ENV === 'development' ? 'nodejs' : 'edge';
+export const runtime = 'edge';
 
 interface Props {
   params: {

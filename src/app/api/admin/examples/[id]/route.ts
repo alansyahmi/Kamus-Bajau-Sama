@@ -5,7 +5,7 @@ import { examples } from '@/lib/db/schema';
 import { eq } from 'drizzle-orm';
 
 export const dynamic = 'force-dynamic';
-export const runtime = process.env.NODE_ENV === 'development' ? 'nodejs' : 'edge';
+export const runtime = 'edge';
 
 export async function PUT(
   req: NextRequest,

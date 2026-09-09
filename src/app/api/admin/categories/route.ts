@@ -5,7 +5,7 @@ import { categories, entryCategories } from '@/lib/db/schema';
 import { eq, sql } from 'drizzle-orm';
 
 export const dynamic = 'force-dynamic';
-export const runtime = process.env.NODE_ENV === 'development' ? 'nodejs' : 'edge';
+export const runtime = 'edge';
 
 export async function GET(req: NextRequest) {
   if (!verifyAdminSession(req)) return unauthorizedResponse();

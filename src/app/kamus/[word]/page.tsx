@@ -16,7 +16,7 @@ import EntryNotFound from '@/components/EntryNotFound';
 import LexicalPagination from '@/components/LexicalPagination';
 
 export const revalidate = 86400; // Cache at Edge for 24 hours
-export const runtime = process.env.NODE_ENV === 'development' ? 'nodejs' : 'edge';
+export const runtime = 'edge';
 
 interface EntryPageProps {
   params: {

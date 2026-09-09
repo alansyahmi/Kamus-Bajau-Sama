@@ -5,7 +5,7 @@ import { entries, senses, examples, affixes, dialects, thesaurus, sources, categ
 import { normalizeQuery } from '@/lib/search/searchService';
 import { eq, like, desc, sql } from 'drizzle-orm';
 
-export const runtime = process.env.NODE_ENV === 'development' ? 'nodejs' : 'edge';
+export const runtime = 'edge';
 
 export async function GET(req: NextRequest) {
   if (!verifyAdminSession(req)) return unauthorizedResponse();

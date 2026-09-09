@@ -1,8 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { toTtsPhoneticSpelling } from '@/lib/tts/speechService';
-import path from 'path';
 
-export const runtime = process.env.NODE_ENV === 'development' ? 'nodejs' : 'edge';
+export const runtime = 'edge';
 
 // Edge Neural Voices mapping prioritizing Austronesian & Glottal models (Tagalog, Javanese, Sundanese, Indonesian, Malay, Arabic)
 const NEURAL_VOICES = {
@@ -39,7 +38,9 @@ export async function GET(req: NextRequest) {
       const { promisify } = require('util');
       const execFileAsync = promisify(execFile);
 
-      const scriptPath = path.resolve(process.cwd(), 'scripts', 'generate-tts.js');
+      const nodeRequire = eval('require');
+      const nodePath = nodeRequire('path');
+      const scriptPath = nodePath.resolve(process.cwd(), 'scripts', 'generate-tts.js');
       const { stdout } = await execFileAsync(
         process.execPath,
         [scriptPath, spokenText, voice, rate || '-5%'],

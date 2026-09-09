@@ -7,7 +7,7 @@ import { toTtsPhoneticSpelling } from '@/lib/tts/speechService';
 import { EdgeTTS } from 'edge-tts-universal';
 
 export const dynamic = 'force-dynamic';
-export const runtime = process.env.NODE_ENV === 'development' ? 'nodejs' : 'edge';
+export const runtime = 'edge';
 
 const NEURAL_VOICES: Record<string, string> = {
   su: 'su-ID-TutiNeural',

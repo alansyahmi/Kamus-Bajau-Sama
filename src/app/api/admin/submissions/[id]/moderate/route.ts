@@ -5,7 +5,7 @@ import { submissions, entries, senses, examples, dialects, sources } from '@/lib
 import { normalizeQuery } from '@/lib/search/searchService';
 import { eq } from 'drizzle-orm';
 
-export const runtime = process.env.NODE_ENV === 'development' ? 'nodejs' : 'edge';
+export const runtime = 'edge';
 
 export async function POST(req: NextRequest, { params }: { params: { id: string } }) {
   if (!verifyAdminSession(req)) return unauthorizedResponse();

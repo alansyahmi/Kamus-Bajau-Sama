@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: EntryPageProps): Promise<Meta
   if (allEntries.length === 0) {
     return {
       title: `"${word}" — Kamus Bajau Sama`,
-      description: `Perkataan "${word}" belum didokumentésénkan dalam Kamus Bajau Sama. Cadangkan perkataan ini.`,
+      description: `Perkataan "${word}" belum di dalam Kamus Bajau Sama. Cadangkan perkataan ini.`,
     };
   }
 
@@ -133,8 +133,8 @@ export default async function EntryPage({ params }: EntryPageProps) {
         const displayHeadword = entry.homonymMeta && isHomonymous
           ? `${entry.headword}${SUPERSCRIPTS[entry.homonymMeta.index]}`
           : entry.homonymMeta
-          ? `${entry.headword}${SUPERSCRIPTS[entry.homonymMeta.index]}`
-          : entry.headword;
+            ? `${entry.headword}${SUPERSCRIPTS[entry.homonymMeta.index]}`
+            : entry.headword;
 
         return (
           <div
@@ -164,65 +164,65 @@ export default async function EntryPage({ params }: EntryPageProps) {
               </div>
             )}
 
-          {/* Two-Column Editorial Entry Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1px_1.2fr] gap-8 lg:gap-12 items-start mt-1 sm:mt-2">
-            {/* Left Column: Headword, Pronunciation, Morphology, Dialects */}
-            <div className="flex flex-col gap-8">
-              <EntryHeader
-                headword={entry.headword}
-                partOfSpeech={entry.partOfSpeech}
-                ipa={entry.ipa}
-                audioUrl={entry.audioUrl}
-                rootEntry={entry.rootEntry}
-              />
+            {/* Two-Column Editorial Entry Layout */}
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_1px_1.2fr] gap-8 lg:gap-12 items-start mt-1 sm:mt-2">
+              {/* Left Column: Headword, Pronunciation, Morphology, Dialects */}
+              <div className="flex flex-col gap-8">
+                <EntryHeader
+                  headword={entry.headword}
+                  partOfSpeech={entry.partOfSpeech}
+                  ipa={entry.ipa}
+                  audioUrl={entry.audioUrl}
+                  rootEntry={entry.rootEntry}
+                />
 
-              {/* Thematic Category Badges */}
-              {entry.categories && entry.categories.length > 0 && (
-                <div className="flex flex-wrap items-center gap-2 -mt-4">
-                  <span className="text-[11px] font-semibold text-stone-400 uppercase tracking-wider">Kategori:</span>
-                  {entry.categories.map((cat) => (
-                    <Link
-                      key={cat.id}
-                      href={`/koleksi/${cat.slug}`}
-                      className="inline-flex items-center gap-1.5 px-3 py-1 bg-amber-50/80 hover:bg-amber-100 text-amber-900 border border-amber-200/70 rounded-full text-xs font-medium transition shadow-2xs"
-                    >
-                      <span>{cat.icon || '🏷️'}</span>
-                      <span>{cat.nameMs}</span>
-                    </Link>
-                  ))}
+                {/* Thematic Category Badges */}
+                {entry.categories && entry.categories.length > 0 && (
+                  <div className="flex flex-wrap items-center gap-2 -mt-4">
+                    <span className="text-[11px] font-semibold text-stone-400 uppercase tracking-wider">Kategori:</span>
+                    {entry.categories.map((cat) => (
+                      <Link
+                        key={cat.id}
+                        href={`/koleksi/${cat.slug}`}
+                        className="inline-flex items-center gap-1.5 px-3 py-1 bg-amber-50/80 hover:bg-amber-100 text-amber-900 border border-amber-200/70 rounded-full text-xs font-medium transition shadow-2xs"
+                      >
+                        <span>{cat.icon || '🏷️'}</span>
+                        <span>{cat.nameMs}</span>
+                      </Link>
+                    ))}
+                  </div>
+                )}
+
+                {/* Mobile-only: Definition positioned directly on top of Word Derivations */}
+                <div className="block lg:hidden">
+                  <DefinitionList senses={entry.senses} />
                 </div>
-              )}
 
-              {/* Mobile-only: Definition positioned directly on top of Word Derivations */}
-              <div className="block lg:hidden">
-                <DefinitionList senses={entry.senses} />
+                <AffixList affixes={entry.affixes} />
+                <DialectList dialects={entry.dialects} />
               </div>
 
-              <AffixList affixes={entry.affixes} />
-              <DialectList dialects={entry.dialects} />
-            </div>
+              {/* Vertical Editorial Column Divider */}
+              <div className="hidden lg:block bg-slate-300 w-[1px] min-h-[480px] self-stretch" aria-hidden="true" />
 
-            {/* Vertical Editorial Column Divider */}
-            <div className="hidden lg:block bg-slate-300 w-[1px] min-h-[480px] self-stretch" aria-hidden="true" />
+              {/* Right Column: Definitions, Examples, Thesaurus, Provenance */}
+              <div className="flex flex-col gap-8">
+                {/* Desktop-only: Definition positioned at top of right editorial column */}
+                <div className="hidden lg:block">
+                  <DefinitionList senses={entry.senses} />
+                </div>
 
-            {/* Right Column: Definitions, Examples, Thesaurus, Provenance */}
-            <div className="flex flex-col gap-8">
-              {/* Desktop-only: Definition positioned at top of right editorial column */}
-              <div className="hidden lg:block">
-                <DefinitionList senses={entry.senses} />
+                <ExampleBox senses={entry.senses} currentHeadword={entry.headword} />
+                <ThesaurusCard thesaurus={entry.thesaurus} />
+                {isPersonalPronounWord(entry.headword) && (
+                  <PronounParadigmCard currentHeadword={entry.headword} />
+                )}
+                <ProvenanceBanner sources={entry.sources} headword={entry.headword} />
               </div>
-
-              <ExampleBox senses={entry.senses} currentHeadword={entry.headword} />
-              <ThesaurusCard thesaurus={entry.thesaurus} />
-              {isPersonalPronounWord(entry.headword) && (
-                <PronounParadigmCard currentHeadword={entry.headword} />
-              )}
-              <ProvenanceBanner sources={entry.sources} headword={entry.headword} />
             </div>
           </div>
-        </div>
-      );
-    })}
+        );
+      })}
 
       {/* Lexical Pagination: Browse Previous / Next in Alphabetical Order */}
       <LexicalPagination

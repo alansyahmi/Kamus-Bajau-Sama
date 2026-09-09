@@ -84,7 +84,7 @@ export default function AlphabetBrowser() {
                 <p className="font-body text-[14px] text-slate-400 py-8 text-center">Memuatkan...</p>
               ) : letterWords.length === 0 ? (
                 <p className="font-body text-[14px] text-slate-400 py-8 text-center">
-                  Tiada perkataan bermula dengan huruf &ldquo;{selectedLetter}&rdquo; didokumentésénkan lagi.
+                  Tiada perkataan bermula dengan huruf &ldquo;{selectedLetter}&rdquo; di lagi.
                 </p>
               ) : (
                 letterWords.map((item) => {

@@ -247,7 +247,7 @@ const TRANSLATIONS = {
     entry_suggest_btn: '+ Cadang Maklumat',
     about_kicker: 'INISIATIF PEMELIHARAAN WARISAN BAHASA',
     about_title: 'Memelihara Warisan Lisan,<br>Memperkasa Penutur <em>Generasi Hadapan.</em>',
-    about_lead: '<strong>Kamus Bajau Sama</strong> ialah sebuah sumber leksikal digital terbuka yang diasaskan untuk mendokumentésénkan, meraikan dan memperluaskan kosa kata bahasa Bajau Sama agar kekal hidup dan mudah diakses oleh semua lapisan masyarakat.',
+    about_lead: '<strong>Kamus Bajau Sama</strong> ialah sebuah sumber leksikal digital terbuka yang diasaskan untuk men, meraikan dan memperluaskan kosa kata bahasa Bajau Sama agar kekal hidup dan mudah diakses oleh semua lapisan masyarakat.',
     about_cta_title: 'Sumbangkan Pengetahuan Anda',
     about_cta_desc: 'Kamus ini berkembang seiring dengan sumbangan anda. Jika anda mengetahui perkataan, sebutan, dialek setempat atau contoh ayat baharu, kongsi bersama kami untuk dinilai dan dimasukkan ke dalam pangkalan data rasmi.',
     about_cta_btn: '+ Cadang Perkataan Sekarang',
@@ -517,7 +517,7 @@ function renderEntry(item) {
               <span class="affix-sep">–</span>
               <span class="affix-desc">${a.desc}</span>
             </div>
-            <span class="affix-badge theoretical-tag" title="Bentuk morfologi produktif (belum didokumentésénkan sebagai entri bertulis tersendiri)">* Bentuk Teoretis</span>
+            <span class="affix-badge theoretical-tag" title="Bentuk morfologi produktif (belum di sebagai entri bertulis tersendiri)">* Bentuk Teoretis</span>
           </li>
         `;
       }
@@ -542,7 +542,7 @@ function renderEntry(item) {
         <a href="#" class="thesaurus-pill" onclick="quickSearch('${t.word}'); return false;">${t.word} <span class="thesaurus-sub">(${t.sub})</span></a>
       `).join('');
     } else {
-      thesaurusItems.innerHTML = `<span style="font-size:13px; color:#94a3b8;">Tiada kata berkaitan didokumentésénkan lagi.</span>`;
+      thesaurusItems.innerHTML = `<span style="font-size:13px; color:#94a3b8;">Tiada kata berkaitan di lagi.</span>`;
     }
   }
 }
@@ -686,7 +686,7 @@ function openTentangModal() {
   body.innerHTML = `
     <div style="display:flex; flex-direction:column; gap:12px; font-size:14.5px; color:#334155; line-height:1.65;">
       <p>
-        <strong>Kamus Bajau Sama</strong> ialah sebuah inisiatif pemeliharaan warisan bahasa dan dokumentésén leksikal digital terbuka untuk bahasa Bajau Sama di Sabah.
+        <strong>Kamus Bajau Sama</strong> ialah sebuah inisiatif pemeliharaan warisan bahasa dan dokumentasi leksikal digital terbuka untuk bahasa Bajau Sama di Sabah.
       </p>
       <p>
         Projek ini menghubungkan para penutur jati, komuniti keluarga, penyelidik dan generasi masa hadapan merentasi pelbagai daerah termasuk Kota Belud, Tuaran, Papar, Kawang dan kawasan pesisir Sabah.
@@ -695,7 +695,7 @@ function openTentangModal() {
         <strong>Matlamat Utama:</strong>
         <ul style="margin-top:6px; padding-left:18px; display:flex; flex-direction:column; gap:4px;">
           <li>Memudahkan pencarian kosa kata secara tepat dan pantas.</li>
-          <li>Mendokumentésénkan variasi dialek daerah dan terbitan imbuhan.</li>
+          <li>Mendokumentasikan variasi dialek daerah dan terbitan imbuhan.</li>
           <li>Menyediakan ruang sumbangan terbuka yang disemak secara teliti.</li>
         </ul>
       </div>

@@ -2080,8 +2080,8 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                               setSelectedEntry({ ...selectedEntry, categoryIds: next });
                             }}
                             className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium transition cursor-pointer border ${isSelected
-                                ? 'bg-amber-600 text-white border-amber-600 shadow-sm'
-                                : 'bg-white text-stone-700 border-sand-300 hover:border-amber-400 hover:bg-amber-50/50'
+                              ? 'bg-amber-600 text-white border-amber-600 shadow-sm'
+                              : 'bg-white text-stone-700 border-sand-300 hover:border-amber-400 hover:bg-amber-50/50'
                               }`}
                           >
                             <span>{cat.icon || '🏷️'}</span>
@@ -2101,7 +2101,7 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                           <span>📚</span> Sumber & Provenans Linguistik ({selectedEntry.sources?.length || 0})
                         </h3>
                         <p className="text-xs text-stone-500">
-                          Dokumentésén sumber rujukan leksikal (cth: penerbitan akademik, informan lisan, atau semakan jawatankuasa).
+                          Dokumentasi sumber rujukan leksikal (cth: penerbitan akademik, informan lisan, atau semakan jawatankuasa).
                         </p>
                       </div>
                       <button

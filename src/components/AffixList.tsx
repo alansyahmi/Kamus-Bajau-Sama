@@ -78,7 +78,7 @@ export default function AffixList({ affixes }: { affixes: LexicalAffix[] }) {
                 ) : (
                   <span
                     className="text-[11px] font-normal text-slate-700 bg-slate-100 px-2 py-0.5 rounded-full inline-flex items-center gap-1 cursor-help"
-                    title="Bentuk morfologi produktif (belum didokumentésénkan sebagai entri bertulis tersendiri)"
+                    title="Bentuk morfologi produktif (belum di sebagai entri bertulis tersendiri)"
                   >
                     <HelpCircle className="w-3 h-3 text-slate-700" />
                     <span>{t.affix_theoretical_form}</span>

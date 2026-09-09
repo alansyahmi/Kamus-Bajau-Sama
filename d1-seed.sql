@@ -1,7 +1,7 @@
 -- Cloudflare D1 Initial Data Seed for Kamus Bajau Sama
 PRAGMA foreign_keys = OFF;
 
--- Table: entries (852 rows)
+-- Table: entries (884 rows)
 INSERT OR REPLACE INTO `entries` (`id`, `headword`, `search_normalized`, `part_of_speech`, `ipa`, `audio_url`, `created_at`, `updated_at`) VALUES
   (18949, 'abis', 'abis', 'KATA KERJA', '/a.bis/', '/audio/18949_abis.mp3?v=1788215876271', '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (18950, 'agak', 'agak', 'KATA KERJA', '/a.gak/', '/audio/18950_agak.mp3?v=1788215892919', '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
@@ -130,9 +130,9 @@ INSERT OR REPLACE INTO `entries` (`id`, `headword`, `search_normalized`, `part_o
   (19073, 'dilau', 'dilau', 'KATA KETERANGAN', '/di.law/', '/audio/19073_dilau.mp3?v=1788222028618', '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19074, 'dinakan', 'dinakan', 'KATA NAMA', '/di.na.kan/', '/audio/19074_dinakan.mp3?v=1788222047826', '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19075, 'diri', 'diri', 'KATA NAMA', '/di.ri/', '/audio/19075_diri.mp3?v=1788222062942', '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
-  (19076, 'do''', 'do', 'KATA PENEGAS (PARTIKEL)', '/doʔ/', '/audio/19076_do_.mp3?v=1788222071861', '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
-  (19077, 'doko''', 'doko', 'KATA SENDI NAMA', '/do.koʔ/', '/audio/19077_doko_.mp3?v=1788222083778', '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
-  (19078, 'dokon', 'dokon', 'KATA SENDI NAMA', '/do.kon/', '/audio/19078_dokon.mp3?v=1788222103262', '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
+  (19076, 'do''', 'do', 'KATA PENEGAS (PARTIKEL)', '/doʔ/', '/audio/19076_do_.mp3?v=1788222071861', '2026-08-31 17:31:15', '2026-09-08T22:45:46.257Z'),
+  (19077, 'doko''', 'doko', 'KATA SENDI NAMA', '/do.koʔ/', '/audio/19077_doko_.mp3?v=1788222083778', '2026-08-31 17:31:15', '2026-09-08T22:44:29.632Z'),
+  (19078, 'dokon', 'dokon', 'KATA SENDI NAMA', '/do.kon/', '/audio/19078_dokon.mp3?v=1788222103262', '2026-08-31 17:31:15', '2026-09-08T22:44:39.122Z'),
   (19079, 'dokop', 'dokop', 'KATA KERJA', '/do.kop/', '/audio/19079_dokop.mp3?v=1788222109184', '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19080, 'duangan', 'duangan', 'PENJODOH BILANGAN', '/du.wa.ŋan/', '/audio/19080_duangan.mp3?v=1788222142827', '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19081, 'dulé''', 'dule', 'KATA KERJA', '/du.leʔ/', '/audio/19081_dul__.mp3?v=1788222156907', '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
@@ -166,7 +166,7 @@ INSERT OR REPLACE INTO `entries` (`id`, `headword`, `search_normalized`, `part_o
   (19108, 'eraa', 'eraa', 'KATA NAMA', '/ə.raː/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19109, 'fikiran', 'fikiran', 'KATA NAMA', '/fi.ki.ran/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19110, 'gemuring', 'gemuring', 'KATA KERJA', '/gə.mu.riŋ/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
-  (19111, 'gai', 'gai', 'KATA NAMA', '/gaj/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
+  (19111, 'gai', 'gai', 'KATA GANTI NAMA', '/gaj/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19112, 'gandang', 'gandang', 'KATA NAMA', '/gan.daŋ/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19113, 'gandum', 'gandum', 'KATA NAMA', '/gan.dum/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19114, 'gontor', 'gontor', 'KATA KERJA', '/gon.tor/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
@@ -195,8 +195,8 @@ INSERT OR REPLACE INTO `entries` (`id`, `headword`, `search_normalized`, `part_o
   (19139, 'jarang', 'jarang', 'KATA KETERANGAN', '/dʒa.raŋ/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19140, 'jata''', 'jata', 'KATA ARAH', '/dʒa.taʔ/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19141, 'jawap', 'jawap', 'KATA KERJA', '/dʒa.wap/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
-  (19142, 'jo', 'jo', 'KATA PENEGAS (PARTIKEL)', '/dʒo/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
-  (19143, 'jomo', 'jomo', 'KATA NAMA', '/dʒo.mo/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
+  (19142, 'jo', 'jo', 'KATA PENEGAS (PARTIKEL)', '/dʒo/', NULL, '2026-08-31 17:31:15', '2026-09-08T22:42:55.112Z'),
+  (19143, 'jomo', 'jomo', 'KATA NAMA', '/dʒo.mo/', NULL, '2026-08-31 17:31:15', '2026-09-08T22:43:21.514Z'),
   (19144, 'ka''', 'ka', 'KATA SIFAT', '/kaʔ/', '/audio/19144_ka_.mp3?v=1788224266889', '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19145, 'kaang', 'kaang', 'KATA KETERANGAN', '/kaːŋ/', '/audio/19145_kaang.mp3?v=1788224326305', '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19146, 'kadai', 'kadai', 'KATA NAMA', '/ka.daj/', '/audio/19146_kadai.mp3?v=1788224306233', '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
@@ -260,10 +260,10 @@ INSERT OR REPLACE INTO `entries` (`id`, `headword`, `search_normalized`, `part_o
 INSERT OR REPLACE INTO `entries` (`id`, `headword`, `search_normalized`, `part_of_speech`, `ipa`, `audio_url`, `created_at`, `updated_at`) VALUES
   (19203, 'kitik-kitikan', 'kitikkitikan', 'KATA NAMA', '/ki.tik-ki.ti.kan/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19204, 'kito', 'kito', 'KATA KERJA', '/ki.to/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
-  (19205, 'kono''', 'kono', 'KATA PENEGAS (PARTIKEL)', '/ko.noʔ/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
+  (19205, 'kono''', 'kono', 'KATA PENEGAS (PARTIKEL)', '/ko.noʔ/', NULL, '2026-08-31 17:31:15', '2026-09-08T22:48:38.199Z'),
   (19206, 'koot', 'koot', 'KATA KERJA', '/koːt/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
-  (19208, 'koso', 'koso', 'KATA BANTU', '/ko.so/', '/audio/19208_koso.mp3?v=1788826548089', '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
-  (19209, 'ku', 'ku', 'KATA GANTI NAMA', '/ku/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
+  (19208, 'koso', 'koso', 'KATA PENEGAS (PARTIKEL)', '/ko.so/', '/audio/19208_koso.mp3?v=1788826548089', '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
+  (19209, '-ku', 'ku', 'KATA GANTI NAMA', '/ku/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19210, 'kua', 'kua', 'KATA KERJA', '/ku.wa/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19211, 'kua-an', 'kuaan', 'KATA BILANGAN', '/ku.wa-an/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19212, 'kucing', 'kucing', 'KATA NAMA', '/ku.ciŋ/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
@@ -337,7 +337,7 @@ INSERT OR REPLACE INTO `entries` (`id`, `headword`, `search_normalized`, `part_o
   (19282, 'malas', 'malas', 'KATA SIFAT', '/ma.las/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19283, 'malé''', 'male', 'KATA SIFAT', '/ma.leʔ/', '/audio/19283_mal__.mp3?v=1788224661379', '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19284, 'mamis', 'mamis', 'KATA SIFAT', '/ma.mis/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
-  (19285, 'man', 'man', 'KATA SENDI NAMA', '/man/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
+  (19285, 'man', 'man', 'KATA SENDI NAMA', '/man/', NULL, '2026-08-31 17:31:15', '2026-09-08T22:35:10.779Z'),
   (19286, 'mandi', 'mandi', 'KATA KERJA', '/man.di/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19287, 'mangan', 'mangan', 'KATA KERJA', '/ma.ŋan/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19288, 'mangé''', 'mange', 'KATA KERJA', '/ma.ŋeʔ/', '/audio/19288_mange_.mp3?v=1788224694180', '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
@@ -357,7 +357,7 @@ INSERT OR REPLACE INTO `entries` (`id`, `headword`, `search_normalized`, `part_o
   (19302, 'mentito', 'mentito', 'KATA NAMA', '/mən.ti.to/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19303, 'meras', 'meras', 'KATA KERJA', '/mə.ras/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19304, 'mesi', 'mesi', 'KATA KERJA', '/mə.si/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
-  (19305, 'mesti''', 'mesti', 'KATA NAMA', '/məs.tiʔ/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
+  (19305, 'mesti''', 'mesti', 'KATA NAMA', '/məs.tiʔ/', NULL, '2026-08-31 17:31:15', '2026-09-08T23:08:18.356Z'),
   (19306, 'metak', 'metak', 'KATA KERJA', '/mə.tak/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39');
 INSERT OR REPLACE INTO `entries` (`id`, `headword`, `search_normalized`, `part_of_speech`, `ipa`, `audio_url`, `created_at`, `updated_at`) VALUES
   (19307, 'metoo', 'metoo', 'KATA NAMA', '/mə.toː/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
@@ -386,7 +386,7 @@ INSERT OR REPLACE INTO `entries` (`id`, `headword`, `search_normalized`, `part_o
   (19330, 'nganga', 'nganga', 'KATA NAMA', '/ŋa.ŋa/', '/audio/19330_nganga.mp3?v=1788225038917', '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19331, 'nganga-nganga', 'nganganganga', 'KATA NAMA', '/ŋa.ŋa-ŋa.ŋa/', '/audio/19331_nganga_nganga.mp3?v=1788225033011', '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19332, 'ngantok', 'ngantok', 'KATA KERJA', '/ŋan.tok/', '/audio/19332_ngantok.mp3?v=1788225018278', '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
-  (19333, 'ngejomo', 'ngejomo', 'KATA KERJA', '/ŋə.dʒo.mo/', '/audio/19333_nge_jomo.mp3?v=1788225122187', '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
+  (19333, 'ngejomo', 'ngejomo', 'KATA KERJA', '/ŋə.dʒo.mo/', '/audio/19333_nge_jomo.mp3?v=1788225122187', '2026-08-31 17:31:15', '2026-09-08T22:42:22.368Z'),
   (19334, 'ngelaa''', 'ngelaa', 'KATA KERJA', '/ŋə.laːʔ/', '/audio/19334_nge_laa_.mp3?v=1788225150568', '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19335, 'ngelandung', 'ngelandung', 'KATA KERJA', '/ŋə.lan.duŋ/', '/audio/19335_ngelandung.mp3?v=1788225200186', '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19336, 'ngelubang', 'ngelubang', 'KATA SIFAT', '/ŋə.lu.baŋ/', '/audio/19336_ngelubang.mp3?v=1788225300419', '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
@@ -419,7 +419,7 @@ INSERT OR REPLACE INTO `entries` (`id`, `headword`, `search_normalized`, `part_o
   (19362, 'nimung', 'nimung', 'KATA KERJA', '/ni.muŋ/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19363, 'ningkoo''', 'ningkoo', 'KATA KERJA', '/niŋ.koːʔ/', '/audio/19363_ningkoo_.mp3?v=1788225930587', '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19364, 'ninkgoo''-ningkoo''', 'ninkgooningkoo', 'KATA KERJA', '/nin.kgoːʔ-niŋ.koːʔ/', '/audio/19364_ninkgoo__ningkoo_.mp3?v=1788225961789', '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
-  (19365, 'no', 'no', 'KATA NAMA', '/no/', '/audio/19365_no.mp3?v=1788226003149', '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
+  (19365, 'no', 'no', 'KATA PENEGAS (PARTIKEL)', '/no/', '/audio/19365_no.mp3?v=1788226003149', '2026-08-31 17:31:15', '2026-09-08T22:41:16.779Z'),
   (19366, 'notok', 'notok', 'KATA KERJA', '/no.tok/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19367, 'nuut', 'nuut', 'KATA KERJA', '/nuːt/', '/audio/19367_nuut.mp3?v=1788226056928', '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19368, 'nya''', 'nya', 'KATA NAFI', '/ɲaʔ/', '/audio/19368_nya_.mp3?v=1788226083577', '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
@@ -449,7 +449,7 @@ INSERT OR REPLACE INTO `entries` (`id`, `headword`, `search_normalized`, `part_o
   (19392, 'palu', 'palu', 'KATA KERJA', '/pa.lu/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19393, 'paluan', 'paluan', 'KATA KERJA', '/pa.lu.wan/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19394, 'palu-paluan', 'palupaluan', 'KATA NAMA', '/pa.lu-pa.lu.wan/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
-  (19395, 'pan', 'pan', 'KATA PENEGAS (PARTIKEL)', '/pan/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
+  (19395, 'pan', 'pan', 'KATA PENEGAS (PARTIKEL)', '/pan/', NULL, '2026-08-31 17:31:15', '2026-09-08T22:43:53.730Z'),
   (19396, 'panas', 'panas', 'KATA SIFAT', '/pa.nas/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19397, 'pandai', 'pandai', 'KATA KERJA', '/pan.daj/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19398, 'pandi', 'pandi', 'KATA KERJA', '/pan.di/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
@@ -460,7 +460,7 @@ INSERT OR REPLACE INTO `entries` (`id`, `headword`, `search_normalized`, `part_o
   (19403, 'panutan', 'panutan', 'KATA KERJA', '/pa.nu.tan/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19404, 'papi', 'papi', 'KATA KERJA', '/pa.pi/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19405, 'papian', 'papian', 'KATA NAMA', '/pa.pi.jan/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
-  (19406, 'parai', 'parai', 'KATA NAMA', '/pa.raj/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39');
+  (19406, 'parai', 'parai', 'KATA NAMA', '/pa.raj/', NULL, '2026-08-31 17:31:15', '2026-09-08T22:30:58.950Z');
 INSERT OR REPLACE INTO `entries` (`id`, `headword`, `search_normalized`, `part_of_speech`, `ipa`, `audio_url`, `created_at`, `updated_at`) VALUES
   (19407, 'pasal', 'pasal', 'KATA NAMA', '/pa.sal/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19408, 'patai', 'patai', 'KATA KERJA', '/pa.taj/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
@@ -579,14 +579,14 @@ INSERT OR REPLACE INTO `entries` (`id`, `headword`, `search_normalized`, `part_o
   (19519, 'ruma''', 'ruma', 'KATA NAMA', '/ru.maʔ/', '/audio/19519_ruma_.mp3?v=1788226529964', '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19520, 'rungai', 'rungai', 'KATA SIFAT', '/ru.ŋaj/', '/audio/19520_rungai.mp3?v=1788226542643', '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19521, 'runsai', 'runsai', 'KATA NAMA', '/run.saj/', '/audio/19521_runsai.mp3?v=1788226552328', '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
-  (19522, 'sab', 'sab', 'KATA PENEGAS (PARTIKEL)', '/sab/', '/audio/19522_sab.mp3?v=1788226569539', '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
+  (19522, 'sab', 'sab', 'KATA PENEGAS (PARTIKEL)', '/sab/', '/audio/19522_sab.mp3?v=1788226569539', '2026-08-31 17:31:15', '2026-09-08T22:50:16.707Z'),
   (19523, 'sading', 'sading', 'KATA KERJA', '/sa.diŋ/', '/audio/19523_sading.mp3?v=1788226574663', '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19524, 'sadingan', 'sadingan', 'KATA KERJA', '/sa.di.ŋan/', '/audio/19524_sadingan.mp3?v=1788226581042', '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19525, 'saging', 'saging', 'KATA NAMA', '/sa.giŋ/', '/audio/19525_saging.mp3?v=1788226585688', '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19526, 'sajuk', 'sajuk', 'KATA SIFAT', '/sa.dʒuk/', '/audio/19526_sajuk.mp3?v=1788226590699', '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19527, 'sala''', 'sala', 'KATA KERJA', '/sa.laʔ/', '/audio/19527_sala_.mp3?v=1788226605837', '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19528, 'sambil', 'sambil', 'KATA HUBUNG', '/sam.bil/', '/audio/19528_sambil.mp3?v=1788226624474', '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
-  (19530, 'sanang', 'sanang', 'KATA SIFAT', '/sa.naŋ/', '/audio/19530_sanang.mp3?v=1788226676832', '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
+  (19530, 'sanang', 'sanang', 'KATA SIFAT', '/sa.naŋ/', '/audio/19530_sanang.mp3?v=1788226676832', '2026-08-31 17:31:15', '2026-09-08T23:42:44.301Z'),
   (19531, 'sapi''', 'sapi', 'KATA NAMA', '/sa.piʔ/', '/audio/19531_sapi_.mp3?v=1788226691134', '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19532, 'sapu', 'sapu', 'KATA KERJA', '/sa.pu/', '/audio/19532_sapu.mp3?v=1788226699048', '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19533, 'sarat', 'sarat', 'KATA KERJA / PENJODOH BILANGAN', '/sa.rat/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
@@ -613,7 +613,7 @@ INSERT OR REPLACE INTO `entries` (`id`, `headword`, `search_normalized`, `part_o
   (19555, 'silimpas', 'silimpas', 'KATA KERJA', '/si.lim.pas/', '/audio/19555_si_limpas.mp3?v=1788227473089', '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19556, 'si-ogo-ogo', 'siogoogo', 'KATA KERJA', '/si-o.go-o.go/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19557, 'si-tangis-tangis', 'sitangistangis', 'KATA KERJA', '/si-ta.ŋis-ta.ŋis/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
-  (19558, 'si-temu', 'sitemu', 'KATA KERJA', '/si-tə.mu/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39');
+  (19558, 'sitemu', 'sitemu', 'KATA KERJA', '/si.tə.mu/', NULL, '2026-08-31 17:31:15', '2026-09-08T22:46:38.432Z');
 INSERT OR REPLACE INTO `entries` (`id`, `headword`, `search_normalized`, `part_of_speech`, `ipa`, `audio_url`, `created_at`, `updated_at`) VALUES
   (19559, 'sian', 'sian', 'KATA TANYA', '/si.jan/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19560, 'siano', 'siano', 'KATA GANTI NAMA TANYA', '/si.ja.no/', '/audio/19560_siano.mp3?v=1788227365300', '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
@@ -638,7 +638,7 @@ INSERT OR REPLACE INTO `entries` (`id`, `headword`, `search_normalized`, `part_o
   (19579, 'suk', 'suk', 'KATA NAMA', '/suk/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19580, 'suka''', 'suka', 'KATA NAMA', '/su.kaʔ/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19581, 'sukup', 'sukup', 'KATA SIFAT', '/su.kup/', '/audio/19581_sukup.mp3?v=1788227951129', '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
-  (19582, 'supaya', 'supaya', 'KATA HUBUNG', '/su.pa.ja/', '/audio/19582_supaya.mp3?v=1788227971220', '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
+  (19582, 'supaya', 'supaya', 'KATA HUBUNG', '/su.pa.ja/', '/audio/19582_supaya.mp3?v=1788227971220', '2026-08-31 17:31:15', '2026-09-08T23:05:30.015Z'),
   (19583, 'surat', 'surat', 'KATA NAMA', '/su.rat/', '/audio/19583_surat.mp3?v=1788227980956', '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19584, 'susa', 'susa', 'KATA NAMA', '/su.sa/', '/audio/19584_susa.mp3?v=1788227987623', '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19585, 'susu', 'susu', 'KATA NAMA', '/su.su/', '/audio/19585_susu.mp3?v=1788227996560', '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
@@ -658,7 +658,7 @@ INSERT OR REPLACE INTO `entries` (`id`, `headword`, `search_normalized`, `part_o
   (19599, 'tatak-tatakan', 'tataktatakan', 'KATA KERJA', '/ta.tak-ta.ta.kan/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19600, 'tau', 'tau', 'KATA NAMA', '/taw/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19601, 'taun', 'taun', 'KATA NAMA', '/ta.un/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
-  (19602, 'té''', 'te', 'KATA PENEGAS (PARTIKEL)', '/teʔ/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
+  (19602, 'té''', 'te', 'KATA PENEGAS (PARTIKEL)', '/teʔ/', NULL, '2026-08-31 17:31:15', '2026-09-08T22:47:59.161Z'),
   (19603, 'teboon', 'teboon', 'KATA KERJA', '/tə.boːn/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19604, 'tekelipat', 'tekelipat', 'KATA KERJA', '/tə.kə.li.pat/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
   (19605, 'terati', 'terati', 'KATA KERJA', '/tə.ra.ti/', NULL, '2026-08-31 17:31:15', '2026-09-08 20:34:39'),
@@ -776,7 +776,7 @@ INSERT OR REPLACE INTO `entries` (`id`, `headword`, `search_normalized`, `part_o
   (20448, 'ano', 'ano', 'KATA GANTI NAMA TANYA', '/a.no/', NULL, '2026-09-08 01:29:46', '2026-09-08 20:34:39'),
   (20449, 'dong', 'dong', 'KATA PERINTAH', '/doŋ/', NULL, '2026-09-08 02:01:19', '2026-09-08 20:34:39'),
   (20450, 'daa', 'daa', 'KATA PERINTAH', '/daː/', NULL, '2026-09-08 02:01:19', '2026-09-08 20:34:39'),
-  (20451, 'baa''', 'baa', 'KATA PERINTAH', '/baːʔ/', NULL, '2026-09-08 02:01:19', '2026-09-08 20:34:39'),
+  (20451, 'baa''', 'baa', 'KATA PERINTAH', '/baːʔ/', NULL, '2026-09-08 02:01:19', '2026-09-08T22:33:22.012Z'),
   (20452, 'pasi', 'pasi', 'KATA PERINTAH', '/pa.si/', NULL, '2026-09-08 02:01:19', '2026-09-08 20:34:39'),
   (20453, 'baya''-ni', 'bayani', 'KATA PERINTAH', '/ba.jaʔ-ni/', NULL, '2026-09-08 02:01:19', '2026-09-08 20:34:39'),
   (20454, 'diata''', 'diata', 'KATA ARAH', '/di.ja.taʔ/', NULL, '2026-09-08 19:39:43', '2026-09-08 20:34:39'),
@@ -871,9 +871,41 @@ INSERT OR REPLACE INTO `entries` (`id`, `headword`, `search_normalized`, `part_o
   (20542, 'lé''', 'le', 'KATA SENDI NAMA', '/leʔ/', NULL, '2026-09-08 21:20:32', '2026-09-08T21:27:13.136Z');
 INSERT OR REPLACE INTO `entries` (`id`, `headword`, `search_normalized`, `part_of_speech`, `ipa`, `audio_url`, `created_at`, `updated_at`) VALUES
   (20543, 'ko''', 'ko', 'KATA SENDI NAMA / KATA HUBUNG', '/koʔ/', NULL, '2026-09-08 21:20:32', '2026-09-08 21:20:32'),
-  (20544, 'sampai', 'sampai', 'KATA SENDI NAMA / KATA HUBUNG', '/sam.paj/', NULL, '2026-09-08 21:20:32', '2026-09-08T21:31:12.113Z');
+  (20544, 'sampai', 'sampai', 'KATA SENDI NAMA / KATA HUBUNG', '/sam.paj/', NULL, '2026-09-08 21:20:32', '2026-09-08T21:31:12.113Z'),
+  (20545, 'aii''', 'aii', 'KATA SERU', '/a.iːʔ/', NULL, '2026-09-08 22:16:28', '2026-09-08 22:16:28'),
+  (20546, 'adaka', 'adaka', 'KATA SERU', '/a.da.ka/', NULL, '2026-09-08 22:16:28', '2026-09-08T22:28:48.011Z'),
+  (20547, 'oi''', 'oi', 'KATA SERU', '/ojʔ/', NULL, '2026-09-08 22:16:28', '2026-09-08 22:16:28'),
+  (20548, 'si''', 'si', 'KATA SERU', '/siʔ/', NULL, '2026-09-08 22:16:28', '2026-09-08T22:30:27.721Z'),
+  (20549, 'sé''', 'se', 'KATA SERU', '/seʔ/', NULL, '2026-09-08 22:16:28', '2026-09-08 22:16:28'),
+  (20550, 'adui', 'adui', 'KATA SERU', '/a.duj/', NULL, '2026-09-08 22:16:28', '2026-09-08T22:32:31.727Z'),
+  (20551, 'adoi', 'adoi', 'KATA SERU', '/a.doj/', NULL, '2026-09-08 22:16:28', '2026-09-08 22:16:28'),
+  (20552, 'ba', 'ba', 'KATA SERU / KATA TUGAS', '/ba/', NULL, '2026-09-08 22:16:28', '2026-09-08T22:33:13.160Z'),
+  (20553, 'aku', 'aku', 'KATA GANTI NAMA', '/a.ku/', NULL, '2026-09-08 22:56:53', '2026-09-08 22:56:53'),
+  (20554, 'kiti', 'kiti', 'KATA GANTI NAMA', '/ki.ti/', NULL, '2026-09-08 22:56:53', '2026-09-08 22:56:53'),
+  (20556, 'kami', 'kami', 'KATA GANTI NAMA', '/ka.mi/', NULL, '2026-09-08 22:56:53', '2026-09-08 22:56:53'),
+  (20557, 'kau', 'kau', 'KATA GANTI NAMA', '/kaw/', NULL, '2026-09-08 22:56:53', '2026-09-08 22:56:53'),
+  (20558, 'kaam', 'kaam', 'KATA GANTI NAMA', '/kaːm/', NULL, '2026-09-08 22:56:53', '2026-09-08 22:56:53'),
+  (20559, 'kam', 'kam', 'KATA GANTI NAMA', '/kam/', NULL, '2026-09-08 22:56:53', '2026-09-08 22:56:53'),
+  (20560, 'iyo', 'iyo', 'KATA GANTI NAMA', '/i.jo/', NULL, '2026-09-08 22:56:53', '2026-09-08 22:56:53'),
+  (20561, '-ti', 'ti', 'KATA GANTI NAMA', '/ti/', NULL, '2026-09-08 22:56:53', '2026-09-08T23:01:54.581Z'),
+  (20562, '-nu', 'nu', 'KATA GANTI NAMA', '/nu/', NULL, '2026-09-08 22:56:53', '2026-09-08 22:56:53'),
+  (20563, '-bi', 'bi', 'KATA GANTI NAMA', '/bi/', NULL, '2026-09-08 22:56:53', '2026-09-08 22:56:53'),
+  (20564, 'kitei', 'kitei', 'KATA GANTI NAMA', '/ki.tej/', NULL, '2026-09-08 22:59:20', '2026-09-08 22:59:20'),
+  (20565, 'kitai', 'kitai', 'KATA GANTI NAMA', '/ki.taj/', NULL, '2026-09-08 22:59:20', '2026-09-08 22:59:20'),
+  (20566, 'enjaji', 'enjaji', 'KATA HUBUNG', '/ən.ja.ji/', NULL, '2026-09-08T23:08:11.040Z', '2026-09-08T23:10:01.111Z'),
+  (20567, 'maku', 'maku', 'KATA GANTI NAMA', '/ma.ku/', NULL, '2026-09-08 23:12:46', '2026-09-08 23:12:46'),
+  (20568, 'engkiti', 'engkiti', 'KATA GANTI NAMA', '/əŋ.ki.ti/', NULL, '2026-09-08 23:12:46', '2026-09-08 23:12:46'),
+  (20569, 'engkami', 'engkami', 'KATA GANTI NAMA', '/əŋ.ka.mi/', NULL, '2026-09-08 23:12:46', '2026-09-08 23:12:46'),
+  (20570, 'engkau', 'engkau', 'KATA GANTI NAMA', '/əŋ.kaw/', NULL, '2026-09-08 23:12:46', '2026-09-08 23:12:46'),
+  (20571, 'engkaam', 'engkaam', 'KATA GANTI NAMA', '/əŋ.kaːm/', NULL, '2026-09-08 23:12:46', '2026-09-08 23:12:46'),
+  (20572, 'mio', 'mio', 'KATA GANTI NAMA', '/mi.o/', NULL, '2026-09-08 23:12:46', '2026-09-08 23:12:46'),
+  (20573, 'miyo', 'miyo', 'KATA GANTI NAMA', '/mi.jo/', NULL, '2026-09-08 23:12:46', '2026-09-08 23:12:46'),
+  (20574, 'enggai', 'enggai', 'KATA GANTI NAMA', '/əŋ.gaj/', NULL, '2026-09-08 23:12:46', '2026-09-08 23:12:46'),
+  (20575, 'engkam', 'engkam', 'KATA GANTI NAMA', '/əŋ.kam/', NULL, '2026-09-08 23:25:01', '2026-09-08 23:25:01'),
+  (20576, 'é', 'e', 'KATA GANTI NAMA TUNJUK', '/e/', NULL, '2026-09-09 01:22:00', '2026-09-09 01:22:00'),
+  (20577, 'u''', 'u', 'KATA GANTI NAMA TUNJUK', '/uʔ/', NULL, '2026-09-09 01:22:00', '2026-09-09 01:22:00');
 
--- Table: senses (881 rows)
+-- Table: senses (914 rows)
 INSERT OR REPLACE INTO `senses` (`id`, `entry_id`, `order_index`, `definition_ms`, `definition_en`) VALUES
   (18949, 18949, 1, 'habis', 'to finish'),
   (18950, 18950, 1, 'agak', 'to guess, to assume'),
@@ -1002,7 +1034,7 @@ INSERT OR REPLACE INTO `senses` (`id`, `entry_id`, `order_index`, `definition_ms
   (19073, 19073, 1, 'semalam', 'yesterday'),
   (19074, 19074, 1, 'saudara-mara', 'relative'),
   (19075, 19075, 1, 'diri', 'self'),
-  (19076, 19076, 1, 'partikel untuk menekankan kecepatan pelaksanaan sesuatu pelakuan atau perintah, (harfiah) dulu', 'a particle to stress the urgency of doing an action, usually an imperative'),
+  (19076, 19076, 1, '-lah, dulu, gerangan; partikel penegas kesegeraan perbuatan (terutamanya dalam ayat suruhan/permintaan) atau penegas kata tanya dan nafi', 'emphatic particle of immediacy (widely used with imperatives/hortatives to urge immediate action, or modifying question words and negators)'),
   (19077, 19077, 1, 'macam, seperti, bagai (mengambil pelengkap frasa nama atau adverba)', 'like, as (typically takes an NP or adverb complement)'),
   (19078, 19078, 1, 'macam, seperti, bagai (mengambil pelengkap klausa atau perbuatan)', 'like, as (regularly takes a clausal complement)'),
   (19079, 19079, 1, 'tangkap', 'to catch'),
@@ -1038,7 +1070,7 @@ INSERT OR REPLACE INTO `senses` (`id`, `entry_id`, `order_index`, `definition_ms
   (19108, 19108, 1, 'teriak', 'shout'),
   (19109, 19109, 1, 'idea, opinion', 'idea, opinion'),
   (19110, 19110, 1, 'guling, golek', 'to roll'),
-  (19111, 19111, 1, 'mereka', '3rd person pronoun: they'),
+  (19111, 19111, 1, 'mereka; kata ganti nama diri ketiga jamak. Dalam nahu Bajau Samah, ''gai'' juga berfungsi sebagai penanda pelaku Set I (tiada bentuk enklitik khusus).', 'they, them (3rd person plural pronoun; functions both as independent pronoun and Set I non-subject actor marker)'),
   (19112, 19112, 1, 'gendang', 'a kind of drum'),
   (19113, 19113, 1, 'jagung, (harfiah) gandum', 'corn'),
   (19114, 19114, 1, 'goyang, (harfiah) guntur', 'to shake something'),
@@ -1061,14 +1093,14 @@ INSERT OR REPLACE INTO `senses` (`id`, `entry_id`, `order_index`, `definition_ms
   (19132, 19132, 1, 'lontar, buang', 'to throw at'),
   (19133, 19133, 1, 'lontarkan, buangkan', 'to throw something at, in'),
   (19135, 19135, 1, 'ibu, emak', 'mother'),
-  (19136, 19136, 1, 'dia', 'he, she, it'),
+  (19136, 19136, 1, 'dia, ia; kata ganti nama diri ketiga tunggal (merujuk kepada orang atau benda). Bentuk baku dan rasmi ialah io.', 'he, she, it (3rd person singular independent pronoun). The standard orthographic form is io.'),
   (19137, 19137, 1, 'jadi', 'to become (someone or something)'),
   (19138, 19138, 1, 'zaman', 'age, period of time'),
   (19139, 19139, 1, 'jarang, jarang-jarang', 'rarely, seldom'),
   (19140, 19140, 1, 'atas, di atas, bahagian atas (ragam Kota Belud bagi diata'')', 'above, on top of, on (Kota Belud regional contracted form of diata'')'),
   (19141, 19141, 1, 'jawab', 'to answer'),
-  (19142, 19142, 1, 'ja, saja, sahaja', '(roughly) only, just'),
-  (19143, 19143, 1, 'orang, manusia, (harfiah) jelma', 'person, people'),
+  (19142, 19142, 1, 'sahaja, saja, cuma, sekadar; partikel pembatas atau penegas fokus yang mengehadkan skop atau melembutkan ujaran perintah', 'only, just, merely; restrictive and focal discourse particle limiting scope or softening imperative force'),
+  (19143, 19143, 1, 'orang, manusia, (harfiah) jelma, (Brunei) jalama', 'person, people'),
   (19144, 19144, 1, 'abang, kakak', 'older sibling'),
   (19145, 19145, 1, 'karang, nanti, kelak', 'later, soon'),
   (19146, 19146, 1, 'kedai, pekan', 'shop, store'),
@@ -1132,10 +1164,10 @@ INSERT OR REPLACE INTO `senses` (`id`, `entry_id`, `order_index`, `definition_ms
 INSERT OR REPLACE INTO `senses` (`id`, `entry_id`, `order_index`, `definition_ms`, `definition_en`) VALUES
   (19203, 19203, 1, 'sasaran geletek', 'object of repeated tickling'),
   (19204, 19204, 1, 'tampak, nampak', 'to see'),
-  (19205, 19205, 1, 'konon', 'hearsay'),
+  (19205, 19205, 1, 'konon, katanya; partikel penyampai khabar angin atau laporan sumber yang tidak disaksikan sendiri oleh penutur', 'hearsay and reportative particle (it is said, allegedly, reportedly; indicates information obtained from others)'),
   (19206, 19206, 1, 'capai, dengan', 'to reach inside with arm'),
-  (19208, 19208, 1, 'akan', '(future intent) will'),
-  (19209, 19209, 1, '-ku, ku', 'I, me'),
+  (19208, 19208, 1, 'akan, bakal, nampaknya; partikel penanda niat atau jangkaan masa depan', 'future or intentional particle (will, intends to, about to)'),
+  (19209, 19209, 1, '-ku, saya; kata ganti nama diri pertama tunggal terikat (enklitik pemunya dan penanda pelaku bukan subjek, cth. ''dapo''-ku'' = kepunyaan saya, ''tekito-ku'' = saya nampak, ''binoo-ku'' = saya bawa)', 'my, mine, by me; 1st person singular enclitic pronoun (marks possessor on nouns and non-subject actor on transitive verbs)'),
   (19210, 19210, 1, 'senduk, cedok', 'to ladle'),
   (19211, 19211, 1, 'senduk, satu', 'to ladle for (s.one)'),
   (19212, 19212, 1, 'kucing', 'cat'),
@@ -1229,7 +1261,7 @@ INSERT OR REPLACE INTO `senses` (`id`, `entry_id`, `order_index`, `definition_ms
   (19302, 19302, 1, 'ibu bapa, orang tua', 'parents, elders'),
   (19303, 19303, 1, 'mengilau', 'to shimmer'),
   (19304, 19304, 1, 'memancing', 'to fish using a rod'),
-  (19305, 19305, 1, 'enjaji  soo   nya', 'enjaji  soo   nya'),
+  (19305, 19305, 1, 'mesti', 'must, should'),
   (19306, 19306, 1, 'drip', 'to drip');
 INSERT OR REPLACE INTO `senses` (`id`, `entry_id`, `order_index`, `definition_ms`, `definition_en`) VALUES
   (19307, 19307, 1, 'mentua', 'parent-in-law'),
@@ -1258,7 +1290,7 @@ INSERT OR REPLACE INTO `senses` (`id`, `entry_id`, `order_index`, `definition_ms
   (19330, 19330, 1, 'spicy', 'spicy'),
   (19331, 19331, 1, 'little spicy', 'a little spicy'),
   (19332, 19332, 1, 'sleepy', 'sleepy'),
-  (19333, 19333, 1, 'meneman', 'to look after someone'),
+  (19333, 19333, 1, 'meneman, memantau', 'to look after someone'),
   (19334, 19334, 1, 'berdarah', 'to bleed'),
   (19335, 19335, 1, 'membayangi, memayungi', 'dim, overcast'),
   (19336, 19336, 1, 'berlubang', 'having many holes'),
@@ -1284,14 +1316,14 @@ INSERT OR REPLACE INTO `senses` (`id`, `entry_id`, `order_index`, `definition_ms
   (19356, 19356, 1, 'bekerja keras, berusaha', 'to work dilligently, to be hard-working');
 INSERT OR REPLACE INTO `senses` (`id`, `entry_id`, `order_index`, `definition_ms`, `definition_en`) VALUES
   (19357, 19357, 1, 'kelam, kabur', 'murky'),
-  (19358, 19358, 1, '-nya', 'his, her, their'),
+  (19358, 19358, 1, '-nya, dia; kata ganti nama diri ketiga tunggal terikat (enklitik pemunya dan penanda pelaku bukan subjek, cth. ''ling-ni'' = katanya, ''anak-ni'' = anaknya, ''kinetoan-ni'' = diketahuinya)', 'his, her, its, by him/her; 3rd person singular enclitic pronoun (marks possessor on nouns and non-subject actor on transitive verbs)'),
   (19359, 19359, 1, 'vow', 'vow'),
   (19360, 19360, 1, 'watched', 'to be watched'),
   (19361, 19361, 1, 'set down', 'to be set down'),
   (19362, 19362, 1, 'tengok', 'to look for clams'),
   (19363, 19363, 1, 'duduk', 'to sit'),
   (19364, 19364, 1, 'duduk', 'to sit at leisure'),
-  (19365, 19365, 1, 'foc', 'FOC'),
+  (19365, 19365, 1, '-lah; partikel penegas fokus dan penanda penyelesaian tindakan (sepadan dengan ''-lah'' dalam bahasa Melayu; cth. ''bangun no'' = bangunlah, ''mule'' no'' = pulanglah)', 'focal and completive discourse particle (equivalent to Malay ''-lah''; marks focus on predicate or completion of action/state)'),
   (19366, 19366, 1, 'tanam', 'to plant seedlings'),
   (19367, 19367, 1, 'ikut, (harfiah) menurut,', 'to follow behind'),
   (19368, 19368, 1, 'tidak', 'negation usually to verbs: no, not'),
@@ -1316,12 +1348,12 @@ INSERT OR REPLACE INTO `senses` (`id`, `entry_id`, `order_index`, `definition_ms
   (19387, 19387, 1, 'pakai', 'to use'),
   (19388, 19388, 1, 'agamawan', 'religious officiant'),
   (19389, 19389, 1, 'paksa', 'to force'),
-  (19390, 19390, 1, 'pula', 'counter-expectation'),
+  (19390, 19390, 1, 'pula, rupa-rupanya, sebenarnya; partikel penanda keadaan berlawanan jangkaan (counter-expectation)', 'counter-expectation discourse particle (turns out, actually, contrary to expectation)'),
   (19391, 19391, 1, 'paling', 'most, extremely'),
   (19392, 19392, 1, 'pukul, hentam, (harfiah) palu', 'hit'),
   (19393, 19393, 1, 'pukulkan', 'to hit using something'),
   (19394, 19394, 1, 'sasaran pukulan', 'object of repeated hitting'),
-  (19395, 19395, 1, 'pun, juga (penanda penegas)', 'topic particle: also, too, (emphatic marker)'),
+  (19395, 19395, 1, 'pun, juga, pula; partikel penanda topik, penambahan maklumat, atau penegas (sepadan dengan ''pun'' dalam bahasa Melayu)', 'topic and additive discourse particle (also, too, as for, even; marks topic shift, additive information, or emphasis)'),
   (19396, 19396, 1, 'panas', 'hot'),
   (19397, 19397, 1, 'mahir, pandai, berkebolehan', 'skilled, clever, able'),
   (19398, 19398, 1, 'memandikan', 'to bathe someone or something'),
@@ -1451,7 +1483,7 @@ INSERT OR REPLACE INTO `senses` (`id`, `entry_id`, `order_index`, `definition_ms
   (19519, 19519, 1, 'rumah', 'house'),
   (19520, 19520, 1, 'hilang', 'missing'),
   (19521, 19521, 1, 'tarian tradisional Bajau Sama', 'a kind of dance'),
-  (19522, 19522, 1, 'juga', 'also, too, repeat'),
+  (19522, 19522, 1, 'juga, pula, lagi; partikel penambah atau pengulang maklumat', 'additive and repetitive particle (also, too, again, in addition)'),
   (19523, 19523, 1, 'sandar, condong', 'to lean'),
   (19524, 19524, 1, 'berbaringan', 'to lie down on something'),
   (19525, 19525, 1, 'banana', 'banana'),
@@ -1485,7 +1517,7 @@ INSERT OR REPLACE INTO `senses` (`id`, `entry_id`, `order_index`, `definition_ms
   (19555, 19555, 1, 'berlalu-laluan', 'to pass by each other'),
   (19556, 19556, 1, 'melawat', 'to visit each other'),
   (19557, 19557, 1, 'menangis', 'to cry together'),
-  (19558, 19558, 1, 'jumpa', 'to meet each other');
+  (19558, 19558, 1, 'berjumpa, bertemu, bersua', 'to meet each other');
 INSERT OR REPLACE INTO `senses` (`id`, `entry_id`, `order_index`, `definition_ms`, `definition_en`) VALUES
   (19559, 19559, 1, 'siapa, siapakah', 'who, whom (interrogative pronoun)'),
   (19560, 19560, 1, 'apa', 'what'),
@@ -1530,7 +1562,7 @@ INSERT OR REPLACE INTO `senses` (`id`, `entry_id`, `order_index`, `definition_ms
   (19599, 19599, 1, 'menjatuh-jatuhkan', 'to drop something repeatedly'),
   (19600, 19600, 1, 'takut, gerun', 'fear'),
   (19601, 19601, 1, 'hutan', 'forest'),
-  (19602, 19602, 1, 'kata tugas: selalunya mengikuti kata kerja, kata keterangan atau penafi nya''. Boleh berada serentak dengan no dan pan.', 'emphatic marker: usually follows a verb, an adverb, or the negator nya’. Also occurs together with no and pan.'),
+  (19602, 19602, 1, '-lah, kan; partikel penegas ujaran lisan yang menyatakan kepastian atau keakraban (lazim mengikuti kata kerja, kata keterangan, atau kata nafi)', 'emphatic spoken particle expressing certainty, solidarity, or emphasis (typically follows verbs, adverbs, or negators)'),
   (19603, 19603, 1, 'terbawakan', 'to accidentally bring something for someone'),
   (19604, 19604, 1, 'terlupa', 'to happen to forget'),
   (19605, 19605, 1, 'tertahu', 'to happen to know'),
@@ -1772,9 +1804,43 @@ INSERT OR REPLACE INTO `senses` (`id`, `entry_id`, `order_index`, `definition_ms
   (20576, 20543, 1, 'dengan, dan, bersama; bentuk ringkas bagi kata sendi dan kata hubung ''engko''''', 'with, and; shortened colloquial form of the preposition and coordinating conjunction ''engko'''''),
   (20577, 20544, 1, 'sampai, hingga, sehingga; kata sendi nama takat yang menandakan batas masa atau tempat', 'until, up to; extent preposition marking a limit of time, distance, or boundary'),
   (20578, 20544, 2, 'sehingga, sampai; kata hubung pancangan yang memperkenalkan klausa takat atau akibat', 'until, so that; subordinator introducing extent or result clauses'),
-  (20579, 19259, 2, 'oleh; kata sendi penanda pelaku dalam binaan pasif (cth. ''bineli ling iyaku'' = dibeli oleh saya; ''pina''an ling jomo'' = diberitahu oleh orang)', 'by; agentive preposition marking the actor in passive constructions (e.g. ''bineli ling iyaku'' = bought by me)');
+  (20579, 19259, 2, 'oleh; kata sendi penanda pelaku dalam binaan pasif (cth. ''bineli ling iyaku'' = dibeli oleh saya; ''pina''an ling jomo'' = diberitahu oleh orang)', 'by; agentive preposition marking the actor in passive constructions (e.g. ''bineli ling iyaku'' = bought by me)'),
+  (20580, 20545, 1, 'wahai, aduhai, amboi, wah; seruan yang menyatakan perasaan terkejut, kagum, atau terperanjat', 'expression of surprise, astonishment, or wonder (''wow!'', ''oh my!'')'),
+  (20581, 20546, 1, 'masakan, adakah begitu!; seruan yang menyatakan rasa hairan, sangsi, atau terperanjat terhadap sesuatu khabar atau peristiwa', 'expression of surprise, disbelief, or astonishment (''really?!'', ''how can it be?!'')'),
+  (20582, 20547, 1, 'hoi, eh, ooi; seruan jengkel, teguran, atau panggilan menarik perhatian', 'expression of annoyance, irritation, or attention-getting call (''hey!'', ''oi!'')'),
+  (20583, 20548, 1, 'suh, hus; seruan atau bunyi yang dibuat khas untuk menghalau ayam', 'sound made to shoo away chickens (''shoo!'')'),
+  (20584, 20549, 1, 'hus, chiss; seruan atau bunyi yang dibuat khas untuk menghalau anjing', 'sound made to shoo away dogs (''shoo!'', ''scram!'')'),
+  (20585, 20550, 1, 'aduh, adoi; seruan untuk menyatakan rasa sakit fizikal, keluhan, atau rintihan', 'ouch, oh dear; exclamation expressing physical pain, distress, or groaning'),
+  (20586, 20551, 1, 'adoi; varian sebutan bagi kata seru rasa sakit atau keluhan ''adui''', 'ouch, oh; phonetic variant of ''adui'' expressing pain or distress'),
+  (20587, 20552, 1, 'ya, baiklah, jom, (Sabah) -bah; partikel atau seruan yang menyatakan persetujuan, permulaan tindakan, atau penegas ujaran yang sangat lazim dalam pertuturan di Sabah', 'all right, okay, let''s go; conversational particle/tag expressing agreement, initiation of action, or emphatic confirmation widely used in Sabah'),
+  (20588, 19285, 2, 'dari, daripada; kata sendi nama yang menandakan punca atau pergerakan menjauhi sesuatu tempat atau objek (cth. ''pelaan man paray é'' = pergi/beredar dari padi itu)', 'from, away from; source preposition indicating departure or movement away from a place or object'),
+  (20589, 20553, 1, 'saya, aku; kata ganti nama diri pertama tunggal (bebas / tidak terikat)', 'I, me (1st person singular independent pronoun)'),
+  (20590, 20554, 1, 'kita; kata ganti nama diri pertama jamak inklusif (merangkumi penutur dan pendengar / orang yang diajak bercakap)', 'we, us (1st person plural inclusive independent pronoun, including the addressee)'),
+  (20592, 20556, 1, 'kami; kata ganti nama diri pertama jamak eksklusif (merangkumi penutur dan kumpulannya, tetapi tidak termasuk pendengar). Dalam nahu Bajau Samah, ''kami'' juga berfungsi sebagai penanda pelaku Set I (tiada bentuk enklitik khusus)', 'we, us (1st person plural exclusive independent pronoun, excluding the addressee; also functions as Set I actor marker)'),
+  (20593, 20557, 1, 'kau, kamu, awak; kata ganti nama diri kedua tunggal (bebas / tidak terikat)', 'you (2nd person singular independent pronoun)'),
+  (20594, 20558, 1, 'kamu semua, kalian; kata ganti nama diri kedua jamak', 'you, you all (2nd person plural independent pronoun)'),
+  (20595, 20559, 1, 'kalian, kamu semua; bentuk pendek atau varian percakapan bagi kaam (kata ganti nama diri kedua jamak). Lihat kaam.', 'you all; shortened conversational variant of kaam (2nd person plural pronoun). See kaam.'),
+  (20596, 20560, 1, 'dia, ia; varian transkripsi linguistik bagi io (kata ganti nama diri ketiga tunggal). Bentuk baku rasmi ialah io. Lihat io.', 'he, she, it; linguistic transcription variant of standard io (3rd person singular pronoun). See io.'),
+  (20597, 20561, 1, 'kita; kata ganti nama diri pertama jamak inklusif terikat (enklitik pemunya dan penanda pelaku bukan subjek, cth. ''kampung-ti'' = kampung kita, ''pemia-ti'' = kita cari)', 'our, by us (inclusive); 1st person plural inclusive enclitic pronoun (marks possessor on nouns and non-subject actor on verbs)'),
+  (20598, 20562, 1, '-mu, kamu, awak; kata ganti nama diri kedua tunggal terikat (enklitik pemunya dan penanda pelaku bukan subjek, cth. ''dangan-nu'' = kawanmu, ''buan-nu'' = kamu berikan)', 'your, yours, by you; 2nd person singular enclitic pronoun (marks possessor on nouns and non-subject actor on transitive verbs)'),
+  (20599, 20563, 1, 'kalian, kamu semua; kata ganti nama diri kedua jamak terikat (enklitik pemunya dan penanda pelaku, cth. ''buan-in bi'' = berikanlah oleh kalian, ''ruma''-bi'' = rumah kalian)', 'your, yours, by you all; 2nd person plural enclitic pronoun (marks possessor or actor among multiple addressees)');
+INSERT OR REPLACE INTO `senses` (`id`, `entry_id`, `order_index`, `definition_ms`, `definition_en`) VALUES
+  (20600, 20564, 1, 'kita; varian dialek bagi kiti (kata ganti nama diri pertama jamak inklusif). Lihat kiti.', 'we, us; dialectal variant of kiti (1st person plural inclusive pronoun). See kiti.'),
+  (20601, 20565, 1, 'kita; varian dialek bagi kiti (kata ganti nama diri pertama jamak inklusif). Lihat kiti.', 'we, us; dialectal variant of kiti (1st person plural inclusive pronoun). See kiti.'),
+  (20602, 20566, 1, 'supaya', '(so) that, in order to'),
+  (20603, 20567, 1, 'kepada aku, pada aku, untuk aku; kata ganti nama diri pertama tunggal bentuk oblik / sendi (terbitan awalan sendi em- + aku, menandakan sasaran atau penerima).', 'to me, for me, at me (1st person singular oblique pronoun; derived from preposition em- + aku).'),
+  (20604, 20568, 1, 'kepada kita, pada kita, untuk kita; kata ganti nama diri pertama jamak inklusif bentuk oblik / sendi (terbitan awalan sendi em- + kiti, merangkumi pendengar).', 'to us, for us (1st person plural inclusive oblique pronoun; derived from preposition em- + kiti).'),
+  (20605, 20569, 1, 'kepada kami, pada kami, untuk kami; kata ganti nama diri pertama jamak eksklusif bentuk oblik / sendi (terbitan awalan sendi em- + kami, tidak merangkumi pendengar).', 'to us, for us (1st person plural exclusive oblique pronoun; derived from preposition em- + kami).'),
+  (20606, 20570, 1, 'kepada kau, pada kamu, untukmu; kata ganti nama diri kedua tunggal bentuk oblik / sendi (terbitan awalan sendi em- + kau).', 'to you, for you (2nd person singular oblique pronoun; derived from preposition em- + kau).'),
+  (20607, 20571, 1, 'kepada kalian, pada kamu semua; kata ganti nama diri kedua jamak bentuk oblik / sendi (terbitan awalan sendi em- + kaam).', 'to you all, for you all (2nd person plural oblique pronoun; derived from preposition em- + kaam).'),
+  (20608, 20572, 1, 'kepada dia, pada dia, untuknya; kata ganti nama diri ketiga tunggal bentuk oblik / sendi (terbitan awalan sendi em- + io). Bentuk baku rasmi ialah mio (varian linguistik: miyo).', 'to him, to her, for him/her (3rd person singular oblique pronoun; derived from preposition em- + io). Standard form is mio.'),
+  (20609, 20573, 1, 'kepada dia, pada dia; varian transkripsi linguistik bagi mio (kata ganti nama diri ketiga tunggal bentuk oblik). Bentuk baku rasmi ialah mio. Lihat mio.', 'to him/her; linguistic variant of standard mio (3rd person singular oblique pronoun). See mio.'),
+  (20610, 20574, 1, 'kepada mereka, pada mereka, untuk mereka; kata ganti nama diri ketiga jamak bentuk oblik / sendi (terbitan awalan sendi em- + gai).', 'to them, for them (3rd person plural oblique pronoun; derived from preposition em- + gai).'),
+  (20611, 20575, 1, 'kepada kalian, pada kamu semua; bentuk pendek atau varian percakapan bagi engkaam (kata ganti nama diri kedua jamak bentuk oblik). Lihat engkaam.', 'to you all; shortened conversational variant of engkaam (2nd person plural oblique pronoun). See engkaam.'),
+  (20612, 20576, 1, 'itu; kata ganti nama tunjuk atau penentu bagi rujukan yang jauh dari penutur, dan penanda maklumat/definit dalam wacana', 'that; distal demonstrative pronoun and determiner (distal from speaker), also marks definiteness or previously introduced information in discourse'),
+  (20613, 20577, 1, 'itu nun di sana; kata ganti nama tunjuk atau penentu bagi rujukan yang jauh dari kedua-dua penutur dan pendengar tetapi masih kelihatan', 'that yonder; distal demonstrative pronoun and determiner (distal from both speaker and hearer, but visible)');
 
--- Table: examples (321 rows)
+-- Table: examples (361 rows)
 INSERT OR REPLACE INTO `examples` (`id`, `sense_id`, `sentence_bajau`, `highlight_word`, `sentence_ms`, `sentence_en`, `audio_url`) VALUES
   (3939, 18952, 'Akan matai no iyo, tapi'' nemu aku toos', 'akan', 'hujan', 'It was going to rain just now [but didn', NULL),
   (3940, 18952, 'Ensan entelo emas akan', 'akan', 'tidak, memberitahu', 'But the man knew even though they did not tell (him).', NULL),
@@ -1821,20 +1887,16 @@ INSERT OR REPLACE INTO `examples` (`id`, `sense_id`, `sentence_bajau`, `highligh
   (3986, 19104, 'Ensan entelo emas akan', 'ensan', 'tidak, memberitahu', 'But the man knew even though they did not tell (him).', NULL),
   (3988, 19107, 'Dikau'' lagi binersi tungan langaw e ngentelo', 'entelo', 'bersih, mana', 'Another (method) is to clean up places where flies lay eggs.', NULL),
   (3989, 19107, 'Ensan entelo emas akan', 'entelo', 'tidak, memberitahu', 'But the man knew even though they did not tell (him).', NULL),
-  (3990, 19111, 'Boi jo gai mangan, turino gai.', 'gai', 'Selepas mereka makan, mereka pun tidur.', 'After they ate, they went to sleep.', NULL),
-  (3991, 19111, 'Ogo gai tabit ta’ kelinik kampung', 'gai', 'jika, rumah, orang ramai', 'If the kitchens were below (the house), she took people', NULL),
   (3992, 19119, 'Itu no guuk', 'guuk', 'ini, itu', 'This is the knife that I bought at the weekly market.', NULL),
   (3993, 19123, 'Rupiah ingin mulé'' lingaw, tapi'' Mastura noo'' iyo ningkoo''.', 'ingin', 'duduk', 'Rupiah wanted to go home quickly, but Mastura made him sit down.', NULL),
-  (3994, 19123, 'Iyo ingin supaya anakku', 'ingin', 'itu, anak, ambil', 'He wanted that my child would take care of the cows.', NULL);
-INSERT OR REPLACE INTO `examples` (`id`, `sense_id`, `sentence_bajau`, `highlight_word`, `sentence_ms`, `sentence_en`, `audio_url`) VALUES
+  (3994, 19123, 'Iyo ingin supaya anakku', 'ingin', 'itu, anak, ambil', 'He wanted that my child would take care of the cows.', NULL),
   (3995, 19129, 'Itu no guuk', 'itu', 'ini, itu', 'This is the knife that I bought at the weekly market.', NULL),
-  (3997, 19135, 'Emma'' ko'' iyang no ninda'' ruma'' tu.', 'iyang', 'Ayah dan emaklah yang menjaga rumah ini.', 'Father and mother are the ones looking after this house.', NULL),
-  (3998, 19136, '… jadi iyo', 'iyo', 'pokok, boleh, jatuh, angin, keras', '… so it (the tree) can fall whenever the wind blows hard.', NULL),
-  (3999, 19136, 'Amzi nya’ boi *ai mangan, iyo', 'iyo', 'tidak, makan', 'Amzi did not eat; he said he has a stomach ache.', NULL),
+  (3997, 19135, 'Emma'' ko'' iyang no ninda'' ruma'' tu.', 'iyang', 'Ayah dan emaklah yang menjaga rumah ini.', 'Father and mother are the ones looking after this house.', NULL);
+INSERT OR REPLACE INTO `examples` (`id`, `sense_id`, `sentence_bajau`, `highlight_word`, `sentence_ms`, `sentence_en`, `audio_url`) VALUES
   (4000, 19137, 'Kain tu binuat jadi badu ko'' tudung.', 'jadi', 'Kain ini dibuat menjadi baju dan tudung.', 'This cloth was made into a shirt and a headscarf.', NULL),
   (4001, 19137, '… jadi iyo', 'jadi', 'pokok, boleh, jatuh, angin, keras', '… so it (the tree) can fall whenever the wind blows hard.', NULL),
   (4002, 19142, 'Boi jo gai mangan, turino gai.', 'jo', 'Selepas mereka makan, mereka pun tidur.', 'After they ate, they went to sleep.', NULL),
-  (4003, 19142, 'Lupus jo aku muat, bo''ku mooni', 'jo', 'apabila', 'When morning came, the king brought (him) home.', NULL),
+  (4003, 19142, 'Lupus jo aku muat, bo''-ku moo-ni', 'jo', 'apabila', 'When morning came, the king brought (him) home.', NULL),
   (4004, 19143, 'Patilauno kiti ta'' jomo e oron kampung tu.', 'jomo', 'Marilah kita bertanya kepada orang itu nama kampung ini.', 'Let us ask that person the name of this village.', NULL),
   (4005, 19143, 'Iyo no meketa jomo ta'' seberang suang.', 'jomo', 'Dialah yang menyeberangkan orang ke seberang sungai.', 'He was the one who crossed the people over to the other side of the river.', NULL),
   (4006, 19143, 'Kealapan jomo e no nikenang semomon.', 'jomo', 'Kebaikan orang itu dikenang oleh semua orang.', 'The goodness of that person is remembered by all.', NULL),
@@ -1853,8 +1915,6 @@ INSERT OR REPLACE INTO `examples` (`id`, `sense_id`, `sentence_bajau`, `highligh
   (4019, 19194, 'Gai ngeta suang makai biduk diki''.', 'keta', 'Mereka menyeberang sungai menggunakan sampan kecil.', 'They crossed the river using a small boat.', NULL),
   (4020, 19194, 'Iyo no meketa jomo ta'' seberang suang.', 'keta', 'Dialah yang menyeberangkan orang ke seberang sungai.', 'He was the one who crossed the people over to the other side of the river.', NULL),
   (4021, 19204, 'Tekito le'' uwa'' e léko'' diom rumbau.', 'kito', 'Ternampak oleh anjing itu seekor ular di dalam semak.', 'The dog accidentally saw a snake in the bushes.', NULL),
-  (4022, 19209, 'Boino ku mangan tadi.', 'ku', 'Sudah saya makan tadi.', 'I already ate just now.', NULL),
-  (4023, 19209, 'Lupus jo aku muat, bo''ku mooni', 'ku', 'apabila', 'When morning came, the king brought (him) home.', NULL),
   (4024, 19212, 'Uwa'' e nundug kucing sampai ta'' sedi poon kayu.', 'kucing', 'Anjing itu mengejar kucing sehingga ke tepi pokok.', 'The dog chased the cat to the side of the tree.', NULL),
   (4025, 19223, 'Lumua'' laa'' lua'' betis-nu.', 'laa''', 'Darah keluar dari kaki kamu.', 'Blood is coming out from your leg.', NULL),
   (4026, 19224, 'Iyo lumaan endiam taun sampai teko ta'' suang.', 'laan', 'Dia berjalan di dalam hutan sehingga tiba di sebatang sungai.', 'He walked through the forest until he reached a river.', NULL),
@@ -1870,33 +1930,31 @@ INSERT OR REPLACE INTO `examples` (`id`, `sense_id`, `sentence_bajau`, `highligh
   (4041, 19278, 'Tekito le'' uwa'' e léko'' diom rumbau.', 'léko''', 'Ternampak oleh anjing itu seekor ular di dalam semak.', 'The dog accidentally saw a snake in the bushes.', NULL),
   (4042, 19281, 'Uwa'' e nundug kucing sampai ta'' sedi poon kayu.', 'makan', 'Anjing itu mengejar kucing sehingga ke tepi pokok.', 'The dog chased the cat to the side of the tree.', NULL),
   (4043, 19282, 'Dela pemalas e tekuri'' sampai tengellau.', 'malas', 'Lelaki pemalas itu tertidur sehingga tengah hari.', 'The lazy man overslept until noon.', NULL),
-  (4044, 19285, 'Aku lagi langa man', 'man', 'semua', 'I am taller than all of you.', NULL),
+  (4044, 19285, 'Aku lagi langa man kam momon.', 'man', 'Aku lagi tinggi dari kamu semua.', 'I am taller than all of you.', NULL),
   (4045, 19287, 'Boi jo gai mangan, turino gai.', 'mangan', 'Selepas mereka makan, mereka pun tidur.', 'After they ate, they went to sleep.', NULL),
   (4046, 19287, 'Amzi nya'' boi mangan, ling-ni pedis betong-ni.', 'mangan', 'Amzi tidak makan; katanya perutnya sakit.', 'Amzi did not eat; he said his stomach hurts.', NULL),
   (4047, 19287, 'Boino ku mangan tadi.', 'mangan', 'Sudah saya makan tadi.', 'I already ate just now.', NULL),
   (4048, 19287, 'Kerabau e mangan parai ta'' tana''.', 'mangan', 'Kerbau itu makan padi di atas tanah.', 'The buffalo ate the unhusked rice on the ground.', NULL),
   (4049, 19287, 'Sedo'' e suang duri''-ni masa pinangan.', 'mangan', 'Ikan itu banyak tulangnya apabila dimakan.', 'The fish has many bones/thorns when eaten.', NULL),
-  (4050, 19291, 'Pada masa e', 'masa', 'itu', 'Its texture is like that of sand, (it is) coarse.', NULL);
-INSERT OR REPLACE INTO `examples` (`id`, `sense_id`, `sentence_bajau`, `highlight_word`, `sentence_ms`, `sentence_en`, `audio_url`) VALUES
+  (4050, 19291, 'Pada masa e', 'masa', 'itu', 'Its texture is like that of sand, (it is) coarse.', NULL),
   (4051, 19300, 'Uwa mesti'' jo iyo mendo anak rojo e', 'mendo', 'e         mara', 'e         mara', NULL),
-  (4052, 19305, 'Uwa mesti'' jo iyo mendo anak rojo e', 'mesti''', 'e         mara', 'e         mara', NULL),
+  (4052, 19305, 'Amun lumaan songom mesti’ makai suu'' enjaji soo nya'' tetindak.', 'mesti''', 'Kalau jalan (ketika waktu) malam, mesti memakai (lampu) suluh supaya tidak terpijak ular.', '‘If (you) travel at night, (you) should use a light so that (you) won’t accidentally step on a snake.', NULL),
   (4053, 19311, 'Iyo ai no mono’ jomo boi', 'mono''', 'siapa', 'He had now killed the men who had earlier killed his older brother.', NULL),
   (4054, 19317, 'Sinsim tu nianang le'' moto-ku ta'' lantai.', 'moto', 'Cincin ini dijumpai oleh saya di atas lantai.', 'This ring was found by my eyes on the floor.', NULL),
   (4055, 19318, 'Amzi boi muan buk e ta'' si Nisah.', 'muan', 'Amzi memberikan buku itu kepada Nisah.', 'Amzi gave the book to Nisah.', NULL),
-  (4056, 19318, 'Amzi boi muan', 'muan', 'amzi gave the book to nisah', 'Amzi gave the book to Nisah.', NULL),
+  (4056, 19318, 'Amzi boi muan', 'muan', 'amzi gave the book to nisah', 'Amzi gave the book to Nisah.', NULL);
+INSERT OR REPLACE INTO `examples` (`id`, `sense_id`, `sentence_bajau`, `highlight_word`, `sentence_ms`, `sentence_en`, `audio_url`) VALUES
   (4057, 19320, 'Rupiah ingin mulé'' lingaw, tapi'' Mastura noo'' iyo ningkoo''.', 'mule''', 'duduk', 'Rupiah wanted to go home quickly, but Mastura made him sit down.', NULL),
   (4058, 19328, 'Dikau'' lagi binersi tungan langaw e ngentelo', 'ngentelo', 'bersih, mana', 'Another (method) is to clean up places where flies lay eggs.', NULL),
   (4059, 19342, 'Anak e ngenda'' bua'' kayu ta'' pitas.', 'ngenda''', 'Kanak-kanak itu melihat buah di atas pokok.', 'The child is looking at the fruit at the top of the tree.', NULL),
   (4060, 19350, 'Nginum kiti bu''e'' dingin tu.', 'nginum', 'Marilah kita minum air sejuk ini.', 'Let us drink this cold water.', NULL),
   (4061, 19358, 'Ai akalan endo-nu aku, bara''-ni kau sakit.', 'ni', 'Isterimu telah membohongi aku, katanya kau sakit.', 'Your wife lied to me, she said you were sick.', NULL),
-  (4062, 19365, 'Jadi e no kejadian linta e', 'no', 'itu', 'That is my assumption…', NULL),
-  (4063, 19365, 'A. Boi no', 'no', 'tidak, padi', 'No, I bought only corn, not rice.', NULL),
   (4064, 19368, 'Amzi nya'' boi mangan, ling-ni pedis betong-ni.', 'nya''', 'Amzi tidak makan; katanya perutnya sakit.', 'Amzi did not eat; he said his stomach hurts.', NULL),
   (4065, 19368, 'Tunganni nya sasaban e…', 'nya''', 'oleh', 'by; on account of', NULL),
   (4066, 19370, 'Ogo gai tabit ta’ kelinik kampung.', 'ogo', 'Mereka (pergi) melawat perawat di klinik kampung.', 'They went to a medical practitioner at the village clinic.', NULL),
   (4068, 19372, 'Boi opo'' Mali kayu é.', 'opo''', 'Mali sudah potong kayu itu.', 'Mali chopped the wood.', NULL),
   (4069, 19375, 'Kawa oyo tungan mapi daging sapi'' amun uun kawin.', 'oyo', 'Kawah besar tempat memasak daging lembu jikalau ada perkahwinan.', 'A large cauldron is what (one) uses for cooking beef when there is a wedding.', NULL),
-  (4071, 19395, 'Pinda io pu’ ta’ Sayap. Pinemia pan iyo mé.', 'pan', 'Dia pindah pergi ke Sayap. Di sana pun dia dicari.', 'He moved to Sayap. He was also searched for there.', NULL),
+  (4071, 19395, 'Pinda io pu’ ta’ Sayap. Pinemia pan io mé.', 'pan', 'Dia pindah pergi ke Sayap. Di sana pun dia dicari.', 'He moved to Sayap. He was also searched for there.', NULL),
   (4072, 19395, 'Mat Saleh mémang pan pinemia.', 'pan', 'Mat Saleh memang pun dicari.', 'Mat Salleh was definitely being hunted for.', NULL),
   (4073, 19396, 'Ellau tu panas tuu sampai karing tana''.', 'panas', 'Hari ini sangat panas sehingga kering tanah.', 'Today is very hot until the earth is dried up.', NULL),
   (4074, 19397, 'Kerabau e pan pandai no betutur.', 'pandai', 'Kerbau itupun pandailah bertutur.', 'The buffalo was able to speak.', NULL),
@@ -1919,7 +1977,7 @@ INSERT OR REPLACE INTO `examples` (`id`, `sense_id`, `sentence_bajau`, `highligh
   (4092, 19525, 'A. Saging e', 'saging', 'ikan, sungai', 'I cleaned the fish at the river.', NULL),
   (4093, 19525, 'Boi Ai ebbaan Azizy poon saging e tapi boi ebba’', 'saging', 'rumah, masih', 'The house has (partially) burned [it is still standing].', NULL),
   (4094, 19528, 'Sambil dela e nembali', 'sambil', 'dekat, tengok, pokok, semasa, dengan, orang ramai', 'I drew near to look at the tree while conversing with people.', NULL),
-  (4095, 19530, '“… bo’ sanang atai', 'sanang', 'ada, jantung', 'I have heart trouble.', NULL),
+  (4095, 19530, 'Tapi’ ensan pian pan malé’ tereso, atai-ku sukup sanang.', 'sanang', 'Tapi walau macam manapun penat terasa, hatiku cukup senang.', 'But however tired (I) felt, I was very happy.', NULL),
   (4096, 19531, 'Sapi''-ni ai rungai diom taun.', 'sapi''', 'Lembunya telah hilang di dalam hutan.', 'His cow is missing in the forest.', NULL),
   (4097, 19531, 'Kawa oyo tungan mapi daging sapi'' amun uun kawin.', 'sapi''', 'Kawah besar tempat memasak daging lembu jikalau ada perkahwinan.', 'A large cauldron is what (one) uses for cooking beef when there is a wedding.', NULL),
   (4098, 19537, 'Gai ningkoo'' ta'' sedi suang.', 'sedi', 'Mereka duduk di tepi sungai.', 'They sat at the riverbank.', NULL),
@@ -1927,8 +1985,7 @@ INSERT OR REPLACE INTO `examples` (`id`, `sense_id`, `sentence_bajau`, `highligh
   (4103, 19562, 'Sikot no ellaw, uun', 'sikot', 'apabila, dekat, siapa', 'When it was near daylight, those who had gone out now arrived.', NULL),
   (4104, 19566, 'Iyo mebeli diki''-ni sinsim amas.', 'sinsim', 'Dia membelikan adiknya sebentuk cincin emas.', 'He bought his younger sibling a gold ring.', NULL),
   (4105, 19566, 'Sinsim tu nianang le'' moto-ku ta'' lantai.', 'sinsim', 'Cincin ini dijumpai oleh saya di atas lantai.', 'This ring was found by my eyes on the floor.', NULL),
-  (4106, 19576, 'Bésé'' lumua'' lua'' moto-ni masa io nangis.', 'suang', 'Air mata mengalir dari matanya semasa dia menangis.', 'Tears flowed from his eyes while he was crying.', NULL);
-INSERT OR REPLACE INTO `examples` (`id`, `sense_id`, `sentence_bajau`, `highlight_word`, `sentence_ms`, `sentence_en`, `audio_url`) VALUES
+  (4106, 19576, 'Bésé'' lumua'' lua'' moto-ni masa io nangis.', 'suang', 'Air mata mengalir dari matanya semasa dia menangis.', 'Tears flowed from his eyes while he was crying.', NULL),
   (4107, 19576, 'Gai ngeta suang makai biduk diki''.', 'suang', 'Mereka menyeberang sungai menggunakan sampan kecil.', 'They crossed the river using a small boat.', NULL),
   (4108, 19576, 'Suang jomo teko diom majlis é.', 'suang', 'Ramai orang datang ke majlis itu.', 'Many people arrived at the gathering.', NULL),
   (4109, 19576, 'Io lumaan endiam taun sampai teko ta'' suang.', 'suang', 'Dia berjalan di dalam hutan sehingga tiba di sebatang sungai.', 'He walked through the forest until he reached a river.', NULL),
@@ -1936,13 +1993,14 @@ INSERT OR REPLACE INTO `examples` (`id`, `sense_id`, `sentence_bajau`, `highligh
   (4111, 19579, 'suk + R', 'suk', 'buat, ramai', 'to make (many) thin', NULL),
   (4112, 19582, 'Iyo ingin supaya anakku', 'supaya', 'itu, anak, ambil', 'He wanted that my child would take care of the cows.', NULL),
   (4113, 19586, 'Amun kau pesuuk', 'suuk', 'padi, apabila, bongkok', 'The rice plants, when ripened, they stoop over.', NULL),
-  (4114, 19587, 'Ogo gai tabit ta’ kelinik kampung', 'tabit', 'jika, rumah, orang ramai', 'If the kitchens were below (the house), she took people', NULL),
+  (4114, 19587, 'Ogo gai tabit ta’ kelinik kampung', 'tabit', 'jika, rumah, orang ramai', 'If the kitchens were below (the house), she took people', NULL);
+INSERT OR REPLACE INTO `examples` (`id`, `sense_id`, `sentence_bajau`, `highlight_word`, `sentence_ms`, `sentence_en`, `audio_url`) VALUES
   (4117, 19595, 'Ai jo gai lumaan, pelua tunganni tapuk', 'tapuk', 'dari, letak, dan', 'After they left, Deli came out from his hiding place and approached the woman.', NULL),
   (4118, 19595, 'Me no gai betapukan diam', 'tapuk', 'di sana', 'Over there in the banana trees they are hiding.', NULL),
   (4119, 19597, 'Dilaw Mark ketatakan', 'tatak', 'bekas, di sana', 'Yesterday Mark (unfortunately for him) dropped some money there in town.', NULL),
   (4120, 19601, 'Io lumaan endiam taun sampai teko ta'' suang.', 'taun', 'Dia berjalan di dalam hutan sehingga tiba di sebatang sungai.', 'He walked through the forest until he reached a river.', NULL),
   (4121, 19601, 'Sapi''-ni ai rungai diom taun.', 'taun', 'Lembunya telah hilang dalam hutan.', 'His cow is missing in the forest.', NULL),
-  (4122, 19602, 'Jadi pelua’ no té''  bué''-ni.', 'té''', 'dan', 'Rupiah reached into the underbrush, (and) suddenly he screamed.', NULL),
+  (4122, 19602, 'Jadi pelua’no té''  bué''-ni.', 'té''', 'Jadi keluarlah airnya.', 'Its water then gushes out.', NULL),
   (4123, 19602, 'Iyang-nu té'' aku tu!', 'té''', 'Ibumu adalah aku!', 'I am your mother!', NULL),
   (4124, 19614, 'Io lai endiam taun sampay teko ta'' dembua'' suang.', 'teko', 'Dia lari ke dalam hutan sehingga tiba di sebuah sungai.', 'He fled into the forest until (he) arrived at a certain river.', NULL),
   (4125, 19614, 'Aku tu bau teko pitu eng Kuta’ Belud.', 'teko', 'Aku ni baru tiba sini di Kota Belud.', 'I have just arrived here in Kota Belud.', NULL),
@@ -1972,14 +2030,13 @@ INSERT OR REPLACE INTO `examples` (`id`, `sense_id`, `sentence_bajau`, `highligh
   (4354, 19388, 'Abis mangan bongon pakir pan bepulé’ no.', 'pakir', '(Setelah) habis makan, golongan agamawan pun baliklah.', 'After eating, the men with religious knowledge went home.', NULL),
   (4355, 19389, 'Paksa’-ni aku posok diam keréta’.', 'paksa', 'Dia paksa aku masuk dalam kereta.', 'He forced me to enter the car.', NULL),
   (4356, 19390, 'Rupo-rupo-ni, kakal pala teingot-ni.', 'pala', 'Rupa-rupanya, kekal pula teringatnya.', 'Apparently, she still kept being remembered of it.', NULL),
-  (4357, 19522, 'Bila  pelua''  sab anak-ni pitu'' kau''.', 'sab', 'Bila keluar juga anaknya tujuh orang.', 'When the baby came out—there were seven.', NULL),
-  (4358, 19522, 'Bila teko ka''-ni pé,  "Ai koyo no sab kam tu, minggo kam ngendo''?"', 'sab', 'Bila tiba kakaknya ke sana, (dia berkata): "Sudah kaya juga kamu ni, mana kamu dapat (kekayaan itu)?"', '‘When her older sister arrived there, (she said):  “You have become rich. Where did you get (your wealth)?', NULL),
+  (4357, 19522, 'Bila pelua'' sab anak-ni pitu'' kau''.', 'sab', 'Bila keluar juga anaknya tujuh orang.', 'When the baby came out—there were seven.', NULL),
+  (4358, 19522, 'Bila teko ka''-ni pé,  "Ai koyo no sab kam tu, minggo kam ngendo''?"', 'sab', 'Bila tiba kakaknya ke sana, (dia berkata): "Sudah kaya juga kamu ni, dari mana kamu dapat (kekayaan itu)?"', '‘When her older sister arrived there, (she said):  “You have become rich. Where did you get (your wealth)?', NULL),
   (4359, 20419, 'Kerabau tu binuat ulun jo té’, sinoo’ narik-narik pengila tandasan é.', 'tandasan', 'Kerbau ini dijadikan hamba saja, disuruh menarik-narik abah-abah kilang tebu itu.', 'The water buffalo was made into a slave, it was forced to pull the harness for the sugarcane mill.', NULL),
   (4360, 19602, 'Amun nya'' buat-ku sab, bo'' aduin no té’ aku!', 'té’', 'Kalau aku tidak buat juga (apa yang aku janjikan), maka adukanlah aku!', 'If I don’t do (what I promised), then go ahead and report me!', NULL),
   (4361, 19606, 'Tapi'' bila sikot ellau, io ai teturi sampai telak.', 'teturi', 'Tapi bila hampir siang, dia telah tertidur sampai terang (di luar)', 'But when it was nearly day, he fell asleep (and did not awake) until it was bright (outside).', NULL),
   (4364, 19610, 'Minggo boi tedakan-nu diing é?', 'tedakan', 'Di mana kau siangkan ikan tu?', 'Where did you clean the fish?', NULL),
-  (4365, 19610, 'Ensuang diing é boi tedakan-ku.', 'tedakan', 'Aku sudah siangkan ikan tu di sungai.', 'I cleaned the fish at the river.', NULL);
-INSERT OR REPLACE INTO `examples` (`id`, `sense_id`, `sentence_bajau`, `highlight_word`, `sentence_ms`, `sentence_en`, `audio_url`) VALUES
+  (4365, 19610, 'Ensuang diing é boi tedakan-ku.', 'tedakan', 'Aku sudah siangkan ikan tu di sungai.', 'I cleaned the fish at the river.', NULL),
   (4366, 19630, 'Dong kayu keros tigad-nu engko’ guuk é.', 'tigad', 'Jangan kau potong kayu keras dengan pisau itu.', 'Don’t chop hardwood with that knife.', NULL),
   (4367, 19647, 'Togor bana tiang pagar é.', 'togor', 'Tegak benar tiang pagar itu.', 'That fence post stands very straight.', NULL),
   (4368, 19442, 'Boi petogor Mali tiang pagar é.', 'petogor', 'Mali telah menegakkan tiang pagar itu.', 'Mali erected the fence post', NULL),
@@ -1987,7 +2044,8 @@ INSERT OR REPLACE INTO `examples` (`id`, `sense_id`, `sentence_bajau`, `highligh
   (4371, 20427, 'Ai peketa kuda’ pe dembila’ suang.', 'peketa', 'Kuda (itu) telah menyeberang ke sebelah sungai.', 'The horse crossed to the other side of the river.', NULL),
   (4372, 20429, 'Dau-da kono'' uun jomo tu temban ta'' dikau'' kampung.', 'kampung', 'Dulu-dulu konon ada orang ni (yang) tinggal di sebuah kampung.', 'Long ago, it is said, there was a man who lived in a certain village.', NULL),
   (4374, 19542, 'Azizy boi sémbét-ku engko'' surat é.', 'sémbét', 'Aku kejar Azizy dengan surat tu.', 'I chased Azizy with the letter.', NULL),
-  (4375, 20434, 'Ta''  dia'' poon suka''.', 'ta''', 'Di bawah pokok kelapa.', '(At) below the coconut tree.', NULL),
+  (4375, 20434, 'Ta''  dia'' poon suka''.', 'ta''', 'Di bawah pokok kelapa.', '(At) below the coconut tree.', NULL);
+INSERT OR REPLACE INTO `examples` (`id`, `sense_id`, `sentence_bajau`, `highlight_word`, `sentence_ms`, `sentence_en`, `audio_url`) VALUES
   (4376, 20436, 'tekito-ni jo uwa'' e lulai sorop meniik, terus iyo memia te'' tungan-ni tapuk.', 'terus', 'Apabila dilihatnya anjing itu berlari mendaki, dia terus mencari tempat bersembunyi.', 'When he saw the dog running toward him, he immediately searched for a place to hide.', NULL),
   (4377, 20437, 'Rupiah peloot diam sumpat, semono-mono ngeraa iyo.', 'semono-mono', 'Rupiah menyeluk ke dalam semak, tiba-tiba dia berteriak.', 'Rupiah reached into the underbrush, and suddenly he screamed.', NULL),
   (4378, 20438, 'Uun entedo Hassan pu'' ta'' laat dembua'' nuut bono''.', 'entedo', 'Ada suatu ketika Hassan pergi ke negeri lain menyertai pertempuran.', 'One time Hassan went yonder to another country to fight.', NULL),
@@ -2028,9 +2086,8 @@ INSERT OR REPLACE INTO `examples` (`id`, `sense_id`, `sentence_bajau`, `highligh
   (4418, 20468, 'Dong no kam tinau, kiti ruun pengawal mitu.', 'Dong', 'Jangan kamu semua berasa takut, kita ada pengawal di sini.', 'Don''t you all be afraid, we have guards here.', NULL),
   (4419, 20469, 'Daa no kiti nipu, daa no kiti muat keraatan.', 'Daa', 'Janganlah kita menipu, janganlah kita membuat kejahatan.', 'Let us not cheat, let us not do bad things.', NULL),
   (4420, 20469, 'Daa kau manas e, aku kekuri jo.', 'Daa', 'Janganlah engkau marah, aku hanya bergurau sahaja.', 'Don''t be angry! I was just playing around.', NULL),
-  (4421, 20470, 'Baa'' no kiti mulé'' pitu balik sebelum petang.', 'Baa''', 'Marilah kita pulang ke sini semula sebelum waktu petang.', 'Come on, let us return here before evening.', NULL),
-  (4422, 20471, 'Pasi kam ningkoo'' mitu diam ruma''.', 'Pasi', 'Silalah kamu semua duduk di sini di dalam rumah.', 'Please sit here inside the house.', NULL);
-INSERT OR REPLACE INTO `examples` (`id`, `sense_id`, `sentence_bajau`, `highlight_word`, `sentence_ms`, `sentence_en`, `audio_url`) VALUES
+  (4421, 20470, 'Baa''no kiti mulé'' pitu balik sebelum petang.', 'Baa''', 'Marilah kita pulang ke sini semula sebelum waktu petang.', 'Come on, let us return here before evening.', NULL),
+  (4422, 20471, 'Pasi kam ningkoo'' mitu diam ruma''.', 'Pasi', 'Silalah kamu semua duduk di sini di dalam rumah.', 'Please sit here inside the house.', NULL),
   (4423, 20472, 'Mulé'' jo no kam, baya''-ni no aku temban mitu.', 'baya''-ni', 'Pulang sajalah kamu semua, biarkan aku tinggal di sini.', 'You all go home, just let me stay here.', NULL),
   (4424, 20472, 'Aa... baya''-ni! Kakan-ku jo iyan uun.', 'baya''-ni', 'Ahh... biarkanlah! Aku makan sahaja apa yang ada.', 'Ahh, let it be! I will eat whatever is available.', NULL),
   (4425, 20473, 'Temban no using e en-diata'' jing ruma''.', 'diata''', 'Kucing itu berada di atas bumbung zink rumah.', 'The cat stayed on top of the zinc roof of the house.', NULL),
@@ -2038,7 +2095,8 @@ INSERT OR REPLACE INTO `examples` (`id`, `sense_id`, `sentence_bajau`, `highligh
   (4427, 20474, 'Sangsuriang pan lumaan no engko'' Situmang en-diom taun.', 'diom', 'Sangsuriang berjalan bersama Situmang ke dalam hutan.', 'Sangsuriang traveled with Situmang into the forest.', NULL),
   (4428, 19069, 'Sangsuriang pan lumaan no engko'' Situmang en-diam taun.', 'diam', 'Sangsuriang berjalan bersama Situmang ke dalam hutan.', 'Sangsuriang traveled with Situmang into the forest.', NULL),
   (4429, 19069, 'lua'' en-diam lubang langkaw', 'diam', 'dari dalam lubang atau terowong yang panjang', 'from within the long tunnel', NULL),
-  (4430, 19269, 'Masa gai kepo lua'' ta'' kayangan...', 'lua''', 'Pada masa mereka melompat turun dari kayangan...', 'At the time they jumped down from the heavens...', NULL),
+  (4430, 19269, 'Masa gai kepo lua'' ta'' kayangan...', 'lua''', 'Pada masa mereka melompat turun dari kayangan...', 'At the time they jumped down from the heavens...', NULL);
+INSERT OR REPLACE INTO `examples` (`id`, `sense_id`, `sentence_bajau`, `highlight_word`, `sentence_ms`, `sentence_en`, `audio_url`) VALUES
   (4431, 19269, '...iyo ngagad-ngagad lua'' kemuap lagi...', 'lua''', '...dia terus menunggu sejak waktu petang lagi...', '...she continued to wait since the afternoon...', NULL),
   (4432, 20476, 'Daa temban ta'' lua'' bilik amun uran.', 'lua''', 'Jangan berada di luar bilik jika hujan.', 'Don''t stay outside the room when it rains.', NULL),
   (4433, 19068, 'Beranti iyo ta'' dia'' poon kayu.', 'dia''', 'Dia berhenti di bawah pokok.', 'He stopped beneath a tree.', NULL),
@@ -2080,8 +2138,7 @@ INSERT OR REPLACE INTO `examples` (`id`, `sense_id`, `sentence_bajau`, `highligh
   (4469, 20563, 'Beli dikau'' limping sigup ta'' kaday.', NULL, 'Beli selempeng tembakau di kedai.', 'Buy one bundle of tobacco at the shop.', NULL),
   (4470, 20564, 'Duo sekat saging masak boi bineli ta'' tamu.', NULL, 'Dua sikat pisang masak telah dibeli di tamu.', 'Two hands of ripe bananas were bought at the market.', NULL),
   (4471, 20565, 'Dikau'' tundun saging nabak ta'' tana''.', NULL, 'Setandan pisang jatuh ke tanah.', 'A bunch of bananas fell to the ground.', NULL),
-  (4472, 20566, 'Duo ingkot sayur bineli ling iyaku.', NULL, 'Dua ikat sayur dibeli oleh saya.', 'Two bundles of vegetables were bought by me.', NULL);
-INSERT OR REPLACE INTO `examples` (`id`, `sense_id`, `sentence_bajau`, `highlight_word`, `sentence_ms`, `sentence_en`, `audio_url`) VALUES
+  (4472, 20566, 'Duo ingkot sayur bineli ling iyaku.', NULL, 'Dua ikat sayur dibeli oleh saya.', 'Two bundles of vegetables were bought by me.', NULL),
   (4473, 20567, 'Dikau'' banan sapi laan mangan ta'' padang.', NULL, 'Sekawan lembu sedang makan rumput di padang.', 'A herd of cows was grazing in the pasture.', NULL),
   (4474, 20568, 'Simpan lauk e ta'' diom mangkuk.', NULL, 'Simpan lauk itu di dalam mangkuk.', 'Keep the dish in a bowl.', NULL),
   (4475, 20569, 'Mangan iyo duo mangkuk sup lauk.', NULL, 'Dia makan dua mangkuk sup ikan.', 'He ate two bowls of fish soup.', NULL),
@@ -2089,7 +2146,8 @@ INSERT OR REPLACE INTO `examples` (`id`, `sense_id`, `sentence_bajau`, `highligh
   (4477, 19080, 'Duangan anak e ngentan bua''.', NULL, 'Dua orang kanak-kanak itu memegang buah.', 'Two children are holding fruits.', NULL),
   (4478, 19617, 'Telungan dendo lai pule''.', NULL, 'Tiga orang perempuan lari pulang.', 'Three women ran home.', NULL),
   (4479, 20570, 'Telu em-bua'' entelo bineli ta'' tamu.', NULL, 'Tiga biji telur dibeli di pasar tamu.', 'Three eggs were bought at the market.', NULL),
-  (4480, 20570, 'Empat em-bua'' ruma'' runtuh tinabak ribut.', NULL, 'Empat buah rumah runtuh dilanda ribut.', 'Four houses collapsed due to the storm.', NULL),
+  (4480, 20570, 'Empat em-bua'' ruma'' runtuh tinabak ribut.', NULL, 'Empat buah rumah runtuh dilanda ribut.', 'Four houses collapsed due to the storm.', NULL);
+INSERT OR REPLACE INTO `examples` (`id`, `sense_id`, `sentence_bajau`, `highlight_word`, `sentence_ms`, `sentence_en`, `audio_url`) VALUES
   (4481, 20571, 'Bagi aku telu sarat duren tu.', NULL, 'Beri saya tiga ulas durian ini.', 'Give me three segments of this durian.', NULL),
   (4482, 20572, 'Tambai de-n-sudu'' gula ta'' kupi nu.', NULL, 'Tambah sesudu gula ke dalam kopi kamu.', 'Add one spoonful of sugar to your coffee.', NULL),
   (4483, 20573, 'Kiniket lindo''-ni lé'' namuk.', 'lé''', 'Dahinya digigit oleh nyamuk.', 'His forehead was bitten by a mosquito.', NULL),
@@ -2102,9 +2160,58 @@ INSERT OR REPLACE INTO `examples` (`id`, `sense_id`, `sentence_bajau`, `highligh
   (4490, 19098, 'Sangsuriang mule'' me-ruma''.', NULL, 'Sangsuriang pulang ke rumah.', 'Sangsuriang went home.', NULL),
   (4491, 19098, 'Temban using e en-jata'' jing.', NULL, 'Kucing itu berada di atas bumbung zink.', 'The cat was on top of the zinc roof.', NULL),
   (4492, 19241, 'Iyo lai lekat ta'' kampungni.', NULL, 'Dia melarikan diri dari kampungnya.', 'He fled from his village.', NULL),
-  (4493, 19241, 'Kulintangan bana binuat lekat ta'' tembaga''.', NULL, 'Kulintangan tulen dibuat daripada tembaga.', 'Genuine kulintangan were made from brass metal.', NULL);
+  (4493, 19241, 'Kulintangan bana binuat lekat ta'' tembaga''.', NULL, 'Kulintangan tulen dibuat daripada tembaga.', 'Genuine kulintangan were made from brass metal.', NULL),
+  (4494, 20580, 'Aii''! Langkau bana bua'' kayu tu.', NULL, 'Wah! Besar sungguh buah pokok itu.', 'Wow! The fruit of this tree is really huge.', NULL),
+  (4495, 20581, 'Adaka! Nya'' tekito ling-ku io teko muli''.', 'adaka', 'Masakan! Tidak kusangka dia sudah pulang.', 'Really?! I had no idea he had come home.', NULL),
+  (4496, 20582, 'Oi''! Pakau kau maku.', NULL, 'Hoi! Kamu mengejutkan saya.', 'Hey! You startled me.', NULL),
+  (4497, 20583, 'Si''! Pelaan man parai é!', 'si''', 'Suh! Pergi dari padi itu!', 'Shoo! Get away from that rice paddy!', NULL),
+  (4498, 20584, 'Sé''! Palai uwa'' tu!', NULL, 'Hus! Halau anjing ini!', 'Shoo! Drive this dog away!', NULL),
+  (4499, 20585, 'Adui! Pedi'' bana betong-ku tu.', 'adui', 'Aduh! Sakit betul perut saya ini.', 'Ouch! This stomach of mine really hurts.', NULL),
+  (4500, 20586, 'Adoi! Nabak aku ta'' jambatan.', NULL, 'Adoi! Saya terjatuh di jambatan.', 'Ouch! I fell on the bridge.', NULL),
+  (4501, 20587, 'Ba, laanno kiti betiru.', 'ba', 'Baiklah, mari kita bertolak sekarang.', 'Alright, let''s leave now.', NULL),
+  (4502, 20588, 'Si''! Pelaan man parai é!', 'man', 'Suh! Pergi dari padi itu!', 'Shoo! Get away from that rice paddy!', NULL),
+  (4503, 19365, 'Bangunno kau, ellau ai langa.', 'no', 'Bangunlah kamu, hari sudah tinggi.', 'Wake up, the day is already late.', NULL),
+  (4504, 19365, 'Lumaanno kiti betiru.', 'no', 'Berjalanlah kita sekarang.', 'Let''s get going now.', NULL),
+  (4505, 19076, 'Buanin-bi do'' bué'' susu tu!', 'do''', 'Berikanlah kalian air susu itu!', 'Give that milk!', NULL),
+  (4506, 19076, 'Bau do'' io teko.', 'do''', 'Baru sahaja tadi dia tiba.', 'He arrived just now.', NULL),
+  (4507, 19205, 'Namuk kono'' oyo bana masa é.', 'kono''', 'Nyamuk kononnya sangat besar pada masa itu.', 'Mosquitoes were said to be very large at that time.', NULL),
+  (4508, 19209, 'Te-kito=ku ruun dekiit jo buas ta'' diam baa e.', NULL, 'Tampak olehku ada sedikit sahaja beras di dalam pasu itu.', 'I saw there was only a little rice inside the jar.', NULL),
+  (4509, 19209, 'Ruma''-ku ta'' sedi suang.', NULL, 'Rumah saya di tepi sungai.', 'My house is beside the river.', NULL),
+  (4510, 19136, 'Pinda io pu’ ta’ Sayap. Pinemia pan iyo mé.', NULL, 'Dia pindah pergi ke Sayap. Di sana pun dia dicari.', 'He moved to Sayap. Even there he was searched for.', NULL),
+  (4511, 19136, 'Amzi nya’ boi mangan, io pedis betong.', NULL, 'Amzi tidak makan, dia sakit perut.', 'Amzi did not eat, he has a stomach ache.', NULL),
+  (4512, 19111, 'Boi jo gai mangan, turino gai.', NULL, 'Selepas mereka makan, mereka pun tidur.', 'After they ate, they went to sleep.', NULL),
+  (4513, 19111, 'Bila pelua'' sab anak-ni pitu'' kau'', ngoyak no gai.', NULL, 'Bila keluar juga anaknya tujuh orang, mereka pun berteriak.', 'When her seven children also came out, they shouted.', NULL),
+  (4514, 20589, 'Aku boi meli buas ta'' tamu.', NULL, 'Saya telah membeli beras di tamu.', 'I bought rice at the market.', NULL),
+  (4515, 20589, 'Ngini kau mau aku?', NULL, 'Mengapakah kamu memanggil saya?', 'Why did you summon me?', NULL),
+  (4516, 20590, 'Lumaan no kiti betiru.', NULL, 'Berjalanlah kita sekarang.', 'Let us go now.', NULL),
+  (4517, 20592, 'Kami muat kerijo tu lekat sinsubuh.', NULL, 'Kami membuat kerja itu sejak pagi lagi.', 'We have been doing this work since early morning.', NULL),
+  (4518, 20593, 'Bangun no kau, ellaw ai langa.', NULL, 'Bangunlah kamu, hari sudah tinggi.', 'Wake up, the day is already late.', NULL),
+  (4519, 20593, 'Ngini kau mau aku?', NULL, 'Mengapa kamu memanggil saya?', 'Why did you call me?', NULL),
+  (4520, 20594, 'Kaam no pio dulu.', NULL, 'Kalianlah pergi ke sana dahulu.', 'You all go there first.', NULL),
+  (4521, 20595, 'Minggo kam boi turi debui’?', NULL, 'Di mana kalian tidur semalam?', 'Where did you all sleep last night?', NULL),
+  (4522, 20596, 'Pinemia pan iyo mé.', NULL, 'Di sana pun dia dicari.', 'Even there he was searched for.', NULL),
+  (4523, 20597, '"Pemia-ti koso, dong kau susa atai," ling-ni.', '-ti', '"Kita akan mencarinya, janganlah kamu susah hati," katanya.', '"We will search for it, don''t worry," he said.', NULL),
+  (4524, 20597, 'Inan no tempat-ti peliukan diri.', '-ti', 'Inilah tempat kita melarikan diri.', 'This is our place to escape.', NULL),
+  (4525, 20598, 'Iyang-nu té'' aku tu!', NULL, 'Ibumu adalah aku!', 'I am your mother!', NULL),
+  (4526, 20598, 'Ai akalan endo-nu aku.', NULL, 'Isterimu telah memperdayakan aku.', 'Your wife deceived me.', NULL),
+  (4527, 20599, 'Buan-in bi do'' bue'' susu tu!', NULL, 'Berikanlah kalian air susu itu!', 'Give that milk!', NULL),
+  (4528, 20599, 'Ruma''-bi minggo tungan-ni?', NULL, 'Di manakah letaknya rumah kalian?', 'Where is your house located?', NULL),
+  (4529, 20602, 'Amun lumaan songom mesti’ makai suu'' enjaji soo nya'' tetindak.', 'enjaji', 'Kalau jalan (ketika waktu) malam, mesti memakai (lampu) suluh supaya tidak terpijak ular.', 'If (you) travel at night, (you) should use a light so that (you) won’t accidentally step on a snake.', NULL),
+  (4530, 20603, 'Oi''! Pakau kau maku.', NULL, 'Hoi! Kamu mengejutkan saya.', 'Hey! You startled me.', NULL);
+INSERT OR REPLACE INTO `examples` (`id`, `sense_id`, `sentence_bajau`, `highlight_word`, `sentence_ms`, `sentence_en`, `audio_url`) VALUES
+  (4531, 20603, 'Buan-nu maku buas e.', NULL, 'Berikanlah kepada saya beras itu.', 'Give that rice to me.', NULL),
+  (4532, 20604, 'Buan-in bi engkiti peluang tu.', NULL, 'Berikanlah kepada kita peluang ini.', 'Give this opportunity to us.', NULL),
+  (4533, 20605, 'Bara''-nu engkami amun tekito-nu iyo.', NULL, 'Beritahulah kepada kami jika kamu ternampak dia.', 'Tell us if you see him.', NULL),
+  (4534, 20606, 'Aku moli engkau kuih tu.', NULL, 'Saya membeli untukmu kuih ini.', 'I bought this cake for you.', NULL),
+  (4535, 20607, 'Boi biniata-ku engkaam semomon duit e.', NULL, 'Sudah saya bayarkan kepada kalian semua wang itu.', 'I have paid the money to all of you.', NULL),
+  (4536, 20608, 'Buan-ku mio bua'' kayu e.', NULL, 'Saya berikan kepadanya buah pokok itu.', 'I gave him the fruit.', NULL),
+  (4537, 20610, 'Kinetoan enggai no pasal hal tu.', NULL, 'Diketahui oleh mereka / disampaikan kepada mereka tentang hal itu.', 'It was made known to them regarding this matter.', NULL),
+  (4538, 20612, 'Buas é boi beli-ni en-semio sini''.', 'é', 'Beras itu telah dibelinya di pekan tadi.', 'He bought that rice at the market earlier.', NULL),
+  (4539, 20612, 'É boi beli-ni en-semio sini''.', 'é', 'Itu telah dibelinya di pekan tadi.', 'He bought that at the market earlier.', NULL),
+  (4540, 20613, 'Buas u'' boi beli-ni en-semio sini''.', 'u''', 'Beras nun di sana itu telah dibelinya di pekan tadi.', 'He bought that rice over there at the market earlier.', NULL),
+  (4541, 20613, 'U'' boi beli-ni en-semio sini''.', 'u''', 'Nun di sana itu telah dibelinya di pekan tadi.', 'He bought that over there at the market earlier.', NULL);
 
--- Table: affixes (2113 rows)
+-- Table: affixes (2095 rows)
 INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
   (53270, 18949, 'beabis', 'mempunyai, bersemua', 'having, possessing all'),
   (53271, 18949, 'peabisan', 'tempat semua', 'place associated with all'),
@@ -2390,15 +2497,6 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (53575, 19074, 'pedinakanan', 'tempat saudara-mara', 'place associated with relative'),
   (53576, 19075, 'bediri', 'mempunyai, berself', 'having, possessing self'),
   (53577, 19075, 'pedirian', 'tempat self', 'place associated with self'),
-  (53578, 19076, 'kedo''on', 'keemphan (Keadaan, Sifat)', 'quality of being emph'),
-  (53579, 19076, 'pedo''', 'peemph (Pelaku, Orang)', 'person who is emph'),
-  (53580, 19077, 'bedoko''', 'mempunyai, beras', 'having, possessing as'),
-  (53581, 19077, 'pedoko''on', 'tempat as', 'place associated with as'),
-  (53582, 19078, 'nokon', 'melike (Ragam Pelaku)', 'to like, as (actor voice)'),
-  (53583, 19078, 'dinokon', 'dilike (Ragam Pasif)', 'to be like, ased (passive voice)'),
-  (53584, 19078, 'pedokon', 'menlikekan (Kausatif)', 'to cause to like, as (causative)'),
-  (53585, 19078, 'dokonon', 'likekan (Aplikatif)', 'to like, as for, at (applicative)'),
-  (53586, 19078, 'dokonon', 'likean (Kata Nama Terbitan)', 'product, result of like, as'),
   (53587, 19079, 'nokop', 'menangkap (Ragam Pelaku)', 'to catch (actor voice)'),
   (53588, 19079, 'dinokop', 'ditangkap (Ragam Pasif)', 'to be catched (passive voice)'),
   (53589, 19079, 'pedokop', 'mentangkapkan (Kausatif)', 'to cause to catch (causative)'),
@@ -2410,8 +2508,7 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (53595, 19081, 'dule''an', 'marahkan (Aplikatif)', 'to show anger for, at (applicative)'),
   (53596, 19081, 'dule''an', 'marahan (Kata Nama Terbitan)', 'product, result of show anger'),
   (53597, 19082, 'beduo', 'mempunyai, berprayers', 'having, possessing prayers'),
-  (53598, 19082, 'peduoon', 'tempat prayers', 'place associated with prayers');
-INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
+  (53598, 19082, 'peduoon', 'tempat prayers', 'place associated with prayers'),
   (53599, 19083, 'nutai', 'menurun (Ragam Pelaku)', 'to descend (actor voice)'),
   (53600, 19083, 'dinutai', 'diturun (Ragam Pasif)', 'to be descended (passive voice)'),
   (53601, 19083, 'pedutai', 'menturunkan (Kausatif)', 'to cause to descend (causative)'),
@@ -2420,7 +2517,8 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (53604, 19084, 'beduwai', 'mempunyai, berturun', 'having, possessing descend'),
   (53605, 19084, 'peduwaian', 'tempat turun', 'place associated with descend'),
   (53606, 19087, 'beella', 'mempunyai, bersuami', 'having, possessing husband'),
-  (53607, 19087, 'peellaan', 'tempat suami', 'place associated with husband'),
+  (53607, 19087, 'peellaan', 'tempat suami', 'place associated with husband');
+INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
   (53612, 19090, 'beellu', 'mempunyai, berpestle', 'having, possessing pestle'),
   (53613, 19090, 'peelluan', 'tempat pestle', 'place associated with pestle'),
   (53614, 19091, 'ngellum', 'mehidup (Ragam Pelaku)', 'to live (actor voice)'),
@@ -2461,8 +2559,7 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (53651, 19105, 'beenselan', 'mempunyai, bergas', 'having, possessing gas'),
   (53652, 19105, 'peenselanan', 'tempat gas', 'place associated with gas'),
   (53653, 19106, 'ngentan', 'mengang (Ragam Pelaku)', 'to hold, to grip (actor voice)'),
-  (53654, 19106, 'ni-entan', 'digang (Ragam Pasif)', 'to be hold, to griped (passive voice)');
-INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
+  (53654, 19106, 'ni-entan', 'digang (Ragam Pasif)', 'to be hold, to griped (passive voice)'),
   (53655, 19106, 'peentan', 'mengangkan (Kausatif)', 'to cause to hold, to grip (causative)'),
   (53656, 19106, 'entanan', 'gangkan (Aplikatif)', 'to hold, to grip for, at (applicative)'),
   (53657, 19106, 'entanan', 'gangan (Kata Nama Terbitan)', 'product, result of hold, to grip'),
@@ -2471,7 +2568,8 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (53660, 19107, 'peentelo', 'mentelurkan (Kausatif)', 'to cause to egg (causative)'),
   (53661, 19107, 'enteloon', 'telurkan (Aplikatif)', 'to egg for, at (applicative)'),
   (53662, 19107, 'enteloon', 'teluran (Kata Nama Terbitan)', 'product, result of egg'),
-  (53663, 19108, 'beeraa', 'mempunyai, bershout', 'having, possessing shout'),
+  (53663, 19108, 'beeraa', 'mempunyai, bershout', 'having, possessing shout');
+INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
   (53664, 19108, 'peeraaan', 'tempat shout', 'place associated with shout'),
   (53665, 19109, 'befikiran', 'mempunyai, beridea', 'having, possessing idea, opinion'),
   (53666, 19109, 'pefikiranan', 'tempat idea', 'place associated with idea, opinion'),
@@ -2512,8 +2610,7 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (53701, 19123, 'inginan', 'desirekan (Aplikatif)', 'to desire for, at (applicative)'),
   (53702, 19123, 'inginan', 'desirean (Kata Nama Terbitan)', 'product, result of desire'),
   (53703, 19125, 'ngingot', 'mengingat (Ragam Pelaku)', 'to remember (actor voice)'),
-  (53704, 19125, 'ni-ingot', 'diingat (Ragam Pasif)', 'to be remembered (passive voice)');
-INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
+  (53704, 19125, 'ni-ingot', 'diingat (Ragam Pasif)', 'to be remembered (passive voice)'),
   (53705, 19125, 'peingot', 'meningatkan (Kausatif)', 'to cause to remember (causative)'),
   (53706, 19125, 'ingoton', 'ingatkan (Aplikatif)', 'to remember for, at (applicative)'),
   (53707, 19125, 'ingoton', 'ingatan (Kata Nama Terbitan)', 'product, result of remember'),
@@ -2522,7 +2619,8 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (53710, 19126, 'peinum', 'menminumkan (Kausatif)', 'to cause to drink (causative)'),
   (53711, 19126, 'inuman', 'minumkan (Aplikatif)', 'to drink for, at (applicative)'),
   (53712, 19126, 'inuman', 'minuman (Kata Nama Terbitan)', 'product, result of drink'),
-  (53713, 19128, 'beitetu', 'mempunyai, bere', 'having, possessing e'),
+  (53713, 19128, 'beitetu', 'mempunyai, bere', 'having, possessing e');
+INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
   (53714, 19128, 'peitetuan', 'tempat e', 'place associated with e'),
   (53717, 19131, 'beiya''', 'mempunyai, bershy', 'having, possessing shy'),
   (53718, 19131, 'peiya''an', 'tempat shy', 'place associated with shy'),
@@ -2547,10 +2645,6 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (53739, 19141, 'pejawap', 'menjawabkan (Kausatif)', 'to cause to answer (causative)'),
   (53740, 19141, 'jawapan', 'jawabkan (Aplikatif)', 'to answer for, at (applicative)'),
   (53741, 19141, 'jawapan', 'jawaban (Kata Nama Terbitan)', 'product, result of answer'),
-  (53742, 19142, 'bejo', 'mempunyai, berfoc', 'having, possessing foc'),
-  (53743, 19142, 'pejoon', 'tempat foc', 'place associated with foc'),
-  (53744, 19143, 'bejomo', 'mempunyai, berorang', 'having, possessing person, people'),
-  (53745, 19143, 'pejomoon', 'tempat orang', 'place associated with person, people'),
   (53746, 19144, 'keka''an', 'keabangan (Keadaan, Sifat)', 'quality of being older sibling'),
   (53747, 19144, 'peka''', 'peabang (Pelaku, Orang)', 'person who is older sibling'),
   (53748, 19145, 'bekaang', 'mempunyai, berlater', 'having, possessing later'),
@@ -2563,8 +2657,7 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (53755, 19148, 'kinakai', 'digaru (Ragam Pasif)', 'to be scratched (passive voice)'),
   (53756, 19148, 'pekakai', 'mengarukan (Kausatif)', 'to cause to scratch (causative)'),
   (53757, 19148, 'kakaian', 'garukan (Aplikatif)', 'to scratch for, at (applicative)'),
-  (53758, 19148, 'kakaian', 'garuan (Kata Nama Terbitan)', 'product, result of scratch');
-INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
+  (53758, 19148, 'kakaian', 'garuan (Kata Nama Terbitan)', 'product, result of scratch'),
   (53759, 19150, 'ngakan', 'memakan (Ragam Pelaku)', 'to eat (actor voice)'),
   (53760, 19150, 'kinakan', 'dimakan (Ragam Pasif)', 'to be eated (passive voice)'),
   (53761, 19150, 'pekakan', 'memberi makan (Kausatif)', 'to cause to eat (causative)'),
@@ -2577,7 +2670,8 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (53768, 19151, 'kakay-kakaian', 'garuan (Kata Nama Terbitan)', 'product, result of scratch repeatedly'),
   (53769, 19152, 'bekaki', 'mempunyai, bersepupu', 'having, possessing cousin'),
   (53770, 19152, 'pekakian', 'tempat sepupu', 'place associated with cousin'),
-  (53771, 19153, 'ngale', 'menengar (Ragam Pelaku)', 'to hear (actor voice)'),
+  (53771, 19153, 'ngale', 'menengar (Ragam Pelaku)', 'to hear (actor voice)');
+INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
   (53772, 19153, 'kinale', 'didengar (Ragam Pasif)', 'to be heared (passive voice)'),
   (53773, 19153, 'pekale', 'mendengarkan (Kausatif)', 'to cause to hear (causative)'),
   (53774, 19153, 'kalean', 'dengarkan (Aplikatif)', 'to hear for, at (applicative)'),
@@ -2614,8 +2708,7 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (53805, 19163, 'pekealapanan', 'tempat advantage', 'place associated with advantage, benefit'),
   (53806, 19164, 'bekebiosoon', 'mempunyai, bercustom', 'having, possessing custom'),
   (53807, 19164, 'pekebiosoonon', 'tempat custom', 'place associated with custom'),
-  (53808, 19165, 'ngebo', 'meruntuh (Ragam Pelaku)', 'to collapse (actor voice)');
-INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
+  (53808, 19165, 'ngebo', 'meruntuh (Ragam Pelaku)', 'to collapse (actor voice)'),
   (53809, 19165, 'kinebo', 'diruntuh (Ragam Pasif)', 'to be collapseed (passive voice)'),
   (53810, 19165, 'pekebo', 'menruntuhkan (Kausatif)', 'to cause to collapse (causative)'),
   (53811, 19165, 'keboon', 'runtuhkan (Aplikatif)', 'to collapse for, at (applicative)'),
@@ -2628,7 +2721,8 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (53818, 19167, 'ngebu-in', 'memasks (Ragam Pelaku)', 'to masks (actor voice)'),
   (53819, 19167, 'kinebu-in', 'dimasks (Ragam Pasif)', 'to be masksed (passive voice)'),
   (53820, 19167, 'pekebu-in', 'menmaskskan (Kausatif)', 'to cause to masks (causative)'),
-  (53821, 19167, 'kebu-inan', 'maskskan (Aplikatif)', 'to masks for, at (applicative)'),
+  (53821, 19167, 'kebu-inan', 'maskskan (Aplikatif)', 'to masks for, at (applicative)');
+INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
   (53822, 19167, 'kebu-inan', 'masksan (Kata Nama Terbitan)', 'product, result of masks'),
   (53823, 19170, 'kekedikianan', 'kechildhoodan (Keadaan, Sifat)', 'quality of being childhood; youngster'),
   (53824, 19170, 'pekedikian', 'pechildhood (Pelaku, Orang)', 'person who is childhood; youngster'),
@@ -2665,8 +2759,7 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (53865, 19184, 'kinengaan', 'diexperience spicy-ness (Ragam Pasif)', 'to be experience spicy-nessed (passive voice)'),
   (53866, 19184, 'pekengaan', 'menexperience spicy-nesskan (Kausatif)', 'to cause to experience spicy-ness (causative)'),
   (53867, 19184, 'kengaanan', 'experience spicy-nesskan (Aplikatif)', 'to experience spicy-ness for, at (applicative)'),
-  (53868, 19184, 'kengaanan', 'experience spicy-nessan (Kata Nama Terbitan)', 'product, result of experience spicy-ness');
-INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
+  (53868, 19184, 'kengaanan', 'experience spicy-nessan (Kata Nama Terbitan)', 'product, result of experience spicy-ness'),
   (53869, 19185, 'ngepa''', 'mehinggap (Ragam Pelaku)', 'to alight on  x (actor voice)'),
   (53870, 19185, 'kinepa''', 'dihinggap (Ragam Pasif)', 'to be alight on  xed (passive voice)'),
   (53871, 19185, 'pekepa''', 'menhinggapkan (Kausatif)', 'to cause to alight on  x (causative)'),
@@ -2679,7 +2772,8 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (53878, 19186, 'kepanasanan', 'panasan (Kata Nama Terbitan)', 'product, result of feel hot'),
   (53879, 19187, 'ngepo', 'melompat (Ragam Pelaku)', 'to jump down (actor voice)'),
   (53880, 19187, 'kinepo', 'dilompat (Ragam Pasif)', 'to be jump downed (passive voice)'),
-  (53881, 19187, 'pekepo', 'menlompatkan (Kausatif)', 'to cause to jump down (causative)'),
+  (53881, 19187, 'pekepo', 'menlompatkan (Kausatif)', 'to cause to jump down (causative)');
+INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
   (53882, 19187, 'kepoon', 'lompatkan (Aplikatif)', 'to jump down for, at (applicative)'),
   (53883, 19187, 'kepoon', 'lompatan (Kata Nama Terbitan)', 'product, result of jump down'),
   (53884, 19188, 'kekeraatanan', 'keburukan (Keadaan, Sifat)', 'quality of being bad deed; crime'),
@@ -2716,8 +2810,7 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (53915, 19197, 'kilingan', 'telentangan (Kata Nama Terbitan)', 'product, result of lie on backside'),
   (53916, 19198, 'ngilo', 'merecognize (Ragam Pelaku)', 'to recognize (actor voice)'),
   (53917, 19198, 'kinilo', 'direcognize (Ragam Pasif)', 'to be recognizeed (passive voice)'),
-  (53918, 19198, 'pekilo', 'menrecognizekan (Kausatif)', 'to cause to recognize (causative)');
-INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
+  (53918, 19198, 'pekilo', 'menrecognizekan (Kausatif)', 'to cause to recognize (causative)'),
   (53919, 19198, 'kiloon', 'recognizekan (Aplikatif)', 'to recognize for, at (applicative)'),
   (53920, 19198, 'kiloon', 'recognizean (Kata Nama Terbitan)', 'product, result of recognize'),
   (53921, 19199, 'ngiro', 'mengira (Ragam Pelaku)', 'to count (actor voice)'),
@@ -2730,7 +2823,8 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (53928, 19200, 'pekisar', 'menmillkan (Kausatif)', 'to cause to mill (causative)'),
   (53929, 19200, 'kisaran', 'millkan (Aplikatif)', 'to mill for, at (applicative)'),
   (53930, 19200, 'kisaran', 'millan (Kata Nama Terbitan)', 'product, result of mill'),
-  (53931, 19201, 'bekisaran', 'mempunyai, bermill', 'having, possessing mill'),
+  (53931, 19201, 'bekisaran', 'mempunyai, bermill', 'having, possessing mill');
+INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
   (53932, 19201, 'pekisaranan', 'tempat mill', 'place associated with mill'),
   (53933, 19202, 'bekitik', 'mempunyai, bertickle', 'having, possessing tickle'),
   (53934, 19202, 'pekitikan', 'tempat tickle', 'place associated with tickle'),
@@ -2744,11 +2838,6 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (53942, 19204, 'pekito', 'mentampakkan (Kausatif)', 'to cause to see (causative)'),
   (53943, 19204, 'kitoon', 'tampakkan (Aplikatif)', 'to see for, at (applicative)'),
   (53944, 19204, 'kitoon', 'tampakan (Kata Nama Terbitan)', 'product, result of see'),
-  (53945, 19205, 'ngono''', 'mehearsay (Ragam Pelaku)', 'to hearsay (actor voice)'),
-  (53946, 19205, 'kinono''', 'dihearsay (Ragam Pasif)', 'to be hearsayed (passive voice)'),
-  (53947, 19205, 'pekono''', 'menhearsaykan (Kausatif)', 'to cause to hearsay (causative)'),
-  (53948, 19205, 'kono''on', 'hearsaykan (Aplikatif)', 'to hearsay for, at (applicative)'),
-  (53949, 19205, 'kono''on', 'hearsayan (Kata Nama Terbitan)', 'product, result of hearsay'),
   (53950, 19206, 'ngoot', 'mecapai (Ragam Pelaku)', 'to reach inside with arm (actor voice)'),
   (53951, 19206, 'kinoot', 'dicapai (Ragam Pasif)', 'to be reach inside with armed (passive voice)'),
   (53952, 19206, 'pekoot', 'mencapaikan (Kausatif)', 'to cause to reach inside with arm (causative)'),
@@ -2767,8 +2856,7 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (53969, 19214, 'kinui', 'diwilling (Ragam Pasif)', 'to be be willinged (passive voice)'),
   (53970, 19214, 'pekui', 'menwillingkan (Kausatif)', 'to cause to be willing (causative)'),
   (53971, 19214, 'kuian', 'willingkan (Aplikatif)', 'to be willing for, at (applicative)'),
-  (53972, 19214, 'kuian', 'willingan (Kata Nama Terbitan)', 'product, result of be willing');
-INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
+  (53972, 19214, 'kuian', 'willingan (Kata Nama Terbitan)', 'product, result of be willing'),
   (53973, 19215, 'ngukur', 'mecukur (Ragam Pelaku)', 'to shave, grate (actor voice)'),
   (53974, 19215, 'kinukur', 'dicukur (Ragam Pasif)', 'to be shave, grateed (passive voice)'),
   (53975, 19215, 'pekukur', 'mencukurkan (Kausatif)', 'to cause to shave, grate (causative)'),
@@ -2786,7 +2874,8 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (53989, 19220, 'kurungan', 'kumpulkan (Aplikatif)', 'to gather (s.thing) for, at (applicative)'),
   (53990, 19220, 'kurungan', 'kumpulan (Kata Nama Terbitan)', 'product, result of gather (s.thing)'),
   (53991, 19222, 'nge-l-em-isad', 'mengelincir (Ragam Pelaku)', 'to slip (actor voice)'),
-  (53992, 19222, 'lin-em-isad', 'digelincir (Ragam Pasif)', 'to be sliped (passive voice)'),
+  (53992, 19222, 'lin-em-isad', 'digelincir (Ragam Pasif)', 'to be sliped (passive voice)');
+INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
   (53993, 19222, 'pel-em-isad', 'mengelincirkan (Kausatif)', 'to cause to slip (causative)'),
   (53994, 19222, 'l-em-isadan', 'gelincirkan (Aplikatif)', 'to slip for, at (applicative)'),
   (53995, 19222, 'l-em-isadan', 'gelinciran (Kata Nama Terbitan)', 'product, result of slip'),
@@ -2818,8 +2907,7 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (54021, 19232, 'belain', 'mempunyai, berdifferent', 'having, possessing different'),
   (54022, 19232, 'pelainan', 'tempat different', 'place associated with different'),
   (54023, 19233, 'nge-landung', 'menyhadow (Ragam Pelaku)', 'to shadow (actor voice)'),
-  (54024, 19233, 'linandung', 'dishadow (Ragam Pasif)', 'to be shadowed (passive voice)');
-INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
+  (54024, 19233, 'linandung', 'dishadow (Ragam Pasif)', 'to be shadowed (passive voice)'),
   (54025, 19233, 'pelandung', 'menshadowkan (Kausatif)', 'to cause to shadow (causative)'),
   (54026, 19233, 'landungan', 'shadowkan (Aplikatif)', 'to shadow for, at (applicative)'),
   (54027, 19233, 'landungan', 'shadowan (Kata Nama Terbitan)', 'product, result of shadow'),
@@ -2837,7 +2925,8 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (54046, 19240, 'nge-leba-an', 'menyet  x  down (Ragam Pelaku)', 'to set  x  down (actor voice)'),
   (54047, 19240, 'lineba-an', 'diset  x  down (Ragam Pasif)', 'to be set  x  downed (passive voice)'),
   (54048, 19240, 'peleba-an', 'menset  x  downkan (Kausatif)', 'to cause to set  x  down (causative)'),
-  (54049, 19240, 'leba-anan', 'set  x  downkan (Aplikatif)', 'to set  x  down for, at (applicative)'),
+  (54049, 19240, 'leba-anan', 'set  x  downkan (Aplikatif)', 'to set  x  down for, at (applicative)');
+INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
   (54050, 19240, 'leba-anan', 'set  x  downan (Kata Nama Terbitan)', 'product, result of set  x  down'),
   (54051, 19242, 'belekatan', 'mempunyai, berdeparture', 'having, possessing departure'),
   (54052, 19242, 'pelekatanan', 'tempat departure', 'place associated with departure'),
@@ -2869,8 +2958,7 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (54078, 19249, 'linepa-an', 'dibebas (Ragam Pasif)', 'to be free  xed (passive voice)'),
   (54079, 19249, 'pelepa-an', 'membebaskan (Kausatif)', 'to cause to free  x (causative)'),
   (54080, 19249, 'lepa-anan', 'bebaskan (Aplikatif)', 'to free  x for, at (applicative)'),
-  (54081, 19249, 'lepa-anan', 'bebasan (Kata Nama Terbitan)', 'product, result of free  x');
-INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
+  (54081, 19249, 'lepa-anan', 'bebasan (Kata Nama Terbitan)', 'product, result of free  x'),
   (54082, 19250, 'beleta''', 'mempunyai, bercrack', 'having, possessing crack'),
   (54083, 19250, 'peleta''an', 'tempat crack', 'place associated with crack'),
   (54084, 19251, 'nge-liak', 'menelentang (Ragam Pelaku)', 'to lie on backside (actor voice)'),
@@ -2888,7 +2976,8 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (54096, 19255, 'nge-limpang', 'mebaring (Ragam Pelaku)', 'to lie down (actor voice)'),
   (54097, 19255, 'linimpang', 'dibaring (Ragam Pasif)', 'to be lie downed (passive voice)'),
   (54098, 19255, 'pelimpang', 'membaringkan (Kausatif)', 'to cause to lie down (causative)'),
-  (54099, 19255, 'limpangan', 'baringkan (Aplikatif)', 'to lie down for, at (applicative)'),
+  (54099, 19255, 'limpangan', 'baringkan (Aplikatif)', 'to lie down for, at (applicative)');
+INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
   (54100, 19255, 'limpangan', 'baringan (Kata Nama Terbitan)', 'product, result of lie down'),
   (54101, 19256, 'nge-limpang-an', 'menempat baring (Ragam Pelaku)', 'to lie down on (s.thing) (actor voice)'),
   (54102, 19256, 'linimpang-an', 'ditempat baring (Ragam Pasif)', 'to be lie down on (s.thing)ed (passive voice)'),
@@ -2920,8 +3009,7 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (54132, 19264, 'peliu', 'menangiskan (Kausatif)', 'to cause to cry together (causative)'),
   (54133, 19264, 'liuan', 'angiskan (Aplikatif)', 'to cry together for, at (applicative)'),
   (54134, 19264, 'liuan', 'angisan (Kata Nama Terbitan)', 'product, result of cry together'),
-  (54140, 19266, 'nge-loot', 'mecapai (Ragam Pelaku)', 'to reach for ( x ) (actor voice)');
-INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
+  (54140, 19266, 'nge-loot', 'mecapai (Ragam Pelaku)', 'to reach for ( x ) (actor voice)'),
   (54141, 19266, 'linoot', 'dicapai (Ragam Pasif)', 'to be reach for ( x )ed (passive voice)'),
   (54142, 19266, 'peloot', 'mencapaikan (Kausatif)', 'to cause to reach for ( x ) (causative)'),
   (54143, 19266, 'looton', 'capaikan (Aplikatif)', 'to reach for ( x ) for, at (applicative)'),
@@ -2939,7 +3027,8 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (54155, 19270, 'belubang', 'mempunyai, berhole', 'having, possessing hole'),
   (54156, 19270, 'pelubangan', 'tempat hole', 'place associated with hole'),
   (54157, 19271, 'nge-lulai', 'mengalih (Ragam Pelaku)', 'to move, to flee (actor voice)'),
-  (54158, 19271, 'linulai', 'dialih (Ragam Pasif)', 'to be move, to fleeed (passive voice)'),
+  (54158, 19271, 'linulai', 'dialih (Ragam Pasif)', 'to be move, to fleeed (passive voice)');
+INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
   (54159, 19271, 'pelulai', 'menalihkan (Kausatif)', 'to cause to move, to flee (causative)'),
   (54160, 19271, 'lulaian', 'alihkan (Aplikatif)', 'to move, to flee for, at (applicative)'),
   (54161, 19271, 'lulaian', 'alihan (Kata Nama Terbitan)', 'product, result of move, to flee'),
@@ -2971,8 +3060,7 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (54187, 19279, 'minagar', 'dibuat (Ragam Pasif)', 'to be make a fenceed (passive voice)'),
   (54188, 19279, 'pemagar', 'membuatkan (Kausatif)', 'to cause to make a fence (causative)'),
   (54189, 19279, 'magaran', 'buatkan (Aplikatif)', 'to make a fence for, at (applicative)'),
-  (54190, 19279, 'magaran', 'buatan (Kata Nama Terbitan)', 'product, result of make a fence');
-INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
+  (54190, 19279, 'magaran', 'buatan (Kata Nama Terbitan)', 'product, result of make a fence'),
   (54191, 19281, 'nge-makan', 'meberi makan (Ragam Pelaku)', 'to feed (actor voice)'),
   (54192, 19281, 'minakan', 'diberi makan (Ragam Pasif)', 'to be feeded (passive voice)'),
   (54193, 19281, 'pemakan', 'membuatkan beri makan (Kausatif)', 'to cause to feed (causative)'),
@@ -2984,15 +3072,14 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (54199, 19283, 'pemale''an', 'tempat exhausted', 'place associated with exhausted'),
   (54200, 19284, 'kemamisan', 'kemanisan (Keadaan, Sifat)', 'quality of being sweet'),
   (54201, 19284, 'pemamis', 'pemmanis (Pelaku, Orang)', 'person who is sweet'),
-  (54202, 19285, 'beman', 'mempunyai, bermore', 'having, possessing more'),
-  (54203, 19285, 'pemanan', 'tempat more', 'place associated with more'),
   (54204, 19286, 'nge-mandi', 'memandi (Ragam Pelaku)', 'to bathe (actor voice)'),
   (54205, 19286, 'minandi', 'dimandi (Ragam Pasif)', 'to be batheed (passive voice)'),
   (54206, 19286, 'pemandi', 'menmandikan (Kausatif)', 'to cause to bathe (causative)'),
   (54207, 19286, 'mandian', 'mandikan (Aplikatif)', 'to bathe for, at (applicative)'),
   (54208, 19286, 'mandian', 'mandian (Kata Nama Terbitan)', 'product, result of bathe'),
   (54209, 19287, 'nge-mangan', 'memakan (Ragam Pelaku)', 'to eat (actor voice)'),
-  (54210, 19287, 'minangan', 'dimakan (Ragam Pasif)', 'to be eated (passive voice)'),
+  (54210, 19287, 'minangan', 'dimakan (Ragam Pasif)', 'to be eated (passive voice)');
+INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
   (54211, 19287, 'pemangan', 'memberi makan (Kausatif)', 'to cause to eat (causative)'),
   (54212, 19287, 'manganan', 'makankan (Aplikatif)', 'to eat for, at (applicative)'),
   (54213, 19287, 'manganan', 'makanan (Kata Nama Terbitan)', 'product, result of eat'),
@@ -3022,8 +3109,7 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (54242, 19297, 'peme-ke-bana', 'menrmitkan (Kausatif)', 'to cause to permit (causative)'),
   (54243, 19297, 'me-ke-banaan', 'rmitkan (Aplikatif)', 'to permit for, at (applicative)'),
   (54244, 19297, 'me-ke-banaan', 'rmitan (Kata Nama Terbitan)', 'product, result of permit'),
-  (54245, 19301, 'nge-meniik', 'menaik (Ragam Pelaku)', 'to ascend (actor voice)');
-INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
+  (54245, 19301, 'nge-meniik', 'menaik (Ragam Pelaku)', 'to ascend (actor voice)'),
   (54246, 19301, 'mineniik', 'dinaik (Ragam Pasif)', 'to be ascended (passive voice)'),
   (54247, 19301, 'pemeniik', 'mennaikkan (Kausatif)', 'to cause to ascend (causative)'),
   (54248, 19301, 'meniikan', 'naikkan (Aplikatif)', 'to ascend for, at (applicative)'),
@@ -3040,12 +3126,11 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (54259, 19304, 'pemesi', 'membuatkan ikan (Kausatif)', 'to cause to fish using a rod (causative)'),
   (54260, 19304, 'mesian', 'ikankan (Aplikatif)', 'to fish using a rod for, at (applicative)'),
   (54261, 19304, 'mesian', 'ikanan (Kata Nama Terbitan)', 'product, result of fish using a rod'),
-  (54262, 19305, 'bemesti''', 'mempunyai, berenjaji  soo   nya', 'having, possessing enjaji  soo   nya'),
-  (54263, 19305, 'pemesti''an', 'tempat enjaji  soo   nya', 'place associated with enjaji  soo   nya'),
   (54264, 19306, 'nge-metak', 'menrip (Ragam Pelaku)', 'to drip (actor voice)'),
   (54265, 19306, 'minetak', 'didrip (Ragam Pasif)', 'to be driped (passive voice)'),
   (54266, 19306, 'pemetak', 'mendripkan (Kausatif)', 'to cause to drip (causative)'),
-  (54267, 19306, 'metakan', 'dripkan (Aplikatif)', 'to drip for, at (applicative)'),
+  (54267, 19306, 'metakan', 'dripkan (Aplikatif)', 'to drip for, at (applicative)');
+INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
   (54268, 19306, 'metakan', 'dripan (Kata Nama Terbitan)', 'product, result of drip'),
   (54269, 19307, 'bemetoo', 'mempunyai, berparent-in-law', 'having, possessing parent-in-law'),
   (54270, 19307, 'pemetooon', 'tempat parent-in-law', 'place associated with parent-in-law'),
@@ -3073,8 +3158,7 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (54292, 19316, 'bemosoduo', 'mempunyai, berread', 'having, possessing read'),
   (54293, 19316, 'pemosoduoon', 'tempat read', 'place associated with read'),
   (54294, 19317, 'bemoto', 'mempunyai, bermata', 'having, possessing eye'),
-  (54295, 19317, 'pemotoon', 'tempat mata', 'place associated with eye');
-INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
+  (54295, 19317, 'pemotoon', 'tempat mata', 'place associated with eye'),
   (54296, 19318, 'nge-muan', 'mengi (Ragam Pelaku)', 'to give (actor voice)'),
   (54297, 19318, 'minuan', 'dii (Ragam Pasif)', 'to be giveed (passive voice)'),
   (54298, 19318, 'pemuan', 'menikan (Kausatif)', 'to cause to give (causative)'),
@@ -3096,7 +3180,8 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (54314, 19324, 'nge-nangis', 'mengangis (Ragam Pelaku)', 'to cry (actor voice)'),
   (54315, 19324, 'ninangis', 'diangis (Ragam Pasif)', 'to be cryed (passive voice)'),
   (54316, 19324, 'penangis', 'menangiskan (Kausatif)', 'to cause to cry (causative)'),
-  (54317, 19324, 'nangisan', 'angiskan (Aplikatif)', 'to cry for, at (applicative)'),
+  (54317, 19324, 'nangisan', 'angiskan (Aplikatif)', 'to cry for, at (applicative)');
+INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
   (54318, 19324, 'nangisan', 'angisan (Kata Nama Terbitan)', 'product, result of cry'),
   (54319, 19325, 'benasip', 'mempunyai, berluckily', 'having, possessing luckily'),
   (54320, 19325, 'penasipan', 'tempat luckily', 'place associated with luckily'),
@@ -3124,8 +3209,7 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (54347, 19332, 'pengantok', 'mensleepykan (Kausatif)', 'to cause to sleepy (causative)'),
   (54348, 19332, 'ngantokon', 'sleepykan (Aplikatif)', 'to sleepy for, at (applicative)'),
   (54349, 19332, 'ngantokon', 'sleepyan (Kata Nama Terbitan)', 'product, result of sleepy'),
-  (54350, 19334, 'nge-nge-laa''', 'menarah (Ragam Pelaku)', 'to bleed (actor voice)');
-INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
+  (54350, 19334, 'nge-nge-laa''', 'menarah (Ragam Pelaku)', 'to bleed (actor voice)'),
   (54351, 19334, 'ninge-laa''', 'didarah (Ragam Pasif)', 'to be bleeded (passive voice)'),
   (54352, 19334, 'penge-laa''', 'mendarahkan (Kausatif)', 'to cause to bleed (causative)'),
   (54353, 19334, 'nge-laa''an', 'darahkan (Aplikatif)', 'to bleed for, at (applicative)'),
@@ -3147,7 +3231,8 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (54369, 19340, 'pengembang', 'membengkakkan (Kausatif)', 'to cause to swell, to rise (causative)'),
   (54370, 19340, 'ngembangan', 'bengkakkan (Aplikatif)', 'to swell, to rise for, at (applicative)'),
   (54371, 19340, 'ngembangan', 'bengkakan (Kata Nama Terbitan)', 'product, result of swell, to rise'),
-  (54372, 19342, 'nge-ngenda''', 'melihat (Ragam Pelaku)', 'to look at (actor voice)'),
+  (54372, 19342, 'nge-ngenda''', 'melihat (Ragam Pelaku)', 'to look at (actor voice)');
+INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
   (54373, 19342, 'ningenda''', 'dilihat (Ragam Pasif)', 'to be look ated (passive voice)'),
   (54374, 19342, 'pengenda''', 'menlihatkan (Kausatif)', 'to cause to look at (causative)'),
   (54375, 19342, 'ngenda''an', 'lihatkan (Aplikatif)', 'to look at for, at (applicative)'),
@@ -3175,8 +3260,7 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (54397, 19349, 'nge-ngintam', 'memiss (Ragam Pelaku)', 'to miss (actor voice)'),
   (54398, 19349, 'ningintam', 'dimiss (Ragam Pasif)', 'to be missed (passive voice)'),
   (54399, 19349, 'pengintam', 'menmisskan (Kausatif)', 'to cause to miss (causative)'),
-  (54400, 19349, 'ngintaman', 'misskan (Aplikatif)', 'to miss for, at (applicative)');
-INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
+  (54400, 19349, 'ngintaman', 'misskan (Aplikatif)', 'to miss for, at (applicative)'),
   (54401, 19349, 'ngintaman', 'missan (Kata Nama Terbitan)', 'product, result of miss'),
   (54402, 19350, 'nge-nginum', 'meminum (Ragam Pelaku)', 'to drink (actor voice)'),
   (54403, 19350, 'ninginum', 'diminum (Ragam Pasif)', 'to be drinked (passive voice)'),
@@ -3198,7 +3282,8 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (54419, 19353, 'pengonsop', 'menminumkan (Kausatif)', 'to cause to drink (causative)'),
   (54420, 19353, 'ngonsopon', 'minumkan (Aplikatif)', 'to drink for, at (applicative)'),
   (54421, 19353, 'ngonsopon', 'minuman (Kata Nama Terbitan)', 'product, result of drink'),
-  (54422, 19354, 'bengukur', 'mempunyai, bercukur', 'having, possessing shave'),
+  (54422, 19354, 'bengukur', 'mempunyai, bercukur', 'having, possessing shave');
+INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
   (54423, 19354, 'pengukuran', 'tempat cukur', 'place associated with shave'),
   (54424, 19355, 'nge-ngupi', 'memimpi (Ragam Pelaku)', 'to dream (actor voice)'),
   (54425, 19355, 'ningupi', 'dimimpi (Ragam Pasif)', 'to be dreamed (passive voice)'),
@@ -3226,8 +3311,7 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (54447, 19362, 'penimung', 'mentengokkan (Kausatif)', 'to cause to look for clams (causative)'),
   (54448, 19362, 'nimungan', 'tengokkan (Aplikatif)', 'to look for clams for, at (applicative)'),
   (54449, 19362, 'nimungan', 'tengokan (Kata Nama Terbitan)', 'product, result of look for clams'),
-  (54450, 19363, 'nge-ningkoo''', 'menuduk (Ragam Pelaku)', 'to sit (actor voice)');
-INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
+  (54450, 19363, 'nge-ningkoo''', 'menuduk (Ragam Pelaku)', 'to sit (actor voice)'),
   (54451, 19363, 'niningkoo''', 'diduduk (Ragam Pasif)', 'to be sited (passive voice)'),
   (54452, 19363, 'peningkoo''', 'mendudukkan (Kausatif)', 'to cause to sit (causative)'),
   (54453, 19363, 'ningkoo''on', 'dudukkan (Aplikatif)', 'to sit for, at (applicative)'),
@@ -3237,8 +3321,6 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (54457, 19364, 'peninkgoo''-ningkoo''', 'mendudukkan (Kausatif)', 'to cause to sit at leisure (causative)'),
   (54458, 19364, 'ninkgoo''-ningkoo''on', 'dudukkan (Aplikatif)', 'to sit at leisure for, at (applicative)'),
   (54459, 19364, 'ninkgoo''-ningkoo''on', 'dudukan (Kata Nama Terbitan)', 'product, result of sit at leisure'),
-  (54460, 19365, 'beno', 'mempunyai, berfoc', 'having, possessing foc'),
-  (54461, 19365, 'penoon', 'tempat foc', 'place associated with foc'),
   (54462, 19366, 'nge-notok', 'menanam (Ragam Pelaku)', 'to plant seedlings (actor voice)'),
   (54463, 19366, 'ninotok', 'ditanam (Ragam Pasif)', 'to be plant seedlingsed (passive voice)'),
   (54464, 19366, 'penotok', 'mentanamkan (Kausatif)', 'to cause to plant seedlings (causative)'),
@@ -3251,7 +3333,8 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (54471, 19367, 'nuutan', 'ikutan (Kata Nama Terbitan)', 'product, result of follow behind'),
   (54514, 19386, 'bepak', 'mempunyai, berkatak', 'having, possessing frog'),
   (54515, 19386, 'pepakan', 'tempat katak', 'place associated with frog'),
-  (54542, 19394, 'malu-paluan', 'menyasaran pukulan (Ragam Pelaku)', 'to object of repeated hitting (actor voice)'),
+  (54542, 19394, 'malu-paluan', 'menyasaran pukulan (Ragam Pelaku)', 'to object of repeated hitting (actor voice)');
+INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
   (54543, 19394, 'pinalu-paluan', 'disasaran pukulan (Ragam Pasif)', 'to be object of repeated hittinged (passive voice)'),
   (54544, 19394, 'pepalu-paluan', 'membuatkan sasaran pukulan (Kausatif)', 'to cause to object of repeated hitting (causative)'),
   (54545, 19394, 'palu-paluanan', 'sasaran pukulankan (Aplikatif)', 'to object of repeated hitting for, at (applicative)'),
@@ -3277,8 +3360,7 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (54623, 19414, 'pine-ke-tau', 'diakutkan (Ragam Pasif)', 'to be scareed (passive voice)'),
   (54624, 19414, 'pepe-ke-tau', 'membuatkan akutkan (Kausatif)', 'to cause to scare (causative)'),
   (54625, 19414, 'pe-ke-tauan', 'akutkankan (Aplikatif)', 'to scare for, at (applicative)'),
-  (54626, 19414, 'pe-ke-tauan', 'akutkanan (Kata Nama Terbitan)', 'product, result of scare');
-INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
+  (54626, 19414, 'pe-ke-tauan', 'akutkanan (Kata Nama Terbitan)', 'product, result of scare'),
   (54627, 19415, 'me-kepa''', 'mehinggap (Ragam Pelaku)', 'to alight (actor voice)'),
   (54628, 19415, 'pine-kepa''', 'dihinggap (Ragam Pasif)', 'to be alighted (passive voice)'),
   (54629, 19415, 'pepe-kepa''', 'menhinggapkan (Kausatif)', 'to cause to alight (causative)'),
@@ -3302,7 +3384,8 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (54649, 19422, 'me-liak', 'mengelentangkan (Ragam Pelaku)', 'to lay (s.thing) on its back; upturn (actor voice)'),
   (54650, 19422, 'pine-liak', 'dielentangkan (Ragam Pasif)', 'to be lay (s.thing) on its back; upturned (passive voice)'),
   (54651, 19422, 'pepe-liak', 'membuatkan elentangkan (Kausatif)', 'to cause to lay (s.thing) on its back; upturn (causative)'),
-  (54652, 19422, 'pe-liakan', 'elentangkankan (Aplikatif)', 'to lay (s.thing) on its back; upturn for, at (applicative)'),
+  (54652, 19422, 'pe-liakan', 'elentangkankan (Aplikatif)', 'to lay (s.thing) on its back; upturn for, at (applicative)');
+INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
   (54653, 19422, 'pe-liakan', 'elentangkanan (Kata Nama Terbitan)', 'product, result of lay (s.thing) on its back; upturn'),
   (54654, 19423, 'me-liang', 'merelease (s.thing) into flight (Ragam Pelaku)', 'to release (s.thing) into flight (actor voice)'),
   (54655, 19423, 'pine-liang', 'direlease (s.thing) into flight (Ragam Pasif)', 'to be release (s.thing) into flighted (passive voice)'),
@@ -3328,8 +3411,7 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (54680, 19430, 'pine-pantau', 'didiri (Ragam Pasif)', 'to be stand (s.thing) uped (passive voice)'),
   (54681, 19430, 'pepe-pantau', 'mendirikan (Kausatif)', 'to cause to stand (s.thing) up (causative)'),
   (54682, 19430, 'pe-pantauan', 'dirikan (Aplikatif)', 'to stand (s.thing) up for, at (applicative)'),
-  (54683, 19430, 'pe-pantauan', 'dirian (Kata Nama Terbitan)', 'product, result of stand (s.thing) up');
-INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
+  (54683, 19430, 'pe-pantauan', 'dirian (Kata Nama Terbitan)', 'product, result of stand (s.thing) up'),
   (54684, 19432, 'me-pe-dia''', 'merendahkan (Ragam Pelaku)', 'to lower (s.thing) (actor voice)'),
   (54685, 19432, 'pine-pe-dia''', 'direndahkan (Ragam Pasif)', 'to be lower (s.thing)ed (passive voice)'),
   (54686, 19432, 'pepe-pe-dia''', 'membuatkan rendahkan (Kausatif)', 'to cause to lower (s.thing) (causative)'),
@@ -3353,7 +3435,8 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (54704, 19437, 'me-sorong', 'mehampiri (Ragam Pelaku)', 'to approach (actor voice)'),
   (54705, 19437, 'pine-sorong', 'dihampiri (Ragam Pasif)', 'to be approached (passive voice)'),
   (54706, 19437, 'pepe-sorong', 'menhampirikan (Kausatif)', 'to cause to approach (causative)'),
-  (54707, 19437, 'pe-sorongon', 'hampirikan (Aplikatif)', 'to approach for, at (applicative)'),
+  (54707, 19437, 'pe-sorongon', 'hampirikan (Aplikatif)', 'to approach for, at (applicative)');
+INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
   (54708, 19437, 'pe-sorongon', 'hampirian (Kata Nama Terbitan)', 'product, result of approach'),
   (54709, 19438, 'me-suk', 'mebecome thin (Ragam Pelaku)', 'to become thin (actor voice)'),
   (54710, 19438, 'pine-suk', 'dibecome thin (Ragam Pasif)', 'to be become thined (passive voice)'),
@@ -3379,8 +3462,7 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (54735, 19445, 'pine-tuun', 'diyelam (Ragam Pasif)', 'to be diveed (passive voice)'),
   (54736, 19445, 'pepe-tuun', 'menyelamkan (Kausatif)', 'to cause to dive (causative)'),
   (54737, 19445, 'pe-tuunan', 'yelamkan (Aplikatif)', 'to dive for, at (applicative)'),
-  (54738, 19445, 'pe-tuunan', 'yelaman (Kata Nama Terbitan)', 'product, result of dive');
-INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
+  (54738, 19445, 'pe-tuunan', 'yelaman (Kata Nama Terbitan)', 'product, result of dive'),
   (54739, 19446, 'mealap', 'mebaiki (Ragam Pelaku)', 'to fix, repair (actor voice)'),
   (54740, 19446, 'pinealap', 'dibaiki (Ragam Pasif)', 'to be fix, repaired (passive voice)'),
   (54741, 19446, 'pepealap', 'membaikikan (Kausatif)', 'to cause to fix, repair (causative)'),
@@ -3404,7 +3486,8 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (54780, 19459, 'pelema''an', 'lembutkan (Aplikatif)', 'to become soft for, at (applicative)'),
   (54781, 19459, 'pelema''an', 'lembutan (Kata Nama Terbitan)', 'product, result of become soft'),
   (54782, 19460, 'meloot-loot', 'mecapai (Ragam Pelaku)', 'to repeatedly reach with (the hand) (actor voice)'),
-  (54783, 19460, 'pineloot-loot', 'dicapai (Ragam Pasif)', 'to be repeatedly reach with (the hand)ed (passive voice)'),
+  (54783, 19460, 'pineloot-loot', 'dicapai (Ragam Pasif)', 'to be repeatedly reach with (the hand)ed (passive voice)');
+INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
   (54784, 19460, 'pepeloot-loot', 'mencapaikan (Kausatif)', 'to cause to repeatedly reach with (the hand) (causative)'),
   (54785, 19460, 'peloot-looton', 'capaikan (Aplikatif)', 'to repeatedly reach with (the hand) for, at (applicative)'),
   (54786, 19460, 'peloot-looton', 'capaian (Kata Nama Terbitan)', 'product, result of repeatedly reach with (the hand)'),
@@ -3430,8 +3513,7 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (54806, 19470, 'pepengendaanan', 'tempat pemerhatian / pemandangan', 'place associated with viewing'),
   (54807, 19471, 'mengayam', 'menomesticated animals (Ragam Pelaku)', 'to domesticated animals (actor voice)'),
   (54808, 19471, 'pinengayam', 'didomesticated animals (Ragam Pasif)', 'to be domesticated animalsed (passive voice)'),
-  (54809, 19471, 'pepengayam', 'mendomesticated animalskan (Kausatif)', 'to cause to domesticated animals (causative)');
-INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
+  (54809, 19471, 'pepengayam', 'mendomesticated animalskan (Kausatif)', 'to cause to domesticated animals (causative)'),
   (54810, 19471, 'pengayaman', 'domesticated animalskan (Aplikatif)', 'to domesticated animals for, at (applicative)'),
   (54811, 19471, 'pengayaman', 'domesticated animalsan (Kata Nama Terbitan)', 'product, result of domesticated animals'),
   (54814, 19473, 'bepengelong', 'mempunyai, berkerbau', 'having, possessing neck harness (for buffalo)'),
@@ -3455,7 +3537,8 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (54832, 19479, 'bepenombol', 'mempunyai, bertutup', 'having, possessing cover'),
   (54833, 19479, 'pepenombolon', 'tempat tutup', 'place associated with cover'),
   (54834, 19480, 'mepekar', 'mengunfurl (Ragam Pelaku)', 'to unfurl (actor voice)'),
-  (54835, 19480, 'pinepekar', 'diunfurl (Ragam Pasif)', 'to be unfurled (passive voice)'),
+  (54835, 19480, 'pinepekar', 'diunfurl (Ragam Pasif)', 'to be unfurled (passive voice)');
+INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
   (54836, 19480, 'pepepekar', 'menunfurlkan (Kausatif)', 'to cause to unfurl (causative)'),
   (54837, 19480, 'pepekaran', 'unfurlkan (Aplikatif)', 'to unfurl for, at (applicative)'),
   (54838, 19480, 'pepekaran', 'unfurlan (Kata Nama Terbitan)', 'product, result of unfurl'),
@@ -3481,8 +3564,7 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (54868, 19489, 'mesuuk', 'mengo underneath (Ragam Pelaku)', 'to go underneath (actor voice)'),
   (54869, 19489, 'pinesuuk', 'digo underneath (Ragam Pasif)', 'to be go underneathed (passive voice)'),
   (54870, 19489, 'pepesuuk', 'mengo underneathkan (Kausatif)', 'to cause to go underneath (causative)'),
-  (54871, 19489, 'pesuukan', 'go underneathkan (Aplikatif)', 'to go underneath for, at (applicative)');
-INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
+  (54871, 19489, 'pesuukan', 'go underneathkan (Aplikatif)', 'to go underneath for, at (applicative)'),
   (54872, 19489, 'pesuukan', 'go underneathan (Kata Nama Terbitan)', 'product, result of go underneath'),
   (54873, 19490, 'meteketa', 'meboleh (Ragam Pelaku)', 'to able to bring (s.thing) across (actor voice)'),
   (54874, 19490, 'pineteketa', 'diboleh (Ragam Pasif)', 'to be able to bring (s.thing) acrossed (passive voice)'),
@@ -3506,7 +3588,8 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (54894, 19494, 'pikiran', 'fikiran (Kata Nama Terbitan)', 'product, result of think'),
   (54895, 19495, 'bepikiran', 'mempunyai, beridea', 'having, possessing idea, opinion'),
   (54896, 19495, 'pepikiranan', 'tempat idea', 'place associated with idea, opinion'),
-  (54897, 19496, 'miko', 'menganda (Ragam Pelaku)', 'to multiply (actor voice)'),
+  (54897, 19496, 'miko', 'menganda (Ragam Pelaku)', 'to multiply (actor voice)');
+INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
   (54898, 19496, 'piniko', 'diganda (Ragam Pasif)', 'to be multiplyed (passive voice)'),
   (54899, 19496, 'pepiko', 'mengandakan (Kausatif)', 'to cause to multiply (causative)'),
   (54900, 19496, 'pikoon', 'gandakan (Aplikatif)', 'to multiply for, at (applicative)'),
@@ -3532,8 +3615,7 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (54920, 19502, 'pepoonon', 'tempat pokok', 'place associated with tree'),
   (54921, 19503, 'mopo''', 'memijak (Ragam Pelaku)', 'to tread (grain) (actor voice)'),
   (54922, 19503, 'pinopo''', 'dipijak (Ragam Pasif)', 'to be tread (grain)ed (passive voice)'),
-  (54923, 19503, 'pepopo''', 'mempijakkan (Kausatif)', 'to cause to tread (grain) (causative)');
-INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
+  (54923, 19503, 'pepopo''', 'mempijakkan (Kausatif)', 'to cause to tread (grain) (causative)'),
   (54924, 19503, 'popo''on', 'pijakkan (Aplikatif)', 'to tread (grain) for, at (applicative)'),
   (54925, 19503, 'popo''on', 'pijakan (Kata Nama Terbitan)', 'product, result of tread (grain)'),
   (54928, 19505, 'mule''', 'meramai (Ragam Pelaku)', 'to many are drinking (actor voice)'),
@@ -3557,7 +3639,8 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (54950, 19512, 'randangan', 'gorengan (Kata Nama Terbitan)', 'product, result of fry'),
   (54951, 19513, 'nge-rangi', 'mengenang (Ragam Pelaku)', 'to swim across (actor voice)'),
   (54952, 19513, 'rinangi', 'dienang (Ragam Pasif)', 'to be swim acrossed (passive voice)'),
-  (54953, 19513, 'perangi', 'menenangkan (Kausatif)', 'to cause to swim across (causative)'),
+  (54953, 19513, 'perangi', 'menenangkan (Kausatif)', 'to cause to swim across (causative)');
+INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
   (54954, 19513, 'rangian', 'enangkan (Aplikatif)', 'to swim across for, at (applicative)'),
   (54955, 19513, 'rangian', 'enangan (Kata Nama Terbitan)', 'product, result of swim across'),
   (54956, 19515, 'nge-rekot', 'menengan (Ragam Pelaku)', 'to be acquainted with each other (actor voice)'),
@@ -3583,8 +3666,7 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (54976, 19520, 'rungaian', 'missingkan (Aplikatif)', 'to missing for, at (applicative)'),
   (54977, 19520, 'rungaian', 'missingan (Kata Nama Terbitan)', 'product, result of missing'),
   (54978, 19521, 'nge-runsai', 'menarian (Ragam Pelaku)', 'to kind of dance (actor voice)'),
-  (54979, 19521, 'rinunsai', 'ditarian (Ragam Pasif)', 'to be kind of danceed (passive voice)');
-INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
+  (54979, 19521, 'rinunsai', 'ditarian (Ragam Pasif)', 'to be kind of danceed (passive voice)'),
   (54980, 19521, 'perunsai', 'membuatkan tarian (Kausatif)', 'to cause to kind of dance (causative)'),
   (54981, 19521, 'runsaian', 'tariankan (Aplikatif)', 'to kind of dance for, at (applicative)'),
   (54982, 19521, 'runsaian', 'tarianan (Kata Nama Terbitan)', 'product, result of kind of dance'),
@@ -3607,10 +3689,9 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (55001, 19527, 'pesala''', 'mensilapkan (Kausatif)', 'to cause to err (causative)'),
   (55002, 19527, 'sala''an', 'silapkan (Aplikatif)', 'to err for, at (applicative)'),
   (55003, 19527, 'sala''an', 'silapan (Kata Nama Terbitan)', 'product, result of err'),
-  (55009, 19530, 'besanang', 'mempunyai, bermiss', 'having, possessing miss'),
-  (55010, 19530, 'pesanangan', 'tempat miss', 'place associated with miss'),
   (55011, 19531, 'besapi''', 'mempunyai, berlembu', 'having, possessing cow'),
-  (55012, 19531, 'pesapi''an', 'tempat lembu', 'place associated with cow'),
+  (55012, 19531, 'pesapi''an', 'tempat lembu', 'place associated with cow');
+INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
   (55013, 19532, 'nyapu', 'menyapu (Ragam Pelaku)', 'to sweep (actor voice)'),
   (55014, 19532, 'sinapu', 'disapu (Ragam Pasif)', 'to be sweeped (passive voice)'),
   (55015, 19532, 'pesapu', 'mensapukan (Kausatif)', 'to cause to sweep (causative)'),
@@ -3634,8 +3715,7 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (55037, 19539, 'seko''on', 'matian (Kata Nama Terbitan)', 'product, result of die'),
   (55038, 19540, 'beselalu', 'mempunyai, beralways', 'having, possessing always'),
   (55039, 19540, 'peselaluan', 'tempat always', 'place associated with always'),
-  (55040, 19541, 'besembali', 'mempunyai, berlembu', 'having, possessing cow');
-INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
+  (55040, 19541, 'besembali', 'mempunyai, berlembu', 'having, possessing cow'),
   (55041, 19541, 'pesembalian', 'tempat lembu', 'place associated with cow'),
   (55047, 19543, 'besentiasa', 'mempunyai, beralways', 'having, possessing always'),
   (55048, 19543, 'pesentiasaan', 'tempat always', 'place associated with always'),
@@ -3661,7 +3741,8 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (55068, 19550, 'si-bangga''an', 'jumpakan (Aplikatif)', 'to meet each other suddenly for, at (applicative)'),
   (55069, 19550, 'si-bangga''an', 'jumpaan (Kata Nama Terbitan)', 'product, result of meet each other suddenly'),
   (55070, 19551, 'nyi-bunda''', 'memace each other (Ragam Pelaku)', 'to face each other (actor voice)'),
-  (55071, 19551, 'sini-bunda''', 'diface each other (Ragam Pasif)', 'to be face each othered (passive voice)'),
+  (55071, 19551, 'sini-bunda''', 'diface each other (Ragam Pasif)', 'to be face each othered (passive voice)');
+INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
   (55072, 19551, 'pesi-bunda''', 'menface each otherkan (Kausatif)', 'to cause to face each other (causative)'),
   (55073, 19551, 'si-bunda''an', 'face each otherkan (Aplikatif)', 'to face each other for, at (applicative)'),
   (55074, 19551, 'si-bunda''an', 'face each otheran (Kata Nama Terbitan)', 'product, result of face each other'),
@@ -3685,17 +3766,11 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (55094, 19556, 'pesi-ogo-ogo', 'menlawatkan (Kausatif)', 'to cause to visit each other (causative)'),
   (55095, 19556, 'si-ogo-ogoon', 'lawatkan (Aplikatif)', 'to visit each other for, at (applicative)'),
   (55096, 19556, 'si-ogo-ogoon', 'lawatan (Kata Nama Terbitan)', 'product, result of visit each other'),
-  (55097, 19557, 'nyi-tangis-tangis', 'mengangis (Ragam Pelaku)', 'to cry together (actor voice)');
-INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
+  (55097, 19557, 'nyi-tangis-tangis', 'mengangis (Ragam Pelaku)', 'to cry together (actor voice)'),
   (55098, 19557, 'sini-tangis-tangis', 'diangis (Ragam Pasif)', 'to be cry togethered (passive voice)'),
   (55099, 19557, 'pesi-tangis-tangis', 'menangiskan (Kausatif)', 'to cause to cry together (causative)'),
   (55100, 19557, 'si-tangis-tangisan', 'angiskan (Aplikatif)', 'to cry together for, at (applicative)'),
   (55101, 19557, 'si-tangis-tangisan', 'angisan (Kata Nama Terbitan)', 'product, result of cry together'),
-  (55102, 19558, 'nyi-temu', 'mejumpa (Ragam Pelaku)', 'to meet each other (actor voice)'),
-  (55103, 19558, 'sini-temu', 'dijumpa (Ragam Pasif)', 'to be meet each othered (passive voice)'),
-  (55104, 19558, 'pesi-temu', 'menjumpakan (Kausatif)', 'to cause to meet each other (causative)'),
-  (55105, 19558, 'si-temuan', 'jumpakan (Aplikatif)', 'to meet each other for, at (applicative)'),
-  (55106, 19558, 'si-temuan', 'jumpaan (Kata Nama Terbitan)', 'product, result of meet each other'),
   (55111, 19561, 'kesiarian', 'kesaudaraan (Keadaan, Sifat)', 'quality of being youngest sibling'),
   (55112, 19561, 'pesiari', 'penyaudara (Pelaku, Orang)', 'person who is youngest sibling'),
   (55113, 19562, 'kesikoton', 'kedekatan (Keadaan, Sifat)', 'quality of being near'),
@@ -3717,7 +3792,8 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (55129, 19572, 'sinongot', 'disweat (Ragam Pasif)', 'to be sweated (passive voice)'),
   (55130, 19572, 'pesongot', 'mensweatkan (Kausatif)', 'to cause to sweat (causative)'),
   (55131, 19572, 'songoton', 'sweatkan (Aplikatif)', 'to sweat for, at (applicative)'),
-  (55132, 19572, 'songoton', 'sweatan (Kata Nama Terbitan)', 'product, result of sweat'),
+  (55132, 19572, 'songoton', 'sweatan (Kata Nama Terbitan)', 'product, result of sweat');
+INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
   (55133, 19573, 'besoo''', 'mempunyai, bercommand', 'having, possessing command, urge, request'),
   (55134, 19573, 'pesoo''on', 'tempat command', 'place associated with command, urge, request'),
   (55135, 19574, 'nyorong', 'mehampiri (Ragam Pelaku)', 'to approach (actor voice)'),
@@ -3736,8 +3812,7 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (55150, 19578, 'pesudu''an', 'tempat satu', 'place associated with one spoonful'),
   (55151, 19579, 'besuk', 'mempunyai, berthin', 'having, possessing thin'),
   (55152, 19579, 'pesukan', 'tempat thin', 'place associated with thin'),
-  (55153, 19580, 'besuka''', 'mempunyai, bercoconut', 'having, possessing coconut');
-INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
+  (55153, 19580, 'besuka''', 'mempunyai, bercoconut', 'having, possessing coconut'),
   (55154, 19580, 'pesuka''an', 'tempat coconut', 'place associated with coconut'),
   (55155, 19583, 'besurat', 'mempunyai, berenvelope', 'having, possessing envelope'),
   (55156, 19583, 'pesuratan', 'tempat envelope', 'place associated with envelope'),
@@ -3768,7 +3843,8 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (55202, 19597, 'tatakan', 'jatuhkan (Aplikatif)', 'to drop for, at (applicative)'),
   (55203, 19597, 'tatakan', 'jatuhan (Kata Nama Terbitan)', 'product, result of drop'),
   (55226, 19607, 'nebong', 'menetak (Ragam Pelaku)', 'to chop down (actor voice)'),
-  (55227, 19607, 'tinebong', 'ditetak (Ragam Pasif)', 'to be chop downed (passive voice)'),
+  (55227, 19607, 'tinebong', 'ditetak (Ragam Pasif)', 'to be chop downed (passive voice)');
+INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
   (55228, 19607, 'petebong', 'mentetakkan (Kausatif)', 'to cause to chop down (causative)'),
   (55229, 19607, 'tebongon', 'tetakkan (Aplikatif)', 'to chop down for, at (applicative)'),
   (55230, 19607, 'tebongon', 'tetakan (Kata Nama Terbitan)', 'product, result of chop down'),
@@ -3787,8 +3863,7 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (55305, 19631, 'tinilau', 'ditanya (Ragam Pasif)', 'to be asked (passive voice)'),
   (55306, 19631, 'petilau', 'mentanyakan (Kausatif)', 'to cause to ask (causative)'),
   (55307, 19631, 'tilauan', 'tanyakan (Aplikatif)', 'to ask for, at (applicative)'),
-  (55308, 19631, 'tilauan', 'tanyaan (Kata Nama Terbitan)', 'product, result of ask');
-INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
+  (55308, 19631, 'tilauan', 'tanyaan (Kata Nama Terbitan)', 'product, result of ask'),
   (55326, 19637, 'ketinauan', 'ketakutan (Keadaan, Sifat)', 'quality of being afraid'),
   (55327, 19637, 'petinau', 'penakut (Pelaku, Orang)', 'person who is afraid'),
   (55400, 19658, 'nuri', 'menidur (Ragam Pelaku)', 'to sleep (actor voice)'),
@@ -3819,7 +3894,8 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (57695, 19370, 'ogoon', 'lawatkan (Aplikatif)', 'to visit for, at (applicative)'),
   (57696, 19370, 'ogoon', 'lawatan (Kata Nama Terbitan)', 'a visit'),
   (57702, 19373, 'beoron', 'bernama', 'having, possessing name'),
-  (57703, 19373, 'pengoron', 'menggunakan sebagai nama', 'to use as a name for something'),
+  (57703, 19373, 'pengoron', 'menggunakan sebagai nama', 'to use as a name for something');
+INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
   (57704, 19373, 'nironon', 'dipanggil, dinamakan', 'to be called, to be named'),
   (57705, 19373, 'oronon', 'namakan', 'to name or call for'),
   (57706, 19374, 'niosok', 'dirasuk', 'to be possessed (usually by spirits)'),
@@ -3838,8 +3914,7 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (57719, 19383, 'pepaam', 'menfahamkan (Kausatif)', 'to cause to understand (causative)'),
   (57720, 19383, 'paaman', 'fahamkan (Aplikatif)', 'to understand for, at (applicative)'),
   (57721, 19383, 'paaman', 'fahaman (Kata Nama Terbitan)', 'product, result of understand'),
-  (57722, 19384, 'magar', 'memagar', 'to make a fence');
-INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
+  (57722, 19384, 'magar', 'memagar', 'to make a fence'),
   (57723, 19384, 'pepagaran', 'tempat berpagar, kawasan pagar', 'place associated with fence'),
   (57724, 19384, 'bepagar', 'berpagar', 'fenced'),
   (57725, 19385, 'maip', 'memaipkan', 'to set, install or build water pipe'),
@@ -3870,7 +3945,8 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (57757, 19397, 'pandai-pandai', 'memandai-mandai, mengada-ada', 'to try to be too clever'),
   (57758, 19397, 'pepandai', 'memandai-mandai, mengada-ada', 'to try to be too clever'),
   (57759, 19398, 'mandi', 'mandi (Ragam Pelaku)', 'to bathe oneself (actor voice)'),
-  (57760, 19398, 'pandiin', 'tolong mandikan', 'please bathe (someone or something)'),
+  (57760, 19398, 'pandiin', 'tolong mandikan', 'please bathe (someone or something)');
+INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
   (57761, 19398, 'pinandi', 'dimandi (Ragam Pasif)', 'to be bathed (passive voice)'),
   (57762, 19398, 'pandian', 'mandikan (Aplikatif)', 'to bathe x for, at (applicative)'),
   (57763, 19398, 'pandian', 'mandian (Kata Nama Terbitan)', 'product, result of bathe x'),
@@ -3889,8 +3965,7 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (57776, 19402, 'panutan', 'hanyutkan (Aplikatif)', 'to drift for, at (applicative)'),
   (57777, 19402, 'panutan', 'hanyutan (Kata Nama Terbitan)', 'product, result of drift'),
   (57783, 19404, 'mapi', 'memasak (Ragam Pelaku)', 'to cook (actor voice)'),
-  (57784, 19404, 'pinapi', 'dimasak (Ragam Pasif)', 'to be cooked (passive voice)');
-INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
+  (57784, 19404, 'pinapi', 'dimasak (Ragam Pasif)', 'to be cooked (passive voice)'),
   (57785, 19404, 'pepapi', 'memasakkan (Kausatif)', 'to cook for someone (causative)'),
   (57786, 19404, 'papian', 'masakkan (Aplikatif)', 'to cook for, at (applicative)'),
   (57787, 19404, 'papian', 'masakan (Kata Nama Terbitan)', 'cooked food'),
@@ -3921,7 +3996,8 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (57822, 19598, 'tatak-tatakan', 'jatuhan (Kata Nama Terbitan)', 'product, result of drop repeatedly'),
   (57823, 19599, 'natak-tatakan', 'mejatuh (Ragam Pelaku)', 'to drop (s.thing) repeatedly (actor voice)'),
   (57824, 19599, 'tinatak-tatakan', 'dijatuh (Ragam Pasif)', 'to be drop (s.thing) repeatedlyed (passive voice)'),
-  (57825, 19599, 'petatak-tatakan', 'menjatuhkan (Kausatif)', 'to cause to drop (s.thing) repeatedly (causative)'),
+  (57825, 19599, 'petatak-tatakan', 'menjatuhkan (Kausatif)', 'to cause to drop (s.thing) repeatedly (causative)');
+INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
   (57826, 19599, 'tatak-tatakanan', 'jatuhkan (Aplikatif)', 'to drop (s.thing) repeatedly for, at (applicative)'),
   (57827, 19599, 'tatak-tatakanan', 'jatuhan (Kata Nama Terbitan)', 'product, result of drop (s.thing) repeatedly'),
   (57828, 19600, 'tinau', 'ditakut (Ragam Pasif)', 'to be feared (passive voice)'),
@@ -3940,8 +4016,7 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (57851, 19614, 'peteko', 'menyampaikan, menghantarkan (Kausatif)', 'to send something (causative)'),
   (57852, 19614, 'ketekoon', 'ketibaan (Kata Nama Terbitan)', 'arrival'),
   (57853, 19619, 'betempat', 'bertempat', 'having, possessing a place'),
-  (57854, 19619, 'petempatan', 'pertempatan', 'settlement, locality');
-INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
+  (57854, 19619, 'petempatan', 'pertempatan', 'settlement, locality'),
   (57855, 19620, 'nemu', 'bertemu (Ragam Pelaku)', 'to meet (actor voice)'),
   (57856, 19620, 'tinemu', 'ditemu (Ragam Pasif)', 'to be meeted (passive voice)'),
   (57857, 19620, 'petemu', 'menemukan (Kausatif)', 'to cause to meet (causative)'),
@@ -3972,7 +4047,8 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (57909, 19630, 'petigad', 'mencencangkan, memotongkan (Kausatif)', 'to cause to chop (causative)'),
   (57910, 19630, 'tigadan', 'cencangkan, potongkan (Aplikatif)', 'to chop for, at (applicative)'),
   (57911, 19630, 'tigadan', 'cencangan, tetakan (Kata Nama Terbitan)', 'product, result of chop'),
-  (57912, 19633, 'niman', 'membuang (Ragam Pelaku)', 'to throw away (actor voice)'),
+  (57912, 19633, 'niman', 'membuang (Ragam Pelaku)', 'to throw away (actor voice)');
+INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
   (57913, 19633, 'tiniman', 'dibuang (Ragam Pasif)', 'to be throw awayed (passive voice)'),
   (57914, 19633, 'petiman', 'membuangkan (Kausatif)', 'to cause to throw away (causative)'),
   (57915, 19633, 'timanan', 'buangkan (Aplikatif)', 'to throw away for, at (applicative)'),
@@ -3991,8 +4067,7 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (57931, 19636, 'timungan', 'berkerangan', 'having, possessing shellfish(es)'),
   (57932, 19636, 'petimungan', 'perkerangan', 'many types of shellfish(es), place where shellfish(es) gathers'),
   (57935, 19638, 'ketinawaran', 'kesukarelaan (Keadaan, Sifat)', 'quality of being volunteered'),
-  (57936, 19638, 'petinawar', 'penawar diri (Pelaku, Orang)', 'person who is volunteered');
-INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
+  (57936, 19638, 'petinawar', 'penawar diri (Pelaku, Orang)', 'person who is volunteered'),
   (57937, 19639, 'nindak', 'memijak (Ragam Pelaku)', 'to step on (actor voice)'),
   (57938, 19639, 'tinindak', 'dipijak (Ragam Pasif)', 'to be stepped on (passive voice)'),
   (57939, 19639, 'petindak', 'memijakkan (Kausatif)', 'to step on someone or something (causative)'),
@@ -4023,7 +4098,8 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (57981, 19663, 'petuut', 'mengikutkan (Kausatif)', 'to cause to follow (causative)'),
   (57982, 19663, 'tuutan', 'ikutkan (Aplikatif)', 'to follow for, at (applicative)'),
   (57983, 19663, 'tuutan', 'turutan, ikutan (Kata Nama Terbitan)', 'product, result of follow'),
-  (57994, 19647, 'nogor', 'menegak (Ragam Pelaku)', 'to erect, stand perpendicular (actor voice)'),
+  (57994, 19647, 'nogor', 'menegak (Ragam Pelaku)', 'to erect, stand perpendicular (actor voice)');
+INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
   (57995, 19647, 'tinogoron', 'ditegakkan (Ragam Pasif)', 'to be erected, to be stood perpendicular (passive voice)'),
   (57996, 19647, 'petogor', 'menegakkan (Kausatif)', 'to stand perpendicular (causative)'),
   (57997, 19647, 'togoron', 'tegakkan (Aplikatif)', 'to make something stand perpendicular (applicative)'),
@@ -4042,8 +4118,7 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (58025, 19651, 'tinondok', 'ditunduk (Ragam Pasif)', 'to be stooped (passive voice)'),
   (58026, 19651, 'petondok', 'menundukkan (Kausatif)', 'to make someone stoop (causative)'),
   (58027, 19651, 'tondokon', 'tundukkan (Aplikatif)', 'to make someone stoop (applicative)'),
-  (58028, 19651, 'tondokon', 'tundukan (Kata Nama Terbitan)', 'product, result of stoop');
-INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
+  (58028, 19651, 'tondokon', 'tundukan (Kata Nama Terbitan)', 'product, result of stoop'),
   (58029, 19652, 'nondokon', 'menundukkan (Ragam Pelaku)', 'to make someone stoop (actor voice)'),
   (58030, 19652, 'tinondokon', 'ditundukkan (Ragam Pasif)', 'to be stoop by someone or something (passive voice)'),
   (58031, 19652, 'petondokon', 'menundukkan (Kausatif)', 'to make someone stoop (causative)'),
@@ -4074,7 +4149,8 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (58058, 19661, 'petuturan', 'pertuturan', 'mode, way of speaking'),
   (58059, 19662, 'nuun', 'menyelam (Ragam Pelaku)', 'to dive for something (actor voice)'),
   (58060, 19662, 'tinuun', 'diselam (Ragam Pasif)', 'to be dived (passive voice)'),
-  (58061, 19662, 'petuun', 'menyelamkan (Kausatif)', 'to cause to dive for something (causative)'),
+  (58061, 19662, 'petuun', 'menyelamkan (Kausatif)', 'to cause to dive for something (causative)');
+INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
   (58062, 19662, 'tuunan', 'selamkan (Aplikatif)', 'to dive, to sink for, at (applicative)'),
   (58063, 19662, 'tuunan', 'selaman (Kata Nama Terbitan)', 'product, result of dive: diving'),
   (58064, 19664, 'nuyung', 'menambah (Ragam Pelaku)', 'to add something to (actor voice)'),
@@ -4093,8 +4169,7 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (58077, 19668, 'urakan', 'hancuran (Kata Nama Terbitan)', 'product, result of shatter: shattering, mess from shattering'),
   (58083, 19670, 'ngurud', 'memarut, mengupas (Ragam Pelaku)', 'to scrape, to peel (actor voice)'),
   (58084, 19670, 'niurud', 'diparut, dikupas (Ragam Pasif)', 'to be scrape, to be peeled (passive voice)'),
-  (58085, 19670, 'peurud', 'memarutkan, mengupaskan (Kausatif)', 'to cause to scrape, to peel (causative)');
-INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
+  (58085, 19670, 'peurud', 'memarutkan, mengupaskan (Kausatif)', 'to cause to scrape, to peel (causative)'),
   (58086, 19670, 'urudan', 'parutkan, kupaskan (Aplikatif)', 'to scrape, to peel for, at (applicative)'),
   (58087, 19670, 'urudan', 'pemarut, pengupas (Kata Nama Terbitan)', 'peeler'),
   (58088, 19670, 'pengurudan', 'pengupasan', '(figurative) analyse, dissect, explore, or break down information'),
@@ -4125,7 +4200,8 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (58120, 19453, 'medutai', 'merendahkan (Ragam Pelaku)', 'to lower (s.thing) (actor voice)'),
   (58121, 19453, 'pinedutai', 'direndahkan (Ragam Pasif)', 'to be lower (s.thing)ed (passive voice)'),
   (58122, 19453, 'pepedutai', 'merendahkan (Kausatif)', 'to cause to lower (s.thing) (causative)'),
-  (58123, 19453, 'pedutaian', 'rendahkan (Aplikatif)', 'to lower (s.thing) for, at (applicative)'),
+  (58123, 19453, 'pedutaian', 'rendahkan (Aplikatif)', 'to lower (s.thing) for, at (applicative)');
+INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
   (58124, 19453, 'pedutaian', 'perendahan (Kata Nama Terbitan)', 'product, result of lower (s.thing)'),
   (58130, 19487, 'pinesoyo', 'dipercayai (Ragam Pasif)', 'to be believed (passive voice)'),
   (58131, 19487, 'pepesoyo', 'mempercayakan (Kausatif)', 'to make someone to believe (causative)'),
@@ -4144,8 +4220,7 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (58144, 19472, 'kepengellauan', 'kekeringan (Keadaan, Sifat)', 'quality of being dry season'),
   (58145, 19472, 'pepengellau', 'pengering (Pelaku, Orang)', 'person who is dry season'),
   (58146, 19288, 'ngemangé''', 'mengencing (Ragam Pelaku)', 'to urinate (actor voice)'),
-  (58147, 19288, 'minangé''', 'dikencing (Ragam Pasif)', 'to be urinateed (passive voice)');
-INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
+  (58147, 19288, 'minangé''', 'dikencing (Ragam Pasif)', 'to be urinateed (passive voice)'),
   (58148, 19288, 'pemangé''', 'menkencingkan (Kausatif)', 'to cause to urinate (causative)'),
   (58149, 19288, 'mangéan', 'kencingkan (Aplikatif)', 'to urinate for, at (applicative)'),
   (58150, 19288, 'mangéan', 'kencingan (Kata Nama Terbitan)', 'product, result of urinate'),
@@ -4176,7 +4251,8 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (58197, 19237, 'lantungan', 'apungkan (Aplikatif)', 'to float for, at (applicative)'),
   (58198, 19237, 'lantungan', 'apungan (Kata Nama Terbitan)', 'product, result of float'),
   (58207, 19037, 'beboro', 'mempunyai, berember(s)', 'having, possessing ember(s)'),
-  (58208, 19037, 'peboroon', 'tempat ember(s)', 'place associated with ember(s)'),
+  (58208, 19037, 'peboroon', 'tempat ember(s)', 'place associated with ember(s)');
+INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
   (58215, 19576, 'besuang', 'bersungai', 'having, possessing river'),
   (58216, 19576, 'pesuangan', 'tempat bersungai', 'place associated with river'),
   (58218, 19559, 'sian-sian', 'siapa-siapa', 'anyone, whoever'),
@@ -4195,8 +4271,7 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (58236, 19172, 'kéétén', 'nyalakan (Aplikatif)', 'to light for, at (applicative)'),
   (58237, 19172, 'kéétén', 'nyalaan (Kata Nama Terbitan)', 'product, result of light'),
   (58238, 19172, 'bekéétén', 'bernyalaan, bernyala', 'shining'),
-  (58260, 19049, 'embunda''', 'di depan', '(at) front, in front of');
-INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
+  (58260, 19049, 'embunda''', 'di depan', '(at) front, in front of'),
   (58261, 19049, 'sibunda''', 'berdepan, bersua muka', 'to face each other'),
   (58262, 19049, 'bundaan', 'depankan', 'to put something to the front'),
   (58263, 19049, 'pebunda''', 'mendepankan, pergi depan', 'to move to the front'),
@@ -4227,7 +4302,8 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (58296, 20456, 'endialom', 'di dalam', '(at) inside, within'),
   (58297, 20456, 'sidialom', 'sama-sama berada di dalam', 'mutually inside together'),
   (58298, 20456, 'dialoman', 'masukkan ke dalam', 'to put inside, insert'),
-  (58299, 20456, 'pedialom', 'masuk ke dalam', 'to go inside, enter'),
+  (58299, 20456, 'pedialom', 'masuk ke dalam', 'to go inside, enter');
+INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
   (58300, 19269, 'melua''', 'di luar', '(at) outside, exterior (native form)'),
   (58301, 19269, 'silua''', 'sama-sama berada di luar', 'mutually outside together'),
   (58302, 19269, 'luaan', 'keluarkan, letak di luar', 'to put outside, expel'),
@@ -4246,8 +4322,7 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (58319, 19065, 'pedembila''', 'menyeberang, pergi ke seberang', 'to cross over to the other side'),
   (58320, 20459, 'engkuanan', 'di sebelah kanan', '(at) on the right side'),
   (58321, 20459, 'sikuanan', 'bersebelahan di sebelah kanan', 'mutually on the right side'),
-  (58322, 20459, 'kuananan', 'kanankan, letak di sebelah kanan', 'to put to the right side');
-INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meaning_en`) VALUES
+  (58322, 20459, 'kuananan', 'kanankan, letak di sebelah kanan', 'to put to the right side'),
   (58323, 20459, 'pekuanan', 'menuju ke kanan, pergi ke kanan', 'to move to the right'),
   (58324, 20460, 'enggibang', 'di sebelah kiri', '(at) on the left side'),
   (58325, 20460, 'sigibang', 'bersebelahan di sebelah kiri', 'mutually on the left side'),
@@ -4260,16 +4335,28 @@ INSERT OR REPLACE INTO `affixes` (`id`, `entry_id`, `term`, `meaning_ms`, `meani
   (58332, 19065, 'bedembilaan', 'seberang-menyeberang, (harfiah) bersebelahan', 'on both sides, across from each other (distributive)'),
   (58333, 18960, 'beanak', 'mempunyai, beranak', 'having, possessing child'),
   (58334, 18960, 'peanakan', 'tempat anak', 'place associated with child'),
-  (58335, 19217, 'tekulé''', 'terdapat, mendapat', 'to be obtained, to obtain, to get');
+  (58335, 19217, 'tekulé''', 'terdapat, mendapat', 'to be obtained, to obtain, to get'),
+  (58355, 19143, 'bejomo', 'berorang', 'having, possessing person, people'),
+  (58356, 19143, 'pejomoon', 'tempat ramai orang', 'place associated with person, people'),
+  (58357, 19143, 'ngejomo', 'meneman, memantau', 'to look after someone'),
+  (58358, 19077, 'bedoko''', 'bermacam, berbagai', 'having, possessing as'),
+  (58361, 19558, 'sinitemu', 'dijumpakan (Ragam Pasif)', 'to be meet each othered (passive voice)'),
+  (58362, 19558, 'pesitemu', 'menjumpakan (Kausatif)', 'to cause to meet each other (causative)'),
+  (58363, 19558, 'sitemuan', 'jumpakan (Aplikatif)', 'to meet each other for, at (applicative)'),
+  (58364, 19558, 'sitemuan', 'perjumpaan (Kata Nama Terbitan)', 'product, result of meet each other'),
+  (58365, 19205, 'ngono''', 'mehearsay (Ragam Pelaku)', 'to hearsay (actor voice)'),
+  (58366, 19205, 'kinono''', 'dihearsay (Ragam Pasif)', 'to be hearsayed (passive voice)'),
+  (58367, 19205, 'pekono''', 'menhearsaykan (Kausatif)', 'to cause to hearsay (causative)'),
+  (58368, 19205, 'kono''on', 'hearsaykan (Aplikatif)', 'to hearsay for, at (applicative)'),
+  (58369, 19205, 'kono''on', 'hearsayan (Kata Nama Terbitan)', 'product, result of hearsay');
 
--- Table: dialects (47 rows)
+-- Table: dialects (65 rows)
 INSERT OR REPLACE INTO `dialects` (`id`, `entry_id`, `locality_name`, `dialect_form`) VALUES
   (61230, 20414, 'Varian Ejaan', 'Jipun'),
   (61231, 19371, 'Varian Ortografi', 'ulé'''),
   (61232, 19371, 'Varian Ortografi', 'lé'''),
   (61233, 19389, 'Varian Ejaan', 'paksa'),
   (61234, 19397, 'Varian Ejaan', 'panday'),
-  (61235, 19522, 'Varian Ejaan', 'saab'),
   (61238, 19645, 'Varian Ejaan', 'tiu'),
   (61240, 19621, 'Varian Ejaan', 'tenob'),
   (61241, 19442, 'Varian Ejaan', 'petegur'),
@@ -4295,7 +4382,6 @@ INSERT OR REPLACE INTO `dialects` (`id`, `entry_id`, `locality_name`, `dialect_f
   (61271, 20445, 'Varian Ejaan', 'sembérén'),
   (61272, 20445, 'Varian Ejaan', 'simbiran'),
   (61273, 20445, 'Varian Ejaan', 'sémbén'),
-  (61275, 20451, 'dialek/lisan', 'ba'''),
   (61276, 20453, 'dialek/kata dasar', 'baya'''),
   (61278, 20448, 'Varian Ejaan', 'anu'),
   (61279, 20454, 'Kota Belud (KB)', 'jata'''),
@@ -4310,9 +4396,30 @@ INSERT OR REPLACE INTO `dialects` (`id`, `entry_id`, `locality_name`, `dialect_f
   (61288, 20456, 'Kota Belud (KB)', 'diam'),
   (61289, 19269, 'Pengaruh Bahasa Melayu', 'luar'),
   (61290, 19039, 'Varian Dialek', 'bue'''),
-  (61292, 20544, 'Transkripsi Linguistik', 'sampay');
+  (61292, 20544, 'Transkripsi Linguistik', 'sampay'),
+  (61297, 20546, 'Varian Ortografi', 'adaka'''),
+  (61298, 20546, 'Varian Ejaan', 'adakah'),
+  (61299, 19406, 'Varian Ejaan', 'paray'),
+  (61301, 20550, 'Varian Sebutan', 'adoi'),
+  (61302, 20451, 'dialek/lisan', 'ba''');
+INSERT OR REPLACE INTO `dialects` (`id`, `entry_id`, `locality_name`, `dialect_form`) VALUES
+  (61303, 19285, 'Varian Ejaan', 'men'),
+  (61304, 19285, 'Varian Ejaan', 'min'),
+  (61305, 19142, 'Varian Ejaan', 'sojo'),
+  (61306, 19142, 'Varian Ejaan', 'sejo'),
+  (61309, 19522, 'Varian Ejaan', 'saab'),
+  (61312, 19136, 'Varian Linguistik', 'iyo'),
+  (61314, 20558, 'Varian Percakapan', 'kam'),
+  (61318, 20554, 'Varian Dialek', 'kitei'),
+  (61319, 20554, 'Varian Dialek', 'kitai'),
+  (61321, 19582, 'Varian Ejaan', 'supoyo'),
+  (61322, 20571, 'Varian Ringkas', 'engkam'),
+  (61323, 20572, 'Varian Linguistik', 'miyo'),
+  (61324, 20576, 'Varian Ejaan', 'e'),
+  (61325, 20577, 'Varian Bentuk', 'u''e'),
+  (61326, 20577, 'Varian Ejaan', 'ue');
 
--- Table: thesaurus (301 rows)
+-- Table: thesaurus (403 rows)
 INSERT OR REPLACE INTO `thesaurus` (`id`, `entry_id`, `related_headword`, `relation_note`) VALUES
   (2135, 18959, 'Amun  l-um-aan  songom', 'enjaji  soo   nya (enjaji  soo   nya)'),
   (2139, 18969, 'atau ''or''', 'atau (or)'),
@@ -4334,7 +4441,6 @@ INSERT OR REPLACE INTO `thesaurus` (`id`, `entry_id`, `related_headword`, `relat
   (2155, 19046, 'buk e', 'book (the book)'),
   (2156, 19070, 'diing e', 'ikan (the fish)'),
   (2157, 19071, 'dikau'' kerabau', 'kerbau (a certain buffalo)'),
-  (2158, 19076, 'do''       aku     bue'' susu,   too''  bana   kelong=ku    tu', 'aku     bue (aku     bue)'),
   (2160, 19082, 'duo em-pu''', '‘twenty (‘twenty)'),
   (2161, 19082, 'duo empu'' telu-ngan', 'tiga (telu-ngan  is ‘twenty-three persons)'),
   (2162, 19088, 'ellaw tu', 'ini, hari (today; this day)'),
@@ -4346,34 +4452,26 @@ INSERT OR REPLACE INTO `thesaurus` (`id`, `entry_id`, `related_headword`, `relat
   (2168, 19092, 'emma'' too', 'datuk (grandfather)'),
   (2169, 19093, 'empat em-', 'ruma (ruma)'),
   (2170, 19101, 'Enggo   langa=nu', 'ka (ka)'),
-  (2173, 19111, 'Gai   airan     bana    ngito     kerabaw   moo       bua''-bua''         kayu   ta''       tanduk=ni', '-bua (-bua)'),
   (2174, 19127, 'isa'' / dikau''', 'dikau (dikau)'),
   (2175, 19135, 'iyang too', 'nenek (grandmother)'),
   (2176, 19135, 'iyang Zamli', 'ibu (mother of Zamli)'),
   (2177, 19135, 'iyang ni', 'ibu (his mother)'),
   (2178, 19135, 'iyang Jaman', 'jaman (Jaman)'),
-  (2179, 19136, 'Iyo tu boi guru ku', 'he was formerly my teacher (He was formerly my teacher)'),
   (2180, 19137, 'jadi ''so; therefore''', 'so; therefore (so; therefore)'),
-  (2181, 19143, 'jomo daras', 'orang (strong person)'),
-  (2182, 19143, 'jomo too e', 'tua (the old man)'),
-  (2183, 19143, 'Jomo    daras   e         jo', 'buka     tombol      telaga (buka     tombol      telaga)'),
   (2184, 19158, 'kayu e', 'kayu (the wood)'),
   (2185, 19158, 'kayu keros', 'hardwood (hardwood)'),
   (2186, 19158, 'Kayu  tomo''  ta''', 'ta (ta)'),
   (2187, 19158, 'Kayu    tomo''   ta''       kubur   e', 'ta (ta)'),
-  (2188, 19205, 'kono''         iko       bana    kerabaw       tenga''', 'iko       bana    kerabaw       tenga (iko       bana    kerabaw       tenga)'),
   (2189, 19222, 'l-em-isad / pe-lisad', 'gelincir, licin (to slip)'),
-  (2190, 19236, 'lanjang jomo', 'orang ramai (people)');
-INSERT OR REPLACE INTO `thesaurus` (`id`, `entry_id`, `related_headword`, `relation_note`) VALUES
+  (2190, 19236, 'lanjang jomo', 'orang ramai (people)'),
   (2191, 19280, 'makay   suu''    enjaji  soo   nya''   te-tindak', 'enjaji  soo   nya (enjaji  soo   nya)'),
-  (2192, 19365, 'no, not', 'tidak (no, not)'),
   (2193, 19368, 'Nya''     beta    ai         kawin     Sultan Salaudin', 'beta    ai         kawin     sultan salaudin     engko (beta    ai         kawin     Sultan Salaudin     engko)'),
   (2194, 19368, 'Nya''   beta', 'beta          ai    kurung  bangan   jomo      ng-enda (beta          ai    kurung  bangan   jomo      ng-enda)'),
   (2195, 19368, 'nya'' lagi', 'tidak (not yet; before)'),
   (2196, 19368, 'nya''   ruun      me-ruma''', 'ruun      me-ruma (ruun      me-ruma)'),
   (2197, 19368, 'Nya'' lagi', 'tidak (not yet)'),
-  (2198, 19368, 'nya''    s-in-oo''', 's-in-oo (s-in-oo)'),
-  (2199, 19395, 'pan   nangis      sambil=ni    teba''-teba''', '-teba (-teba)'),
+  (2198, 19368, 'nya''    s-in-oo''', 's-in-oo (s-in-oo)');
+INSERT OR REPLACE INTO `thesaurus` (`id`, `entry_id`, `related_headword`, `relation_note`) VALUES
   (2200, 19478, 'penitik (kulintangan', '(gong) beaters ((gong) beaters)'),
   (2201, 19501, 'pitu''    kau''', 'kau (kau)'),
   (2202, 19501, 'pitu''   kau''', 'kau (kau)'),
@@ -4414,8 +4512,7 @@ INSERT OR REPLACE INTO `thesaurus` (`id`, `entry_id`, `related_headword`, `relat
   (2328, 20467, 'diam', 'kata dasar / root word'),
   (2329, 19069, 'diaman', 'turunan / derivation (kata kerja)'),
   (2330, 20468, 'diata''', 'kata dasar / root word'),
-  (2331, 20454, 'diataan', 'turunan / derivation (kata kerja)');
-INSERT OR REPLACE INTO `thesaurus` (`id`, `entry_id`, `related_headword`, `relation_note`) VALUES
+  (2331, 20454, 'diataan', 'turunan / derivation (kata kerja)'),
   (2332, 20469, 'diom', 'kata dasar / root word'),
   (2333, 20455, 'dioman', 'turunan / derivation (kata kerja)'),
   (2334, 20470, 'buli''', 'kata dasar / root word'),
@@ -4424,7 +4521,8 @@ INSERT OR REPLACE INTO `thesaurus` (`id`, `entry_id`, `related_headword`, `relat
   (2337, 19049, 'embunda''', 'turunan / derivation (kata arah)'),
   (2338, 20472, 'dembila''', 'kata dasar / root word'),
   (2339, 19065, 'endembila''', 'turunan / derivation (kata arah)'),
-  (2340, 20473, 'dia''', 'kata dasar / root word'),
+  (2340, 20473, 'dia''', 'kata dasar / root word');
+INSERT OR REPLACE INTO `thesaurus` (`id`, `entry_id`, `related_headword`, `relation_note`) VALUES
   (2341, 19068, 'endia''', 'turunan / derivation (kata arah)'),
   (2342, 20474, 'dialom', 'kata dasar / root word'),
   (2343, 20456, 'endialom', 'turunan / derivation (kata arah)'),
@@ -4465,8 +4563,7 @@ INSERT OR REPLACE INTO `thesaurus` (`id`, `entry_id`, `related_headword`, `relat
   (2378, 19410, 'dia''', 'kata dasar / root word'),
   (2379, 20492, 'dialom', 'kata dasar / root word'),
   (2380, 20456, 'pedialom', 'turunan / derivation (kata kerja)'),
-  (2381, 20493, 'diam', 'kata dasar / root word');
-INSERT OR REPLACE INTO `thesaurus` (`id`, `entry_id`, `related_headword`, `relation_note`) VALUES
+  (2381, 20493, 'diam', 'kata dasar / root word'),
   (2382, 19069, 'pediam', 'turunan / derivation (kata kerja)'),
   (2383, 20494, 'diata''', 'kata dasar / root word'),
   (2384, 20454, 'pediata''', 'turunan / derivation (kata kerja)'),
@@ -4475,7 +4572,8 @@ INSERT OR REPLACE INTO `thesaurus` (`id`, `entry_id`, `related_headword`, `relat
   (2387, 20496, 'gibang', 'kata dasar / root word'),
   (2388, 20460, 'pegibang', 'turunan / derivation (kata kerja)'),
   (2389, 19454, 'jata''', 'kata dasar / root word'),
-  (2390, 20497, 'kuanan', 'kata dasar / root word'),
+  (2390, 20497, 'kuanan', 'kata dasar / root word');
+INSERT OR REPLACE INTO `thesaurus` (`id`, `entry_id`, `related_headword`, `relation_note`) VALUES
   (2391, 20459, 'pekuanan', 'turunan / derivation (kata kerja)'),
   (2392, 19425, 'lua''', 'kata dasar / root word'),
   (2393, 19434, 'sedi', 'kata dasar / root word'),
@@ -4516,8 +4614,7 @@ INSERT OR REPLACE INTO `thesaurus` (`id`, `entry_id`, `related_headword`, `relat
   (2428, 20514, 'tenga''', 'kata dasar / root word'),
   (2429, 20457, 'tengaan', 'turunan / derivation (kata kerja)'),
   (2430, 20515, 'torong', 'kata dasar / root word'),
-  (2431, 20458, 'torongan', 'turunan / derivation (kata kerja)');
-INSERT OR REPLACE INTO `thesaurus` (`id`, `entry_id`, `related_headword`, `relation_note`) VALUES
+  (2431, 20458, 'torongan', 'turunan / derivation (kata kerja)'),
   (2432, 18960, 'anak bua', 'anak saudara (nephew, niece)'),
   (2433, 18960, 'anak dinakan', 'saudara-mara (relative(s))'),
   (2434, 18960, 'anak bua''', 'anak saudara (niece, nephew)'),
@@ -4526,7 +4623,8 @@ INSERT OR REPLACE INTO `thesaurus` (`id`, `entry_id`, `related_headword`, `relat
   (2437, 20516, 'dangan', 'sistem bilangan asli seorang'),
   (2438, 20516, 'duangan', 'sistem bilangan asli dua orang'),
   (2439, 20516, 'telungan', 'sistem bilangan asli tiga orang'),
-  (2440, 20516, 'orang', 'varian sebutan/ejaan pinjaman Melayu'),
+  (2440, 20516, 'orang', 'varian sebutan/ejaan pinjaman Melayu');
+INSERT OR REPLACE INTO `thesaurus` (`id`, `entry_id`, `related_headword`, `relation_note`) VALUES
   (2441, 20517, 'urang', 'varian tempatan'),
   (2442, 20517, 'jomo', 'istilah asli Sama untuk orang/manusia'),
   (2443, 20518, 'bua''', 'kata dasar penjodoh bilangan'),
@@ -4567,8 +4665,7 @@ INSERT OR REPLACE INTO `thesaurus` (`id`, `entry_id`, `related_headword`, `relat
   (2478, 20533, 'kerot', 'keping, kerat'),
   (2479, 20534, 'sarat', 'ulas, pangsa'),
   (2480, 20534, 'unga''', 'ruas'),
-  (2481, 20535, 'bohe''', 'air');
-INSERT OR REPLACE INTO `thesaurus` (`id`, `entry_id`, `related_headword`, `relation_note`) VALUES
+  (2481, 20535, 'bohe''', 'air'),
   (2482, 20536, 'sigup', 'tembakau'),
   (2483, 20536, 'ingkot', 'ikat'),
   (2484, 20537, 'tundun', 'setandan pisang'),
@@ -4577,7 +4674,8 @@ INSERT OR REPLACE INTO `thesaurus` (`id`, `entry_id`, `related_headword`, `relat
   (2487, 20538, 'saging', 'pisang'),
   (2488, 20539, 'limping', 'lempeng tembakau'),
   (2489, 20539, 'tundun', 'tandan'),
-  (2490, 20540, 'sapi''', 'lembu'),
+  (2490, 20540, 'sapi''', 'lembu');
+INSERT OR REPLACE INTO `thesaurus` (`id`, `entry_id`, `related_headword`, `relation_note`) VALUES
   (2491, 20540, 'kerabau', 'kerbau'),
   (2492, 20540, 'kau''', 'penjodoh bilangan ekor'),
   (2493, 20541, 'sudu''', 'sudu / sesudu'),
@@ -4610,19 +4708,132 @@ INSERT OR REPLACE INTO `thesaurus` (`id`, `entry_id`, `related_headword`, `relat
   (2522, 19241, 'ta''', 'di, ke, pada'),
   (2523, 19102, 'ko''', 'bentuk ringkas'),
   (2524, 19102, 'sama', 'bersama'),
-  (2525, 19285, 'engko''', 'digunakan dalam soalan bandingan'),
-  (2526, 19077, 'dokon', 'mengambil pelengkap klausa'),
-  (2527, 19077, 'masam', 'kata pinjaman Melayu'),
-  (2528, 19078, 'doko''', 'mengambil pelengkap frasa nama'),
-  (2529, 19078, 'masam', 'kata pinjaman Melayu'),
   (2530, 19292, 'doko''', 'istilah asli Sama'),
   (2531, 19292, 'dokon', 'istilah asli Sama'),
   (2534, 20542, 'olé''', 'varian sebutan / bentuk penuh'),
-  (2535, 20542, 'ling', 'oleh (penanda pelaku pasif)');
+  (2535, 20542, 'ling', 'oleh (penanda pelaku pasif)'),
+  (2536, 20544, 'sampay', 'transkripsi linguistik (Miller 2007)'),
+  (2540, 20549, 'si''', 'seruan menghalau ayam'),
+  (2542, 20551, 'adui', 'varian utama'),
+  (2548, 20546, 'adakah''', 'transkripsi linguistik (Miller 2007)'),
+  (2549, 20548, 'sé''', 'seruan menghalau anjing'),
+  (2550, 20548, 'man', 'kata sendi (dari, daripada)'),
+  (2552, 20550, 'adoi', 'varian sebutan'),
+  (2561, 19285, 'engko''', 'digunakan dalam soalan bandingan'),
+  (2562, 19285, 'lekat', 'dari, daripada'),
+  (2563, 19285, 'lua''', 'dari, daripada'),
+  (2564, 19285, 'si''', 'contoh seruan: ''Si''''! Pelaan man paray é!'''),
+  (2576, 19208, 'no', 'partikel fokus (-lah)'),
+  (2577, 19208, 'pan', 'partikel topik'),
+  (2578, 19390, 'sab', 'juga, pula');
 INSERT OR REPLACE INTO `thesaurus` (`id`, `entry_id`, `related_headword`, `relation_note`) VALUES
-  (2536, 20544, 'sampay', 'transkripsi linguistik (Miller 2007)');
+  (2579, 19390, 'pan', 'partikel topik (pun, juga)'),
+  (2585, 19365, 'jo', 'partikel pembatas/penegas (sahaja)'),
+  (2586, 19365, 'pan', 'partikel topik (pun, juga)'),
+  (2587, 19365, 'té''', 'partikel penegas lisan'),
+  (2603, 19142, 'no', 'partikel fokus (-lah)'),
+  (2604, 19142, 'pan', 'partikel topik (pun)'),
+  (2605, 19143, 'jomo daras', 'orang (strong person)'),
+  (2606, 19143, 'jomo too e', 'tua (the old man)'),
+  (2607, 19143, 'Jomo    daras   e         jo', 'buka     tombol      telaga (buka     tombol      telaga)'),
+  (2610, 19395, 'no', 'partikel fokus (-lah)'),
+  (2611, 19395, 'sab', 'juga, pula'),
+  (2612, 19077, 'dokon', 'mengambil pelengkap klausa'),
+  (2613, 19077, 'masam', 'kata pinjaman Melayu'),
+  (2614, 19078, 'doko''', 'mengambil pelengkap frasa nama'),
+  (2615, 19078, 'masam', 'kata pinjaman Melayu'),
+  (2618, 19076, 'té''', 'partikel penegas lisan'),
+  (2619, 19076, 'no', 'partikel fokus (-lah)'),
+  (2622, 19602, 'do''', 'partikel penegas kesegeraan'),
+  (2623, 19602, 'no', 'partikel fokus (-lah)'),
+  (2628, 19522, 'pan', 'partikel topik / penambah'),
+  (2629, 19522, 'no', 'partikel fokus'),
+  (2630, 19209, 'aku', 'bentuk bebas / tidak terikat'),
+  (2631, 19209, '-ti', 'jamak inklusif'),
+  (2632, 19358, 'io', 'bentuk bebas (dia)'),
+  (2633, 19358, 'gai', 'jamak (mereka)'),
+  (2634, 19136, '-ni', 'bentuk terikat / enklitik'),
+  (2635, 19136, 'gai', 'jamak (mereka)'),
+  (2636, 19136, 'iyo', 'varian linguistik (bukan baku)'),
+  (2637, 19111, 'io', 'tunggal (dia)'),
+  (2638, 20553, '-ku', 'bentuk terikat / enklitik'),
+  (2639, 20553, 'kiti', 'jamak inklusif (kita)'),
+  (2640, 20553, 'kami', 'jamak eksklusif (kami)'),
+  (2641, 20554, '-ti', 'bentuk terikat / enklitik'),
+  (2642, 20554, 'kami', 'jamak eksklusif'),
+  (2643, 20554, 'aku', 'tunggal'),
+  (2646, 20556, 'kiti', 'jamak inklusif'),
+  (2647, 20556, 'aku', 'tunggal'),
+  (2648, 20557, '-nu', 'bentuk terikat / enklitik'),
+  (2649, 20557, 'kaam', 'jamak (kalian)'),
+  (2650, 20558, '-bi', 'bentuk terikat / enklitik'),
+  (2651, 20558, 'kau', 'tunggal'),
+  (2652, 20558, 'kam', 'varian ringkas'),
+  (2653, 20559, 'kaam', 'bentuk penuh'),
+  (2654, 20559, '-bi', 'bentuk terikat'),
+  (2655, 20560, 'io', 'bentuk baku / rasmi'),
+  (2656, 20560, '-ni', 'bentuk terikat / enklitik'),
+  (2657, 20560, 'gai', 'jamak'),
+  (2660, 20562, 'kau', 'bentuk bebas'),
+  (2661, 20562, '-bi', 'jamak (kalian)'),
+  (2662, 20563, 'kaam', 'bentuk bebas');
+INSERT OR REPLACE INTO `thesaurus` (`id`, `entry_id`, `related_headword`, `relation_note`) VALUES
+  (2663, 20563, '-nu', 'tunggal'),
+  (2664, 20554, 'kitei', 'varian dialek'),
+  (2665, 20554, 'kitai', 'varian dialek'),
+  (2666, 20564, 'kiti', 'bentuk baku'),
+  (2667, 20565, 'kiti', 'bentuk baku'),
+  (2668, 20561, 'kiti', 'bentuk bebas'),
+  (2669, 20561, '-ku', 'tunggal'),
+  (2672, 20566, 'supaya', 'sinonim'),
+  (2673, 20567, 'aku', 'bentuk bebas'),
+  (2674, 20567, '-ku', 'bentuk terikat / enklitik'),
+  (2675, 20567, 'engkiti', 'jamak inklusif'),
+  (2676, 20568, 'kiti', 'bentuk bebas'),
+  (2677, 20568, '-ti', 'bentuk terikat / enklitik'),
+  (2678, 20568, 'engkami', 'jamak eksklusif'),
+  (2679, 20569, 'kami', 'bentuk bebas'),
+  (2680, 20569, 'engkiti', 'jamak inklusif'),
+  (2681, 20570, 'kau', 'bentuk bebas'),
+  (2682, 20570, '-nu', 'bentuk terikat / enklitik'),
+  (2683, 20570, 'engkaam', 'jamak (kalian)'),
+  (2684, 20571, 'kaam', 'bentuk bebas'),
+  (2685, 20571, '-bi', 'bentuk terikat / enklitik'),
+  (2686, 20571, 'engkau', 'tunggal'),
+  (2687, 20572, 'io', 'bentuk bebas'),
+  (2688, 20572, '-ni', 'bentuk terikat / enklitik'),
+  (2689, 20572, 'enggai', 'jamak (mereka)'),
+  (2690, 20573, 'mio', 'bentuk baku / rasmi'),
+  (2691, 20574, 'gai', 'bentuk bebas'),
+  (2692, 20574, 'mio', 'tunggal (dia)'),
+  (2693, 20553, 'maku', 'bentuk oblik / sasaran'),
+  (2694, 19209, 'maku', 'bentuk oblik / sasaran'),
+  (2695, 20554, 'engkiti', 'bentuk oblik / sasaran'),
+  (2696, 20561, 'engkiti', 'bentuk oblik / sasaran'),
+  (2697, 20556, 'engkami', 'bentuk oblik / sasaran'),
+  (2698, 20557, 'engkau', 'bentuk oblik / sasaran'),
+  (2699, 20562, 'engkau', 'bentuk oblik / sasaran'),
+  (2700, 20558, 'engkaam', 'bentuk oblik / sasaran'),
+  (2701, 20563, 'engkaam', 'bentuk oblik / sasaran'),
+  (2702, 19136, 'mio', 'bentuk oblik / sasaran'),
+  (2703, 19358, 'mio', 'bentuk oblik / sasaran'),
+  (2704, 19111, 'enggai', 'bentuk oblik / sasaran'),
+  (2705, 20575, 'engkaam', 'bentuk penuh / baku'),
+  (2706, 20575, 'kam', 'bentuk bebas'),
+  (2707, 20571, 'engkam', 'varian ringkas'),
+  (2708, 20576, 'tu', 'Kata tunjuk dekat (ini)'),
+  (2709, 20576, 'itu', 'Kata tunjuk dekat bentuk penuh (ini)'),
+  (2710, 20576, 'u''', 'Kata tunjuk jauh kelihatan (nun di sana)'),
+  (2711, 20577, 'tu', 'Kata tunjuk dekat (ini)'),
+  (2712, 20577, 'itu', 'Kata tunjuk dekat bentuk penuh (ini)'),
+  (2713, 20577, 'é', 'Kata tunjuk jauh (itu)'),
+  (2714, 19653, 'é', 'Kata tunjuk jauh (itu)');
+INSERT OR REPLACE INTO `thesaurus` (`id`, `entry_id`, `related_headword`, `relation_note`) VALUES
+  (2715, 19653, 'u''', 'Kata tunjuk jauh kelihatan (nun di sana)'),
+  (2716, 19129, 'é', 'Kata tunjuk jauh (itu)'),
+  (2717, 19129, 'u''', 'Kata tunjuk jauh kelihatan (nun di sana)');
 
--- Table: categories (10 rows)
+-- Table: categories (11 rows)
 INSERT OR REPLACE INTO `categories` (`id`, `name_ms`, `name_en`, `slug`, `description`, `icon`) VALUES
   (1, 'Anggota Badan', 'Human Body Parts', 'anggota-badan', 'Bahagian tubuh badan manusia dalam bahasa Bajau Sama.', '👤'),
   (2, 'Arah & Ruang', 'Directives & Spatial Terms', 'arah-ruang', 'Istilah arah, kedudukan relatif, dan hubungan ruang.', '🧭'),
@@ -4633,9 +4844,10 @@ INSERT OR REPLACE INTO `categories` (`id`, `name_ms`, `name_en`, `slug`, `descri
   (7, 'Budaya, Tradisi & Kraf', 'Culture, Traditions & Crafts', 'budaya-tradisi', 'Warisan kesenian, pakaian, senjata, dan kraftangan Sama.', '🧵'),
   (8, 'Nombor & Bilangan', 'Numbers & Quantifiers', 'nombor-bilangan', 'Sistem nombor asas, angka, dan kata penjodoh bilangan.', '🔢'),
   (9, 'Warna & Sifat', 'Colors & Qualities', 'warna-sifat', 'Karakteristik visual, warna, dan kata sifat penerang.', '🎨'),
-  (10, 'Kehidupan Harian & Rumah', 'Daily Life & Household', 'kehidupan-harian', 'Peralatan rumah, perkakas dapur, dan aktiviti harian.', '🏠');
+  (10, 'Kehidupan Harian & Rumah', 'Daily Life & Household', 'kehidupan-harian', 'Peralatan rumah, perkakas dapur, dan aktiviti harian.', '🏠'),
+  (11, 'Perasaan', NULL, 'perasaan', 'Semua jenis perasaan yang dirasai insan manusia.', '❤️');
 
--- Table: entry_categories (201 rows)
+-- Table: entry_categories (202 rows)
 INSERT OR REPLACE INTO `entry_categories` (`id`, `entry_id`, `category_id`) VALUES
   (1, 18994, 2),
   (2, 19022, 2),
@@ -4749,7 +4961,6 @@ INSERT OR REPLACE INTO `entry_categories` (`id`, `entry_id`, `category_id`) VALU
   (108, 19672, 3),
   (109, 19676, 3),
   (111, 19066, 5),
-  (112, 19143, 5),
   (113, 18973, 5),
   (114, 18989, 5),
   (115, 18991, 5),
@@ -4788,9 +4999,9 @@ INSERT OR REPLACE INTO `entry_categories` (`id`, `entry_id`, `category_id`) VALU
   (148, 20519, 8),
   (149, 20519, 7),
   (150, 20520, 8),
-  (151, 20520, 6);
+  (151, 20520, 6),
+  (152, 20521, 8);
 INSERT OR REPLACE INTO `entry_categories` (`id`, `entry_id`, `category_id`) VALUES
-  (152, 20521, 8),
   (153, 20521, 7),
   (154, 20522, 8),
   (155, 20522, 7),
@@ -4839,11 +5050,13 @@ INSERT OR REPLACE INTO `entry_categories` (`id`, `entry_id`, `category_id`) VALU
   (198, 19544, 8),
   (199, 19616, 8),
   (200, 20421, 2),
-  (201, 19098, 2);
-INSERT OR REPLACE INTO `entry_categories` (`id`, `entry_id`, `category_id`) VALUES
+  (201, 19098, 2),
   (202, 19241, 2);
+INSERT OR REPLACE INTO `entry_categories` (`id`, `entry_id`, `category_id`) VALUES
+  (208, 19143, 5),
+  (209, 19530, 11);
 
--- Table: sources (851 rows)
+-- Table: sources (883 rows)
 INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`, `verified_by`) VALUES
   (18949, 18949, 'Academic Publication', 'Miller (2007:372, 373)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (18950, 18950, 'Academic Publication', 'Miller (2007:434)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
@@ -4962,9 +5175,6 @@ INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`
   (19073, 19073, 'Academic Publication', 'Miller (2007:187, 240, 241)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19074, 19074, 'Academic Publication', 'Miller (2007:105)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19075, 19075, 'Academic Publication', 'Miller (2007:206)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
-  (19076, 19076, 'Academic Publication', 'Miller (2007:397, 399, 415)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
-  (19077, 19077, 'Academic Publication', 'Miller (2007:327)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
-  (19078, 19078, 'Academic Publication', 'Miller (2007:327)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19079, 19079, 'Academic Publication', 'Miller (2007:89)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19080, 19080, 'Academic Publication', 'Miller (2007:143)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19081, 19081, 'Academic Publication', 'Miller (2007:275)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
@@ -4994,13 +5204,13 @@ INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`
   (19108, 19108, 'Academic Publication', 'Miller (2007:291)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19109, 19109, 'Academic Publication', 'Miller (2007:90)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19110, 19110, 'Academic Publication', 'Miller (2007:278)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
-  (19111, 19111, 'Academic Publication', 'Miller (2007:235, 236, 456)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (19111, 19111, 'Academic Publication', 'Miller (2007:88, 140)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19112, 19112, 'Academic Publication', 'Miller (2007:277)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
-  (19113, 19113, 'Academic Publication', 'Miller (2007:255)', 'Ahli Linguistik / Penutur Jati Kota Belud');
-INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`, `verified_by`) VALUES
+  (19113, 19113, 'Academic Publication', 'Miller (2007:255)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19114, 19114, 'Academic Publication', 'Miller (2007:279)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19115, 19115, 'Academic Publication', 'Miller (2007:381)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
-  (19116, 19116, 'Academic Publication', 'Miller (2007:318)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (19116, 19116, 'Academic Publication', 'Miller (2007:318)', 'Ahli Linguistik / Penutur Jati Kota Belud');
+INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`, `verified_by`) VALUES
   (19117, 19117, 'Academic Publication', 'Miller (2007:275)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19118, 19118, 'Academic Publication', 'Miller (2007:171)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19119, 19119, 'Academic Publication', 'Miller (2007:323, 329, 428)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
@@ -5018,14 +5228,12 @@ INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`
   (19132, 19132, 'Academic Publication', 'Miller (2007:323)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19133, 19133, 'Academic Publication', 'Miller (2007:323)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19135, 19135, 'Academic Publication', 'Miller (2007:44, 105)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
-  (19136, 19136, 'Academic Publication', 'Miller (2007:91, 174, 208)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (19136, 19136, 'Academic Publication', 'Miller (2007:88, 140–142)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19137, 19137, 'Academic Publication', 'Miller (2007:26, 220, 221)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19138, 19138, 'Academic Publication', 'Miller (2007:90)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19139, 19139, 'Academic Publication', 'Miller (2007:381)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19140, 19140, 'Academic Publication', 'Miller (2007:137, 280, 281)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19141, 19141, 'Academic Publication', 'Miller (2007:440)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
-  (19142, 19142, 'Academic Publication', 'Miller (2007:228, 364, 399)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
-  (19143, 19143, 'Academic Publication', 'Miller (2007:105, 275, 368)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19144, 19144, 'Academic Publication', 'Miller (2007:44)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19145, 19145, 'Academic Publication', 'Miller (2007:187, 436)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19146, 19146, 'Academic Publication', 'Miller (2007:91, 105, 114)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
@@ -5047,13 +5255,13 @@ INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`
   (19162, 19162, 'Academic Publication', 'Miller (2007:288)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19163, 19163, 'Academic Publication', 'Miller (2007:127)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19164, 19164, 'Academic Publication', 'Miller (2007:127)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
-  (19165, 19165, 'Academic Publication', 'Miller (2007:136, 292, 413)', 'Ahli Linguistik / Penutur Jati Kota Belud');
-INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`, `verified_by`) VALUES
+  (19165, 19165, 'Academic Publication', 'Miller (2007:136, 292, 413)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19166, 19166, 'Academic Publication', 'Miller (2007:293, 413)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19167, 19167, 'Academic Publication', 'Miller (2007:413)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19168, 19168, 'Academic Publication', 'Miller (2007:111)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19169, 19169, 'Academic Publication', 'Miller (2007:111)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
-  (19170, 19170, 'Academic Publication', 'Miller (2007:127)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (19170, 19170, 'Academic Publication', 'Miller (2007:127)', 'Ahli Linguistik / Penutur Jati Kota Belud');
+INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`, `verified_by`) VALUES
   (19171, 19171, 'Academic Publication', 'Miller (2007:329)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19174, 19174, 'Academic Publication', 'Miller (2007:127)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19175, 19175, 'Academic Publication', 'Miller (2007:128)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
@@ -5086,9 +5294,8 @@ INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`
   (19202, 19202, 'Academic Publication', 'Miller (2007:124)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19203, 19203, 'Academic Publication', 'Miller (2007:124)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19204, 19204, 'Academic Publication', 'Miller (2007:105, 340, 341)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
-  (19205, 19205, 'Academic Publication', 'Miller (2007:397)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19206, 19206, 'Academic Publication', 'Miller (2007:112)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
-  (19209, 19209, 'Academic Publication', 'Miller (2007:96)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (19209, 19209, 'Academic Publication', 'Miller (2007:88, 139–141)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19210, 19210, 'Academic Publication', 'Miller (2007:310)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19211, 19211, 'Academic Publication', 'Miller (2007:310)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19212, 19212, 'Academic Publication', 'Miller (2007:105)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
@@ -5098,14 +5305,14 @@ INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`
   (19216, 19216, 'Academic Publication', 'Miller (2007:125)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19218, 19218, 'Academic Publication', 'Miller (2007:282)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19219, 19219, 'Academic Publication', 'Miller (2007:318, 324)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
-  (19220, 19220, 'Academic Publication', 'Miller (2007:113)', 'Ahli Linguistik / Penutur Jati Kota Belud');
-INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`, `verified_by`) VALUES
+  (19220, 19220, 'Academic Publication', 'Miller (2007:113)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19221, 19221, 'Academic Publication', 'Miller (2007:113)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19222, 19222, 'Academic Publication', 'Miller (2007:278)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19223, 19223, 'Academic Publication', 'Miller (2007:295)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19224, 19224, 'Academic Publication', 'Miller (2007:105, 112, 124)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19225, 19225, 'Academic Publication', 'Miller (2007:124)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
-  (19226, 19226, 'Academic Publication', 'Miller (2007:119)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (19226, 19226, 'Academic Publication', 'Miller (2007:119)', 'Ahli Linguistik / Penutur Jati Kota Belud');
+INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`, `verified_by`) VALUES
   (19227, 19227, 'Academic Publication', 'Miller (2007:285, 286, 325)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19228, 19228, 'Academic Publication', 'Miller (2007:192, 325)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19229, 19229, 'Academic Publication', 'Miller (2007:357, 379, 380)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
@@ -5149,18 +5356,17 @@ INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`
   (19272, 19272, 'Academic Publication', 'Miller (2007:133, 153, 454)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19273, 19273, 'Academic Publication', 'Miller (2007:298, 300, 335)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19274, 19274, 'Academic Publication', 'Miller (2007:279, 325, 333)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
-  (19275, 19275, 'Academic Publication', 'Miller (2007:325)', 'Ahli Linguistik / Penutur Jati Kota Belud');
-INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`, `verified_by`) VALUES
+  (19275, 19275, 'Academic Publication', 'Miller (2007:325)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19276, 19276, 'Academic Publication', 'Miller (2007:371)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19277, 19277, 'Academic Publication', 'Miller (2007:120, 277)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19278, 19278, 'Academic Publication', 'Miller (2007:105)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19279, 19279, 'Academic Publication', 'Miller (2007:275)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19280, 19280, 'Academic Publication', 'Miller (2007:452)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
-  (19281, 19281, 'Academic Publication', 'Miller (2007:235)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (19281, 19281, 'Academic Publication', 'Miller (2007:235)', 'Ahli Linguistik / Penutur Jati Kota Belud');
+INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`, `verified_by`) VALUES
   (19282, 19282, 'Academic Publication', 'Miller (2007:105, 276)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19283, 19283, 'Academic Publication', 'Miller (2007:293)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19284, 19284, 'Academic Publication', 'Miller (2007:293)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
-  (19285, 19285, 'Academic Publication', 'Miller (2007:324–325)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19286, 19286, 'Academic Publication', 'Miller (2007:205, 291, 466)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19289, 19289, 'Academic Publication', 'Miller (2007:131, 133, 274)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19290, 19290, 'Academic Publication', 'Miller (2007:105, 108, 228)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
@@ -5177,7 +5383,6 @@ INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`
   (19302, 19302, 'Academic Publication', 'Miller (2007:113)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19303, 19303, 'Academic Publication', 'Miller (2007:276, 295)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19304, 19304, 'Academic Publication', 'Miller (2007:275)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
-  (19305, 19305, 'Academic Publication', 'Miller (2007:22, 375, 376)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19306, 19306, 'Academic Publication', 'Miller (2007:111)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19307, 19307, 'Academic Publication', 'Miller (2007:44)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19308, 19308, 'Academic Publication', 'Miller (2007:386)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
@@ -5200,17 +5405,16 @@ INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`
   (19325, 19325, 'Academic Publication', 'Miller (2007:385)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19326, 19326, 'Academic Publication', 'Miller (2007:274)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19327, 19327, 'Academic Publication', 'Miller (2007:434)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
-  (19328, 19328, 'Academic Publication', 'Miller (2007:275)', 'Ahli Linguistik / Penutur Jati Kota Belud');
-INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`, `verified_by`) VALUES
+  (19328, 19328, 'Academic Publication', 'Miller (2007:275)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19330, 19330, 'Academic Publication', 'Miller (2007:114, 213)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19331, 19331, 'Academic Publication', 'Miller (2007:114)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19332, 19332, 'Academic Publication', 'Miller (2007:276, 293)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
-  (19333, 19333, 'Academic Publication', 'Miller (2007:275)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19334, 19334, 'Academic Publication', 'Miller (2007:275)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19335, 19335, 'Academic Publication', 'Miller (2007:275)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19336, 19336, 'Academic Publication', 'Miller (2007:275, 294)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19337, 19337, 'Academic Publication', 'Miller (2007:275, 294)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
-  (19338, 19338, 'Academic Publication', 'Miller (2007:133)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (19338, 19338, 'Academic Publication', 'Miller (2007:133)', 'Ahli Linguistik / Penutur Jati Kota Belud');
+INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`, `verified_by`) VALUES
   (19339, 19339, 'Academic Publication', 'Miller (2007:275)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19340, 19340, 'Academic Publication', 'Miller (2007:276)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19341, 19341, 'Academic Publication', 'Miller (2007:275)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
@@ -5230,14 +5434,13 @@ INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`
   (19355, 19355, 'Academic Publication', 'Miller (2007:434)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19356, 19356, 'Academic Publication', 'Miller (2007:276)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19357, 19357, 'Academic Publication', 'Miller (2007:276, 293)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
-  (19358, 19358, 'Academic Publication', 'Miller (2007:192, 208)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (19358, 19358, 'Academic Publication', 'Miller (2007:88, 139–141)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19359, 19359, 'Academic Publication', 'Miller (2007:443)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19360, 19360, 'Academic Publication', 'Miller (2007:89)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19361, 19361, 'Academic Publication', 'Miller (2007:89)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19362, 19362, 'Academic Publication', 'Miller (2007:275)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19363, 19363, 'Academic Publication', 'Miller (2007:131, 137, 274)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19364, 19364, 'Academic Publication', 'Miller (2007:112)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
-  (19365, 19365, 'Academic Publication', 'Miller (2007:245, 389, 399)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19366, 19366, 'Academic Publication', 'Miller (2007:275)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19367, 19367, 'Academic Publication', 'Miller (2007:198, 199, 465)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19368, 19368, 'Academic Publication', 'Miller (2007:22, 216, 358)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
@@ -5251,8 +5454,7 @@ INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`
   (19415, 19415, 'Academic Publication', 'Miller (2007:279, 300)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19416, 19416, 'Academic Publication', 'Miller (2007:279, 300)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19417, 19417, 'Academic Publication', 'Miller (2007:279)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
-  (19418, 19418, 'Academic Publication', 'Miller (2007:340)', 'Ahli Linguistik / Penutur Jati Kota Belud');
-INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`, `verified_by`) VALUES
+  (19418, 19418, 'Academic Publication', 'Miller (2007:340)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19420, 19420, 'Academic Publication', 'Miller (2007:304, 337)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19421, 19421, 'Academic Publication', 'Miller (2007:280, 355)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19422, 19422, 'Academic Publication', 'Miller (2007:279, 296, 338)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
@@ -5262,7 +5464,8 @@ INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`
   (19427, 19427, 'Academic Publication', 'Miller (2007:300, 304)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19428, 19428, 'Academic Publication', 'Miller (2007:279, 298, 304)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19429, 19429, 'Academic Publication', 'Miller (2007:280)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
-  (19430, 19430, 'Academic Publication', 'Miller (2007:131, 307, 338)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (19430, 19430, 'Academic Publication', 'Miller (2007:131, 307, 338)', 'Ahli Linguistik / Penutur Jati Kota Belud');
+INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`, `verified_by`) VALUES
   (19431, 19431, 'Academic Publication', 'Miller (2007:337)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19432, 19432, 'Academic Publication', 'Miller (2007:336)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19433, 19433, 'Academic Publication', 'Miller (2007:279, 296)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
@@ -5302,8 +5505,7 @@ INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`
   (19476, 19476, 'Academic Publication', 'Miller (2007:126)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19477, 19477, 'Academic Publication', 'Miller (2007:200, 297)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19478, 19478, 'Academic Publication', 'Miller (2007:126)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
-  (19479, 19479, 'Academic Publication', 'Miller (2007:126)', 'Ahli Linguistik / Penutur Jati Kota Belud');
-INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`, `verified_by`) VALUES
+  (19479, 19479, 'Academic Publication', 'Miller (2007:126)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19480, 19480, 'Academic Publication', 'Miller (2007:109, 113)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19481, 19481, 'Academic Publication', 'Miller (2007:109)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19482, 19482, 'Academic Publication', 'Miller (2007:289)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
@@ -5313,7 +5515,8 @@ INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`
   (19486, 19486, 'Academic Publication', 'Miller (2007:275)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19489, 19489, 'Academic Publication', 'Miller (2007:137)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19490, 19490, 'Academic Publication', 'Miller (2007:100)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
-  (19491, 19491, 'Academic Publication', 'Miller (2007:131, 297, 337)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (19491, 19491, 'Academic Publication', 'Miller (2007:131, 297, 337)', 'Ahli Linguistik / Penutur Jati Kota Belud');
+INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`, `verified_by`) VALUES
   (19492, 19492, 'Academic Publication', 'Miller (2007:137, 290, 338)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19494, 19494, 'Academic Publication', 'Miller (2007:434)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19495, 19495, 'Academic Publication', 'Miller (2007:90)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
@@ -5346,15 +5549,13 @@ INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`
   (19526, 19526, 'Academic Publication', 'Miller (2007:213)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19527, 19527, 'Academic Publication', 'Miller (2007:127)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19528, 19528, 'Academic Publication', 'Miller (2007:26, 449)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
-  (19530, 19530, 'Academic Publication', 'Miller (2007:214)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19531, 19531, 'Academic Publication', 'Miller (2007:118, 169)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19532, 19532, 'Academic Publication', 'Miller (2007:108)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19533, 19533, 'Academic Publication', 'Miller (2007:111)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19534, 19534, 'Academic Publication', 'Miller (2007:290)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19535, 19535, 'Academic Publication', 'Miller (2007:378)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19536, 19536, 'Academic Publication', 'Miller (2007:46)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
-  (19537, 19537, 'Academic Publication', 'Miller (2007:105)', 'Ahli Linguistik / Penutur Jati Kota Belud');
-INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`, `verified_by`) VALUES
+  (19537, 19537, 'Academic Publication', 'Miller (2007:105)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19539, 19539, 'Academic Publication', 'Miller (2007:111, 274)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19540, 19540, 'Academic Publication', 'Miller (2007:391)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19541, 19541, 'Academic Publication', 'Miller (2007:169)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
@@ -5365,7 +5566,8 @@ INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`
   (19547, 19547, 'Academic Publication', 'Miller (2007:193)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19548, 19548, 'Academic Publication', 'Miller (2007:337)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19549, 19549, 'Academic Publication', 'Miller (2007:384)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
-  (19550, 19550, 'Academic Publication', 'Miller (2007:284)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (19550, 19550, 'Academic Publication', 'Miller (2007:284)', 'Ahli Linguistik / Penutur Jati Kota Belud');
+INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`, `verified_by`) VALUES
   (19551, 19551, 'Academic Publication', 'Miller (2007:284)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19552, 19552, 'Academic Publication', 'Miller (2007:284)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19553, 19553, 'Academic Publication', 'Miller (2007:284)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
@@ -5373,7 +5575,6 @@ INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`
   (19555, 19555, 'Academic Publication', 'Miller (2007:283)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19556, 19556, 'Academic Publication', 'Miller (2007:284)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19557, 19557, 'Academic Publication', 'Miller (2007:284)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
-  (19558, 19558, 'Academic Publication', 'Miller (2007:283)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19561, 19561, 'Academic Publication', 'Miller (2007:44)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19562, 19562, 'Academic Publication', 'Miller (2007:106, 280)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19563, 19563, 'Academic Publication', 'Miller (2007:106)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
@@ -5394,7 +5595,6 @@ INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`
   (19579, 19579, 'Academic Publication', 'Miller (2007:75, 109, 113)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19580, 19580, 'Academic Publication', 'Miller (2007:286)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19581, 19581, 'Academic Publication', 'Miller (2007:212)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
-  (19582, 19582, 'Academic Publication', 'Miller (2007:434, 455)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19583, 19583, 'Academic Publication', 'Miller (2007:321, 337)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19584, 19584, 'Academic Publication', 'Miller (2007:114)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19585, 19585, 'Academic Publication', 'Miller (2007:105)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
@@ -5404,8 +5604,7 @@ INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`
   (19595, 19595, 'Academic Publication', 'Miller (2007:112, 126, 278)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19597, 19597, 'Academic Publication', 'Miller (2007:108, 288)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19607, 19607, 'Academic Publication', 'Miller (2007:124, 126, 132)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
-  (19608, 19608, 'Academic Publication', 'Miller (2007:124)', 'Ahli Linguistik / Penutur Jati Kota Belud');
-INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`, `verified_by`) VALUES
+  (19608, 19608, 'Academic Publication', 'Miller (2007:124)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19611, 19611, 'Academic Publication', 'Miller (2007:124)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19618, 19618, 'Academic Publication', 'Miller (2007:239, 241, 314)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19628, 19628, 'Academic Publication', 'Miller (2007:220)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
@@ -5418,7 +5617,8 @@ INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`
   (19677, 19677, 'Academic Publication', 'Miller (2007:433)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (19678, 19678, 'Academic Publication', 'Miller (2007:104)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (20411, 20411, 'Penyunting Pentadbir', 'Dimasukkan melalui Papan Pemuka Pentadbir Kamus Bajau Samah', 'Pentadbir Kamus'),
-  (20412, 20414, 'Penyunting Pentadbir', 'Dimasukkan melalui Papan Pemuka Pentadbir Kamus Bajau Samah', 'Pentadbir Kamus'),
+  (20412, 20414, 'Penyunting Pentadbir', 'Dimasukkan melalui Papan Pemuka Pentadbir Kamus Bajau Samah', 'Pentadbir Kamus');
+INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`, `verified_by`) VALUES
   (20415, 19287, 'Academic Publication', 'Miller (2007:105, 197)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (20416, 19370, 'Academic Publication', 'Miller (2007:200, 284)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (20417, 19371, 'Academic Publication', 'Miller (2007:201, 204, 325)', NULL),
@@ -5438,11 +5638,10 @@ INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`
   (20432, 19387, 'Academic Publication', 'Miller (2007:49)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (20433, 19388, 'Academic Publication', 'Miller (2007:113)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (20434, 19389, 'Academic Publication', 'Miller (2007:310, 311)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
-  (20435, 19390, 'Academic Publication', 'Miller (2007:353)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (20435, 19390, 'Academic Publication', 'Miller (2007:364, 366)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (20436, 19391, 'Academic Publication', 'Miller (2007:349)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (20438, 19392, 'Academic Publication', 'Miller (2007:39, 56, 91, 290, 417)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (20439, 19393, 'Academic Publication', 'Miller (2007:290)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
-  (20440, 19395, 'Academic Publication', 'Miller (2007:360–362)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (20441, 19397, 'Academic Publication', 'Miller (2007:344)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (20442, 19398, 'Academic Publication', 'Miller (2007:282)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (20443, 19399, 'Academic Publication', 'Miller (2007:124)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
@@ -5452,11 +5651,8 @@ INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`
   (20447, 19402, 'Academic Publication', 'Miller (2007:304, 325)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (20449, 19405, 'Academic Publication', 'Miller (2007:124, 310)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (20450, 19404, 'Academic Publication', 'Miller (2007:124, 198, 282)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
-  (20451, 19406, 'Academic Publication', 'Miller (2007:105, 145, 349)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (20452, 19407, 'Academic Publication', 'Miller (2007:453)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
-  (20454, 19522, 'Academic Publication', 'Miller (2007:399)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
-  (20457, 19588, 'Academic Publication', 'Miller (2007:104)', 'Ahli Linguistik / Penutur Jati Kota Belud');
-INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`, `verified_by`) VALUES
+  (20457, 19588, 'Academic Publication', 'Miller (2007:104)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (20458, 19589, 'Academic Publication', 'Miller (2007:166)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (20461, 19590, 'Academic Publication', 'Miller (2007:106, 295)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (20463, 19591, 'Academic Publication', 'Miller (2007:92)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
@@ -5467,13 +5663,13 @@ INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`
   (20470, 19599, 'Academic Publication', 'Miller (2007:108)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (20471, 19600, 'Academic Publication', 'Miller (2007:302)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (20472, 19601, 'Academic Publication', 'Miller (2007:105, 141)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
-  (20473, 19602, 'Academic Publication', 'Miller (2007:363)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (20474, 19603, 'Academic Publication', 'Miller (2007:370)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (20475, 19604, 'Academic Publication', 'Miller (2007:373)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (20476, 19605, 'Academic Publication', 'Miller (2007:373)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (20477, 19606, 'Academic Publication', 'Miller (2007:328, 369)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (20480, 19609, 'Academic Publication', 'Miller (2007:124, 428)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
-  (20482, 19610, 'Academic Publication', 'Miller (2007:209)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (20482, 19610, 'Academic Publication', 'Miller (2007:209)', 'Ahli Linguistik / Penutur Jati Kota Belud');
+INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`, `verified_by`) VALUES
   (20483, 19612, 'Academic Publication', 'Miller (2007:220)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (20484, 19613, 'Academic Publication', 'Miller (2007:67)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (20485, 19614, 'Academic Publication', 'Miller (2007:23, 131, 153)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
@@ -5506,8 +5702,7 @@ INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`
   (20524, 19644, 'Academic Publication', 'Miller (2007:405)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (20525, 19646, 'Academic Publication', 'Miller (2007:126, 276, 291)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (20527, 19663, 'Academic Publication', 'Miller (2007:199, 409)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
-  (20530, 19647, 'Academic Publication', 'Miller (2007:263, 303)', 'Ahli Linguistik / Penutur Jati Kota Belud');
-INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`, `verified_by`) VALUES
+  (20530, 19647, 'Academic Publication', 'Miller (2007:263, 303)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (20531, 19442, 'Academic Publication', 'Miller (2007:303)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (20532, 19648, 'Academic Publication', 'Miller (2007:263)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (20534, 19650, 'Academic Publication', 'Miller (2007:320)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
@@ -5524,7 +5719,8 @@ INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`
   (20548, 19661, 'Academic Publication', 'Miller (2007:124)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (20549, 19662, 'Academic Publication', 'Miller (2007:279, 298, 300)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (20550, 19664, 'Academic Publication', 'Miller (2007:317)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
-  (20552, 19674, 'Academic Publication', 'Miller (2007:125)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (20552, 19674, 'Academic Publication', 'Miller (2007:125)', 'Ahli Linguistik / Penutur Jati Kota Belud');
+INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`, `verified_by`) VALUES
   (20553, 19669, 'Academic Publication', 'Miller (2007:119, 126, 211)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (20554, 19666, 'Academic Publication', 'Miller (2007:125)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (20555, 19667, 'Academic Publication', 'Miller (2007:125)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
@@ -5557,8 +5753,7 @@ INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`
   (20591, 19372, 'Academic Publication', 'Miller (2007:162)', NULL),
   (20594, 19413, 'Academic Publication', 'Miller (2007:335, 337)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (20596, 19509, 'Academic Publication', 'Miller (2007:124, 127, 335)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
-  (20598, 19510, 'Academic Publication', 'Miller (2007:124)', 'Ahli Linguistik / Penutur Jati Kota Belud');
-INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`, `verified_by`) VALUES
+  (20598, 19510, 'Academic Publication', 'Miller (2007:124)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (20599, 20417, 'Penyunting Pentadbir', 'Miller (2007:35)', 'Pentadbir Kamus'),
   (20601, 20418, 'Penyunting Pentadbir', 'Miller (2007:35)', 'Pentadbir Kamus'),
   (20603, 20419, 'Academic Publication', 'Miller (2007:35)', 'Pentadbir Kamus'),
@@ -5575,14 +5770,15 @@ INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`
   (20619, 20427, 'Buku / Bahan Bertulis', 'Penerbitan Linguistik (A Grammar of West Coast Bajau, hlm. 119)', 'Penyelidikan Linguistik (Mark T. Miller, 2007)'),
   (20620, 20428, 'Buku / Bahan Bertulis', 'Penerbitan Linguistik (A Grammar of West Coast Bajau, hlm. 347)', 'Penyelidikan Linguistik (Mark T. Miller, 2007)'),
   (20622, 20430, 'Buku / Bahan Bertulis', 'Penerbitan Linguistik (A Grammar of West Coast Bajau, hlm. 118)', 'Penyelidikan Linguistik (Mark T. Miller, 2007)'),
-  (20627, 20435, 'Buku / Bahan Bertulis', 'Penerbitan Linguistik (A Grammar of West Coast Bajau, hlm. 353)', 'Penyelidikan Linguistik (Mark T. Miller, 2007)'),
+  (20627, 20435, 'Buku / Bahan Bertulis', 'Penerbitan Linguistik (A Grammar of West Coast Bajau, hlm. 353)', 'Penyelidikan Linguistik (Mark T. Miller, 2007)');
+INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`, `verified_by`) VALUES
   (20628, 20436, 'Buku / Bahan Bertulis', 'Penerbitan Linguistik (A Grammar of West Coast Bajau, hlm. 352)', 'Penyelidikan Linguistik (Mark T. Miller, 2007)'),
   (20629, 20437, 'Buku / Bahan Bertulis', 'Penerbitan Linguistik (A Grammar of West Coast Bajau, hlm. 348)', 'Penyelidikan Linguistik (Mark T. Miller, 2007)'),
   (20634, 20442, 'Buku / Bahan Bertulis', 'Penerbitan Linguistik (A Grammar of West Coast Bajau, hlm. 353)', 'Penyelidikan Linguistik (Mark T. Miller, 2007)'),
   (20635, 20429, 'Buku / Bahan Bertulis', 'Penerbitan Linguistik (A Grammar of West Coast Bajau, hlm. 353)', 'Penyelidikan Linguistik (Mark T. Miller, 2007)'),
   (20636, 19369, 'Academic Publication', 'Miller (2007:216)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (20637, 19675, 'Academic Publication', 'Miller (2007:216, 217)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
-  (20643, 19208, 'Academic Publication', 'Miller (2007:397, 399, 440)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (20643, 19208, 'Academic Publication', 'Miller (2007:364, 366)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
   (20645, 20431, 'Buku / Bahan Bertulis', 'Penerbitan Linguistik (A Grammar of West Coast Bajau, hlm. 118)', 'Penyelidikan Linguistik (Mark T. Miller, 2007)'),
   (20646, 20432, 'Buku / Bahan Bertulis', 'Penerbitan Linguistik (A Grammar of West Coast Bajau, hlm. 118)', 'Penyelidikan Linguistik (Mark T. Miller, 2007)'),
   (20647, 20441, 'Buku / Bahan Bertulis', 'Penerbitan Linguistik (A Grammar of West Coast Bajau, hlm. 352)', 'Penyelidikan Linguistik (Mark T. Miller, 2007)'),
@@ -5607,9 +5803,7 @@ INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`
   (20697, 20445, 'Buku / Bahan Bertulis', 'Penerbitan Linguistik (A Grammar of West Coast Bajau, hlm. 388)', 'Penyelidikan Linguistik (Mark T. Miller, 2007)'),
   (20698, 20449, 'Buku / Bahan Bertulis', 'Penerbitan Linguistik (A Grammar of West Coast Bajau, hlm. 381 & 440)', 'Penyelidikan Linguistik (Mark T. Miller, 2007)'),
   (20699, 20450, 'Buku / Bahan Bertulis', 'Penerbitan Linguistik (A Grammar of West Coast Bajau, hlm. 381 & 385)', 'Penyelidikan Linguistik (Mark T. Miller, 2007)'),
-  (20700, 20451, 'Buku / Bahan Bertulis', 'Penyelidikan Linguistik & Penutur Jati Kota Belud', 'Penyelidikan Linguistik (Mark T. Miller, 2007)'),
-  (20701, 20452, 'Buku / Bahan Bertulis', 'Penutur Jati & Korpus Linguistik Bajau Sama', 'Penyelidikan Linguistik (Mark T. Miller, 2007)');
-INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`, `verified_by`) VALUES
+  (20701, 20452, 'Buku / Bahan Bertulis', 'Penutur Jati & Korpus Linguistik Bajau Sama', 'Penyelidikan Linguistik (Mark T. Miller, 2007)'),
   (20702, 20453, 'Buku / Bahan Bertulis', 'Penerbitan Linguistik (A Grammar of West Coast Bajau, hlm. 384)', 'Penyelidikan Linguistik (Mark T. Miller, 2007)'),
   (20704, 20448, 'Buku / Bahan Bertulis', 'Penerbitan Linguistik (A Grammar of West Coast Bajau, hlm. 390)', 'Penyelidikan Linguistik (Mark T. Miller, 2007)'),
   (20705, 20454, 'corpus', 'Proto-Sama-Bajaw (*diataʔ); A Grammar of West Coast Bajau, hlm. 89', NULL),
@@ -5627,7 +5821,8 @@ INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`
   (20731, 19679, 'Penyunting Pentadbir', 'Dimasukkan melalui Papan Pemuka Pentadbir Kamus Bajau Samah', 'Pentadbir Kamus'),
   (20732, 20458, 'corpus', 'Penerbitan Linguistik (A Grammar of West Coast Bajau, hlm. 89 & 383)', NULL),
   (20733, 20462, 'linguistic_grammar', 'Terbitan morfologi bahasa Bajau Sama bagi kata dasar ''buli'''' (rujukan: A Grammar of West Coast Bajau, hlm. 89, 280-284)', NULL),
-  (20734, 20463, 'linguistic_grammar', 'Terbitan morfologi bahasa Bajau Sama bagi kata dasar ''bunda'''' (rujukan: A Grammar of West Coast Bajau, hlm. 89, 280-284)', NULL),
+  (20734, 20463, 'linguistic_grammar', 'Terbitan morfologi bahasa Bajau Sama bagi kata dasar ''bunda'''' (rujukan: A Grammar of West Coast Bajau, hlm. 89, 280-284)', NULL);
+INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`, `verified_by`) VALUES
   (20735, 20464, 'linguistic_grammar', 'Terbitan morfologi bahasa Bajau Sama bagi kata dasar ''dembila'''' (rujukan: A Grammar of West Coast Bajau, hlm. 89, 280-284)', NULL),
   (20736, 20465, 'linguistic_grammar', 'Terbitan morfologi bahasa Bajau Sama bagi kata dasar ''dia'''' (rujukan: A Grammar of West Coast Bajau, hlm. 89, 280-284)', NULL),
   (20737, 20466, 'linguistic_grammar', 'Terbitan morfologi bahasa Bajau Sama bagi kata dasar ''dialom'' (rujukan: A Grammar of West Coast Bajau, hlm. 89, 280-284)', NULL),
@@ -5659,8 +5854,7 @@ INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`
   (20763, 20492, 'linguistic_grammar', 'Terbitan morfologi bahasa Bajau Sama bagi kata dasar ''dialom'' (rujukan: A Grammar of West Coast Bajau, hlm. 89, 280-284)', NULL),
   (20764, 20493, 'linguistic_grammar', 'Terbitan morfologi bahasa Bajau Sama bagi kata dasar ''diam'' (rujukan: A Grammar of West Coast Bajau, hlm. 89, 280-284)', NULL),
   (20765, 20494, 'linguistic_grammar', 'Terbitan morfologi bahasa Bajau Sama bagi kata dasar ''diata'''' (rujukan: A Grammar of West Coast Bajau, hlm. 89, 280-284)', NULL),
-  (20766, 20495, 'linguistic_grammar', 'Terbitan morfologi bahasa Bajau Sama bagi kata dasar ''diom'' (rujukan: A Grammar of West Coast Bajau, hlm. 89, 280-284)', NULL);
-INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`, `verified_by`) VALUES
+  (20766, 20495, 'linguistic_grammar', 'Terbitan morfologi bahasa Bajau Sama bagi kata dasar ''diom'' (rujukan: A Grammar of West Coast Bajau, hlm. 89, 280-284)', NULL),
   (20767, 20496, 'linguistic_grammar', 'Terbitan morfologi bahasa Bajau Sama bagi kata dasar ''gibang'' (rujukan: A Grammar of West Coast Bajau, hlm. 89, 280-284)', NULL),
   (20768, 20497, 'linguistic_grammar', 'Terbitan morfologi bahasa Bajau Sama bagi kata dasar ''kuanan'' (rujukan: A Grammar of West Coast Bajau, hlm. 89, 280-284)', NULL),
   (20769, 20498, 'linguistic_grammar', 'Terbitan morfologi bahasa Bajau Sama bagi kata dasar ''tenga'''' (rujukan: A Grammar of West Coast Bajau, hlm. 89, 280-284)', NULL),
@@ -5678,7 +5872,8 @@ INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`
   (20781, 20510, 'linguistic_grammar', 'Miller (2007:89, 280–284)', NULL),
   (20782, 20511, 'linguistic_grammar', 'Miller (2007:89, 280–284)', NULL),
   (20783, 20512, 'linguistic_grammar', 'Miller (2007:89, 280–284)', NULL),
-  (20784, 20513, 'linguistic_grammar', 'Miller (2007:89, 280–284)', NULL),
+  (20784, 20513, 'linguistic_grammar', 'Miller (2007:89, 280–284)', NULL);
+INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`, `verified_by`) VALUES
   (20785, 20514, 'linguistic_grammar', 'Miller (2007:89, 280–284)', NULL),
   (20786, 20515, 'linguistic_grammar', 'Miller (2007:89, 280–284)', NULL),
   (20787, 18960, 'Academic Publication', 'Miller (2007:44, 105)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
@@ -5710,9 +5905,59 @@ INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`
   (20813, 20541, 'Linguistics', 'Miller (2007:112)', 'Penyemak Linguistik'),
   (20815, 20543, 'Linguistics', 'Miller (2007:323, nota kaki 3)', 'Penyemak Linguistik'),
   (20818, 20542, 'Linguistics', 'Miller (2007:325–326)', 'Penyemak Linguistik'),
-  (20819, 19217, 'Academic Publication', 'Miller (2007:269, 406, 407)', 'Ahli Linguistik / Penutur Jati Kota Belud');
+  (20819, 19217, 'Academic Publication', 'Miller (2007:269, 406, 407)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (20824, 20544, 'Linguistics', 'Miller (2007:327–328)', 'Penyemak Linguistik'),
+  (20825, 20545, 'Linguistics', 'Miller (2007:122)', 'Penyemak Linguistik'),
+  (20827, 20547, 'Linguistics', 'Miller (2007:122)', 'Penyemak Linguistik'),
+  (20829, 20549, 'Linguistics', 'Miller (2007:122)', 'Penyemak Linguistik'),
+  (20831, 20551, 'Oral Source', 'Informan Lisan & Penutur Jati (Kota Belud)', 'Penutur Jati'),
+  (20835, 20546, 'Linguistics', 'Miller (2007:122)', 'Penyemak Linguistik'),
+  (20836, 20548, 'Linguistics', 'Miller (2007:122)', 'Penyemak Linguistik'),
+  (20837, 19406, 'Academic Publication', 'Miller (2007:105, 145, 349)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (20839, 20550, 'Oral Source', 'Informan Lisan & Penutur Jati (Kota Belud)', 'Penutur Jati'),
+  (20841, 20552, 'Oral Source', 'Informan Lisan & Penutur Jati (Kota Belud)', 'Penutur Jati'),
+  (20842, 20451, 'Buku / Bahan Bertulis', 'Penyelidikan Linguistik & Penutur Jati Kota Belud', 'Penyelidikan Linguistik (Mark T. Miller, 2007)'),
+  (20845, 19285, 'Academic Publication', 'Miller (2007:122, 324–325)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (20847, 19365, 'Academic Publication', 'Miller (2007:355–358)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (20853, 19333, 'Academic Publication', 'Miller (2007:275)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (20854, 19142, 'Academic Publication', 'Miller (2007:358–360)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (20855, 19143, 'Academic Publication', 'Miller (2007:105, 275, 368)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (20857, 19395, 'Academic Publication', 'Miller (2007:360–363)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (20858, 19077, 'Academic Publication', 'Miller (2007:327)', 'Ahli Linguistik / Penutur Jati Kota Belud');
 INSERT OR REPLACE INTO `sources` (`id`, `entry_id`, `source_type`, `description`, `verified_by`) VALUES
-  (20824, 20544, 'Linguistics', 'Miller (2007:327–328)', 'Penyemak Linguistik');
+  (20859, 19078, 'Academic Publication', 'Miller (2007:327)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (20861, 19076, 'Academic Publication', 'Miller (2007:363–364)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (20862, 19558, 'Academic Publication', 'Miller (2007:283)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (20864, 19602, 'Academic Publication', 'Miller (2007:363)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (20865, 19205, 'Academic Publication', 'Miller (2007:353, 364)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (20868, 19522, 'Academic Publication', 'Miller (2007:364, 366)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (20869, 20553, 'Academic Publication', 'Miller (2007:88, 140–142)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (20870, 20554, 'Academic Publication', 'Miller (2007:88, 140)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (20872, 20556, 'Academic Publication', 'Miller (2007:88, 140)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (20873, 20557, 'Academic Publication', 'Miller (2007:88, 140–142)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (20874, 20558, 'Academic Publication', 'Miller (2007:88, 140)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (20875, 20559, 'Academic Publication', 'Miller (2007:88, 119)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (20876, 20560, 'Academic Publication', 'Miller (2007:88, 140)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (20878, 20562, 'Academic Publication', 'Miller (2007:88, 139–141)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (20879, 20563, 'Academic Publication', 'Miller (2007:88, 139–141)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (20880, 20564, 'Community Contributor', 'Penutur Jati Bajau Samah', 'Penutur Jati Pantai Barat'),
+  (20881, 20565, 'Community Contributor', 'Penutur Jati Bajau Samah', 'Penutur Jati Pantai Barat'),
+  (20882, 20561, 'Academic Publication', 'Miller (2007:88, 139–141)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (20884, 19582, 'Academic Publication', 'Miller (2007:434, 455)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (20886, 19305, 'Academic Publication', 'Miller (2007:22, 375, 376)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (20888, 20566, 'Academic Publication', 'Miller (2007:343)', 'Pentadbir Kamus'),
+  (20889, 20567, 'Academic Publication', 'Miller (2007:88, 140)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (20890, 20568, 'Academic Publication', 'Miller (2007:88, 140)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (20891, 20569, 'Academic Publication', 'Miller (2007:88, 140)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (20892, 20570, 'Academic Publication', 'Miller (2007:88, 140)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (20893, 20571, 'Academic Publication', 'Miller (2007:88, 140)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (20894, 20572, 'Academic Publication', 'Miller (2007:88, 140)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (20895, 20573, 'Academic Publication', 'Miller (2007:88, 140)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (20896, 20574, 'Academic Publication', 'Miller (2007:88, 140)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (20897, 20575, 'Academic Publication', 'Miller (2007:88, 140)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (20900, 19530, 'Academic Publication', 'Miller (2007:214)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (20901, 20576, 'Academic Publication', 'Miller (2007:115–116)', 'Ahli Linguistik / Penutur Jati Kota Belud'),
+  (20902, 20577, 'Academic Publication', 'Miller (2007:115–116)', 'Ahli Linguistik / Penutur Jati Kota Belud');
 
 -- Performance Indexes to prevent full table scans and eliminate row read limits
 CREATE INDEX IF NOT EXISTS `affixes_entry_id_idx` ON `affixes` (`entry_id`);

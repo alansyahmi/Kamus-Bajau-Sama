@@ -2050,7 +2050,7 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                     <div className="flex items-center justify-between">
                       <div>
                         <h3 className="font-semibold text-sm text-stone-900 flex items-center gap-2">
-                          <span>🏷️</span> Kategori Tematik & Domain Semantik ({(selectedEntry.categoryIds || []).length})
+                          <span>🏷️</span> Kategori Bertema ({(selectedEntry.categoryIds || []).length})
                         </h3>
                         <p className="text-xs text-stone-500">
                           Kelompokkan perkataan ke dalam bidang tema (cth: Anggota Badan, Haiwan, Arah & Ruang) untuk carian bertema.
@@ -2079,11 +2079,10 @@ export default function AdminDashboard({ initialWord, searchParams }: AdminEdito
                                 : [...current, cat.id];
                               setSelectedEntry({ ...selectedEntry, categoryIds: next });
                             }}
-                            className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium transition cursor-pointer border ${
-                              isSelected
+                            className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium transition cursor-pointer border ${isSelected
                                 ? 'bg-amber-600 text-white border-amber-600 shadow-sm'
                                 : 'bg-white text-stone-700 border-sand-300 hover:border-amber-400 hover:bg-amber-50/50'
-                            }`}
+                              }`}
                           >
                             <span>{cat.icon || '🏷️'}</span>
                             <span>{cat.nameMs}</span>

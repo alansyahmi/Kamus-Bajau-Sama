@@ -9,6 +9,8 @@ import DialectList from '@/components/DialectList';
 import DefinitionList from '@/components/DefinitionList';
 import ExampleBox from '@/components/ExampleBox';
 import ThesaurusCard from '@/components/ThesaurusCard';
+import PronounParadigmCard from '@/components/PronounParadigmCard';
+import { isPersonalPronounWord } from '@/lib/pronouns';
 import ProvenanceBanner from '@/components/ProvenanceBanner';
 import EntryNotFound from '@/components/EntryNotFound';
 import LexicalPagination from '@/components/LexicalPagination';
@@ -212,6 +214,9 @@ export default async function EntryPage({ params }: EntryPageProps) {
 
               <ExampleBox senses={entry.senses} currentHeadword={entry.headword} />
               <ThesaurusCard thesaurus={entry.thesaurus} />
+              {isPersonalPronounWord(entry.headword) && (
+                <PronounParadigmCard currentHeadword={entry.headword} />
+              )}
               <ProvenanceBanner sources={entry.sources} headword={entry.headword} />
             </div>
           </div>

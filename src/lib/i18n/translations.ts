@@ -24,6 +24,10 @@ export interface UiTranslations {
   entry_definition: string;
   entry_examples: string;
   entry_thesaurus: string;
+  entry_pronoun_paradigm_kicker: string;
+  entry_pronoun_paradigm_title: string;
+  entry_pronoun_paradigm_desc: string;
+  entry_pronoun_current_badge: string;
   entry_source_prefix: string;
   entry_suggest_btn: string;
   entry_listen_audio: string;
@@ -143,6 +147,10 @@ export const TRANSLATIONS: Record<LanguageCode, UiTranslations> = {
     entry_definition: 'Definisi',
     entry_examples: 'Contoh Penggunaan',
     entry_thesaurus: 'TESAURUS',
+    entry_pronoun_paradigm_kicker: 'PARADIGMA TATABAHASA',
+    entry_pronoun_paradigm_title: 'Carta Paradigma Kata Ganti Nama Diri',
+    entry_pronoun_paradigm_desc: 'Hubungan sistemik antara Bentuk Bebas (Set II), Bentuk Terikat / Enklitik (Set I), dan Bentuk Oblik / Sasaran (Set III: em- + Set II).',
+    entry_pronoun_current_badge: 'Entri Semasa',
     entry_source_prefix: 'Sumber:',
     entry_suggest_btn: '+ Cadang Maklumat',
     entry_listen_audio: 'Dengarkan sebutan',
@@ -252,6 +260,10 @@ export const TRANSLATIONS: Record<LanguageCode, UiTranslations> = {
     entry_definition: 'Definisi',
     entry_examples: 'Sonto Pegunoon',
     entry_thesaurus: 'TESAURUS',
+    entry_pronoun_paradigm_kicker: 'PARADIGMA NAHU SAMA',
+    entry_pronoun_paradigm_title: 'Carta Paradigma Koto Gantian Diri',
+    entry_pronoun_paradigm_desc: 'Pekait sistemik antara Bentuk Bebas (Set II), Bentuk Tekaet / Enklitik (Set I), ko Bentuk Oblik / Tuju (Set III: em- + Set II).',
+    entry_pronoun_current_badge: 'Pekotoon Betiru',
     entry_source_prefix: 'Poon:',
     entry_suggest_btn: '+ Sadang Maklumat',
     entry_listen_audio: 'Pakale sebutan',
@@ -361,6 +373,10 @@ export const TRANSLATIONS: Record<LanguageCode, UiTranslations> = {
     entry_definition: 'Definition',
     entry_examples: 'Usage Examples',
     entry_thesaurus: 'THESAURUS',
+    entry_pronoun_paradigm_kicker: 'GRAMMATICAL PARADIGM',
+    entry_pronoun_paradigm_title: 'Personal Pronoun Paradigm Chart',
+    entry_pronoun_paradigm_desc: 'Systemic relationship between Independent Pronouns (Set II), Enclitic Pronouns (Set I), and Oblique / Prepositional Pronouns (Set III: em- + Set II).',
+    entry_pronoun_current_badge: 'Current Entry',
     entry_source_prefix: 'Source:',
     entry_suggest_btn: '+ Suggest Information',
     entry_listen_audio: 'Listen to pronunciation',
